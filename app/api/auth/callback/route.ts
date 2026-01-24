@@ -5,18 +5,14 @@ export const runtime = "nodejs";
 export const maxDuration = 300;
 
 function detectLocaleFromNext(nextPath: string): string {
-  // nextPath style: /fr/studio, /en/studio
   const m = nextPath.match(/^\/([a-z]{2})(\/|$)/);
   return m?.[1] ?? "fr";
 }
 
 function ensureLocaleInNext(nextPath: string, locale: string): string {
-  // si next = /studio -> devient /fr/studio
   if (nextPath === "/") return `/${locale}`;
   if (nextPath.startsWith(`/${locale}/`) || nextPath === `/${locale}`) return nextPath;
-  // si next commence déjà par /xx/ avec autre locale, on le laisse
   if (/^\/[a-z]{2}(\/|$)/.test(nextPath)) return nextPath;
-  // sinon, on préfixe
   return `/${locale}${nextPath.startsWith("/") ? "" : "/"}${nextPath}`;
 }
 
@@ -25,13 +21,11 @@ export async function GET(request: NextRequest) {
   const code = url.searchParams.get("code");
   let next = url.searchParams.get("next") ?? "/studio";
 
-  // sécurité: empêche redirection externe (https://evil.com)
+  // Security: prevent open redirects
   if (!next.startsWith("/")) next = "/studio";
 
-  // baseUrl = origin réel (bon pour bunshin3d.com / bunshin2.vercel.app)
   const baseUrl = request.nextUrl.origin;
 
-  // locale cohérente basée sur next
   const locale = detectLocaleFromNext(next);
   next = ensureLocaleInNext(next, locale);
 
@@ -39,11 +33,8 @@ export async function GET(request: NextRequest) {
     return NextResponse.redirect(`${baseUrl}/${locale}/login?error=missing_code`);
   }
 
-  // CRITIQUE: Créer la réponse AVANT de créer le client Supabase
-  // pour que setAll() puisse écrire les cookies dessus
+  // Create redirect response FIRST so Supabase can write cookies on it.
   const response = NextResponse.redirect(`${baseUrl}${next}`);
-  
-  // Empêche la mise en cache du redirect d'auth
   response.headers.set("Cache-Control", "no-store, no-cache, must-revalidate");
   response.headers.set("Pragma", "no-cache");
 
@@ -56,18 +47,25 @@ export async function GET(request: NextRequest) {
           return request.cookies.getAll();
         },
         setAll(cookiesToSet) {
-          // CRITIQUE: Écrire tous les cookies sur la réponse
           cookiesToSet.forEach(({ name, value, options }) => {
-            // S'assurer que les options de cookie sont correctes pour la production
+            // IMPORTANT:
+            // Do NOT force httpOnly=true here, otherwise the browser client can't read the session
+            // (and you get classic "OAuth loop" symptoms).
             const cookieOptions = {
               ...options,
-              // Force ces options pour garantir que les cookies fonctionnent
-              httpOnly: options?.httpOnly ?? true,
-              secure: process.env.NODE_ENV === "production",
-              sameSite: (options?.sameSite as "lax" | "strict" | "none") ?? "lax",
               path: options?.path ?? "/",
+              secure:
+                options?.secure ??
+                (process.env.NODE_ENV === "production"),
+              sameSite: (options?.sameSite as "lax" | "strict" | "none") ?? "lax",
+              httpOnly: options?.httpOnly ?? false,
             };
-            
+
+            // If SameSite=None, Secure must be true (required by browsers)
+            if (cookieOptions.sameSite === "none") {
+              cookieOptions.secure = true;
+            }
+
             response.cookies.set(name, value, cookieOptions);
           });
         },
@@ -75,26 +73,20 @@ export async function GET(request: NextRequest) {
     },
   );
 
-  // Échange le code pour une session
   const { data, error } = await supabase.auth.exchangeCodeForSession(code);
 
   if (error) {
     console.error("❌ exchangeCodeForSession error:", error);
-    return NextResponse.redirect(
-      `${baseUrl}/${locale}/login?error=auth_code_error`,
-    );
+    return NextResponse.redirect(`${baseUrl}/${locale}/login?error=auth_code_error`);
   }
 
-  // Vérification supplémentaire: la session doit exister
   if (!data.session) {
     console.error("❌ Session non créée après exchangeCodeForSession");
-    return NextResponse.redirect(
-      `${baseUrl}/${locale}/login?error=no_session`,
-    );
+    return NextResponse.redirect(`${baseUrl}/${locale}/login?error=no_session`);
   }
 
   console.log("✅ Session créée pour:", data.user?.email);
-  console.log("✅ Cookies écrits:", response.cookies.getAll().map(c => c.name));
+  console.log("✅ Cookies écrits:", response.cookies.getAll().map((c) => c.name));
 
   return response;
 }
