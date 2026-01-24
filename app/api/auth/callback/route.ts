@@ -21,23 +21,22 @@ export async function GET(request: NextRequest) {
   const code = url.searchParams.get("code");
   let next = url.searchParams.get("next") ?? "/studio";
 
-  // Security: prevent open redirects
   if (!next.startsWith("/")) next = "/studio";
 
   const baseUrl = request.nextUrl.origin;
-
   const locale = detectLocaleFromNext(next);
   next = ensureLocaleInNext(next, locale);
 
   if (!code) {
+    console.error("❌ Code OAuth manquant");
     return NextResponse.redirect(`${baseUrl}/${locale}/login?error=missing_code`);
   }
 
-  // Create redirect response FIRST so Supabase can write cookies on it.
-  const response = NextResponse.redirect(`${baseUrl}${next}`);
-  response.headers.set("Cache-Control", "no-store, no-cache, must-revalidate");
-  response.headers.set("Pragma", "no-cache");
+  console.log("🔄 Début échange code OAuth pour session");
 
+  // CRITICAL: Create response object that will be returned
+  let response = NextResponse.redirect(`${baseUrl}${next}`);
+  
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
@@ -47,21 +46,19 @@ export async function GET(request: NextRequest) {
           return request.cookies.getAll();
         },
         setAll(cookiesToSet) {
+          console.log("📝 Écriture de", cookiesToSet.length, "cookies");
           cookiesToSet.forEach(({ name, value, options }) => {
-            const cookieOptions = {
+            // CRITICAL: Don't force httpOnly or the browser can't read session
+            const finalOptions = {
               ...options,
-              path: options?.path ?? "/",
-              secure: options?.secure ?? (process.env.NODE_ENV === "production"),
-              sameSite: (options?.sameSite as "lax" | "strict" | "none") ?? "lax",
-              httpOnly: options?.httpOnly ?? false,
+              path: "/",
+              httpOnly: false,
+              secure: process.env.NODE_ENV === "production",
+              sameSite: "lax" as const,
             };
 
-            // If SameSite=None, Secure must be true (required by browsers)
-            if (cookieOptions.sameSite === "none") {
-              cookieOptions.secure = true;
-            }
-
-            response.cookies.set(name, value, cookieOptions);
+            console.log("🍪 Set cookie:", name, "httpOnly:", finalOptions.httpOnly);
+            response.cookies.set(name, value, finalOptions);
           });
         },
       },
@@ -71,17 +68,29 @@ export async function GET(request: NextRequest) {
   const { data, error } = await supabase.auth.exchangeCodeForSession(code);
 
   if (error) {
-    console.error("❌ exchangeCodeForSession error:", error);
-    return NextResponse.redirect(`${baseUrl}/${locale}/login?error=auth_code_error`);
+    console.error("❌ exchangeCodeForSession error:", error.message);
+    return NextResponse.redirect(`${baseUrl}/${locale}/login?error=auth_failed`);
   }
 
   if (!data.session) {
-    console.error("❌ Session non créée après exchangeCodeForSession");
+    console.error("❌ Session non créée");
     return NextResponse.redirect(`${baseUrl}/${locale}/login?error=no_session`);
   }
 
   console.log("✅ Session créée pour:", data.user?.email);
-  console.log("✅ Cookies écrits:", response.cookies.getAll().map((c) => c.name));
+  console.log("✅ Access token (premiers chars):", data.session.access_token.substring(0, 20));
+  
+  const allCookies = response.cookies.getAll();
+  console.log("✅ Cookies dans response:", allCookies.map(c => ({
+    name: c.name,
+    httpOnly: c.httpOnly,
+    secure: c.secure,
+    sameSite: c.sameSite,
+    hasValue: !!c.value
+  })));
 
+  // Add cache headers
+  response.headers.set("Cache-Control", "no-store, max-age=0");
+  
   return response;
 }
