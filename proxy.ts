@@ -66,6 +66,17 @@ export async function proxy(request: NextRequest) {
     });
   }
 
+  const pathname = request.nextUrl.pathname;
+  const { locale, cleanPath } = getLocaleAndCleanPath(pathname);
+
+  // ⚠️ CRITICAL: Skip auth validation for OAuth callback routes
+  // Otherwise the middleware interferes with session creation
+  const isAuthCallback = cleanPath.startsWith("/auth/callback");
+  if (isAuthCallback) {
+    console.log("🔄 Auth callback detected, skipping middleware validation");
+    return response;
+  }
+
   // Create the Supabase server client with cookie read/write
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -92,9 +103,6 @@ export async function proxy(request: NextRequest) {
     error,
   } = await supabase.auth.getUser();
 
-  const pathname = request.nextUrl.pathname;
-  const { locale, cleanPath } = getLocaleAndCleanPath(pathname);
-
   // Minimal debug log (keep it, it's useful in prod)
   const cookieNames = request.cookies.getAll().map((c) => c.name);
   const hasSessionCookie = cookieNames.some((name) => name.startsWith("sb-"));
@@ -112,22 +120,12 @@ export async function proxy(request: NextRequest) {
 
   // Public routes + auth routes (do NOT block OAuth callback)
   const publicRoutes = ["/", "/login", "/pricing"];
-  const authRoutes = ["/auth"]; // legacy, just in case
 
   const isPublicRoute = publicRoutes.some(
     (route) => cleanPath === route || cleanPath.startsWith(`${route}/`),
   );
 
-  const isAuthRoute = authRoutes.some(
-    (route) => cleanPath === route || cleanPath.startsWith(`${route}/`),
-  );
-
-  // Allow auth callback routes (and anything under /api is excluded by matcher)
-  if (isAuthRoute) {
-    return response;
-  }
-
-  // Also allow important public files / PWA assets
+  // Allow important public files / PWA assets
   const isWellKnownPublicAsset = [
     "/manifest.json",
     "/robots.txt",
