@@ -29,33 +29,43 @@ export default function AuthForm() {
       return "fr";
     };
 
-    // Vérifier si l'utilisateur est déjà connecté
+    // Vérifier si l'utilisateur est déjà connecté au chargement
     const checkSession = async () => {
       const { data: { session } } = await supabase.auth.getSession();
       if (session) {
         const locale = getLocale();
-        console.log("✅ Déjà connecté, redirect vers:", `/${locale}/studio`);
-        router.push(`/${locale}/studio`);
+        console.log("✅ Session détectée, redirect vers studio");
+        // Force le refresh pour éviter le cache
+        window.location.href = `/${locale}/studio`;
       }
     };
 
+    // Vérifier immédiatement
     checkSession();
 
-    // Écouter les changements d'auth (important pour le retour OAuth)
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
-      console.log("🔐 Auth event:", event, session?.user?.email);
+    // Écouter les changements d'auth (pour le retour OAuth)
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(async (event, session) => {
+      console.log("🔐 Auth event:", event);
       
       if (event === "SIGNED_IN" && session) {
         const locale = getLocale();
-        console.log("✅ Connexion réussie, redirect vers:", `/${locale}/studio`);
-        router.push(`/${locale}/studio`);
+        console.log("✅ Connexion réussie, redirect vers studio");
+        // Force le refresh pour s'assurer que le middleware voit la session
+        window.location.href = `/${locale}/studio`;
+      }
+
+      // Aussi écouter INITIAL_SESSION au cas où
+      if (event === "INITIAL_SESSION" && session) {
+        const locale = getLocale();
+        console.log("✅ Session initiale détectée, redirect vers studio");
+        window.location.href = `/${locale}/studio`;
       }
     });
 
     return () => {
       subscription.unsubscribe();
     };
-  }, [supabase, router]);
+  }, [supabase]);
 
   const handleEmailLogin = async (e: React.FormEvent) => {
     e.preventDefault();
