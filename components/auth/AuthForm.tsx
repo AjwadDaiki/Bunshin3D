@@ -15,7 +15,6 @@ export default function AuthForm() {
   const [isLoading, setIsLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [isSent, setIsSent] = useState(false);
-  const [redirectUrl, setRedirectUrl] = useState("");
 
   const supabase = createClient();
 
@@ -23,19 +22,17 @@ export default function AuthForm() {
     // Fonction pour extraire la locale correctement
     const getLocale = () => {
       const pathParts = window.location.pathname.split("/").filter(Boolean);
-      // Vérifie si le premier segment est une locale valide (fr ou en)
       const firstSegment = pathParts[0];
       if (firstSegment && /^(fr|en)$/.test(firstSegment)) {
         return firstSegment;
       }
-      return "fr"; // fallback
+      return "fr";
     };
 
     // Vérifier si l'utilisateur est déjà connecté
     const checkSession = async () => {
       const { data: { session } } = await supabase.auth.getSession();
       if (session) {
-        // Déjà connecté, rediriger vers studio
         const locale = getLocale();
         console.log("✅ Déjà connecté, redirect vers:", `/${locale}/studio`);
         router.push(`/${locale}/studio`);
@@ -44,16 +41,11 @@ export default function AuthForm() {
 
     checkSession();
 
-    // Construire l'URL de callback
-    const origin = window.location.origin;
-    setRedirectUrl(`${origin}/api/auth/callback`);
-
-    // Écouter les changements d'auth
+    // Écouter les changements d'auth (important pour le retour OAuth)
     const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
       console.log("🔐 Auth event:", event, session?.user?.email);
       
       if (event === "SIGNED_IN" && session) {
-        // Rediriger vers studio après connexion
         const locale = getLocale();
         console.log("✅ Connexion réussie, redirect vers:", `/${locale}/studio`);
         router.push(`/${locale}/studio`);
@@ -69,16 +61,10 @@ export default function AuthForm() {
     e.preventDefault();
     setIsLoading(true);
 
-    if (!redirectUrl) {
-      console.error("URL de redirection non prête");
-      setIsLoading(false);
-      return;
-    }
-
     const { error } = await supabase.auth.signInWithOtp({
       email,
       options: {
-        emailRedirectTo: redirectUrl,
+        emailRedirectTo: `${window.location.origin}`,
       },
     });
 
@@ -96,24 +82,16 @@ export default function AuthForm() {
   const handleGoogleLogin = async () => {
     setIsLoading(true);
 
-    if (!redirectUrl) {
-      console.error("URL de redirection non prête");
-      setIsLoading(false);
-      return;
-    }
-
     // Extraire la locale du path
     const locale = window.location.pathname.split("/")[1] || "fr";
 
-    console.log("🔗 Connexion Google:", {
-      redirectTo: `${redirectUrl}?next=/${locale}/studio`,
-      locale,
-    });
+    console.log("🔗 Connexion Google (flow natif Supabase)");
 
     const { error } = await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {
-        redirectTo: `${redirectUrl}?next=/${locale}/studio`,
+        // Supabase gère tout automatiquement, juste lui dire où rediriger après
+        redirectTo: `${window.location.origin}/${locale}/studio`,
         queryParams: {
           access_type: "offline",
           prompt: "consent",
@@ -165,7 +143,7 @@ export default function AuthForm() {
       <div className="space-y-4">
         <button
           onClick={handleGoogleLogin}
-          disabled={isLoading || !redirectUrl}
+          disabled={isLoading}
           className="w-full flex items-center justify-center gap-3 bg-white text-zinc-950 font-medium h-11 rounded-lg hover:bg-zinc-200 transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
         >
           {isLoading ? (
