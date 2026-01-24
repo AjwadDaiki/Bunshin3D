@@ -46,10 +46,3 @@ export async function GET(request: NextRequest) {
     }
   }, { status: 200 });
 }
-```
-
----
-
-Ensuite, **après t'être connecté avec Google**, visite cette URL dans ton navigateur :
-```
-https://bunshin3d.com/api/debug-cookies
