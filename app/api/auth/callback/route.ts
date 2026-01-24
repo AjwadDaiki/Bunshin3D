@@ -48,15 +48,10 @@ export async function GET(request: NextRequest) {
         },
         setAll(cookiesToSet) {
           cookiesToSet.forEach(({ name, value, options }) => {
-            // IMPORTANT:
-            // Do NOT force httpOnly=true here, otherwise the browser client can't read the session
-            // (and you get classic "OAuth loop" symptoms).
             const cookieOptions = {
               ...options,
               path: options?.path ?? "/",
-              secure:
-                options?.secure ??
-                (process.env.NODE_ENV === "production"),
+              secure: options?.secure ?? (process.env.NODE_ENV === "production"),
               sameSite: (options?.sameSite as "lax" | "strict" | "none") ?? "lax",
               httpOnly: options?.httpOnly ?? false,
             };
