@@ -1,6 +1,9 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 
+const defaultLocale = "fr";
+const locales = ["fr", "en"];
+
 export async function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
 
@@ -8,6 +11,25 @@ export async function middleware(request: NextRequest) {
   if (pathname.includes("/api/auth/callback")) {
     console.log("🔄 Skipping middleware for OAuth callback");
     return NextResponse.next();
+  }
+
+  // Check if pathname is missing a locale
+  const pathnameHasLocale = locales.some(
+    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
+  );
+
+  // Redirect to default locale if no locale in path
+  if (!pathnameHasLocale && !pathname.startsWith("/api") && pathname !== "/" && !pathname.match(/\.(svg|png|jpg|jpeg|gif|webp|ico|css|js)$/)) {
+    const url = request.nextUrl.clone();
+    url.pathname = `/${defaultLocale}${pathname}`;
+    return NextResponse.redirect(url);
+  }
+
+  // Redirect root to default locale
+  if (pathname === "/") {
+    const url = request.nextUrl.clone();
+    url.pathname = `/${defaultLocale}`;
+    return NextResponse.redirect(url);
   }
 
   // Create response
@@ -19,7 +41,7 @@ export async function middleware(request: NextRequest) {
 
   // Detect locale from path
   const localeMatch = pathname.match(/^\/([a-z]{2})(\/|$)/);
-  const locale = localeMatch ? localeMatch[1] : "fr";
+  const locale = localeMatch ? localeMatch[1] : defaultLocale;
   const cleanPath = pathname.replace(new RegExp(`^/${locale}(?=/|$)`), "") || "/";
 
   // Create Supabase client
