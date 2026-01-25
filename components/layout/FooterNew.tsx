@@ -24,9 +24,7 @@ export default function FooterNew() {
                 <span className="text-brand-accent">3D</span>
               </span>
             </div>
-            <p className="text-sm text-gray-400 mb-4">
-              {t("tagline")}
-            </p>
+            <p className="text-sm text-gray-400 mb-4">{t("tagline")}</p>
           </div>
 
           <div>
@@ -46,14 +44,6 @@ export default function FooterNew() {
                   className="hover:text-brand-primary transition-colors"
                 >
                   {tNav("pricing")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/#features"
-                  className="hover:text-brand-primary transition-colors"
-                >
-                  {t("features")}
                 </Link>
               </li>
             </ul>
