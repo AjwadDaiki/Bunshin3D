@@ -6,6 +6,9 @@ import UserDashboard from "@/components/account/UserDashboard";
 import { createServerClient, type CookieOptions } from "@supabase/ssr";
 import { cookies } from "next/headers";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 // --- SEO ---
 export async function generateMetadata({
   params,

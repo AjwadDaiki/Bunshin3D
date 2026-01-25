@@ -6,8 +6,6 @@ export const constructCanonicalUrl = (path: string) => {
   return `${APP_URL}${path}`;
 };
 
-// Configuration technique de base (SANS TEXTE)
-// Cette config sert de fondation technique. Le texte est fusionné dynamiquement dans le Layout.
 export const baseMetadataConfig: Metadata = {
   metadataBase: new URL(APP_URL),
   authors: [{ name: "Bunshin 3D Engineering", url: APP_URL }],
@@ -18,7 +16,6 @@ export const baseMetadataConfig: Metadata = {
     address: false,
     telephone: false,
   },
-  // La configuration robots reste ici car elle est technique
   robots: {
     index: true,
     follow: true,

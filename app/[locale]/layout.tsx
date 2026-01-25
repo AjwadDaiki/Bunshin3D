@@ -90,21 +90,17 @@ export default async function LocaleLayout({
   setRequestLocale(locale);
   const messages = await getMessages();
 
-  // Récupération de l'ID Google Analytics depuis l'environnement
   const gaId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS;
 
   return (
     <html lang={locale} className="dark" suppressHydrationWarning>
       <head>
-        {/* Resource hints pour performance */}
         <link rel="preconnect" href="https://ajax.googleapis.com" />
         <link rel="dns-prefetch" href="https://ajax.googleapis.com" />
         <link rel="preconnect" href={process.env.NEXT_PUBLIC_SUPABASE_URL} />
         <link rel="dns-prefetch" href={process.env.NEXT_PUBLIC_SUPABASE_URL} />
-        {/* Google Analytics Preconnect */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
 
-        {/* Favicons & Icons */}
         <link rel="icon" href="/favicon.ico" sizes="32x32" />
         <link
           rel="icon"
@@ -125,18 +121,14 @@ export default async function LocaleLayout({
         />
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#9945ff" />
 
-        {/* PWA Manifest */}
         <link rel="manifest" href="/manifest.json" />
 
-        {/* Windows Tiles */}
         <meta name="msapplication-TileColor" content="#0a0a0f" />
         <meta name="msapplication-TileImage" content="/mstile-150x150.png" />
 
-        {/* Theme Colors */}
         <meta name="theme-color" content="#9945ff" />
         <meta name="color-scheme" content="dark" />
 
-        {/* Preload model-viewer avec crossorigin pour éviter l'avertissement CORS */}
         <link
           rel="preload"
           href="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"
@@ -144,7 +136,6 @@ export default async function LocaleLayout({
           crossOrigin="anonymous"
         />
 
-        {/* Schema.org Organization */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -159,12 +150,10 @@ export default async function LocaleLayout({
           geistMono.variable,
         )}
       >
-        {/* Skip link pour accessibilité */}
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>
 
-        {/* --- GOOGLE ANALYTICS --- */}
         {gaId && (
           <>
             <Script
@@ -184,7 +173,6 @@ export default async function LocaleLayout({
           </>
         )}
 
-        {/* --- CHARGEMENT DU MOTEUR 3D --- */}
         <Script
           type="module"
           src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"

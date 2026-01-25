@@ -4,21 +4,19 @@ import { useState, useEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
 import { createClient } from "@/lib/supabase";
 import {
-  Upload,
-  Sparkles,
-  Zap,
-  Download,
-  Loader2,
+  UploadSimple,
+  Sparkle,
+  Lightning,
+  DownloadSimple,
+  CircleNotch,
   Image as ImageIcon,
   FileCode,
-} from "lucide-react";
+} from "@phosphor-icons/react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { convertToSTL, triggerDownload } from "@/lib/3d-processing";
-// Import du nouveau logo
 import { BunshinLogo } from "../ui/BunshinLogo";
 
-// Déclaration pour TypeScript pour le Web Component model-viewer
 declare global {
   namespace JSX {
     interface IntrinsicElements {
@@ -61,22 +59,17 @@ export default function StudioInterface() {
   const [isDownloading, setIsDownloading] = useState(false);
   const [logs, setLogs] = useState<LogEntry[]>([]);
   const [modelUrl, setModelUrl] = useState<string | null>(null);
-  const [generatedImageUrl, setGeneratedImageUrl] = useState<string | null>(
-    null,
-  );
+  const [generatedImageUrl, setGeneratedImageUrl] = useState<string | null>(null);
   const [credits, setCredits] = useState<number>(0);
   const [userId, setUserId] = useState<string | null>(null);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
   const logsContainerRef = useRef<HTMLDivElement>(null);
 
-  // Récupérer utilisateur
   useEffect(() => {
     const getUser = async () => {
       const supabase = createClient();
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
+      const { data: { user } } = await supabase.auth.getUser();
       if (user) {
         setUserId(user.id);
         const { data } = await supabase
@@ -90,27 +83,20 @@ export default function StudioInterface() {
     getUser();
   }, []);
 
-  // Auto-scroll des logs
   useEffect(() => {
     if (logsContainerRef.current) {
-      logsContainerRef.current.scrollTop =
-        logsContainerRef.current.scrollHeight;
+      logsContainerRef.current.scrollTop = logsContainerRef.current.scrollHeight;
     }
   }, [logs]);
 
-  // Charger le script model-viewer dynamiquement
   useEffect(() => {
     const script = document.createElement("script");
     script.type = "module";
-    script.src =
-      "https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js";
+    script.src = "https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js";
     document.head.appendChild(script);
   }, []);
 
-  const addLog = (
-    message: string,
-    type: "info" | "success" | "error" = "info",
-  ) => {
+  const addLog = (message: string, type: "info" | "success" | "error" = "info") => {
     setLogs((prev) => [
       ...prev,
       { id: Date.now() + Math.random(), message, type, timestamp: new Date() },
@@ -122,7 +108,6 @@ export default function StudioInterface() {
     if (file) {
       setImageFile(file);
       setImagePreview(URL.createObjectURL(file));
-      // Reset states
       setModelUrl(null);
       setGeneratedImageUrl(null);
     }
@@ -166,10 +151,7 @@ export default function StudioInterface() {
     }
 
     if (credits < costInCredits) {
-      addLog(
-        `Insufficient credits. You need ${costInCredits} credit(s).`,
-        "error",
-      );
+      addLog(`Insufficient credits. You need ${costInCredits} credit(s).`, "error");
       return;
     }
 
@@ -183,7 +165,6 @@ export default function StudioInterface() {
 
       let finalImageUrl: string;
 
-      // --- ETAPE 1 : OBTENTION DE L'IMAGE ---
       if (mode === "text") {
         addLog(t("Logs.generatingImage"));
 
@@ -199,12 +180,9 @@ export default function StudioInterface() {
         const imagePredictionId = imageData.predictionId;
         let imageResult = null;
 
-        // Polling Image
         while (!imageResult) {
           await new Promise((r) => setTimeout(r, 2000));
-          const statusRes = await fetch(
-            `/api/check-status/${imagePredictionId}`,
-          );
+          const statusRes = await fetch(`/api/check-status/${imagePredictionId}`);
           const status = await statusRes.json();
 
           if (status.status === "succeeded") {
@@ -221,7 +199,6 @@ export default function StudioInterface() {
         addLog("⏳ Cooling down API (Safe Wait)...", "info");
         await new Promise((r) => setTimeout(r, 3000));
       } else {
-        // Mode Image Upload
         addLog(t("Logs.uploadingImage"));
         const supabase = createClient();
         const fileName = `${userId}/${Date.now()}-${imageFile!.name.replace(/[^a-zA-Z0-9.]/g, "")}`;
@@ -232,15 +209,12 @@ export default function StudioInterface() {
 
         if (uploadError) throw uploadError;
 
-        const {
-          data: { publicUrl },
-        } = supabase.storage.from("uploads").getPublicUrl(fileName);
+        const { data: { publicUrl } } = supabase.storage.from("uploads").getPublicUrl(fileName);
 
         finalImageUrl = publicUrl;
         addLog("✓ Image uploaded successfully", "success");
       }
 
-      // --- ETAPE 2 : GENERATION 3D ---
       addLog(t("Logs.buildingMesh"));
 
       let apiEndpoint: string;
@@ -259,9 +233,7 @@ export default function StudioInterface() {
       if (modelRes.status === 429) {
         addLog("⚠️ Server Busy (429). Retrying in 5s...", "error");
         await new Promise((r) => setTimeout(r, 5000));
-        throw new Error(
-          "System busy (Rate Limit). Please wait 30s and try again.",
-        );
+        throw new Error("System busy (Rate Limit). Please wait 30s and try again.");
       }
 
       const modelData = await modelRes.json();
@@ -271,7 +243,6 @@ export default function StudioInterface() {
       let modelResult = null;
       let pollCount = 0;
 
-      // Polling 3D
       while (!modelResult) {
         await new Promise((r) => setTimeout(r, 4000));
         pollCount++;
@@ -290,7 +261,7 @@ export default function StudioInterface() {
           } else {
             modelResult =
               Object.values(status.output).find(
-                (val: any) => typeof val === "string" && val.includes(".glb"),
+                (val: any) => typeof val === "string" && val.includes(".glb")
               ) || status.output;
           }
 
@@ -313,7 +284,6 @@ export default function StudioInterface() {
   return (
     <div className="min-h-screen bg-linear-to-b from-surface-1 to-surface-2 pt-24 pb-16 px-4">
       <div className="container mx-auto max-w-[1600px]">
-        {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-end mb-8 gap-4 border-b border-white/10 pb-6">
           <div>
             <h1 className="text-4xl font-bold text-gradient-brand mb-2">
@@ -331,16 +301,14 @@ export default function StudioInterface() {
             </span>
             <div className="h-4 w-px bg-white/10"></div>
             <span className="text-amber-400 font-bold flex items-center gap-2">
-              <Zap className="h-5 w-5 fill-current" />
+              <Lightning className="h-5 w-5" weight="fill" />
               {credits} Credits
             </span>
           </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          {/* --- LEFT COLUMN: CONTROLS (4 cols) --- */}
           <div className="lg:col-span-4 space-y-6">
-            {/* Mode Selection */}
             <div className="glass-card p-2 rounded-2xl flex gap-2">
               <button
                 onClick={() => setMode("image")}
@@ -348,10 +316,10 @@ export default function StudioInterface() {
                   "flex-1 py-3 px-4 rounded-xl font-bold transition-all duration-300 flex items-center justify-center gap-2",
                   mode === "image"
                     ? "bg-brand-primary text-white shadow-lg shadow-brand-primary/20"
-                    : "hover:bg-white/5 text-gray-400",
+                    : "hover:bg-white/5 text-gray-400"
                 )}
               >
-                <Upload className="h-5 w-5" />
+                <UploadSimple className="h-5 w-5" weight="bold" />
                 {t("Modes.imageToModel")}
               </button>
               <button
@@ -360,15 +328,14 @@ export default function StudioInterface() {
                   "flex-1 py-3 px-4 rounded-xl font-bold transition-all duration-300 flex items-center justify-center gap-2",
                   mode === "text"
                     ? "bg-brand-primary text-white shadow-lg shadow-brand-primary/20"
-                    : "hover:bg-white/5 text-gray-400",
+                    : "hover:bg-white/5 text-gray-400"
                 )}
               >
-                <Sparkles className="h-5 w-5" />
+                <Sparkle className="h-5 w-5" weight="fill" />
                 {t("Modes.textToModel")}
               </button>
             </div>
 
-            {/* Quality Selection */}
             <div className="glass-card p-6 rounded-2xl">
               <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">
                 {t("Quality.title")}
@@ -380,7 +347,7 @@ export default function StudioInterface() {
                     "w-full p-4 rounded-xl border-2 transition-all duration-300 flex items-center justify-between group",
                     quality === "standard"
                       ? "border-brand-primary bg-brand-primary/5"
-                      : "border-white/5 hover:border-white/10 bg-surface-2",
+                      : "border-white/5 hover:border-white/10 bg-surface-2"
                   )}
                 >
                   <div className="flex items-center gap-3">
@@ -389,19 +356,16 @@ export default function StudioInterface() {
                         "p-2 rounded-lg",
                         quality === "standard"
                           ? "bg-amber-400/20 text-amber-400"
-                          : "bg-white/5 text-gray-400",
+                          : "bg-white/5 text-gray-400"
                       )}
                     >
-                      {/* Remplacement de Box par BunshinLogo */}
                       <BunshinLogo className="h-5 w-5" />
                     </div>
                     <div className="text-left">
                       <span
                         className={cn(
                           "block font-bold",
-                          quality === "standard"
-                            ? "text-white"
-                            : "text-gray-400",
+                          quality === "standard" ? "text-white" : "text-gray-400"
                         )}
                       >
                         {t("Quality.standard")}
@@ -420,7 +384,7 @@ export default function StudioInterface() {
                     "w-full p-4 rounded-xl border-2 transition-all duration-300 flex items-center justify-between group",
                     quality === "premium"
                       ? "border-purple-500 bg-purple-500/5"
-                      : "border-white/5 hover:border-white/10 bg-surface-2",
+                      : "border-white/5 hover:border-white/10 bg-surface-2"
                   )}
                 >
                   <div className="flex items-center gap-3">
@@ -429,18 +393,16 @@ export default function StudioInterface() {
                         "p-2 rounded-lg",
                         quality === "premium"
                           ? "bg-purple-500/20 text-purple-400"
-                          : "bg-white/5 text-gray-400",
+                          : "bg-white/5 text-gray-400"
                       )}
                     >
-                      <Sparkles className="h-5 w-5" />
+                      <Sparkle className="h-5 w-5" weight="fill" />
                     </div>
                     <div className="text-left">
                       <span
                         className={cn(
                           "block font-bold",
-                          quality === "premium"
-                            ? "text-white"
-                            : "text-gray-400",
+                          quality === "premium" ? "text-white" : "text-gray-400"
                         )}
                       >
                         {t("Quality.premium")}
@@ -455,7 +417,6 @@ export default function StudioInterface() {
               </div>
             </div>
 
-            {/* Input Zone */}
             <div className="glass-card p-6 rounded-2xl">
               {mode === "image" ? (
                 <>
@@ -476,7 +437,7 @@ export default function StudioInterface() {
                     ) : (
                       <>
                         <div className="p-4 rounded-full bg-white/5 group-hover:bg-brand-primary/20 group-hover:text-brand-primary transition-colors mb-3">
-                          <Upload className="h-6 w-6" />
+                          <UploadSimple className="h-6 w-6" weight="bold" />
                         </div>
                         <p className="text-gray-500 text-sm font-medium">
                           {t("Interface.DropZone.subtitle")}
@@ -514,27 +475,26 @@ export default function StudioInterface() {
               >
                 {isGenerating ? (
                   <>
-                    <Loader2 className="h-5 w-5 animate-spin" />
+                    <CircleNotch className="h-5 w-5 animate-spin" weight="bold" />
                     <span className="animate-pulse">
                       {t("Interface.Controls.processing")}
                     </span>
                   </>
                 ) : (
                   <>
-                    <Sparkles className="h-5 w-5" />
+                    <Sparkle className="h-5 w-5" weight="fill" />
                     {t("Interface.Controls.generate")}
                   </>
                 )}
               </button>
             </div>
 
-            {/* Console Logs */}
             <div className="glass-card p-4 rounded-2xl bg-black/40 border-white/5">
               <h3 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3 flex items-center gap-2">
                 <div
                   className={cn(
                     "w-2 h-2 rounded-full",
-                    isGenerating ? "bg-green-400 animate-pulse" : "bg-gray-600",
+                    isGenerating ? "bg-green-400 animate-pulse" : "bg-gray-600"
                   )}
                 />
                 Process Logs
@@ -545,7 +505,7 @@ export default function StudioInterface() {
               >
                 {logs.length === 0 ? (
                   <div className="h-full flex flex-col items-center justify-center text-gray-700">
-                    <FileCode className="h-8 w-8 mb-2 opacity-50" />
+                    <FileCode className="h-8 w-8 mb-2 opacity-50" weight="duotone" />
                     <p>Ready to generate</p>
                   </div>
                 ) : (
@@ -558,7 +518,7 @@ export default function StudioInterface() {
                           ? "text-green-400"
                           : log.type === "error"
                             ? "text-red-400"
-                            : "text-gray-400",
+                            : "text-gray-400"
                       )}
                     >
                       <span className="opacity-50">
@@ -579,33 +539,26 @@ export default function StudioInterface() {
             </div>
           </div>
 
-          {/* --- RIGHT COLUMN: VISUALIZATION (8 cols) --- */}
           <div className="lg:col-span-8 flex flex-col gap-6 h-full">
-            {/* Main Viewer Area */}
             <div className="glass-card rounded-3xl overflow-hidden bg-surface-2 border-white/10 relative h-[600px] flex items-center justify-center group">
-              {/* Background Grid Pattern */}
               <div
                 className="absolute inset-0 opacity-10 pointer-events-none"
                 style={{
-                  backgroundImage:
-                    "radial-gradient(circle, #ffffff 1px, transparent 1px)",
+                  backgroundImage: "radial-gradient(circle, #ffffff 1px, transparent 1px)",
                   backgroundSize: "20px 20px",
                 }}
               ></div>
 
               {!modelUrl && !generatedImageUrl && !isGenerating && (
                 <div className="text-center opacity-30 select-none pointer-events-none">
-                  {/* Remplacement de Box par BunshinLogo */}
                   <BunshinLogo className="h-32 w-32 mx-auto mb-6 text-white stroke-1" />
                   <h3 className="text-2xl font-bold">Waiting for input...</h3>
                 </div>
               )}
 
-              {/* --- NOUVELLE ANIMATION DE CHARGEMENT STYLÉE --- */}
               {isGenerating && (
                 <div className="absolute inset-0 z-20 bg-black/80 backdrop-blur-sm flex flex-col items-center justify-center">
                   <div className="relative">
-                    {/* Utilisation du nouveau logo avec la prop animated */}
                     <BunshinLogo
                       className="h-32 w-32 text-brand-primary"
                       animated={true}
@@ -620,7 +573,6 @@ export default function StudioInterface() {
                 </div>
               )}
 
-              {/* 2D Image Preview */}
               {generatedImageUrl && !modelUrl && (
                 <div className="absolute inset-0 z-10 flex items-center justify-center p-8">
                   <img
@@ -629,13 +581,12 @@ export default function StudioInterface() {
                     className="max-h-full max-w-full rounded-xl shadow-2xl object-contain"
                   />
                   <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/70 backdrop-blur-md px-4 py-2 rounded-full text-sm font-medium border border-white/10 flex items-center gap-2">
-                    <ImageIcon className="h-4 w-4 text-brand-primary" />
+                    <ImageIcon className="h-4 w-4 text-brand-primary" weight="duotone" />
                     Reference Image
                   </div>
                 </div>
               )}
 
-              {/* 3D Viewer */}
               {modelUrl && (
                 <model-viewer
                   src={modelUrl}
@@ -655,7 +606,6 @@ export default function StudioInterface() {
               )}
             </div>
 
-            {/* Action Bar (Download) */}
             {modelUrl && (
               <div className="flex flex-col sm:flex-row gap-4 animate-in fade-in slide-in-from-bottom-4 duration-700">
                 <div className="glass-card flex-1 p-6 rounded-2xl flex items-center justify-between border-green-500/20 bg-green-500/5">
@@ -675,9 +625,9 @@ export default function StudioInterface() {
                       className="px-5 py-2.5 bg-surface-3 hover:bg-white/10 border border-white/10 rounded-lg font-bold transition-all flex items-center gap-2 text-sm"
                     >
                       {isDownloading ? (
-                        <Loader2 className="h-4 w-4 animate-spin" />
+                        <CircleNotch className="h-4 w-4 animate-spin" weight="bold" />
                       ) : (
-                        <Download className="h-4 w-4" />
+                        <DownloadSimple className="h-4 w-4" weight="bold" />
                       )}
                       GLB <span className="opacity-50 text-xs">(Web/AR)</span>
                     </button>
@@ -687,14 +637,11 @@ export default function StudioInterface() {
                       className="px-5 py-2.5 bg-brand-primary hover:bg-brand-secondary text-white rounded-lg font-bold transition-all flex items-center gap-2 text-sm shadow-lg shadow-brand-primary/20"
                     >
                       {isDownloading ? (
-                        <Loader2 className="h-4 w-4 animate-spin" />
+                        <CircleNotch className="h-4 w-4 animate-spin" weight="bold" />
                       ) : (
-                        <Download className="h-4 w-4" />
+                        <DownloadSimple className="h-4 w-4" weight="bold" />
                       )}
-                      STL{" "}
-                      <span className="opacity-50 text-xs text-white/70">
-                        (Print)
-                      </span>
+                      STL <span className="opacity-50 text-xs text-white/70">(Print)</span>
                     </button>
                   </div>
                 </div>

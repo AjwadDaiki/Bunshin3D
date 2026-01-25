@@ -4,18 +4,18 @@ import React, { useState } from "react";
 import { useTranslations } from "next-intl";
 import { createClient } from "@/lib/supabase";
 import {
-  ShieldAlert,
-  Banknote,
+  ShieldWarning,
+  Money,
   Users,
-  Box,
-  Activity,
+  Cube,
+  ChartLineUp,
   Lock,
-  Unlock,
-  TrendingUp,
-  Zap,
+  LockOpen,
+  TrendUp,
+  Lightning,
   Clock,
   UserCheck,
-} from "lucide-react";
+} from "@phosphor-icons/react";
 import { cn } from "@/lib/utils";
 
 type AdminProps = {
@@ -64,11 +64,10 @@ export default function AdminDashboard({
 
   return (
     <div className="space-y-8 animate-in fade-in duration-500 pb-20">
-      {/* HEADER */}
       <div className="flex flex-col md:flex-row md:items-center justify-between border-b border-white/10 pb-6 gap-4">
         <div className="space-y-1">
           <h1 className="text-3xl font-bold tracking-tight uppercase flex items-center gap-3">
-            <ShieldAlert className="w-8 h-8 text-brand-primary" />
+            <ShieldWarning className="w-8 h-8 text-brand-primary" weight="fill" />
             {t("Header.title")}
           </h1>
           <p className="text-gray-400 text-sm font-bold tracking-wider">
@@ -77,7 +76,7 @@ export default function AdminDashboard({
         </div>
         <div className="flex items-center gap-4">
           <div className="text-right hidden md:block">
-            <div className="text-xs text-gray-400">SERVER TIME</div>
+            <div className="text-xs text-gray-400">{t("Controls.serverTime")}</div>
             <div className="font-mono text-brand-primary">
               {new Date().toLocaleTimeString()}
             </div>
@@ -89,53 +88,50 @@ export default function AdminDashboard({
         </div>
       </div>
 
-      {/* KPI GRID (First Row - Financials) */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <KpiCard
-          icon={<Banknote className="w-6 h-6" />}
+          icon={<Money className="w-6 h-6" weight="duotone" />}
           label={t("KPI.revenue")}
           value={`${stats.revenue.toFixed(2)} €`}
           color="border-green-900/50 text-green-500"
         />
         <KpiCard
-          icon={<TrendingUp className="w-6 h-6" />}
+          icon={<TrendUp className="w-6 h-6" weight="duotone" />}
           label={t("KPI.arpu")}
           value={`${stats.arpu} €`}
           color="border-blue-900/50 text-blue-500"
         />
         <KpiCard
-          icon={<Zap className="w-6 h-6" />}
+          icon={<Lightning className="w-6 h-6" weight="fill" />}
           label={t("KPI.burn")}
           value={`$${stats.burn}`}
           color="border-orange-900/50 text-orange-500"
         />
       </div>
 
-      {/* KPI GRID (Second Row - Usage) */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <KpiCard
-          icon={<Users className="w-6 h-6" />}
+          icon={<Users className="w-6 h-6" weight="duotone" />}
           label={t("KPI.users")}
           value={stats.users.toString()}
         />
         <KpiCard
-          icon={<Box className="w-6 h-6" />}
+          icon={<Cube className="w-6 h-6" weight="duotone" />}
           label={t("KPI.models")}
           value={stats.models.toString()}
         />
         <KpiCard
-          icon={<Activity className="w-6 h-6" />}
+          icon={<ChartLineUp className="w-6 h-6" weight="duotone" />}
           label={t("KPI.conversion")}
           value={`${stats.conversion}%`}
         />
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        {/* RECENT USERS TABLE */}
         <div className="glass-card rounded-xl overflow-hidden">
           <div className="px-6 py-4 border-b border-white/10 bg-brand-primary/5 flex justify-between items-center">
             <h3 className="text-sm font-bold uppercase tracking-wider text-brand-primary flex items-center gap-2">
-              <UserCheck className="w-4 h-4" /> {t("Tables.usersTitle")}
+              <UserCheck className="w-4 h-4" weight="duotone" /> {t("Tables.usersTitle")}
             </h3>
           </div>
           <div className="overflow-x-auto">
@@ -171,11 +167,10 @@ export default function AdminDashboard({
           </div>
         </div>
 
-        {/* RECENT GENERATIONS TABLE */}
         <div className="glass-card rounded-xl overflow-hidden">
           <div className="px-6 py-4 border-b border-white/10 bg-brand-primary/5 flex justify-between items-center">
             <h3 className="text-sm font-bold uppercase tracking-wider text-brand-primary flex items-center gap-2">
-              <Box className="w-4 h-4" /> {t("Tables.generationsTitle")}
+              <Cube className="w-4 h-4" weight="duotone" /> {t("Tables.generationsTitle")}
             </h3>
           </div>
           <div className="overflow-x-auto">
@@ -204,7 +199,7 @@ export default function AdminDashboard({
                           "px-2 py-1 rounded text-[10px] uppercase font-bold",
                           gen.status === "succeeded"
                             ? "bg-success/20 text-success"
-                            : "bg-error/20 text-error",
+                            : "bg-error/20 text-error"
                         )}
                       >
                         {gen.status}
@@ -221,10 +216,9 @@ export default function AdminDashboard({
         </div>
       </div>
 
-      {/* SYSTEM CONTROLS */}
       <div className="glass-card p-8 mt-8 rounded-xl">
         <h2 className="text-xl font-bold mb-6 flex items-center gap-2 text-brand-primary">
-          <Activity className="w-5 h-5" /> SYSTEM CONTROLS
+          <ChartLineUp className="w-5 h-5" weight="duotone" /> {t("Controls.systemControls")}
         </h2>
 
         <div className="flex flex-col md:flex-row items-center justify-between p-6 glass-card rounded-xl gap-6">
@@ -244,13 +238,13 @@ export default function AdminDashboard({
               "flex items-center gap-2 px-8 py-4 rounded-full font-bold transition-smooth border uppercase tracking-widest",
               settings.maintenance_mode
                 ? "bg-error text-white border-error hover:bg-error/90 shadow-[0_0_20px_rgba(220,38,38,0.5)]"
-                : "bg-brand-primary text-white border-brand-primary hover:bg-brand-secondary",
+                : "bg-brand-primary text-white border-brand-primary hover:bg-brand-secondary"
             )}
           >
             {settings.maintenance_mode ? (
-              <Lock className="w-5 h-5" />
+              <Lock className="w-5 h-5" weight="bold" />
             ) : (
-              <Unlock className="w-5 h-5" />
+              <LockOpen className="w-5 h-5" weight="bold" />
             )}
             {settings.maintenance_mode
               ? t("Controls.inactive")
@@ -280,7 +274,7 @@ function KpiCard({
         <div
           className={cn(
             "p-2 rounded-lg",
-            color ? color.split(" ")[1] : "text-brand-primary",
+            color ? color.split(" ")[1] : "text-brand-primary"
           )}
         >
           {icon}
@@ -290,7 +284,7 @@ function KpiCard({
         <p
           className={cn(
             "text-3xl font-bold",
-            color ? color.split(" ")[1] : "text-brand-primary",
+            color ? color.split(" ")[1] : "text-brand-primary"
           )}
         >
           {value}

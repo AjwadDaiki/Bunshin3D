@@ -108,6 +108,7 @@ export async function POST(request: Request) {
       status: "processing",
       prediction_id: prediction.id,
       type: "text_to_3d_trellis",
+      source_image_url: imageUrl,
       created_at: new Date().toISOString(),
     });
 

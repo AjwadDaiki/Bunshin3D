@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { createClient } from "@/lib/supabase";
 import { useTranslations } from "next-intl";
-import { Loader2, Mail, CheckCircle2 } from "lucide-react";
+import { CircleNotch, Envelope, CheckCircle } from "@phosphor-icons/react";
 import { Link } from "@/i18n/routing";
 import { useRouter } from "next/navigation";
 
@@ -19,7 +19,6 @@ export default function AuthForm() {
   const supabase = createClient();
 
   useEffect(() => {
-    // Fonction pour extraire la locale correctement
     const getLocale = () => {
       const pathParts = window.location.pathname.split("/").filter(Boolean);
       const firstSegment = pathParts[0];
@@ -29,35 +28,24 @@ export default function AuthForm() {
       return "fr";
     };
 
-    // Vérifier si l'utilisateur est déjà connecté au chargement
     const checkSession = async () => {
       const { data: { session } } = await supabase.auth.getSession();
       if (session) {
         const locale = getLocale();
-        console.log("✅ Session détectée, redirect vers studio");
-        // Force le refresh pour éviter le cache
         window.location.href = `/${locale}/studio`;
       }
     };
 
-    // Vérifier immédiatement
     checkSession();
 
-    // Écouter les changements d'auth (pour le retour OAuth)
     const { data: { subscription } } = supabase.auth.onAuthStateChange(async (event, session) => {
-      console.log("🔐 Auth event:", event);
-      
       if (event === "SIGNED_IN" && session) {
         const locale = getLocale();
-        console.log("✅ Connexion réussie, redirect vers studio");
-        // Force le refresh pour s'assurer que le middleware voit la session
         window.location.href = `/${locale}/studio`;
       }
 
-      // Aussi écouter INITIAL_SESSION au cas où
       if (event === "INITIAL_SESSION" && session) {
         const locale = getLocale();
-        console.log("✅ Session initiale détectée, redirect vers studio");
         window.location.href = `/${locale}/studio`;
       }
     });
@@ -79,11 +67,10 @@ export default function AuthForm() {
     });
 
     if (error) {
-      console.error("❌ Erreur envoi magic link:", error);
+      console.error("Erreur envoi magic link:", error);
       alert("Erreur lors de l'envoi du lien magique");
       setIsLoading(false);
     } else {
-      console.log("✅ Magic link envoyé à:", email);
       setIsSent(true);
       setIsLoading(false);
     }
@@ -92,15 +79,11 @@ export default function AuthForm() {
   const handleGoogleLogin = async () => {
     setIsLoading(true);
 
-    // Extraire la locale du path
     const locale = window.location.pathname.split("/")[1] || "fr";
-
-    console.log("🔗 Connexion Google (flow natif Supabase)");
 
     const { error } = await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {
-        // Supabase gère tout automatiquement, juste lui dire où rediriger après
         redirectTo: `${window.location.origin}/${locale}/studio`,
         queryParams: {
           access_type: "offline",
@@ -110,18 +93,17 @@ export default function AuthForm() {
     });
 
     if (error) {
-      console.error("❌ Erreur Auth Google:", error);
+      console.error("Erreur Auth Google:", error);
       alert("Erreur lors de la connexion avec Google");
       setIsLoading(false);
     }
-    // Pas besoin de setIsLoading(false) ici car on est redirigé vers Google
   };
 
   if (isSent) {
     return (
       <div className="bg-zinc-900/50 border border-white/10 rounded-2xl p-8 backdrop-blur-md text-center animate-in fade-in zoom-in-95 duration-300">
         <div className="w-16 h-16 bg-emerald-500/10 text-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6">
-          <CheckCircle2 className="w-8 h-8" />
+          <CheckCircle className="w-8 h-8" weight="fill" />
         </div>
         <h2 className="text-2xl font-bold text-white mb-2">
           {t("checkEmail")}
@@ -157,7 +139,7 @@ export default function AuthForm() {
           className="w-full flex items-center justify-center gap-3 bg-white text-zinc-950 font-medium h-11 rounded-lg hover:bg-zinc-200 transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
         >
           {isLoading ? (
-            <Loader2 className="w-4 h-4 animate-spin" />
+            <CircleNotch className="w-4 h-4 animate-spin" weight="bold" />
           ) : (
             <svg className="w-4 h-4" viewBox="0 0 24 24">
               <path
@@ -199,7 +181,7 @@ export default function AuthForm() {
               {t("emailLabel")}
             </label>
             <div className="relative">
-              <Mail className="absolute left-3 top-3 w-4 h-4 text-zinc-500" />
+              <Envelope className="absolute left-3 top-3 w-4 h-4 text-zinc-500" weight="duotone" />
               <input
                 id="email"
                 type="email"
@@ -218,7 +200,7 @@ export default function AuthForm() {
             className="w-full h-10 bg-zinc-800 text-white font-medium text-sm rounded-lg hover:bg-zinc-700 transition-colors border border-white/5 disabled:opacity-50"
           >
             {isLoading ? (
-              <Loader2 className="w-4 h-4 animate-spin mx-auto" />
+              <CircleNotch className="w-4 h-4 animate-spin mx-auto" weight="bold" />
             ) : (
               t("magicLink")
             )}

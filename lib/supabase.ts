@@ -1,9 +1,5 @@
 import { createBrowserClient } from "@supabase/ssr";
 
-/**
- * Browser Supabase client.
- * We store the session in cookies so SSR/middleware can read it too.
- */
 export const createClient = () =>
   createBrowserClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -33,7 +29,6 @@ export const createClient = () =>
           const opts = options ?? {};
           let cookie = `${name}=${encodeURIComponent(value)}`;
 
-          // Prefer maxAge if provided (Supabase uses it)
           if (typeof opts.maxAge === "number") cookie += `; Max-Age=${opts.maxAge}`;
           if (opts.expires) cookie += `; Expires=${new Date(opts.expires).toUTCString()}`;
 
@@ -41,7 +36,6 @@ export const createClient = () =>
 
           if (opts.domain) cookie += `; Domain=${opts.domain}`;
 
-          // SameSite must be capitalized in Set-Cookie value
           if (opts.sameSite) {
             const ss =
               typeof opts.sameSite === "string"
@@ -52,7 +46,6 @@ export const createClient = () =>
             cookie += `; SameSite=Lax`;
           }
 
-          // If SameSite=None, Secure is required
           const secure =
             opts.secure ??
             (typeof window !== "undefined" &&

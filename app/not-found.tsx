@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Sparkles } from "lucide-react";
+import { Sparkle } from "@phosphor-icons/react/dist/ssr";
 
 export default function NotFound() {
   return (
@@ -13,13 +13,13 @@ export default function NotFound() {
         </div>
         <h2 className="text-2xl font-bold mb-4">Page Not Found</h2>
         <p className="text-gray-400 mb-8 max-w-md mx-auto">
-          The page you're looking for has drifted into another dimension.
+          The page you&apos;re looking for has drifted into another dimension.
         </p>
         <Link
           href="/"
           className="inline-flex items-center gap-2 px-6 py-3 bg-brand-primary hover:bg-brand-secondary rounded-full transition-smooth"
         >
-          <Sparkles className="h-5 w-5" />
+          <Sparkle className="h-5 w-5" weight="fill" />
           Back to Home
         </Link>
       </div>

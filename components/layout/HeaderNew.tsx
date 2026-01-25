@@ -6,20 +6,20 @@ import { useTranslations } from "next-intl";
 import { createClient } from "@/lib/supabase";
 import { User } from "@supabase/supabase-js";
 import {
-  Menu,
+  List,
   X,
-  LogOut,
-  LayoutDashboard,
-  Zap,
+  SignOut,
+  SquaresFour,
+  Lightning,
   CreditCard,
   User as UserIcon,
-} from "lucide-react";
+} from "@phosphor-icons/react";
 import { cn } from "@/lib/utils";
-// Import du logo personnalisé
 import { BunshinLogo } from "../ui/BunshinLogo";
 
 export default function HeaderNew() {
   const t = useTranslations("Navigation");
+  const tCommon = useTranslations("Common");
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -45,17 +45,13 @@ export default function HeaderNew() {
 
   useEffect(() => {
     const initAuth = async () => {
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
+      const { data: { user } } = await supabase.auth.getUser();
       setUser(user);
       if (user) fetchCredits(user.id);
     };
     initAuth();
 
-    const {
-      data: { subscription },
-    } = supabase.auth.onAuthStateChange((_, session) => {
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_, session) => {
       setUser(session?.user ?? null);
       if (session?.user) fetchCredits(session.user.id);
     });
@@ -74,12 +70,11 @@ export default function HeaderNew() {
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
         scrolled
           ? "bg-surface-1/80 backdrop-blur-2xl border-b border-white/10 shadow-lg"
-          : "bg-transparent",
+          : "bg-transparent"
       )}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12">
         <div className="flex h-16 items-center justify-between">
-          {/* Logo */}
           <Link
             href="/"
             className="flex items-center gap-2 group"
@@ -87,7 +82,6 @@ export default function HeaderNew() {
           >
             <div className="relative">
               <div className="absolute inset-0 bg-brand-primary/20 blur-xl rounded-full animate-pulse-slow"></div>
-              {/* Remplacement de Sparkles par BunshinLogo */}
               <BunshinLogo className="relative h-8 w-8 text-brand-primary group-hover:scale-110 transition-transform" />
             </div>
             <span className="text-xl font-bold">
@@ -96,7 +90,6 @@ export default function HeaderNew() {
             </span>
           </Link>
 
-          {/* Desktop Navigation */}
           <nav
             className="hidden md:flex items-center gap-6"
             aria-label="Main navigation"
@@ -105,7 +98,7 @@ export default function HeaderNew() {
               href="/studio"
               className={cn(
                 "text-sm font-medium transition-colors hover:text-brand-primary",
-                pathname === "/studio" ? "text-brand-primary" : "text-gray-300",
+                pathname === "/studio" ? "text-brand-primary" : "text-gray-300"
               )}
             >
               {t("studio")}
@@ -114,35 +107,31 @@ export default function HeaderNew() {
               href="/pricing"
               className={cn(
                 "text-sm font-medium transition-colors hover:text-brand-primary",
-                pathname === "/pricing"
-                  ? "text-brand-primary"
-                  : "text-gray-300",
+                pathname === "/pricing" ? "text-brand-primary" : "text-gray-300"
               )}
             >
               {t("pricing")}
             </Link>
           </nav>
 
-          {/* User Section */}
           <div className="hidden md:flex items-center gap-4">
             {user ? (
               <>
-                {/* Credits Badge */}
                 <Link
                   href="/pricing"
                   className="glass-button px-3 py-1.5 rounded-full flex items-center gap-2"
                   aria-label={`${credits ?? 0} credits available. Click to buy more credits`}
                 >
-                  <Zap
+                  <Lightning
                     className={cn(
                       "h-4 w-4",
-                      (credits ?? 0) > 5 ? "text-amber-400" : "text-red-400",
+                      (credits ?? 0) > 5 ? "text-amber-400" : "text-red-400"
                     )}
+                    weight="fill"
                   />
                   <span className="text-sm font-bold">{credits ?? 0}</span>
                 </Link>
 
-                {/* User Menu */}
                 <div className="relative">
                   <button
                     onClick={() => setUserMenuOpen(!userMenuOpen)}
@@ -151,7 +140,7 @@ export default function HeaderNew() {
                     aria-haspopup="true"
                     aria-expanded={userMenuOpen}
                   >
-                    <UserIcon className="h-5 w-5" />
+                    <UserIcon className="h-5 w-5" weight="bold" />
                   </button>
 
                   {userMenuOpen && (
@@ -163,22 +152,22 @@ export default function HeaderNew() {
                         href="/account"
                         className="flex items-center gap-2 px-4 py-2.5 hover:bg-white/10 transition-colors"
                       >
-                        <LayoutDashboard className="h-4 w-4" />
+                        <SquaresFour className="h-4 w-4" weight="duotone" />
                         <span className="text-sm">{t("dashboard")}</span>
                       </Link>
                       <Link
                         href="/pricing"
                         className="flex items-center gap-2 px-4 py-2.5 hover:bg-white/10 transition-colors"
                       >
-                        <CreditCard className="h-4 w-4" />
-                        <span className="text-sm">Buy Credits</span>
+                        <CreditCard className="h-4 w-4" weight="duotone" />
+                        <span className="text-sm">{tCommon("buyCredits")}</span>
                       </Link>
                       <button
                         onClick={handleLogout}
                         className="w-full flex items-center gap-2 px-4 py-2.5 hover:bg-red-500/10 text-red-400 transition-colors"
                         aria-label="Logout from account"
                       >
-                        <LogOut className="h-4 w-4" />
+                        <SignOut className="h-4 w-4" weight="bold" />
                         <span className="text-sm">{t("logout")}</span>
                       </button>
                     </div>
@@ -195,18 +184,16 @@ export default function HeaderNew() {
             )}
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden p-2 rounded-lg glass-button"
             aria-label="Toggle navigation menu"
             aria-expanded={isOpen}
           >
-            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {isOpen ? <X className="h-6 w-6" weight="bold" /> : <List className="h-6 w-6" weight="bold" />}
           </button>
         </div>
 
-        {/* Mobile Menu */}
         {isOpen && (
           <div className="md:hidden glass-card rounded-xl mt-2 p-4 mb-4">
             <nav className="flex flex-col gap-3" aria-label="Mobile navigation">
@@ -221,7 +208,7 @@ export default function HeaderNew() {
                 <>
                   <div className="border-t border-white/10 my-2"></div>
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-gray-400">Credits</span>
+                    <span className="text-sm text-gray-400">{t("credits")}</span>
                     <span className="text-sm font-bold">{credits ?? 0}</span>
                   </div>
                   <Link href="/account" className="text-sm font-medium">

@@ -104,6 +104,7 @@ export async function POST(request: Request) {
       status: "processing",
       prediction_id: prediction.id,
       type: "premium_3d",
+      source_image_url: imageUrl,
       created_at: new Date().toISOString(),
     });
 

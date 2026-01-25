@@ -3,8 +3,7 @@
 import React from "react";
 import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
-import { Github, Twitter, Linkedin, Hexagon } from "lucide-react";
-// Import du logo personnalisé
+import { Hexagon } from "@phosphor-icons/react";
 import { BunshinLogo } from "../ui/BunshinLogo";
 
 export default function FooterNew() {
@@ -12,16 +11,13 @@ export default function FooterNew() {
   const tNav = useTranslations("Navigation");
 
   return (
-    <footer className="relative mt-32 border-t border-white/10 bg-surface-1">
-      {/* Gradient overlay */}
+    <footer className="relative  border-t border-white/10 bg-surface-1">
       <div className="absolute inset-0 bg-gradient-to-t from-brand-primary/5 to-transparent pointer-events-none"></div>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-12 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Brand Section */}
           <div className="md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              {/* Remplacement de Sparkles par BunshinLogo */}
               <BunshinLogo className="h-6 w-6 text-brand-primary" />
               <span className="text-lg font-bold">
                 <span className="text-gradient-brand">Bunshin</span>
@@ -29,11 +25,10 @@ export default function FooterNew() {
               </span>
             </div>
             <p className="text-sm text-gray-400 mb-4">
-              Transform your images into stunning 3D models with AI
+              {t("tagline")}
             </p>
           </div>
 
-          {/* Product */}
           <div>
             <h3 className="text-sm font-semibold mb-4">{t("product")}</h3>
             <ul className="space-y-2 text-sm text-gray-400">
@@ -58,13 +53,12 @@ export default function FooterNew() {
                   href="/#features"
                   className="hover:text-brand-primary transition-colors"
                 >
-                  Features
+                  {t("features")}
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Company */}
           <div>
             <h3 className="text-sm font-semibold mb-4">{t("legal")}</h3>
             <ul className="space-y-2 text-sm text-gray-400">
@@ -89,22 +83,21 @@ export default function FooterNew() {
                   href="/legal-mentions"
                   className="hover:text-brand-primary transition-colors"
                 >
-                  Legal Mentions
+                  {t("mentions")}
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Support */}
           <div>
-            <h3 className="text-sm font-semibold mb-4">Support</h3>
+            <h3 className="text-sm font-semibold mb-4">{t("support")}</h3>
             <ul className="space-y-2 text-sm text-gray-400">
               <li>
                 <Link
                   href="/account"
                   className="hover:text-brand-primary transition-colors"
                 >
-                  Account
+                  {t("account")}
                 </Link>
               </li>
               <li>
@@ -112,7 +105,7 @@ export default function FooterNew() {
                   href="https://metalya.fr/contact"
                   className="hover:text-brand-primary transition-colors"
                 >
-                  Contact
+                  {t("contact")}
                 </a>
               </li>
               <li>
@@ -120,14 +113,13 @@ export default function FooterNew() {
                   href="https://metalya.fr/"
                   className="hover:text-brand-primary transition-colors"
                 >
-                  Blog
+                  {t("blog")}
                 </a>
               </li>
             </ul>
           </div>
         </div>
 
-        {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-gray-500">
             {t("copyright", { year: new Date().getFullYear() })}
@@ -140,7 +132,10 @@ export default function FooterNew() {
               rel="noopener noreferrer"
               className="group flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 hover:bg-white/10 border border-white/5 hover:border-indigo-500/30 transition-all duration-300"
             >
-              <Hexagon className="w-3 h-3 text-indigo-500 group-hover:rotate-180 transition-transform duration-700" />
+              <Hexagon
+                className="w-3 h-3 text-indigo-500 group-hover:rotate-180 transition-transform duration-700"
+                weight="fill"
+              />
               <span className="font-bold text-zinc-300 group-hover:text-white transition-colors">
                 HiddenLab
               </span>

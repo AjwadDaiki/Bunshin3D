@@ -7,7 +7,6 @@ import LandingPage from "@/components/home/LandingPage";
 import PricingTable from "@/components/marketing/PricingTable";
 import { baseMetadataConfig } from "@/lib/seo-config";
 
-// --- SEO CONFIGURATION ---
 export async function generateMetadata({
   params,
 }: {
@@ -38,7 +37,6 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-// --- MAIN PAGE ---
 export default async function HomePage({
   params,
 }: {
@@ -52,13 +50,11 @@ export default async function HomePage({
 
   setRequestLocale(locale);
 
-  // Récupération des traductions pour le Header Pricing
   const tPricing = await getTranslations({
     locale,
     namespace: "Pricing.Header",
   });
 
-  // Schema.org pour l'Organisation et l'Application
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebSite",
@@ -75,23 +71,19 @@ export default async function HomePage({
     <>
       <JsonLd data={jsonLd} />
 
-      {/* 1. Landing Page Content (Hero, Showcase, Features) */}
       <LandingPage />
 
-      {/* 2. Pricing Section Injected Here */}
       <section
         id="pricing"
         className="py-24 bg-zinc-950 relative overflow-hidden border-t border-white/5"
       >
-        {/* Background Ambience */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-indigo-500/5 rounded-full blur-[100px] pointer-events-none"></div>
 
         <div className="container mx-auto px-4 relative z-10">
-          {/* Pricing Header */}
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-white">
               {tPricing("title")}{" "}
-              <span className="bg-gradient-to-r from-indigo-300 to-indigo-500 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-indigo-300 to-indigo-500 bg-clip-text text-transparent">
                 {tPricing("titleHighlight")}
               </span>
             </h2>
@@ -100,7 +92,6 @@ export default async function HomePage({
             </p>
           </div>
 
-          {/* Pricing Table Component */}
           <PricingTable />
         </div>
       </section>
