@@ -1,21 +1,31 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
-
-const defaultLocale = "fr";
-const locales = ["fr", "en"];
+import { routing } from "./i18n/routing";
 
 export async function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
+
+  // Récupération dynamique pour ne jamais oublier une langue et respecter le 'en' par défaut
+  const defaultLocale = routing.defaultLocale;
+  const locales = routing.locales;
 
   if (pathname.includes("/api/auth/callback")) {
     return NextResponse.next();
   }
 
   const pathnameHasLocale = locales.some(
-    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
+    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
   );
 
-  if (!pathnameHasLocale && !pathname.startsWith("/api") && pathname !== "/" && !pathname.match(/\.(svg|png|jpg|jpeg|gif|webp|ico|css|js)$/)) {
+  // Correction : Ajout des extensions 3D (glb, gltf, stl) pour éviter les erreurs de chargement de modèles
+  if (
+    !pathnameHasLocale &&
+    !pathname.startsWith("/api") &&
+    pathname !== "/" &&
+    !pathname.match(
+      /\.(svg|png|jpg|jpeg|gif|webp|ico|css|js|glb|gltf|stl|map)$/,
+    )
+  ) {
     const url = request.nextUrl.clone();
     url.pathname = `/${defaultLocale}${pathname}`;
     return NextResponse.redirect(url);
@@ -35,7 +45,8 @@ export async function middleware(request: NextRequest) {
 
   const localeMatch = pathname.match(/^\/([a-z]{2})(\/|$)/);
   const locale = localeMatch ? localeMatch[1] : defaultLocale;
-  const cleanPath = pathname.replace(new RegExp(`^/${locale}(?=/|$)`), "") || "/";
+  const cleanPath =
+    pathname.replace(new RegExp(`^/${locale}(?=/|$)`), "") || "/";
 
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -54,10 +65,20 @@ export async function middleware(request: NextRequest) {
     },
   );
 
-  const { data: { user }, error } = await supabase.auth.getUser();
+  const {
+    data: { user },
+    error,
+  } = await supabase.auth.getUser();
 
   const isLoggedIn = !!user && !error;
-  const publicRoutes = ["/", "/login", "/pricing", "/terms", "/privacy", "/legal-mentions"];
+  const publicRoutes = [
+    "/",
+    "/login",
+    "/pricing",
+    "/terms",
+    "/privacy",
+    "/legal-mentions",
+  ];
   const isPublicRoute = publicRoutes.some(
     (route) => cleanPath === route || cleanPath.startsWith(`${route}/`),
   );
