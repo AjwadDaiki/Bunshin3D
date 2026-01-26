@@ -1,11 +1,20 @@
 import Link from "next/link";
-import { useTranslations } from "next-intl";
 import { BunshinLogo } from "@/components/ui/BunshinLogo";
 import { House, ArrowRight } from "@phosphor-icons/react/dist/ssr";
 
-export default function NotFoundHero() {
-  // On utilise le namespace "Error" qui existe déjà
-  const t = useTranslations("Error");
+// On définit les props attendues
+interface NotFoundHeroProps {
+  title: string;
+  description: string;
+  action: string;
+}
+
+export default function NotFoundHero({
+  title,
+  description,
+  action,
+}: NotFoundHeroProps) {
+  // PLUS DE useTranslations ICI
 
   return (
     <div className="min-h-screen w-full flex flex-col items-center justify-center relative overflow-hidden bg-[#0a0a0f]">
@@ -28,10 +37,10 @@ export default function NotFoundHero() {
 
         <div className="space-y-2 mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-white tracking-wide uppercase">
-            {t("notFoundTitle")}
+            {title}
           </h2>
           <p className="text-gray-400 max-w-md mx-auto text-lg">
-            {t("notFoundDescription")}
+            {description}
           </p>
         </div>
 
@@ -42,7 +51,7 @@ export default function NotFoundHero() {
           <div className="absolute inset-0 bg-gradient-to-r from-brand-primary/20 to-brand-secondary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           <span className="relative flex items-center gap-3 font-bold text-white tracking-widest uppercase text-sm">
             <House className="w-5 h-5" weight="duotone" />
-            {t("backHome")}
+            {action}
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </span>
         </Link>

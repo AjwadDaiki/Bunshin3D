@@ -1,5 +1,14 @@
+import { useTranslations } from "next-intl";
 import NotFoundHero from "@/components/ui/NotFoundHero";
 
 export default function NotFound() {
-  return <NotFoundHero />;
+  const t = useTranslations("Error");
+
+  return (
+    <NotFoundHero
+      title={t("notFoundTitle")}
+      description={t("notFoundDescription")}
+      action={t("backHome")}
+    />
+  );
 }
