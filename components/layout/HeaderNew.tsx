@@ -13,9 +13,11 @@ import {
   Lightning,
   CreditCard,
   User as UserIcon,
+  ShieldCheck,
 } from "@phosphor-icons/react";
 import { cn } from "@/lib/utils";
 import { BunshinLogo } from "../ui/BunshinLogo";
+import { checkIsAdmin } from "@/app/actions/admin";
 
 export default function HeaderNew() {
   const t = useTranslations("Navigation");
@@ -25,6 +27,7 @@ export default function HeaderNew() {
   const [scrolled, setScrolled] = useState(false);
   const [user, setUser] = useState<User | null>(null);
   const [credits, setCredits] = useState<number | null>(null);
+  const [isAdmin, setIsAdmin] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
   const supabase = createClient();
 
@@ -45,15 +48,29 @@ export default function HeaderNew() {
 
   useEffect(() => {
     const initAuth = async () => {
-      const { data: { user } } = await supabase.auth.getUser();
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
       setUser(user);
-      if (user) fetchCredits(user.id);
+      if (user) {
+        fetchCredits(user.id);
+        const adminStatus = await checkIsAdmin();
+        setIsAdmin(adminStatus);
+      }
     };
     initAuth();
 
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_, session) => {
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange(async (_, session) => {
       setUser(session?.user ?? null);
-      if (session?.user) fetchCredits(session.user.id);
+      if (session?.user) {
+        fetchCredits(session.user.id);
+        const adminStatus = await checkIsAdmin();
+        setIsAdmin(adminStatus);
+      } else {
+        setIsAdmin(false);
+      }
     });
 
     return () => subscription.unsubscribe();
@@ -70,7 +87,7 @@ export default function HeaderNew() {
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
         scrolled
           ? "bg-surface-1/80 backdrop-blur-2xl border-b border-white/10 shadow-lg"
-          : "bg-transparent"
+          : "bg-transparent",
       )}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12">
@@ -98,7 +115,7 @@ export default function HeaderNew() {
               href="/studio"
               className={cn(
                 "text-sm font-medium transition-colors hover:text-brand-primary",
-                pathname === "/studio" ? "text-brand-primary" : "text-gray-300"
+                pathname === "/studio" ? "text-brand-primary" : "text-gray-300",
               )}
             >
               {t("studio")}
@@ -107,11 +124,27 @@ export default function HeaderNew() {
               href="/pricing"
               className={cn(
                 "text-sm font-medium transition-colors hover:text-brand-primary",
-                pathname === "/pricing" ? "text-brand-primary" : "text-gray-300"
+                pathname === "/pricing"
+                  ? "text-brand-primary"
+                  : "text-gray-300",
               )}
             >
               {t("pricing")}
             </Link>
+            {isAdmin && (
+              <Link
+                href="/admin"
+                className={cn(
+                  "text-sm font-bold uppercase tracking-wider flex items-center gap-1.5 px-3 py-1 rounded-full border transition-all",
+                  pathname === "/admin"
+                    ? "bg-red-500/10 border-red-500/50 text-red-400"
+                    : "bg-white/5 border-white/10 text-gray-300 hover:bg-white/10 hover:text-white",
+                )}
+              >
+                <ShieldCheck className="w-4 h-4" weight="fill" />
+                {t("admin")}
+              </Link>
+            )}
           </nav>
 
           <div className="hidden md:flex items-center gap-4">
@@ -125,7 +158,7 @@ export default function HeaderNew() {
                   <Lightning
                     className={cn(
                       "h-4 w-4",
-                      (credits ?? 0) > 5 ? "text-amber-400" : "text-red-400"
+                      (credits ?? 0) > 5 ? "text-amber-400" : "text-red-400",
                     )}
                     weight="fill"
                   />
@@ -190,7 +223,11 @@ export default function HeaderNew() {
             aria-label="Toggle navigation menu"
             aria-expanded={isOpen}
           >
-            {isOpen ? <X className="h-6 w-6" weight="bold" /> : <List className="h-6 w-6" weight="bold" />}
+            {isOpen ? (
+              <X className="h-6 w-6" weight="bold" />
+            ) : (
+              <List className="h-6 w-6" weight="bold" />
+            )}
           </button>
         </div>
 
@@ -204,11 +241,23 @@ export default function HeaderNew() {
                 {t("pricing")}
               </Link>
 
+              {isAdmin && (
+                <Link
+                  href="/admin"
+                  className="text-sm font-bold text-red-400 flex items-center gap-2"
+                >
+                  <ShieldCheck className="w-4 h-4" weight="fill" />
+                  {t("admin")}
+                </Link>
+              )}
+
               {user ? (
                 <>
                   <div className="border-t border-white/10 my-2"></div>
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-gray-400">{t("credits")}</span>
+                    <span className="text-sm text-gray-400">
+                      {t("credits")}
+                    </span>
                     <span className="text-sm font-bold">{credits ?? 0}</span>
                   </div>
                   <Link href="/account" className="text-sm font-medium">

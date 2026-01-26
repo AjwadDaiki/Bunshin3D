@@ -26,6 +26,7 @@
     "terms": "Conditions",
     "privacy": "Confidentialité",
     "dashboard": "Tableau de bord",
+    "admin": "Admin",
     "logout": "Déconnexion",
     "credits": "Crédits"
   },
@@ -322,13 +323,20 @@
       "subtitle": "Accès Restreint. Personnel Autorisé Uniquement.",
       "status": "CONNEXION EN DIRECT"
     },
+    "Tabs": {
+      "overview": "Vue d'ensemble",
+      "users": "Utilisateurs"
+    },
     "KPI": {
       "revenue": "Revenu Total",
       "users": "Utilisateurs Totaux",
       "models": "Modèles Générés",
       "conversion": "Taux Conv. (Payant)",
       "arpu": "ARPU (Revenu Moyen)",
-      "burn": "Taux Consommation GPU"
+      "burn": "Taux Consommation GPU",
+      "today": "aujourd'hui",
+      "gpuCost": "Coût GPU estimé",
+      "errorRate": "Taux d'Erreur"
     },
     "Tables": {
       "usersTitle": "Acquisitions Utilisateurs Récentes",
@@ -347,6 +355,56 @@
       "maintenanceDesc": "Verrouille l'interface studio. L'accès API reste actif pour les flux existants.",
       "active": "SYSTÈME ACTIF",
       "inactive": "SYSTÈME VERROUILLÉ"
+    },
+    "Users": {
+      "colActions": "Actions",
+      "colUser": "Utilisateur",
+      "colCredits": "Crédits",
+      "colDate": "Inscription",
+      "role": "Rôle",
+      "status": "Statut",
+      "grantCredits": "Accorder des crédits",
+      "changeRole": "Changer le rôle",
+      "ban": "Bannir",
+      "unban": "Débannir",
+      "delete": "Supprimer",
+      "inspect": "Inspecter",
+      "searchPlaceholder": "Rechercher par email...",
+      "search": "Rechercher",
+      "actions": "Actions",
+      "grantTitle": "Accorder des Crédits",
+      "currentCredits": "Crédits actuels",
+      "selectAmount": "Sélectionner le montant",
+      "credits": "crédits",
+      "customAmount": "Montant personnalisé",
+      "cancel": "Annuler",
+      "grant": "Accorder",
+      "roleTitle": "Changer le Rôle",
+      "selectRole": "Sélectionner le rôle",
+      "roles": {
+        "user": "Utilisateur",
+        "moderator": "Modérateur",
+        "admin": "Administrateur"
+      },
+      "roleDesc": {
+        "user": "Accès standard au studio",
+        "moderator": "Peut modérer le contenu",
+        "admin": "Accès complet au système"
+      },
+      "saveRole": "Enregistrer",
+      "banTitle": "Bannir l'Utilisateur",
+      "banMessage": "Êtes-vous sûr de vouloir bannir cet utilisateur ? Il ne pourra plus accéder au service.",
+      "unbanTitle": "Débannir l'Utilisateur",
+      "unbanMessage": "Êtes-vous sûr de vouloir débannir cet utilisateur ? Il retrouvera l'accès au service.",
+      "deleteTitle": "Supprimer l'Utilisateur",
+      "deleteMessage": "Cette action est IRRÉVERSIBLE. Toutes les données de l'utilisateur seront définitivement supprimées.",
+      "deleteConfirm": "Tapez DELETE pour confirmer",
+      "typeDelete": "Tapez DELETE",
+      "confirm": "Confirmer",
+      "inspectTitle": "Générations de l'Utilisateur",
+      "noGenerations": "Aucune génération trouvée",
+      "totalGenerations": "{count} génération(s) au total",
+      "close": "Fermer"
     }
   },
   "Legal": {

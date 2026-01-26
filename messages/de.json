@@ -26,6 +26,7 @@
     "terms": "Bedingungen",
     "privacy": "Datenschutz",
     "dashboard": "Dashboard",
+    "admin": "Admin",
     "logout": "Abmelden",
     "credits": "Credits"
   },
@@ -322,13 +323,20 @@
       "subtitle": "Beschränkter Zugang. Nur autorisiertes Personal.",
       "status": "LIVE VERBINDUNG"
     },
+    "Tabs": {
+      "overview": "Übersicht",
+      "users": "Benutzer"
+    },
     "KPI": {
       "revenue": "Gesamtumsatz",
       "users": "Gesamte Nutzer",
       "models": "Generierte Modelle",
       "conversion": "Konv. Rate (Bezahlt)",
       "arpu": "ARPU (Durchschn. Umsatz)",
-      "burn": "GPU-Verbrauchsrate"
+      "burn": "GPU-Verbrauchsrate",
+      "today": "heute",
+      "gpuCost": "Geschätzte GPU-Kosten",
+      "errorRate": "Fehlerrate"
     },
     "Tables": {
       "usersTitle": "Neueste Nutzerakquisitionen",
@@ -347,6 +355,56 @@
       "maintenanceDesc": "Sperrt die Studio-Oberfläche. API-Zugang bleibt für bestehende Workflows aktiv.",
       "active": "SYSTEM AKTIV",
       "inactive": "SYSTEM GESPERRT"
+    },
+    "Users": {
+      "colActions": "Aktionen",
+      "colUser": "Benutzer",
+      "colCredits": "Credits",
+      "colDate": "Registriert",
+      "role": "Rolle",
+      "status": "Status",
+      "grantCredits": "Credits gewähren",
+      "changeRole": "Rolle ändern",
+      "ban": "Sperren",
+      "unban": "Entsperren",
+      "delete": "Löschen",
+      "inspect": "Inspizieren",
+      "searchPlaceholder": "Nach E-Mail suchen...",
+      "search": "Suchen",
+      "actions": "Aktionen",
+      "grantTitle": "Credits Gewähren",
+      "currentCredits": "Aktuelle Credits",
+      "selectAmount": "Betrag auswählen",
+      "credits": "Credits",
+      "customAmount": "Benutzerdefinierter Betrag",
+      "cancel": "Abbrechen",
+      "grant": "Gewähren",
+      "roleTitle": "Rolle Ändern",
+      "selectRole": "Rolle auswählen",
+      "roles": {
+        "user": "Benutzer",
+        "moderator": "Moderator",
+        "admin": "Administrator"
+      },
+      "roleDesc": {
+        "user": "Standard Studio-Zugang",
+        "moderator": "Kann Inhalte moderieren",
+        "admin": "Voller Systemzugang"
+      },
+      "saveRole": "Speichern",
+      "banTitle": "Benutzer Sperren",
+      "banMessage": "Sind Sie sicher, dass Sie diesen Benutzer sperren möchten? Er wird keinen Zugang mehr zum Service haben.",
+      "unbanTitle": "Benutzer Entsperren",
+      "unbanMessage": "Sind Sie sicher, dass Sie diesen Benutzer entsperren möchten? Er erhält wieder Zugang zum Service.",
+      "deleteTitle": "Benutzer Löschen",
+      "deleteMessage": "Diese Aktion ist UNWIDERRUFLICH. Alle Benutzerdaten werden dauerhaft gelöscht.",
+      "deleteConfirm": "Geben Sie DELETE zur Bestätigung ein",
+      "typeDelete": "Geben Sie DELETE ein",
+      "confirm": "Bestätigen",
+      "inspectTitle": "Benutzer-Generierungen",
+      "noGenerations": "Keine Generierungen gefunden",
+      "totalGenerations": "{count} Generierung(en) insgesamt",
+      "close": "Schließen"
     }
   },
   "Legal": {

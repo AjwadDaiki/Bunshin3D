@@ -26,6 +26,7 @@
     "terms": "Terms",
     "privacy": "Privacy",
     "dashboard": "Dashboard",
+    "admin": "Admin",
     "logout": "Logout",
     "credits": "Credits"
   },
@@ -322,13 +323,20 @@
       "subtitle": "Restricted Access. Authorized Personnel Only.",
       "status": "LIVE CONNECTION"
     },
+    "Tabs": {
+      "overview": "Overview",
+      "users": "Users"
+    },
     "KPI": {
       "revenue": "Total Revenue",
       "users": "Total Users",
       "models": "Models Generated",
       "conversion": "Conv. Rate (Paid)",
       "arpu": "ARPU (Avg Revenue)",
-      "burn": "GPU Burn Rate"
+      "burn": "GPU Burn Rate",
+      "today": "today",
+      "gpuCost": "Estimated GPU cost",
+      "errorRate": "Error Rate"
     },
     "Tables": {
       "usersTitle": "Recent User Acquisitions",
@@ -347,6 +355,56 @@
       "maintenanceDesc": "Locks the studio interface. API access remains active for existing workflows.",
       "active": "SYSTEM ACTIVE",
       "inactive": "SYSTEM LOCKED"
+    },
+    "Users": {
+      "colActions": "Actions",
+      "colUser": "User",
+      "colCredits": "Credits",
+      "colDate": "Joined",
+      "role": "Role",
+      "status": "Status",
+      "grantCredits": "Grant credits",
+      "changeRole": "Change role",
+      "ban": "Ban",
+      "unban": "Unban",
+      "delete": "Delete",
+      "inspect": "Inspect",
+      "searchPlaceholder": "Search by email...",
+      "search": "Search",
+      "actions": "Actions",
+      "grantTitle": "Grant Credits",
+      "currentCredits": "Current credits",
+      "selectAmount": "Select amount",
+      "credits": "credits",
+      "customAmount": "Custom amount",
+      "cancel": "Cancel",
+      "grant": "Grant",
+      "roleTitle": "Change Role",
+      "selectRole": "Select role",
+      "roles": {
+        "user": "User",
+        "moderator": "Moderator",
+        "admin": "Administrator"
+      },
+      "roleDesc": {
+        "user": "Standard studio access",
+        "moderator": "Can moderate content",
+        "admin": "Full system access"
+      },
+      "saveRole": "Save",
+      "banTitle": "Ban User",
+      "banMessage": "Are you sure you want to ban this user? They will no longer be able to access the service.",
+      "unbanTitle": "Unban User",
+      "unbanMessage": "Are you sure you want to unban this user? They will regain access to the service.",
+      "deleteTitle": "Delete User",
+      "deleteMessage": "This action is IRREVERSIBLE. All user data will be permanently deleted.",
+      "deleteConfirm": "Type DELETE to confirm",
+      "typeDelete": "Type DELETE",
+      "confirm": "Confirm",
+      "inspectTitle": "User Generations",
+      "noGenerations": "No generations found",
+      "totalGenerations": "{count} generation(s) total",
+      "close": "Close"
     }
   },
   "Legal": {

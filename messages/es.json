@@ -26,6 +26,7 @@
     "terms": "Términos",
     "privacy": "Privacidad",
     "dashboard": "Panel",
+    "admin": "Admin",
     "logout": "Cerrar Sesión",
     "credits": "Créditos"
   },
@@ -322,13 +323,20 @@
       "subtitle": "Acceso Restringido. Solo Personal Autorizado.",
       "status": "CONEXIÓN EN VIVO"
     },
+    "Tabs": {
+      "overview": "Vista General",
+      "users": "Usuarios"
+    },
     "KPI": {
       "revenue": "Ingresos Totales",
       "users": "Usuarios Totales",
       "models": "Modelos Generados",
       "conversion": "Tasa Conv. (Pago)",
       "arpu": "ARPU (Ingreso Promedio)",
-      "burn": "Tasa Consumo GPU"
+      "burn": "Tasa Consumo GPU",
+      "today": "hoy",
+      "gpuCost": "Costo GPU estimado",
+      "errorRate": "Tasa de Error"
     },
     "Tables": {
       "usersTitle": "Adquisiciones de Usuarios Recientes",
@@ -347,6 +355,56 @@
       "maintenanceDesc": "Bloquea la interfaz del estudio. El acceso API permanece activo para flujos existentes.",
       "active": "SISTEMA ACTIVO",
       "inactive": "SISTEMA BLOQUEADO"
+    },
+    "Users": {
+      "colActions": "Acciones",
+      "colUser": "Usuario",
+      "colCredits": "Créditos",
+      "colDate": "Registro",
+      "role": "Rol",
+      "status": "Estado",
+      "grantCredits": "Otorgar créditos",
+      "changeRole": "Cambiar rol",
+      "ban": "Banear",
+      "unban": "Desbanear",
+      "delete": "Eliminar",
+      "inspect": "Inspeccionar",
+      "searchPlaceholder": "Buscar por email...",
+      "search": "Buscar",
+      "actions": "Acciones",
+      "grantTitle": "Otorgar Créditos",
+      "currentCredits": "Créditos actuales",
+      "selectAmount": "Seleccionar cantidad",
+      "credits": "créditos",
+      "customAmount": "Cantidad personalizada",
+      "cancel": "Cancelar",
+      "grant": "Otorgar",
+      "roleTitle": "Cambiar Rol",
+      "selectRole": "Seleccionar rol",
+      "roles": {
+        "user": "Usuario",
+        "moderator": "Moderador",
+        "admin": "Administrador"
+      },
+      "roleDesc": {
+        "user": "Acceso estándar al estudio",
+        "moderator": "Puede moderar contenido",
+        "admin": "Acceso completo al sistema"
+      },
+      "saveRole": "Guardar",
+      "banTitle": "Banear Usuario",
+      "banMessage": "¿Estás seguro de que deseas banear a este usuario? No podrá acceder al servicio.",
+      "unbanTitle": "Desbanear Usuario",
+      "unbanMessage": "¿Estás seguro de que deseas desbanear a este usuario? Recuperará el acceso al servicio.",
+      "deleteTitle": "Eliminar Usuario",
+      "deleteMessage": "Esta acción es IRREVERSIBLE. Todos los datos del usuario serán eliminados permanentemente.",
+      "deleteConfirm": "Escribe DELETE para confirmar",
+      "typeDelete": "Escribe DELETE",
+      "confirm": "Confirmar",
+      "inspectTitle": "Generaciones del Usuario",
+      "noGenerations": "No se encontraron generaciones",
+      "totalGenerations": "{count} generación(es) en total",
+      "close": "Cerrar"
     }
   },
   "Legal": {

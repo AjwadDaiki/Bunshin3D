@@ -26,6 +26,7 @@
     "terms": "利用規約",
     "privacy": "プライバシー",
     "dashboard": "ダッシュボード",
+    "admin": "管理",
     "logout": "ログアウト",
     "credits": "クレジット"
   },
@@ -322,13 +323,20 @@
       "subtitle": "制限付きアクセス。認可された担当者のみ。",
       "status": "ライブ接続"
     },
+    "Tabs": {
+      "overview": "概要",
+      "users": "ユーザー"
+    },
     "KPI": {
       "revenue": "総収益",
       "users": "総ユーザー数",
       "models": "生成されたモデル",
       "conversion": "コンバージョン率（有料）",
       "arpu": "ARPU（平均収益）",
-      "burn": "GPU消費率"
+      "burn": "GPU消費率",
+      "today": "本日",
+      "gpuCost": "推定GPUコスト",
+      "errorRate": "エラー率"
     },
     "Tables": {
       "usersTitle": "最近のユーザー獲得",
@@ -347,6 +355,56 @@
       "maintenanceDesc": "スタジオインターフェースをロック。既存のワークフローのAPIアクセスは有効。",
       "active": "システム 有効",
       "inactive": "システム ロック済み"
+    },
+    "Users": {
+      "colActions": "アクション",
+      "colUser": "ユーザー",
+      "colCredits": "クレジット",
+      "colDate": "登録日",
+      "role": "役割",
+      "status": "ステータス",
+      "grantCredits": "クレジット付与",
+      "changeRole": "役割変更",
+      "ban": "BAN",
+      "unban": "BAN解除",
+      "delete": "削除",
+      "inspect": "検査",
+      "searchPlaceholder": "メールで検索...",
+      "search": "検索",
+      "actions": "アクション",
+      "grantTitle": "クレジット付与",
+      "currentCredits": "現在のクレジット",
+      "selectAmount": "金額を選択",
+      "credits": "クレジット",
+      "customAmount": "カスタム金額",
+      "cancel": "キャンセル",
+      "grant": "付与",
+      "roleTitle": "役割変更",
+      "selectRole": "役割を選択",
+      "roles": {
+        "user": "ユーザー",
+        "moderator": "モデレーター",
+        "admin": "管理者"
+      },
+      "roleDesc": {
+        "user": "スタンダードスタジオアクセス",
+        "moderator": "コンテンツモデレーション可能",
+        "admin": "フルシステムアクセス"
+      },
+      "saveRole": "保存",
+      "banTitle": "ユーザーをBAN",
+      "banMessage": "このユーザーをBANしてもよろしいですか？サービスにアクセスできなくなります。",
+      "unbanTitle": "ユーザーのBAN解除",
+      "unbanMessage": "このユーザーのBANを解除してもよろしいですか？サービスへのアクセスが回復します。",
+      "deleteTitle": "ユーザー削除",
+      "deleteMessage": "この操作は取り消せません。ユーザーのすべてのデータが完全に削除されます。",
+      "deleteConfirm": "DELETEと入力して確認",
+      "typeDelete": "DELETEと入力",
+      "confirm": "確認",
+      "inspectTitle": "ユーザーの生成履歴",
+      "noGenerations": "生成履歴がありません",
+      "totalGenerations": "合計{count}件の生成",
+      "close": "閉じる"
     }
   },
   "Legal": {

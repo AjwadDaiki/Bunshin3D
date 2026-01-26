@@ -26,6 +26,7 @@
     "terms": "条款",
     "privacy": "隐私",
     "dashboard": "仪表板",
+    "admin": "管理",
     "logout": "退出",
     "credits": "积分"
   },
@@ -322,13 +323,20 @@
       "subtitle": "限制访问。仅授权人员。",
       "status": "实时连接"
     },
+    "Tabs": {
+      "overview": "概览",
+      "users": "用户"
+    },
     "KPI": {
       "revenue": "总收入",
       "users": "总用户",
       "models": "生成的模型",
       "conversion": "转化率（付费）",
       "arpu": "ARPU（平均收入）",
-      "burn": "GPU消耗率"
+      "burn": "GPU消耗率",
+      "today": "今日",
+      "gpuCost": "预估GPU成本",
+      "errorRate": "错误率"
     },
     "Tables": {
       "usersTitle": "最近用户获取",
@@ -347,6 +355,56 @@
       "maintenanceDesc": "锁定工作室界面。现有工作流的API访问保持活跃。",
       "active": "系统活跃",
       "inactive": "系统锁定"
+    },
+    "Users": {
+      "colActions": "操作",
+      "colUser": "用户",
+      "colCredits": "积分",
+      "colDate": "注册时间",
+      "role": "角色",
+      "status": "状态",
+      "grantCredits": "授予积分",
+      "changeRole": "更改角色",
+      "ban": "封禁",
+      "unban": "解封",
+      "delete": "删除",
+      "inspect": "检查",
+      "searchPlaceholder": "通过邮箱搜索...",
+      "search": "搜索",
+      "actions": "操作",
+      "grantTitle": "授予积分",
+      "currentCredits": "当前积分",
+      "selectAmount": "选择数量",
+      "credits": "积分",
+      "customAmount": "自定义数量",
+      "cancel": "取消",
+      "grant": "授予",
+      "roleTitle": "更改角色",
+      "selectRole": "选择角色",
+      "roles": {
+        "user": "用户",
+        "moderator": "版主",
+        "admin": "管理员"
+      },
+      "roleDesc": {
+        "user": "标准工作室访问权限",
+        "moderator": "可以审核内容",
+        "admin": "完整系统访问权限"
+      },
+      "saveRole": "保存",
+      "banTitle": "封禁用户",
+      "banMessage": "您确定要封禁此用户吗？他们将无法再访问该服务。",
+      "unbanTitle": "解封用户",
+      "unbanMessage": "您确定要解封此用户吗？他们将恢复对服务的访问权限。",
+      "deleteTitle": "删除用户",
+      "deleteMessage": "此操作不可逆。所有用户数据将被永久删除。",
+      "deleteConfirm": "输入DELETE确认",
+      "typeDelete": "输入DELETE",
+      "confirm": "确认",
+      "inspectTitle": "用户生成记录",
+      "noGenerations": "未找到生成记录",
+      "totalGenerations": "共{count}条生成记录",
+      "close": "关闭"
     }
   },
   "Legal": {
