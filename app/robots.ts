@@ -6,11 +6,27 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
       {
+        userAgent: "Googlebot",
+        allow: ["/", "/fr/", "/en/", "/fr/pricing", "/en/pricing"],
+        disallow: ["/studio/", "/account/", "/admin/", "/api/", "/*?*"],
+      },
+      {
+        userAgent: "Googlebot-Image",
+        allow: ["/"],
+        disallow: ["/api/"],
+      },
+      {
+        userAgent: "Bingbot",
+        allow: ["/", "/fr/", "/en/"],
+        disallow: ["/studio/", "/account/", "/admin/", "/api/"],
+      },
+      {
         userAgent: "*",
         allow: "/",
-        disallow: ["/studio/", "/account/", "/admin/", "/api/"],
+        disallow: ["/studio/", "/account/", "/admin/", "/api/", "/_next/", "/static/"],
       },
     ],
     sitemap: `${baseUrl}/sitemap.xml`,
+    host: baseUrl,
   };
 }

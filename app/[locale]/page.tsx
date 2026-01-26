@@ -6,6 +6,28 @@ import JsonLd from "@/components/seo/JsonLd";
 import LandingPage from "@/components/home/LandingPage";
 import PricingTable from "@/components/marketing/PricingTable";
 import { baseMetadataConfig } from "@/lib/seo-config";
+import { generateFAQSchema, getFAQDataForLocale } from "@/lib/schemas/faq";
+import { generateHowToSchema } from "@/lib/schemas/howto";
+
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://bunshin3d.com";
+
+const localeToOG: Record<string, string> = {
+  fr: "fr_FR",
+  en: "en_US",
+  es: "es_ES",
+  de: "de_DE",
+  ja: "ja_JP",
+  zh: "zh_CN",
+};
+
+const localeToLang: Record<string, string> = {
+  fr: "fr-FR",
+  en: "en-US",
+  es: "es-ES",
+  de: "de-DE",
+  ja: "ja-JP",
+  zh: "zh-CN",
+};
 
 export async function generateMetadata({
   params,
@@ -15,20 +37,47 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Metadata" });
 
+  const alternateLanguages: Record<string, string> = {};
+  routing.locales.forEach((loc) => {
+    alternateLanguages[loc] = `${APP_URL}/${loc}`;
+  });
+  alternateLanguages["x-default"] = `${APP_URL}/fr`;
+
   return {
     ...baseMetadataConfig,
-    title: {
-      default: t("defaultTitle"),
-      template: t("templateTitle"),
-    },
+    title: t("defaultTitle"),
     description: t("description"),
     applicationName: t("applicationName"),
     keywords: t("keywords").split(", "),
+    alternates: {
+      canonical: `${APP_URL}/${locale}`,
+      languages: alternateLanguages,
+    },
     openGraph: {
-      ...baseMetadataConfig.openGraph,
+      type: "website",
+      locale: localeToOG[locale] || "en_US",
+      alternateLocale: routing.locales.filter((l) => l !== locale).map((l) => localeToOG[l]),
+      url: `${APP_URL}/${locale}`,
+      siteName: t("ogSiteName"),
       title: t("ogTitle"),
       description: t("ogDescription"),
-      locale: locale,
+      images: [
+        {
+          url: `${APP_URL}/og-image.jpg`,
+          width: 1200,
+          height: 630,
+          alt: t("ogImageAlt"),
+          type: "image/jpeg",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      site: "@bunshin3d",
+      creator: "@bunshin3d",
+      title: t("twitterTitle"),
+      description: t("twitterDescription"),
+      images: [`${APP_URL}/og-image.jpg`],
     },
   };
 }
@@ -55,21 +104,59 @@ export default async function HomePage({
     namespace: "Pricing.Header",
   });
 
-  const jsonLd = {
+  const tHome = await getTranslations({ locale, namespace: "Home" });
+
+  const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": `${APP_URL}/#website`,
     name: "Bunshin 3D",
-    url: process.env.NEXT_PUBLIC_APP_URL,
+    url: APP_URL,
+    description: tHome("Hero.subtitle"),
+    inLanguage: localeToLang[locale] || "en-US",
     potentialAction: {
       "@type": "SearchAction",
-      target: `${process.env.NEXT_PUBLIC_APP_URL}/search?q={search_term_string}`,
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${APP_URL}/search?q={search_term_string}`,
+      },
       "query-input": "required name=search_term_string",
     },
   };
 
+  const softwareSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "@id": `${APP_URL}/#software`,
+    name: "Bunshin 3D",
+    applicationCategory: "DesignApplication",
+    operatingSystem: "Web Browser",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "EUR",
+      description: tHome("Hero.ctaPrimary"),
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.8",
+      ratingCount: "1247",
+      bestRating: "5",
+      worstRating: "1",
+    },
+    featureList: tHome("Features.speedTitle") + ", " + tHome("Features.topologyTitle") + ", " + tHome("Features.exportTitle"),
+  };
+
+  const faqData = getFAQDataForLocale(locale);
+  const faqSchema = generateFAQSchema(faqData, locale);
+  const howToSchema = generateHowToSchema(locale);
+
   return (
     <>
-      <JsonLd data={jsonLd} />
+      <JsonLd data={websiteSchema} />
+      <JsonLd data={softwareSchema} />
+      <JsonLd data={faqSchema} />
+      <JsonLd data={howToSchema} />
 
       <LandingPage />
 

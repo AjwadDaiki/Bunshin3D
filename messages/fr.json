@@ -1,18 +1,18 @@
 {
   "Metadata": {
-    "defaultTitle": "Bunshin 3D | Convertisseur IA d'Image vers STL & GLB",
-    "templateTitle": "%s | Bunshin 3D Studio",
-    "description": "Transformez instantanément vos images, logos et dessins en modèles 3D (STL, OBJ, GLB) optimisés pour l'impression 3D et les jeux vidéo.",
+    "defaultTitle": "Bunshin 3D | Convertisseur IA Gratuit Image vers STL & GLB 3D",
+    "templateTitle": "%s | Bunshin 3D - Générateur 3D IA",
+    "description": "Transformez images, logos et dessins en modèles 3D instantanément. Convertisseur IA gratuit vers STL pour impression 3D & GLB pour Unity/Unreal. Sans compétences requises !",
     "applicationName": "Bunshin 3D",
-    "keywords": "convertisseur image 3d, logo vers stl, ia 3d, générateur modèle 3d, impression 3d ia, image vers stl, logo vers 3d, conversion 2d vers 3d",
+    "keywords": "convertisseur image 3d, logo vers stl, générateur modèle 3d ia, convertisseur stl gratuit, photo vers modèle 3d, 2d vers 3d ia, image vers glb, png vers stl en ligne, impression 3d ia, logo modèle 3d, image vers 3d, assets unity 3d, générateur assets jeux, créateur modèle 3d gratuit, convertir image en stl gratuit, ia image vers modèle 3d, impression 3d depuis photo",
     "creator": "Bunshin 3D",
     "publisher": "Bunshin 3D",
-    "ogSiteName": "Bunshin 3D",
-    "ogTitle": "Bunshin 3D - L'IA qui Sculpte vos Images",
-    "ogDescription": "Générez des fichiers 3D prêts pour la production à partir de n'importe quelle image 2D en quelques secondes.",
-    "ogImageAlt": "Interface Bunshin 3D",
-    "twitterTitle": "Bunshin 3D - IA Image vers 3D",
-    "twitterDescription": "Générez des fichiers 3D prêts pour la production à partir de n'importe quelle image 2D."
+    "ogSiteName": "Bunshin 3D - Générateur de Modèles 3D par IA",
+    "ogTitle": "Transformez N'importe Quelle Image en Modèle 3D en 30 Secondes | Gratuit",
+    "ogDescription": "Convertissez logos, photos et dessins en STL/GLB instantanément. Générateur 3D IA gratuit - aucune compétence requise. Parfait pour impression 3D et jeux vidéo.",
+    "ogImageAlt": "Bunshin 3D - L'IA convertit vos images 2D en modèles 3D pour impression et jeux",
+    "twitterTitle": "🚀 Convertisseur IA Image vers 3D | Générateur STL & GLB Gratuit",
+    "twitterDescription": "Transformez n'importe quelle image en modèle 3D imprimable en secondes. Convertisseur IA gratuit - aucune compétence requise. Essayez maintenant !"
   },
   "Navigation": {
     "brandName": "BUNSHIN",

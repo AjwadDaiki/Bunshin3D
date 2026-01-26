@@ -1,18 +1,18 @@
 {
   "Metadata": {
-    "defaultTitle": "Bunshin 3D | AI Image to STL & GLB Converter",
-    "templateTitle": "%s | Bunshin 3D Studio",
-    "description": "Instantly transform your images, logos, and drawings into 3D models (STL, OBJ, GLB) optimized for 3D printing and video games.",
+    "defaultTitle": "Bunshin 3D | Free AI Image to STL & GLB 3D Model Converter",
+    "templateTitle": "%s | Bunshin 3D - AI 3D Generator",
+    "description": "Transform images, logos & drawings into 3D models instantly. Free AI-powered converter to STL for 3D printing & GLB for Unity/Unreal. No design skills needed. Try now!",
     "applicationName": "Bunshin 3D",
-    "keywords": "image to 3d converter, logo to stl, ai 3d, 3d model generator, ai 3d printing, image to stl, logo to 3d, 2d to 3d conversion",
+    "keywords": "image to 3d converter, logo to stl, ai 3d model generator, free stl converter, photo to 3d model, 2d to 3d ai, image to glb, png to stl online, ai 3d printing, logo 3d model, picture to 3d, unity 3d assets, game asset generator, free 3d model maker, convert image to stl free, ai image to 3d model, 3d print from photo, blender obj from image",
     "creator": "Bunshin 3D",
     "publisher": "Bunshin 3D",
-    "ogSiteName": "Bunshin 3D",
-    "ogTitle": "Bunshin 3D - The AI that Sculpts your Images",
-    "ogDescription": "Generate production-ready 3D files from any 2D image in seconds.",
-    "ogImageAlt": "Bunshin 3D Interface",
-    "twitterTitle": "Bunshin 3D - AI Image to 3D",
-    "twitterDescription": "Generate production-ready 3D files from any 2D image."
+    "ogSiteName": "Bunshin 3D - AI 3D Model Generator",
+    "ogTitle": "Turn Any Image into a 3D Model in 30 Seconds | Free AI Converter",
+    "ogDescription": "Convert logos, photos & drawings to STL/GLB instantly. Free AI 3D generator - no skills needed. Perfect for 3D printing & game development.",
+    "ogImageAlt": "Bunshin 3D - AI converts 2D images to 3D models for printing and games",
+    "twitterTitle": "🚀 AI Image to 3D Converter | Free STL & GLB Generator",
+    "twitterDescription": "Transform any image into a printable 3D model in seconds. Free AI converter - no design skills required. Try Bunshin 3D now!"
   },
   "Navigation": {
     "brandName": "BUNSHIN",

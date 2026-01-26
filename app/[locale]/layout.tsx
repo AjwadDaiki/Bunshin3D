@@ -36,6 +36,13 @@ export async function generateMetadata({
 }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Metadata" });
+  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "https://bunshin3d.com";
+
+  const alternateLanguages: Record<string, string> = {};
+  routing.locales.forEach((loc) => {
+    alternateLanguages[loc] = `${baseUrl}/${loc}`;
+  });
+  alternateLanguages["x-default"] = `${baseUrl}/fr`;
 
   return {
     ...baseMetadataConfig,
@@ -48,28 +55,47 @@ export async function generateMetadata({
     keywords: t("keywords").split(", "),
     creator: t("creator"),
     publisher: t("publisher"),
+    category: "technology",
+    classification: "3D Modeling Software",
+    alternates: {
+      canonical: `${baseUrl}/${locale}`,
+      languages: alternateLanguages,
+    },
+    verification: {
+      google: process.env.GOOGLE_SITE_VERIFICATION,
+      yandex: process.env.YANDEX_VERIFICATION,
+      other: {
+        "msvalidate.01": process.env.BING_SITE_VERIFICATION || "",
+      },
+    },
     openGraph: {
       type: "website",
-      locale: locale,
-      url: process.env.NEXT_PUBLIC_APP_URL,
+      locale: locale === "fr" ? "fr_FR" : "en_US",
+      alternateLocale: locale === "fr" ? ["en_US"] : ["fr_FR"],
+      url: `${baseUrl}/${locale}`,
       siteName: t("ogSiteName"),
       title: t("ogTitle"),
       description: t("ogDescription"),
       images: [
         {
-          url: `${process.env.NEXT_PUBLIC_APP_URL}/og-image.jpg`,
+          url: `${baseUrl}/og-image.jpg`,
           width: 1200,
           height: 630,
           alt: t("ogImageAlt"),
+          type: "image/jpeg",
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
+      site: "@bunshin3d",
+      creator: "@bunshin3d",
       title: t("twitterTitle"),
       description: t("twitterDescription"),
-      creator: "@bunshin3d",
-      images: [`${process.env.NEXT_PUBLIC_APP_URL}/og-image.jpg`],
+      images: {
+        url: `${baseUrl}/og-image.jpg`,
+        alt: t("ogImageAlt"),
+      },
     },
   };
 }

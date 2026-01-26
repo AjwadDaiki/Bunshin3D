@@ -1,18 +1,18 @@
 {
   "Metadata": {
-    "defaultTitle": "Bunshin 3D | AI画像からSTL & GLBへの変換",
-    "templateTitle": "%s | Bunshin 3Dスタジオ",
-    "description": "画像、ロゴ、描画を3Dモデル（STL、OBJ、GLB）に瞬時に変換。3Dプリントとゲーム開発に最適化。",
+    "defaultTitle": "Bunshin 3D | 無料AI画像から3DモデルSTL・GLB変換ツール",
+    "templateTitle": "%s | Bunshin 3D - AI 3Dジェネレーター",
+    "description": "画像、ロゴ、イラストを瞬時に3Dモデルに変換。3Dプリント用STL・Unity/Unreal用GLBへの無料AI変換。デザインスキル不要！",
     "applicationName": "Bunshin 3D",
-    "keywords": "画像 3d 変換, ロゴ stl, ai 3d, 3dモデル 生成, ai 3dプリント, 画像 stl, ロゴ 3d, 2d 3d 変換",
+    "keywords": "画像 3d 変換, ロゴ stl 変換, ai 3dモデル生成, 無料 stl 変換, 写真 3dモデル, 2d 3d ai, 画像 glb 変換, png stl オンライン, ai 3dプリント, ロゴ 3dモデル, 画像から3d, unity 3d アセット, ゲームアセット生成, 無料 3dモデル作成",
     "creator": "Bunshin 3D",
     "publisher": "Bunshin 3D",
-    "ogSiteName": "Bunshin 3D",
-    "ogTitle": "Bunshin 3D - 画像を彫刻するAI",
-    "ogDescription": "2D画像から数秒でプロダクション対応の3Dファイルを生成。",
-    "ogImageAlt": "Bunshin 3Dインターフェース",
-    "twitterTitle": "Bunshin 3D - AI画像から3Dへ",
-    "twitterDescription": "2D画像からプロダクション対応の3Dファイルを生成。"
+    "ogSiteName": "Bunshin 3D - AI 3Dモデルジェネレーター",
+    "ogTitle": "30秒で画像を3Dモデルに変換 | 無料AIツール",
+    "ogDescription": "ロゴ、写真、イラストを瞬時にSTL/GLBに変換。無料AI 3Dジェネレーター - スキル不要。3Dプリントとゲーム開発に最適。",
+    "ogImageAlt": "Bunshin 3D - AIが2D画像を印刷・ゲーム用3Dモデルに変換",
+    "twitterTitle": "🚀 AI画像から3D変換 | 無料STL・GLBジェネレーター",
+    "twitterDescription": "任意の画像を数秒で印刷可能な3Dモデルに変換。無料AIコンバーター - デザインスキル不要。今すぐBunshin 3Dをお試しください！"
   },
   "Navigation": {
     "brandName": "BUNSHIN",
@@ -26,7 +26,8 @@
     "terms": "利用規約",
     "privacy": "プライバシー",
     "dashboard": "ダッシュボード",
-    "logout": "ログアウト"
+    "logout": "ログアウト",
+    "credits": "クレジット"
   },
   "Home": {
     "Hero": {
@@ -81,8 +82,12 @@
     "useCases": "使用例",
     "pricing": "料金",
     "studio": "3Dスタジオ",
+    "features": "機能",
     "blog": "ブログ",
     "help": "ヘルプセンター",
+    "support": "サポート",
+    "account": "アカウント",
+    "contact": "お問い合わせ",
     "legal": "法務",
     "terms": "利用規約",
     "privacy": "プライバシーポリシー",
@@ -101,7 +106,8 @@
     "notFoundDescription": "申し訳ございません。お探しのページは存在しません。",
     "serverErrorTitle": "エラーが発生しました",
     "serverErrorDescription": "サーバーで重大なエラーが発生しました。対応中です。",
-    "backHome": "ホームに戻る"
+    "backHome": "ホームに戻る",
+    "tryAgain": "再試行"
   },
   "Auth": {
     "title": "おかえりなさい",
@@ -214,11 +220,16 @@
       },
       "Viewer": {
         "label": "ビューポート [WEBGL]",
-        "waiting": "データストリーム待機中...",
+        "waiting": "入力待機中...",
+        "waitingStream": "データストリーム待機中...",
         "engine": "TRELLISエンジン V1.0",
         "axis": "XYZ軸: ロック済み",
         "autoRotate": "自動回転",
-        "shadows": "シャドウ: オン"
+        "shadows": "シャドウ: オン",
+        "readyToGenerate": "生成準備完了",
+        "generated2D": "2D画像生成済み",
+        "webAR": "Web/AR",
+        "print": "印刷"
       },
       "Errors": {
         "fileTooLarge": "画像が大きすぎます（最大10MB）。",
@@ -286,7 +297,8 @@
     "Stats": {
       "credits": "利用可能クレジット",
       "generations": "総作成数",
-      "plan": "現在のステータス"
+      "plan": "現在のステータス",
+      "memberSince": "会員登録日"
     },
     "History": {
       "title": "生成履歴",
@@ -329,6 +341,8 @@
       "colMode": "モード"
     },
     "Controls": {
+      "serverTime": "サーバー時刻",
+      "systemControls": "システムコントロール",
       "maintenance": "メンテナンスモード",
       "maintenanceDesc": "スタジオインターフェースをロック。既存のワークフローのAPIアクセスは有効。",
       "active": "システム 有効",
@@ -378,7 +392,10 @@
     "cancel": "キャンセル",
     "confirm": "確認",
     "download": "ダウンロード",
-    "processing": "処理中..."
+    "processing": "処理中...",
+    "previous": "前へ",
+    "next": "次へ",
+    "pageOf": "{total}ページ中{page}ページ"
   },
   "TextTo3D": {
     "Metadata": {
