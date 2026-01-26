@@ -6,7 +6,7 @@ import { routing } from "./i18n/routing";
 // Initialisation du middleware next-intl qui gère la détection de langue
 const handleI18nRouting = createMiddleware(routing);
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
 
   // Ignorer les appels API auth callback pour ne pas interférer avec Supabase
@@ -119,6 +119,6 @@ export async function middleware(request: NextRequest) {
 export const config = {
   matcher: [
     // Matcher optimisé pour next-intl et Supabase
-    "/((?!api|_next/static|_next/image|favicon.ico|manifest.json|robots.txt|sitemap.xml|.*\\.(?:svg|png|jpg|jpeg|gif|webp|glb|gltf|stl|css|js|map)$).*)",
+    "/((?!api|_next/static|_next/image|favicon.ico|manifest.json|manifest.webmanifest|robots.txt|sitemap.xml|.*\\.(?:svg|png|jpg|jpeg|gif|webp|glb|gltf|stl|css|js|map)$).*)",
   ],
 };

@@ -147,7 +147,7 @@ export default async function LocaleLayout({
         />
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#9945ff" />
 
-        <link rel="manifest" href="/manifest.json" />
+        <link rel="manifest" href="/manifest.webmanifest" />
 
         <meta name="msapplication-TileColor" content="#0a0a0f" />
         <meta name="msapplication-TileImage" content="/mstile-150x150.png" />
