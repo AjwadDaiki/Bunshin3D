@@ -11,10 +11,15 @@ import {
   CircleNotch,
   Image as ImageIcon,
   FileCode,
+  Cube, // Ajout pour l'icône OBJ
+  Aperture, // Ajout pour l'icône USDZ
 } from "@phosphor-icons/react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { convertToSTL, triggerDownload } from "@/lib/3d-processing";
+import {
+  useModelDownload,
+  type DownloadFormat,
+} from "@/hooks/useModelDownload"; // Import du hook corrigé
 import { BunshinLogo } from "../ui/BunshinLogo";
 
 declare global {
@@ -56,10 +61,12 @@ export default function StudioInterface() {
   const [imagePreview, setImagePreview] = useState<string | null>(null);
   const [prompt, setPrompt] = useState("");
   const [isGenerating, setIsGenerating] = useState(false);
-  const [isDownloading, setIsDownloading] = useState(false);
+  // Suppression de l'état local isDownloading au profit du hook
   const [logs, setLogs] = useState<LogEntry[]>([]);
   const [modelUrl, setModelUrl] = useState<string | null>(null);
-  const [generatedImageUrl, setGeneratedImageUrl] = useState<string | null>(null);
+  const [generatedImageUrl, setGeneratedImageUrl] = useState<string | null>(
+    null,
+  );
   const [credits, setCredits] = useState<number>(0);
   const [userId, setUserId] = useState<string | null>(null);
 
@@ -69,7 +76,9 @@ export default function StudioInterface() {
   useEffect(() => {
     const getUser = async () => {
       const supabase = createClient();
-      const { data: { user } } = await supabase.auth.getUser();
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
       if (user) {
         setUserId(user.id);
         const { data } = await supabase
@@ -85,23 +94,34 @@ export default function StudioInterface() {
 
   useEffect(() => {
     if (logsContainerRef.current) {
-      logsContainerRef.current.scrollTop = logsContainerRef.current.scrollHeight;
+      logsContainerRef.current.scrollTop =
+        logsContainerRef.current.scrollHeight;
     }
   }, [logs]);
 
   useEffect(() => {
     const script = document.createElement("script");
     script.type = "module";
-    script.src = "https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js";
+    script.src =
+      "https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js";
     document.head.appendChild(script);
   }, []);
 
-  const addLog = (message: string, type: "info" | "success" | "error" = "info") => {
+  const addLog = (
+    message: string,
+    type: "info" | "success" | "error" = "info",
+  ) => {
     setLogs((prev) => [
       ...prev,
       { id: Date.now() + Math.random(), message, type, timestamp: new Date() },
     ]);
   };
+
+  // Intégration du hook de téléchargement corrigé (remplace la fonction locale)
+  const { downloadModel, isDownloading, downloadFormat } = useModelDownload({
+    onSuccess: (fmt) => addLog(`✓ ${fmt} Downloaded successfully`, "success"),
+    onError: (err) => addLog(`Download error: ${err}`, "error"),
+  });
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -113,28 +133,9 @@ export default function StudioInterface() {
     }
   };
 
-  const downloadModel = async (format: "glb" | "stl") => {
-    if (!modelUrl) return;
-    setIsDownloading(true);
-    try {
-      if (format === "glb") {
-        const response = await fetch(modelUrl);
-        if (!response.ok) throw new Error("Download failed");
-        const blob = await response.blob();
-        triggerDownload(blob, `bunshin-model-${Date.now()}.glb`);
-        addLog("✓ GLB Downloaded", "success");
-      } else if (format === "stl") {
-        addLog("Converting to STL...", "info");
-        const stlBlob = await convertToSTL(modelUrl);
-        triggerDownload(stlBlob, `bunshin-model-${Date.now()}.stl`);
-        addLog("✓ STL Converted & Downloaded", "success");
-      }
-    } catch (e: any) {
-      console.error(e);
-      addLog(`Download error: ${e.message}`, "error");
-    } finally {
-      setIsDownloading(false);
-    }
+  // Wrapper pour le téléchargement
+  const handleDownload = (format: DownloadFormat) => {
+    if (modelUrl) downloadModel(modelUrl, format);
   };
 
   const costInCredits = quality === "premium" ? 5 : 1;
@@ -151,7 +152,10 @@ export default function StudioInterface() {
     }
 
     if (credits < costInCredits) {
-      addLog(`Insufficient credits. You need ${costInCredits} credit(s).`, "error");
+      addLog(
+        `Insufficient credits. You need ${costInCredits} credit(s).`,
+        "error",
+      );
       return;
     }
 
@@ -182,7 +186,9 @@ export default function StudioInterface() {
 
         while (!imageResult) {
           await new Promise((r) => setTimeout(r, 2000));
-          const statusRes = await fetch(`/api/check-status/${imagePredictionId}`);
+          const statusRes = await fetch(
+            `/api/check-status/${imagePredictionId}`,
+          );
           const status = await statusRes.json();
 
           if (status.status === "succeeded") {
@@ -209,7 +215,9 @@ export default function StudioInterface() {
 
         if (uploadError) throw uploadError;
 
-        const { data: { publicUrl } } = supabase.storage.from("uploads").getPublicUrl(fileName);
+        const {
+          data: { publicUrl },
+        } = supabase.storage.from("uploads").getPublicUrl(fileName);
 
         finalImageUrl = publicUrl;
         addLog("✓ Image uploaded successfully", "success");
@@ -233,7 +241,9 @@ export default function StudioInterface() {
       if (modelRes.status === 429) {
         addLog("⚠️ Server Busy (429). Retrying in 5s...", "error");
         await new Promise((r) => setTimeout(r, 5000));
-        throw new Error("System busy (Rate Limit). Please wait 30s and try again.");
+        throw new Error(
+          "System busy (Rate Limit). Please wait 30s and try again.",
+        );
       }
 
       const modelData = await modelRes.json();
@@ -261,7 +271,7 @@ export default function StudioInterface() {
           } else {
             modelResult =
               Object.values(status.output).find(
-                (val: any) => typeof val === "string" && val.includes(".glb")
+                (val: any) => typeof val === "string" && val.includes(".glb"),
               ) || status.output;
           }
 
@@ -316,7 +326,7 @@ export default function StudioInterface() {
                   "flex-1 py-3 px-4 rounded-xl font-bold transition-all duration-300 flex items-center justify-center gap-2",
                   mode === "image"
                     ? "bg-brand-primary text-white shadow-lg shadow-brand-primary/20"
-                    : "hover:bg-white/5 text-gray-400"
+                    : "hover:bg-white/5 text-gray-400",
                 )}
               >
                 <UploadSimple className="h-5 w-5" weight="bold" />
@@ -328,7 +338,7 @@ export default function StudioInterface() {
                   "flex-1 py-3 px-4 rounded-xl font-bold transition-all duration-300 flex items-center justify-center gap-2",
                   mode === "text"
                     ? "bg-brand-primary text-white shadow-lg shadow-brand-primary/20"
-                    : "hover:bg-white/5 text-gray-400"
+                    : "hover:bg-white/5 text-gray-400",
                 )}
               >
                 <Sparkle className="h-5 w-5" weight="fill" />
@@ -347,7 +357,7 @@ export default function StudioInterface() {
                     "w-full p-4 rounded-xl border-2 transition-all duration-300 flex items-center justify-between group",
                     quality === "standard"
                       ? "border-brand-primary bg-brand-primary/5"
-                      : "border-white/5 hover:border-white/10 bg-surface-2"
+                      : "border-white/5 hover:border-white/10 bg-surface-2",
                   )}
                 >
                   <div className="flex items-center gap-3">
@@ -356,7 +366,7 @@ export default function StudioInterface() {
                         "p-2 rounded-lg",
                         quality === "standard"
                           ? "bg-amber-400/20 text-amber-400"
-                          : "bg-white/5 text-gray-400"
+                          : "bg-white/5 text-gray-400",
                       )}
                     >
                       <BunshinLogo className="h-5 w-5" />
@@ -365,7 +375,9 @@ export default function StudioInterface() {
                       <span
                         className={cn(
                           "block font-bold",
-                          quality === "standard" ? "text-white" : "text-gray-400"
+                          quality === "standard"
+                            ? "text-white"
+                            : "text-gray-400",
                         )}
                       >
                         {t("Quality.standard")}
@@ -384,7 +396,7 @@ export default function StudioInterface() {
                     "w-full p-4 rounded-xl border-2 transition-all duration-300 flex items-center justify-between group",
                     quality === "premium"
                       ? "border-purple-500 bg-purple-500/5"
-                      : "border-white/5 hover:border-white/10 bg-surface-2"
+                      : "border-white/5 hover:border-white/10 bg-surface-2",
                   )}
                 >
                   <div className="flex items-center gap-3">
@@ -393,7 +405,7 @@ export default function StudioInterface() {
                         "p-2 rounded-lg",
                         quality === "premium"
                           ? "bg-purple-500/20 text-purple-400"
-                          : "bg-white/5 text-gray-400"
+                          : "bg-white/5 text-gray-400",
                       )}
                     >
                       <Sparkle className="h-5 w-5" weight="fill" />
@@ -402,7 +414,9 @@ export default function StudioInterface() {
                       <span
                         className={cn(
                           "block font-bold",
-                          quality === "premium" ? "text-white" : "text-gray-400"
+                          quality === "premium"
+                            ? "text-white"
+                            : "text-gray-400",
                         )}
                       >
                         {t("Quality.premium")}
@@ -475,7 +489,10 @@ export default function StudioInterface() {
               >
                 {isGenerating ? (
                   <>
-                    <CircleNotch className="h-5 w-5 animate-spin" weight="bold" />
+                    <CircleNotch
+                      className="h-5 w-5 animate-spin"
+                      weight="bold"
+                    />
                     <span className="animate-pulse">
                       {t("Interface.Controls.processing")}
                     </span>
@@ -494,7 +511,7 @@ export default function StudioInterface() {
                 <div
                   className={cn(
                     "w-2 h-2 rounded-full",
-                    isGenerating ? "bg-green-400 animate-pulse" : "bg-gray-600"
+                    isGenerating ? "bg-green-400 animate-pulse" : "bg-gray-600",
                   )}
                 />
                 Process Logs
@@ -505,7 +522,10 @@ export default function StudioInterface() {
               >
                 {logs.length === 0 ? (
                   <div className="h-full flex flex-col items-center justify-center text-gray-700">
-                    <FileCode className="h-8 w-8 mb-2 opacity-50" weight="duotone" />
+                    <FileCode
+                      className="h-8 w-8 mb-2 opacity-50"
+                      weight="duotone"
+                    />
                     <p>Ready to generate</p>
                   </div>
                 ) : (
@@ -518,7 +538,7 @@ export default function StudioInterface() {
                           ? "text-green-400"
                           : log.type === "error"
                             ? "text-red-400"
-                            : "text-gray-400"
+                            : "text-gray-400",
                       )}
                     >
                       <span className="opacity-50">
@@ -544,7 +564,8 @@ export default function StudioInterface() {
               <div
                 className="absolute inset-0 opacity-10 pointer-events-none"
                 style={{
-                  backgroundImage: "radial-gradient(circle, #ffffff 1px, transparent 1px)",
+                  backgroundImage:
+                    "radial-gradient(circle, #ffffff 1px, transparent 1px)",
                   backgroundSize: "20px 20px",
                 }}
               ></div>
@@ -581,7 +602,10 @@ export default function StudioInterface() {
                     className="max-h-full max-w-full rounded-xl shadow-2xl object-contain"
                   />
                   <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/70 backdrop-blur-md px-4 py-2 rounded-full text-sm font-medium border border-white/10 flex items-center gap-2">
-                    <ImageIcon className="h-4 w-4 text-brand-primary" weight="duotone" />
+                    <ImageIcon
+                      className="h-4 w-4 text-brand-primary"
+                      weight="duotone"
+                    />
                     Reference Image
                   </div>
                 </div>
@@ -607,41 +631,106 @@ export default function StudioInterface() {
             </div>
 
             {modelUrl && (
-              <div className="flex flex-col sm:flex-row gap-4 animate-in fade-in slide-in-from-bottom-4 duration-700">
-                <div className="glass-card flex-1 p-6 rounded-2xl flex items-center justify-between border-green-500/20 bg-green-500/5">
+              <div className="glass-card p-6 rounded-2xl animate-in fade-in slide-in-from-bottom-4 duration-700">
+                <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                   <div>
-                    <h3 className="font-bold text-green-400 text-lg flex items-center gap-2">
-                      <BunshinLogo className="h-5 w-5" />
-                      Model Ready!
+                    <h3 className="font-bold text-white text-xl flex items-center gap-2 mb-1">
+                      <BunshinLogo className="h-6 w-6 text-green-400" />
+                      Ready to Export
                     </h3>
                     <p className="text-gray-400 text-sm">
-                      Select format to download
+                      Choose your format below. OBJ is recommended for universal
+                      compatibility.
                     </p>
                   </div>
-                  <div className="flex gap-3">
+
+                  <div className="flex flex-wrap gap-3 justify-center md:justify-end">
+                    {/* GLB Button */}
                     <button
-                      onClick={() => downloadModel("glb")}
+                      onClick={() => handleDownload("glb")}
                       disabled={isDownloading}
-                      className="px-5 py-2.5 bg-surface-3 hover:bg-white/10 border border-white/10 rounded-lg font-bold transition-all flex items-center gap-2 text-sm"
+                      className={cn(
+                        "px-4 py-3 rounded-xl font-bold transition-all flex items-center gap-2 text-sm border",
+                        isDownloading && downloadFormat === "glb"
+                          ? "bg-brand-primary border-brand-primary text-white"
+                          : "bg-surface-3 hover:bg-surface-1 border-white/10 text-gray-300",
+                      )}
                     >
-                      {isDownloading ? (
-                        <CircleNotch className="h-4 w-4 animate-spin" weight="bold" />
+                      {isDownloading && downloadFormat === "glb" ? (
+                        <CircleNotch className="h-4 w-4 animate-spin" />
                       ) : (
                         <DownloadSimple className="h-4 w-4" weight="bold" />
                       )}
-                      GLB <span className="opacity-50 text-xs">(Web/AR)</span>
+                      GLB{" "}
+                      <span className="opacity-50 text-xs font-normal hidden sm:inline">
+                        (Web)
+                      </span>
                     </button>
+
+                    {/* OBJ Button */}
                     <button
-                      onClick={() => downloadModel("stl")}
+                      onClick={() => handleDownload("obj")}
                       disabled={isDownloading}
-                      className="px-5 py-2.5 bg-brand-primary hover:bg-brand-secondary text-white rounded-lg font-bold transition-all flex items-center gap-2 text-sm shadow-lg shadow-brand-primary/20"
+                      className={cn(
+                        "px-4 py-3 rounded-xl font-bold transition-all flex items-center gap-2 text-sm border",
+                        isDownloading && downloadFormat === "obj"
+                          ? "bg-brand-primary border-brand-primary text-white"
+                          : "bg-surface-3 hover:bg-surface-1 border-white/10 text-gray-300",
+                      )}
                     >
-                      {isDownloading ? (
-                        <CircleNotch className="h-4 w-4 animate-spin" weight="bold" />
+                      {isDownloading && downloadFormat === "obj" ? (
+                        <CircleNotch className="h-4 w-4 animate-spin" />
+                      ) : (
+                        <Cube className="h-4 w-4" weight="fill" />
+                      )}
+                      OBJ{" "}
+                      <span className="opacity-50 text-xs font-normal hidden sm:inline">
+                        (Universal)
+                      </span>
+                    </button>
+
+                    {/* USDZ Button */}
+                    <button
+                      onClick={() => handleDownload("usdz")}
+                      disabled={isDownloading}
+                      className={cn(
+                        "px-4 py-3 rounded-xl font-bold transition-all flex items-center gap-2 text-sm border",
+                        isDownloading && downloadFormat === "usdz"
+                          ? "bg-brand-primary border-brand-primary text-white"
+                          : "bg-surface-3 hover:bg-surface-1 border-white/10 text-gray-300",
+                      )}
+                    >
+                      {isDownloading && downloadFormat === "usdz" ? (
+                        <CircleNotch className="h-4 w-4 animate-spin" />
+                      ) : (
+                        <Aperture className="h-4 w-4" weight="fill" />
+                      )}
+                      USDZ{" "}
+                      <span className="opacity-50 text-xs font-normal hidden sm:inline">
+                        (AR/iOS)
+                      </span>
+                    </button>
+
+                    {/* STL Button */}
+                    <button
+                      onClick={() => handleDownload("stl")}
+                      disabled={isDownloading}
+                      className={cn(
+                        "px-4 py-3 rounded-xl font-bold transition-all flex items-center gap-2 text-sm border",
+                        isDownloading && downloadFormat === "stl"
+                          ? "bg-brand-primary border-brand-primary text-white"
+                          : "bg-surface-3 hover:bg-surface-1 border-white/10 text-gray-300",
+                      )}
+                    >
+                      {isDownloading && downloadFormat === "stl" ? (
+                        <CircleNotch className="h-4 w-4 animate-spin" />
                       ) : (
                         <DownloadSimple className="h-4 w-4" weight="bold" />
                       )}
-                      STL <span className="opacity-50 text-xs text-white/70">(Print)</span>
+                      STL{" "}
+                      <span className="opacity-50 text-xs font-normal hidden sm:inline">
+                        (Print)
+                      </span>
                     </button>
                   </div>
                 </div>

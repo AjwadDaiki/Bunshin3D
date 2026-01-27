@@ -16,8 +16,13 @@ import {
   ArrowClockwise,
   Trash,
   CircleNotch,
+  Aperture, // Ajout de l'icône pour USDZ
 } from "@phosphor-icons/react";
-import { convertToSTL, triggerDownload } from "@/lib/3d-processing";
+// On remplace l'import direct des fonctions par le hook
+import {
+  useModelDownload,
+  type DownloadFormat,
+} from "@/hooks/useModelDownload";
 import { cn } from "@/lib/utils";
 import dynamic from "next/dynamic";
 
@@ -25,7 +30,10 @@ const ModelViewer = dynamic(() => import("@/components/ui/ModelViewer"), {
   ssr: false,
   loading: () => (
     <div className="w-full h-full flex items-center justify-center">
-      <SpinnerGap className="w-8 h-8 text-brand-primary animate-spin" weight="bold" />
+      <SpinnerGap
+        className="w-8 h-8 text-brand-primary animate-spin"
+        weight="bold"
+      />
     </div>
   ),
 });
@@ -58,7 +66,8 @@ export default function UserDashboard({
   const router = useRouter();
   const supabase = createClient();
 
-  const [generations, setGenerations] = useState<Generation[]>(initialGenerations);
+  const [generations, setGenerations] =
+    useState<Generation[]>(initialGenerations);
   const [profile, setProfile] = useState(initialProfile);
   const [page, setPage] = useState(1);
   const [isRefreshing, setIsRefreshing] = useState(false);
@@ -119,15 +128,15 @@ export default function UserDashboard({
               prev.map((g) =>
                 g.id === (payload.new as Generation).id
                   ? (payload.new as Generation)
-                  : g
-              )
+                  : g,
+              ),
             );
           } else if (payload.eventType === "DELETE") {
             setGenerations((prev) =>
-              prev.filter((g) => g.id !== (payload.old as Generation).id)
+              prev.filter((g) => g.id !== (payload.old as Generation).id),
             );
           }
-        }
+        },
       )
       .on(
         "postgres_changes",
@@ -139,7 +148,7 @@ export default function UserDashboard({
         },
         (payload) => {
           setProfile(payload.new);
-        }
+        },
       )
       .subscribe();
 
@@ -208,7 +217,7 @@ export default function UserDashboard({
               <Lightning
                 className={cn(
                   "h-6 w-6",
-                  (profile?.credits ?? 0) > 5 ? "text-amber-400" : "text-error"
+                  (profile?.credits ?? 0) > 5 ? "text-amber-400" : "text-error",
                 )}
                 weight="fill"
               />
@@ -235,7 +244,10 @@ export default function UserDashboard({
         <div className="glass-card p-6 rounded-xl">
           <div className="flex items-center gap-4">
             <div className="p-3 rounded-full bg-brand-accent/10">
-              <Calendar className="h-6 w-6 text-brand-accent" weight="duotone" />
+              <Calendar
+                className="h-6 w-6 text-brand-accent"
+                weight="duotone"
+              />
             </div>
             <div>
               <p className="text-sm text-gray-400">{t("Stats.memberSince")}</p>
@@ -331,27 +343,18 @@ function GenerationCard({
   formatDate: (date: string) => string;
   onDelete: (id: string) => Promise<void>;
 }) {
-  const [isDownloading, setIsDownloading] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
   const isProcessing = generation.status === "processing";
   const hasModel = !!generation.model_glb_url;
 
-  const handleDownload = async (format: "glb" | "stl") => {
-    if (!generation.model_glb_url) return;
-    setIsDownloading(true);
-    try {
-      if (format === "glb") {
-        const response = await fetch(generation.model_glb_url);
-        const blob = await response.blob();
-        triggerDownload(blob, `bunshin-${generation.id.slice(0, 8)}.glb`);
-      } else {
-        const stlBlob = await convertToSTL(generation.model_glb_url);
-        triggerDownload(stlBlob, `bunshin-${generation.id.slice(0, 8)}.stl`);
-      }
-    } catch (e) {
-      console.error("Download error:", e);
-    } finally {
-      setIsDownloading(false);
+  // Utilisation du hook pour gérer tous les formats
+  const { downloadModel, isDownloading, downloadFormat } = useModelDownload({
+    onError: (err) => console.error("Download error:", err),
+  });
+
+  const handleDownload = (format: DownloadFormat) => {
+    if (generation.model_glb_url) {
+      downloadModel(generation.model_glb_url, format);
     }
   };
 
@@ -365,14 +368,19 @@ function GenerationCard({
     <div className="group relative glass-card rounded-xl overflow-hidden hover:bg-white/10 transition-all">
       <div className="aspect-square bg-surface-2 relative flex items-center justify-center overflow-hidden">
         {hasModel ? (
-          <ModelViewer src={generation.model_glb_url!} className="w-full h-full" />
+          <ModelViewer
+            src={generation.model_glb_url!}
+            className="w-full h-full"
+          />
         ) : generation.source_image_url ? (
           <img
             src={generation.source_image_url}
             alt="Source"
             className={cn(
               "w-full h-full object-contain p-4 transition-opacity",
-              isProcessing ? "opacity-50" : "opacity-80 group-hover:opacity-100"
+              isProcessing
+                ? "opacity-50"
+                : "opacity-80 group-hover:opacity-100",
             )}
           />
         ) : (
@@ -381,7 +389,7 @@ function GenerationCard({
         <div
           className={cn(
             "absolute top-3 right-3 px-2 py-1 glass-card rounded text-[10px] font-mono uppercase font-bold",
-            isProcessing ? "text-amber-400" : "text-brand-primary"
+            isProcessing ? "text-amber-400" : "text-brand-primary",
           )}
         >
           {generation.status}
@@ -399,13 +407,16 @@ function GenerationCard({
         </button>
         {isProcessing && (
           <div className="absolute inset-0 flex items-center justify-center bg-black/30">
-            <SpinnerGap className="w-8 h-8 text-brand-primary animate-spin" weight="bold" />
+            <SpinnerGap
+              className="w-8 h-8 text-brand-primary animate-spin"
+              weight="bold"
+            />
           </div>
         )}
       </div>
 
       <div className="p-4 border-t border-white/10">
-        <div className="flex items-center mb-2">
+        <div className="flex items-center mb-3">
           <span className="text-xs text-gray-400 flex items-center gap-1">
             <Calendar className="w-3 h-3" weight="duotone" />
             {formatDate(generation.created_at)}
@@ -413,25 +424,80 @@ function GenerationCard({
         </div>
 
         {hasModel ? (
-          <div className="flex gap-2">
+          <div className="grid grid-cols-2 gap-2">
+            {/* GLB Button */}
             <button
               onClick={() => handleDownload("glb")}
               disabled={isDownloading}
-              className="flex-1 flex items-center justify-center gap-1 py-2 bg-surface-3 hover:bg-white/10 border border-white/10 text-white text-xs font-medium rounded-lg transition-smooth"
+              className={cn(
+                "flex items-center justify-center gap-1 py-2 text-xs font-medium rounded-lg transition-smooth border",
+                isDownloading && downloadFormat === "glb"
+                  ? "bg-brand-primary text-white border-brand-primary"
+                  : "bg-surface-3 hover:bg-white/10 text-white border-white/10",
+              )}
+              title="Download GLB (Web/Standard)"
             >
-              {isDownloading ? (
+              {isDownloading && downloadFormat === "glb" ? (
                 <CircleNotch className="w-3 h-3 animate-spin" weight="bold" />
               ) : (
                 <DownloadSimple className="w-3 h-3" weight="bold" />
               )}
               GLB
             </button>
+
+            {/* OBJ Button */}
+            <button
+              onClick={() => handleDownload("obj")}
+              disabled={isDownloading}
+              className={cn(
+                "flex items-center justify-center gap-1 py-2 text-xs font-medium rounded-lg transition-smooth border",
+                isDownloading && downloadFormat === "obj"
+                  ? "bg-brand-primary text-white border-brand-primary"
+                  : "bg-surface-3 hover:bg-white/10 text-white border-white/10",
+              )}
+              title="Download OBJ (Universal)"
+            >
+              {isDownloading && downloadFormat === "obj" ? (
+                <CircleNotch className="w-3 h-3 animate-spin" weight="bold" />
+              ) : (
+                <Cube className="w-3 h-3" weight="fill" />
+              )}
+              OBJ
+            </button>
+
+            {/* USDZ Button */}
+            <button
+              onClick={() => handleDownload("usdz")}
+              disabled={isDownloading}
+              className={cn(
+                "flex items-center justify-center gap-1 py-2 text-xs font-medium rounded-lg transition-smooth border",
+                isDownloading && downloadFormat === "usdz"
+                  ? "bg-brand-primary text-white border-brand-primary"
+                  : "bg-surface-3 hover:bg-white/10 text-white border-white/10",
+              )}
+              title="Download USDZ (iOS/AR)"
+            >
+              {isDownloading && downloadFormat === "usdz" ? (
+                <CircleNotch className="w-3 h-3 animate-spin" weight="bold" />
+              ) : (
+                <Aperture className="w-3 h-3" weight="fill" />
+              )}
+              USDZ
+            </button>
+
+            {/* STL Button */}
             <button
               onClick={() => handleDownload("stl")}
               disabled={isDownloading}
-              className="flex-1 flex items-center justify-center gap-1 py-2 bg-brand-primary hover:bg-brand-secondary text-white text-xs font-medium rounded-lg transition-smooth"
+              className={cn(
+                "flex items-center justify-center gap-1 py-2 text-xs font-medium rounded-lg transition-smooth border",
+                isDownloading && downloadFormat === "stl"
+                  ? "bg-brand-primary text-white border-brand-primary"
+                  : "bg-brand-primary hover:bg-brand-secondary text-white border-transparent",
+              )}
+              title="Download STL (3D Printing)"
             >
-              {isDownloading ? (
+              {isDownloading && downloadFormat === "stl" ? (
                 <CircleNotch className="w-3 h-3 animate-spin" weight="bold" />
               ) : (
                 <DownloadSimple className="w-3 h-3" weight="bold" />
