@@ -31,8 +31,10 @@ export async function convertToSTL(glbUrl: string): Promise<Blob> {
       glbUrl,
       (gltf) => {
         const exporter = new STLExporter();
-        const stlString = exporter.parse(gltf.scene, { binary: true });
-        const blob = new Blob([stlString], {
+        const stlResult = exporter.parse(gltf.scene, { binary: true });
+
+        // Cast en 'any' pour éviter les conflits de types
+        const blob = new Blob([stlResult as any], {
           type: "application/octet-stream",
         });
         resolve(blob);
@@ -77,14 +79,30 @@ export async function convertToUSDZ(glbUrl: string): Promise<Blob> {
     const loader = new GLTFLoader();
     loader.load(
       glbUrl,
-      async (gltf) => {
-        const exporter = new USDZExporter();
-        // @ts-ignore - USDZExporter types are sometimes missing in older definitions
-        const usdzArray = await exporter.parse(gltf.scene);
-        const blob = new Blob([usdzArray], {
-          type: "application/octet-stream",
-        });
-        resolve(blob);
+      (gltf) => {
+        try {
+          const exporter = new USDZExporter();
+          // CORRECTION: Utilisation des callbacks au lieu de await
+          // Signature: parse(scene, onDone, onError, options)
+          exporter.parse(
+            gltf.scene,
+            (result) => {
+              // Succès : result contient le binaire
+              const blob = new Blob([result as any], {
+                type: "application/octet-stream",
+              });
+              resolve(blob);
+            },
+            (error) => {
+              // Erreur lors de l'export
+              console.error("USDZ export error:", error);
+              reject(error);
+            },
+            { quickLookCompatible: true }, // Optionnel : améliore la compatibilité AR QuickLook (iOS)
+          );
+        } catch (err) {
+          reject(err);
+        }
       },
       undefined,
       (error) => reject(error),
