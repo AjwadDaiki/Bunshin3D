@@ -1,10 +1,10 @@
 "use client";
-
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { X, Warning, SpinnerGap } from "@phosphor-icons/react";
 import { banUser, deleteUser } from "@/app/actions/admin";
 import { cn } from "@/lib/utils";
+import AdminConfirmInput from "./AdminConfirmInput";
 
 type Props = {
   title: string;
@@ -33,13 +33,12 @@ export default function AdminConfirmModal({
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [confirmText, setConfirmText] = useState("");
-
   const requiresConfirmation = action === "delete";
-  const isConfirmed = !requiresConfirmation || confirmText === "DELETE";
+  const deleteKeyword = t("Users.deleteKeyword");
+  const isConfirmed = !requiresConfirmation || confirmText === deleteKeyword;
 
   const handleConfirm = async () => {
     if (!isConfirmed) return;
-
     setLoading(true);
     setError(null);
 
@@ -52,7 +51,7 @@ export default function AdminConfirmModal({
       onSuccess();
       onClose();
     } catch (err: any) {
-      setError(err.message || "Action failed");
+      setError(err.message || t("Errors.actionFailed"));
     } finally {
       setLoading(false);
     }
@@ -77,18 +76,16 @@ export default function AdminConfirmModal({
   };
 
   const styles = variantStyles[variant];
-
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
       <div
         className="absolute inset-0 bg-black/70 backdrop-blur-sm"
         onClick={onClose}
       />
-
       <div
         className={cn(
           "relative w-full max-w-md bg-surface-2 border rounded-2xl shadow-2xl animate-in fade-in zoom-in-95 duration-200",
-          styles.border
+          styles.border,
         )}
       >
         <div className="flex items-center justify-between p-6 border-b border-white/10">
@@ -105,23 +102,15 @@ export default function AdminConfirmModal({
             <X className="w-5 h-5 text-gray-400" />
           </button>
         </div>
-
         <div className="p-6 space-y-4">
           <p className="text-gray-300">{message}</p>
-
           {requiresConfirmation && (
-            <div className="space-y-2">
-              <p className="text-sm text-gray-400">
-                {t("Users.typeDelete")}
-              </p>
-              <input
-                type="text"
-                value={confirmText}
-                onChange={(e) => setConfirmText(e.target.value)}
-                placeholder="DELETE"
-                className="w-full px-4 py-3 bg-red-500/10 border border-red-500/30 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-red-500 transition-colors font-mono"
-              />
-            </div>
+            <AdminConfirmInput
+              label={t("Users.typeDelete")}
+              value={confirmText}
+              placeholder={deleteKeyword}
+              onChange={setConfirmText}
+            />
           )}
 
           {error && (
@@ -130,7 +119,6 @@ export default function AdminConfirmModal({
             </p>
           )}
         </div>
-
         <div className="flex gap-3 p-6 border-t border-white/10">
           <button
             onClick={onClose}
@@ -143,7 +131,7 @@ export default function AdminConfirmModal({
             disabled={loading || !isConfirmed}
             className={cn(
               "flex-1 py-3 rounded-xl font-bold text-white transition-colors disabled:opacity-50 flex items-center justify-center gap-2",
-              styles.button
+              styles.button,
             )}
           >
             {loading ? (

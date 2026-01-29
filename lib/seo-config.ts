@@ -1,6 +1,10 @@
 import { Metadata } from "next";
+import { createTranslator } from "next-intl";
+import messages from "@/messages/en.json";
+import { routing } from "@/i18n/routing";
 
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://bunshin3d.com";
+const t = createTranslator({ locale: "en", messages, namespace: "SEO" });
 
 export const constructCanonicalUrl = (path: string) => {
   return `${APP_URL}${path}`;
@@ -9,10 +13,10 @@ export const constructCanonicalUrl = (path: string) => {
 export const baseMetadataConfig: Metadata = {
   metadataBase: new URL(APP_URL),
   authors: [
-    { name: "Bunshin 3D", url: APP_URL },
-    { name: "Bunshin 3D Engineering Team" },
+    { name: t("siteName"), url: APP_URL },
+    { name: t("engineeringTeam") },
   ],
-  generator: "Next.js 16",
+  generator: t("generator"),
   referrer: "origin-when-cross-origin",
   formatDetection: {
     email: false,
@@ -52,11 +56,11 @@ export const baseMetadataConfig: Metadata = {
       },
     ],
   },
-  manifest: "/manifest.json",
+  manifest: "/manifest.webmanifest",
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
-    title: "Bunshin 3D",
+    title: t("appleWebAppTitle"),
   },
   other: {
     "mobile-web-app-capable": "yes",
@@ -67,8 +71,8 @@ export const baseMetadataConfig: Metadata = {
 };
 
 export const seoConstants = {
-  siteName: "Bunshin 3D",
-  twitterHandle: "@bunshin3d",
-  defaultLocale: "fr",
-  supportedLocales: ["fr", "en"],
+  siteName: t("siteName"),
+  twitterHandle: t("twitterHandle"),
+  defaultLocale: routing.defaultLocale,
+  supportedLocales: routing.locales,
 };

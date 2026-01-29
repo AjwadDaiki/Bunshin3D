@@ -1,81 +1,129 @@
-import { NextResponse } from "next/server";
+﻿import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
+import { createClient } from "@supabase/supabase-js";
+import { getApiTranslations } from "@/lib/api-i18n";
+import { getPriceForCurrency, type PackId } from "@/lib/config/pricing";
 
-// Vérification des variables d'environnement
-if (!process.env.STRIPE_SECRET_KEY) {
-  throw new Error("STRIPE_SECRET_KEY is not defined in environment variables");
-}
+const OTO_DURATION_MS = 24 * 60 * 60 * 1000;
+const OTO_COUPONS: Record<string, string> = {
+  discovery: process.env.STRIPE_OTO_COUPON_DISCOVERY || "",
+  studio: process.env.STRIPE_OTO_COUPON_STUDIO || "",
+};
 
-// Configuration Stripe avec version API
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
-  apiVersion: "2025-12-15.clover",
-});
+export async function POST(request: NextRequest) {
+  const t = await getApiTranslations(request, "Api.Checkout");
+  const stripeKey = process.env.STRIPE_SECRET_KEY;
 
-export async function POST(request: Request) {
+  if (!stripeKey) {
+    console.error(t("errors.missingStripeKey"));
+    return NextResponse.json(
+      { error: t("responses.missingStripeKey") },
+      { status: 500 },
+    );
+  }
+
+  const stripe = new Stripe(stripeKey, {
+    apiVersion: "2025-12-15.clover",
+  });
+
   try {
-    const { packId, userId } = await request.json();
-    const origin = request.headers.get("origin") || process.env.NEXT_PUBLIC_APP_URL;
+    const { packId, userId, currency, isOTO } = await request.json();
+    const origin =
+      request.headers.get("origin") || process.env.NEXT_PUBLIC_APP_URL || "";
 
-    console.log(`🛒 Checkout request: packId=${packId}, userId=${userId}, origin=${origin}`);
+    console.log(t("logs.request", { packId, userId, origin }));
 
     if (!userId) {
-      console.error("❌ Missing userId");
-      return NextResponse.json({ error: "User ID is required" }, { status: 400 });
+      console.error(t("errors.missingUserId"));
+      return NextResponse.json(
+        { error: t("responses.userIdRequired") },
+        { status: 400 },
+      );
     }
 
-    // Définition des Packs (Connectée au Dashboard Stripe via les Price IDs)
-    const packs = {
-      discovery: {
-        priceId: "price_1SsXtCRcc7sv4ae7cewEcPmX", // Pack Découverte (2.99€)
-        credits: 10,
-      },
-      creator: {
-        priceId: "price_1SsXuWRcc7sv4ae7iFxnyujz", // Pack Créateur (9.99€)
-        credits: 50,
-      },
-      studio: {
-        priceId: "price_1SsXvjRcc7sv4ae7add6yPXT", // Pack Studio (29.99€)
-        credits: 200,
-      },
+    // OTO packs use the same Stripe prices but with a coupon applied
+    const otoPackMapping: Record<string, string> = {
+      oto_discovery: "discovery",
+      oto_studio: "studio",
     };
 
-    const selectedPack = packs[packId as keyof typeof packs];
+    const resolvedPackId = otoPackMapping[packId] || packId;
+    const isOTOPack = packId in otoPackMapping || isOTO;
 
-    if (!selectedPack) {
-      console.error(`❌ Invalid pack: ${packId}`);
-      return NextResponse.json({ error: "Invalid pack" }, { status: 400 });
+    // Validate pack and currency using central config
+    const validPackIds = ["discovery", "creator", "studio"];
+    if (!validPackIds.includes(resolvedPackId)) {
+      console.error(t("errors.invalidPack", { packId }));
+      return NextResponse.json(
+        { error: t("responses.invalidPack") },
+        { status: 400 },
+      );
     }
 
-    console.log(`✅ Selected pack: ${packId}, priceId: ${selectedPack.priceId}, credits: ${selectedPack.credits}`);
+    const selectedPack = getPriceForCurrency(resolvedPackId as PackId, currency || "USD");
 
-    // Création de la Session Stripe
-    const session = await stripe.checkout.sessions.create({
+    // Validate OTO eligibility server-side
+    let otoCouponId = "";
+    const packCoupon = OTO_COUPONS[resolvedPackId] || "";
+    if (isOTOPack && packCoupon) {
+      const supabaseAdmin = createClient(
+        process.env.NEXT_PUBLIC_SUPABASE_URL!,
+        process.env.SUPABASE_SERVICE_ROLE_KEY!,
+        { auth: { autoRefreshToken: false, persistSession: false } },
+      );
+      const { data: profile } = await supabaseAdmin
+        .from("profiles")
+        .select("special_offer_started_at")
+        .eq("id", userId)
+        .single();
+
+      if (profile?.special_offer_started_at) {
+        const start = new Date(profile.special_offer_started_at).getTime();
+        if (Date.now() - start < OTO_DURATION_MS) {
+          otoCouponId = packCoupon;
+        }
+      }
+    }
+
+    console.log(
+      t("logs.selectedPack", {
+        packId,
+        priceId: selectedPack.priceId,
+        credits: selectedPack.credits,
+      }),
+    );
+
+    const sessionParams: Stripe.Checkout.SessionCreateParams = {
       payment_method_types: ["card"],
       line_items: [
         {
-          price: selectedPack.priceId,
+          price: selectedPack.priceId as string,
           quantity: 1,
         },
       ],
       mode: "payment",
       success_url: `${origin}/studio?success=true`,
       cancel_url: `${origin}/pricing?canceled=true`,
-      // Métadonnées critiques pour le webhook
       metadata: {
-        userId: userId,
-        packId: packId,
+        userId,
+        packId: resolvedPackId,
         credits: selectedPack.credits.toString(),
       },
-    });
+    };
 
-    console.log(`✅ Stripe session created: ${session.id}`);
+    if (otoCouponId) {
+      sessionParams.discounts = [{ coupon: otoCouponId }];
+    }
+
+    const session = await stripe.checkout.sessions.create(sessionParams);
+
+    console.log(t("logs.sessionCreated", { sessionId: session.id }));
     return NextResponse.json({ sessionId: session.id, url: session.url });
   } catch (err: any) {
-    console.error("❌ Stripe Error:", err.message);
-    console.error("Full error:", err);
+    console.error(t("errors.stripeError", { message: err.message }));
     return NextResponse.json(
-      { error: err.message || "Payment initialization failed" },
-      { status: 500 }
+      { error: t("responses.paymentInitFailed") },
+      { status: 500 },
     );
   }
 }

@@ -14,6 +14,16 @@
     "twitterTitle": "🚀 AI Image to 3D Converter | Free STL & GLB Generator",
     "twitterDescription": "Transform any image into a printable 3D model in seconds. Free AI converter - no design skills required. Try Bunshin 3D now!"
   },
+  "SEO": {
+    "siteName": "Bunshin 3D",
+    "engineeringTeam": "Engineering Team",
+    "generator": "Bunshin 3D",
+    "appleWebAppTitle": "Bunshin 3D",
+    "twitterHandle": "@bunshin3d",
+    "organizationName": "Bunshin 3D",
+    "organizationDescription": "AI-powered 3D generation platform",
+    "contactType": "Customer Support"
+  },
   "Navigation": {
     "brandName": "BUNSHIN",
     "brandSuffix": "3D",
@@ -28,9 +38,24 @@
     "dashboard": "Dashboard",
     "admin": "Admin",
     "logout": "Logout",
-    "credits": "Credits"
+    "credits": "Credits",
+    "aria": {
+      "home": "Go to homepage",
+      "mainNav": "Main navigation",
+      "toggleNav": "Toggle navigation menu",
+      "userMenu": "User menu",
+      "logout": "Log out",
+      "creditsAvailable": "{count} credits available",
+      "mobileNav": "Mobile navigation"
+    }
   },
   "Home": {
+    "Schema": {
+      "websiteName": "Bunshin 3D",
+      "softwareName": "Bunshin 3D",
+      "softwareCategory": "Design Application",
+      "operatingSystem": "Web"
+    },
     "Hero": {
       "title": "Turn 2D Pixels into",
       "titleHighlight": "3D Reality.",
@@ -58,7 +83,7 @@
       "step1": "Upload Image",
       "step1Desc": "Drag & drop any PNG, JPG or WEBP.",
       "step2": "AI Processing",
-      "step2Desc": "Our Trellis Engine reconstructs depth and texture.",
+      "step2Desc": "Our Bunshin Engine reconstructs depth and texture.",
       "step3": "Download 3D",
       "step3Desc": "Get your asset game-ready or print-ready."
     },
@@ -95,7 +120,8 @@
     "mentions": "Legal Mentions",
     "rights": "All rights reserved.",
     "crafted": "Crafted with precision by",
-    "copyright": "© {year} Bunshin 3D. All rights reserved."
+    "copyright": "© {year} Bunshin 3D. All rights reserved.",
+    "partnerName": "Hidden Lab"
   },
   "UseCases": {
     "logoToStl": "Convert Logo to STL",
@@ -108,7 +134,13 @@
     "serverErrorTitle": "Something went wrong!",
     "serverErrorDescription": "An unexpected error occurred. Please try again.",
     "backHome": "Back to Home",
-    "tryAgain": "Try Again"
+    "tryAgain": "Try Again",
+    "logPrefix": "Application error:",
+    "errorId": "Error ID: {id}",
+    "footer": "If the problem persists, please contact support.",
+    "notFoundCode": "404",
+    "rootLogPrefix": "Application error:",
+    "warningSymbol": "⚠️"
   },
   "Auth": {
     "title": "Welcome Back",
@@ -120,12 +152,13 @@
     "google": "Google",
     "checkEmail": "Check your email",
     "checkEmailDesc": "We've sent you a magic link to sign in.",
-    "loading": "Authenticating..."
+    "loading": "Authenticating...",
+    "tryDifferentEmail": "Try a different email"
   },
   "Studio": {
     "Metadata": {
       "title": "Neural Studio",
-      "description": "Transform your 2D images into 3D models using our Trellis AI Engine."
+      "description": "Transform your 2D images into 3D models using our Bunshin AI Engine."
     },
     "JsonLd": {
       "name": "Bunshin 3D Studio",
@@ -135,7 +168,7 @@
     "Header": {
       "title": "Neural Studio",
       "subtitle": "Transform 2D matter into 3D structure.",
-      "version": "v2.0 // Trellis Engine Active",
+      "version": "v2.0 // Bunshin Engine Active",
       "status": "GPU CLUSTER ONLINE",
       "latency": "LATENCY: 45ms"
     },
@@ -173,13 +206,28 @@
       "uploadingResult": "Uploading result...",
       "complete": "Generation complete!",
       "downloadReady": "Your model is ready to download",
-      "error": "An error occurred during generation"
+      "error": "An error occurred during generation",
+      "downloadSuccess": "Download ready: {format}",
+      "downloadError": "Download failed: {error}",
+      "errorPrefix": "Error: {message}",
+      "generationFailed": "Generation failed.",
+      "insufficientCredits": "Insufficient credits. Need {count}.",
+      "missingImage": "Please upload an image.",
+      "missingPrompt": "Please enter a prompt.",
+      "imageUploaded": "Image uploaded to the cloud.",
+      "imageGenerated": "Image generated.",
+      "imageGenerationFailed": "Image generation failed.",
+      "cooldown": "Cooling down...",
+      "serverBusy": "Server is busy. Retrying...",
+      "rateLimited": "Rate limit reached. Please try again later.",
+      "serverSideFailure": "Server-side generation failed."
     },
     "Interface": {
       "DropZone": {
         "title": "Drop Image Source",
         "subtitle": "JPG, PNG, WEBP (Max 10MB)",
-        "scanning": "NEURAL SCANNING..."
+        "scanning": "NEURAL SCANNING...",
+        "previewAlt": "Uploaded image preview"
       },
       "Samples": {
         "title": "Examples",
@@ -203,7 +251,19 @@
         "system": "SYSTEM STATUS"
       },
       "Export": {
-        "title": "Export Options"
+        "title": "Export Options",
+        "readyTitle": "Ready to export",
+        "subtitle": "Choose a format to download your model.",
+        "labels": {
+          "glb": "GLB",
+          "web": "Web",
+          "obj": "OBJ",
+          "universal": "Universal",
+          "usdz": "USDZ",
+          "ar": "AR",
+          "stl": "STL",
+          "print": "Print"
+        }
       },
       "Formats": {
         "standard": {
@@ -223,14 +283,16 @@
         "label": "VIEWPORT [WEBGL]",
         "waiting": "Waiting for input...",
         "waitingStream": "WAITING FOR DATA STREAM...",
-        "engine": "TRELLIS ENGINE V1.0",
+        "engine": "BUNSHIN ENGINE V1.0",
         "axis": "XYZ AXIS: LOCKED",
         "autoRotate": "Auto-Rotate",
         "shadows": "Shadows: ON",
         "readyToGenerate": "Ready to generate",
         "generated2D": "Generated 2D",
         "webAR": "Web/AR",
-        "print": "Print"
+        "print": "Print",
+        "creatingMagic": "Creating your model...",
+        "referenceImage": "Reference image"
       },
       "Errors": {
         "fileTooLarge": "Image is too large (Max 10MB).",
@@ -238,12 +300,68 @@
         "conversionFailed": "Local conversion error. Check your browser.",
         "timeout": "The request took too long (>60s). Please try a smaller image or retry later."
       }
+    },
+    "CreditsPrompt": {
+      "title": "Credits",
+      "headline": "Your creativity deserves more.",
+      "description": "This generation requires {count} credits. Top up or invite a friend to earn free credits.",
+      "ctaPricing": "Buy Credits",
+      "ctaReferral": "Earn with Referrals",
+      "note": "Invite a friend: +{signup} on signup, +{payment} after their first purchase.",
+      "close": "Close"
     }
+  },
+  "HowTo": {
+    "name": "How to convert an image to 3D",
+    "description": "Turn any image into a downloadable 3D model in seconds with Bunshin 3D.",
+    "tools": {
+      "browser": "Web browser",
+      "image": "Image file (PNG, JPG, or WEBP)"
+    },
+    "steps": [
+      {
+        "name": "Upload an image",
+        "text": "Upload a clear PNG, JPG, or WEBP to start."
+      },
+      {
+        "name": "Let the AI generate",
+        "text": "Our AI reconstructs depth, geometry, and textures."
+      },
+      {
+        "name": "Download your 3D model",
+        "text": "Get your GLB or STL for print or games."
+      }
+    ]
   },
   "Pricing": {
     "Metadata": {
       "title": "Pricing & Credits",
-      "description": "Flexible credit packs for 3D generation. Pay once, use forever."
+      "description": "Flexible credit packs for 3D generation. Pay once, use forever.",
+      "siteName": "Bunshin 3D",
+      "ogImageAlt": "Bunshin 3D pricing and credit packs"
+    },
+    "Schema": {
+      "productName": "Bunshin 3D Credits",
+      "productDescription": "Flexible credit packs for 3D generation. Pay once, use forever.",
+      "brandName": "Bunshin 3D",
+      "offers": {
+        "discovery": {
+          "name": "Discovery Pack",
+          "description": "Starter pack for testing the 3D generator."
+        },
+        "creator": {
+          "name": "Creator Pack",
+          "description": "Best for designers and creators."
+        },
+        "studio": {
+          "name": "Studio Pack",
+          "description": "High-volume pack for studios and teams."
+        }
+      },
+      "breadcrumb": {
+        "home": "Home",
+        "pricing": "Pricing"
+      }
     },
     "Header": {
       "title": "Simple, Transparent",
@@ -261,28 +379,62 @@
       "priority": "Priority GPU Access",
       "support": "Priority Support"
     },
+    "Card": {
+      "perPack": "per pack",
+      "perCredit": "/ credit",
+      "savings": "Save {percent}%"
+    },
     "Packs": {
       "Discovery": {
         "name": "DISCOVERY",
-        "price": "2.99",
         "credits": "10 Credits",
         "description": "Perfect for testing.",
         "cta": "Buy Discovery Pack"
       },
       "Creator": {
         "name": "CREATOR",
-        "price": "9.99",
         "credits": "50 Credits",
         "description": "For designers & creators.",
         "cta": "Buy Creator Pack"
       },
       "Studio": {
         "name": "STUDIO",
-        "price": "29.99",
         "credits": "200 Credits",
         "description": "Intensive usage & pros.",
         "cta": "Buy Studio Pack"
       }
+    },
+    "Footer": {
+      "note": "Secure checkout. Credits never expire."
+    },
+    "Trust": {
+      "secure": "Secure Payment",
+      "noSub": "No Subscription",
+      "neverExpire": "Credits Never Expire",
+      "commercial": "Commercial License"
+    },
+    "SocialProof": {
+      "users": "Trusted by 1,200+ creators worldwide"
+    },
+    "FAQ": {
+      "title": "Frequently Asked Questions",
+      "q1": "What are credits used for?",
+      "a1": "Each credit allows you to generate one 3D model from an image or text prompt. Credits are consumed only on successful generations.",
+      "q2": "Do credits expire?",
+      "a2": "No! Your credits never expire. Buy once, use them whenever you want. There are no monthly subscriptions or hidden fees.",
+      "q3": "What formats can I export?",
+      "a3": "All generated 3D models can be exported in GLB (for game engines like Unity & Unreal) and STL (for 3D printing). Both formats are included with every generation.",
+      "q4": "Can I use the models commercially?",
+      "a4": "Yes! All credit packs include a full commercial license. You can use your generated 3D models in games, products, marketing materials, and more.",
+      "q5": "How does the AI generation work?",
+      "a5": "Our AI analyzes your 2D image or text description and generates a detailed 3D mesh with textures. The process takes about 30 seconds and runs on priority GPU servers."
+    },
+    "Checkout": {
+      "loginRequired": "Please log in to continue.",
+      "serverError": "Server error (status {status}).",
+      "noCheckoutUrl": "Checkout link is missing.",
+      "checkoutErrorLog": "Checkout error:",
+      "paymentInitFailed": "Payment initialization failed: {message}"
     }
   },
   "Account": {
@@ -307,7 +459,29 @@
       "emptyDesc": "Start your first 3D transformation in the Studio.",
       "emptyBtn": "Go to Studio",
       "download": "Download",
-      "date": "Created on"
+      "date": "Created on",
+      "confirmDelete": "Delete this generation?",
+      "generatedTime": "Generated at {time}",
+      "retentionNotice": "Your generations are saved here for quick access.",
+      "sourceAlt": "Source image",
+      "statuses": {
+        "processing": "Processing",
+        "succeeded": "Completed",
+        "failed": "Failed",
+        "queued": "Queued"
+      },
+      "downloadTitles": {
+        "glb": "Download GLB",
+        "obj": "Download OBJ",
+        "usdz": "Download USDZ",
+        "stl": "Download STL"
+      },
+      "formatLabels": {
+        "glb": "GLB",
+        "obj": "OBJ",
+        "usdz": "USDZ",
+        "stl": "STL"
+      }
     },
     "Settings": {
       "logout": "Log Out",
@@ -336,7 +510,8 @@
       "burn": "GPU Burn Rate",
       "today": "today",
       "gpuCost": "Estimated GPU cost",
-      "errorRate": "Error Rate"
+      "errorRate": "Error Rate",
+      "arpuSubValue": "{symbol}{value} ARPU"
     },
     "Tables": {
       "usersTitle": "Recent User Acquisitions",
@@ -404,10 +579,49 @@
       "inspectTitle": "User Generations",
       "noGenerations": "No generations found",
       "totalGenerations": "{count} generation(s) total",
-      "close": "Close"
+      "close": "Close",
+      "customAmountPlaceholder": "Enter amount",
+      "deleteKeyword": "DELETE",
+      "rolesShort": {
+        "admin": "ADMIN",
+        "moderator": "MOD",
+        "user": "USER"
+      },
+      "statusActive": "Active",
+      "statusBanned": "Banned",
+      "unknownInitial": "?"
+    },
+    "Errors": {
+      "actionFailed": "Action failed. Please try again.",
+      "changeRoleFailed": "Failed to change role.",
+      "grantCreditsFailed": "Failed to grant credits.",
+      "loadUsers": "Failed to load users.",
+      "updateSystemStatus": "Failed to update system status.",
+      "serviceRoleMissing": "Service role key is missing.",
+      "userNotFound": "User not found.",
+      "banUpdateFailed": "Failed to update ban status.",
+      "deleteProfileFailed": "Failed to delete user profile.",
+      "fetchUsersFailed": "Failed to fetch users.",
+      "updateSettingsFailed": "Failed to update settings.",
+      "notAuthenticated": "Not authenticated.",
+      "notAuthorized": "Not authorized."
+    },
+    "Statuses": {
+      "processing": "Processing",
+      "succeeded": "Succeeded",
+      "failed": "Failed",
+      "queued": "Queued"
     }
   },
   "Legal": {
+    "Metadata": {
+      "termsTitle": "Terms of Service - Bunshin 3D",
+      "termsDescription": "Read the terms of service for Bunshin 3D.",
+      "privacyTitle": "Privacy Policy - Bunshin 3D",
+      "privacyDescription": "Learn how Bunshin 3D collects and uses your data.",
+      "mentionsTitle": "Legal Mentions - Bunshin 3D",
+      "mentionsDescription": "Company and hosting information for Bunshin 3D."
+    },
     "Terms": {
       "title": "Terms of Service",
       "lastUpdated": "Last updated: January 2026",
@@ -435,7 +649,7 @@
       "editorTitle": "Publisher",
       "editorText": "Bunshin 3D\nFrance\nEmail: contact@metalya.fr",
       "hostTitle": "Hosting",
-      "hostText": "Qualify",
+      "hostText": "Vercel",
       "creditsTitle": "Credits",
       "creditsText": "Design & Development by Bunshin 3D Team."
     }
@@ -453,7 +667,23 @@
     "processing": "Processing...",
     "previous": "Previous",
     "next": "Next",
-    "pageOf": "Page {page} of {total}"
+    "pageOf": "Page {page} of {total}",
+    "brandLogoAlt": "Bunshin 3D Logo",
+    "creditsWithCount": "{count, plural, one {# credit} other {# credits}}",
+    "currencySymbols": {
+      "eur": "€",
+      "usd": "$"
+    },
+    "downloads": {
+      "fileName": "bunshin3d-{timestamp}.{extension}"
+    },
+    "errors": {
+      "downloadErrorLog": "Download error:",
+      "downloadFailed": "Download failed.",
+      "noModelUrl": "Model URL is missing.",
+      "unknownFormat": "Unknown format."
+    },
+    "pending": "Pending"
   },
   "TextTo3D": {
     "Metadata": {
@@ -517,9 +747,163 @@
       "message": "This will cost 5 credits. Premium models offer cinema-quality results with photorealistic details."
     }
   },
+  "Referral": {
+    "title": "Referral Program",
+    "linkLabel": "Your referral link",
+    "linkUnavailable": "Link unavailable",
+    "creditsLabel": "Credits earned from referrals",
+    "copyLabel": "Copy link",
+    "copiedLabel": "Copied!",
+    "Promo": {
+      "headerText": "Invite friends, earn free credits",
+      "headerCta": "Learn More",
+      "badge": "Referral Program",
+      "sectionTitle": "Earn Free Credits",
+      "sectionSubtitle": "Share Bunshin 3D with your friends and earn credits for every signup and purchase.",
+      "bonusTitle": "Referral Bonuses",
+      "bonusSubtitle": "Earn credits at every step",
+      "bonusBadgeSignup": "+2 credits",
+      "bonusBadgePayment": "+10 credits",
+      "bonusCaption": "No limits. Stack credits.",
+      "steps": {
+        "invite": {
+          "title": "Share Your Link",
+          "description": "Send your unique referral link to friends",
+          "desc": "Send your unique referral link to friends"
+        },
+        "signup": {
+          "title": "Friend Signs Up",
+          "description": "They create an account using your link",
+          "desc": "They create an account using your link"
+        },
+        "pay": {
+          "title": "Friend Purchases",
+          "description": "When they buy credits, you both win",
+          "desc": "When they buy credits, you both win"
+        }
+      },
+      "ctaPrimary": "Copy Referral Link",
+      "ctaSecondary": "Go to Dashboard",
+      "highlightTag": "FREE CREDITS",
+      "pricingTitle": "Refer & Save",
+      "pricingSubtitle": "Earn credits by inviting friends",
+      "footerTitle": "Invite your friends and earn free credits for every signup!",
+      "footerCta": "Start Earning"
+    }
+  },
   "Showcase": {
     "generatedAsset": "Generated Asset",
     "viewModel": "View Model",
-    "download": "Download"
+    "download": "Download",
+    "title": "Generated with Bunshin",
+    "subtitle": "From simple logos to complex characters. See what our AI can create.",
+    "badges": {
+      "premium": "Premium",
+      "standard": "Standard"
+    },
+    "examples": {
+      "woodenChair": {
+        "name": "Wooden Chair",
+        "prompt": "A simple rustic wooden chair with carved backrest",
+        "alt": "3D wooden chair model generated by Bunshin AI"
+      },
+      "coffeeMug": {
+        "name": "Coffee Mug",
+        "prompt": "A ceramic coffee mug with minimalist design",
+        "alt": "3D coffee mug model generated by Bunshin AI"
+      },
+      "rubberDuck": {
+        "name": "Rubber Duck",
+        "prompt": "A classic yellow rubber duck bath toy",
+        "alt": "3D rubber duck model generated by Bunshin AI"
+      },
+      "cactusPot": {
+        "name": "Cactus Pot",
+        "prompt": "A small cactus in a terracotta pot with pebbles",
+        "alt": "3D cactus pot model generated by Bunshin AI"
+      },
+      "katanaSword": {
+        "name": "Katana Sword",
+        "prompt": "A traditional Japanese katana with wrapped handle and curved blade",
+        "alt": "3D katana sword model generated by Bunshin AI"
+      },
+      "shuriken": {
+        "name": "Shuriken",
+        "prompt": "A sharp four-pointed shuriken throwing star with engraved patterns",
+        "alt": "3D shuriken throwing star model generated by Bunshin AI"
+      },
+      "battleAxe": {
+        "name": "Battle Axe",
+        "prompt": "A double-headed viking battle axe with rune-carved wooden handle",
+        "alt": "3D battle axe model generated by Bunshin AI"
+      },
+      "wizardStaff": {
+        "name": "Wizard Staff",
+        "prompt": "A mystical wizard staff with glowing crystal orb and twisted wood",
+        "alt": "3D wizard staff model generated by Bunshin AI"
+      }
+    },
+    "items": {
+      "poubelle": "Trash Can",
+      "shuriken": "Shuriken",
+      "robot": "Robot",
+      "coffre": "Chest",
+      "chaise": "Chair",
+      "hache": "Axe",
+      "tasse": "Mug",
+      "lampe": "Lamp"
+    }
+  },
+  "OTO": {
+    "close": "Close",
+    "badge": "Exclusive Welcome Offer",
+    "title": "Your creativity deserves better.",
+    "subtitle": "Unlock your first credits at an unbeatable price. This offer expires soon.",
+    "discountBadge": "UP TO -67% OFF",
+    "discovery": {
+      "name": "Discovery",
+      "price": "0.99€",
+      "originalPrice": "2.99€",
+      "credits": "10 credits included"
+    },
+    "studio": {
+      "name": "Studio Pro",
+      "price": "19.99€",
+      "originalPrice": "29.99€",
+      "credits": "200 credits included"
+    },
+    "footer": "One-time offer. Credits never expire.",
+    "banner": {
+      "text": "Welcome offer expires in",
+      "cta": "Claim Now"
+    }
+  },
+  "FAQ": {
+    "items": [
+      {
+        "question": "How does Bunshin 3D work?",
+        "answer": "Bunshin 3D uses advanced AI to convert 2D images and text descriptions into 3D models in GLB and STL formats. Simply upload an image or describe what you want, and our AI generates a production-ready 3D model."
+      },
+      {
+        "question": "What formats are supported?",
+        "answer": "We support GLB (for game engines like Unity and Unreal), STL (for 3D printing), and OBJ formats. All models come with optimized topology."
+      },
+      {
+        "question": "How many credits do I need?",
+        "answer": "Standard quality costs 1 credit per generation. Premium quality costs 5 credits for cinema-grade results with photorealistic textures."
+      },
+      {
+        "question": "Do credits expire?",
+        "answer": "No, your credits never expire. Buy once, use whenever you want."
+      },
+      {
+        "question": "Can I use the models commercially?",
+        "answer": "Yes! All generated models are yours to use commercially, including for games, 3D printing, and professional projects."
+      },
+      {
+        "question": "How does the referral program work?",
+        "answer": "Share your unique referral link. When a friend signs up, you get +2 credits. When they make their first purchase, you get +10 credits. There are no limits on referral earnings."
+      }
+    ]
   }
 }

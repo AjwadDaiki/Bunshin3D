@@ -75,7 +75,6 @@ export default async function StudioPage({
     redirect(`/${locale}/login`);
   }
 
-  const tHeader = await getTranslations("Studio.Header");
   const tJsonLd = await getTranslations("Studio.JsonLd");
 
   const jsonLd = {
@@ -103,32 +102,6 @@ export default async function StudioPage({
         </div>
 
         <div className="relative z-10 container mx-auto px-4 py-8 md:py-12 max-w-7xl pt-24">
-          <header className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/10 pb-8 animate-in fade-in slide-in-from-top-4 duration-700">
-            <div className="space-y-2">
-              <h1 className="text-4xl md:text-5xl font-bold tracking-tighter bg-linear-to-r from-white via-zinc-400 to-zinc-600 bg-clip-text text-transparent">
-                {tHeader("title")}
-                <span className="text-indigo-500">.</span>
-              </h1>
-              <p className="text-zinc-400 max-w-lg text-lg leading-relaxed">
-                {tHeader("subtitle")} <br />
-                <span className="text-xs uppercase tracking-widest text-zinc-500 font-mono">
-                  {tHeader("version")}
-                </span>
-              </p>
-            </div>
-
-            <div className="flex items-center gap-4 text-xs font-mono text-zinc-500">
-              <div className="flex items-center gap-2">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                </span>
-                {tHeader("status")}
-              </div>
-              <div className="h-4 w-px bg-zinc-800"></div>
-              <div>{tHeader("latency")}</div>
-            </div>
-          </header>
           <StudioInterface />
         </div>
       </main>

@@ -92,6 +92,23 @@ export default async function AccountPage({
 
   const profile = profileReq.data;
   const generations = generationsReq.data || [];
+  const profileEmail =
+    profile && typeof profile.email === "string" ? profile.email : undefined;
+  const metadataEmail =
+    typeof user.user_metadata?.email === "string"
+      ? user.user_metadata.email
+      : undefined;
+  const resolvedEmail = user.email ?? profileEmail ?? metadataEmail;
+
+  if (!resolvedEmail) {
+    redirect(`/${locale}/login?error=missing_email`);
+  }
+
+  const accountUser = {
+    id: user.id,
+    email: resolvedEmail,
+    created_at: user.created_at,
+  };
 
   return (
     <div className="min-h-screen bg-zinc-950 text-white pt-24 pb-20 px-4 relative overflow-hidden">
@@ -103,7 +120,7 @@ export default async function AccountPage({
 
       <div className="relative z-10 container mx-auto max-w-6xl">
         <UserDashboard
-          user={user}
+          user={accountUser}
           profile={profile}
           generations={generations}
         />

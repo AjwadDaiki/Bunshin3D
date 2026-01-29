@@ -1,11 +1,15 @@
+import { createTranslator } from "next-intl";
+import messages from "@/messages/en.json";
+
+const t = createTranslator({ locale: "en", messages, namespace: "SEO" });
+
 export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "Bunshin3D",
+  name: t("organizationName"),
   url: process.env.NEXT_PUBLIC_APP_URL,
   logo: `${process.env.NEXT_PUBLIC_APP_URL}/logo.png`,
-  description:
-    "Transform your images into stunning 3D models with AI. The most advanced 2D to 3D conversion platform.",
+  description: t("organizationDescription"),
   sameAs: [
     "https://twitter.com/bunshin3d",
     "https://github.com/bunshin3d",
@@ -14,7 +18,7 @@ export const organizationSchema = {
   contactPoint: {
     "@type": "ContactPoint",
     email: "support@bunshin3d.com",
-    contactType: "Customer Support",
+    contactType: t("contactType"),
     availableLanguage: ["en", "fr", "es", "de", "ja", "zh"],
   },
 };

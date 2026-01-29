@@ -1,13 +1,13 @@
 import { createClient } from "@supabase/supabase-js";
+import { getAdminTranslations } from "@/lib/admin/i18n";
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY!;
 
-export function createAdminClient() {
+export async function createAdminClient() {
   if (!serviceRoleKey) {
-    throw new Error(
-      "SUPABASE_SERVICE_ROLE_KEY is not set. Add it to your .env file."
-    );
+    const t = await getAdminTranslations("Admin.Errors");
+    throw new Error(t("serviceRoleMissing"));
   }
 
   return createClient(supabaseUrl, serviceRoleKey, {
@@ -18,4 +18,4 @@ export function createAdminClient() {
   });
 }
 
-export type AdminClient = ReturnType<typeof createAdminClient>;
+export type AdminClient = Awaited<ReturnType<typeof createAdminClient>>;

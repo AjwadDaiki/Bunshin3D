@@ -1,10 +1,14 @@
 import { MetadataRoute } from "next";
+import { createTranslator } from "next-intl";
+import messages from "@/messages/en.json";
 
 export default function manifest(): MetadataRoute.Manifest {
+  const t = createTranslator({ locale: "en", messages, namespace: "Metadata" });
+
   return {
-    name: "Bunshin3D - AI 3D Generation",
-    short_name: "Bunshin3D",
-    description: "Transform images into 3D models using AI",
+    name: t("applicationName"),
+    short_name: t("applicationName"),
+    description: t("description"),
     start_url: "/",
     display: "standalone",
     background_color: "#0a0a0f",
@@ -35,15 +39,12 @@ export default function manifest(): MetadataRoute.Manifest {
         src: "/icon-192.png",
         sizes: "192x192",
         type: "image/png",
-        // @ts-expect-error Next.js type definition is too strict for "any maskable"
-        purpose: "any maskable",
       },
       {
         src: "/icon-512.png",
         sizes: "512x512",
         type: "image/png",
-        // @ts-expect-error Next.js type definition is too strict for "any maskable"
-        purpose: "any maskable",
+        purpose: "maskable",
       },
     ],
   };

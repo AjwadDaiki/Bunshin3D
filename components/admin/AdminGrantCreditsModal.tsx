@@ -33,7 +33,7 @@ export default function AdminGrantCreditsModal({ user, onClose, onSuccess }: Pro
       onSuccess();
       onClose();
     } catch (err: any) {
-      setError(err.message || "Failed to grant credits");
+      setError(err.message || t("Errors.grantCreditsFailed"));
     } finally {
       setLoading(false);
     }
@@ -104,7 +104,7 @@ export default function AdminGrantCreditsModal({ user, onClose, onSuccess }: Pro
               type="number"
               value={customAmount}
               onChange={(e) => setCustomAmount(e.target.value)}
-              placeholder="0"
+              placeholder={t("Users.customAmountPlaceholder")}
               className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-brand-primary transition-colors"
             />
           </div>

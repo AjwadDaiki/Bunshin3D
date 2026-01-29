@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { Suspense } from "react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
@@ -38,6 +39,7 @@ export default async function LoginPage({
   }
 
   setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: "Auth" });
 
   return (
     <div className="min-h-screen w-full flex items-center justify-center bg-zinc-950 relative overflow-hidden">
@@ -48,7 +50,15 @@ export default async function LoginPage({
       </div>
 
       <div className="relative z-10 w-full max-w-md px-4">
-        <AuthForm />
+        <Suspense
+          fallback={
+            <div className="bg-zinc-900/50 border border-white/10 rounded-2xl p-8 backdrop-blur-md shadow-2xl">
+              <p className="text-center text-sm text-zinc-400">{t("loading")}</p>
+            </div>
+          }
+        >
+          <AuthForm />
+        </Suspense>
       </div>
     </div>
   );

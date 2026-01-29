@@ -10,10 +10,13 @@ import { routing } from "@/i18n/routing";
 import "../globals.css";
 import { cn } from "@/lib/utils";
 import { baseMetadataConfig } from "@/lib/seo-config";
-import Script from "next/script";
 import HeaderNew from "@/components/layout/HeaderNew";
 import FooterNew from "@/components/layout/FooterNew";
-import { organizationSchema } from "@/lib/schemas/organization";
+import HeadLinks from "@/components/layout/HeadLinks";
+import AnalyticsScripts from "@/components/layout/AnalyticsScripts";
+import ModelViewerScript from "@/components/layout/ModelViewerScript";
+import OTOBanner from "@/components/layout/OTOBanner";
+import { CurrencyProvider } from "@/components/providers/CurrencyProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -115,59 +118,15 @@ export default async function LocaleLayout({
 
   setRequestLocale(locale);
   const messages = await getMessages();
+  const tCommon = await getTranslations({ locale, namespace: "Common" });
 
   const gaId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS;
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 
   return (
     <html lang={locale} className="dark" suppressHydrationWarning>
       <head>
-        <link rel="preconnect" href="https://ajax.googleapis.com" />
-        <link rel="dns-prefetch" href="https://ajax.googleapis.com" />
-        <link rel="preconnect" href={process.env.NEXT_PUBLIC_SUPABASE_URL} />
-        <link rel="dns-prefetch" href={process.env.NEXT_PUBLIC_SUPABASE_URL} />
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
-
-        <link rel="icon" href="/favicon.ico" sizes="32x32" />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/icon-16x16.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/icon-32x32.png"
-        />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/apple-touch-icon.png"
-        />
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#9945ff" />
-
-        <link rel="manifest" href="/manifest.webmanifest" />
-
-        <meta name="msapplication-TileColor" content="#0a0a0f" />
-        <meta name="msapplication-TileImage" content="/mstile-150x150.png" />
-
-        <meta name="theme-color" content="#9945ff" />
-        <meta name="color-scheme" content="dark" />
-
-        <link
-          rel="preload"
-          href="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"
-          as="script"
-          crossOrigin="anonymous"
-        />
-
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationSchema),
-          }}
-        />
+        <HeadLinks supabaseUrl={supabaseUrl} />
       </head>
       <body
         className={cn(
@@ -177,39 +136,19 @@ export default async function LocaleLayout({
         )}
       >
         <a href="#main-content" className="skip-link">
-          Skip to main content
+          {tCommon("skipToContent")}
         </a>
 
-        {gaId && (
-          <>
-            <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
-              strategy="afterInteractive"
-            />
-            <Script id="google-analytics" strategy="afterInteractive">
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${gaId}', {
-                  page_path: window.location.pathname,
-                });
-              `}
-            </Script>
-          </>
-        )}
-
-        <Script
-          type="module"
-          src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"
-          strategy="lazyOnload"
-          crossOrigin="anonymous"
-        />
+        <AnalyticsScripts gaId={gaId} />
+        <ModelViewerScript />
 
         <NextIntlClientProvider messages={messages}>
-          <HeaderNew />
-          <main id="main-content">{children}</main>
-          <FooterNew />
+          <CurrencyProvider>
+            <OTOBanner />
+            <HeaderNew />
+            <main id="main-content">{children}</main>
+            <FooterNew />
+          </CurrencyProvider>
         </NextIntlClientProvider>
       </body>
     </html>

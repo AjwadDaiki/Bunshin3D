@@ -15,8 +15,8 @@ export default function LocaleError({
   const t = useTranslations("Error");
 
   useEffect(() => {
-    console.error("Locale Error:", error);
-  }, [error]);
+    console.error(t("logPrefix"), error);
+  }, [error, t]);
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-surface-1 relative overflow-hidden">
@@ -45,7 +45,7 @@ export default function LocaleError({
           {error.digest && (
             <div className="mb-6 px-4 py-2 bg-white/5 rounded-lg border border-white/10">
               <p className="text-xs text-gray-500 font-mono">
-                Error ID: {error.digest}
+                {t("errorId", { id: error.digest })}
               </p>
             </div>
           )}
@@ -68,9 +68,7 @@ export default function LocaleError({
           </div>
         </div>
 
-        <p className="mt-8 text-xs text-gray-600">
-          Bunshin 3D &bull; AI-Powered 3D Generation
-        </p>
+        <p className="mt-8 text-xs text-gray-600">{t("footer")}</p>
       </div>
     </div>
   );

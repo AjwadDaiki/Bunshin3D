@@ -6,8 +6,10 @@ import JsonLd from "@/components/seo/JsonLd";
 import LandingPage from "@/components/home/LandingPage";
 import PricingTable from "@/components/marketing/PricingTable";
 import { baseMetadataConfig } from "@/lib/seo-config";
-import { generateFAQSchema, getFAQDataForLocale } from "@/lib/schemas/faq";
+import { generateFAQSchema, getFAQData } from "@/lib/schemas/faq";
 import { generateHowToSchema } from "@/lib/schemas/howto";
+import { getHomeSchemas } from "@/lib/schemas/home";
+import ReferralPromoPanel from "@/components/referral/ReferralPromoPanel";
 
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://bunshin3d.com";
 
@@ -104,52 +106,14 @@ export default async function HomePage({
     namespace: "Pricing.Header",
   });
 
-  const tHome = await getTranslations({ locale, namespace: "Home" });
-
-  const websiteSchema = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "@id": `${APP_URL}/#website`,
-    name: "Bunshin 3D",
-    url: APP_URL,
-    description: tHome("Hero.subtitle"),
-    inLanguage: localeToLang[locale] || "en-US",
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: `${APP_URL}/search?q={search_term_string}`,
-      },
-      "query-input": "required name=search_term_string",
-    },
-  };
-
-  const softwareSchema = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "@id": `${APP_URL}/#software`,
-    name: "Bunshin 3D",
-    applicationCategory: "DesignApplication",
-    operatingSystem: "Web Browser",
-    offers: {
-      "@type": "Offer",
-      price: "0",
-      priceCurrency: "EUR",
-      description: tHome("Hero.ctaPrimary"),
-    },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.8",
-      ratingCount: "1247",
-      bestRating: "5",
-      worstRating: "1",
-    },
-    featureList: tHome("Features.speedTitle") + ", " + tHome("Features.topologyTitle") + ", " + tHome("Features.exportTitle"),
-  };
-
-  const faqData = getFAQDataForLocale(locale);
+  const faqData = await getFAQData(locale);
   const faqSchema = generateFAQSchema(faqData, locale);
-  const howToSchema = generateHowToSchema(locale);
+  const howToSchema = await generateHowToSchema(locale);
+  const { websiteSchema, softwareSchema } = await getHomeSchemas(
+    locale,
+    APP_URL,
+    localeToLang,
+  );
 
   return (
     <>
@@ -180,6 +144,10 @@ export default async function HomePage({
           </div>
 
           <PricingTable />
+
+          <div className="mt-16 max-w-5xl mx-auto">
+            <ReferralPromoPanel />
+          </div>
         </div>
       </section>
     </>

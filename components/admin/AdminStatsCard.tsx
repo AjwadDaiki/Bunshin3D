@@ -2,6 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { ReactNode } from "react";
+import { ArrowDownRight, ArrowRight, ArrowUpRight } from "@phosphor-icons/react";
 
 type AdminStatsCardProps = {
   icon: ReactNode;
@@ -50,12 +51,12 @@ export default function AdminStatsCard({
                 "flex items-center gap-1 text-xs font-medium px-2 py-1 rounded-full",
                 trend === "up" && "bg-green-500/10 text-green-400",
                 trend === "down" && "bg-red-500/10 text-red-400",
-                trend === "neutral" && "bg-gray-500/10 text-gray-400"
+                trend === "neutral" && "bg-gray-500/10 text-gray-400",
               )}
             >
-              {trend === "up" && "↑"}
-              {trend === "down" && "↓"}
-              {trend === "neutral" && "→"}
+              {trend === "up" && <ArrowUpRight className="w-3 h-3" weight="bold" />}
+              {trend === "down" && <ArrowDownRight className="w-3 h-3" weight="bold" />}
+              {trend === "neutral" && <ArrowRight className="w-3 h-3" weight="bold" />}
             </div>
           )}
         </div>

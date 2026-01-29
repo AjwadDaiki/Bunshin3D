@@ -5,6 +5,8 @@ import { routing } from "@/i18n/routing";
 import JsonLd from "@/components/seo/JsonLd";
 import PricingTable from "@/components/marketing/PricingTable";
 import { baseMetadataConfig } from "@/lib/seo-config";
+import { getPricingSchemas } from "@/lib/schemas/pricing";
+import ReferralPromoPanel from "@/components/referral/ReferralPromoPanel";
 
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://bunshin3d.com";
 
@@ -34,7 +36,7 @@ export async function generateMetadata({
       type: "website",
       locale: locale === "fr" ? "fr_FR" : "en_US",
       url: `${APP_URL}/${locale}/pricing`,
-      siteName: "Bunshin 3D",
+      siteName: t("siteName"),
       title: t("title"),
       description: t("description"),
       images: [
@@ -42,7 +44,7 @@ export async function generateMetadata({
           url: `${APP_URL}/og-image.jpg`,
           width: 1200,
           height: 630,
-          alt: locale === "fr" ? "Tarifs Bunshin 3D" : "Bunshin 3D Pricing",
+          alt: t("ogImageAlt"),
         },
       ],
     },
@@ -73,100 +75,35 @@ export default async function PricingPage({
   setRequestLocale(locale);
 
   const tHeader = await getTranslations("Pricing.Header");
+  const tFooter = await getTranslations("Pricing.Footer");
+  const tTrust = await getTranslations("Pricing.Trust");
+  const tFaq = await getTranslations("Pricing.FAQ");
+  const tSocial = await getTranslations("Pricing.SocialProof");
+  const { productSchema, breadcrumbSchema, faqSchema } =
+    await getPricingSchemas(locale, APP_URL);
 
-  const productSchema = {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "@id": `${APP_URL}/#product`,
-    name: locale === "fr" ? "Crédits Bunshin 3D" : "Bunshin 3D Credits",
-    description: locale === "fr"
-      ? "Crédits pour la génération de modèles 3D par IA"
-      : "Credits for AI 3D Model Generation",
-    brand: {
-      "@type": "Brand",
-      name: "Bunshin 3D",
-    },
-    image: `${APP_URL}/og-image.jpg`,
-    offers: {
-      "@type": "AggregateOffer",
-      priceCurrency: "EUR",
-      lowPrice: "2.99",
-      highPrice: "29.99",
-      offerCount: "3",
-      availability: "https://schema.org/InStock",
-      offers: [
-        {
-          "@type": "Offer",
-          name: locale === "fr" ? "Pack Découverte" : "Discovery Pack",
-          price: "2.99",
-          priceCurrency: "EUR",
-          description: locale === "fr" ? "10 Crédits - Parfait pour tester" : "10 Credits - Perfect for testing",
-          availability: "https://schema.org/InStock",
-          priceValidUntil: "2027-12-31",
-          url: `${APP_URL}/${locale}/pricing`,
-        },
-        {
-          "@type": "Offer",
-          name: locale === "fr" ? "Pack Créateur" : "Creator Pack",
-          price: "9.99",
-          priceCurrency: "EUR",
-          description: locale === "fr" ? "50 Crédits - Pour designers et créateurs" : "50 Credits - For designers & creators",
-          availability: "https://schema.org/InStock",
-          priceValidUntil: "2027-12-31",
-          url: `${APP_URL}/${locale}/pricing`,
-        },
-        {
-          "@type": "Offer",
-          name: locale === "fr" ? "Pack Studio" : "Studio Pack",
-          price: "29.99",
-          priceCurrency: "EUR",
-          description: locale === "fr" ? "200 Crédits - Usage intensif et professionnels" : "200 Credits - Intensive usage & pros",
-          availability: "https://schema.org/InStock",
-          priceValidUntil: "2027-12-31",
-          url: `${APP_URL}/${locale}/pricing`,
-        },
-      ],
-    },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.8",
-      reviewCount: "856",
-      bestRating: "5",
-      worstRating: "1",
-    },
-  };
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: locale === "fr" ? "Accueil" : "Home",
-        item: `${APP_URL}/${locale}`,
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: locale === "fr" ? "Tarifs" : "Pricing",
-        item: `${APP_URL}/${locale}/pricing`,
-      },
-    ],
-  };
+  const faqItems = [
+    { q: tFaq("q1"), a: tFaq("a1") },
+    { q: tFaq("q2"), a: tFaq("a2") },
+    { q: tFaq("q3"), a: tFaq("a3") },
+    { q: tFaq("q4"), a: tFaq("a4") },
+    { q: tFaq("q5"), a: tFaq("a5") },
+  ];
 
   return (
     <>
       <JsonLd data={productSchema} />
       <JsonLd data={breadcrumbSchema} />
+      <JsonLd data={faqSchema} />
 
       <div className="min-h-screen bg-zinc-950 text-white pt-32 pb-20 px-4 overflow-hidden relative">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-indigo-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-indigo-500/10 rounded-full blur-[120px] pointer-events-none" />
 
-        <div className="relative z-10 container mx-auto text-center space-y-6 mb-16">
+        {/* Header */}
+        <div className="relative z-10 container mx-auto text-center space-y-6 mb-10">
           <h1 className="text-5xl md:text-6xl font-bold tracking-tighter">
             {tHeader("title")} <br className="hidden md:block" />
-            <span className="bg-gradient-to-r from-white via-indigo-200 to-indigo-500 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-white via-indigo-200 to-indigo-500 bg-clip-text text-transparent">
               {tHeader("titleHighlight")}
             </span>
           </h1>
@@ -175,12 +112,78 @@ export default async function PricingPage({
           </p>
         </div>
 
+        {/* Trust bar */}
+        <div className="relative z-10 max-w-3xl mx-auto mb-16">
+          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-zinc-400">
+            <span className="flex items-center gap-2">
+              <svg className="w-4 h-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+              {tTrust("secure")}
+            </span>
+            <span className="hidden sm:inline text-zinc-700">|</span>
+            <span className="flex items-center gap-2">
+              <svg className="w-4 h-4 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" /></svg>
+              {tTrust("noSub")}
+            </span>
+            <span className="hidden sm:inline text-zinc-700">|</span>
+            <span className="flex items-center gap-2">
+              <svg className="w-4 h-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              {tTrust("neverExpire")}
+            </span>
+            <span className="hidden sm:inline text-zinc-700">|</span>
+            <span className="flex items-center gap-2">
+              <svg className="w-4 h-4 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>
+              {tTrust("commercial")}
+            </span>
+          </div>
+          <p className="text-center text-xs text-zinc-500 mt-4">
+            {tSocial("users")}
+          </p>
+        </div>
+
+        {/* Pricing cards */}
         <div className="relative z-10">
           <PricingTable />
         </div>
 
+        {/* Referral */}
+        <div className="relative z-10 mt-16 max-w-5xl mx-auto px-4">
+          <ReferralPromoPanel />
+        </div>
+
+        {/* FAQ */}
+        <div className="relative z-10 mt-20 max-w-3xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-10 tracking-tight">
+            {tFaq("title")}
+          </h2>
+          <div className="space-y-4">
+            {faqItems.map((item, i) => (
+              <details
+                key={i}
+                className="group rounded-2xl border border-white/10 bg-zinc-900/50 overflow-hidden"
+              >
+                <summary className="flex items-center justify-between cursor-pointer px-6 py-5 text-left font-medium text-zinc-200 hover:text-white transition-colors">
+                  <span>{item.q}</span>
+                  <svg
+                    className="w-5 h-5 shrink-0 text-zinc-500 transition-transform duration-200 group-open:rotate-180"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <div className="px-6 pb-5 text-sm text-zinc-400 leading-relaxed">
+                  {item.a}
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+
+        {/* Footer note */}
         <div className="text-center mt-20 text-zinc-500 text-sm font-mono uppercase tracking-widest opacity-60">
-          {locale === "fr" ? "Paiement sécurisé via Stripe • Livraison instantanée" : "Secure Payment via Stripe • Instant Delivery"}
+          {tFooter("note")}
         </div>
       </div>
     </>

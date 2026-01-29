@@ -12,6 +12,7 @@ import {
 } from "@phosphor-icons/react";
 import { changeUserRole } from "@/app/actions/admin";
 import { cn } from "@/lib/utils";
+import AdminRoleOption from "./AdminRoleOption";
 
 type Props = {
   user: {
@@ -40,7 +41,7 @@ export default function AdminChangeRoleModal({ user, onClose, onSuccess }: Props
   };
 
   const [selectedRole, setSelectedRole] = useState<"user" | "moderator" | "admin">(
-    getCurrentRole()
+    getCurrentRole(),
   );
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -59,7 +60,7 @@ export default function AdminChangeRoleModal({ user, onClose, onSuccess }: Props
       onSuccess();
       onClose();
     } catch (err: any) {
-      setError(err.message || "Failed to change role");
+      setError(err.message || t("Errors.changeRoleFailed"));
     } finally {
       setLoading(false);
     }
@@ -100,31 +101,15 @@ export default function AdminChangeRoleModal({ user, onClose, onSuccess }: Props
 
           <div className="space-y-3">
             {ROLES.map(({ value, icon: Icon, color, bg }) => (
-              <button
+              <AdminRoleOption
                 key={value}
-                onClick={() => setSelectedRole(value)}
-                className={cn(
-                  "w-full p-4 rounded-xl border transition-all flex items-center gap-4",
-                  selectedRole === value
-                    ? "border-brand-primary bg-brand-primary/10"
-                    : "border-white/10 bg-white/5 hover:bg-white/10"
-                )}
-              >
-                <div className={cn("p-2 rounded-lg", bg)}>
-                  <Icon className={cn("w-5 h-5", color)} weight="fill" />
-                </div>
-                <div className="text-left">
-                  <p className="font-medium text-white capitalize">
-                    {t(`Users.roles.${value}`)}
-                  </p>
-                  <p className="text-xs text-gray-400">
-                    {t(`Users.roleDesc.${value}`)}
-                  </p>
-                </div>
-                {selectedRole === value && (
-                  <div className="ml-auto w-3 h-3 rounded-full bg-brand-primary" />
-                )}
-              </button>
+                value={value}
+                selected={selectedRole === value}
+                onSelect={setSelectedRole}
+                Icon={Icon}
+                color={color}
+                bg={bg}
+              />
             ))}
           </div>
 

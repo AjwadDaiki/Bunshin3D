@@ -6,6 +6,7 @@ export default function NotFound() {
 
   return (
     <NotFoundHero
+      code={t("notFoundCode")}
       title={t("notFoundTitle")}
       description={t("notFoundDescription")}
       action={t("backHome")}

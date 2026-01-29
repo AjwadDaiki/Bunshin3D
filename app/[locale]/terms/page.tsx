@@ -1,5 +1,5 @@
 import { useTranslations } from "next-intl";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 
 export function generateStaticParams() {
@@ -12,11 +12,11 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "Legal.Metadata" });
 
   return {
-    title: "Terms of Service | Bunshin3D",
-    description:
-      "Terms and conditions for using Bunshin3D AI 3D generation service",
+    title: t("termsTitle"),
+    description: t("termsDescription"),
     robots: { index: true, follow: true },
     alternates: {
       canonical: `${process.env.NEXT_PUBLIC_APP_URL}/${locale}/terms`,

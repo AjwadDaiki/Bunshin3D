@@ -1,39 +1,39 @@
-import { NextResponse } from "next/server";
+﻿import { NextRequest, NextResponse } from "next/server";
 import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
-
+import { getApiTranslations } from "@/lib/api-i18n";
+import { storeModelFromUrl } from "@/lib/generation/storeModel";
+import { resolveModelUrl } from "@/lib/generation-utils";
+export const dynamic = "force-dynamic";
 export async function GET(
-  request: Request,
-  { params }: { params: Promise<{ id: string }> }
+  request: NextRequest,
+  { params }: { params: Promise<{ id: string }> },
 ) {
+  const t = await getApiTranslations(request, "Api.Status");
   try {
     const { id } = await params;
-
     if (!id) {
       return NextResponse.json(
-        { error: "Prediction ID is required" },
-        { status: 400 }
+        { error: t("responses.missingId") },
+        { status: 400 },
       );
     }
 
-    const response = await fetch(
-      `https://api.replicate.com/v1/predictions/${id}`,
-      {
-        headers: {
-          Authorization: `Token ${process.env.REPLICATE_API_TOKEN}`,
-          "Content-Type": "application/json",
-        },
-      }
-    );
-
+    const response = await fetch(`https://api.replicate.com/v1/predictions/${id}`, {
+      cache: "no-store",
+      headers: {
+        Authorization: `Token ${process.env.REPLICATE_API_TOKEN}`,
+        "Content-Type": "application/json",
+      },
+    });
     if (!response.ok) {
       const errorText = await response.text();
-      throw new Error(`Failed to check status: ${response.status}`);
+      throw new Error(
+        t("errors.fetchFailed", { status: response.status, message: errorText }),
+      );
     }
-
     const prediction = await response.json();
-
-    if (prediction.status === "succeeded" && prediction.output) {
+    if (prediction.status === "succeeded" || prediction.status === "failed") {
       const cookieStore = await cookies();
       const supabase = createServerClient(
         process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -46,67 +46,96 @@ export async function GET(
             setAll(cookiesToSet) {
               try {
                 cookiesToSet.forEach(({ name, value, options }) =>
-                  cookieStore.set(name, value, options)
+                  cookieStore.set(name, value, options),
                 );
               } catch {}
             },
           },
-        }
+        },
       );
 
-      let modelUrl: string | null = null;
-
-      if (typeof prediction.output === "string") {
-        modelUrl = prediction.output;
-      } else if (prediction.output?.model_file) {
-        modelUrl = prediction.output.model_file;
-      } else if (prediction.output?.glb) {
-        modelUrl = prediction.output.glb;
-      } else if (Array.isArray(prediction.output)) {
-        modelUrl = prediction.output.find(
-          (val: string) => typeof val === "string" && val.includes(".glb")
+      if (prediction.status === "succeeded") {
+        const modelUrl = resolveModelUrl(prediction.output);
+        const { data: columns } = await supabase
+          .from("information_schema.columns")
+          .select("column_name")
+          .eq("table_schema", "public")
+          .eq("table_name", "generations");
+        const hasExpiresAt = Boolean(
+          columns?.some((col) => col.column_name === "expires_at"),
         );
-      } else if (typeof prediction.output === "object") {
-        const values = Object.values(prediction.output);
-        modelUrl = values.find(
-          (val: any) => typeof val === "string" && val.includes(".glb")
-        ) as string | null;
-      }
+        const hasModelStoragePath = Boolean(
+          columns?.some((col) => col.column_name === "model_storage_path"),
+        );
+        const selectColumns = ["id", "user_id", "model_glb_url", "created_at"];
+        if (hasExpiresAt) selectColumns.push("expires_at");
+        if (hasModelStoragePath) selectColumns.push("model_storage_path");
+        type GenerationRow = {
+          id?: string;
+          user_id?: string;
+          model_glb_url?: string | null;
+          created_at?: string | null;
+          expires_at?: string | null;
+          model_storage_path?: string | null;
+        };
 
-      if (modelUrl) {
+        const { data: generation } = (await supabase
+          .from("generations")
+          .select(selectColumns.join(","))
+          .eq("prediction_id", id)
+          .maybeSingle()) as { data: GenerationRow | null };
+
+        const updatePayload: Record<string, string | null> = {
+          status: "succeeded",
+        };
+
+        if (hasExpiresAt && !generation?.expires_at) {
+          const baseTime = generation?.created_at ? new Date(generation.created_at) : new Date();
+          updatePayload.expires_at = new Date(
+            baseTime.getTime() + 24 * 60 * 60 * 1000,
+          ).toISOString();
+        }
+
+        if (modelUrl && generation?.user_id) {
+          const stored = await storeModelFromUrl({
+            supabase,
+            modelUrl,
+            userId: generation.user_id,
+            predictionId: id,
+            existingUrl: generation.model_glb_url,
+          });
+
+          const finalUrl = stored.url ?? modelUrl;
+
+          if (stored.missing) {
+            updatePayload.model_glb_url = null;
+            if (hasModelStoragePath) updatePayload.model_storage_path = null;
+          } else if (finalUrl) {
+            updatePayload.model_glb_url = finalUrl;
+            if (stored.path && hasModelStoragePath) {
+              updatePayload.model_storage_path = stored.path;
+            }
+          }
+
+          if (stored.url) {
+            prediction.output = stored.url;
+          }
+        } else {
+          updatePayload.model_glb_url = null;
+          if (hasModelStoragePath) updatePayload.model_storage_path = null;
+        }
+
         await supabase
           .from("generations")
-          .update({
-            status: "succeeded",
-            model_glb_url: modelUrl,
-          })
+          .update(updatePayload)
           .eq("prediction_id", id);
       }
-    } else if (prediction.status === "failed") {
-      const cookieStore = await cookies();
-      const supabase = createServerClient(
-        process.env.NEXT_PUBLIC_SUPABASE_URL!,
-        process.env.SUPABASE_SERVICE_ROLE_KEY!,
-        {
-          cookies: {
-            getAll() {
-              return cookieStore.getAll();
-            },
-            setAll(cookiesToSet) {
-              try {
-                cookiesToSet.forEach(({ name, value, options }) =>
-                  cookieStore.set(name, value, options)
-                );
-              } catch {}
-            },
-          },
-        }
-      );
-
-      await supabase
-        .from("generations")
-        .update({ status: "failed" })
-        .eq("prediction_id", id);
+      if (prediction.status === "failed") {
+        await supabase
+          .from("generations")
+          .update({ status: "failed" })
+          .eq("prediction_id", id);
+      }
     }
 
     return NextResponse.json({
@@ -117,8 +146,8 @@ export async function GET(
     });
   } catch (err: any) {
     return NextResponse.json(
-      { error: err.message || "Failed to check status" },
-      { status: 500 }
+      { error: err.message || t("responses.checkFailed") },
+      { status: 500 },
     );
   }
 }

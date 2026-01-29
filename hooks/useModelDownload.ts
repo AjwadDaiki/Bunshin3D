@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import { useTranslations } from "next-intl";
 import {
   convertToSTL,
   convertToOBJ,
@@ -16,6 +17,7 @@ interface UseModelDownloadOptions {
 export type DownloadFormat = "glb" | "stl" | "obj" | "usdz";
 
 export function useModelDownload(options?: UseModelDownloadOptions) {
+  const t = useTranslations("Common");
   const [isDownloading, setIsDownloading] = useState(false);
   const [downloadFormat, setDownloadFormat] = useState<DownloadFormat | null>(
     null,
@@ -23,7 +25,8 @@ export function useModelDownload(options?: UseModelDownloadOptions) {
 
   const downloadModel = useCallback(
     async (modelUrl: string, format: DownloadFormat) => {
-      if (!modelUrl) return { success: false, error: "No model URL provided" };
+      if (!modelUrl)
+        return { success: false, error: t("errors.noModelUrl") };
 
       setIsDownloading(true);
       setDownloadFormat(format);
@@ -35,7 +38,7 @@ export function useModelDownload(options?: UseModelDownloadOptions) {
 
         if (format === "glb") {
           const response = await fetch(modelUrl);
-          if (!response.ok) throw new Error("Download failed");
+          if (!response.ok) throw new Error(t("errors.downloadFailed"));
           blob = await response.blob();
         } else if (format === "stl") {
           blob = await convertToSTL(modelUrl);
@@ -44,10 +47,14 @@ export function useModelDownload(options?: UseModelDownloadOptions) {
         } else if (format === "usdz") {
           blob = await convertToUSDZ(modelUrl);
         } else {
-          throw new Error("Unknown format");
+          throw new Error(t("errors.unknownFormat"));
         }
 
-        triggerDownload(blob, `bunshin-model-${timestamp}.${extension}`);
+        const fileName = t("downloads.fileName", {
+          timestamp,
+          extension,
+        });
+        triggerDownload(blob, fileName);
         options?.onSuccess?.(format.toUpperCase());
         return { success: true };
       } catch (e: any) {
@@ -59,7 +66,7 @@ export function useModelDownload(options?: UseModelDownloadOptions) {
         setDownloadFormat(null);
       }
     },
-    [options],
+    [options, t],
   );
 
   return {

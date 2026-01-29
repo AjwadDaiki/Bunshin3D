@@ -9,6 +9,7 @@ import { BunshinLogo } from "../ui/BunshinLogo";
 export default function FooterNew() {
   const t = useTranslations("Footer");
   const tNav = useTranslations("Navigation");
+  const tReferral = useTranslations("Referral.Promo");
 
   return (
     <footer className="relative  border-t border-white/10 bg-surface-1">
@@ -20,8 +21,8 @@ export default function FooterNew() {
             <div className="flex items-center gap-2 mb-4">
               <BunshinLogo className="h-6 w-6 text-brand-primary" />
               <span className="text-lg font-bold">
-                <span className="text-gradient-brand">Bunshin</span>
-                <span className="text-brand-accent">3D</span>
+                <span className="text-gradient-brand">{tNav("brandName")}</span>
+                <span className="text-brand-accent">{tNav("brandSuffix")}</span>
               </span>
             </div>
             <p className="text-sm text-gray-400 mb-4">{t("tagline")}</p>
@@ -110,6 +111,18 @@ export default function FooterNew() {
           </div>
         </div>
 
+        <div className="mt-12 rounded-2xl border border-white/10 bg-linear-to-r from-brand-primary/10 via-white/5 to-cyan-500/10 p-6 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-sm md:text-base text-white/90 font-medium">
+            {tReferral("footerTitle")}
+          </p>
+          <Link
+            href="/account"
+            className="px-4 py-2 rounded-full bg-white text-zinc-900 font-semibold hover:bg-zinc-100 transition-colors"
+          >
+            {tReferral("footerCta")}
+          </Link>
+        </div>
+
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-gray-500">
             {t("copyright", { year: new Date().getFullYear() })}
@@ -127,7 +140,7 @@ export default function FooterNew() {
                 weight="fill"
               />
               <span className="font-bold text-zinc-300 group-hover:text-white transition-colors">
-                HiddenLab
+                {t("partnerName")}
               </span>
             </a>
           </div>
