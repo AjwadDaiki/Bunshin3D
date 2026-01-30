@@ -37,14 +37,13 @@ export function useAuthFlow(t: Translator): AuthFlowState {
       : routing.defaultLocale;
   }, []);
 
+  // Server callback URL — used for magic links (PKCE flow)
   const buildCallbackUrl = useCallback(() => {
     if (typeof window === "undefined") return "";
     const locale = getLocale();
     const redirectParam = searchParams.get("redirect");
     const next = redirectParam ? `/${locale}${redirectParam}` : `/${locale}/studio`;
     const refParam = referralCode ? `&ref=${encodeURIComponent(referralCode)}` : "";
-    // Do NOT encodeURIComponent(next) — Supabase redirect URL matching
-    // requires the raw path format to match the dashboard whitelist
     return `${window.location.origin}/api/auth/callback?next=${next}${refParam}`;
   }, [getLocale, referralCode, searchParams]);
 
@@ -68,6 +67,23 @@ export function useAuthFlow(t: Translator): AuthFlowState {
       return redirectParam ? `/${locale}${redirectParam}` : `/${locale}/studio`;
     };
 
+    const processPostLogin = async (userId: string) => {
+      // Process referral for OAuth logins (server callback handles this for magic links)
+      const ref = referralCode || localStorage.getItem("bunshin_ref") || "";
+      if (ref) {
+        localStorage.removeItem("bunshin_ref");
+        try {
+          await fetch("/api/auth/post-login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ userId, referralCode: ref }),
+          });
+        } catch {
+          // Non-blocking — referral failure shouldn't prevent login
+        }
+      }
+    };
+
     const checkSession = async () => {
       const {
         data: { session },
@@ -83,6 +99,7 @@ export function useAuthFlow(t: Translator): AuthFlowState {
       data: { subscription },
     } = supabase.auth.onAuthStateChange(async (event: any, session: any) => {
       if ((event === "SIGNED_IN" || event === "INITIAL_SESSION") && session) {
+        await processPostLogin(session.user.id);
         window.location.href = getRedirectUrl();
       }
     });
@@ -90,7 +107,7 @@ export function useAuthFlow(t: Translator): AuthFlowState {
     return () => {
       subscription.unsubscribe();
     };
-  }, [getLocale, supabase]);
+  }, [getLocale, referralCode, supabase]);
 
   const handleEmailLogin = useCallback(
     async (event: React.FormEvent) => {
@@ -122,10 +139,19 @@ export function useAuthFlow(t: Translator): AuthFlowState {
     setIsLoading(true);
     setErrorMessage(null);
 
+    // Store referral code before redirect so it survives the OAuth flow
+    if (referralCode) {
+      localStorage.setItem("bunshin_ref", referralCode);
+    }
+
+    // For OAuth: redirect back to the login page (NOT the server callback).
+    // Supabase uses implicit flow for OAuth — tokens come as URL hash fragments
+    // which servers can't read. The client library picks them up automatically
+    // via detectSessionInUrl, and onAuthStateChange fires SIGNED_IN.
     const { error } = await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {
-        redirectTo: buildCallbackUrl(),
+        redirectTo: `${window.location.origin}/${getLocale()}/login`,
         queryParams: {
           access_type: "offline",
           prompt: "consent",
@@ -138,7 +164,7 @@ export function useAuthFlow(t: Translator): AuthFlowState {
       setErrorMessage(t("Errors.googleLogin"));
       setIsLoading(false);
     }
-  }, [buildCallbackUrl, supabase, t]);
+  }, [getLocale, referralCode, supabase, t]);
 
   return {
     email,
