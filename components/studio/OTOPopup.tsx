@@ -132,6 +132,7 @@ export default function OTOPopup({
             {PACKS.map(({ id, icon: Icon, color, border, bg }) => {
               const price = getPriceForCurrency(id, currency);
               const otoPrice = getOTOPriceForCurrency(id, currency);
+              if (!otoPrice) return null;
               const formattedOTO = formatPrice(otoPrice.amount, price.currency, locale);
               const formattedOriginal = formatPrice(price.amount, price.currency, locale);
 

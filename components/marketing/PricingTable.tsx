@@ -6,7 +6,7 @@ import { Sparkle, Lightning, Cube } from "@phosphor-icons/react";
 import { createClient } from "@/lib/supabase";
 import { useCurrency } from "@/components/providers/CurrencyProvider";
 import { useOTO } from "@/components/providers/OTOProvider";
-import { getPriceForCurrency, getOTOPriceForCurrency, PRICING_CONFIG, type PackId } from "@/lib/config/pricing";
+import { getPriceForCurrency, getOTOPriceForCurrency, isOTOEligible, PRICING_CONFIG, type PackId } from "@/lib/config/pricing";
 import PricingCard from "./PricingCard";
 import Toast from "@/components/ui/Toast";
 
@@ -42,7 +42,7 @@ export default function PricingTable() {
     if (!userId) {
       setToast({ message: t("Checkout.loginRequired"), type: "info" });
       setTimeout(() => {
-        window.location.href = `/${locale}/login`;
+        window.location.href = `/${locale}/login?redirect=/pricing`;
       }, 1500);
       return;
     }
@@ -52,7 +52,7 @@ export default function PricingTable() {
       const response = await fetch("/api/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ packId, userId, currency, isOTO: isOfferActive, locale }),
+        body: JSON.stringify({ packId, userId, currency, isOTO: isOfferActive && isOTOEligible(packId as PackId), locale }),
       });
 
       const data = await response.json();
@@ -167,7 +167,7 @@ export default function PricingTable() {
               bestValueLabel={isBestValue ? t("Badges.bestValue") : undefined}
               isLoading={loadingPack === id}
               onSelect={() => handleCheckout(id)}
-              isPromo={isOfferActive}
+              isPromo={!!otoPriceData}
             />
           );
         })}

@@ -122,7 +122,7 @@
     "mentions": "Legal Mentions",
     "rights": "All rights reserved.",
     "crafted": "Crafted with precision by",
-    "copyright": "Â© {year} Bunshin 3D. All rights reserved.",
+    "copyright": "© {year} Bunshin 3D. All rights reserved.",
     "partnerName": "Hidden Lab"
   },
   "UseCases": {
@@ -142,7 +142,7 @@
     "footer": "If the problem persists, please contact support.",
     "notFoundCode": "404",
     "rootLogPrefix": "Application error:",
-    "warningSymbol": "âš ï¸"
+    "warningSymbol": "⚠️"
   },
   "Auth": {
     "title": "Welcome Back",
@@ -270,15 +270,15 @@
       "Formats": {
         "standard": {
           "title": "Master Format",
-          "subtitle": "High Poly â€¢ GLB Texture"
+          "subtitle": "High Poly • GLB Texture"
         },
         "lowpoly": {
           "title": "Game Ready",
-          "subtitle": "Optimized Low Poly â€¢ 50% Decimation"
+          "subtitle": "Optimized Low Poly • 50% Decimation"
         },
         "print": {
           "title": "3D Print",
-          "subtitle": "Solid STL â€¢ Binary Format"
+          "subtitle": "Solid STL • Binary Format"
         }
       },
       "Viewer": {
@@ -676,7 +676,7 @@
     "brandLogoAlt": "Bunshin 3D Logo",
     "creditsWithCount": "{count, plural, one {# credit} other {# credits}}",
     "currencySymbols": {
-      "eur": "â‚¬",
+      "eur": "€",
       "usd": "$"
     },
     "downloads": {
@@ -748,7 +748,7 @@
       "feature4": "Production-ready for film and AAA games"
     },
     "Warning": {
-      "title": "âš ï¸ Premium Generation",
+      "title": "⚠️ Premium Generation",
       "message": "This will cost 5 credits. Premium models offer cinema-quality results with photorealistic details."
     }
   },
@@ -867,14 +867,14 @@
     "discountBadge": "UP TO -67% OFF",
     "discovery": {
       "name": "Discovery",
-      "price": "0.99â‚¬",
-      "originalPrice": "2.99â‚¬",
+      "price": "0.99€",
+      "originalPrice": "2.99€",
       "credits": "10 credits included"
     },
     "studio": {
       "name": "Studio Pro",
-      "price": "19.99â‚¬",
-      "originalPrice": "29.99â‚¬",
+      "price": "19.99€",
+      "originalPrice": "29.99€",
       "credits": "200 credits included"
     },
     "footer": "One-time offer. Credits never expire.",

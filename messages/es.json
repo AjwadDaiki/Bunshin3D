@@ -98,7 +98,7 @@
     },
     "CTA": {
       "title": "¿Listo para materializar tus ideas?",
-      "subtitle": "Ãšnete a miles de creadores usando Bunshin 3D hoy.",
+      "subtitle": "Únete a miles de creadores usando Bunshin 3D hoy.",
       "button": "Lanzar Estudio"
     }
   },
@@ -142,7 +142,7 @@
     "footer": "Si el problema persiste, contacte con soporte.",
     "notFoundCode": "404",
     "rootLogPrefix": "Error de la aplicación:",
-    "warningSymbol": "âš ️"
+    "warningSymbol": "⚠️"
   },
   "Auth": {
     "title": "Bienvenido de Vuelta",
@@ -270,15 +270,15 @@
       "Formats": {
         "standard": {
           "title": "Formato Principal",
-          "subtitle": "High Poly â€¢ Textura GLB"
+          "subtitle": "High Poly • Textura GLB"
         },
         "lowpoly": {
           "title": "Listo para Juego",
-          "subtitle": "Low Poly Optimizado â€¢ Decimación 50%"
+          "subtitle": "Low Poly Optimizado • Decimación 50%"
         },
         "print": {
           "title": "Impresión 3D",
-          "subtitle": "STL Sólido â€¢ Formato Binario"
+          "subtitle": "STL Sólido • Formato Binario"
         }
       },
       "Viewer": {
@@ -500,7 +500,7 @@
     "Header": {
       "title": "Centro de Comando",
       "subtitle": "Acceso Restringido. Solo Personal Autorizado.",
-      "status": "CONEXIÃ“N EN VIVO"
+      "status": "CONEXIÓN EN VIVO"
     },
     "Tabs": {
       "overview": "Vista General",
@@ -629,7 +629,7 @@
     },
     "Terms": {
       "title": "Términos de Servicio",
-      "lastUpdated": "Ãšltima actualización: Enero 2026",
+      "lastUpdated": "Última actualización: Enero 2026",
       "intro": "Bienvenido a Bunshin 3D. Al usar nuestros servicios, aceptas estos términos.",
       "section1Title": "1. Uso",
       "section1Text": "Nuestro servicio te permite generar modelos 3D usando IA. Debes usar este servicio cumpliendo con todas las leyes aplicables.",
@@ -640,7 +640,7 @@
     },
     "Privacy": {
       "title": "Política de Privacidad",
-      "lastUpdated": "Ãšltima actualización: Enero 2026",
+      "lastUpdated": "Última actualización: Enero 2026",
       "intro": "Tu privacidad es importante para nosotros. Esta política explica cómo manejamos tus datos.",
       "section1Title": "1. Recopilación de Datos",
       "section1Text": "Recopilamos tu correo electrónico y las imágenes cargadas únicamente con el propósito de proporcionar el servicio.",
@@ -665,7 +665,7 @@
     "buyCredits": "Comprar Créditos",
     "loading": "Cargando...",
     "error": "Error",
-    "success": "Ã‰xito",
+    "success": "Éxito",
     "cancel": "Cancelar",
     "confirm": "Confirmar",
     "download": "Descargar",
@@ -676,7 +676,7 @@
     "brandLogoAlt": "Logo Bunshin 3D",
     "creditsWithCount": "{count, plural, one {# crédito} other {# créditos}}",
     "currencySymbols": {
-      "eur": "â‚¬",
+      "eur": "€",
       "usd": "$"
     },
     "downloads": {
@@ -748,7 +748,7 @@
       "feature4": "Listo para producción en cine y juegos AAA"
     },
     "Warning": {
-      "title": "âš ️ Generación Premium",
+      "title": "⚠️ Generación Premium",
       "message": "Esto costará 5 créditos. Los modelos premium ofrecen resultados con calidad cinematográfica y detalles fotorrealistas."
     }
   },
@@ -789,7 +789,7 @@
       },
       "ctaPrimary": "Copiar Enlace",
       "ctaSecondary": "Ir al Panel",
-      "highlightTag": "CRÃ‰DITOS GRATIS",
+      "highlightTag": "CRÉDITOS GRATIS",
       "pricingTitle": "Refiere y Ahorra",
       "pricingSubtitle": "Gana créditos invitando amigos",
       "footerTitle": "¡Invita a tus amigos y gana créditos gratis!",
@@ -895,14 +895,14 @@
     "discountBadge": "HASTA -67% DTO.",
     "discovery": {
       "name": "Descubrimiento",
-      "price": "0.99â‚¬",
-      "originalPrice": "2.99â‚¬",
+      "price": "0.99€",
+      "originalPrice": "2.99€",
       "credits": "10 créditos incluidos"
     },
     "studio": {
       "name": "Estudio Pro",
-      "price": "19.99â‚¬",
-      "originalPrice": "29.99â‚¬",
+      "price": "19.99€",
+      "originalPrice": "29.99€",
       "credits": "200 créditos incluidos"
     },
     "footer": "Oferta única. Los créditos no caducan.",

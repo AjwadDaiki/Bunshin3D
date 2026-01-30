@@ -1,485 +1,485 @@
 {
   "Metadata": {
-    "defaultTitle": "Bunshin 3D | å…è´¹AIå›¾åƒè½¬3Dæ¨¡åž‹STLå’ŒGLBè½¬æ¢å™¨",
-    "templateTitle": "%s | Bunshin 3D - AI 3Dç”Ÿæˆå™¨",
-    "description": "å³æ—¶å°†å›¾åƒã€å¾½æ ‡å’Œç»˜å›¾è½¬æ¢ä¸º3Dæ¨¡åž‹ã€‚å…è´¹AIè½¬æ¢å™¨ï¼Œæ”¯æŒ3Dæ‰“å°STLå’ŒUnity/Unrealçš„GLBã€‚æ— éœ€è®¾è®¡æŠ€èƒ½ï¼",
+    "defaultTitle": "Bunshin 3D | 免费AI图像转3D模型STL和GLB转换器",
+    "templateTitle": "%s | Bunshin 3D - AI 3D生成器",
+    "description": "即时将图像、徽标和绘图转换为3D模型。免费AI转换器，支持3D打印STL和Unity/Unreal的GLB。无需设计技能！",
     "applicationName": "Bunshin 3D",
-    "keywords": "å›¾åƒ3dè½¬æ¢å™¨, å¾½æ ‡è½¬stl, ai 3dæ¨¡åž‹ç”Ÿæˆå™¨, å…è´¹stlè½¬æ¢å™¨, ç…§ç‰‡è½¬3dæ¨¡åž‹, 2dè½¬3d ai, å›¾åƒè½¬glb, pngè½¬stlåœ¨çº¿, ai 3dæ‰“å°, å¾½æ ‡3dæ¨¡åž‹, å›¾åƒè½¬3d, unity 3dèµ„äº§, æ¸¸æˆèµ„äº§ç”Ÿæˆå™¨, å…è´¹3dæ¨¡åž‹åˆ¶ä½œ, å›¾åƒè½¬stlå…è´¹",
+    "keywords": "图像3d转换器, 徽标转stl, ai 3d模型生成器, 免费stl转换器, 照片转3d模型, 2d转3d ai, 图像转glb, png转stl在线, ai 3d打印, 徽标3d模型, 图像转3d, unity 3d资产, 游戏资产生成器, 免费3d模型制作, 图像转stl免费",
     "creator": "Bunshin 3D",
     "publisher": "Bunshin 3D",
-    "ogSiteName": "Bunshin 3D - AI 3Dæ¨¡åž‹ç”Ÿæˆå™¨",
-    "ogTitle": "30ç§’å°†ä»»æ„å›¾åƒè½¬æ¢ä¸º3Dæ¨¡åž‹ | å…è´¹AIå·¥å…·",
-    "ogDescription": "å³æ—¶å°†å¾½æ ‡ã€ç…§ç‰‡å’Œç»˜å›¾è½¬æ¢ä¸ºSTL/GLBã€‚å…è´¹AI 3Dç”Ÿæˆå™¨ - æ— éœ€æŠ€èƒ½ã€‚å®Œç¾Žé€‚ç”¨äºŽ3Dæ‰“å°å’Œæ¸¸æˆå¼€å‘ã€‚",
-    "ogImageAlt": "Bunshin 3D - AIå°†2Då›¾åƒè½¬æ¢ä¸ºç”¨äºŽæ‰“å°å’Œæ¸¸æˆçš„3Dæ¨¡åž‹",
-    "twitterTitle": "ðŸš€ AIå›¾åƒè½¬3Dè½¬æ¢å™¨ | å…è´¹STLå’ŒGLBç”Ÿæˆå™¨",
-    "twitterDescription": "å‡ ç§’é’Ÿå†…å°†ä»»ä½•å›¾åƒè½¬æ¢ä¸ºå¯æ‰“å°çš„3Dæ¨¡åž‹ã€‚å…è´¹AIè½¬æ¢å™¨ - æ— éœ€è®¾è®¡æŠ€èƒ½ã€‚ç«‹å³å°è¯•Bunshin 3Dï¼"
+    "ogSiteName": "Bunshin 3D - AI 3D模型生成器",
+    "ogTitle": "30秒将任意图像转换为3D模型 | 免费AI工具",
+    "ogDescription": "即时将徽标、照片和绘图转换为STL/GLB。免费AI 3D生成器 - 无需技能。完美适用于3D打印和游戏开发。",
+    "ogImageAlt": "Bunshin 3D - AI将2D图像转换为用于打印和游戏的3D模型",
+    "twitterTitle": "ðŸš€ AI图像转3D转换器 | 免费STL和GLB生成器",
+    "twitterDescription": "几秒钟内将任何图像转换为可打印的3D模型。免费AI转换器 - 无需设计技能。立即尝试Bunshin 3D！"
   },
   "SEO": {
     "siteName": "Bunshin 3D",
-    "engineeringTeam": "å·¥ç¨‹å›¢é˜Ÿ",
+    "engineeringTeam": "工程团队",
     "generator": "Bunshin 3D",
     "appleWebAppTitle": "Bunshin 3D",
     "twitterHandle": "@bunshin3d",
     "organizationName": "Bunshin 3D",
-    "organizationDescription": "AI é©±åŠ¨çš„ 3D ç”Ÿæˆå¹³å°",
-    "contactType": "å®¢æˆ·æ”¯æŒ"
+    "organizationDescription": "AI 驱动的 3D 生成平台",
+    "contactType": "客户支持"
   },
   "Navigation": {
     "brandName": "BUNSHIN",
     "brandSuffix": "3D",
-    "useCases": "ä½¿ç”¨æ¡ˆä¾‹",
-    "pricing": "ä»·æ ¼",
-    "login": "ç™»å½•",
-    "start": "å¼€å§‹",
-    "studio": "å·¥ä½œå®¤",
+    "useCases": "使用案例",
+    "pricing": "价格",
+    "login": "登录",
+    "start": "开始",
+    "studio": "工作室",
     "api": "API",
-    "terms": "æ¡æ¬¾",
-    "privacy": "éšç§",
-    "dashboard": "ä»ªè¡¨æ¿",
-    "admin": "ç®¡ç†",
-    "logout": "é€€å‡º",
-    "credits": "ç§¯åˆ†",
-    "buyCredits": "è´­ä¹°",
-    "lowCredits": "ä¸è¶³",
+    "terms": "条款",
+    "privacy": "隐私",
+    "dashboard": "仪表板",
+    "admin": "管理",
+    "logout": "退出",
+    "credits": "积分",
+    "buyCredits": "购买",
+    "lowCredits": "不足",
     "aria": {
-      "home": "å‰å¾€é¦–é¡µ",
-      "mainNav": "ä¸»å¯¼èˆª",
-      "toggleNav": "åˆ‡æ¢å¯¼èˆªèœå•",
-      "userMenu": "ç”¨æˆ·èœå•",
-      "logout": "é€€å‡ºç™»å½•",
-      "creditsAvailable": "å¯ç”¨ {count} ç§¯åˆ†",
-      "mobileNav": "ç§»åŠ¨å¯¼èˆª"
+      "home": "前往首页",
+      "mainNav": "主导航",
+      "toggleNav": "切换导航菜单",
+      "userMenu": "用户菜单",
+      "logout": "退出登录",
+      "creditsAvailable": "可用 {count} 积分",
+      "mobileNav": "移动导航"
     }
   },
   "Home": {
     "Schema": {
       "websiteName": "Bunshin 3D",
       "softwareName": "Bunshin 3D",
-      "softwareCategory": "è®¾è®¡åº”ç”¨",
+      "softwareCategory": "设计应用",
       "operatingSystem": "Web"
     },
     "Hero": {
-      "title": "å°†2Dåƒç´ è½¬å˜ä¸º",
-      "titleHighlight": "3DçŽ°å®žã€‚",
-      "subtitle": "ç”¨äºŽ3Dæ‰“å°å’Œæ¸¸æˆå¼€å‘çš„æœ€å…ˆè¿›AIç®¡é“ã€‚ä½¿ç”¨ä¸“ä¸šçº§æ‹“æ‰‘åœ¨å‡ ç§’é’Ÿå†…å°†ä»»ä½•å›¾åƒè½¬æ¢ä¸ºGLB/STLã€‚",
-      "ctaPrimary": "å…è´¹åˆ›å»º",
-      "ctaSecondary": "æŸ¥çœ‹ç”»å»Š",
-      "trustedBy": "å—10,000+åˆ›ä½œè€…å’Œå¼€å‘è€…ä¿¡èµ–"
+      "title": "将2D像素转变为",
+      "titleHighlight": "3D现实。",
+      "subtitle": "用于3D打印和游戏开发的最先进AI管道。使用专业级拓扑在几秒钟内将任何图像转换为GLB/STL。",
+      "ctaPrimary": "免费创建",
+      "ctaSecondary": "查看画廊",
+      "trustedBy": "受10,000+创作者和开发者信赖"
     },
     "Showcase": {
-      "title": "ä½¿ç”¨Bunshinç”Ÿæˆ",
-      "subtitle": "ä»Žç®€å•çš„å¾½æ ‡åˆ°å¤æ‚çš„è§’è‰²ã€‚æ— éœ€æ‰‹åŠ¨é›•åˆ»ã€‚"
+      "title": "使用Bunshin生成",
+      "subtitle": "从简单的徽标到复杂的角色。无需手动雕刻。"
     },
     "Features": {
-      "title": "ç”Ÿäº§å°±ç»ªæž¶æž„",
-      "subtitle": "ä¸ºéœ€è¦é€Ÿåº¦ã€ç²¾åº¦å’Œè‡ªåŠ¨åŒ–çš„ä¸“ä¸šäººå£«è®¾è®¡ã€‚",
-      "speedTitle": "é—ªç”µèˆ¬å¿«é€Ÿ",
-      "speedDesc": "GPUåŠ é€ŸæŽ¨ç†åœ¨<30ç§’å†…ç”Ÿæˆæ¨¡åž‹ã€‚",
-      "topologyTitle": "æ¸…æ™°æ‹“æ‰‘",
-      "topologyDesc": "åŸºäºŽå››è¾¹å½¢çš„ç½‘æ ¼ä¼˜åŒ–ï¼Œç”¨äºŽåŠ¨ç”»å’Œç»‘å®šã€‚",
-      "exportTitle": "å¤šæ ¼å¼",
-      "exportDesc": "åŽŸç”Ÿå¯¼å‡ºåˆ°GLBã€FBXã€OBJå’Œç”¨äºŽæ‰“å°çš„æ°´å¯†STLã€‚"
+      "title": "生产就绪架构",
+      "subtitle": "为需要速度、精度和自动化的专业人士设计。",
+      "speedTitle": "闪电般快速",
+      "speedDesc": "GPU加速推理在<30秒内生成模型。",
+      "topologyTitle": "清晰拓扑",
+      "topologyDesc": "基于四边形的网格优化，用于动画和绑定。",
+      "exportTitle": "多格式",
+      "exportDesc": "原生导出到GLB、FBX、OBJ和用于打印的水密STL。"
     },
     "Steps": {
-      "title": "å·¥ä½œåŽŸç†",
-      "step1": "ä¸Šä¼ å›¾åƒ",
-      "step1Desc": "æ‹–æ”¾ä»»ä½•PNGã€JPGæˆ–WEBPã€‚",
-      "step2": "AIå¤„ç†",
-      "step2Desc": "æˆ‘ä»¬çš„Bunshinå¼•æ“Žé‡å»ºæ·±åº¦å’Œçº¹ç†ã€‚",
-      "step3": "ä¸‹è½½3D",
-      "step3Desc": "èŽ·å–æ‚¨çš„æ¸¸æˆå°±ç»ªæˆ–æ‰“å°å°±ç»ªèµ„äº§ã€‚"
+      "title": "工作原理",
+      "step1": "上传图像",
+      "step1Desc": "拖放任何PNG、JPG或WEBP。",
+      "step2": "AI处理",
+      "step2Desc": "我们的Bunshin引擎重建深度和纹理。",
+      "step3": "下载3D",
+      "step3Desc": "获取您的游戏就绪或打印就绪资产。"
     },
     "Samples": {
-      "title": "æœ€è¿‘ç”Ÿæˆ",
-      "helmet": "ç§‘å¹»å¤´ç›”",
-      "vase": "é™¶ç“·èŠ±ç“¶",
-      "character": "é£Žæ ¼åŒ–è‹±é›„",
-      "mech": "æœºç”²éƒ¨ä»¶"
+      "title": "最近生成",
+      "helmet": "科幻头盔",
+      "vase": "陶瓷花瓶",
+      "character": "风格化英雄",
+      "mech": "机甲部件"
     },
     "CTA": {
-      "title": "å‡†å¤‡å¥½å®žçŽ°æ‚¨çš„æƒ³æ³•äº†å—ï¼Ÿ",
-      "subtitle": "ä»Šå¤©åŠ å…¥æ•°åƒåä½¿ç”¨Bunshin 3Dçš„åˆ›ä½œè€…ã€‚",
-      "button": "å¯åŠ¨å·¥ä½œå®¤"
+      "title": "准备好实现您的想法了吗？",
+      "subtitle": "今天加入数千名使用Bunshin 3D的创作者。",
+      "button": "启动工作室"
     }
   },
   "Footer": {
-    "tagline": "æœ€å…ˆè¿›çš„2Dåˆ°3Dè½¬æ¢æž¶æž„ã€‚ä¸ºåˆ›ä½œè€…è®¾è®¡ï¼Œä¸ºæ€§èƒ½ä¼˜åŒ–ã€‚",
-    "brandDesc": "ä¸‹ä¸€ä»£AIé©±åŠ¨çš„3Dåˆ›ä½œå·¥å…·ã€‚ç”±è‰ºæœ¯å®¶ä¸ºè‰ºæœ¯å®¶æ‰“é€ ã€‚",
-    "product": "äº§å“",
-    "resources": "èµ„æº",
-    "useCases": "ä½¿ç”¨æ¡ˆä¾‹",
-    "pricing": "ä»·æ ¼",
-    "studio": "3Då·¥ä½œå®¤",
-    "features": "åŠŸèƒ½",
-    "blog": "åšå®¢",
-    "help": "å¸®åŠ©ä¸­å¿ƒ",
-    "support": "æ”¯æŒ",
-    "account": "è´¦æˆ·",
-    "contact": "è”ç³»æˆ‘ä»¬",
-    "legal": "æ³•å¾‹",
-    "terms": "æœåŠ¡æ¡æ¬¾",
-    "privacy": "éšç§æ”¿ç­–",
-    "mentions": "æ³•å¾‹å£°æ˜Ž",
-    "rights": "ä¿ç•™æ‰€æœ‰æƒåˆ©ã€‚",
-    "crafted": "ç²¾å¿ƒåˆ¶ä½œ",
+    "tagline": "最先进的2D到3D转换架构。为创作者设计，为性能优化。",
+    "brandDesc": "下一代AI驱动的3D创作工具。由艺术家为艺术家打造。",
+    "product": "产品",
+    "resources": "资源",
+    "useCases": "使用案例",
+    "pricing": "价格",
+    "studio": "3D工作室",
+    "features": "功能",
+    "blog": "博客",
+    "help": "帮助中心",
+    "support": "支持",
+    "account": "账户",
+    "contact": "联系我们",
+    "legal": "法律",
+    "terms": "服务条款",
+    "privacy": "隐私政策",
+    "mentions": "法律声明",
+    "rights": "保留所有权利。",
+    "crafted": "精心制作",
     "partnerName": "Hidden Lab",
-    "copyright": "Â© {year} Bunshin 3Dã€‚ä¿ç•™æ‰€æœ‰æƒåˆ©ã€‚"
+    "copyright": "© {year} Bunshin 3D。保留所有权利。"
   },
   "UseCases": {
-    "logoToStl": "å°†å¾½æ ‡è½¬æ¢ä¸ºSTL",
-    "unityAssets": "åˆ›å»ºUnityèµ„äº§",
-    "printing": "3Dæ‰“å°"
+    "logoToStl": "将徽标转换为STL",
+    "unityAssets": "创建Unity资产",
+    "printing": "3D打印"
   },
   "Error": {
-    "notFoundTitle": "é¡µé¢æœªæ‰¾åˆ°",
-    "notFoundDescription": "æŠ±æ­‰ï¼Œæ‚¨æŸ¥æ‰¾çš„é¡µé¢ä¸å­˜åœ¨ã€‚",
-    "serverErrorTitle": "å‡ºäº†ç‚¹é—®é¢˜",
-    "serverErrorDescription": "æˆ‘ä»¬çš„æœåŠ¡å™¨å‘ç”Ÿäº†ä¸¥é‡é”™è¯¯ã€‚æˆ‘ä»¬æ­£åœ¨å¤„ç†ã€‚",
-    "backHome": "è¿”å›žä¸»é¡µ",
-    "tryAgain": "é‡è¯•",
-    "logPrefix": "åº”ç”¨ç¨‹åºé”™è¯¯ï¼š",
-    "errorId": "é”™è¯¯IDï¼š{id}",
-    "footer": "å¦‚æžœé—®é¢˜ä»ç„¶å­˜åœ¨ï¼Œè¯·è”ç³»æ”¯æŒã€‚",
+    "notFoundTitle": "页面未找到",
+    "notFoundDescription": "抱歉，您查找的页面不存在。",
+    "serverErrorTitle": "出了点问题",
+    "serverErrorDescription": "我们的服务器发生了严重错误。我们正在处理。",
+    "backHome": "返回主页",
+    "tryAgain": "重试",
+    "logPrefix": "应用程序错误：",
+    "errorId": "错误ID：{id}",
+    "footer": "如果问题仍然存在，请联系支持。",
     "notFoundCode": "404",
-    "rootLogPrefix": "åº”ç”¨ç¨‹åºé”™è¯¯:",
-    "warningSymbol": "âš ï¸"
+    "rootLogPrefix": "应用程序错误:",
+    "warningSymbol": "⚠️"
   },
   "Auth": {
-    "title": "æ¬¢è¿Žå›žæ¥",
-    "subtitle": "è¾“å…¥æ‚¨çš„å‡­æ®ä»¥è®¿é—®ç¥žç»å·¥ä½œå®¤ã€‚",
-    "emailLabel": "ç”µå­é‚®ä»¶åœ°å€",
+    "title": "欢迎回来",
+    "subtitle": "输入您的凭据以访问神经工作室。",
+    "emailLabel": "电子邮件地址",
     "emailPlaceholder": "name@example.com",
-    "magicLink": "å‘é€é­”æ³•é“¾æŽ¥",
-    "or": "æˆ–ç»§ç»­ä½¿ç”¨",
+    "magicLink": "发送魔法链接",
+    "or": "或继续使用",
     "google": "Google",
-    "checkEmail": "æ£€æŸ¥æ‚¨çš„ç”µå­é‚®ä»¶",
-    "checkEmailDesc": "æˆ‘ä»¬å·²å‘æ‚¨å‘é€äº†ä¸€ä¸ªç™»å½•é­”æ³•é“¾æŽ¥ã€‚",
-    "loading": "è®¤è¯ä¸­...",
-    "tryDifferentEmail": "å°è¯•å…¶ä»–é‚®ç®±"
+    "checkEmail": "检查您的电子邮件",
+    "checkEmailDesc": "我们已向您发送了一个登录魔法链接。",
+    "loading": "认证中...",
+    "tryDifferentEmail": "尝试其他邮箱"
   },
   "Studio": {
     "Metadata": {
-      "title": "ç¥žç»å·¥ä½œå®¤",
-      "description": "ä½¿ç”¨æˆ‘ä»¬çš„Bunshin AIå¼•æ“Žå°†2Då›¾åƒè½¬æ¢ä¸º3Dæ¨¡åž‹ã€‚"
+      "title": "神经工作室",
+      "description": "使用我们的Bunshin AI引擎将2D图像转换为3D模型。"
     },
     "JsonLd": {
-      "name": "Bunshin 3Då·¥ä½œå®¤",
-      "applicationCategory": "è®¾è®¡åº”ç”¨ç¨‹åº",
-      "featureList": "å›¾åƒè½¬STLï¼Œå¾½æ ‡è½¬3Dï¼ŒAI 3Dç”Ÿæˆ"
+      "name": "Bunshin 3D工作室",
+      "applicationCategory": "设计应用程序",
+      "featureList": "图像转STL，徽标转3D，AI 3D生成"
     },
     "Header": {
-      "title": "ç¥žç»å·¥ä½œå®¤",
-      "subtitle": "å°†2Dç‰©è´¨è½¬å˜ä¸º3Dç»“æž„ã€‚",
-      "version": "v2.0 // Bunshinå¼•æ“Žæ´»è·ƒ",
-      "status": "GPUé›†ç¾¤åœ¨çº¿",
-      "latency": "å»¶è¿Ÿï¼š45ms"
+      "title": "神经工作室",
+      "subtitle": "将2D物质转变为3D结构。",
+      "version": "v2.0 // Bunshin引擎活跃",
+      "status": "GPU集群在线",
+      "latency": "延迟：45ms"
     },
     "Modes": {
-      "imageToModel": "å›¾åƒè½¬3D",
-      "textToModel": "æ–‡æœ¬è½¬3D"
+      "imageToModel": "图像转3D",
+      "textToModel": "文本转3D"
     },
     "Quality": {
-      "title": "è´¨é‡çº§åˆ«",
-      "standard": "æ ‡å‡†",
-      "standardDesc": "å¿«é€Ÿç”Ÿæˆï¼Œè‰¯å¥½è´¨é‡",
-      "standardCost": "{cost}ç§¯åˆ†",
-      "premium": "é«˜çº§",
-      "premiumDesc": "ç”µå½±è´¨é‡ï¼Œç…§ç‰‡çº§çœŸå®ž",
-      "premiumCost": "{cost}ç§¯åˆ†"
+      "title": "质量级别",
+      "standard": "标准",
+      "standardDesc": "快速生成，良好质量",
+      "standardCost": "{cost}积分",
+      "premium": "高级",
+      "premiumDesc": "电影质量，照片级真实",
+      "premiumCost": "{cost}积分"
     },
     "TextMode": {
-      "promptLabel": "æè¿°æ‚¨çš„3Dæ¨¡åž‹",
-      "promptPlaceholder": "ç«™åœ¨å¹³å°ä¸Šçš„æœªæ¥æœºå™¨äºº...",
-      "generateButton": "ä»Žæ–‡æœ¬ç”Ÿæˆ"
+      "promptLabel": "描述您的3D模型",
+      "promptPlaceholder": "站在平台上的未来机器人...",
+      "generateButton": "从文本生成"
     },
     "Logs": {
-      "title": "ç”Ÿæˆæ—¥å¿—",
-      "initializing": "æ­£åœ¨åˆå§‹åŒ–AIå¼•æ“Ž...",
-      "checkingCredits": "æ­£åœ¨éªŒè¯ç§¯åˆ†ä½™é¢...",
-      "uploadingImage": "æ­£åœ¨ä¸Šä¼ å›¾åƒåˆ°äº‘ç«¯...",
-      "optimizingPrompt": "æ­£åœ¨ä¼˜åŒ–ç”¨äºŽ3Dç”Ÿæˆçš„æç¤º...",
-      "generatingImage": "æ­£åœ¨ç”Ÿæˆä¼˜åŒ–çš„å›¾åƒ...",
-      "analyzingImage": "æ­£åœ¨åˆ†æžå›¾åƒç»“æž„...",
-      "extractingFeatures": "æ­£åœ¨æå–å‡ ä½•ç‰¹å¾...",
-      "buildingMesh": "æ­£åœ¨æž„å»º3Dç½‘æ ¼...",
-      "applyingTextures": "æ­£åœ¨åº”ç”¨çº¹ç†å’Œæè´¨...",
-      "optimizingGeometry": "æ­£åœ¨ä¼˜åŒ–å‡ ä½•...",
-      "finalizingModel": "æ­£åœ¨å®Œæˆ3Dæ¨¡åž‹...",
-      "uploadingResult": "æ­£åœ¨ä¸Šä¼ ç»“æžœ...",
-      "complete": "ç”Ÿæˆå®Œæˆï¼",
-      "downloadReady": "æ‚¨çš„æ¨¡åž‹å·²å‡†å¤‡å¥½ä¸‹è½½",
-      "error": "ç”Ÿæˆè¿‡ç¨‹ä¸­å‘ç”Ÿé”™è¯¯",
-      "downloadSuccess": "ä¸‹è½½å·²å°±ç»ªï¼š{format}",
-      "downloadError": "ä¸‹è½½å¤±è´¥ï¼š{error}",
-      "errorPrefix": "é”™è¯¯ï¼š{message}",
-      "generationFailed": "ç”Ÿæˆå¤±è´¥ã€‚",
-      "insufficientCredits": "ç§¯åˆ†ä¸è¶³ã€‚éœ€è¦ {count}ã€‚",
-      "missingImage": "è¯·ä¸Šä¼ å›¾ç‰‡ã€‚",
-      "missingPrompt": "è¯·è¾“å…¥æç¤ºè¯ã€‚",
-      "imageUploaded": "å›¾ç‰‡å·²ä¸Šä¼ åˆ°äº‘ç«¯ã€‚",
-      "imageGenerated": "å›¾ç‰‡å·²ç”Ÿæˆã€‚",
-      "imageGenerationFailed": "å›¾ç‰‡ç”Ÿæˆå¤±è´¥ã€‚",
-      "cooldown": "å†·å´ä¸­...",
-      "serverBusy": "æœåŠ¡å™¨ç¹å¿™ï¼Œæ­£åœ¨é‡è¯•...",
-      "rateLimited": "è§¦å‘é€ŸçŽ‡é™åˆ¶ï¼Œè¯·ç¨åŽå†è¯•ã€‚",
-      "serverSideFailure": "æœåŠ¡å™¨ç«¯ç”Ÿæˆå¤±è´¥ã€‚"
+      "title": "生成日志",
+      "initializing": "正在初始化AI引擎...",
+      "checkingCredits": "正在验证积分余额...",
+      "uploadingImage": "正在上传图像到云端...",
+      "optimizingPrompt": "正在优化用于3D生成的提示...",
+      "generatingImage": "正在生成优化的图像...",
+      "analyzingImage": "正在分析图像结构...",
+      "extractingFeatures": "正在提取几何特征...",
+      "buildingMesh": "正在构建3D网格...",
+      "applyingTextures": "正在应用纹理和材质...",
+      "optimizingGeometry": "正在优化几何...",
+      "finalizingModel": "正在完成3D模型...",
+      "uploadingResult": "正在上传结果...",
+      "complete": "生成完成！",
+      "downloadReady": "您的模型已准备好下载",
+      "error": "生成过程中发生错误",
+      "downloadSuccess": "下载已就绪：{format}",
+      "downloadError": "下载失败：{error}",
+      "errorPrefix": "错误：{message}",
+      "generationFailed": "生成失败。",
+      "insufficientCredits": "积分不足。需要 {count}。",
+      "missingImage": "请上传图片。",
+      "missingPrompt": "请输入提示词。",
+      "imageUploaded": "图片已上传到云端。",
+      "imageGenerated": "图片已生成。",
+      "imageGenerationFailed": "图片生成失败。",
+      "cooldown": "冷却中...",
+      "serverBusy": "服务器繁忙，正在重试...",
+      "rateLimited": "触发速率限制，请稍后再试。",
+      "serverSideFailure": "服务器端生成失败。"
     },
     "Interface": {
       "DropZone": {
-        "title": "æ”¾ç½®å›¾åƒæº",
-        "subtitle": "JPGã€PNGã€WEBPï¼ˆæœ€å¤§10MBï¼‰",
-        "scanning": "ç¥žç»æ‰«æä¸­...",
-        "previewAlt": "å·²ä¸Šä¼ å›¾ç‰‡é¢„è§ˆ"
+        "title": "放置图像源",
+        "subtitle": "JPG、PNG、WEBP（最大10MB）",
+        "scanning": "神经扫描中...",
+        "previewAlt": "已上传图片预览"
       },
       "Samples": {
-        "title": "ç¤ºä¾‹",
-        "helmet": "ç§‘å¹»å¤´ç›”",
-        "vase": "å¤ä»£èŠ±ç“¶",
-        "character": "èµ›åšè§’è‰²",
-        "mech": "æœºç”²éƒ¨ä»¶"
+        "title": "示例",
+        "helmet": "科幻头盔",
+        "vase": "古代花瓶",
+        "character": "赛博角色",
+        "mech": "机甲部件"
       },
       "Controls": {
-        "title": "æŽ§åˆ¶ä¸­å¿ƒ",
-        "ready": "å°±ç»ª",
-        "generate": "ç”Ÿæˆ3Dæ¨¡åž‹",
-        "awaiting": "ç­‰å¾…è¾“å…¥",
-        "processing": "å¤„ç†ä¸­"
+        "title": "控制中心",
+        "ready": "就绪",
+        "generate": "生成3D模型",
+        "awaiting": "等待输入",
+        "processing": "处理中"
       },
       "Actions": {
-        "reset": "é‡ç½®å›¾åƒ",
-        "generate": "ç”Ÿæˆ3D"
+        "reset": "重置图像",
+        "generate": "生成3D"
       },
       "Status": {
-        "system": "ç³»ç»ŸçŠ¶æ€"
+        "system": "系统状态"
       },
       "Export": {
-        "title": "å¯¼å‡ºé€‰é¡¹",
-        "readyTitle": "å‡†å¤‡å¯¼å‡º",
-        "subtitle": "é€‰æ‹©æ ¼å¼ä»¥ä¸‹è½½ä½ çš„æ¨¡åž‹ã€‚",
+        "title": "导出选项",
+        "readyTitle": "准备导出",
+        "subtitle": "选择格式以下载你的模型。",
         "labels": {
           "glb": "GLB",
           "web": "Web",
           "obj": "OBJ",
-          "universal": "é€šç”¨",
+          "universal": "通用",
           "usdz": "USDZ",
           "ar": "AR",
           "stl": "STL",
-          "print": "æ‰“å°"
+          "print": "打印"
         }
       },
       "Formats": {
         "standard": {
-          "title": "ä¸»æ ¼å¼",
-          "subtitle": "é«˜å¤šè¾¹å½¢ â€¢ GLBçº¹ç†"
+          "title": "主格式",
+          "subtitle": "高多边形 • GLB纹理"
         },
         "lowpoly": {
-          "title": "æ¸¸æˆå°±ç»ª",
-          "subtitle": "ä¼˜åŒ–ä½Žå¤šè¾¹å½¢ â€¢ 50%æŠ½å–"
+          "title": "游戏就绪",
+          "subtitle": "优化低多边形 • 50%抽取"
         },
         "print": {
-          "title": "3Dæ‰“å°",
-          "subtitle": "å®žä½“STL â€¢ äºŒè¿›åˆ¶æ ¼å¼"
+          "title": "3D打印",
+          "subtitle": "实体STL • 二进制格式"
         }
       },
       "Viewer": {
-        "label": "è§†å£ [WEBGL]",
-        "waiting": "ç­‰å¾…è¾“å…¥...",
-        "waitingStream": "ç­‰å¾…æ•°æ®æµ...",
-        "engine": "BUNSHINå¼•æ“Ž V1.0",
-        "axis": "XYZè½´ï¼šé”å®š",
-        "autoRotate": "è‡ªåŠ¨æ—‹è½¬",
-        "shadows": "é˜´å½±ï¼šå¼€å¯",
-        "readyToGenerate": "å‡†å¤‡ç”Ÿæˆ",
-        "generated2D": "2Då›¾åƒå·²ç”Ÿæˆ",
+        "label": "视口 [WEBGL]",
+        "waiting": "等待输入...",
+        "waitingStream": "等待数据流...",
+        "engine": "BUNSHIN引擎 V1.0",
+        "axis": "XYZ轴：锁定",
+        "autoRotate": "自动旋转",
+        "shadows": "阴影：开启",
+        "readyToGenerate": "准备生成",
+        "generated2D": "2D图像已生成",
         "webAR": "Web/AR",
-        "print": "æ‰“å°",
-        "creatingMagic": "æ­£åœ¨ç”Ÿæˆæ¨¡åž‹...",
-        "referenceImage": "å‚è€ƒå›¾ç‰‡"
+        "print": "打印",
+        "creatingMagic": "正在生成模型...",
+        "referenceImage": "参考图片"
       },
       "Errors": {
-        "fileTooLarge": "å›¾åƒå¤ªå¤§ï¼ˆæœ€å¤§10MBï¼‰ã€‚",
-        "generationFailed": "GPUé›†ç¾¤æ— æ³•å¤„ç†è¯·æ±‚ã€‚è¯·é‡è¯•ã€‚",
-        "conversionFailed": "æœ¬åœ°è½¬æ¢é”™è¯¯ã€‚è¯·æ£€æŸ¥æ‚¨çš„æµè§ˆå™¨ã€‚",
-        "timeout": "è¯·æ±‚èŠ±è´¹æ—¶é—´è¿‡é•¿ï¼ˆ>60ç§’ï¼‰ã€‚è¯·å°è¯•è¾ƒå°çš„å›¾åƒæˆ–ç¨åŽé‡è¯•ã€‚"
+        "fileTooLarge": "图像太大（最大10MB）。",
+        "generationFailed": "GPU集群无法处理请求。请重试。",
+        "conversionFailed": "本地转换错误。请检查您的浏览器。",
+        "timeout": "请求花费时间过长（>60秒）。请尝试较小的图像或稍后重试。"
       }
     },
     "CreditsPrompt": {
-      "title": "ç§¯åˆ†",
-      "headline": "ä½ çš„åˆ›é€ åŠ›å€¼å¾—æ›´å¤šã€‚",
-      "description": "æœ¬æ¬¡ç”Ÿæˆéœ€è¦ {count} ç§¯åˆ†ã€‚å……å€¼æˆ–é‚€è¯·å¥½å‹èŽ·å–å…è´¹ç§¯åˆ†ã€‚",
-      "ctaPricing": "è´­ä¹°ç§¯åˆ†",
-      "ctaReferral": "é€šè¿‡é‚€è¯·èµšå–",
-      "note": "é‚€è¯·å¥½å‹ï¼šæ³¨å†Œ +{signup}ï¼Œé¦–æ¬¡è´­ä¹°åŽ +{payment}ã€‚",
-      "close": "å…³é—­",
+      "title": "积分",
+      "headline": "你的创造力值得更多。",
+      "description": "本次生成需要 {count} 积分。充值或邀请好友获取免费积分。",
+      "ctaPricing": "购买积分",
+      "ctaReferral": "通过邀请赚取",
+      "note": "邀请好友：注册 +{signup}，首次购买后 +{payment}。",
+      "close": "关闭",
       "creditsLabel": "积分"
     }
   },
   "HowTo": {
-    "name": "å¦‚ä½•å°†å›¾ç‰‡è½¬æ¢ä¸º3D",
-    "description": "ä½¿ç”¨ Bunshin 3Dï¼Œå¯åœ¨æ•°ç§’å†…å°†ä»»æ„å›¾ç‰‡è½¬æ¢ä¸ºå¯ä¸‹è½½çš„3Dæ¨¡åž‹ã€‚",
+    "name": "如何将图片转换为3D",
+    "description": "使用 Bunshin 3D，可在数秒内将任意图片转换为可下载的3D模型。",
     "tools": {
-      "browser": "ç½‘é¡µæµè§ˆå™¨",
-      "image": "å›¾ç‰‡æ–‡ä»¶ï¼ˆPNGã€JPG æˆ– WEBPï¼‰"
+      "browser": "网页浏览器",
+      "image": "图片文件（PNG、JPG 或 WEBP）"
     },
     "steps": [
       {
-        "name": "ä¸Šä¼ å›¾ç‰‡",
-        "text": "ä¸Šä¼ æ¸…æ™°çš„ PNGã€JPG æˆ– WEBP æ–‡ä»¶ã€‚"
+        "name": "上传图片",
+        "text": "上传清晰的 PNG、JPG 或 WEBP 文件。"
       },
       {
-        "name": "AI å¤„ç†",
-        "text": "AI é‡å»ºæ·±åº¦ã€å‡ ä½•ä¸Žçº¹ç†ã€‚"
+        "name": "AI 处理",
+        "text": "AI 重建深度、几何与纹理。"
       },
       {
-        "name": "ä¸‹è½½ 3D æ¨¡åž‹",
-        "text": "èŽ·å– GLB æˆ– STLï¼Œç”¨äºŽæ‰“å°æˆ–æ¸¸æˆã€‚"
+        "name": "下载 3D 模型",
+        "text": "获取 GLB 或 STL，用于打印或游戏。"
       }
     ]
   },
   "Pricing": {
     "Metadata": {
-      "title": "ä»·æ ¼å’Œç§¯åˆ†",
-      "description": "çµæ´»çš„ç§¯åˆ†åŒ…ç”¨äºŽ3Dç”Ÿæˆã€‚ä¸€æ¬¡ä»˜è´¹ï¼Œæ°¸ä¹…ä½¿ç”¨ã€‚",
+      "title": "价格和积分",
+      "description": "灵活的积分包用于3D生成。一次付费，永久使用。",
       "siteName": "Bunshin 3D",
-      "ogImageAlt": "Bunshin 3D çš„å®šä»·ä¸Žç§¯åˆ†åŒ…"
+      "ogImageAlt": "Bunshin 3D 的定价与积分包"
     },
     "Schema": {
-      "productName": "Bunshin 3D ç§¯åˆ†",
-      "productDescription": "ç”¨äºŽ 3D ç”Ÿæˆçš„çµæ´»ç§¯åˆ†åŒ…ã€‚ä¸€æ¬¡è´­ä¹°ï¼Œæ°¸ä¹…ä½¿ç”¨ã€‚",
+      "productName": "Bunshin 3D 积分",
+      "productDescription": "用于 3D 生成的灵活积分包。一次购买，永久使用。",
       "brandName": "Bunshin 3D",
       "offers": {
         "discovery": {
-          "name": "æŽ¢ç´¢åŒ…",
-          "description": "ç”¨äºŽæµ‹è¯• 3D ç”Ÿæˆå™¨çš„å…¥é—¨åŒ…ã€‚"
+          "name": "探索包",
+          "description": "用于测试 3D 生成器的入门包。"
         },
         "creator": {
-          "name": "åˆ›ä½œè€…åŒ…",
-          "description": "é€‚åˆè®¾è®¡å¸ˆå’Œåˆ›ä½œè€…ã€‚"
+          "name": "创作者包",
+          "description": "适合设计师和创作者。"
         },
         "studio": {
-          "name": "å·¥ä½œå®¤åŒ…",
-          "description": "é¢å‘å·¥ä½œå®¤å’Œå›¢é˜Ÿçš„å¤§å®¹é‡åŒ…ã€‚"
+          "name": "工作室包",
+          "description": "面向工作室和团队的大容量包。"
         }
       },
       "breadcrumb": {
-        "home": "é¦–é¡µ",
-        "pricing": "å®šä»·"
+        "home": "首页",
+        "pricing": "定价"
       }
     },
     "Header": {
-      "title": "ç®€å•ã€é€æ˜Ž",
-      "titleHighlight": "ä»·æ ¼ã€‚",
-      "subtitle": "æŒ‰éœ€è´­ä¹°ç§¯åˆ†ã€‚æ²¡æœ‰æœˆåº¦è®¢é˜…é™·é˜±ã€‚æ‚¨çš„ç§¯åˆ†æ°¸ä¸è¿‡æœŸã€‚"
+      "title": "简单、透明",
+      "titleHighlight": "价格。",
+      "subtitle": "按需购买积分。没有月度订阅陷阱。您的积分永不过期。"
     },
     "Badges": {
-      "popular": "æŽ¨è",
-      "bestValue": "æœ€ä½³ä»·å€¼"
+      "popular": "推荐",
+      "bestValue": "最佳价值"
     },
     "Features": {
-      "quality": "é«˜è´¨é‡ç”Ÿæˆ",
-      "commercial": "å•†ä¸šè®¸å¯",
-      "formats": "GLBå’ŒSTLå¯¼å‡º",
-      "priority": "ä¼˜å…ˆGPUè®¿é—®",
-      "support": "ä¼˜å…ˆæ”¯æŒ"
+      "quality": "高质量生成",
+      "commercial": "商业许可",
+      "formats": "GLB和STL导出",
+      "priority": "优先GPU访问",
+      "support": "优先支持"
     },
     "Card": {
-      "perPack": "æ¯åŒ…",
-      "perCredit": "/ ç§¯åˆ†",
-      "savings": "èŠ‚çœ{percent}%"
+      "perPack": "每包",
+      "perCredit": "/ 积分",
+      "savings": "节省{percent}%"
     },
     "Packs": {
       "Discovery": {
-        "name": "æŽ¢ç´¢",
-        "credits": "10ç§¯åˆ†",
-        "description": "å®Œç¾Žç”¨äºŽæµ‹è¯•ã€‚",
-        "cta": "è´­ä¹°æŽ¢ç´¢åŒ…"
+        "name": "探索",
+        "credits": "10积分",
+        "description": "完美用于测试。",
+        "cta": "购买探索包"
       },
       "Creator": {
-        "name": "åˆ›ä½œè€…",
-        "credits": "50ç§¯åˆ†",
-        "description": "é€‚åˆè®¾è®¡å¸ˆå’Œåˆ›ä½œè€…ã€‚",
-        "cta": "è´­ä¹°åˆ›ä½œè€…åŒ…"
+        "name": "创作者",
+        "credits": "50积分",
+        "description": "适合设计师和创作者。",
+        "cta": "购买创作者包"
       },
       "Studio": {
-        "name": "å·¥ä½œå®¤",
-        "credits": "200ç§¯åˆ†",
-        "description": "å¯†é›†ä½¿ç”¨å’Œä¸“ä¸šäººå£«ã€‚",
-        "cta": "è´­ä¹°å·¥ä½œå®¤åŒ…"
+        "name": "工作室",
+        "credits": "200积分",
+        "description": "密集使用和专业人士。",
+        "cta": "购买工作室包"
       }
     },
     "Footer": {
-      "note": "å®‰å…¨ç»“è´¦ã€‚ç§¯åˆ†æ°¸ä¸è¿‡æœŸã€‚"
+      "note": "安全结账。积分永不过期。"
     },
     "Trust": {
-      "secure": "å®‰å…¨æ”¯ä»˜",
-      "noSub": "æ— éœ€è®¢é˜…",
-      "neverExpire": "ç§¯åˆ†æ°¸ä¸è¿‡æœŸ",
-      "commercial": "å•†ä¸šè®¸å¯"
+      "secure": "安全支付",
+      "noSub": "无需订阅",
+      "neverExpire": "积分永不过期",
+      "commercial": "商业许可"
     },
     "SocialProof": {
-      "users": "å…¨çƒè¶…è¿‡1,200ä½åˆ›ä½œè€…ä¿¡èµ–ä½¿ç”¨"
+      "users": "全球超过1,200位创作者信赖使用"
     },
     "FAQ": {
-      "title": "å¸¸è§é—®é¢˜",
-      "q1": "ç§¯åˆ†æœ‰ä»€ä¹ˆç”¨ï¼Ÿ",
-      "a1": "æ¯ä¸ªç§¯åˆ†å¯ä»¥ä»Žå›¾ç‰‡æˆ–æ–‡å­—æç¤ºç”Ÿæˆä¸€ä¸ª3Dæ¨¡åž‹ã€‚ç§¯åˆ†ä»…åœ¨ç”ŸæˆæˆåŠŸæ—¶æ¶ˆè€—ã€‚",
-      "q2": "ç§¯åˆ†ä¼šè¿‡æœŸå—ï¼Ÿ",
-      "a2": "ä¸ä¼šï¼æ‚¨çš„ç§¯åˆ†æ°¸ä¸è¿‡æœŸã€‚ä¸€æ¬¡è´­ä¹°ï¼Œéšæ—¶ä½¿ç”¨ã€‚æ²¡æœ‰æœˆåº¦è®¢é˜…æˆ–éšè—è´¹ç”¨ã€‚",
-      "q3": "æ”¯æŒå“ªäº›å¯¼å‡ºæ ¼å¼ï¼Ÿ",
-      "a3": "æ‰€æœ‰ç”Ÿæˆçš„3Dæ¨¡åž‹éƒ½å¯ä»¥å¯¼å‡ºä¸ºGLBï¼ˆç”¨äºŽUnityå’ŒUnrealç­‰æ¸¸æˆå¼•æ“Žï¼‰å’ŒSTLï¼ˆç”¨äºŽ3Dæ‰“å°ï¼‰ã€‚ä¸¤ç§æ ¼å¼å‡åŒ…å«åœ¨å†…ã€‚",
-      "q4": "æˆ‘å¯ä»¥å°†æ¨¡åž‹ç”¨äºŽå•†ä¸šç”¨é€”å—ï¼Ÿ",
-      "a4": "å¯ä»¥ï¼æ‰€æœ‰ç§¯åˆ†åŒ…éƒ½åŒ…å«å®Œæ•´çš„å•†ä¸šè®¸å¯è¯ã€‚æ‚¨å¯ä»¥åœ¨æ¸¸æˆã€äº§å“ã€è¥é”€ææ–™ç­‰ä¸­ä½¿ç”¨ç”Ÿæˆçš„3Dæ¨¡åž‹ã€‚",
-      "q5": "AIç”Ÿæˆæ˜¯å¦‚ä½•å·¥ä½œçš„ï¼Ÿ",
-      "a5": "æˆ‘ä»¬çš„AIåˆ†æžæ‚¨çš„2Då›¾ç‰‡æˆ–æ–‡å­—æè¿°ï¼Œç”Ÿæˆå¸¦æœ‰çº¹ç†çš„è¯¦ç»†3Dç½‘æ ¼ã€‚è¯¥è¿‡ç¨‹åœ¨ä¼˜å…ˆGPUæœåŠ¡å™¨ä¸Šå¤§çº¦éœ€è¦30ç§’ã€‚"
+      "title": "常见问题",
+      "q1": "积分有什么用？",
+      "a1": "每个积分可以从图片或文字提示生成一个3D模型。积分仅在生成成功时消耗。",
+      "q2": "积分会过期吗？",
+      "a2": "不会！您的积分永不过期。一次购买，随时使用。没有月度订阅或隐藏费用。",
+      "q3": "支持哪些导出格式？",
+      "a3": "所有生成的3D模型都可以导出为GLB（用于Unity和Unreal等游戏引擎）和STL（用于3D打印）。两种格式均包含在内。",
+      "q4": "我可以将模型用于商业用途吗？",
+      "a4": "可以！所有积分包都包含完整的商业许可证。您可以在游戏、产品、营销材料等中使用生成的3D模型。",
+      "q5": "AI生成是如何工作的？",
+      "a5": "我们的AI分析您的2D图片或文字描述，生成带有纹理的详细3D网格。该过程在优先GPU服务器上大约需要30秒。"
     },
     "Checkout": {
-      "loginRequired": "è¯·ç™»å½•ä»¥ç»§ç»­ã€‚",
-      "serverError": "æœåŠ¡å™¨é”™è¯¯ï¼ˆçŠ¶æ€ {status}ï¼‰ã€‚",
-      "noCheckoutUrl": "ç¼ºå°‘ç»“è´¦é“¾æŽ¥ã€‚",
-      "checkoutErrorLog": "ç»“è´¦é”™è¯¯ï¼š",
-      "paymentInitFailed": "æ”¯ä»˜åˆå§‹åŒ–å¤±è´¥ï¼š{message}"
+      "loginRequired": "请登录以继续。",
+      "serverError": "服务器错误（状态 {status}）。",
+      "noCheckoutUrl": "缺少结账链接。",
+      "checkoutErrorLog": "结账错误：",
+      "paymentInitFailed": "支付初始化失败：{message}"
     }
   },
   "Account": {
     "Metadata": {
-      "title": "æˆ‘çš„ä»ªè¡¨æ¿",
-      "description": "ç®¡ç†æ‚¨çš„ç”Ÿæˆå’Œç§¯åˆ†ã€‚"
+      "title": "我的仪表板",
+      "description": "管理您的生成和积分。"
     },
     "Header": {
-      "title": "æŒ‡æŒ¥ä¸­å¿ƒ",
-      "subtitle": "æ‚¨çš„åˆ›æ„èµ„äº§å’Œèµ„æºæ¦‚è§ˆã€‚",
-      "welcome": "æ¬¢è¿Žå›žæ¥ï¼Œ"
+      "title": "指挥中心",
+      "subtitle": "您的创意资产和资源概览。",
+      "welcome": "欢迎回来，"
     },
     "Stats": {
-      "credits": "å¯ç”¨ç§¯åˆ†",
-      "generations": "æ€»åˆ›ä½œæ•°",
-      "plan": "å½“å‰çŠ¶æ€",
-      "memberSince": "åŠ å…¥æ—¶é—´"
+      "credits": "可用积分",
+      "generations": "总创作数",
+      "plan": "当前状态",
+      "memberSince": "加入时间"
     },
     "History": {
-      "title": "ç”ŸæˆåŽ†å²",
-      "emptyTitle": "è¿˜æ²¡æœ‰åˆ›ä½œ",
-      "emptyDesc": "åœ¨å·¥ä½œå®¤å¼€å§‹æ‚¨çš„ç¬¬ä¸€ä¸ª3Dè½¬æ¢ã€‚",
-      "emptyBtn": "å‰å¾€å·¥ä½œå®¤",
-      "download": "ä¸‹è½½",
-      "date": "åˆ›å»ºäºŽ",
-      "confirmDelete": "åˆ é™¤æ­¤ç”Ÿæˆè®°å½•ï¼Ÿ",
+      "title": "生成历史",
+      "emptyTitle": "还没有创作",
+      "emptyDesc": "在工作室开始您的第一个3D转换。",
+      "emptyBtn": "前往工作室",
+      "download": "下载",
+      "date": "创建于",
+      "confirmDelete": "删除此生成记录？",
       "confirmYes": "删除",
       "confirmNo": "取消",
-      "generatedTime": "ç”Ÿæˆæ—¶é—´ï¼š{time}",
-      "retentionNotice": "ä½ çš„ç”Ÿæˆç»“æžœä¼šä¿å­˜åœ¨è¿™é‡Œï¼Œä¾¿äºŽå¿«é€Ÿè®¿é—®ã€‚",
-      "sourceAlt": "æºå›¾åƒ",
+      "generatedTime": "生成时间：{time}",
+      "retentionNotice": "你的生成结果会保存在这里，便于快速访问。",
+      "sourceAlt": "源图像",
       "statuses": {
-        "processing": "å¤„ç†ä¸­",
-        "succeeded": "å·²å®Œæˆ",
-        "failed": "å¤±è´¥",
-        "queued": "æŽ’é˜Ÿä¸­"
+        "processing": "处理中",
+        "succeeded": "已完成",
+        "failed": "失败",
+        "queued": "排队中"
       },
       "downloadTitles": {
-        "glb": "ä¸‹è½½ GLB",
-        "obj": "ä¸‹è½½ OBJ",
-        "usdz": "ä¸‹è½½ USDZ",
-        "stl": "ä¸‹è½½ STL"
+        "glb": "下载 GLB",
+        "obj": "下载 OBJ",
+        "usdz": "下载 USDZ",
+        "stl": "下载 STL"
       },
       "formatLabels": {
         "glb": "GLB",
@@ -489,426 +489,426 @@
       }
     },
     "Settings": {
-      "logout": "é€€å‡º",
-      "buyCredits": "å……å€¼ç§¯åˆ†"
+      "logout": "退出",
+      "buyCredits": "充值积分"
     }
   },
   "Admin": {
     "Metadata": {
-      "title": "ç³»ç»Ÿè¦†ç›– // ç®¡ç†å‘˜"
+      "title": "系统覆盖 // 管理员"
     },
     "Header": {
-      "title": "æŒ‡æŒ¥ä¸­å¿ƒ",
-      "subtitle": "é™åˆ¶è®¿é—®ã€‚ä»…æŽˆæƒäººå‘˜ã€‚",
-      "status": "å®žæ—¶è¿žæŽ¥"
+      "title": "指挥中心",
+      "subtitle": "限制访问。仅授权人员。",
+      "status": "实时连接"
     },
     "Tabs": {
-      "overview": "æ¦‚è§ˆ",
-      "users": "ç”¨æˆ·"
+      "overview": "概览",
+      "users": "用户"
     },
     "KPI": {
-      "revenue": "æ€»æ”¶å…¥",
-      "users": "æ€»ç”¨æˆ·",
-      "models": "ç”Ÿæˆçš„æ¨¡åž‹",
-      "conversion": "è½¬åŒ–çŽ‡ï¼ˆä»˜è´¹ï¼‰",
-      "arpu": "ARPUï¼ˆå¹³å‡æ”¶å…¥ï¼‰",
-      "burn": "GPUæ¶ˆè€—çŽ‡",
-      "today": "ä»Šæ—¥",
-      "gpuCost": "é¢„ä¼°GPUæˆæœ¬",
-      "errorRate": "é”™è¯¯çŽ‡",
+      "revenue": "总收入",
+      "users": "总用户",
+      "models": "生成的模型",
+      "conversion": "转化率（付费）",
+      "arpu": "ARPU（平均收入）",
+      "burn": "GPU消耗率",
+      "today": "今日",
+      "gpuCost": "预估GPU成本",
+      "errorRate": "错误率",
       "arpuSubValue": "ARPU {symbol}{value}"
     },
     "Tables": {
-      "usersTitle": "æœ€è¿‘ç”¨æˆ·èŽ·å–",
-      "generationsTitle": "å®žæ—¶ç”ŸæˆåŠ¨æ€",
-      "colUser": "ç”¨æˆ·",
-      "colDate": "æ—¥æœŸ",
-      "colStatus": "çŠ¶æ€",
-      "colCredits": "ç§¯åˆ†",
-      "colCost": "ä¼°è®¡æˆæœ¬",
-      "colMode": "æ¨¡å¼"
+      "usersTitle": "最近用户获取",
+      "generationsTitle": "实时生成动态",
+      "colUser": "用户",
+      "colDate": "日期",
+      "colStatus": "状态",
+      "colCredits": "积分",
+      "colCost": "估计成本",
+      "colMode": "模式"
     },
     "Controls": {
-      "serverTime": "æœåŠ¡å™¨æ—¶é—´",
-      "systemControls": "ç³»ç»ŸæŽ§åˆ¶",
-      "maintenance": "ç»´æŠ¤æ¨¡å¼",
-      "maintenanceDesc": "é”å®šå·¥ä½œå®¤ç•Œé¢ã€‚çŽ°æœ‰å·¥ä½œæµçš„APIè®¿é—®ä¿æŒæ´»è·ƒã€‚",
-      "active": "ç³»ç»Ÿæ´»è·ƒ",
-      "inactive": "ç³»ç»Ÿé”å®š"
+      "serverTime": "服务器时间",
+      "systemControls": "系统控制",
+      "maintenance": "维护模式",
+      "maintenanceDesc": "锁定工作室界面。现有工作流的API访问保持活跃。",
+      "active": "系统活跃",
+      "inactive": "系统锁定"
     },
     "Users": {
-      "colActions": "æ“ä½œ",
-      "colUser": "ç”¨æˆ·",
-      "colCredits": "ç§¯åˆ†",
-      "colDate": "æ³¨å†Œæ—¶é—´",
-      "role": "è§’è‰²",
-      "status": "çŠ¶æ€",
-      "grantCredits": "æŽˆäºˆç§¯åˆ†",
-      "changeRole": "æ›´æ”¹è§’è‰²",
-      "ban": "å°ç¦",
-      "unban": "è§£å°",
-      "delete": "åˆ é™¤",
-      "inspect": "æ£€æŸ¥",
-      "searchPlaceholder": "é€šè¿‡é‚®ç®±æœç´¢...",
-      "search": "æœç´¢",
-      "actions": "æ“ä½œ",
-      "grantTitle": "æŽˆäºˆç§¯åˆ†",
-      "currentCredits": "å½“å‰ç§¯åˆ†",
-      "selectAmount": "é€‰æ‹©æ•°é‡",
-      "credits": "ç§¯åˆ†",
-      "customAmount": "è‡ªå®šä¹‰æ•°é‡",
-      "cancel": "å–æ¶ˆ",
-      "grant": "æŽˆäºˆ",
-      "roleTitle": "æ›´æ”¹è§’è‰²",
-      "selectRole": "é€‰æ‹©è§’è‰²",
+      "colActions": "操作",
+      "colUser": "用户",
+      "colCredits": "积分",
+      "colDate": "注册时间",
+      "role": "角色",
+      "status": "状态",
+      "grantCredits": "授予积分",
+      "changeRole": "更改角色",
+      "ban": "封禁",
+      "unban": "解封",
+      "delete": "删除",
+      "inspect": "检查",
+      "searchPlaceholder": "通过邮箱搜索...",
+      "search": "搜索",
+      "actions": "操作",
+      "grantTitle": "授予积分",
+      "currentCredits": "当前积分",
+      "selectAmount": "选择数量",
+      "credits": "积分",
+      "customAmount": "自定义数量",
+      "cancel": "取消",
+      "grant": "授予",
+      "roleTitle": "更改角色",
+      "selectRole": "选择角色",
       "roles": {
-        "user": "ç”¨æˆ·",
-        "moderator": "ç‰ˆä¸»",
-        "admin": "ç®¡ç†å‘˜"
+        "user": "用户",
+        "moderator": "版主",
+        "admin": "管理员"
       },
       "roleDesc": {
-        "user": "æ ‡å‡†å·¥ä½œå®¤è®¿é—®æƒé™",
-        "moderator": "å¯ä»¥å®¡æ ¸å†…å®¹",
-        "admin": "å®Œæ•´ç³»ç»Ÿè®¿é—®æƒé™"
+        "user": "标准工作室访问权限",
+        "moderator": "可以审核内容",
+        "admin": "完整系统访问权限"
       },
-      "saveRole": "ä¿å­˜",
-      "banTitle": "å°ç¦ç”¨æˆ·",
-      "banMessage": "æ‚¨ç¡®å®šè¦å°ç¦æ­¤ç”¨æˆ·å—ï¼Ÿä»–ä»¬å°†æ— æ³•å†è®¿é—®è¯¥æœåŠ¡ã€‚",
-      "unbanTitle": "è§£å°ç”¨æˆ·",
-      "unbanMessage": "æ‚¨ç¡®å®šè¦è§£å°æ­¤ç”¨æˆ·å—ï¼Ÿä»–ä»¬å°†æ¢å¤å¯¹æœåŠ¡çš„è®¿é—®æƒé™ã€‚",
-      "deleteTitle": "åˆ é™¤ç”¨æˆ·",
-      "deleteMessage": "æ­¤æ“ä½œä¸å¯é€†ã€‚æ‰€æœ‰ç”¨æˆ·æ•°æ®å°†è¢«æ°¸ä¹…åˆ é™¤ã€‚",
-      "deleteConfirm": "è¾“å…¥DELETEç¡®è®¤",
-      "typeDelete": "è¾“å…¥DELETE",
-      "confirm": "ç¡®è®¤",
-      "inspectTitle": "ç”¨æˆ·ç”Ÿæˆè®°å½•",
-      "noGenerations": "æœªæ‰¾åˆ°ç”Ÿæˆè®°å½•",
-      "totalGenerations": "å…±{count}æ¡ç”Ÿæˆè®°å½•",
-      "close": "å…³é—­",
-      "customAmountPlaceholder": "è¾“å…¥é‡‘é¢",
+      "saveRole": "保存",
+      "banTitle": "封禁用户",
+      "banMessage": "您确定要封禁此用户吗？他们将无法再访问该服务。",
+      "unbanTitle": "解封用户",
+      "unbanMessage": "您确定要解封此用户吗？他们将恢复对服务的访问权限。",
+      "deleteTitle": "删除用户",
+      "deleteMessage": "此操作不可逆。所有用户数据将被永久删除。",
+      "deleteConfirm": "输入DELETE确认",
+      "typeDelete": "输入DELETE",
+      "confirm": "确认",
+      "inspectTitle": "用户生成记录",
+      "noGenerations": "未找到生成记录",
+      "totalGenerations": "共{count}条生成记录",
+      "close": "关闭",
+      "customAmountPlaceholder": "输入金额",
       "deleteKeyword": "DELETE",
       "rolesShort": {
-        "admin": "ç®¡ç†å‘˜",
+        "admin": "管理员",
         "moderator": "MOD",
-        "user": "ç”¨æˆ·"
+        "user": "用户"
       },
-      "statusActive": "æ´»è·ƒ",
-      "statusBanned": "å·²å°ç¦",
+      "statusActive": "活跃",
+      "statusBanned": "已封禁",
       "unknownInitial": "?"
     },
     "Errors": {
-      "actionFailed": "æ“ä½œå¤±è´¥ï¼Œè¯·é‡è¯•ã€‚",
-      "changeRoleFailed": "æ›´æ”¹è§’è‰²å¤±è´¥ã€‚",
-      "grantCreditsFailed": "å‘æ”¾ç§¯åˆ†å¤±è´¥ã€‚",
-      "loadUsers": "åŠ è½½ç”¨æˆ·å¤±è´¥ã€‚",
-      "updateSystemStatus": "æ›´æ–°ç³»ç»ŸçŠ¶æ€å¤±è´¥ã€‚",
-      "serviceRoleMissing": "ç¼ºå°‘ service role å¯†é’¥ã€‚",
-      "userNotFound": "æœªæ‰¾åˆ°ç”¨æˆ·ã€‚",
-      "banUpdateFailed": "æ›´æ–°å°ç¦çŠ¶æ€å¤±è´¥ã€‚",
-      "deleteProfileFailed": "åˆ é™¤ç”¨æˆ·èµ„æ–™å¤±è´¥ã€‚",
-      "fetchUsersFailed": "èŽ·å–ç”¨æˆ·å¤±è´¥ã€‚",
-      "updateSettingsFailed": "æ›´æ–°è®¾ç½®å¤±è´¥ã€‚",
-      "notAuthenticated": "æœªè®¤è¯ã€‚",
-      "notAuthorized": "æ— æƒé™ã€‚"
+      "actionFailed": "操作失败，请重试。",
+      "changeRoleFailed": "更改角色失败。",
+      "grantCreditsFailed": "发放积分失败。",
+      "loadUsers": "加载用户失败。",
+      "updateSystemStatus": "更新系统状态失败。",
+      "serviceRoleMissing": "缺少 service role 密钥。",
+      "userNotFound": "未找到用户。",
+      "banUpdateFailed": "更新封禁状态失败。",
+      "deleteProfileFailed": "删除用户资料失败。",
+      "fetchUsersFailed": "获取用户失败。",
+      "updateSettingsFailed": "更新设置失败。",
+      "notAuthenticated": "未认证。",
+      "notAuthorized": "无权限。"
     },
     "Statuses": {
-      "processing": "å¤„ç†ä¸­",
-      "succeeded": "æˆåŠŸ",
-      "failed": "å¤±è´¥",
-      "queued": "æŽ’é˜Ÿä¸­"
+      "processing": "处理中",
+      "succeeded": "成功",
+      "failed": "失败",
+      "queued": "排队中"
     }
   },
   "Legal": {
     "Metadata": {
-      "termsTitle": "æœåŠ¡æ¡æ¬¾ - Bunshin 3D",
-      "termsDescription": "æŸ¥çœ‹ Bunshin 3D çš„æœåŠ¡æ¡æ¬¾ã€‚",
-      "privacyTitle": "éšç§æ”¿ç­– - Bunshin 3D",
-      "privacyDescription": "äº†è§£ Bunshin 3D å¦‚ä½•æ”¶é›†å¹¶ä½¿ç”¨ä½ çš„æ•°æ®ã€‚",
-      "mentionsTitle": "æ³•å¾‹å£°æ˜Ž - Bunshin 3D",
-      "mentionsDescription": "Bunshin 3D çš„å…¬å¸ä¸Žæ‰˜ç®¡ä¿¡æ¯ã€‚"
+      "termsTitle": "服务条款 - Bunshin 3D",
+      "termsDescription": "查看 Bunshin 3D 的服务条款。",
+      "privacyTitle": "隐私政策 - Bunshin 3D",
+      "privacyDescription": "了解 Bunshin 3D 如何收集并使用你的数据。",
+      "mentionsTitle": "法律声明 - Bunshin 3D",
+      "mentionsDescription": "Bunshin 3D 的公司与托管信息。"
     },
     "Terms": {
-      "title": "æœåŠ¡æ¡æ¬¾",
-      "lastUpdated": "æœ€åŽæ›´æ–°ï¼š2026å¹´1æœˆ",
-      "intro": "æ¬¢è¿Žä½¿ç”¨Bunshin 3Dã€‚ä½¿ç”¨æˆ‘ä»¬çš„æœåŠ¡å³è¡¨ç¤ºæ‚¨åŒæ„è¿™äº›æ¡æ¬¾ã€‚",
-      "section1Title": "1. ä½¿ç”¨",
-      "section1Text": "æˆ‘ä»¬çš„æœåŠ¡å…è®¸æ‚¨ä½¿ç”¨AIç”Ÿæˆ3Dæ¨¡åž‹ã€‚æ‚¨å¿…é¡»éµå®ˆæ‰€æœ‰é€‚ç”¨æ³•å¾‹ä½¿ç”¨æ­¤æœåŠ¡ã€‚",
-      "section2Title": "2. çŸ¥è¯†äº§æƒ",
-      "section2Text": "æ‚¨ä¿ç•™å¯¹ç”Ÿæˆæ¨¡åž‹çš„æƒåˆ©ï¼Œä½†éœ€æŽˆäºˆæˆ‘ä»¬æ‰˜ç®¡å’Œå±•ç¤ºçš„è®¸å¯ã€‚",
-      "section3Title": "3. è´£ä»»",
-      "section3Text": "æœåŠ¡æŒ‰'åŽŸæ ·'æä¾›ã€‚æˆ‘ä»¬ä¸å¯¹ä½¿ç”¨äº§ç”Ÿçš„ä»»ä½•æŸå®³è´Ÿè´£ã€‚"
+      "title": "服务条款",
+      "lastUpdated": "最后更新：2026年1月",
+      "intro": "欢迎使用Bunshin 3D。使用我们的服务即表示您同意这些条款。",
+      "section1Title": "1. 使用",
+      "section1Text": "我们的服务允许您使用AI生成3D模型。您必须遵守所有适用法律使用此服务。",
+      "section2Title": "2. 知识产权",
+      "section2Text": "您保留对生成模型的权利，但需授予我们托管和展示的许可。",
+      "section3Title": "3. 责任",
+      "section3Text": "服务按'原样'提供。我们不对使用产生的任何损害负责。"
     },
     "Privacy": {
-      "title": "éšç§æ”¿ç­–",
-      "lastUpdated": "æœ€åŽæ›´æ–°ï¼š2026å¹´1æœˆ",
-      "intro": "æ‚¨çš„éšç§å¯¹æˆ‘ä»¬å¾ˆé‡è¦ã€‚æœ¬æ”¿ç­–è§£é‡Šæˆ‘ä»¬å¦‚ä½•å¤„ç†æ‚¨çš„æ•°æ®ã€‚",
-      "section1Title": "1. æ•°æ®æ”¶é›†",
-      "section1Text": "æˆ‘ä»¬ä»…ä¸ºæä¾›æœåŠ¡çš„ç›®çš„æ”¶é›†æ‚¨çš„ç”µå­é‚®ä»¶å’Œä¸Šä¼ çš„å›¾åƒã€‚",
-      "section2Title": "2. æ•°æ®ä½¿ç”¨",
-      "section2Text": "æˆ‘ä»¬ä¸å‡ºå”®æ‚¨çš„æ•°æ®ã€‚æ‚¨çš„å›¾åƒç”±æˆ‘ä»¬çš„AIæä¾›å•†å¤„ç†å¹¶å®‰å…¨å­˜å‚¨ã€‚",
-      "section3Title": "3. æ‚¨çš„æƒåˆ©",
-      "section3Text": "æ‚¨å¯ä»¥éšæ—¶é€šè¿‡ä»ªè¡¨æ¿è¯·æ±‚åˆ é™¤æ‚¨çš„å¸æˆ·å’Œæ•°æ®ã€‚"
+      "title": "隐私政策",
+      "lastUpdated": "最后更新：2026年1月",
+      "intro": "您的隐私对我们很重要。本政策解释我们如何处理您的数据。",
+      "section1Title": "1. 数据收集",
+      "section1Text": "我们仅为提供服务的目的收集您的电子邮件和上传的图像。",
+      "section2Title": "2. 数据使用",
+      "section2Text": "我们不出售您的数据。您的图像由我们的AI提供商处理并安全存储。",
+      "section3Title": "3. 您的权利",
+      "section3Text": "您可以随时通过仪表板请求删除您的帐户和数据。"
     },
     "Mentions": {
-      "title": "æ³•å¾‹å£°æ˜Ž",
-      "editorTitle": "å‡ºç‰ˆå•†",
-      "editorText": "Bunshin 3D\næ³•å›½\nç”µå­é‚®ä»¶ï¼šcontact@metalya.fr",
-      "hostTitle": "æ‰˜ç®¡",
+      "title": "法律声明",
+      "editorTitle": "出版商",
+      "editorText": "Bunshin 3D\n法国\n电子邮件：contact@metalya.fr",
+      "hostTitle": "托管",
       "hostText": "Vercel",
-      "creditsTitle": "åˆ¶ä½œäººå‘˜",
-      "creditsText": "ç”±Bunshin 3Då›¢é˜Ÿè®¾è®¡å’Œå¼€å‘ã€‚"
+      "creditsTitle": "制作人员",
+      "creditsText": "由Bunshin 3D团队设计和开发。"
     }
   },
   "Common": {
-    "skipToContent": "è·³è½¬åˆ°ä¸»è¦å†…å®¹",
-    "generatedAsset": "ç”Ÿæˆçš„èµ„äº§",
-    "buyCredits": "è´­ä¹°ç§¯åˆ†",
-    "loading": "åŠ è½½ä¸­...",
-    "error": "é”™è¯¯",
-    "success": "æˆåŠŸ",
-    "cancel": "å–æ¶ˆ",
-    "confirm": "ç¡®è®¤",
-    "download": "ä¸‹è½½",
-    "processing": "å¤„ç†ä¸­...",
-    "previous": "ä¸Šä¸€é¡µ",
-    "next": "ä¸‹ä¸€é¡µ",
-    "pageOf": "ç¬¬{page}é¡µï¼Œå…±{total}é¡µ",
-    "brandLogoAlt": "Bunshin 3D æ ‡å¿—",
-    "creditsWithCount": "{count} ç§¯åˆ†",
+    "skipToContent": "跳转到主要内容",
+    "generatedAsset": "生成的资产",
+    "buyCredits": "购买积分",
+    "loading": "加载中...",
+    "error": "错误",
+    "success": "成功",
+    "cancel": "取消",
+    "confirm": "确认",
+    "download": "下载",
+    "processing": "处理中...",
+    "previous": "上一页",
+    "next": "下一页",
+    "pageOf": "第{page}页，共{total}页",
+    "brandLogoAlt": "Bunshin 3D 标志",
+    "creditsWithCount": "{count} 积分",
     "currencySymbols": {
-      "eur": "â‚¬",
+      "eur": "€",
       "usd": "$"
     },
     "downloads": {
       "fileName": "bunshin3d-{timestamp}.{extension}"
     },
     "errors": {
-      "downloadErrorLog": "ä¸‹è½½é”™è¯¯ï¼š",
-      "downloadFailed": "ä¸‹è½½å¤±è´¥ã€‚",
-      "noModelUrl": "ç¼ºå°‘æ¨¡åž‹ URLã€‚",
-      "unknownFormat": "æœªçŸ¥æ ¼å¼ã€‚"
+      "downloadErrorLog": "下载错误：",
+      "downloadFailed": "下载失败。",
+      "noModelUrl": "缺少模型 URL。",
+      "unknownFormat": "未知格式。"
     },
-    "pending": "å¾…å¤„ç†"
+    "pending": "待处理"
   },
   "TextTo3D": {
     "Metadata": {
-      "title": "æ–‡æœ¬è½¬3D - æ ‡å‡†",
-      "description": "ä½¿ç”¨AIä»Žæ–‡æœ¬æè¿°ç”Ÿæˆ3Dæ¨¡åž‹ã€‚æ¯æ¬¡ç”Ÿæˆ1ç§¯åˆ†ã€‚"
+      "title": "文本转3D - 标准",
+      "description": "使用AI从文本描述生成3D模型。每次生成1积分。"
     },
     "Header": {
-      "title": "æ–‡æœ¬è½¬3D - æ ‡å‡†",
-      "subtitle": "å°†æ‚¨çš„æƒ³æ³•è½¬å˜ä¸º3Dæ¨¡åž‹",
-      "cost": "æ¯æ¬¡ç”Ÿæˆ1ç§¯åˆ†"
+      "title": "文本转3D - 标准",
+      "subtitle": "将您的想法转变为3D模型",
+      "cost": "每次生成1积分"
     },
     "Form": {
-      "promptLabel": "æè¿°æ‚¨çš„3Dæ¨¡åž‹",
-      "promptPlaceholder": "ç«™åœ¨å¹³å°ä¸Šçš„æœªæ¥æœºå™¨äºº...",
-      "generateButton": "ç”Ÿæˆ3Dæ¨¡åž‹",
-      "generatingImage": "æ­¥éª¤1/2ï¼šæ­£åœ¨ç”Ÿæˆä¼˜åŒ–çš„å›¾åƒ...",
-      "generatingModel": "æ­¥éª¤2/2ï¼šæ­£åœ¨è½¬æ¢ä¸º3Dæ¨¡åž‹...",
-      "imageReady": "å›¾åƒå·²ç”Ÿæˆï¼æ­£åœ¨è¿›è¡Œ3Då¤„ç†...",
-      "modelReady": "3Dæ¨¡åž‹å·²å‡†å¤‡å¥½ï¼",
-      "downloadGLB": "ä¸‹è½½GLB",
-      "insufficientCredits": "ç§¯åˆ†ä¸è¶³ã€‚ç”Ÿæˆéœ€è¦1ç§¯åˆ†ã€‚",
-      "promptRequired": "è¯·è¾“å…¥æè¿°"
+      "promptLabel": "描述您的3D模型",
+      "promptPlaceholder": "站在平台上的未来机器人...",
+      "generateButton": "生成3D模型",
+      "generatingImage": "步骤1/2：正在生成优化的图像...",
+      "generatingModel": "步骤2/2：正在转换为3D模型...",
+      "imageReady": "图像已生成！正在进行3D处理...",
+      "modelReady": "3D模型已准备好！",
+      "downloadGLB": "下载GLB",
+      "insufficientCredits": "积分不足。生成需要1积分。",
+      "promptRequired": "请输入描述"
     },
     "Tips": {
-      "title": "èŽ·å¾—æœ€ä½³ç»“æžœçš„æç¤º",
-      "tip1": "å…·ä½“è¯´æ˜Žç‰©ä½“å½¢çŠ¶å’Œç»†èŠ‚",
-      "tip2": "æåŠè§†è§’ï¼ˆç­‰è·ã€æ­£è§†å›¾ç­‰ï¼‰",
-      "tip3": "é¿å…åŒ…å«å¤šä¸ªç‰©ä½“çš„å¤æ‚åœºæ™¯",
-      "tip4": "æ ‡å‡†è´¨é‡éžå¸¸é€‚åˆåŽŸåž‹å’Œæ¦‚å¿µ"
+      "title": "获得最佳结果的提示",
+      "tip1": "具体说明物体形状和细节",
+      "tip2": "提及视角（等距、正视图等）",
+      "tip3": "避免包含多个物体的复杂场景",
+      "tip4": "标准质量非常适合原型和概念"
     }
   },
   "Premium3D": {
     "Metadata": {
-      "title": "é«˜çº§å›¾åƒè½¬3D",
-      "description": "ä½¿ç”¨Rodin AIä»Žå›¾åƒè¿›è¡Œé«˜ä¿çœŸ3Dç”Ÿæˆã€‚æ¯æ¬¡ç”Ÿæˆ5ç§¯åˆ†ã€‚"
+      "title": "高级图像转3D",
+      "description": "使用Rodin AI从图像进行高保真3D生成。每次生成5积分。"
     },
     "Header": {
-      "title": "é«˜çº§å›¾åƒè½¬3D",
-      "subtitle": "ä»Žæ‚¨çš„å›¾åƒç”Ÿæˆç”µå½±è´¨é‡çš„3Dæ¨¡åž‹",
-      "cost": "æ¯æ¬¡ç”Ÿæˆ5ç§¯åˆ†"
+      "title": "高级图像转3D",
+      "subtitle": "从您的图像生成电影质量的3D模型",
+      "cost": "每次生成5积分"
     },
     "Form": {
-      "uploadLabel": "ä¸Šä¼ æ‚¨çš„å›¾åƒ",
-      "uploadHint": "JPGã€PNGã€WEBPï¼ˆæœ€å¤§10MBï¼‰",
-      "generateButton": "ç”Ÿæˆé«˜çº§3D",
-      "generating": "Rodin AIæ­£åœ¨å·¥ä½œ...ï¼ˆé¢„è®¡2åˆ†é’Ÿï¼‰",
-      "modelReady": "é«˜çº§3Dæ¨¡åž‹å·²å‡†å¤‡å¥½ï¼",
-      "downloadGLB": "ä¸‹è½½GLB",
-      "insufficientCredits": "ç§¯åˆ†ä¸è¶³ã€‚é«˜çº§ç”Ÿæˆéœ€è¦5ç§¯åˆ†ã€‚",
-      "imageRequired": "è¯·å…ˆä¸Šä¼ å›¾åƒ"
+      "uploadLabel": "上传您的图像",
+      "uploadHint": "JPG、PNG、WEBP（最大10MB）",
+      "generateButton": "生成高级3D",
+      "generating": "Rodin AI正在工作...（预计2分钟）",
+      "modelReady": "高级3D模型已准备好！",
+      "downloadGLB": "下载GLB",
+      "insufficientCredits": "积分不足。高级生成需要5积分。",
+      "imageRequired": "请先上传图像"
     },
     "Features": {
-      "title": "é«˜çº§åŠŸèƒ½",
-      "feature1": "ç…§ç‰‡çº§çœŸå®žçº¹ç†",
-      "feature2": "é«˜å¤šè¾¹å½¢ç½‘æ ¼ä»¥èŽ·å¾—æœ€å¤§ç»†èŠ‚",
-      "feature3": "é«˜çº§å‡ ä½•é‡å»º",
-      "feature4": "é€‚ç”¨äºŽç”µå½±å’ŒAAAæ¸¸æˆçš„ç”Ÿäº§å°±ç»ª"
+      "title": "高级功能",
+      "feature1": "照片级真实纹理",
+      "feature2": "高多边形网格以获得最大细节",
+      "feature3": "高级几何重建",
+      "feature4": "适用于电影和AAA游戏的生产就绪"
     },
     "Warning": {
-      "title": "âš ï¸ é«˜çº§ç”Ÿæˆ",
-      "message": "è¿™å°†æ¶ˆè€—5ç§¯åˆ†ã€‚é«˜çº§æ¨¡åž‹æä¾›å…·æœ‰ç…§ç‰‡çº§çœŸå®žç»†èŠ‚çš„ç”µå½±è´¨é‡ç»“æžœã€‚"
+      "title": "⚠️ 高级生成",
+      "message": "这将消耗5积分。高级模型提供具有照片级真实细节的电影质量结果。"
     }
   },
   "Referral": {
-    "title": "æŽ¨èè®¡åˆ’",
-    "linkLabel": "ä½ çš„æŽ¨èé“¾æŽ¥",
-    "linkUnavailable": "é“¾æŽ¥ä¸å¯ç”¨",
-    "creditsLabel": "é€šè¿‡æŽ¨èèŽ·å¾—çš„ç§¯åˆ†",
-    "copyLabel": "å¤åˆ¶é“¾æŽ¥",
-    "copiedLabel": "å·²å¤åˆ¶ï¼",
+    "title": "推荐计划",
+    "linkLabel": "你的推荐链接",
+    "linkUnavailable": "链接不可用",
+    "creditsLabel": "通过推荐获得的积分",
+    "copyLabel": "复制链接",
+    "copiedLabel": "已复制！",
     "Promo": {
-      "headerText": "é‚€è¯·å¥½å‹ï¼Œèµšå–å…è´¹ç§¯åˆ†",
-      "headerCta": "äº†è§£æ›´å¤š",
-      "badge": "æŽ¨èè®¡åˆ’",
-      "sectionTitle": "èµšå–å…è´¹ç§¯åˆ†",
-      "sectionSubtitle": "ä¸Žå¥½å‹åˆ†äº« Bunshin 3Dï¼Œæ¯æ¬¡æ³¨å†Œå’Œè´­ä¹°éƒ½èƒ½èŽ·å¾—ç§¯åˆ†ã€‚",
-      "bonusTitle": "æŽ¨èå¥–åŠ±",
-      "bonusSubtitle": "æ¯ä¸ªæ­¥éª¤éƒ½èƒ½èµšç§¯åˆ†",
-      "bonusBadgeSignup": "+2 ç§¯åˆ†",
-      "bonusBadgePayment": "+10 ç§¯åˆ†",
-      "bonusCaption": "æ— ä¸Šé™ï¼Œç§¯åˆ†å¯ç´¯ç§¯ã€‚",
+      "headerText": "邀请好友，赚取免费积分",
+      "headerCta": "了解更多",
+      "badge": "推荐计划",
+      "sectionTitle": "赚取免费积分",
+      "sectionSubtitle": "与好友分享 Bunshin 3D，每次注册和购买都能获得积分。",
+      "bonusTitle": "推荐奖励",
+      "bonusSubtitle": "每个步骤都能赚积分",
+      "bonusBadgeSignup": "+2 积分",
+      "bonusBadgePayment": "+10 积分",
+      "bonusCaption": "无上限，积分可累积。",
       "steps": {
         "invite": {
-          "title": "åˆ†äº«ä½ çš„é“¾æŽ¥",
-          "description": "å°†ä½ çš„ä¸“å±žæŽ¨èé“¾æŽ¥å‘ç»™å¥½å‹",
-          "desc": "å°†ä½ çš„ä¸“å±žæŽ¨èé“¾æŽ¥å‘ç»™å¥½å‹"
+          "title": "分享你的链接",
+          "description": "将你的专属推荐链接发给好友",
+          "desc": "将你的专属推荐链接发给好友"
         },
         "signup": {
-          "title": "å¥½å‹æ³¨å†Œ",
-          "description": "ä»–ä»¬é€šè¿‡ä½ çš„é“¾æŽ¥åˆ›å»ºè´¦æˆ·",
-          "desc": "ä»–ä»¬é€šè¿‡ä½ çš„é“¾æŽ¥åˆ›å»ºè´¦æˆ·"
+          "title": "好友注册",
+          "description": "他们通过你的链接创建账户",
+          "desc": "他们通过你的链接创建账户"
         },
         "pay": {
-          "title": "å¥½å‹è´­ä¹°",
-          "description": "å½“ä»–ä»¬è´­ä¹°ç§¯åˆ†æ—¶ï¼ŒåŒæ–¹éƒ½èŽ·ç›Š",
-          "desc": "å½“ä»–ä»¬è´­ä¹°ç§¯åˆ†æ—¶ï¼ŒåŒæ–¹éƒ½èŽ·ç›Š"
+          "title": "好友购买",
+          "description": "当他们购买积分时，双方都获益",
+          "desc": "当他们购买积分时，双方都获益"
         }
       },
-      "ctaPrimary": "å¤åˆ¶æŽ¨èé“¾æŽ¥",
-      "ctaSecondary": "å‰å¾€ä»ªè¡¨æ¿",
-      "highlightTag": "å…è´¹ç§¯åˆ†",
-      "pricingTitle": "æŽ¨èç«‹çœ",
-      "pricingSubtitle": "é‚€è¯·å¥½å‹èµšå–ç§¯åˆ†",
-      "footerTitle": "é‚€è¯·å¥½å‹æ³¨å†Œå³å¯èŽ·å¾—å…è´¹ç§¯åˆ†ï¼",
-      "footerCta": "å¼€å§‹èµšå–"
+      "ctaPrimary": "复制推荐链接",
+      "ctaSecondary": "前往仪表板",
+      "highlightTag": "免费积分",
+      "pricingTitle": "推荐立省",
+      "pricingSubtitle": "邀请好友赚取积分",
+      "footerTitle": "邀请好友注册即可获得免费积分！",
+      "footerCta": "开始赚取"
     }
   },
   "Showcase": {
-    "generatedAsset": "ç”Ÿæˆçš„èµ„äº§",
-    "viewModel": "æŸ¥çœ‹æ¨¡åž‹",
-    "download": "ä¸‹è½½",
-    "title": "Bunshin ç”Ÿæˆ",
-    "subtitle": "ä»Žç®€å•çš„æ ‡å¿—åˆ°å¤æ‚çš„è§’è‰²ã€‚çœ‹çœ‹æˆ‘ä»¬çš„ AI èƒ½åˆ›é€ ä»€ä¹ˆã€‚",
+    "generatedAsset": "生成的资产",
+    "viewModel": "查看模型",
+    "download": "下载",
+    "title": "Bunshin 生成",
+    "subtitle": "从简单的标志到复杂的角色。看看我们的 AI 能创造什么。",
     "badges": {
-      "premium": "é«˜çº§",
-      "standard": "æ ‡å‡†"
+      "premium": "高级",
+      "standard": "标准"
     },
     "examples": {
       "woodenChair": {
-        "name": "æœ¨æ¤…",
-        "prompt": "ä¸€æŠŠæœ´ç´ çš„ä¹¡æ‘é£Žæœ¨æ¤…ï¼Œå¸¦é›•åˆ»é èƒŒ",
-        "alt": "Bunshin AI ç”Ÿæˆçš„æœ¨æ¤… 3D æ¨¡åž‹"
+        "name": "木椅",
+        "prompt": "一把朴素的乡村风木椅，带雕刻靠背",
+        "alt": "Bunshin AI 生成的木椅 3D 模型"
       },
       "coffeeMug": {
-        "name": "å’–å•¡æ¯",
-        "prompt": "ä¸€åªæžç®€è®¾è®¡çš„é™¶ç“·å’–å•¡æ¯",
-        "alt": "Bunshin AI ç”Ÿæˆçš„å’–å•¡æ¯ 3D æ¨¡åž‹"
+        "name": "咖啡杯",
+        "prompt": "一只极简设计的陶瓷咖啡杯",
+        "alt": "Bunshin AI 生成的咖啡杯 3D 模型"
       },
       "rubberDuck": {
-        "name": "æ©¡çš®é¸­",
-        "prompt": "ä¸€åªç»å…¸é»„è‰²æ©¡çš®é¸­æµ´çŽ©å…·",
-        "alt": "Bunshin AI ç”Ÿæˆçš„æ©¡çš®é¸­ 3D æ¨¡åž‹"
+        "name": "橡皮鸭",
+        "prompt": "一只经典黄色橡皮鸭浴玩具",
+        "alt": "Bunshin AI 生成的橡皮鸭 3D 模型"
       },
       "cactusPot": {
-        "name": "ä»™äººæŽŒç›†æ ½",
-        "prompt": "ä¸€æ ªå°ä»™äººæŽŒï¼Œç½®äºŽé™¶åœŸç›†ä¸­å¹¶é…æœ‰å°çŸ³å­",
-        "alt": "Bunshin AI ç”Ÿæˆçš„ä»™äººæŽŒç›†æ ½ 3D æ¨¡åž‹"
+        "name": "仙人掌盆栽",
+        "prompt": "一株小仙人掌，置于陶土盆中并配有小石子",
+        "alt": "Bunshin AI 生成的仙人掌盆栽 3D 模型"
       },
       "katanaSword": {
-        "name": "æ­¦å£«åˆ€",
-        "prompt": "ä¼ ç»Ÿæ—¥æœ¬æ­¦å£«åˆ€ï¼Œå¸¦ç¼ ç»•åˆ€æŸ„å’Œå¼¯æ›²åˆ€åˆƒ",
-        "alt": "Bunshin AIç”Ÿæˆçš„æ­¦å£«åˆ€3Dæ¨¡åž‹"
+        "name": "武士刀",
+        "prompt": "传统日本武士刀，带缠绕刀柄和弯曲刀刃",
+        "alt": "Bunshin AI生成的武士刀3D模型"
       },
       "shuriken": {
-        "name": "æ‰‹é‡Œå‰‘",
-        "prompt": "å¸¦æœ‰é›•åˆ»å›¾æ¡ˆçš„é”‹åˆ©å››è§’æ‰‹é‡Œå‰‘",
-        "alt": "Bunshin AIç”Ÿæˆçš„æ‰‹é‡Œå‰‘3Dæ¨¡åž‹"
+        "name": "手里剑",
+        "prompt": "带有雕刻图案的锋利四角手里剑",
+        "alt": "Bunshin AI生成的手里剑3D模型"
       },
       "battleAxe": {
-        "name": "æˆ˜æ–§",
-        "prompt": "åˆ»æœ‰ç¬¦æ–‡çš„æœ¨æŸ„åŒåˆƒç»´äº¬æˆ˜æ–§",
-        "alt": "Bunshin AIç”Ÿæˆçš„æˆ˜æ–§3Dæ¨¡åž‹"
+        "name": "战斧",
+        "prompt": "刻有符文的木柄双刃维京战斧",
+        "alt": "Bunshin AI生成的战斧3D模型"
       },
       "wizardStaff": {
-        "name": "é­”æ³•æ–",
-        "prompt": "å¸¦æœ‰å‘å…‰æ°´æ™¶çƒå’Œæ‰­æ›²æœ¨æçš„ç¥žç§˜é­”æ³•å¸ˆæ³•æ–",
-        "alt": "Bunshin AIç”Ÿæˆçš„é­”æ³•æ–3Dæ¨¡åž‹"
+        "name": "魔法杖",
+        "prompt": "带有发光水晶球和扭曲木材的神秘魔法师法杖",
+        "alt": "Bunshin AI生成的魔法杖3D模型"
       }
     },
     "items": {
-      "poubelle": "åžƒåœ¾æ¡¶",
-      "shuriken": "æ‰‹é‡Œå‰‘",
-      "robot": "æœºå™¨äºº",
-      "coffre": "å®ç®±",
-      "chaise": "æ¤…å­",
-      "hache": "æ–§å¤´",
-      "tasse": "æ¯å­",
-      "lampe": "ç¯"
+      "poubelle": "垃圾桶",
+      "shuriken": "手里剑",
+      "robot": "机器人",
+      "coffre": "宝箱",
+      "chaise": "椅子",
+      "hache": "斧头",
+      "tasse": "杯子",
+      "lampe": "灯"
     }
   },
   "OTO": {
-    "close": "å…³é—­",
-    "badge": "ç‹¬å®¶æ¬¢è¿Žä¼˜æƒ ",
-    "title": "ä½ çš„åˆ›é€ åŠ›å€¼å¾—æ›´å¥½ã€‚",
-    "subtitle": "ä»¥è¶…å€¼ä»·æ ¼è§£é”ä½ çš„é¦–æ‰¹ç§¯åˆ†ã€‚ä¼˜æƒ å³å°†ç»“æŸã€‚",
-    "discountBadge": "æœ€é«˜ -67% ä¼˜æƒ ",
+    "close": "关闭",
+    "badge": "独家欢迎优惠",
+    "title": "你的创造力值得更好。",
+    "subtitle": "以超值价格解锁你的首批积分。优惠即将结束。",
+    "discountBadge": "最高 -67% 优惠",
     "discovery": {
-      "name": "æŽ¢ç´¢",
-      "price": "0.99â‚¬",
-      "originalPrice": "2.99â‚¬",
-      "credits": "åŒ…å«10ç§¯åˆ†"
+      "name": "探索",
+      "price": "0.99€",
+      "originalPrice": "2.99€",
+      "credits": "包含10积分"
     },
     "studio": {
-      "name": "å·¥ä½œå®¤ Pro",
-      "price": "19.99â‚¬",
-      "originalPrice": "29.99â‚¬",
-      "credits": "åŒ…å«200ç§¯åˆ†"
+      "name": "工作室 Pro",
+      "price": "19.99€",
+      "originalPrice": "29.99€",
+      "credits": "包含200积分"
     },
-    "footer": "ä¸€æ¬¡æ€§ä¼˜æƒ ï¼Œç§¯åˆ†æ°¸ä¸è¿‡æœŸã€‚",
+    "footer": "一次性优惠，积分永不过期。",
     "checkoutError": "发生错误，请重试。",
     "banner": {
-      "text": "æ¬¢è¿Žä¼˜æƒ å°†äºŽ",
-      "cta": "ç«‹å³é¢†å–"
+      "text": "欢迎优惠将于",
+      "cta": "立即领取"
     }
   },
   "FAQ": {
     "items": [
       {
-        "question": "Bunshin 3D å¦‚ä½•å·¥ä½œï¼Ÿ",
-        "answer": "Bunshin 3D ä½¿ç”¨å…ˆè¿›çš„ AI å°† 2D å›¾åƒå’Œæ–‡æœ¬æè¿°è½¬æ¢ä¸º GLB å’Œ STL æ ¼å¼çš„ 3D æ¨¡åž‹ã€‚åªéœ€ä¸Šä¼ å›¾ç‰‡æˆ–æè¿°ä½ çš„éœ€æ±‚ï¼ŒAI å°±ä¼šç”Ÿæˆå¯ç”¨äºŽç”Ÿäº§çš„ 3D æ¨¡åž‹ã€‚"
+        "question": "Bunshin 3D 如何工作？",
+        "answer": "Bunshin 3D 使用先进的 AI 将 2D 图像和文本描述转换为 GLB 和 STL 格式的 3D 模型。只需上传图片或描述你的需求，AI 就会生成可用于生产的 3D 模型。"
       },
       {
-        "question": "æ”¯æŒå“ªäº›æ ¼å¼ï¼Ÿ",
-        "answer": "æˆ‘ä»¬æ”¯æŒ GLBï¼ˆç”¨äºŽ Unity/Unreal ç­‰æ¸¸æˆå¼•æ“Žï¼‰ã€STLï¼ˆç”¨äºŽ 3D æ‰“å°ï¼‰å’Œ OBJ æ ¼å¼ã€‚æ‰€æœ‰æ¨¡åž‹éƒ½ç»è¿‡æ‹“æ‰‘ä¼˜åŒ–ã€‚"
+        "question": "支持哪些格式？",
+        "answer": "我们支持 GLB（用于 Unity/Unreal 等游戏引擎）、STL（用于 3D 打印）和 OBJ 格式。所有模型都经过拓扑优化。"
       },
       {
-        "question": "éœ€è¦å¤šå°‘ç§¯åˆ†ï¼Ÿ",
-        "answer": "æ ‡å‡†è´¨é‡æ¯æ¬¡ç”Ÿæˆæ¶ˆè€— 1 ç§¯åˆ†ã€‚é«˜çº§è´¨é‡æ¶ˆè€— 5 ç§¯åˆ†ï¼Œæä¾›ç”µå½±çº§ã€å…·å¤‡å†™å®žçº¹ç†çš„æ•ˆæžœã€‚"
+        "question": "需要多少积分？",
+        "answer": "标准质量每次生成消耗 1 积分。高级质量消耗 5 积分，提供电影级、具备写实纹理的效果。"
       },
       {
-        "question": "ç§¯åˆ†ä¼šè¿‡æœŸå—ï¼Ÿ",
-        "answer": "ä¸ä¼šï¼Œç§¯åˆ†æ°¸ä¸è¿‡æœŸã€‚ä¸€æ¬¡è´­ä¹°ï¼Œéšæ—¶ä½¿ç”¨ã€‚"
+        "question": "积分会过期吗？",
+        "answer": "不会，积分永不过期。一次购买，随时使用。"
       },
       {
-        "question": "å¯ä»¥å•†ç”¨å—ï¼Ÿ",
-        "answer": "å¯ä»¥ï¼æ‰€æœ‰ç”Ÿæˆçš„æ¨¡åž‹å‡å¯ç”¨äºŽå•†ä¸šç”¨é€”ï¼ŒåŒ…æ‹¬æ¸¸æˆã€3D æ‰“å°å’Œä¸“ä¸šé¡¹ç›®ã€‚"
+        "question": "可以商用吗？",
+        "answer": "可以！所有生成的模型均可用于商业用途，包括游戏、3D 打印和专业项目。"
       },
       {
-        "question": "æŽ¨èè®¡åˆ’å¦‚ä½•è¿ä½œï¼Ÿ",
-        "answer": "åˆ†äº«ä½ çš„ä¸“å±žæŽ¨èé“¾æŽ¥ã€‚å¥½å‹æ³¨å†Œå¯èŽ·å¾— +2 ç§¯åˆ†ï¼Œé¦–æ¬¡è´­ä¹°å¯èŽ·å¾— +10 ç§¯åˆ†ã€‚æŽ¨èå¥–åŠ±æ— ä¸Šé™ã€‚"
+        "question": "推荐计划如何运作？",
+        "answer": "分享你的专属推荐链接。好友注册可获得 +2 积分，首次购买可获得 +10 积分。推荐奖励无上限。"
       }
     ]
   }

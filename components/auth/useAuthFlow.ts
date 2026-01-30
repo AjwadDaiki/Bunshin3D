@@ -40,9 +40,11 @@ export function useAuthFlow(t: Translator): AuthFlowState {
   const buildCallbackUrl = useCallback(() => {
     if (typeof window === "undefined") return "";
     const locale = getLocale();
+    const redirectParam = searchParams.get("redirect");
+    const next = redirectParam ? `/${locale}${redirectParam}` : `/${locale}/studio`;
     const refParam = referralCode ? `&ref=${encodeURIComponent(referralCode)}` : "";
-    return `${window.location.origin}/api/auth/callback?next=/${locale}/studio${refParam}`;
-  }, [getLocale, referralCode]);
+    return `${window.location.origin}/api/auth/callback?next=${encodeURIComponent(next)}${refParam}`;
+  }, [getLocale, referralCode, searchParams]);
 
   useEffect(() => {
     const errorParam = searchParams.get("error");
@@ -58,13 +60,18 @@ export function useAuthFlow(t: Translator): AuthFlowState {
   }, [searchParams, t]);
 
   useEffect(() => {
+    const getRedirectUrl = () => {
+      const locale = getLocale();
+      const redirectParam = searchParams.get("redirect");
+      return redirectParam ? `/${locale}${redirectParam}` : `/${locale}/studio`;
+    };
+
     const checkSession = async () => {
       const {
         data: { session },
       } = await supabase.auth.getSession();
       if (session) {
-        const locale = getLocale();
-        window.location.href = `/${locale}/studio`;
+        window.location.href = getRedirectUrl();
       }
     };
 
@@ -74,8 +81,7 @@ export function useAuthFlow(t: Translator): AuthFlowState {
       data: { subscription },
     } = supabase.auth.onAuthStateChange(async (event: any, session: any) => {
       if ((event === "SIGNED_IN" || event === "INITIAL_SESSION") && session) {
-        const locale = getLocale();
-        window.location.href = `/${locale}/studio`;
+        window.location.href = getRedirectUrl();
       }
     });
 

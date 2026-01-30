@@ -98,7 +98,7 @@
     },
     "CTA": {
       "title": "Bereit, Ihre Ideen zu materialisieren?",
-      "subtitle": "SchlieÃŸen Sie sich Tausenden von Kreativen an, die Bunshin 3D heute nutzen.",
+      "subtitle": "Schließen Sie sich Tausenden von Kreativen an, die Bunshin 3D heute nutzen.",
       "button": "Studio starten"
     }
   },
@@ -142,7 +142,7 @@
     "footer": "Wenn das Problem weiterhin besteht, wenden Sie sich bitte an den Support.",
     "notFoundCode": "404",
     "rootLogPrefix": "Anwendungsfehler:",
-    "warningSymbol": "âš ️"
+    "warningSymbol": "⚠️"
   },
   "Auth": {
     "title": "Willkommen zurück",
@@ -152,7 +152,7 @@
     "magicLink": "Magic Link senden",
     "or": "ODER FORTFAHREN MIT",
     "google": "Google",
-    "checkEmail": "Ãœberprüfen Sie Ihre E-Mail",
+    "checkEmail": "Überprüfen Sie Ihre E-Mail",
     "checkEmailDesc": "Wir haben Ihnen einen Magic Link zum Anmelden gesendet.",
     "loading": "Authentifizierung...",
     "tryDifferentEmail": "Andere E-Mail verwenden"
@@ -270,15 +270,15 @@
       "Formats": {
         "standard": {
           "title": "Hauptformat",
-          "subtitle": "High Poly â€¢ GLB Textur"
+          "subtitle": "High Poly • GLB Textur"
         },
         "lowpoly": {
           "title": "Spielbereit",
-          "subtitle": "Optimiertes Low Poly â€¢ 50% Dezimierung"
+          "subtitle": "Optimiertes Low Poly • 50% Dezimierung"
         },
         "print": {
           "title": "3D-Druck",
-          "subtitle": "Solides STL â€¢ Binärformat"
+          "subtitle": "Solides STL • Binärformat"
         }
       },
       "Viewer": {
@@ -297,9 +297,9 @@
         "referenceImage": "Referenzbild"
       },
       "Errors": {
-        "fileTooLarge": "Das Bild ist zu groÃŸ (Max 10MB).",
+        "fileTooLarge": "Das Bild ist zu groß (Max 10MB).",
         "generationFailed": "Der GPU-Cluster konnte die Anfrage nicht verarbeiten. Versuchen Sie es erneut.",
-        "conversionFailed": "Lokaler Konvertierungsfehler. Ãœberprüfen Sie Ihren Browser.",
+        "conversionFailed": "Lokaler Konvertierungsfehler. Überprüfen Sie Ihren Browser.",
         "timeout": "Die Anfrage dauerte zu lange (>60s). Bitte versuchen Sie es mit einem kleineren Bild oder später erneut."
       }
     },
@@ -310,7 +310,7 @@
       "ctaPricing": "Credits kaufen",
       "ctaReferral": "Mit Empfehlungen verdienen",
       "note": "Einen Freund einladen: +{signup} bei der Registrierung, +{payment} nach dem ersten Kauf.",
-      "close": "SchlieÃŸen",
+      "close": "Schließen",
       "creditsLabel": "Credits"
     }
   },
@@ -447,7 +447,7 @@
     },
     "Header": {
       "title": "Kommandozentrale",
-      "subtitle": "Ãœbersicht Ihrer kreativen Assets und Ressourcen.",
+      "subtitle": "Übersicht Ihrer kreativen Assets und Ressourcen.",
       "welcome": "Willkommen zurück,"
     },
     "Stats": {
@@ -503,7 +503,7 @@
       "status": "LIVE VERBINDUNG"
     },
     "Tabs": {
-      "overview": "Ãœbersicht",
+      "overview": "Übersicht",
       "users": "Benutzer"
     },
     "KPI": {
@@ -559,7 +559,7 @@
       "customAmount": "Benutzerdefinierter Betrag",
       "cancel": "Abbrechen",
       "grant": "Gewähren",
-      "roleTitle": "Rolle Ã„ndern",
+      "roleTitle": "Rolle Ändern",
       "selectRole": "Rolle auswählen",
       "roles": {
         "user": "Benutzer",
@@ -584,7 +584,7 @@
       "inspectTitle": "Benutzer-Generierungen",
       "noGenerations": "Keine Generierungen gefunden",
       "totalGenerations": "{count} Generierung(en) insgesamt",
-      "close": "SchlieÃŸen",
+      "close": "Schließen",
       "customAmountPlaceholder": "Betrag eingeben",
       "deleteKeyword": "DELETE",
       "rolesShort": {
@@ -632,7 +632,7 @@
       "lastUpdated": "Zuletzt aktualisiert: Januar 2026",
       "intro": "Willkommen bei Bunshin 3D. Durch die Nutzung unserer Dienste stimmen Sie diesen Bedingungen zu.",
       "section1Title": "1. Nutzung",
-      "section1Text": "Unser Service ermöglicht es Ihnen, 3D-Modelle mit KI zu generieren. Sie müssen diesen Service in Ãœbereinstimmung mit allen geltenden Gesetzen nutzen.",
+      "section1Text": "Unser Service ermöglicht es Ihnen, 3D-Modelle mit KI zu generieren. Sie müssen diesen Service in Übereinstimmung mit allen geltenden Gesetzen nutzen.",
       "section2Title": "2. Geistiges Eigentum",
       "section2Text": "Sie behalten die Rechte an den von Ihnen generierten Modellen, vorbehaltlich der Lizenz, die Sie uns zum Hosten und Anzeigen gewähren.",
       "section3Title": "3. Haftung",
@@ -643,7 +643,7 @@
       "lastUpdated": "Zuletzt aktualisiert: Januar 2026",
       "intro": "Ihre Privatsphäre ist uns wichtig. Diese Richtlinie erklärt, wie wir Ihre Daten verarbeiten.",
       "section1Title": "1. Datenerfassung",
-      "section1Text": "Wir erfassen Ihre E-Mail und hochgeladene Bilder ausschlieÃŸlich zum Zweck der Servicebereitstellung.",
+      "section1Text": "Wir erfassen Ihre E-Mail und hochgeladene Bilder ausschließlich zum Zweck der Servicebereitstellung.",
       "section2Title": "2. Datennutzung",
       "section2Text": "Wir verkaufen Ihre Daten nicht. Ihre Bilder werden von unseren KI-Anbietern verarbeitet und sicher gespeichert.",
       "section3Title": "3. Ihre Rechte",
@@ -676,7 +676,7 @@
     "brandLogoAlt": "Bunshin 3D-Logo",
     "creditsWithCount": "{count, plural, one {# Credit} other {# Credits}}",
     "currencySymbols": {
-      "eur": "â‚¬",
+      "eur": "€",
       "usd": "$"
     },
     "downloads": {
@@ -748,7 +748,7 @@
       "feature4": "Produktionsbereit für Film und AAA-Spiele"
     },
     "Warning": {
-      "title": "âš ️ Premium-Generierung",
+      "title": "⚠️ Premium-Generierung",
       "message": "Dies kostet 5 Credits. Premium-Modelle bieten Ergebnisse in Kinoqualität mit fotorealistischen Details."
     }
   },
@@ -860,21 +860,21 @@
     }
   },
   "OTO": {
-    "close": "SchlieÃŸen",
+    "close": "Schließen",
     "badge": "Exklusives Willkommensangebot",
     "title": "Ihre Kreativität verdient Besseres.",
     "subtitle": "Sichern Sie sich Ihre ersten Credits zu einem unschlagbaren Preis. Dieses Angebot läuft bald ab.",
     "discountBadge": "BIS ZU -67 %",
     "discovery": {
       "name": "Entdeckung",
-      "price": "0.99â‚¬",
-      "originalPrice": "2.99â‚¬",
+      "price": "0.99€",
+      "originalPrice": "2.99€",
       "credits": "10 Credits enthalten"
     },
     "studio": {
       "name": "Studio Pro",
-      "price": "19.99â‚¬",
-      "originalPrice": "29.99â‚¬",
+      "price": "19.99€",
+      "originalPrice": "29.99€",
       "credits": "200 Credits enthalten"
     },
     "footer": "Einmaliges Angebot. Credits verfallen nie.",

@@ -16,12 +16,12 @@
   },
   "SEO": {
     "siteName": "Bunshin 3D",
-    "engineeringTeam": "Ã‰quipe dâ€™ingénierie",
+    "engineeringTeam": "Équipe d’ingénierie",
     "generator": "Bunshin 3D",
     "appleWebAppTitle": "Bunshin 3D",
     "twitterHandle": "@bunshin3d",
     "organizationName": "Bunshin 3D",
-    "organizationDescription": "Plateforme de génération 3D propulsée par lâ€™IA",
+    "organizationDescription": "Plateforme de génération 3D propulsée par l’IA",
     "contactType": "Support client"
   },
   "Navigation": {
@@ -64,7 +64,7 @@
       "subtitle": "Le pipeline IA le plus avancé pour l'Impression 3D et le Développement de Jeux. Convertissez n'importe quelle image en GLB/STL en secondes avec une topologie de qualité professionnelle.",
       "ctaPrimary": "Créer Gratuitement",
       "ctaSecondary": "Voir la Galerie",
-      "trustedBy": "APPROUVÃ‰ PAR 10 000+ CRÃ‰ATEURS & DÃ‰VELOPPEURS"
+      "trustedBy": "APPROUVÉ PAR 10 000+ CRÉATEURS & DÉVELOPPEURS"
     },
     "Showcase": {
       "title": "Généré avec Bunshin",
@@ -142,7 +142,7 @@
     "footer": "Si le problème persiste, veuillez contacter le support.",
     "notFoundCode": "404",
     "rootLogPrefix": "Erreur d'application :",
-    "warningSymbol": "âš ️"
+    "warningSymbol": "⚠️"
   },
   "Auth": {
     "title": "Bon Retour",
@@ -210,19 +210,19 @@
       "downloadReady": "Votre modèle est prêt à être téléchargé",
       "error": "Une erreur s'est produite pendant la génération",
       "downloadSuccess": "Téléchargement prêt : {format}",
-      "downloadError": "Ã‰chec du téléchargement : {error}",
+      "downloadError": "Échec du téléchargement : {error}",
       "errorPrefix": "Erreur : {message}",
-      "generationFailed": "Ã‰chec de la génération.",
+      "generationFailed": "Échec de la génération.",
       "insufficientCredits": "Crédits insuffisants. Il faut {count}.",
       "missingImage": "Veuillez téléverser une image.",
       "missingPrompt": "Veuillez saisir un prompt.",
       "imageUploaded": "Image téléversée dans le cloud.",
       "imageGenerated": "Image générée.",
-      "imageGenerationFailed": "Ã‰chec de la génération de l'image.",
+      "imageGenerationFailed": "Échec de la génération de l'image.",
       "cooldown": "Refroidissement en cours...",
       "serverBusy": "Serveur occupé. Nouvel essai...",
       "rateLimited": "Limite atteinte. Veuillez réessayer plus tard.",
-      "serverSideFailure": "Ã‰chec de la génération côté serveur."
+      "serverSideFailure": "Échec de la génération côté serveur."
     },
     "Interface": {
       "DropZone": {
@@ -240,9 +240,9 @@
       },
       "Controls": {
         "title": "Centre de Contrôle",
-        "ready": "PRÃŠT",
-        "generate": "GÃ‰NÃ‰RER MODÃˆLE 3D",
-        "awaiting": "EN ATTENTE D'ENTRÃ‰E",
+        "ready": "PRÊT",
+        "generate": "GÉNÉRER MODÈLE 3D",
+        "awaiting": "EN ATTENTE D'ENTRÉE",
         "processing": "TRAITEMENT"
       },
       "Actions": {
@@ -250,7 +250,7 @@
         "generate": "Générer 3D"
       },
       "Status": {
-        "system": "Ã‰TAT DU SYSTÃˆME"
+        "system": "ÉTAT DU SYSTÈME"
       },
       "Export": {
         "title": "Options d'Export",
@@ -270,23 +270,23 @@
       "Formats": {
         "standard": {
           "title": "Format Principal",
-          "subtitle": "High Poly â€¢ Texture GLB"
+          "subtitle": "High Poly • Texture GLB"
         },
         "lowpoly": {
           "title": "Prêt pour le Jeu",
-          "subtitle": "Low Poly Optimisé â€¢ Décimation 50%"
+          "subtitle": "Low Poly Optimisé • Décimation 50%"
         },
         "print": {
           "title": "Impression 3D",
-          "subtitle": "STL Solide â€¢ Format Binaire"
+          "subtitle": "STL Solide • Format Binaire"
         }
       },
       "Viewer": {
         "label": "VIEWPORT [WEBGL]",
         "waiting": "En attente d'entrée...",
-        "waitingStream": "EN ATTENTE DU FLUX DE DONNÃ‰ES...",
+        "waitingStream": "EN ATTENTE DU FLUX DE DONNÉES...",
         "engine": "MOTEUR BUNSHIN V1.0",
-        "axis": "AXE XYZ : VERROUILLÃ‰",
+        "axis": "AXE XYZ : VERROUILLÉ",
         "autoRotate": "Rotation Auto",
         "shadows": "Ombres : ACTIF",
         "readyToGenerate": "Prêt à générer",
@@ -372,7 +372,7 @@
       "subtitle": "Achetez des crédits au fur et à mesure. Pas de piège d'abonnement mensuel. Vos crédits n'expirent jamais."
     },
     "Badges": {
-      "popular": "RECOMMANDÃ‰",
+      "popular": "RECOMMANDÉ",
       "bestValue": "MEILLEURE VALEUR"
     },
     "Features": {
@@ -389,13 +389,13 @@
     },
     "Packs": {
       "Discovery": {
-        "name": "DÃ‰COUVERTE",
+        "name": "DÉCOUVERTE",
         "credits": "10 Crédits",
         "description": "Parfait pour tester.",
         "cta": "Acheter Pack Découverte"
       },
       "Creator": {
-        "name": "CRÃ‰ATEUR",
+        "name": "CRÉATEUR",
         "credits": "50 Crédits",
         "description": "Pour designers & créateurs.",
         "cta": "Acheter Pack Créateur"
@@ -421,7 +421,7 @@
     },
     "FAQ": {
       "title": "Questions Frequentes",
-      "q1": "Ã€ quoi servent les crédits ?",
+      "q1": "À quoi servent les crédits ?",
       "a1": "Chaque credit vous permet de generer un modele 3D a partir d'une image ou d'un prompt texte. Les credits ne sont consommes qu'en cas de generation reussie.",
       "q2": "Les crédits expirent-ils ?",
       "a2": "Non ! Vos credits n'expirent jamais. Achetez une fois, utilisez-les quand vous voulez. Pas d'abonnement mensuel ni de frais caches.",
@@ -437,7 +437,7 @@
       "serverError": "Erreur serveur (statut {status}).",
       "noCheckoutUrl": "Le lien de paiement est manquant.",
       "checkoutErrorLog": "Erreur de paiement :",
-      "paymentInitFailed": "Ã‰chec de l'initialisation du paiement : {message}"
+      "paymentInitFailed": "Échec de l'initialisation du paiement : {message}"
     }
   },
   "Account": {
@@ -472,7 +472,7 @@
       "statuses": {
         "processing": "En cours",
         "succeeded": "Terminée",
-        "failed": "Ã‰chec",
+        "failed": "Échec",
         "queued": "En file d'attente"
       },
       "downloadTitles": {
@@ -495,7 +495,7 @@
   },
   "Admin": {
     "Metadata": {
-      "title": "OVERRIDE SYSTÃˆME // ADMIN"
+      "title": "OVERRIDE SYSTÈME // ADMIN"
     },
     "Header": {
       "title": "Centre de Commande",
@@ -530,11 +530,11 @@
     },
     "Controls": {
       "serverTime": "HEURE SERVEUR",
-      "systemControls": "CONTRÃ”LES SYSTÃˆME",
+      "systemControls": "CONTRÔLES SYSTÈME",
       "maintenance": "Mode Maintenance",
       "maintenanceDesc": "Verrouille l'interface studio. L'accès API reste actif pour les flux existants.",
-      "active": "SYSTÃˆME ACTIF",
-      "inactive": "SYSTÃˆME VERROUILLÃ‰"
+      "active": "SYSTÈME ACTIF",
+      "inactive": "SYSTÈME VERROUILLÉ"
     },
     "Users": {
       "colActions": "Actions",
@@ -573,11 +573,11 @@
       },
       "saveRole": "Enregistrer",
       "banTitle": "Bannir l'Utilisateur",
-      "banMessage": "ÃŠtes-vous sûr de vouloir bannir cet utilisateur ? Il ne pourra plus accéder au service.",
+      "banMessage": "Êtes-vous sûr de vouloir bannir cet utilisateur ? Il ne pourra plus accéder au service.",
       "unbanTitle": "Débannir l'Utilisateur",
-      "unbanMessage": "ÃŠtes-vous sûr de vouloir débannir cet utilisateur ? Il retrouvera l'accès au service.",
+      "unbanMessage": "Êtes-vous sûr de vouloir débannir cet utilisateur ? Il retrouvera l'accès au service.",
       "deleteTitle": "Supprimer l'Utilisateur",
-      "deleteMessage": "Cette action est IRRÃ‰VERSIBLE. Toutes les données de l'utilisateur seront définitivement supprimées.",
+      "deleteMessage": "Cette action est IRRÉVERSIBLE. Toutes les données de l'utilisateur seront définitivement supprimées.",
       "deleteConfirm": "Tapez DELETE pour confirmer",
       "typeDelete": "Tapez DELETE",
       "confirm": "Confirmer",
@@ -597,7 +597,7 @@
       "unknownInitial": "?"
     },
     "Errors": {
-      "actionFailed": "Ã‰chec de l'action. Veuillez réessayer.",
+      "actionFailed": "Échec de l'action. Veuillez réessayer.",
       "changeRoleFailed": "Impossible de modifier le rôle.",
       "grantCreditsFailed": "Impossible d'attribuer des crédits.",
       "loadUsers": "Impossible de charger les utilisateurs.",
@@ -614,7 +614,7 @@
     "Statuses": {
       "processing": "En cours",
       "succeeded": "Réussie",
-      "failed": "Ã‰chec",
+      "failed": "Échec",
       "queued": "En file d'attente"
     }
   },
@@ -651,12 +651,12 @@
     },
     "Mentions": {
       "title": "Mentions Légales",
-      "editorTitle": "Ã‰diteur",
+      "editorTitle": "Éditeur",
       "editorText": "Bunshin 3D\nFrance\nEmail: contact@metalya.fr",
       "hostTitle": "Hébergement",
       "hostText": "Vercel",
       "creditsTitle": "Crédits",
-      "creditsText": "Design & Développement par l'Ã‰quipe Bunshin 3D."
+      "creditsText": "Design & Développement par l'Équipe Bunshin 3D."
     }
   },
   "Common": {
@@ -676,7 +676,7 @@
     "brandLogoAlt": "Logo Bunshin 3D",
     "creditsWithCount": "{count, plural, one {# crédit} other {# crédits}}",
     "currencySymbols": {
-      "eur": "â‚¬",
+      "eur": "€",
       "usd": "$"
     },
     "downloads": {
@@ -684,7 +684,7 @@
     },
     "errors": {
       "downloadErrorLog": "Erreur de téléchargement :",
-      "downloadFailed": "Ã‰chec du téléchargement.",
+      "downloadFailed": "Échec du téléchargement.",
       "noModelUrl": "URL du modèle manquante.",
       "unknownFormat": "Format inconnu."
     },
@@ -704,8 +704,8 @@
       "promptLabel": "Décrivez votre modèle 3D",
       "promptPlaceholder": "Un robot futuriste debout sur une plateforme...",
       "generateButton": "Générer le Modèle 3D",
-      "generatingImage": "Ã‰tape 1/2 : Génération de l'image optimisée...",
-      "generatingModel": "Ã‰tape 2/2 : Conversion en modèle 3D...",
+      "generatingImage": "Étape 1/2 : Génération de l'image optimisée...",
+      "generatingModel": "Étape 2/2 : Conversion en modèle 3D...",
       "imageReady": "Image générée ! Passage à la 3D...",
       "modelReady": "Modèle 3D prêt !",
       "downloadGLB": "Télécharger GLB",
@@ -716,7 +716,7 @@
       "title": "Conseils pour de meilleurs résultats",
       "tip1": "Soyez précis sur la forme et les détails de l'objet",
       "tip2": "Mentionnez l'angle de vue (isométrique, vue de face, etc.)",
-      "tip3": "Ã‰vitez les scènes complexes avec plusieurs objets",
+      "tip3": "Évitez les scènes complexes avec plusieurs objets",
       "tip4": "La qualité standard est parfaite pour les prototypes et concepts"
     }
   },
@@ -748,7 +748,7 @@
       "feature4": "Prêt pour la production film et jeux AAA"
     },
     "Warning": {
-      "title": "âš ️ Génération Premium",
+      "title": "⚠️ Génération Premium",
       "message": "Cela coûtera 5 crédits. Les modèles premium offrent des résultats qualité cinéma avec des détails photoréalistes."
     }
   },
@@ -789,8 +789,8 @@
       },
       "ctaPrimary": "Copier le Lien de Parrainage",
       "ctaSecondary": "Aller au Tableau de Bord",
-      "highlightTag": "CRÃ‰DITS GRATUITS",
-      "pricingTitle": "Parrainez & Ã‰conomisez",
+      "highlightTag": "CRÉDITS GRATUITS",
+      "pricingTitle": "Parrainez & Économisez",
       "pricingSubtitle": "Gagnez des crédits en invitant vos amis",
       "footerTitle": "Invitez vos amis et gagnez des crédits gratuits à chaque inscription !",
       "footerCta": "Commencer à Gagner"
@@ -892,17 +892,17 @@
     "badge": "Offre de bienvenue exclusive",
     "title": "Votre créativité mérite mieux.",
     "subtitle": "Débloquez vos premiers crédits à un prix imbattable. Cette offre expire bientôt.",
-    "discountBadge": "JUSQU'Ã€ -67 %",
+    "discountBadge": "JUSQU'À -67 %",
     "discovery": {
       "name": "Découverte",
-      "price": "0.99â‚¬",
-      "originalPrice": "2.99â‚¬",
+      "price": "0.99€",
+      "originalPrice": "2.99€",
       "credits": "10 crédits inclus"
     },
     "studio": {
       "name": "Studio Pro",
-      "price": "19.99â‚¬",
-      "originalPrice": "29.99â‚¬",
+      "price": "19.99€",
+      "originalPrice": "29.99€",
       "credits": "200 crédits inclus"
     },
     "footer": "Offre unique. Les crédits n'expirent jamais.",
