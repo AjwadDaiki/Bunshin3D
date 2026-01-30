@@ -1,7 +1,7 @@
 ﻿"use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { createClient, resetClient } from "@/lib/supabase";
+import { createClient, clearSupabaseCookies } from "@/lib/supabase";
 import { User } from "@supabase/supabase-js";
 import { checkIsAdmin } from "@/app/actions/admin";
 
@@ -29,13 +29,13 @@ export function useHeaderSession() {
   }, []);
 
   const hydrateUser = useCallback(async () => {
-    // Use getUser() to validate session server-side (not stale cache)
     const {
-      data: { user: validatedUser },
-    } = await supabase.auth.getUser();
-    setUser(validatedUser);
-    if (validatedUser) {
-      await Promise.all([fetchCredits(validatedUser.id), refreshAdmin()]);
+      data: { session },
+    } = await supabase.auth.getSession();
+    const sessionUser = session?.user ?? null;
+    setUser(sessionUser);
+    if (sessionUser) {
+      await Promise.all([fetchCredits(sessionUser.id), refreshAdmin()]);
     } else {
       setIsAdmin(false);
       setCredits(null);
@@ -66,7 +66,7 @@ export function useHeaderSession() {
     setCredits(null);
     setIsAdmin(false);
     await supabase.auth.signOut({ scope: "global" });
-    resetClient();
+    clearSupabaseCookies();
     window.location.href = window.location.pathname;
   }, [supabase]);
 

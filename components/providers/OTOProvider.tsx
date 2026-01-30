@@ -31,9 +31,9 @@ export function OTOProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const fetchUser = async () => {
       const {
-        data: { user },
-      } = await supabase.auth.getUser();
-      if (user) setUserId(user.id);
+        data: { session },
+      } = await supabase.auth.getSession();
+      if (session?.user) setUserId(session.user.id);
     };
     fetchUser();
   }, [supabase]);

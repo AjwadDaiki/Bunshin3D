@@ -31,9 +31,9 @@ export default function PricingTable() {
     const fetchUser = async () => {
       const supabase = createClient();
       const {
-        data: { user },
-      } = await supabase.auth.getUser();
-      if (user) setUserId(user.id);
+        data: { session },
+      } = await supabase.auth.getSession();
+      if (session?.user) setUserId(session.user.id);
     };
     fetchUser();
   }, []);
