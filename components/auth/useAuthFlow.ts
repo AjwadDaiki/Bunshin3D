@@ -114,10 +114,11 @@ export function useAuthFlow(t: Translator): AuthFlowState {
     setIsLoading(true);
     setErrorMessage(null);
 
+    const locale = getLocale();
     const { error } = await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {
-        redirectTo: buildCallbackUrl(),
+        redirectTo: `${window.location.origin}/${locale}/studio`,
         queryParams: {
           access_type: "offline",
           prompt: "consent",
@@ -130,7 +131,7 @@ export function useAuthFlow(t: Translator): AuthFlowState {
       setErrorMessage(t("Errors.googleLogin"));
       setIsLoading(false);
     }
-  }, [buildCallbackUrl, supabase, t]);
+  }, [getLocale, supabase, t]);
 
   return {
     email,
