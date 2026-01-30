@@ -137,7 +137,7 @@ export default function PricingTable() {
             : formatPrice(perCredit, priceData.currency, locale);
 
           const savingsPercent =
-            id !== "discovery"
+            id === "studio"
               ? Math.round((1 - perCredit / discoveryPerCredit) * 100)
               : 0;
 

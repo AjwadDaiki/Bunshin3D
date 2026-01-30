@@ -1,7 +1,7 @@
 ﻿"use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { createClient } from "@/lib/supabase";
+import { createClient, resetClient } from "@/lib/supabase";
 import { User } from "@supabase/supabase-js";
 import { checkIsAdmin } from "@/app/actions/admin";
 
@@ -66,7 +66,8 @@ export function useHeaderSession() {
     setUser(null);
     setCredits(null);
     setIsAdmin(false);
-    await supabase.auth.signOut({ scope: "local" });
+    await supabase.auth.signOut({ scope: "global" });
+    resetClient();
     window.location.href = window.location.pathname;
   }, [supabase]);
 
