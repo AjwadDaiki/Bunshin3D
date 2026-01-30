@@ -30,12 +30,11 @@ export function useHeaderSession() {
 
   const hydrateUser = useCallback(async () => {
     const {
-      data: { session },
-    } = await supabase.auth.getSession();
-    const sessionUser = session?.user ?? null;
-    setUser(sessionUser);
-    if (sessionUser) {
-      await Promise.all([fetchCredits(sessionUser.id), refreshAdmin()]);
+      data: { user },
+    } = await supabase.auth.getUser();
+    setUser(user ?? null);
+    if (user) {
+      await Promise.all([fetchCredits(user.id), refreshAdmin()]);
     } else {
       setIsAdmin(false);
       setCredits(null);
@@ -65,9 +64,9 @@ export function useHeaderSession() {
     setUser(null);
     setCredits(null);
     setIsAdmin(false);
-    await supabase.auth.signOut({ scope: "global" });
+    await supabase.auth.signOut();
     clearSupabaseCookies();
-    window.location.href = window.location.pathname;
+    window.location.href = "/";
   }, [supabase]);
 
   return {

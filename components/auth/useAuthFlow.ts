@@ -43,7 +43,9 @@ export function useAuthFlow(t: Translator): AuthFlowState {
     const redirectParam = searchParams.get("redirect");
     const next = redirectParam ? `/${locale}${redirectParam}` : `/${locale}/studio`;
     const refParam = referralCode ? `&ref=${encodeURIComponent(referralCode)}` : "";
-    return `${window.location.origin}/api/auth/callback?next=${encodeURIComponent(next)}${refParam}`;
+    // Do NOT encodeURIComponent(next) — Supabase redirect URL matching
+    // requires the raw path format to match the dashboard whitelist
+    return `${window.location.origin}/api/auth/callback?next=${next}${refParam}`;
   }, [getLocale, referralCode, searchParams]);
 
   useEffect(() => {
@@ -67,12 +69,10 @@ export function useAuthFlow(t: Translator): AuthFlowState {
     };
 
     const checkSession = async () => {
-      // Use getUser() instead of getSession() to validate server-side
-      // getSession() reads from local cache and may return stale sessions
       const {
-        data: { user },
-      } = await supabase.auth.getUser();
-      if (user) {
+        data: { session },
+      } = await supabase.auth.getSession();
+      if (session) {
         window.location.href = getRedirectUrl();
       }
     };
@@ -82,8 +82,7 @@ export function useAuthFlow(t: Translator): AuthFlowState {
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange(async (event: any, session: any) => {
-      // Only redirect on SIGNED_IN (fresh login), not INITIAL_SESSION (could be stale)
-      if (event === "SIGNED_IN" && session) {
+      if ((event === "SIGNED_IN" || event === "INITIAL_SESSION") && session) {
         window.location.href = getRedirectUrl();
       }
     });
@@ -91,7 +90,7 @@ export function useAuthFlow(t: Translator): AuthFlowState {
     return () => {
       subscription.unsubscribe();
     };
-  }, [getLocale, searchParams, supabase]);
+  }, [getLocale, supabase]);
 
   const handleEmailLogin = useCallback(
     async (event: React.FormEvent) => {
