@@ -7,7 +7,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const mainRoutes = [
     { path: "", priority: 1.0, changeFrequency: "daily" as const },
     { path: "/pricing", priority: 0.9, changeFrequency: "weekly" as const },
-    { path: "/login", priority: 0.5, changeFrequency: "monthly" as const },
     { path: "/terms", priority: 0.3, changeFrequency: "yearly" as const },
     { path: "/privacy", priority: 0.3, changeFrequency: "yearly" as const },
     { path: "/legal-mentions", priority: 0.3, changeFrequency: "yearly" as const },
@@ -43,7 +42,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
       entries.push({
         url: `${baseUrl}/${locale}${route.path}`,
-        lastModified: new Date(),
+        lastModified: new Date("2025-01-30"),
         changeFrequency: route.changeFrequency,
         priority: route.priority,
         alternates: { languages: alternates },
@@ -59,7 +58,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
       entries.push({
         url: `${baseUrl}/${locale}/use-cases/${slug}`,
-        lastModified: new Date(),
+        lastModified: new Date("2025-01-30"),
         changeFrequency: "weekly",
         priority: 0.8,
         alternates: { languages: alternates },

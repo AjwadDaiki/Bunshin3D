@@ -7,23 +7,41 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: "Googlebot",
-        allow: ["/", "/fr/", "/en/", "/fr/pricing", "/en/pricing"],
-        disallow: ["/studio/", "/account/", "/admin/", "/api/", "/*?*"],
+        allow: "/",
+        disallow: [
+          "/*/studio",
+          "/*/account",
+          "/*/admin",
+          "/api/",
+          "/*?*",
+        ],
       },
       {
         userAgent: "Googlebot-Image",
-        allow: ["/"],
+        allow: "/",
         disallow: ["/api/"],
       },
       {
         userAgent: "Bingbot",
-        allow: ["/", "/fr/", "/en/"],
-        disallow: ["/studio/", "/account/", "/admin/", "/api/"],
+        allow: "/",
+        disallow: [
+          "/*/studio",
+          "/*/account",
+          "/*/admin",
+          "/api/",
+        ],
       },
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/studio/", "/account/", "/admin/", "/api/", "/_next/", "/static/"],
+        disallow: [
+          "/*/studio",
+          "/*/account",
+          "/*/admin",
+          "/api/",
+          "/_next/",
+          "/static/",
+        ],
       },
     ],
     sitemap: `${baseUrl}/sitemap.xml`,

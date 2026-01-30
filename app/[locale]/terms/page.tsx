@@ -27,6 +27,7 @@ export async function generateMetadata({
         de: `${process.env.NEXT_PUBLIC_APP_URL}/de/terms`,
         ja: `${process.env.NEXT_PUBLIC_APP_URL}/ja/terms`,
         zh: `${process.env.NEXT_PUBLIC_APP_URL}/zh/terms`,
+        "x-default": `${process.env.NEXT_PUBLIC_APP_URL}/en/terms`,
       },
     },
   };

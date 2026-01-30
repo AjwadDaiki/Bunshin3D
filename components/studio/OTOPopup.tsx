@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { X, Sparkle, Lightning, Timer, Cube } from "@phosphor-icons/react";
+import { X, Sparkle, Timer, Cube } from "@phosphor-icons/react";
 import { useTranslations, useLocale } from "next-intl";
 import { useCurrency } from "@/components/providers/CurrencyProvider";
 import {
@@ -36,7 +36,6 @@ function formatPrice(amount: number, currency: string, locale: string) {
 
 const PACKS: { id: PackId; icon: typeof Cube; color: string; border: string; bg: string }[] = [
   { id: "discovery", icon: Cube, color: "text-zinc-400", border: "border-white/10", bg: "bg-white/5" },
-  { id: "creator", icon: Lightning, color: "text-indigo-400", border: "border-indigo-500/20", bg: "bg-indigo-500/5" },
   { id: "studio", icon: Sparkle, color: "text-amber-400", border: "border-amber-500/20", bg: "bg-amber-500/5" },
 ];
 
@@ -88,7 +87,7 @@ export default function OTOPopup({
       <div
         role="dialog"
         aria-modal="true"
-        className="relative w-full max-w-2xl animate-oto-enter rounded-3xl border border-white/10 p-[1px] shadow-2xl"
+        className="relative w-full max-w-lg animate-oto-enter rounded-3xl border border-white/10 p-[1px] shadow-2xl"
         style={{
           background:
             "linear-gradient(135deg, rgba(168,85,247,0.4), rgba(234,179,8,0.4), rgba(168,85,247,0.2))",
@@ -129,7 +128,7 @@ export default function OTOPopup({
           </div>
 
           {/* Offers - 3 packs */}
-          <div className="mt-6 grid gap-3 sm:grid-cols-3">
+          <div className="mt-6 grid gap-3 sm:grid-cols-2">
             {PACKS.map(({ id, icon: Icon, color, border, bg }) => {
               const price = getPriceForCurrency(id, currency);
               const otoPrice = getOTOPriceForCurrency(id, currency);

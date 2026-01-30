@@ -27,6 +27,7 @@ export async function generateMetadata({
         de: `${process.env.NEXT_PUBLIC_APP_URL}/de/legal-mentions`,
         ja: `${process.env.NEXT_PUBLIC_APP_URL}/ja/legal-mentions`,
         zh: `${process.env.NEXT_PUBLIC_APP_URL}/zh/legal-mentions`,
+        "x-default": `${process.env.NEXT_PUBLIC_APP_URL}/en/legal-mentions`,
       },
     },
   };
