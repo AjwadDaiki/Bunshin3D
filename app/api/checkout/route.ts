@@ -7,6 +7,7 @@ import { getPriceForCurrency, type PackId } from "@/lib/config/pricing";
 const OTO_DURATION_MS = 24 * 60 * 60 * 1000;
 const OTO_COUPONS: Record<string, string> = {
   discovery: process.env.STRIPE_OTO_COUPON_DISCOVERY || "",
+  creator: process.env.STRIPE_OTO_COUPON_CREATOR || "",
   studio: process.env.STRIPE_OTO_COUPON_STUDIO || "",
 };
 
@@ -45,6 +46,7 @@ export async function POST(request: NextRequest) {
     // OTO packs use the same Stripe prices but with a coupon applied
     const otoPackMapping: Record<string, string> = {
       oto_discovery: "discovery",
+      oto_creator: "creator",
       oto_studio: "studio",
     };
 

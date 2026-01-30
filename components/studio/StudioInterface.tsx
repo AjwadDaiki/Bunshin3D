@@ -54,11 +54,12 @@ export default function StudioInterface() {
     credits,
     onInsufficientCredits: () => {
       if (!offerStartedAt && credits === 0) {
+        // First time reaching 0 credits: trigger the 24h promo and show OTO popup
         triggerOffer();
         setOtoOpen(true);
-      } else if (isOfferActive) {
-        setOtoOpen(true);
       } else {
+        // Already triggered before (or promo expired): show normal credits prompt
+        // StudioCreditsPrompt will show promo prices if the offer is still active
         setCreditsPromptOpen(true);
       }
     },
@@ -136,6 +137,7 @@ export default function StudioInterface() {
       <StudioCreditsPrompt
         open={creditsPromptOpen}
         requiredCredits={costInCredits}
+        isPromoActive={isOfferActive}
         onClose={() => setCreditsPromptOpen(false)}
       />
       <OTOPopup

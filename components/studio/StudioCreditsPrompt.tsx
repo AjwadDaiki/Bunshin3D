@@ -1,21 +1,43 @@
 "use client";
 
+import { useState } from "react";
 import { X, Sparkle, CreditCard, Lightning } from "@phosphor-icons/react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { Link } from "@/i18n/routing";
+import { useCurrency } from "@/components/providers/CurrencyProvider";
+import {
+  getPriceForCurrency,
+  getOTOPriceForCurrency,
+  PRICING_CONFIG,
+  type PackId,
+} from "@/lib/config/pricing";
 
 type Props = {
   open: boolean;
   requiredCredits: number;
+  isPromoActive?: boolean;
   onClose: () => void;
 };
+
+function formatPrice(amount: number, currency: string, locale: string) {
+  return new Intl.NumberFormat(locale, {
+    style: "currency",
+    currency,
+    minimumFractionDigits: currency === "JPY" ? 0 : 2,
+  }).format(amount);
+}
+
+const PACK_IDS: PackId[] = ["discovery", "creator", "studio"];
 
 export default function StudioCreditsPrompt({
   open,
   requiredCredits,
+  isPromoActive,
   onClose,
 }: Props) {
   const t = useTranslations("Studio");
+  const locale = useLocale();
+  const { currency } = useCurrency();
 
   if (!open) return null;
 
@@ -69,8 +91,45 @@ export default function StudioCreditsPrompt({
           </p>
         </div>
 
+        {/* Pack prices */}
+        <div className="mt-6 grid gap-3 sm:grid-cols-3">
+          {PACK_IDS.map((id) => {
+            const price = getPriceForCurrency(id, currency);
+            const otoPrice = isPromoActive
+              ? getOTOPriceForCurrency(id, currency)
+              : null;
+            const displayAmount = otoPrice ? otoPrice.amount : price.amount;
+            const formattedPrice = formatPrice(displayAmount, price.currency, locale);
+            const originalFormatted = otoPrice
+              ? formatPrice(price.amount, price.currency, locale)
+              : null;
+
+            return (
+              <Link
+                key={id}
+                href="/pricing"
+                className="group rounded-2xl border border-white/10 bg-white/5 p-4 text-center transition hover:border-indigo-500/30 hover:bg-white/[0.08]"
+              >
+                <p className="text-xs font-semibold uppercase tracking-wider text-gray-400">
+                  {PRICING_CONFIG[id].credits} {t("CreditsPrompt.creditsLabel")}
+                </p>
+                <div className="mt-2">
+                  {originalFormatted && (
+                    <span className="text-xs text-gray-500 line-through mr-1">
+                      {originalFormatted}
+                    </span>
+                  )}
+                  <span className={`text-lg font-bold ${otoPrice ? "text-green-400" : "text-white"}`}>
+                    {formattedPrice}
+                  </span>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+
         {/* CTA buttons */}
-        <div className="mt-8 grid gap-3 sm:grid-cols-2">
+        <div className="mt-6 grid gap-3 sm:grid-cols-2">
           <Link
             href="/pricing"
             className="group flex items-center justify-center gap-2 rounded-2xl bg-linear-to-r from-indigo-600 to-purple-600 px-5 py-3.5 font-semibold text-white shadow-lg shadow-indigo-500/20 transition hover:shadow-indigo-500/30 hover:from-indigo-500 hover:to-purple-500"

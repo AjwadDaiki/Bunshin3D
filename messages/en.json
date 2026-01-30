@@ -310,7 +310,8 @@
       "ctaPricing": "Buy Credits",
       "ctaReferral": "Earn with Referrals",
       "note": "Invite a friend: +{signup} on signup, +{payment} after their first purchase.",
-      "close": "Close"
+      "close": "Close",
+      "creditsLabel": "credits"
     }
   },
   "HowTo": {

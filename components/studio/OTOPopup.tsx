@@ -1,9 +1,15 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { X, Sparkle, Lightning, Timer } from "@phosphor-icons/react";
+import { useState } from "react";
+import { X, Sparkle, Lightning, Timer, Cube } from "@phosphor-icons/react";
 import { useTranslations, useLocale } from "next-intl";
 import { useCurrency } from "@/components/providers/CurrencyProvider";
+import {
+  getPriceForCurrency,
+  getOTOPriceForCurrency,
+  PRICING_CONFIG,
+  type PackId,
+} from "@/lib/config/pricing";
 
 type Props = {
   open: boolean;
@@ -20,6 +26,20 @@ function formatCountdown(ms: number) {
   return `${String(h).padStart(2, "0")}:${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`;
 }
 
+function formatPrice(amount: number, currency: string, locale: string) {
+  return new Intl.NumberFormat(locale, {
+    style: "currency",
+    currency,
+    minimumFractionDigits: currency === "JPY" ? 0 : 2,
+  }).format(amount);
+}
+
+const PACKS: { id: PackId; icon: typeof Cube; color: string; border: string; bg: string }[] = [
+  { id: "discovery", icon: Cube, color: "text-zinc-400", border: "border-white/10", bg: "bg-white/5" },
+  { id: "creator", icon: Lightning, color: "text-indigo-400", border: "border-indigo-500/20", bg: "bg-indigo-500/5" },
+  { id: "studio", icon: Sparkle, color: "text-amber-400", border: "border-amber-500/20", bg: "bg-amber-500/5" },
+];
+
 export default function OTOPopup({
   open,
   timeRemaining,
@@ -30,10 +50,9 @@ export default function OTOPopup({
   const locale = useLocale();
   const { currency } = useCurrency();
   const [loading, setLoading] = useState<string | null>(null);
-
   const [error, setError] = useState<string | null>(null);
 
-  const handleCheckout = async (packId: string) => {
+  const handleCheckout = async (packId: PackId) => {
     if (!userId) return;
     setLoading(packId);
     setError(null);
@@ -69,7 +88,7 @@ export default function OTOPopup({
       <div
         role="dialog"
         aria-modal="true"
-        className="relative w-full max-w-lg animate-oto-enter rounded-3xl border border-white/10 p-[1px] shadow-2xl"
+        className="relative w-full max-w-2xl animate-oto-enter rounded-3xl border border-white/10 p-[1px] shadow-2xl"
         style={{
           background:
             "linear-gradient(135deg, rgba(168,85,247,0.4), rgba(234,179,8,0.4), rgba(168,85,247,0.2))",
@@ -109,62 +128,39 @@ export default function OTOPopup({
             </span>
           </div>
 
-          {/* Offers */}
-          <div className="mt-6 grid gap-3 sm:grid-cols-2">
-            {/* Discovery OTO */}
-            <button
-              type="button"
-              onClick={() => handleCheckout("oto_discovery")}
-              disabled={loading === "oto_discovery"}
-              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-5 text-left transition hover:border-purple-500/30 hover:bg-white/[0.08] disabled:opacity-60"
-            >
-              <div className="flex items-center gap-2 text-zinc-400">
-                <Lightning className="h-5 w-5" weight="fill" />
-                <span className="text-xs font-semibold uppercase tracking-wider">
-                  {t("discovery.name")}
-                </span>
-              </div>
-              <div className="mt-3 flex items-baseline gap-2">
-                <span className="text-3xl font-bold text-white">
-                  {t("discovery.price")}
-                </span>
-                <span className="text-sm text-gray-500 line-through">
-                  {t("discovery.originalPrice")}
-                </span>
-              </div>
-              <p className="mt-1 text-xs text-gray-500">
-                {t("discovery.credits")}
-              </p>
-            </button>
+          {/* Offers - 3 packs */}
+          <div className="mt-6 grid gap-3 sm:grid-cols-3">
+            {PACKS.map(({ id, icon: Icon, color, border, bg }) => {
+              const price = getPriceForCurrency(id, currency);
+              const otoPrice = getOTOPriceForCurrency(id, currency);
+              const formattedOTO = formatPrice(otoPrice.amount, price.currency, locale);
+              const formattedOriginal = formatPrice(price.amount, price.currency, locale);
 
-            {/* Studio OTO */}
-            <button
-              type="button"
-              onClick={() => handleCheckout("oto_studio")}
-              disabled={loading === "oto_studio"}
-              className="group relative overflow-hidden rounded-2xl border border-amber-500/20 bg-amber-500/5 p-5 text-left transition hover:border-amber-500/40 hover:bg-amber-500/10 disabled:opacity-60"
-            >
-              <div className="absolute -right-6 -top-6 h-20 w-20 rounded-full bg-amber-500/10 blur-2xl" />
-              <div className="relative">
-                <div className="flex items-center gap-2 text-amber-400">
-                  <Sparkle className="h-5 w-5" weight="fill" />
-                  <span className="text-xs font-semibold uppercase tracking-wider">
-                    {t("studio.name")}
-                  </span>
-                </div>
-                <div className="mt-3 flex items-baseline gap-2">
-                  <span className="text-3xl font-bold text-white">
-                    {t("studio.price")}
-                  </span>
-                  <span className="text-sm text-gray-500 line-through">
-                    {t("studio.originalPrice")}
-                  </span>
-                </div>
-                <p className="mt-1 text-xs text-gray-500">
-                  {t("studio.credits")}
-                </p>
-              </div>
-            </button>
+              return (
+                <button
+                  key={id}
+                  type="button"
+                  onClick={() => handleCheckout(id)}
+                  disabled={loading === id}
+                  className={`group relative overflow-hidden rounded-2xl ${border} ${bg} p-5 text-left transition hover:bg-white/[0.08] disabled:opacity-60`}
+                >
+                  <div className={`flex items-center gap-2 ${color}`}>
+                    <Icon className="h-5 w-5" weight="fill" />
+                    <span className="text-xs font-semibold uppercase tracking-wider">
+                      {PRICING_CONFIG[id].credits} credits
+                    </span>
+                  </div>
+                  <div className="mt-3 flex items-baseline gap-2">
+                    <span className="text-2xl font-bold text-white">
+                      {formattedOTO}
+                    </span>
+                    <span className="text-sm text-gray-500 line-through">
+                      {formattedOriginal}
+                    </span>
+                  </div>
+                </button>
+              );
+            })}
           </div>
 
           {error && (
