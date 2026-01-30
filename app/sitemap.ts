@@ -39,7 +39,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       routing.locales.forEach((loc) => {
         alternates[loc] = `${baseUrl}/${loc}${route.path}`;
       });
-      alternates["x-default"] = `${baseUrl}/fr${route.path}`;
+      alternates["x-default"] = `${baseUrl}/en${route.path}`;
 
       entries.push({
         url: `${baseUrl}/${locale}${route.path}`,
@@ -55,7 +55,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       routing.locales.forEach((loc) => {
         alternates[loc] = `${baseUrl}/${loc}/use-cases/${slug}`;
       });
-      alternates["x-default"] = `${baseUrl}/fr/use-cases/${slug}`;
+      alternates["x-default"] = `${baseUrl}/en/use-cases/${slug}`;
 
       entries.push({
         url: `${baseUrl}/${locale}/use-cases/${slug}`,

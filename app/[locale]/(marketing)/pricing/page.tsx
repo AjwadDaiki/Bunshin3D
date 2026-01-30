@@ -22,7 +22,7 @@ export async function generateMetadata({
   routing.locales.forEach((loc) => {
     alternateLanguages[loc] = `${APP_URL}/${loc}/pricing`;
   });
-  alternateLanguages["x-default"] = `${APP_URL}/fr/pricing`;
+  alternateLanguages["x-default"] = `${APP_URL}/en/pricing`;
 
   return {
     ...baseMetadataConfig,
@@ -34,7 +34,7 @@ export async function generateMetadata({
     },
     openGraph: {
       type: "website",
-      locale: locale === "fr" ? "fr_FR" : "en_US",
+      locale: ({ fr: "fr_FR", en: "en_US", es: "es_ES", de: "de_DE", ja: "ja_JP", zh: "zh_CN" } as Record<string, string>)[locale] || "en_US",
       url: `${APP_URL}/${locale}/pricing`,
       siteName: t("siteName"),
       title: t("title"),

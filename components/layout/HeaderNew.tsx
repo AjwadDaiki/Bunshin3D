@@ -33,7 +33,7 @@ export default function HeaderNew() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
+        "sticky top-0 left-0 right-0 z-50 transition-all duration-500",
         scrolled
           ? "bg-surface-1/80 backdrop-blur-2xl border-b border-white/10 shadow-lg"
           : "bg-transparent",

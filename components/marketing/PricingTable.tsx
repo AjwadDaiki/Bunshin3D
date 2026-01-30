@@ -1,12 +1,14 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { Sparkle, Lightning, Cube } from "@phosphor-icons/react";
 import { createClient } from "@/lib/supabase";
 import { useCurrency } from "@/components/providers/CurrencyProvider";
-import { getPriceForCurrency, PRICING_CONFIG, type PackId } from "@/lib/config/pricing";
+import { useOTO } from "@/components/providers/OTOProvider";
+import { getPriceForCurrency, getOTOPriceForCurrency, PRICING_CONFIG, type PackId } from "@/lib/config/pricing";
 import PricingCard from "./PricingCard";
+import Toast from "@/components/ui/Toast";
 
 function formatPrice(amount: number, currency: string, locale: string) {
   return new Intl.NumberFormat(locale, {
@@ -20,24 +22,28 @@ export default function PricingTable() {
   const t = useTranslations("Pricing");
   const locale = useLocale();
   const { currency, isLoading: currencyLoading } = useCurrency();
+  const { isOfferActive } = useOTO();
   const [loadingPack, setLoadingPack] = useState<string | null>(null);
   const [userId, setUserId] = useState<string | null>(null);
+  const [toast, setToast] = useState<{ message: string; type: "error" | "info" } | null>(null);
 
   useEffect(() => {
     const getUser = async () => {
       const supabase = createClient();
       const {
-        data: { user },
-      } = await supabase.auth.getUser();
-      if (user) setUserId(user.id);
+        data: { session },
+      } = await supabase.auth.getSession();
+      if (session?.user) setUserId(session.user.id);
     };
     getUser();
   }, []);
 
-  const handleCheckout = async (packId: string) => {
+  const handleCheckout = useCallback(async (packId: string) => {
     if (!userId) {
-      alert(t("Checkout.loginRequired"));
-      window.location.href = "/login";
+      setToast({ message: t("Checkout.loginRequired"), type: "info" });
+      setTimeout(() => {
+        window.location.href = `/${locale}/login`;
+      }, 1500);
       return;
     }
 
@@ -46,7 +52,7 @@ export default function PricingTable() {
       const response = await fetch("/api/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ packId, userId, currency }),
+        body: JSON.stringify({ packId, userId, currency, isOTO: isOfferActive }),
       });
 
       const data = await response.json();
@@ -64,11 +70,11 @@ export default function PricingTable() {
       }
     } catch (error: any) {
       console.error(t("Checkout.checkoutErrorLog"), error);
-      alert(t("Checkout.paymentInitFailed", { message: error.message }));
+      setToast({ message: t("Checkout.paymentInitFailed", { message: error.message }), type: "error" });
     } finally {
       setLoadingPack(null);
     }
-  };
+  }, [userId, currency, isOfferActive, t]);
 
   const packs: {
     id: PackId;
@@ -98,58 +104,74 @@ export default function PricingTable() {
     studio: "Studio",
   };
 
-  // Calculate price per credit for discovery as baseline
   const discoveryPrice = getPriceForCurrency("discovery", currency);
   const discoveryPerCredit = discoveryPrice.amount / PRICING_CONFIG.discovery.credits;
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-      {packs.map(({ id, icon, isPopular, isBestValue }) => {
-        const name = packNameMap[id];
-        const priceData = getPriceForCurrency(id, currency);
-        const formattedPrice = currencyLoading
-          ? "---"
-          : formatPrice(priceData.amount, priceData.currency, locale);
+    <>
+      {toast && (
+        <Toast
+          message={toast.message}
+          type={toast.type}
+          onClose={() => setToast(null)}
+        />
+      )}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        {packs.map(({ id, icon, isPopular, isBestValue }) => {
+          const name = packNameMap[id];
+          const priceData = getPriceForCurrency(id, currency);
+          const otoPriceData = isOfferActive ? getOTOPriceForCurrency(id, currency) : null;
 
-        const perCredit = priceData.amount / priceData.credits;
-        const formattedPerCredit = currencyLoading
-          ? "---"
-          : formatPrice(perCredit, priceData.currency, locale);
+          const displayAmount = otoPriceData ? otoPriceData.amount : priceData.amount;
+          const formattedPrice = currencyLoading
+            ? "---"
+            : formatPrice(displayAmount, priceData.currency, locale);
 
-        // Savings vs discovery price/credit
-        const savingsPercent =
-          id !== "discovery"
-            ? Math.round((1 - perCredit / discoveryPerCredit) * 100)
-            : 0;
+          const originalPrice = otoPriceData && !currencyLoading
+            ? formatPrice(priceData.amount, priceData.currency, locale)
+            : undefined;
 
-        return (
-          <PricingCard
-            key={id}
-            id={id}
-            title={t(`Packs.${name}.name`)}
-            price={formattedPrice}
-            pricePerCredit={formattedPerCredit}
-            savingsPercent={savingsPercent}
-            credits={t(`Packs.${name}.credits`)}
-            description={t(`Packs.${name}.description`)}
-            cta={t(`Packs.${name}.cta`)}
-            features={[
-              t("Features.quality"),
-              t("Features.commercial"),
-              t("Features.formats"),
-              t("Features.priority"),
-              t("Features.support"),
-            ]}
-            icon={icon}
-            isPopular={isPopular}
-            isBestValue={isBestValue}
-            popularLabel={isPopular ? t("Badges.popular") : undefined}
-            bestValueLabel={isBestValue ? t("Badges.bestValue") : undefined}
-            isLoading={loadingPack === id}
-            onSelect={() => handleCheckout(id)}
-          />
-        );
-      })}
-    </div>
+          const perCredit = displayAmount / priceData.credits;
+          const formattedPerCredit = currencyLoading
+            ? "---"
+            : formatPrice(perCredit, priceData.currency, locale);
+
+          const savingsPercent =
+            id !== "discovery"
+              ? Math.round((1 - perCredit / discoveryPerCredit) * 100)
+              : 0;
+
+          return (
+            <PricingCard
+              key={id}
+              id={id}
+              title={t(`Packs.${name}.name`)}
+              price={formattedPrice}
+              originalPrice={originalPrice}
+              pricePerCredit={formattedPerCredit}
+              savingsPercent={savingsPercent}
+              credits={t(`Packs.${name}.credits`)}
+              description={t(`Packs.${name}.description`)}
+              cta={t(`Packs.${name}.cta`)}
+              features={[
+                t("Features.quality"),
+                t("Features.commercial"),
+                t("Features.formats"),
+                t("Features.priority"),
+                t("Features.support"),
+              ]}
+              icon={icon}
+              isPopular={isPopular}
+              isBestValue={isBestValue}
+              popularLabel={isPopular ? t("Badges.popular") : undefined}
+              bestValueLabel={isBestValue ? t("Badges.bestValue") : undefined}
+              isLoading={loadingPack === id}
+              onSelect={() => handleCheckout(id)}
+              isPromo={isOfferActive}
+            />
+          );
+        })}
+      </div>
+    </>
   );
 }

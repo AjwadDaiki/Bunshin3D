@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { X, Sparkle, Lightning, Timer } from "@phosphor-icons/react";
 import { useTranslations } from "next-intl";
+import { useCurrency } from "@/components/providers/CurrencyProvider";
 
 type Props = {
   open: boolean;
@@ -26,6 +27,7 @@ export default function OTOPopup({
   onClose,
 }: Props) {
   const t = useTranslations("OTO");
+  const { currency } = useCurrency();
   const [loading, setLoading] = useState<string | null>(null);
 
   const handleCheckout = async (packId: string) => {
@@ -35,7 +37,7 @@ export default function OTOPopup({
       const res = await fetch("/api/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ packId, userId, isOTO: true }),
+        body: JSON.stringify({ packId, userId, currency, isOTO: true }),
       });
       const data = await res.json();
       if (data.url) window.location.href = data.url;

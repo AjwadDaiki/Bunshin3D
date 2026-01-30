@@ -1,7 +1,7 @@
 ﻿"use client";
 
 import { useState } from "react";
-import { Calendar, Clock } from "@phosphor-icons/react";
+import { Calendar, Clock, X, Trash } from "@phosphor-icons/react";
 import { useTranslations } from "next-intl";
 import GenerationMedia from "./GenerationMedia";
 import GenerationDownloads from "./GenerationDownloads";
@@ -16,6 +16,7 @@ type Props = {
 export default function GenerationCard({ generation, formatDate, onDelete }: Props) {
   const t = useTranslations("Account");
   const [isDeleting, setIsDeleting] = useState(false);
+  const [showConfirm, setShowConfirm] = useState(false);
   const formatTime = (dateString: string) =>
     new Date(dateString).toLocaleTimeString(undefined, {
       hour: "2-digit",
@@ -23,7 +24,11 @@ export default function GenerationCard({ generation, formatDate, onDelete }: Pro
     });
 
   const handleDelete = async () => {
-    if (!confirm(t("History.confirmDelete"))) return;
+    setShowConfirm(true);
+  };
+
+  const confirmDelete = async () => {
+    setShowConfirm(false);
     setIsDeleting(true);
     await onDelete(generation.id);
   };
@@ -52,6 +57,25 @@ export default function GenerationCard({ generation, formatDate, onDelete }: Pro
           modelUrl={generation.model_glb_url}
           status={generation.status}
         />
+
+        {showConfirm && (
+          <div className="mt-3 flex items-center gap-2 rounded-xl bg-red-500/10 border border-red-500/20 px-3 py-2">
+            <p className="text-xs text-red-300 flex-1">{t("History.confirmDelete")}</p>
+            <button
+              onClick={confirmDelete}
+              className="flex items-center gap-1 rounded-lg bg-red-600 px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-red-500"
+            >
+              <Trash className="h-3 w-3" weight="bold" />
+              {t("History.confirmYes")}
+            </button>
+            <button
+              onClick={() => setShowConfirm(false)}
+              className="flex items-center justify-center rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-gray-400 transition hover:bg-white/10"
+            >
+              {t("History.confirmNo")}
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

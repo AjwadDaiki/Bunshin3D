@@ -40,6 +40,22 @@ export function isSupportedCurrency(currency: string): currency is SupportedCurr
   return SUPPORTED_CURRENCIES.includes(currency as SupportedCurrency);
 }
 
+// OTO discount multipliers per pack
+const OTO_DISCOUNTS: Record<PackId, number> = {
+  discovery: 0.33, // 0.99 / 2.99 ≈ 33%
+  creator: 0.67,   // ~33% off
+  studio: 0.67,    // 19.99 / 29.99 ≈ 67%
+};
+
+export function getOTOPriceForCurrency(packId: PackId, currency: string) {
+  const base = getPriceForCurrency(packId, currency);
+  const discount = OTO_DISCOUNTS[packId];
+  return {
+    ...base,
+    amount: Math.round(base.amount * discount * 100) / 100,
+  };
+}
+
 export function getPriceForCurrency(packId: PackId, currency: string) {
   const pack = PRICING_CONFIG[packId];
   const safeCurrency = isSupportedCurrency(currency) ? currency : DEFAULT_CURRENCY;

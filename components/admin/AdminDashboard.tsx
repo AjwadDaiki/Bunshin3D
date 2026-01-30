@@ -9,6 +9,7 @@ import AdminTabs from "./AdminTabs";
 import AdminOverviewTab from "./AdminOverviewTab";
 import AdminUsersTab from "./AdminUsersTab";
 import { AdminStats, AdminUserProfile } from "./types";
+import Toast from "@/components/ui/Toast";
 
 type AdminProps = {
   stats: AdminStats;
@@ -33,6 +34,7 @@ export default function AdminDashboard({
   const [currentPage, setCurrentPage] = useState(1);
   const [totalUsers, setTotalUsers] = useState(stats.users);
   const [serverTime, setServerTime] = useState<Date | null>(null);
+  const [toast, setToast] = useState<{ message: string; type: "error" | "success" | "info" } | null>(null);
 
   useEffect(() => {
     setServerTime(new Date());
@@ -48,7 +50,7 @@ export default function AdminDashboard({
       await updateAppSettings({ maintenance_mode: newValue });
       setSettings({ ...settings, maintenance_mode: newValue });
     } catch {
-      alert(t("Errors.updateSystemStatus"));
+      setToast({ message: t("Errors.updateSystemStatus"), type: "error" });
     }
     setLoading(false);
   };
@@ -82,6 +84,14 @@ export default function AdminDashboard({
   const totalPages = Math.ceil(totalUsers / 20);
 
   return (
+    <>
+      {toast && (
+        <Toast
+          message={toast.message}
+          type={toast.type}
+          onClose={() => setToast(null)}
+        />
+      )}
     <div className="space-y-8 animate-in fade-in duration-500 pb-20">
       <AdminDashboardHeader
         maintenanceMode={!!settings.maintenance_mode}
@@ -122,6 +132,7 @@ export default function AdminDashboard({
         />
       )}
     </div>
+    </>
   );
 }
 

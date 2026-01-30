@@ -13,7 +13,7 @@ export default function ReferralSection({ referralCode, referralCredits }: Props
   const t = useTranslations("Referral");
   const code = referralCode || "";
   const link = code
-    ? `https://www.google.com/search?q=${encodeURIComponent(`bunshin3d.com?ref=${code}`)}`
+    ? `https://bunshin3d.com/?ref=${code}`
     : "";
   const [copied, setCopied] = useState(false);
 

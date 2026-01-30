@@ -17,6 +17,7 @@ import AnalyticsScripts from "@/components/layout/AnalyticsScripts";
 import ModelViewerScript from "@/components/layout/ModelViewerScript";
 import OTOBanner from "@/components/layout/OTOBanner";
 import { CurrencyProvider } from "@/components/providers/CurrencyProvider";
+import { OTOProvider } from "@/components/providers/OTOProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -45,7 +46,7 @@ export async function generateMetadata({
   routing.locales.forEach((loc) => {
     alternateLanguages[loc] = `${baseUrl}/${loc}`;
   });
-  alternateLanguages["x-default"] = `${baseUrl}/fr`;
+  alternateLanguages["x-default"] = `${baseUrl}/en`;
 
   return {
     ...baseMetadataConfig,
@@ -73,8 +74,8 @@ export async function generateMetadata({
     },
     openGraph: {
       type: "website",
-      locale: locale === "fr" ? "fr_FR" : "en_US",
-      alternateLocale: locale === "fr" ? ["en_US"] : ["fr_FR"],
+      locale: ({ fr: "fr_FR", en: "en_US", es: "es_ES", de: "de_DE", ja: "ja_JP", zh: "zh_CN" } as Record<string, string>)[locale] || "en_US",
+      alternateLocale: ["fr_FR", "en_US", "es_ES", "de_DE", "ja_JP", "zh_CN"].filter(l => l !== ({ fr: "fr_FR", en: "en_US", es: "es_ES", de: "de_DE", ja: "ja_JP", zh: "zh_CN" } as Record<string, string>)[locale]),
       url: `${baseUrl}/${locale}`,
       siteName: t("ogSiteName"),
       title: t("ogTitle"),
@@ -144,10 +145,12 @@ export default async function LocaleLayout({
 
         <NextIntlClientProvider messages={messages}>
           <CurrencyProvider>
-            <OTOBanner />
-            <HeaderNew />
-            <main id="main-content">{children}</main>
-            <FooterNew />
+            <OTOProvider>
+              <OTOBanner />
+              <HeaderNew />
+              <main id="main-content">{children}</main>
+              <FooterNew />
+            </OTOProvider>
           </CurrencyProvider>
         </NextIntlClientProvider>
       </body>

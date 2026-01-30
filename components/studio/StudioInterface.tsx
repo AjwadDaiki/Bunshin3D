@@ -21,7 +21,7 @@ import { useState } from "react";
 
 export default function StudioInterface() {
   const { credits, setCredits, userId } = useStudioUser();
-  const { isOfferActive, timeRemaining, triggerOffer } = useSpecialOffer(userId);
+  const { isOfferActive, timeRemaining, triggerOffer, offerStartedAt } = useSpecialOffer(userId);
   const [otoOpen, setOtoOpen] = useState(false);
   const {
     mode,
@@ -53,10 +53,10 @@ export default function StudioInterface() {
     userId,
     credits,
     onInsufficientCredits: () => {
-      if (credits === 0 && isOfferActive) {
-        setOtoOpen(true);
-      } else if (credits === 0 && !isOfferActive) {
+      if (!offerStartedAt && credits === 0) {
         triggerOffer();
+        setOtoOpen(true);
+      } else if (isOfferActive) {
         setOtoOpen(true);
       } else {
         setCreditsPromptOpen(true);

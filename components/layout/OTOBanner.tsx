@@ -1,10 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { Timer } from "@phosphor-icons/react";
 import { useTranslations } from "next-intl";
-import { useSpecialOffer } from "@/hooks/useSpecialOffer";
-import { createClient } from "@/lib/supabase";
+import { useOTO } from "@/components/providers/OTOProvider";
 import { Link } from "@/i18n/routing";
 
 function formatCountdown(ms: number) {
@@ -17,29 +15,17 @@ function formatCountdown(ms: number) {
 
 export default function OTOBanner() {
   const t = useTranslations("OTO");
-  const [userId, setUserId] = useState<string | null>(null);
-  const supabase = createClient();
-
-  useEffect(() => {
-    const getUser = async () => {
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
-      if (user) setUserId(user.id);
-    };
-    getUser();
-  }, [supabase]);
-
-  const { isOfferActive, timeRemaining } = useSpecialOffer(userId);
+  const { isOfferActive, timeRemaining } = useOTO();
 
   if (!isOfferActive) return null;
 
   return (
-    <div className="relative z-50 flex items-center justify-center gap-3 bg-linear-to-r from-purple-600/90 via-amber-500/90 to-purple-600/90 px-4 py-2 text-sm font-medium text-white">
+    <div
+      id="oto-banner"
+      className="sticky top-0 z-60 flex items-center justify-center gap-3 bg-linear-to-r from-purple-600/90 via-amber-500/90 to-purple-600/90 px-4 py-2 text-sm font-medium text-white"
+    >
       <Timer className="h-4 w-4 shrink-0" weight="fill" />
-      <span>
-        {t("banner.text")}
-      </span>
+      <span>{t("banner.text")}</span>
       <span className="font-mono font-bold tabular-nums">
         {formatCountdown(timeRemaining)}
       </span>

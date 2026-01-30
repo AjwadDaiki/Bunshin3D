@@ -43,7 +43,7 @@ export async function generateMetadata({
   routing.locales.forEach((loc) => {
     alternateLanguages[loc] = `${APP_URL}/${loc}`;
   });
-  alternateLanguages["x-default"] = `${APP_URL}/fr`;
+  alternateLanguages["x-default"] = `${APP_URL}/en`;
 
   return {
     ...baseMetadataConfig,

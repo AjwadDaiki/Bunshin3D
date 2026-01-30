@@ -83,7 +83,7 @@ export function useDashboardData({
           table: "generations",
           filter: `user_id=eq.${user.id}`,
         },
-        (payload) => {
+        (payload: any) => {
           if (payload.eventType === "INSERT") {
             setGenerations((prev) => [payload.new as Generation, ...prev]);
           } else if (payload.eventType === "UPDATE") {
@@ -109,7 +109,7 @@ export function useDashboardData({
           table: "profiles",
           filter: `id=eq.${user.id}`,
         },
-        (payload) => {
+        (payload: any) => {
           setProfile(payload.new as AccountProfile);
         },
       )

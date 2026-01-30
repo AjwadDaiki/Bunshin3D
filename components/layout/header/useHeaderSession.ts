@@ -29,12 +29,14 @@ export function useHeaderSession() {
   }, []);
 
   const hydrateUser = useCallback(async () => {
+    // Use getSession() first for instant hydration from cache
     const {
-      data: { user },
-    } = await supabase.auth.getUser();
-    setUser(user ?? null);
-    if (user) {
-      await Promise.all([fetchCredits(user.id), refreshAdmin()]);
+      data: { session },
+    } = await supabase.auth.getSession();
+    const sessionUser = session?.user ?? null;
+    setUser(sessionUser);
+    if (sessionUser) {
+      await Promise.all([fetchCredits(sessionUser.id), refreshAdmin()]);
     } else {
       setIsAdmin(false);
       setCredits(null);
@@ -46,7 +48,7 @@ export function useHeaderSession() {
 
     const {
       data: { subscription },
-    } = supabase.auth.onAuthStateChange(async (_, session) => {
+    } = supabase.auth.onAuthStateChange(async (_: any, session: any) => {
       const nextUser = session?.user ?? null;
       setUser(nextUser);
       if (nextUser) {
@@ -62,7 +64,7 @@ export function useHeaderSession() {
 
   const logout = useCallback(async () => {
     await supabase.auth.signOut();
-    window.location.href = "/";
+    window.location.reload();
   }, [supabase]);
 
   return {

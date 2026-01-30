@@ -11,7 +11,7 @@
     "ogTitle": "Turn Any Image into a 3D Model in 30 Seconds | Free AI Converter",
     "ogDescription": "Convert logos, photos & drawings to STL/GLB instantly. Free AI 3D generator - no skills needed. Perfect for 3D printing & game development.",
     "ogImageAlt": "Bunshin 3D - AI converts 2D images to 3D models for printing and games",
-    "twitterTitle": "🚀 AI Image to 3D Converter | Free STL & GLB Generator",
+    "twitterTitle": "ðŸš€ AI Image to 3D Converter | Free STL & GLB Generator",
     "twitterDescription": "Transform any image into a printable 3D model in seconds. Free AI converter - no design skills required. Try Bunshin 3D now!"
   },
   "SEO": {
@@ -39,6 +39,8 @@
     "admin": "Admin",
     "logout": "Logout",
     "credits": "Credits",
+    "buyCredits": "Buy Credits",
+    "lowCredits": "Low",
     "aria": {
       "home": "Go to homepage",
       "mainNav": "Main navigation",
@@ -120,7 +122,7 @@
     "mentions": "Legal Mentions",
     "rights": "All rights reserved.",
     "crafted": "Crafted with precision by",
-    "copyright": "© {year} Bunshin 3D. All rights reserved.",
+    "copyright": "Â© {year} Bunshin 3D. All rights reserved.",
     "partnerName": "Hidden Lab"
   },
   "UseCases": {
@@ -140,7 +142,7 @@
     "footer": "If the problem persists, please contact support.",
     "notFoundCode": "404",
     "rootLogPrefix": "Application error:",
-    "warningSymbol": "⚠️"
+    "warningSymbol": "âš ï¸"
   },
   "Auth": {
     "title": "Welcome Back",
@@ -268,15 +270,15 @@
       "Formats": {
         "standard": {
           "title": "Master Format",
-          "subtitle": "High Poly • GLB Texture"
+          "subtitle": "High Poly â€¢ GLB Texture"
         },
         "lowpoly": {
           "title": "Game Ready",
-          "subtitle": "Optimized Low Poly • 50% Decimation"
+          "subtitle": "Optimized Low Poly â€¢ 50% Decimation"
         },
         "print": {
           "title": "3D Print",
-          "subtitle": "Solid STL • Binary Format"
+          "subtitle": "Solid STL â€¢ Binary Format"
         }
       },
       "Viewer": {
@@ -461,6 +463,8 @@
       "download": "Download",
       "date": "Created on",
       "confirmDelete": "Delete this generation?",
+      "confirmYes": "Delete",
+      "confirmNo": "Cancel",
       "generatedTime": "Generated at {time}",
       "retentionNotice": "Your generations are saved here for quick access.",
       "sourceAlt": "Source image",
@@ -671,7 +675,7 @@
     "brandLogoAlt": "Bunshin 3D Logo",
     "creditsWithCount": "{count, plural, one {# credit} other {# credits}}",
     "currencySymbols": {
-      "eur": "€",
+      "eur": "â‚¬",
       "usd": "$"
     },
     "downloads": {
@@ -743,7 +747,7 @@
       "feature4": "Production-ready for film and AAA games"
     },
     "Warning": {
-      "title": "⚠️ Premium Generation",
+      "title": "âš ï¸ Premium Generation",
       "message": "This will cost 5 credits. Premium models offer cinema-quality results with photorealistic details."
     }
   },
@@ -862,14 +866,14 @@
     "discountBadge": "UP TO -67% OFF",
     "discovery": {
       "name": "Discovery",
-      "price": "0.99€",
-      "originalPrice": "2.99€",
+      "price": "0.99â‚¬",
+      "originalPrice": "2.99â‚¬",
       "credits": "10 credits included"
     },
     "studio": {
       "name": "Studio Pro",
-      "price": "19.99€",
-      "originalPrice": "29.99€",
+      "price": "19.99â‚¬",
+      "originalPrice": "29.99â‚¬",
       "credits": "200 credits included"
     },
     "footer": "One-time offer. Credits never expire.",
