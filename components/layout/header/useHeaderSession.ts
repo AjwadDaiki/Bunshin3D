@@ -1,7 +1,7 @@
 ﻿"use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { createClient, clearSupabaseCookies } from "@/lib/supabase";
+import { createClient } from "@/lib/supabase";
 import { User } from "@supabase/supabase-js";
 import { checkIsAdmin } from "@/app/actions/admin";
 
@@ -61,11 +61,7 @@ export function useHeaderSession() {
   }, [fetchCredits, hydrateUser, refreshAdmin, supabase]);
 
   const logout = useCallback(async () => {
-    setUser(null);
-    setCredits(null);
-    setIsAdmin(false);
     await supabase.auth.signOut();
-    clearSupabaseCookies();
     window.location.href = "/";
   }, [supabase]);
 

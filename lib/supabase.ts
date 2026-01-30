@@ -67,14 +67,3 @@ export const createClient = () =>
       },
     },
   );
-
-/** Force-clear all Supabase auth cookies from the browser */
-export const clearSupabaseCookies = () => {
-  if (typeof document === "undefined") return;
-  document.cookie.split(";").forEach((c) => {
-    const name = c.trim().split("=")[0];
-    if (name.startsWith("sb-")) {
-      document.cookie = `${name}=; Max-Age=0; Path=/`;
-    }
-  });
-};
