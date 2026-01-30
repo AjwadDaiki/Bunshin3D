@@ -67,10 +67,12 @@ export function useAuthFlow(t: Translator): AuthFlowState {
     };
 
     const checkSession = async () => {
+      // Use getUser() instead of getSession() to validate server-side
+      // getSession() reads from local cache and may return stale sessions
       const {
-        data: { session },
-      } = await supabase.auth.getSession();
-      if (session) {
+        data: { user },
+      } = await supabase.auth.getUser();
+      if (user) {
         window.location.href = getRedirectUrl();
       }
     };
@@ -80,7 +82,8 @@ export function useAuthFlow(t: Translator): AuthFlowState {
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange(async (event: any, session: any) => {
-      if ((event === "SIGNED_IN" || event === "INITIAL_SESSION") && session) {
+      // Only redirect on SIGNED_IN (fresh login), not INITIAL_SESSION (could be stale)
+      if (event === "SIGNED_IN" && session) {
         window.location.href = getRedirectUrl();
       }
     });
@@ -88,7 +91,7 @@ export function useAuthFlow(t: Translator): AuthFlowState {
     return () => {
       subscription.unsubscribe();
     };
-  }, [getLocale, supabase]);
+  }, [getLocale, searchParams, supabase]);
 
   const handleEmailLogin = useCallback(
     async (event: React.FormEvent) => {

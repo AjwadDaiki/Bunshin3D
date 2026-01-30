@@ -155,7 +155,16 @@
     "checkEmail": "检查您的电子邮件",
     "checkEmailDesc": "我们已向您发送了一个登录魔法链接。",
     "loading": "认证中...",
-    "tryDifferentEmail": "尝试其他邮箱"
+    "tryDifferentEmail": "尝试其他邮箱",
+    "Errors": {
+      "noCode": "未收到认证码。",
+      "authFailed": "认证失败：{message}",
+      "noSession": "未创建会话，请重试。",
+      "banned": "此账户已被暂停。",
+      "generic": "发生意外错误。",
+      "magicLinkSend": "无法发送魔法链接。",
+      "googleLogin": "Google登录失败，请重试。"
+    }
   },
   "Studio": {
     "Metadata": {
@@ -878,6 +887,7 @@
       "credits": "包含200积分"
     },
     "footer": "一次性优惠，积分永不过期。",
+    "creditsLabel": "积分",
     "checkoutError": "发生错误，请重试。",
     "banner": {
       "text": "欢迎优惠将于",

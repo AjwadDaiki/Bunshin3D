@@ -29,13 +29,13 @@ export function OTOProvider({ children }: { children: ReactNode }) {
   const supabase = createClient();
 
   useEffect(() => {
-    const getUser = async () => {
+    const fetchUser = async () => {
       const {
-        data: { session },
-      } = await supabase.auth.getSession();
-      if (session?.user) setUserId(session.user.id);
+        data: { user },
+      } = await supabase.auth.getUser();
+      if (user) setUserId(user.id);
     };
-    getUser();
+    fetchUser();
   }, [supabase]);
 
   const { isOfferActive, timeRemaining, triggerOffer, offerStartedAt } =

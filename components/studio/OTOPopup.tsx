@@ -147,7 +147,7 @@ export default function OTOPopup({
                   <div className={`flex items-center gap-2 ${color}`}>
                     <Icon className="h-5 w-5" weight="fill" />
                     <span className="text-xs font-semibold uppercase tracking-wider">
-                      {PRICING_CONFIG[id].credits} credits
+                      {PRICING_CONFIG[id].credits} {t("creditsLabel")}
                     </span>
                   </div>
                   <div className="mt-3 flex items-baseline gap-2">

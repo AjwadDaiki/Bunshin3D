@@ -155,7 +155,16 @@
     "checkEmail": "Check your email",
     "checkEmailDesc": "We've sent you a magic link to sign in.",
     "loading": "Authenticating...",
-    "tryDifferentEmail": "Try a different email"
+    "tryDifferentEmail": "Try a different email",
+    "Errors": {
+      "noCode": "No authentication code received.",
+      "authFailed": "Authentication failed: {message}",
+      "noSession": "No session created. Please try again.",
+      "banned": "This account has been suspended.",
+      "generic": "An unexpected error occurred.",
+      "magicLinkSend": "Failed to send the magic link.",
+      "googleLogin": "Google sign-in failed. Please try again."
+    }
   },
   "Studio": {
     "Metadata": {
@@ -878,6 +887,7 @@
       "credits": "200 credits included"
     },
     "footer": "One-time offer. Credits never expire.",
+    "creditsLabel": "credits",
     "checkoutError": "An error occurred. Please try again.",
     "banner": {
       "text": "Welcome offer expires in",

@@ -28,14 +28,14 @@ export default function PricingTable() {
   const [toast, setToast] = useState<{ message: string; type: "error" | "info" } | null>(null);
 
   useEffect(() => {
-    const getUser = async () => {
+    const fetchUser = async () => {
       const supabase = createClient();
       const {
-        data: { session },
-      } = await supabase.auth.getSession();
-      if (session?.user) setUserId(session.user.id);
+        data: { user },
+      } = await supabase.auth.getUser();
+      if (user) setUserId(user.id);
     };
-    getUser();
+    fetchUser();
   }, []);
 
   const handleCheckout = useCallback(async (packId: string) => {

@@ -155,7 +155,16 @@
     "checkEmail": "Revisa tu correo",
     "checkEmailDesc": "Te hemos enviado un enlace mágico para iniciar sesión.",
     "loading": "Autenticando...",
-    "tryDifferentEmail": "Probar con otro correo"
+    "tryDifferentEmail": "Probar con otro correo",
+    "Errors": {
+      "noCode": "No se recibió código de autenticación.",
+      "authFailed": "Error de autenticación: {message}",
+      "noSession": "No se creó ninguna sesión. Inténtalo de nuevo.",
+      "banned": "Esta cuenta ha sido suspendida.",
+      "generic": "Ocurrió un error inesperado.",
+      "magicLinkSend": "No se pudo enviar el enlace mágico.",
+      "googleLogin": "Error al iniciar sesión con Google. Inténtalo de nuevo."
+    }
   },
   "Studio": {
     "Metadata": {
@@ -906,6 +915,7 @@
       "credits": "200 créditos incluidos"
     },
     "footer": "Oferta única. Los créditos no caducan.",
+    "creditsLabel": "créditos",
     "checkoutError": "Ocurrió un error. Por favor, inténtelo de nuevo.",
     "banner": {
       "text": "La oferta de bienvenida expira en",

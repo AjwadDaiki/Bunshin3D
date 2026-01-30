@@ -155,7 +155,16 @@
     "checkEmail": "Vérifiez votre email",
     "checkEmailDesc": "Nous vous avons envoyé un lien magique pour vous connecter.",
     "loading": "Authentification...",
-    "tryDifferentEmail": "Essayer une autre adresse"
+    "tryDifferentEmail": "Essayer une autre adresse",
+    "Errors": {
+      "noCode": "Aucun code d'authentification reçu.",
+      "authFailed": "Échec de l'authentification : {message}",
+      "noSession": "Aucune session créée. Veuillez réessayer.",
+      "banned": "Ce compte a été suspendu.",
+      "generic": "Une erreur inattendue s'est produite.",
+      "magicLinkSend": "Impossible d'envoyer le lien magique.",
+      "googleLogin": "La connexion Google a échoué. Veuillez réessayer."
+    }
   },
   "Studio": {
     "Metadata": {
@@ -906,6 +915,7 @@
       "credits": "200 crédits inclus"
     },
     "footer": "Offre unique. Les crédits n'expirent jamais.",
+    "creditsLabel": "crédits",
     "checkoutError": "Une erreur est survenue. Veuillez réessayer.",
     "banner": {
       "text": "L'offre de bienvenue expire dans",

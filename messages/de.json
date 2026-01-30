@@ -155,7 +155,16 @@
     "checkEmail": "Überprüfen Sie Ihre E-Mail",
     "checkEmailDesc": "Wir haben Ihnen einen Magic Link zum Anmelden gesendet.",
     "loading": "Authentifizierung...",
-    "tryDifferentEmail": "Andere E-Mail verwenden"
+    "tryDifferentEmail": "Andere E-Mail verwenden",
+    "Errors": {
+      "noCode": "Kein Authentifizierungscode empfangen.",
+      "authFailed": "Authentifizierung fehlgeschlagen: {message}",
+      "noSession": "Keine Sitzung erstellt. Bitte versuchen Sie es erneut.",
+      "banned": "Dieses Konto wurde gesperrt.",
+      "generic": "Ein unerwarteter Fehler ist aufgetreten.",
+      "magicLinkSend": "Der Magic Link konnte nicht gesendet werden.",
+      "googleLogin": "Google-Anmeldung fehlgeschlagen. Bitte versuchen Sie es erneut."
+    }
   },
   "Studio": {
     "Metadata": {
@@ -878,6 +887,7 @@
       "credits": "200 Credits enthalten"
     },
     "footer": "Einmaliges Angebot. Credits verfallen nie.",
+    "creditsLabel": "Credits",
     "checkoutError": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.",
     "banner": {
       "text": "Willkommensangebot endet in",

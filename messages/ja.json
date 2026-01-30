@@ -155,7 +155,16 @@
     "checkEmail": "メールを確認",
     "checkEmailDesc": "サインイン用のマジックリンクを送信しました。",
     "loading": "認証中...",
-    "tryDifferentEmail": "別のメールアドレスを試す"
+    "tryDifferentEmail": "別のメールアドレスを試す",
+    "Errors": {
+      "noCode": "認証コードが受信されませんでした。",
+      "authFailed": "認証に失敗しました: {message}",
+      "noSession": "セッションが作成されませんでした。もう一度お試しください。",
+      "banned": "このアカウントは停止されています。",
+      "generic": "予期しないエラーが発生しました。",
+      "magicLinkSend": "マジックリンクの送信に失敗しました。",
+      "googleLogin": "Googleログインに失敗しました。もう一度お試しください。"
+    }
   },
   "Studio": {
     "Metadata": {
@@ -878,6 +887,7 @@
       "credits": "200 クレジット込み"
     },
     "footer": "一度きりのオファー。クレジットは失効しません。",
+    "creditsLabel": "クレジット",
     "checkoutError": "エラーが発生しました。もう一度お試しください。",
     "banner": {
       "text": "ウェルカムオファー終了まで",

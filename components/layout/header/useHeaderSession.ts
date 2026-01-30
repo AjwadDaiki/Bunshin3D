@@ -29,14 +29,13 @@ export function useHeaderSession() {
   }, []);
 
   const hydrateUser = useCallback(async () => {
-    // Use getSession() first for instant hydration from cache
+    // Use getUser() to validate session server-side (not stale cache)
     const {
-      data: { session },
-    } = await supabase.auth.getSession();
-    const sessionUser = session?.user ?? null;
-    setUser(sessionUser);
-    if (sessionUser) {
-      await Promise.all([fetchCredits(sessionUser.id), refreshAdmin()]);
+      data: { user: validatedUser },
+    } = await supabase.auth.getUser();
+    setUser(validatedUser);
+    if (validatedUser) {
+      await Promise.all([fetchCredits(validatedUser.id), refreshAdmin()]);
     } else {
       setIsAdmin(false);
       setCredits(null);

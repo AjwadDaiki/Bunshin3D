@@ -94,8 +94,13 @@ export async function POST(request: NextRequest) {
       }),
     );
 
+    // Map app locales to Stripe-supported locale codes
+    const stripeLocaleMap: Record<string, string> = {
+      fr: "fr", en: "en", es: "es", de: "de", ja: "ja", zh: "zh",
+    };
+    const stripeLocale = stripeLocaleMap[locale] || "auto";
+
     const sessionParams: Stripe.Checkout.SessionCreateParams = {
-      payment_method_types: ["card"],
       line_items: [
         {
           price: selectedPack.priceId as string,
@@ -103,6 +108,7 @@ export async function POST(request: NextRequest) {
         },
       ],
       mode: "payment",
+      locale: stripeLocale as Stripe.Checkout.SessionCreateParams["locale"],
       success_url: `${origin}/${locale}/studio?success=true`,
       cancel_url: `${origin}/${locale}/pricing?canceled=true`,
       metadata: {
