@@ -905,6 +905,7 @@
       "credits": "200 crÃ©dits inclus"
     },
     "footer": "Offre unique. Les crÃ©dits n'expirent jamais.",
+    "checkoutError": "Une erreur est survenue. Veuillez réessayer.",
     "banner": {
       "text": "L'offre de bienvenue expire dans",
       "cta": "En profiter"

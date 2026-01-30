@@ -11,8 +11,9 @@ export function useStudioUser() {
   useEffect(() => {
     const getUser = async () => {
       const {
-        data: { user },
-      } = await supabase.auth.getUser();
+        data: { session },
+      } = await supabase.auth.getSession();
+      const user = session?.user;
       if (user) {
         setUserId(user.id);
         const { data } = await supabase

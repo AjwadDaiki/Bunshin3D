@@ -15,13 +15,13 @@ import { useStudioState } from "./useStudioState";
 import { useStudioLogs } from "./useStudioLogs";
 import { useStudioGeneration } from "./useStudioGeneration";
 import { useModelDownload, DownloadFormat } from "@/hooks/useModelDownload";
-import { useSpecialOffer } from "@/hooks/useSpecialOffer";
+import { useOTO } from "@/components/providers/OTOProvider";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 
 export default function StudioInterface() {
   const { credits, setCredits, userId } = useStudioUser();
-  const { isOfferActive, timeRemaining, triggerOffer, offerStartedAt } = useSpecialOffer(userId);
+  const { isOfferActive, timeRemaining, triggerOffer, offerStartedAt } = useOTO();
   const [otoOpen, setOtoOpen] = useState(false);
   const {
     mode,

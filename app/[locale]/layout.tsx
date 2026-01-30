@@ -146,8 +146,10 @@ export default async function LocaleLayout({
         <NextIntlClientProvider messages={messages}>
           <CurrencyProvider>
             <OTOProvider>
-              <OTOBanner />
-              <HeaderNew />
+              <div className="sticky top-0 z-50">
+                <OTOBanner />
+                <HeaderNew />
+              </div>
               <main id="main-content">{children}</main>
               <FooterNew />
             </OTOProvider>

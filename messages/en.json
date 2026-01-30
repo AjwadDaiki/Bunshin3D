@@ -877,6 +877,7 @@
       "credits": "200 credits included"
     },
     "footer": "One-time offer. Credits never expire.",
+    "checkoutError": "An error occurred. Please try again.",
     "banner": {
       "text": "Welcome offer expires in",
       "cta": "Claim Now"

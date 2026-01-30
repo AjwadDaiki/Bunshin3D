@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { X, Sparkle, Lightning, Timer } from "@phosphor-icons/react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { useCurrency } from "@/components/providers/CurrencyProvider";
 
 type Props = {
@@ -27,21 +27,31 @@ export default function OTOPopup({
   onClose,
 }: Props) {
   const t = useTranslations("OTO");
+  const locale = useLocale();
   const { currency } = useCurrency();
   const [loading, setLoading] = useState<string | null>(null);
+
+  const [error, setError] = useState<string | null>(null);
 
   const handleCheckout = async (packId: string) => {
     if (!userId) return;
     setLoading(packId);
+    setError(null);
     try {
       const res = await fetch("/api/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ packId, userId, currency, isOTO: true }),
+        body: JSON.stringify({ packId, userId, currency, isOTO: true, locale }),
       });
       const data = await res.json();
-      if (data.url) window.location.href = data.url;
+      if (data.url) {
+        window.location.href = data.url;
+      } else {
+        setError(data.error || t("checkoutError"));
+        setLoading(null);
+      }
     } catch {
+      setError(t("checkoutError"));
       setLoading(null);
     }
   };
@@ -156,6 +166,10 @@ export default function OTOPopup({
               </div>
             </button>
           </div>
+
+          {error && (
+            <p className="mt-3 text-center text-xs text-red-400">{error}</p>
+          )}
 
           <p className="mt-4 text-center text-xs text-gray-600">
             {t("footer")}

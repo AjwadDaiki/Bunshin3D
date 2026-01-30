@@ -52,7 +52,7 @@ export default function PricingTable() {
       const response = await fetch("/api/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ packId, userId, currency, isOTO: isOfferActive }),
+        body: JSON.stringify({ packId, userId, currency, isOTO: isOfferActive, locale }),
       });
 
       const data = await response.json();

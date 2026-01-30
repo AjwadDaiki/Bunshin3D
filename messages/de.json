@@ -877,6 +877,7 @@
       "credits": "200 Credits enthalten"
     },
     "footer": "Einmaliges Angebot. Credits verfallen nie.",
+    "checkoutError": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.",
     "banner": {
       "text": "Willkommensangebot endet in",
       "cta": "Jetzt sichern"

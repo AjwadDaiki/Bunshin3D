@@ -27,7 +27,8 @@ export async function POST(request: NextRequest) {
   });
 
   try {
-    const { packId, userId, currency, isOTO } = await request.json();
+    const { packId, userId, currency, isOTO, locale: clientLocale } = await request.json();
+    const locale = clientLocale || "en";
     const origin =
       request.headers.get("origin") || process.env.NEXT_PUBLIC_APP_URL || "";
 
@@ -102,8 +103,8 @@ export async function POST(request: NextRequest) {
         },
       ],
       mode: "payment",
-      success_url: `${origin}/studio?success=true`,
-      cancel_url: `${origin}/pricing?canceled=true`,
+      success_url: `${origin}/${locale}/studio?success=true`,
+      cancel_url: `${origin}/${locale}/pricing?canceled=true`,
       metadata: {
         userId,
         packId: resolvedPackId,

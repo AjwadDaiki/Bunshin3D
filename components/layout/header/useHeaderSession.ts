@@ -63,8 +63,11 @@ export function useHeaderSession() {
   }, [fetchCredits, hydrateUser, refreshAdmin, supabase]);
 
   const logout = useCallback(async () => {
-    await supabase.auth.signOut();
-    window.location.reload();
+    setUser(null);
+    setCredits(null);
+    setIsAdmin(false);
+    await supabase.auth.signOut({ scope: "local" });
+    window.location.href = window.location.pathname;
   }, [supabase]);
 
   return {

@@ -905,6 +905,7 @@
       "credits": "200 crÃ©ditos incluidos"
     },
     "footer": "Oferta Ãºnica. Los crÃ©ditos no caducan.",
+    "checkoutError": "Ocurrió un error. Por favor, inténtelo de nuevo.",
     "banner": {
       "text": "La oferta de bienvenida expira en",
       "cta": "Reclamar ahora"
