@@ -33,11 +33,8 @@ export default function HeaderNew() {
   return (
     <header
       className={cn(
-        "left-0 right-0 transition-all duration-500",
-        "backdrop-blur-2xl",
-        scrolled
-          ? "bg-surface-1/80 shadow-lg border-b border-white/10"
-          : "bg-surface-1/80",
+        "left-0 right-0 transition-all duration-500 backdrop-blur-2xl bg-surface-1/80",
+        scrolled && "shadow-lg border-b border-white/10",
       )}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12">
