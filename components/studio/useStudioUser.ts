@@ -9,10 +9,12 @@ export function useStudioUser() {
   const [userId, setUserId] = useState<string | null>(null);
 
   useEffect(() => {
-    const getUser = async () => {
-      const {
-        data: { session },
-      } = await supabase.auth.getSession();
+    let mounted = true;
+
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange(async (_event, session) => {
+      if (!mounted) return;
       const user = session?.user;
       if (user) {
         setUserId(user.id);
@@ -21,10 +23,14 @@ export function useStudioUser() {
           .select("credits")
           .eq("id", user.id)
           .single();
-        if (data) setCredits(data.credits);
+        if (mounted && data) setCredits(data.credits);
       }
+    });
+
+    return () => {
+      mounted = false;
+      subscription.unsubscribe();
     };
-    getUser();
   }, [supabase]);
 
   return {

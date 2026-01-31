@@ -58,22 +58,14 @@ export function useAuthFlow(t: Translator): AuthFlowState {
   }, [searchParams, t]);
 
   useEffect(() => {
-    const checkSession = async () => {
-      const {
-        data: { session },
-      } = await supabase.auth.getSession();
-      if (session) {
-        const locale = getLocale();
-        window.location.href = `/${locale}/studio`;
-      }
-    };
-
-    checkSession();
+    let redirected = false;
 
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange(async (event, session) => {
+      if (redirected) return;
       if ((event === "SIGNED_IN" || event === "INITIAL_SESSION") && session) {
+        redirected = true;
         const locale = getLocale();
         window.location.href = `/${locale}/studio`;
       }
