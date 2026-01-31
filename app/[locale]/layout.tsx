@@ -18,6 +18,7 @@ import ModelViewerScript from "@/components/layout/ModelViewerScript";
 import OTOBanner from "@/components/layout/OTOBanner";
 import { CurrencyProvider } from "@/components/providers/CurrencyProvider";
 import { OTOProvider } from "@/components/providers/OTOProvider";
+import BackgroundFX from "@/components/landing/BackgroundFX";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -143,6 +144,7 @@ export default async function LocaleLayout({
         <AnalyticsScripts gaId={gaId} />
         <ModelViewerScript />
 
+        <BackgroundFX />
         <NextIntlClientProvider messages={messages}>
           <CurrencyProvider>
             <OTOProvider>
@@ -150,7 +152,7 @@ export default async function LocaleLayout({
                 <OTOBanner />
                 <HeaderNew />
               </div>
-              <main id="main-content">{children}</main>
+              <main id="main-content" className="relative z-10">{children}</main>
               <FooterNew />
             </OTOProvider>
           </CurrencyProvider>

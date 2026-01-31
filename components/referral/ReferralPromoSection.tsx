@@ -26,8 +26,7 @@ export default function ReferralPromoSection() {
   const t = useTranslations("Referral.Promo");
 
   return (
-    <section className="relative z-10 py-24 bg-surface-1 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/10 via-transparent to-cyan-500/10 pointer-events-none" />
+    <section className="relative z-10 py-24 overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">

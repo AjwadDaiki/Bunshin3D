@@ -95,13 +95,8 @@ export default async function StudioPage({
     <>
       <JsonLd data={jsonLd} />
 
-      <main className="min-h-screen bg-zinc-950 text-white selection:bg-indigo-500/30 pt-10">
-        <div className="fixed inset-0 z-0 pointer-events-none">
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-          <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-zinc-950/80 to-transparent"></div>
-        </div>
-
-        <div className="relative z-10 container mx-auto px-4 py-8 md:py-12 max-w-7xl pt-24">
+      <main className="min-h-screen text-white pt-10">
+        <div className="container mx-auto px-4 py-8 md:py-12 max-w-7xl pt-24">
           <StudioInterface />
         </div>
       </main>

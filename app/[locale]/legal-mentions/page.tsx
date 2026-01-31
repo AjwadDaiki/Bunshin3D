@@ -42,7 +42,7 @@ export default function MentionsPage({
   const t = useTranslations("Legal.Mentions");
 
   return (
-    <main className="min-h-screen bg-zinc-950 text-zinc-300 pt-32 pb-20 px-6">
+    <main className="min-h-screen text-zinc-300 pt-32 pb-20 px-6">
       <div className="container mx-auto max-w-3xl">
         <h1 className="text-4xl font-bold text-white mb-12">{t("title")}</h1>
 

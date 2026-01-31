@@ -8,7 +8,7 @@ export default function HeroSection() {
   const t = useTranslations("Home");
 
   return (
-    <section className="relative z-10 pt-32 pb-20 md:pt-48 md:pb-32 px-4">
+    <section className="relative z-10 pt-20 pb-20 md:pt-32 md:pb-32 px-4">
       <div className="container mx-auto max-w-6xl text-center space-y-8">
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-tight animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-100">
           {t("Hero.title")} <br className="hidden md:block" />

@@ -8,7 +8,7 @@ export default function CTASection() {
 
   return (
     <section className="relative z-10 py-32 px-4 text-center">
-      <div className="container mx-auto max-w-3xl space-y-8 p-12 rounded-[2.5rem] border border-white/10 bg-linear-to-b from-zinc-900/80 to-black backdrop-blur-xl shadow-2xl">
+      <div className="container mx-auto max-w-3xl space-y-8 p-12 rounded-[2.5rem] border border-white/5 bg-white/3">
         <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white">
           {t("CTA.title")}
         </h2>

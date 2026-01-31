@@ -15,11 +15,7 @@ export default function NotFoundHero({
   code,
 }: NotFoundHeroProps) {
   return (
-    <div className="min-h-screen w-full flex flex-col items-center justify-center relative overflow-hidden bg-[#0a0a0f]">
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-brand-primary/20 rounded-full blur-[120px] animate-pulse-slow" />
-        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-brand-secondary/20 rounded-full blur-[120px] animate-pulse-slow delay-1000" />
-      </div>
+    <div className="min-h-screen w-full flex flex-col items-center justify-center relative">
 
       <div className="relative z-10 flex flex-col items-center text-center px-4 animate-in fade-in slide-in-from-bottom-8 duration-700">
         <div className="mb-8 relative group">
@@ -54,8 +50,8 @@ export default function NotFoundHero({
       </div>
 
       <div
-        className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"
-        style={{ opacity: 0.05 }}
+        className="absolute inset-0"
+        style={{}}
       />
     </div>
   );

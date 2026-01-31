@@ -108,7 +108,7 @@ export default function ShowcaseSection() {
   return (
     <section
       id="showcase"
-      className="relative z-10 border-y border-white/5 bg-zinc-950/50 py-24 backdrop-blur-sm"
+      className="relative z-10 py-24"
     >
       <div className="container mx-auto px-4">
         {/* Header */}

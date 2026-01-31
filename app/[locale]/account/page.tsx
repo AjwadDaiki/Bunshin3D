@@ -111,14 +111,8 @@ export default async function AccountPage({
   };
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-white pt-24 pb-20 px-4 relative overflow-hidden">
-      {/* Background FX */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-0 left-0 w-full h-[500px] bg-gradient-to-b from-indigo-950/20 to-transparent"></div>
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:32px_32px]"></div>
-      </div>
-
-      <div className="relative z-10 container mx-auto max-w-6xl">
+    <div className="min-h-screen text-white pt-24 pb-20 px-4">
+      <div className="container mx-auto max-w-6xl">
         <UserDashboard
           user={accountUser}
           profile={profile}

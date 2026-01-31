@@ -90,7 +90,7 @@ export default function StudioInterface() {
   const lastLogMessage = logs[logs.length - 1]?.message;
 
   return (
-    <div className="min-h-screen pt-24 pb-16 px-4">
+    <div className="min-h-screen pt-16 pb-16 px-4">
       <div className="container mx-auto max-w-[1600px]">
         <StudioHeader credits={credits} />
 

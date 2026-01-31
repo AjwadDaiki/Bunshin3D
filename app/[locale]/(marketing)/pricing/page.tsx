@@ -96,8 +96,7 @@ export default async function PricingPage({
       <JsonLd data={breadcrumbSchema} />
       <JsonLd data={faqSchema} />
 
-      <div className="min-h-screen bg-zinc-950 text-white pt-32 pb-20 px-4 overflow-hidden relative">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-indigo-500/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="min-h-screen text-white pt-32 pb-20 px-4 relative">
 
         {/* Header */}
         <div className="relative z-10 container mx-auto text-center space-y-6 mb-10">

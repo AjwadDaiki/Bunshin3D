@@ -129,8 +129,7 @@ export default async function AdminPage({
   };
 
   return (
-    <div className="min-h-screen bg-surface-1 text-white pt-24 px-4 relative overflow-hidden">
-      <div className="absolute inset-0 z-0 opacity-10 pointer-events-none bg-grid-flow"></div>
+    <div className="min-h-screen text-white pt-24 px-4 relative">
 
       <div className="relative z-10 container mx-auto max-w-7xl">
         <AdminDashboard

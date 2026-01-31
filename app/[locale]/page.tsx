@@ -126,10 +126,8 @@ export default async function HomePage({
 
       <section
         id="pricing"
-        className="py-24 bg-zinc-950 relative overflow-hidden border-t border-white/5"
+        className="py-24 relative overflow-hidden"
       >
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-indigo-500/5 rounded-full blur-[100px] pointer-events-none"></div>
-
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-white">

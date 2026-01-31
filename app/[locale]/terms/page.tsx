@@ -38,7 +38,7 @@ export default function TermsPage({ params }: { params: { locale: string } }) {
   const t = useTranslations("Legal.Terms");
 
   return (
-    <main className="min-h-screen bg-zinc-950 text-zinc-300 pt-32 pb-20 px-6">
+    <main className="min-h-screen text-zinc-300 pt-32 pb-20 px-6">
       <div className="container mx-auto max-w-3xl">
         <h1 className="text-4xl font-bold text-white mb-2">{t("title")}</h1>
         <p className="text-zinc-500 text-sm mb-12">{t("lastUpdated")}</p>
