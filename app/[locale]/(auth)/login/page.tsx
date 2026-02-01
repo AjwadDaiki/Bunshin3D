@@ -1,8 +1,10 @@
 import { Metadata } from "next";
+import { Suspense } from "react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import AuthForm from "@/components/auth/AuthForm";
+import { generateAlternates } from "@/lib/seo-utils";
 
 export async function generateMetadata({
   params,
@@ -16,9 +18,10 @@ export async function generateMetadata({
     title: t("title"),
     description: t("subtitle"),
     robots: {
-      index: false, // Pas d'indexation pour la page de login
+      index: false,
       follow: true,
     },
+    alternates: generateAlternates(locale, "/login"),
   };
 }
 
@@ -38,17 +41,20 @@ export default async function LoginPage({
   }
 
   setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: "Auth" });
 
   return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-zinc-950 relative overflow-hidden">
-      {/* Background FX */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-500/10 rounded-full blur-[120px]"></div>
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:32px_32px]"></div>
-      </div>
-
-      <div className="relative z-10 w-full max-w-md px-4">
-        <AuthForm />
+    <div className="min-h-screen w-full flex items-center justify-center">
+      <div className="w-full max-w-md px-4">
+        <Suspense
+          fallback={
+            <div className="bg-zinc-900/50 border border-white/10 rounded-2xl p-8 backdrop-blur-md shadow-2xl">
+              <p className="text-center text-sm text-zinc-400">{t("loading")}</p>
+            </div>
+          }
+        >
+          <AuthForm />
+        </Suspense>
       </div>
     </div>
   );

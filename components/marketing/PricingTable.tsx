@@ -1,237 +1,177 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { useTranslations } from "next-intl";
-import { Check, Loader2, Sparkles, Zap, Box } from "lucide-react";
-import { cn } from "@/lib/utils";
-import { useRouter } from "@/i18n/routing";
+import React, { useState, useEffect, useCallback } from "react";
+import { useTranslations, useLocale } from "next-intl";
+import { Sparkle, Lightning, Cube } from "@phosphor-icons/react";
 import { createClient } from "@/lib/supabase";
+import { useCurrency } from "@/components/providers/CurrencyProvider";
+import { useOTO } from "@/components/providers/OTOProvider";
+import { getPriceForCurrency, getOTOPriceForCurrency, isOTOEligible, PRICING_CONFIG, type PackId } from "@/lib/config/pricing";
+import PricingCard from "./PricingCard";
+import Toast from "@/components/ui/Toast";
+
+function formatPrice(amount: number, currency: string, locale: string) {
+  return new Intl.NumberFormat(locale, {
+    style: "currency",
+    currency,
+    minimumFractionDigits: currency === "JPY" ? 0 : 2,
+  }).format(amount);
+}
 
 export default function PricingTable() {
   const t = useTranslations("Pricing");
+  const locale = useLocale();
+  const { currency, isLoading: currencyLoading } = useCurrency();
+  const { isOfferActive } = useOTO();
   const [loadingPack, setLoadingPack] = useState<string | null>(null);
   const [userId, setUserId] = useState<string | null>(null);
-  const router = useRouter();
+  const [toast, setToast] = useState<{ message: string; type: "error" | "info" } | null>(null);
 
   useEffect(() => {
-    const getUser = async () => {
+    const fetchUser = async () => {
       const supabase = createClient();
       const {
-        data: { user },
-      } = await supabase.auth.getUser();
-      if (user) setUserId(user.id);
+        data: { session },
+      } = await supabase.auth.getSession();
+      if (session?.user) setUserId(session.user.id);
     };
-    getUser();
+    fetchUser();
   }, []);
 
-  const handleCheckout = async (packId: string) => {
+  const handleCheckout = useCallback(async (packId: string) => {
     if (!userId) {
-      alert("Veuillez vous connecter pour acheter des crédits");
-      window.location.href = "/login";
+      setToast({ message: t("Checkout.loginRequired"), type: "info" });
+      setTimeout(() => {
+        window.location.href = `/${locale}/login?redirect=/pricing`;
+      }, 1500);
       return;
     }
 
     setLoadingPack(packId);
     try {
-      console.log(`Initiating checkout for pack: ${packId}`);
-
       const response = await fetch("/api/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          packId,
-          userId,
-        }),
+        body: JSON.stringify({ packId, userId, currency, isOTO: isOfferActive && isOTOEligible(packId as PackId), locale }),
       });
 
       const data = await response.json();
-      console.log("Checkout response:", data);
 
       if (!response.ok) {
-        throw new Error(data.error || `Server error: ${response.status}`);
+        throw new Error(
+          data.error || t("Checkout.serverError", { status: response.status }),
+        );
       }
 
       if (data.url) {
-        console.log("Redirecting to Stripe:", data.url);
-        window.location.href = data.url; // Redirection Stripe
+        window.location.href = data.url;
       } else {
-        throw new Error("No checkout URL returned from server");
+        throw new Error(t("Checkout.noCheckoutUrl"));
       }
     } catch (error: any) {
-      console.error("Checkout error:", error);
-      alert(
-        `Payment initialization failed: ${error.message}\n\nPlease check the console for details or contact support.`,
-      );
+      console.error(t("Checkout.checkoutErrorLog"), error);
+      setToast({ message: t("Checkout.paymentInitFailed", { message: error.message }), type: "error" });
     } finally {
       setLoadingPack(null);
     }
+  }, [userId, currency, isOfferActive, t]);
+
+  const packs: {
+    id: PackId;
+    icon: React.ReactNode;
+    isPopular?: boolean;
+    isBestValue?: boolean;
+  }[] = [
+    {
+      id: "discovery",
+      icon: <Cube className="w-6 h-6 text-zinc-400" weight="duotone" />,
+    },
+    {
+      id: "creator",
+      icon: <Lightning className="w-6 h-6 text-indigo-400" weight="fill" />,
+      isPopular: true,
+    },
+    {
+      id: "studio",
+      icon: <Sparkle className="w-6 h-6 text-amber-400" weight="fill" />,
+      isBestValue: true,
+    },
+  ];
+
+  const packNameMap: Record<PackId, string> = {
+    discovery: "Discovery",
+    creator: "Creator",
+    studio: "Studio",
   };
 
+  const discoveryPrice = getPriceForCurrency("discovery", currency);
+  const discoveryPerCredit = discoveryPrice.amount / PRICING_CONFIG.discovery.credits;
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-      {/* --- PACK DÉCOUVERTE (2.99€) --- */}
-      <PricingCard
-        id="discovery"
-        title={t("Packs.Discovery.name")}
-        price={t("Packs.Discovery.price")}
-        credits={t("Packs.Discovery.credits")}
-        description={t("Packs.Discovery.description")}
-        cta={t("Packs.Discovery.cta")}
-        features={[
-          t("Features.quality"),
-          t("Features.commercial"),
-          t("Features.formats"),
-          t("Features.priority"),
-          t("Features.support"),
-        ]}
-        icon={<Box className="w-6 h-6 text-zinc-400" />}
-        isLoading={loadingPack === "discovery"}
-        onSelect={() => handleCheckout("discovery")}
-      />
-
-      {/* --- PACK CRÉATEUR (9.99€) - POPULAR --- */}
-      <PricingCard
-        id="creator"
-        title={t("Packs.Creator.name")}
-        price={t("Packs.Creator.price")}
-        credits={t("Packs.Creator.credits")}
-        description={t("Packs.Creator.description")}
-        cta={t("Packs.Creator.cta")}
-        features={[
-          t("Features.quality"),
-          t("Features.commercial"),
-          t("Features.formats"),
-          t("Features.priority"),
-          t("Features.support"),
-        ]}
-        icon={<Zap className="w-6 h-6 text-indigo-400" />}
-        isPopular
-        popularLabel={t("Badges.popular")}
-        isLoading={loadingPack === "creator"}
-        onSelect={() => handleCheckout("creator")}
-      />
-
-      {/* --- PACK STUDIO (29.99€) --- */}
-      <PricingCard
-        id="studio"
-        title={t("Packs.Studio.name")}
-        price={t("Packs.Studio.price")}
-        credits={t("Packs.Studio.credits")}
-        description={t("Packs.Studio.description")}
-        cta={t("Packs.Studio.cta")}
-        features={[
-          t("Features.quality"),
-          t("Features.commercial"),
-          t("Features.formats"),
-          t("Features.priority"),
-          t("Features.support"),
-        ]}
-        icon={<Sparkles className="w-6 h-6 text-amber-400" />}
-        isLoading={loadingPack === "studio"}
-        onSelect={() => handleCheckout("studio")}
-      />
-    </div>
-  );
-}
-
-// --- SUB-COMPONENT: CARD ---
-function PricingCard({
-  id,
-  title,
-  price,
-  credits,
-  description,
-  cta,
-  features,
-  icon,
-  isPopular = false,
-  popularLabel,
-  isLoading,
-  onSelect,
-}: any) {
-  return (
-    <div
-      className={cn(
-        "relative flex flex-col p-8 rounded-3xl border transition-all duration-300 group",
-        isPopular
-          ? "bg-zinc-900/80 border-indigo-500/50 shadow-[0_0_40px_-10px_rgba(99,102,241,0.3)] scale-105 z-10"
-          : "bg-zinc-950/50 border-white/10 hover:border-white/20 hover:bg-zinc-900/50",
+    <>
+      {toast && (
+        <Toast
+          message={toast.message}
+          type={toast.type}
+          onClose={() => setToast(null)}
+        />
       )}
-    >
-      {/* Popular Badge */}
-      {isPopular && (
-        <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-indigo-500 text-white text-xs font-bold rounded-full tracking-widest shadow-lg">
-          {popularLabel}
-        </div>
-      )}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        {packs.map(({ id, icon, isPopular, isBestValue }) => {
+          const name = packNameMap[id];
+          const priceData = getPriceForCurrency(id, currency);
+          const otoPriceData = isOfferActive ? getOTOPriceForCurrency(id, currency) : null;
 
-      {/* Header */}
-      <div className="mb-6 space-y-4">
-        <div
-          className={cn(
-            "w-12 h-12 rounded-xl flex items-center justify-center border",
-            isPopular
-              ? "bg-indigo-500/10 border-indigo-500/30"
-              : "bg-zinc-900 border-white/5",
-          )}
-        >
-          {icon}
-        </div>
-        <div>
-          <h3 className="text-lg font-bold text-zinc-200 tracking-wide">
-            {title}
-          </h3>
-          <div className="flex items-baseline gap-1 mt-2">
-            <span className="text-4xl font-bold text-white">{price}€</span>
-            <span className="text-zinc-500 font-medium">/ pack</span>
-          </div>
-          <div className="text-sm font-mono text-indigo-400 mt-2 font-bold">
-            {credits}
-          </div>
-        </div>
-        <p className="text-sm text-zinc-400 leading-relaxed min-h-[40px]">
-          {description}
-        </p>
-      </div>
+          const displayAmount = otoPriceData ? otoPriceData.amount : priceData.amount;
+          const formattedPrice = currencyLoading
+            ? "---"
+            : formatPrice(displayAmount, priceData.currency, locale);
 
-      {/* Separator */}
-      <div className="w-full h-px bg-white/5 mb-6"></div>
+          const originalPrice = otoPriceData && !currencyLoading
+            ? formatPrice(priceData.amount, priceData.currency, locale)
+            : undefined;
 
-      {/* Features */}
-      <ul className="space-y-4 mb-8 flex-1">
-        {features.map((feature: string, i: number) => (
-          <li key={i} className="flex items-start gap-3 text-sm text-zinc-300">
-            <Check
-              className={cn(
-                "w-5 h-5 shrink-0",
-                isPopular ? "text-indigo-400" : "text-zinc-500",
-              )}
+          const perCredit = displayAmount / priceData.credits;
+          const formattedPerCredit = currencyLoading
+            ? "---"
+            : formatPrice(perCredit, priceData.currency, locale);
+
+          const savingsPercent =
+            id === "studio"
+              ? Math.round((1 - perCredit / discoveryPerCredit) * 100)
+              : 0;
+
+          return (
+            <PricingCard
+              key={id}
+              id={id}
+              title={t(`Packs.${name}.name`)}
+              price={formattedPrice}
+              originalPrice={originalPrice}
+              pricePerCredit={formattedPerCredit}
+              savingsPercent={savingsPercent}
+              credits={t(`Packs.${name}.credits`)}
+              description={t(`Packs.${name}.description`)}
+              cta={t(`Packs.${name}.cta`)}
+              features={[
+                t("Features.quality"),
+                t("Features.commercial"),
+                t("Features.formats"),
+                t("Features.priority"),
+                t("Features.support"),
+              ]}
+              icon={icon}
+              isPopular={isPopular}
+              isBestValue={isBestValue}
+              popularLabel={isPopular ? t("Badges.popular") : undefined}
+              bestValueLabel={isBestValue ? t("Badges.bestValue") : undefined}
+              isLoading={loadingPack === id}
+              onSelect={() => handleCheckout(id)}
+              isPromo={!!otoPriceData}
             />
-            <span>{feature}</span>
-          </li>
-        ))}
-      </ul>
-
-      {/* CTA Button */}
-      <button
-        onClick={onSelect}
-        disabled={isLoading}
-        className={cn(
-          "w-full h-12 rounded-xl font-bold text-sm transition-all duration-300 flex items-center justify-center gap-2",
-          isPopular
-            ? "bg-white text-black hover:bg-indigo-50 shadow-[0_0_20px_rgba(255,255,255,0.3)]"
-            : "bg-zinc-800 text-white hover:bg-zinc-700 border border-white/5",
-          isLoading && "opacity-70 cursor-not-allowed",
-        )}
-      >
-        {isLoading && <Loader2 className="w-4 h-4 animate-spin" />}
-        {cta}
-      </button>
-
-      {/* Background Gradient for Popular */}
-      {isPopular && (
-        <div className="absolute inset-0 bg-gradient-to-b from-indigo-500/5 to-transparent rounded-3xl pointer-events-none"></div>
-      )}
-    </div>
+          );
+        })}
+      </div>
+    </>
   );
 }

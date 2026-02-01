@@ -1,15 +1,17 @@
-import { NextResponse } from "next/server";
+﻿import { NextRequest, NextResponse } from "next/server";
 import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
+import { getApiTranslations } from "@/lib/api-i18n";
 
-// Premium Image-to-3D avec Rodin (5 crédits)
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
+  const t = await getApiTranslations(request, "Api.Premium3D");
+
   try {
     const { imageUrl, userId } = await request.json();
 
     if (!userId || !imageUrl) {
       return NextResponse.json(
-        { error: "User ID and image URL are required" },
+        { error: t("responses.missingParams") },
         { status: 400 },
       );
     }
@@ -42,12 +44,11 @@ export async function POST(request: Request) {
 
     if (!profile || profile.credits < 5) {
       return NextResponse.json(
-        { error: "Insufficient credits. You need 5 credits." },
+        { error: t("responses.insufficientCredits") },
         { status: 400 },
       );
     }
 
-    // Déduire 5 crédits
     const { error: deductError } = await supabase.rpc("decrement_credits", {
       target_user_id: userId,
       amount: 5,
@@ -55,12 +56,11 @@ export async function POST(request: Request) {
 
     if (deductError) {
       return NextResponse.json(
-        { error: "Failed to deduct credits" },
+        { error: t("responses.deductFailed") },
         { status: 500 },
       );
     }
 
-    // Appel à Replicate
     const response = await fetch("https://api.replicate.com/v1/predictions", {
       method: "POST",
       headers: {
@@ -78,54 +78,42 @@ export async function POST(request: Request) {
     });
 
     if (!response.ok) {
-      // Remboursement en cas d'erreur API
       await supabase.rpc("increment_credits", {
         target_user_id: userId,
         amount: 5,
       });
 
-      const errorText = await response.text();
-      console.error("❌ Replicate API error:", response.status);
+      console.error(t("errors.replicateApi"), response.status);
 
       if (response.status === 429) {
         return NextResponse.json(
-          { error: "Server busy (Rate Limit). Please try again later." },
-          { status: 429 }, // Retourne 429 explicitement, pas 500
+          { error: t("responses.rateLimited") },
+          { status: 429 },
         );
       }
 
-      throw new Error(`Replicate API failed: ${response.status}`);
+      throw new Error(t("errors.replicateFailed", { status: response.status }));
     }
 
     const prediction = await response.json();
 
-    // Insert generation with error handling
-    const { data: insertedGen, error: insertError } = await supabase
-      .from("generations")
-      .insert({
-        user_id: userId,
-        status: "processing",
-        prediction_id: prediction.id,
-        type: "premium_3d",
-        created_at: new Date().toISOString(),
-      })
-      .select()
-      .single();
-
-    if (insertError) {
-      console.error("❌ Failed to insert generation:", insertError);
-    } else {
-      console.log(`✅ Premium generation created: ${insertedGen.id} with prediction_id: ${prediction.id}`);
-    }
+    await supabase.from("generations").insert({
+      user_id: userId,
+      status: "processing",
+      prediction_id: prediction.id,
+      type: "premium_3d",
+      source_image_url: imageUrl,
+      created_at: new Date().toISOString(),
+    });
 
     return NextResponse.json({
       predictionId: prediction.id,
       status: prediction.status,
     });
   } catch (err: any) {
-    console.error("❌ Premium 3D Error:", err.message);
+    console.error(t("errors.requestFailed", { message: err.message }));
     return NextResponse.json(
-      { error: err.message || "Premium 3D generation failed" },
+      { error: err.message || t("responses.generationFailed") },
       { status: 500 },
     );
   }

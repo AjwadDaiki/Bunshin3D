@@ -1,39 +1,22 @@
 import { WebIO } from "@gltf-transform/core";
 import { simplify } from "@gltf-transform/functions";
 import { MeshoptSimplifier } from "meshoptimizer";
-
-/**
- * 🎮 MODE LOW POLY
- * Réduit le nombre de polygones de 50% avec glTF-Transform & Meshopt
- */
 export async function convertToLowPoly(glbUrl: string): Promise<Blob> {
-  // 1. Fetch le GLB original
   const response = await fetch(glbUrl);
   const arrayBuffer = await response.arrayBuffer();
 
-  // 2. Initialisation IO
   const io = new WebIO();
-
-  // 3. Charger le document
   const document = await io.readBinary(new Uint8Array(arrayBuffer));
 
-  // 4. Appliquer la simplification (Ratio 0.5 = 50% des triangles originaux)
   await document.transform(
     simplify({ simplifier: MeshoptSimplifier, ratio: 0.5, error: 0.001 }),
   );
 
-  // 5. Exporter en binaire
   const glbBytes = await io.writeBinary(document);
   return new Blob([glbBytes], { type: "model/gltf-binary" });
 }
 
-/**
- * 🖨️ MODE PRINT (STL)
- * Convertit le GLB en STL binaire pour l'impression 3D via Three.js
- * Utilise dynamic import pour éviter le conflit avec model-viewer
- */
 export async function convertToSTL(glbUrl: string): Promise<Blob> {
-  // Dynamic import de Three.js uniquement quand nécessaire
   const [{ GLTFLoader }, { STLExporter }] = await Promise.all([
     import("three/examples/jsm/loaders/GLTFLoader.js"),
     import("three/examples/jsm/exporters/STLExporter.js"),
@@ -41,16 +24,13 @@ export async function convertToSTL(glbUrl: string): Promise<Blob> {
 
   return new Promise((resolve, reject) => {
     const loader = new GLTFLoader();
-
     loader.load(
       glbUrl,
       (gltf) => {
         const exporter = new STLExporter();
-        // Option binary: true est cruciale pour l'impression 3D (fichier plus léger)
-        const stlString = exporter.parse(gltf.scene, { binary: true });
+        const stlResult = exporter.parse(gltf.scene, { binary: true });
 
-        // STLExporter avec binary:true retourne un DataView ou Uint8Array
-        const blob = new Blob([stlString], {
+        const blob = new Blob([stlResult as any], {
           type: "application/octet-stream",
         });
         resolve(blob);
@@ -61,9 +41,65 @@ export async function convertToSTL(glbUrl: string): Promise<Blob> {
   });
 }
 
-/**
- * UTILITY: Déclenche le téléchargement navigateur
- */
+export async function convertToOBJ(glbUrl: string): Promise<Blob> {
+  const [{ GLTFLoader }, { OBJExporter }] = await Promise.all([
+    import("three/examples/jsm/loaders/GLTFLoader.js"),
+    import("three/examples/jsm/exporters/OBJExporter.js"),
+  ]);
+
+  return new Promise((resolve, reject) => {
+    const loader = new GLTFLoader();
+    loader.load(
+      glbUrl,
+      (gltf) => {
+        const exporter = new OBJExporter();
+        const objString = exporter.parse(gltf.scene);
+        const blob = new Blob([objString], { type: "text/plain" });
+        resolve(blob);
+      },
+      undefined,
+      (error) => reject(error),
+    );
+  });
+}
+
+export async function convertToUSDZ(glbUrl: string): Promise<Blob> {
+  const [{ GLTFLoader }, { USDZExporter }] = await Promise.all([
+    import("three/examples/jsm/loaders/GLTFLoader.js"),
+    import("three/examples/jsm/exporters/USDZExporter.js"),
+  ]);
+
+  return new Promise((resolve, reject) => {
+    const loader = new GLTFLoader();
+    loader.load(
+      glbUrl,
+      (gltf) => {
+        try {
+          const exporter = new USDZExporter();
+          exporter.parse(
+            gltf.scene,
+            (result) => {
+              const blob = new Blob([result as any], {
+                type: "application/octet-stream",
+              });
+              resolve(blob);
+            },
+            (error) => {
+              console.error(error);
+              reject(error);
+            },
+            { quickLookCompatible: true },
+          );
+        } catch (err) {
+          reject(err);
+        }
+      },
+      undefined,
+      (error) => reject(error),
+    );
+  });
+}
+
 export function triggerDownload(blob: Blob, filename: string) {
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");

@@ -79,11 +79,6 @@ export default async function AdminPage({
   }
 
   // 4. MASSIVE DATA FETCHING (Parallel)
-  const now = new Date();
-  const todayStart = new Date(now.getFullYear(), now.getMonth(), now.getDate()).toISOString();
-  const weekStart = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000).toISOString();
-  const monthStart = new Date(now.getFullYear(), now.getMonth(), 1).toISOString();
-
   const [
     settingsReq,
     usersCountReq,
@@ -91,13 +86,6 @@ export default async function AdminPage({
     recentUsersReq,
     recentGenerationsReq,
     payingUsersReq,
-    // Nouvelles stats
-    succeededGenerationsReq,
-    failedGenerationsReq,
-    todayGenerationsReq,
-    weekGenerationsReq,
-    monthGenerationsReq,
-    topUsersReq,
   ] = await Promise.all([
     supabase.from("app_settings").select("*").single(),
     supabase.from("profiles").select("id", { count: "exact", head: true }),
@@ -116,36 +104,6 @@ export default async function AdminPage({
       .from("profiles")
       .select("id", { count: "exact", head: true })
       .gt("credits", 5), // Simple proxy for paying users
-    // Générations réussies
-    supabase
-      .from("generations")
-      .select("id", { count: "exact", head: true })
-      .eq("status", "succeeded"),
-    // Générations échouées
-    supabase
-      .from("generations")
-      .select("id", { count: "exact", head: true })
-      .eq("status", "failed"),
-    // Générations aujourd'hui
-    supabase
-      .from("generations")
-      .select("id", { count: "exact", head: true })
-      .gte("created_at", todayStart),
-    // Générations cette semaine
-    supabase
-      .from("generations")
-      .select("id", { count: "exact", head: true })
-      .gte("created_at", weekStart),
-    // Générations ce mois
-    supabase
-      .from("generations")
-      .select("id", { count: "exact", head: true })
-      .gte("created_at", monthStart),
-    // Top utilisateurs par nombre de générations
-    supabase
-      .from("generations")
-      .select("user_id")
-      .eq("status", "succeeded"),
   ]);
 
   const settings = settingsReq.data;
@@ -153,39 +111,6 @@ export default async function AdminPage({
   const totalGenerations = generationsCountReq.count || 0;
   const payingUsers = payingUsersReq.count || 0;
   const revenue = settings?.total_revenue || 0;
-  const succeededGenerations = succeededGenerationsReq.count || 0;
-  const failedGenerations = failedGenerationsReq.count || 0;
-  const todayGenerations = todayGenerationsReq.count || 0;
-  const weekGenerations = weekGenerationsReq.count || 0;
-  const monthGenerations = monthGenerationsReq.count || 0;
-
-  // Calculer le top utilisateurs
-  const userGenerationCounts: Record<string, number> = {};
-  (topUsersReq.data || []).forEach((gen: { user_id: string }) => {
-    userGenerationCounts[gen.user_id] = (userGenerationCounts[gen.user_id] || 0) + 1;
-  });
-
-  const topUserIds = Object.entries(userGenerationCounts)
-    .sort(([, a], [, b]) => b - a)
-    .slice(0, 5)
-    .map(([userId]) => userId);
-
-  // Récupérer les emails des top utilisateurs
-  let topUsersWithDetails: { email: string; count: number }[] = [];
-  if (topUserIds.length > 0) {
-    const { data: topUsersProfiles } = await supabase
-      .from("profiles")
-      .select("id, email")
-      .in("id", topUserIds);
-
-    topUsersWithDetails = topUserIds.map((userId) => {
-      const profile = topUsersProfiles?.find((p) => p.id === userId);
-      return {
-        email: profile?.email || "Unknown",
-        count: userGenerationCounts[userId],
-      };
-    });
-  }
 
   // Calculs KPI
   const arpu = totalUsers > 0 ? (revenue / totalUsers).toFixed(2) : "0.00";
@@ -193,10 +118,6 @@ export default async function AdminPage({
     totalUsers > 0 ? ((payingUsers / totalUsers) * 100).toFixed(1) : "0.0";
   // Estimation coût GPU (hypothetique 0.05$ par run)
   const gpuBurn = (totalGenerations * 0.05).toFixed(2);
-  // Taux de succès
-  const successRate = totalGenerations > 0
-    ? ((succeededGenerations / totalGenerations) * 100).toFixed(1)
-    : "0.0";
 
   const stats = {
     revenue,
@@ -205,19 +126,10 @@ export default async function AdminPage({
     arpu,
     conversion: conversionRate,
     burn: gpuBurn,
-    // Nouvelles stats
-    succeededGenerations,
-    failedGenerations,
-    successRate,
-    todayGenerations,
-    weekGenerations,
-    monthGenerations,
-    topUsers: topUsersWithDetails,
   };
 
   return (
-    <div className="min-h-screen bg-surface-1 text-white pt-24 px-4 relative overflow-hidden">
-      <div className="absolute inset-0 z-0 opacity-10 pointer-events-none bg-grid-flow"></div>
+    <div className="min-h-screen text-white pt-24 px-4 relative">
 
       <div className="relative z-10 container mx-auto max-w-7xl">
         <AdminDashboard

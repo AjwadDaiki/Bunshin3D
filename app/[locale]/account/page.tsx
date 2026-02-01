@@ -5,6 +5,10 @@ import { routing } from "@/i18n/routing";
 import UserDashboard from "@/components/account/UserDashboard";
 import { createServerClient, type CookieOptions } from "@supabase/ssr";
 import { cookies } from "next/headers";
+import { generateAlternates } from "@/lib/seo-utils";
+
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 // --- SEO ---
 export async function generateMetadata({
@@ -19,9 +23,10 @@ export async function generateMetadata({
     title: t("title"),
     description: t("description"),
     robots: {
-      index: false, // Dashboard privé = Noindex
+      index: false,
       follow: false,
     },
+    alternates: generateAlternates(locale, "/account"),
   };
 }
 
@@ -89,18 +94,29 @@ export default async function AccountPage({
 
   const profile = profileReq.data;
   const generations = generationsReq.data || [];
+  const profileEmail =
+    profile && typeof profile.email === "string" ? profile.email : undefined;
+  const metadataEmail =
+    typeof user.user_metadata?.email === "string"
+      ? user.user_metadata.email
+      : undefined;
+  const resolvedEmail = user.email ?? profileEmail ?? metadataEmail;
+
+  if (!resolvedEmail) {
+    redirect(`/${locale}/login?error=missing_email`);
+  }
+
+  const accountUser = {
+    id: user.id,
+    email: resolvedEmail,
+    created_at: user.created_at,
+  };
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-white pt-24 pb-20 px-4 relative overflow-hidden">
-      {/* Background FX */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-0 left-0 w-full h-[500px] bg-gradient-to-b from-indigo-950/20 to-transparent"></div>
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:32px_32px]"></div>
-      </div>
-
-      <div className="relative z-10 container mx-auto max-w-6xl">
+    <div className="min-h-screen text-white pt-24 pb-20 px-4">
+      <div className="container mx-auto max-w-6xl">
         <UserDashboard
-          user={user}
+          user={accountUser}
           profile={profile}
           generations={generations}
         />

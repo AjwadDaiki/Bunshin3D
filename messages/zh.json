@@ -1,18 +1,28 @@
 {
   "Metadata": {
-    "defaultTitle": "Bunshin 3D | AI图像转STL和GLB转换器",
-    "templateTitle": "%s | Bunshin 3D工作室",
-    "description": "即时将您的图像、徽标和绘图转换为3D模型（STL、OBJ、GLB），优化用于3D打印和视频游戏。",
+    "defaultTitle": "Bunshin 3D | 免费AI图像转3D模型STL和GLB转换器",
+    "templateTitle": "%s | Bunshin 3D - AI 3D生成器",
+    "description": "即时将图像、徽标和绘图转换为3D模型。免费AI转换器，支持3D打印STL和Unity/Unreal的GLB。无需设计技能！",
     "applicationName": "Bunshin 3D",
-    "keywords": "图像3d转换器, 徽标转stl, ai 3d, 3d模型生成器, ai 3d打印, 图像转stl, 徽标转3d, 2d转3d转换",
+    "keywords": "图像3d转换器, 徽标转stl, ai 3d模型生成器, 免费stl转换器, 照片转3d模型, 2d转3d ai, 图像转glb, png转stl在线, ai 3d打印, 徽标3d模型, 图像转3d, unity 3d资产, 游戏资产生成器, 免费3d模型制作, 图像转stl免费",
     "creator": "Bunshin 3D",
     "publisher": "Bunshin 3D",
-    "ogSiteName": "Bunshin 3D",
-    "ogTitle": "Bunshin 3D - 雕刻您图像的AI",
-    "ogDescription": "从任何2D图像在几秒钟内生成生产就绪的3D文件。",
-    "ogImageAlt": "Bunshin 3D界面",
-    "twitterTitle": "Bunshin 3D - AI图像转3D",
-    "twitterDescription": "从任何2D图像生成生产就绪的3D文件。"
+    "ogSiteName": "Bunshin 3D - AI 3D模型生成器",
+    "ogTitle": "30秒将任意图像转换为3D模型 | 免费AI工具",
+    "ogDescription": "即时将徽标、照片和绘图转换为STL/GLB。免费AI 3D生成器 - 无需技能。完美适用于3D打印和游戏开发。",
+    "ogImageAlt": "Bunshin 3D - AI将2D图像转换为用于打印和游戏的3D模型",
+    "twitterTitle": "ðŸš€ AI图像转3D转换器 | 免费STL和GLB生成器",
+    "twitterDescription": "几秒钟内将任何图像转换为可打印的3D模型。免费AI转换器 - 无需设计技能。立即尝试Bunshin 3D！"
+  },
+  "SEO": {
+    "siteName": "Bunshin 3D",
+    "engineeringTeam": "工程团队",
+    "generator": "Bunshin 3D",
+    "appleWebAppTitle": "Bunshin 3D",
+    "twitterHandle": "@bunshin3d",
+    "organizationName": "Bunshin 3D",
+    "organizationDescription": "AI 驱动的 3D 生成平台",
+    "contactType": "客户支持"
   },
   "Navigation": {
     "brandName": "BUNSHIN",
@@ -26,9 +36,28 @@
     "terms": "条款",
     "privacy": "隐私",
     "dashboard": "仪表板",
-    "logout": "退出"
+    "admin": "管理",
+    "logout": "退出",
+    "credits": "积分",
+    "buyCredits": "购买",
+    "lowCredits": "不足",
+    "aria": {
+      "home": "前往首页",
+      "mainNav": "主导航",
+      "toggleNav": "切换导航菜单",
+      "userMenu": "用户菜单",
+      "logout": "退出登录",
+      "creditsAvailable": "可用 {count} 积分",
+      "mobileNav": "移动导航"
+    }
   },
   "Home": {
+    "Schema": {
+      "websiteName": "Bunshin 3D",
+      "softwareName": "Bunshin 3D",
+      "softwareCategory": "设计应用",
+      "operatingSystem": "Web"
+    },
     "Hero": {
       "title": "将2D像素转变为",
       "titleHighlight": "3D现实。",
@@ -56,7 +85,7 @@
       "step1": "上传图像",
       "step1Desc": "拖放任何PNG、JPG或WEBP。",
       "step2": "AI处理",
-      "step2Desc": "我们的Trellis引擎重建深度和纹理。",
+      "step2Desc": "我们的Bunshin引擎重建深度和纹理。",
       "step3": "下载3D",
       "step3Desc": "获取您的游戏就绪或打印就绪资产。"
     },
@@ -81,14 +110,19 @@
     "useCases": "使用案例",
     "pricing": "价格",
     "studio": "3D工作室",
+    "features": "功能",
     "blog": "博客",
     "help": "帮助中心",
+    "support": "支持",
+    "account": "账户",
+    "contact": "联系我们",
     "legal": "法律",
     "terms": "服务条款",
     "privacy": "隐私政策",
     "mentions": "法律声明",
     "rights": "保留所有权利。",
     "crafted": "精心制作",
+    "partnerName": "Hidden Lab",
     "copyright": "© {year} Bunshin 3D。保留所有权利。"
   },
   "UseCases": {
@@ -101,7 +135,14 @@
     "notFoundDescription": "抱歉，您查找的页面不存在。",
     "serverErrorTitle": "出了点问题",
     "serverErrorDescription": "我们的服务器发生了严重错误。我们正在处理。",
-    "backHome": "返回主页"
+    "backHome": "返回主页",
+    "tryAgain": "重试",
+    "logPrefix": "应用程序错误：",
+    "errorId": "错误ID：{id}",
+    "footer": "如果问题仍然存在，请联系支持。",
+    "notFoundCode": "404",
+    "rootLogPrefix": "应用程序错误:",
+    "warningSymbol": "⚠️"
   },
   "Auth": {
     "title": "欢迎回来",
@@ -113,12 +154,23 @@
     "google": "Google",
     "checkEmail": "检查您的电子邮件",
     "checkEmailDesc": "我们已向您发送了一个登录魔法链接。",
-    "loading": "认证中..."
+    "loading": "认证中...",
+    "tryDifferentEmail": "尝试其他邮箱",
+    "Errors": {
+      "noCode": "未收到认证码。",
+      "authFailed": "认证失败：{message}",
+      "noSession": "未创建会话，请重试。",
+      "banned": "此账户已被暂停。",
+      "generic": "发生意外错误。",
+      "magicLinkSend": "无法发送魔法链接。",
+      "googleLogin": "Google登录失败，请重试。"
+    }
   },
   "Studio": {
     "Metadata": {
       "title": "神经工作室",
-      "description": "使用我们的Trellis AI引擎将2D图像转换为3D模型。"
+      "description": "使用我们的Bunshin AI引擎将2D图像转换为3D模型。",
+      "keywords": "3D模型生成器, AI 3D工作室, 图片转3D在线, 免费3D转换器, STL生成器, GLB创建器"
     },
     "JsonLd": {
       "name": "Bunshin 3D工作室",
@@ -128,10 +180,9 @@
     "Header": {
       "title": "神经工作室",
       "subtitle": "将2D物质转变为3D结构。",
-      "version": "v2.0 // Trellis引擎活跃",
+      "version": "v2.0 // Bunshin引擎活跃",
       "status": "GPU集群在线",
-      "latency": "延迟：45ms",
-      "credits": "积分"
+      "latency": "延迟：45ms"
     },
     "Modes": {
       "imageToModel": "图像转3D",
@@ -152,7 +203,7 @@
       "generateButton": "从文本生成"
     },
     "Logs": {
-      "title": "处理日志",
+      "title": "生成日志",
       "initializing": "正在初始化AI引擎...",
       "checkingCredits": "正在验证积分余额...",
       "uploadingImage": "正在上传图像到云端...",
@@ -168,38 +219,27 @@
       "complete": "生成完成！",
       "downloadReady": "您的模型已准备好下载",
       "error": "生成过程中发生错误",
-      "coolingDown": "⏳ API冷却中（安全等待）...",
-      "generationFailed": "服务器端3D生成失败。",
-      "ready": "准备生成"
-    },
-    "Viewer": {
-      "waitingInput": "等待输入...",
-      "creatingMagic": "创造魔法中...",
-      "referenceImage": "参考图像"
-    },
-    "LoadingMessages": {
-      "analyzing": "分析您的想法...",
-      "sculpting": "雕刻数字材料...",
-      "magic": "施展魔法中...",
-      "neurons": "神经网络处理中...",
-      "dimensions": "弯曲维度...",
-      "geometry": "创建完美几何体...",
-      "textures": "用光线绘画...",
-      "finalizing": "即将完成...",
-      "patience": "伟大的作品需要时间...",
-      "creating": "创造独特之作..."
-    },
-    "Download": {
-      "modelReady": "模型就绪！",
-      "selectFormat": "选择下载格式",
-      "webAR": "(网页/AR)",
-      "print": "(打印)"
+      "downloadSuccess": "下载已就绪：{format}",
+      "downloadError": "下载失败：{error}",
+      "errorPrefix": "错误：{message}",
+      "generationFailed": "生成失败。",
+      "insufficientCredits": "积分不足。需要 {count}。",
+      "missingImage": "请上传图片。",
+      "missingPrompt": "请输入提示词。",
+      "imageUploaded": "图片已上传到云端。",
+      "imageGenerated": "图片已生成。",
+      "imageGenerationFailed": "图片生成失败。",
+      "cooldown": "冷却中...",
+      "serverBusy": "服务器繁忙，正在重试...",
+      "rateLimited": "触发速率限制，请稍后再试。",
+      "serverSideFailure": "服务器端生成失败。"
     },
     "Interface": {
       "DropZone": {
         "title": "放置图像源",
         "subtitle": "JPG、PNG、WEBP（最大10MB）",
-        "scanning": "神经扫描中..."
+        "scanning": "神经扫描中...",
+        "previewAlt": "已上传图片预览"
       },
       "Samples": {
         "title": "示例",
@@ -223,7 +263,19 @@
         "system": "系统状态"
       },
       "Export": {
-        "title": "导出选项"
+        "title": "导出选项",
+        "readyTitle": "准备导出",
+        "subtitle": "选择格式以下载你的模型。",
+        "labels": {
+          "glb": "GLB",
+          "web": "Web",
+          "obj": "OBJ",
+          "universal": "通用",
+          "usdz": "USDZ",
+          "ar": "AR",
+          "stl": "STL",
+          "print": "打印"
+        }
       },
       "Formats": {
         "standard": {
@@ -241,11 +293,18 @@
       },
       "Viewer": {
         "label": "视口 [WEBGL]",
-        "waiting": "等待数据流...",
-        "engine": "TRELLIS引擎 V1.0",
+        "waiting": "等待输入...",
+        "waitingStream": "等待数据流...",
+        "engine": "BUNSHIN引擎 V1.0",
         "axis": "XYZ轴：锁定",
         "autoRotate": "自动旋转",
-        "shadows": "阴影：开启"
+        "shadows": "阴影：开启",
+        "readyToGenerate": "准备生成",
+        "generated2D": "2D图像已生成",
+        "webAR": "Web/AR",
+        "print": "打印",
+        "creatingMagic": "正在生成模型...",
+        "referenceImage": "参考图片"
       },
       "Errors": {
         "fileTooLarge": "图像太大（最大10MB）。",
@@ -253,12 +312,70 @@
         "conversionFailed": "本地转换错误。请检查您的浏览器。",
         "timeout": "请求花费时间过长（>60秒）。请尝试较小的图像或稍后重试。"
       }
+    },
+    "CreditsPrompt": {
+      "title": "积分",
+      "headline": "你的创造力值得更多。",
+      "description": "本次生成需要 {count} 积分。充值或邀请好友获取免费积分。",
+      "ctaPricing": "购买积分",
+      "ctaReferral": "通过邀请赚取",
+      "note": "邀请好友：注册 +{signup}，首次购买后 +{payment}。",
+      "close": "关闭",
+      "creditsLabel": "积分"
     }
+  },
+  "HowTo": {
+    "name": "如何将图片转换为3D",
+    "description": "使用 Bunshin 3D，可在数秒内将任意图片转换为可下载的3D模型。",
+    "tools": {
+      "browser": "网页浏览器",
+      "image": "图片文件（PNG、JPG 或 WEBP）"
+    },
+    "steps": [
+      {
+        "name": "上传图片",
+        "text": "上传清晰的 PNG、JPG 或 WEBP 文件。"
+      },
+      {
+        "name": "AI 处理",
+        "text": "AI 重建深度、几何与纹理。"
+      },
+      {
+        "name": "下载 3D 模型",
+        "text": "获取 GLB 或 STL，用于打印或游戏。"
+      }
+    ]
   },
   "Pricing": {
     "Metadata": {
       "title": "价格和积分",
-      "description": "灵活的积分包用于3D生成。一次付费，永久使用。"
+      "description": "灵活的积分包用于3D生成。一次付费，永久使用。",
+      "siteName": "Bunshin 3D",
+      "ogImageAlt": "Bunshin 3D 的定价与积分包",
+      "keywords": "bunshin 3d 价格, 3D模型积分, AI 3D生成器费用, 购买3D积分, 实惠3D打印"
+    },
+    "Schema": {
+      "productName": "Bunshin 3D 积分",
+      "productDescription": "用于 3D 生成的灵活积分包。一次购买，永久使用。",
+      "brandName": "Bunshin 3D",
+      "offers": {
+        "discovery": {
+          "name": "探索包",
+          "description": "用于测试 3D 生成器的入门包。"
+        },
+        "creator": {
+          "name": "创作者包",
+          "description": "适合设计师和创作者。"
+        },
+        "studio": {
+          "name": "工作室包",
+          "description": "面向工作室和团队的大容量包。"
+        }
+      },
+      "breadcrumb": {
+        "home": "首页",
+        "pricing": "定价"
+      }
     },
     "Header": {
       "title": "简单、透明",
@@ -276,28 +393,62 @@
       "priority": "优先GPU访问",
       "support": "优先支持"
     },
+    "Card": {
+      "perPack": "每包",
+      "perCredit": "/ 积分",
+      "savings": "节省{percent}%"
+    },
     "Packs": {
       "Discovery": {
         "name": "探索",
-        "price": "2.99",
         "credits": "10积分",
         "description": "完美用于测试。",
         "cta": "购买探索包"
       },
       "Creator": {
         "name": "创作者",
-        "price": "9.99",
         "credits": "50积分",
         "description": "适合设计师和创作者。",
         "cta": "购买创作者包"
       },
       "Studio": {
         "name": "工作室",
-        "price": "29.99",
         "credits": "200积分",
         "description": "密集使用和专业人士。",
         "cta": "购买工作室包"
       }
+    },
+    "Footer": {
+      "note": "安全结账。积分永不过期。"
+    },
+    "Trust": {
+      "secure": "安全支付",
+      "noSub": "无需订阅",
+      "neverExpire": "积分永不过期",
+      "commercial": "商业许可"
+    },
+    "SocialProof": {
+      "users": "全球超过1,200位创作者信赖使用"
+    },
+    "FAQ": {
+      "title": "常见问题",
+      "q1": "积分有什么用？",
+      "a1": "每个积分可以从图片或文字提示生成一个3D模型。积分仅在生成成功时消耗。",
+      "q2": "积分会过期吗？",
+      "a2": "不会！您的积分永不过期。一次购买，随时使用。没有月度订阅或隐藏费用。",
+      "q3": "支持哪些导出格式？",
+      "a3": "所有生成的3D模型都可以导出为GLB（用于Unity和Unreal等游戏引擎）和STL（用于3D打印）。两种格式均包含在内。",
+      "q4": "我可以将模型用于商业用途吗？",
+      "a4": "可以！所有积分包都包含完整的商业许可证。您可以在游戏、产品、营销材料等中使用生成的3D模型。",
+      "q5": "AI生成是如何工作的？",
+      "a5": "我们的AI分析您的2D图片或文字描述，生成带有纹理的详细3D网格。该过程在优先GPU服务器上大约需要30秒。"
+    },
+    "Checkout": {
+      "loginRequired": "请登录以继续。",
+      "serverError": "服务器错误（状态 {status}）。",
+      "noCheckoutUrl": "缺少结账链接。",
+      "checkoutErrorLog": "结账错误：",
+      "paymentInitFailed": "支付初始化失败：{message}"
     }
   },
   "Account": {
@@ -314,7 +465,7 @@
       "credits": "可用积分",
       "generations": "总创作数",
       "plan": "当前状态",
-      "memberSince": "会员注册日期"
+      "memberSince": "加入时间"
     },
     "History": {
       "title": "生成历史",
@@ -323,15 +474,30 @@
       "emptyBtn": "前往工作室",
       "download": "下载",
       "date": "创建于",
-      "models": "模型",
-      "generating": "生成中...",
-      "failed": "失败",
-      "dataUnavailable": "数据不可用",
-      "confirmDelete": "您确定要删除此模型吗？此操作无法撤消。",
-      "downloadFailed": "下载失败。链接可能已过期。",
-      "previous": "上一页",
-      "next": "下一页",
-      "pageOf": "第 {page} 页，共 {totalPages} 页"
+      "confirmDelete": "删除此生成记录？",
+      "confirmYes": "删除",
+      "confirmNo": "取消",
+      "generatedTime": "生成时间：{time}",
+      "retentionNotice": "你的生成结果会保存在这里，便于快速访问。",
+      "sourceAlt": "源图像",
+      "statuses": {
+        "processing": "处理中",
+        "succeeded": "已完成",
+        "failed": "失败",
+        "queued": "排队中"
+      },
+      "downloadTitles": {
+        "glb": "下载 GLB",
+        "obj": "下载 OBJ",
+        "usdz": "下载 USDZ",
+        "stl": "下载 STL"
+      },
+      "formatLabels": {
+        "glb": "GLB",
+        "obj": "OBJ",
+        "usdz": "USDZ",
+        "stl": "STL"
+      }
     },
     "Settings": {
       "logout": "退出",
@@ -347,13 +513,21 @@
       "subtitle": "限制访问。仅授权人员。",
       "status": "实时连接"
     },
+    "Tabs": {
+      "overview": "概览",
+      "users": "用户"
+    },
     "KPI": {
       "revenue": "总收入",
       "users": "总用户",
       "models": "生成的模型",
       "conversion": "转化率（付费）",
       "arpu": "ARPU（平均收入）",
-      "burn": "GPU消耗率"
+      "burn": "GPU消耗率",
+      "today": "今日",
+      "gpuCost": "预估GPU成本",
+      "errorRate": "错误率",
+      "arpuSubValue": "ARPU {symbol}{value}"
     },
     "Tables": {
       "usersTitle": "最近用户获取",
@@ -366,13 +540,123 @@
       "colMode": "模式"
     },
     "Controls": {
+      "serverTime": "服务器时间",
+      "systemControls": "系统控制",
       "maintenance": "维护模式",
       "maintenanceDesc": "锁定工作室界面。现有工作流的API访问保持活跃。",
       "active": "系统活跃",
       "inactive": "系统锁定"
+    },
+    "Users": {
+      "colActions": "操作",
+      "colUser": "用户",
+      "colCredits": "积分",
+      "colDate": "注册时间",
+      "role": "角色",
+      "status": "状态",
+      "grantCredits": "授予积分",
+      "changeRole": "更改角色",
+      "ban": "封禁",
+      "unban": "解封",
+      "delete": "删除",
+      "inspect": "检查",
+      "searchPlaceholder": "通过邮箱搜索...",
+      "search": "搜索",
+      "actions": "操作",
+      "grantTitle": "授予积分",
+      "currentCredits": "当前积分",
+      "selectAmount": "选择数量",
+      "credits": "积分",
+      "customAmount": "自定义数量",
+      "cancel": "取消",
+      "grant": "授予",
+      "roleTitle": "更改角色",
+      "selectRole": "选择角色",
+      "roles": {
+        "user": "用户",
+        "moderator": "版主",
+        "admin": "管理员"
+      },
+      "roleDesc": {
+        "user": "标准工作室访问权限",
+        "moderator": "可以审核内容",
+        "admin": "完整系统访问权限"
+      },
+      "saveRole": "保存",
+      "banTitle": "封禁用户",
+      "banMessage": "您确定要封禁此用户吗？他们将无法再访问该服务。",
+      "unbanTitle": "解封用户",
+      "unbanMessage": "您确定要解封此用户吗？他们将恢复对服务的访问权限。",
+      "deleteTitle": "删除用户",
+      "deleteMessage": "此操作不可逆。所有用户数据将被永久删除。",
+      "deleteConfirm": "输入DELETE确认",
+      "typeDelete": "输入DELETE",
+      "confirm": "确认",
+      "inspectTitle": "用户生成记录",
+      "noGenerations": "未找到生成记录",
+      "totalGenerations": "共{count}条生成记录",
+      "close": "关闭",
+      "customAmountPlaceholder": "输入金额",
+      "deleteKeyword": "DELETE",
+      "rolesShort": {
+        "admin": "管理员",
+        "moderator": "MOD",
+        "user": "用户"
+      },
+      "statusActive": "活跃",
+      "statusBanned": "已封禁",
+      "unknownInitial": "?"
+    },
+    "Errors": {
+      "actionFailed": "操作失败，请重试。",
+      "changeRoleFailed": "更改角色失败。",
+      "grantCreditsFailed": "发放积分失败。",
+      "loadUsers": "加载用户失败。",
+      "updateSystemStatus": "更新系统状态失败。",
+      "serviceRoleMissing": "缺少 service role 密钥。",
+      "userNotFound": "未找到用户。",
+      "banUpdateFailed": "更新封禁状态失败。",
+      "deleteProfileFailed": "删除用户资料失败。",
+      "fetchUsersFailed": "获取用户失败。",
+      "updateSettingsFailed": "更新设置失败。",
+      "notAuthenticated": "未认证。",
+      "notAuthorized": "无权限。"
+    },
+    "Statuses": {
+      "processing": "处理中",
+      "succeeded": "成功",
+      "failed": "失败",
+      "queued": "排队中"
     }
   },
+  "Breadcrumbs": {
+    "home": "首页",
+    "studio": "工作室",
+    "pricing": "定价",
+    "account": "账户",
+    "login": "登录",
+    "terms": "服务条款",
+    "privacy": "隐私政策",
+    "legalMentions": "法律声明"
+  },
   "Legal": {
+    "Metadata": {
+      "termsTitle": "服务条款 - Bunshin 3D",
+      "termsDescription": "查看 Bunshin 3D 的服务条款。",
+      "termsOgTitle": "服务条款 | Bunshin 3D",
+      "termsOgDescription": "阅读 Bunshin 3D AI 3D模型生成平台的使用条款。",
+      "privacyTitle": "隐私政策 - Bunshin 3D",
+      "privacyDescription": "了解 Bunshin 3D 如何收集并使用你的数据。",
+      "privacyOgTitle": "隐私政策 | Bunshin 3D",
+      "privacyOgDescription": "了解 Bunshin 3D 如何安全管理您的数据、图像和个人信息。",
+      "mentionsTitle": "法律声明 - Bunshin 3D",
+      "mentionsDescription": "Bunshin 3D 的公司与托管信息。",
+      "mentionsOgTitle": "法律声明 | Bunshin 3D",
+      "mentionsOgDescription": "Bunshin 3D 的公司信息、托管详情和法律通知。",
+      "termsKeywords": "bunshin 3d 服务条款, 3D生成器使用条款, AI模型使用条款",
+      "privacyKeywords": "bunshin 3d 隐私, 3D生成器隐私政策, AI数据保护",
+      "mentionsKeywords": "bunshin 3d 法律信息, 公司信息, 托管详情"
+    },
     "Terms": {
       "title": "服务条款",
       "lastUpdated": "最后更新：2026年1月",
@@ -400,7 +684,7 @@
       "editorTitle": "出版商",
       "editorText": "Bunshin 3D\n法国\n电子邮件：contact@metalya.fr",
       "hostTitle": "托管",
-      "hostText": "Qualify",
+      "hostText": "Vercel",
       "creditsTitle": "制作人员",
       "creditsText": "由Bunshin 3D团队设计和开发。"
     }
@@ -415,7 +699,26 @@
     "cancel": "取消",
     "confirm": "确认",
     "download": "下载",
-    "processing": "处理中..."
+    "processing": "处理中...",
+    "previous": "上一页",
+    "next": "下一页",
+    "pageOf": "第{page}页，共{total}页",
+    "brandLogoAlt": "Bunshin 3D 标志",
+    "creditsWithCount": "{count} 积分",
+    "currencySymbols": {
+      "eur": "€",
+      "usd": "$"
+    },
+    "downloads": {
+      "fileName": "bunshin3d-{timestamp}.{extension}"
+    },
+    "errors": {
+      "downloadErrorLog": "下载错误：",
+      "downloadFailed": "下载失败。",
+      "noModelUrl": "缺少模型 URL。",
+      "unknownFormat": "未知格式。"
+    },
+    "pending": "待处理"
   },
   "TextTo3D": {
     "Metadata": {
@@ -479,9 +782,165 @@
       "message": "这将消耗5积分。高级模型提供具有照片级真实细节的电影质量结果。"
     }
   },
+  "Referral": {
+    "title": "推荐计划",
+    "linkLabel": "你的推荐链接",
+    "linkUnavailable": "链接不可用",
+    "creditsLabel": "通过推荐获得的积分",
+    "copyLabel": "复制链接",
+    "copiedLabel": "已复制！",
+    "Promo": {
+      "headerText": "邀请好友，赚取免费积分",
+      "headerCta": "了解更多",
+      "badge": "推荐计划",
+      "sectionTitle": "赚取免费积分",
+      "sectionSubtitle": "与好友分享 Bunshin 3D，每次注册和购买都能获得积分。",
+      "bonusTitle": "推荐奖励",
+      "bonusSubtitle": "每个步骤都能赚积分",
+      "bonusBadgeSignup": "+2 积分",
+      "bonusBadgePayment": "+10 积分",
+      "bonusCaption": "无上限，积分可累积。",
+      "steps": {
+        "invite": {
+          "title": "分享你的链接",
+          "description": "将你的专属推荐链接发给好友",
+          "desc": "将你的专属推荐链接发给好友"
+        },
+        "signup": {
+          "title": "好友注册",
+          "description": "他们通过你的链接创建账户",
+          "desc": "他们通过你的链接创建账户"
+        },
+        "pay": {
+          "title": "好友购买",
+          "description": "当他们购买积分时，双方都获益",
+          "desc": "当他们购买积分时，双方都获益"
+        }
+      },
+      "ctaPrimary": "复制推荐链接",
+      "ctaSecondary": "前往仪表板",
+      "highlightTag": "免费积分",
+      "pricingTitle": "推荐立省",
+      "pricingSubtitle": "邀请好友赚取积分",
+      "footerTitle": "邀请好友注册即可获得免费积分！",
+      "footerCta": "开始赚取"
+    }
+  },
   "Showcase": {
     "generatedAsset": "生成的资产",
     "viewModel": "查看模型",
-    "download": "下载"
+    "download": "下载",
+    "title": "Bunshin 生成",
+    "subtitle": "从简单的标志到复杂的角色。看看我们的 AI 能创造什么。",
+    "badges": {
+      "premium": "高级",
+      "standard": "标准"
+    },
+    "examples": {
+      "woodenChair": {
+        "name": "木椅",
+        "prompt": "一把朴素的乡村风木椅，带雕刻靠背",
+        "alt": "Bunshin AI 生成的木椅 3D 模型"
+      },
+      "coffeeMug": {
+        "name": "咖啡杯",
+        "prompt": "一只极简设计的陶瓷咖啡杯",
+        "alt": "Bunshin AI 生成的咖啡杯 3D 模型"
+      },
+      "rubberDuck": {
+        "name": "橡皮鸭",
+        "prompt": "一只经典黄色橡皮鸭浴玩具",
+        "alt": "Bunshin AI 生成的橡皮鸭 3D 模型"
+      },
+      "cactusPot": {
+        "name": "仙人掌盆栽",
+        "prompt": "一株小仙人掌，置于陶土盆中并配有小石子",
+        "alt": "Bunshin AI 生成的仙人掌盆栽 3D 模型"
+      },
+      "katanaSword": {
+        "name": "武士刀",
+        "prompt": "传统日本武士刀，带缠绕刀柄和弯曲刀刃",
+        "alt": "Bunshin AI生成的武士刀3D模型"
+      },
+      "shuriken": {
+        "name": "手里剑",
+        "prompt": "带有雕刻图案的锋利四角手里剑",
+        "alt": "Bunshin AI生成的手里剑3D模型"
+      },
+      "battleAxe": {
+        "name": "战斧",
+        "prompt": "刻有符文的木柄双刃维京战斧",
+        "alt": "Bunshin AI生成的战斧3D模型"
+      },
+      "wizardStaff": {
+        "name": "魔法杖",
+        "prompt": "带有发光水晶球和扭曲木材的神秘魔法师法杖",
+        "alt": "Bunshin AI生成的魔法杖3D模型"
+      }
+    },
+    "items": {
+      "poubelle": "垃圾桶",
+      "shuriken": "手里剑",
+      "robot": "机器人",
+      "coffre": "宝箱",
+      "chaise": "椅子",
+      "hache": "斧头",
+      "tasse": "杯子",
+      "lampe": "灯"
+    }
+  },
+  "OTO": {
+    "close": "关闭",
+    "badge": "独家欢迎优惠",
+    "title": "你的创造力值得更好。",
+    "subtitle": "以超值价格解锁你的首批积分。优惠即将结束。",
+    "discountBadge": "最高 -67% 优惠",
+    "discovery": {
+      "name": "探索",
+      "price": "0.99€",
+      "originalPrice": "2.99€",
+      "credits": "包含10积分"
+    },
+    "studio": {
+      "name": "工作室 Pro",
+      "price": "19.99€",
+      "originalPrice": "29.99€",
+      "credits": "包含200积分"
+    },
+    "footer": "一次性优惠，积分永不过期。",
+    "creditsLabel": "积分",
+    "checkoutError": "发生错误，请重试。",
+    "banner": {
+      "text": "欢迎优惠将于",
+      "cta": "立即领取"
+    }
+  },
+  "FAQ": {
+    "items": [
+      {
+        "question": "Bunshin 3D 如何工作？",
+        "answer": "Bunshin 3D 使用先进的 AI 将 2D 图像和文本描述转换为 GLB 和 STL 格式的 3D 模型。只需上传图片或描述你的需求，AI 就会生成可用于生产的 3D 模型。"
+      },
+      {
+        "question": "支持哪些格式？",
+        "answer": "我们支持 GLB（用于 Unity/Unreal 等游戏引擎）、STL（用于 3D 打印）和 OBJ 格式。所有模型都经过拓扑优化。"
+      },
+      {
+        "question": "需要多少积分？",
+        "answer": "标准质量每次生成消耗 1 积分。高级质量消耗 5 积分，提供电影级、具备写实纹理的效果。"
+      },
+      {
+        "question": "积分会过期吗？",
+        "answer": "不会，积分永不过期。一次购买，随时使用。"
+      },
+      {
+        "question": "可以商用吗？",
+        "answer": "可以！所有生成的模型均可用于商业用途，包括游戏、3D 打印和专业项目。"
+      },
+      {
+        "question": "推荐计划如何运作？",
+        "answer": "分享你的专属推荐链接。好友注册可获得 +2 积分，首次购买可获得 +10 积分。推荐奖励无上限。"
+      }
+    ]
   }
 }

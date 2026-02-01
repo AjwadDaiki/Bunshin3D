@@ -7,60 +7,63 @@ export const createClient = () =>
     {
       cookies: {
         get(name: string) {
-          // Vérifier si on est côté client avant d'accéder à document
-          if (typeof window === 'undefined') {
-            return undefined;
+          if (typeof document === "undefined") return undefined;
+
+          const match = document.cookie
+            .split("; ")
+            .find((row) => row.startsWith(`${name}=`));
+
+          if (!match) return undefined;
+
+          const raw = match.substring(name.length + 1);
+          try {
+            return decodeURIComponent(raw);
+          } catch {
+            return raw;
           }
-          // Lecture des cookies côté client
-          const value = document.cookie
-            .split('; ')
-            .find(row => row.startsWith(`${name}=`))
-            ?.split('=')[1];
-          return value ? decodeURIComponent(value) : undefined;
         },
+
         set(name: string, value: string, options: any) {
-          // Vérifier si on est côté client avant d'accéder à document
-          if (typeof window === 'undefined') {
-            return;
-          }
-          // Écriture des cookies côté client
+          if (typeof document === "undefined") return;
+
+          const opts = options ?? {};
           let cookie = `${name}=${encodeURIComponent(value)}`;
 
-          if (options?.maxAge) {
-            cookie += `; max-age=${options.maxAge}`;
+          if (typeof opts.maxAge === "number") cookie += `; Max-Age=${opts.maxAge}`;
+          if (opts.expires) cookie += `; Expires=${new Date(opts.expires).toUTCString()}`;
+
+          cookie += `; Path=${opts.path ?? "/"}`;
+
+          if (opts.domain) cookie += `; Domain=${opts.domain}`;
+
+          if (opts.sameSite) {
+            const ss =
+              typeof opts.sameSite === "string"
+                ? opts.sameSite
+                : String(opts.sameSite);
+            cookie += `; SameSite=${ss[0].toUpperCase()}${ss.slice(1)}`;
+          } else {
+            cookie += `; SameSite=Lax`;
           }
-          if (options?.path) {
-            cookie += `; path=${options.path}`;
-          }
-          if (options?.domain) {
-            cookie += `; domain=${options.domain}`;
-          }
-          if (options?.sameSite) {
-            cookie += `; samesite=${options.sameSite}`;
-          }
-          if (options?.secure) {
-            cookie += '; secure';
-          }
+
+          const secure =
+            opts.secure ??
+            (typeof window !== "undefined" &&
+              window.location.protocol === "https:");
+          if (secure) cookie += "; Secure";
 
           document.cookie = cookie;
         },
-        remove(name: string, options: any) {
-          // Vérifier si on est côté client avant d'accéder à document
-          if (typeof window === 'undefined') {
-            return;
-          }
-          // Suppression des cookies côté client
-          let cookie = `${name}=; max-age=0`;
 
-          if (options?.path) {
-            cookie += `; path=${options.path}`;
-          }
-          if (options?.domain) {
-            cookie += `; domain=${options.domain}`;
-          }
+        remove(name: string, options: any) {
+          if (typeof document === "undefined") return;
+
+          const opts = options ?? {};
+          let cookie = `${name}=; Max-Age=0; Path=${opts.path ?? "/"}`;
+          if (opts.domain) cookie += `; Domain=${opts.domain}`;
 
           document.cookie = cookie;
         },
       },
-    }
+    },
   );
