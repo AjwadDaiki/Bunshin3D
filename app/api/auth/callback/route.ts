@@ -1,51 +1,42 @@
-import { NextResponse, NextRequest } from "next/server";
+﻿import { NextRequest, NextResponse } from "next/server";
 import { createServerClient } from "@supabase/ssr";
+import { createAdminClient } from "@/lib/admin-client";
+import { getApiTranslations } from "@/lib/api-i18n";
 
 export const runtime = "nodejs";
 export const maxDuration = 300;
 
 function detectLocaleFromNext(nextPath: string): string {
-  // nextPath style: /fr/studio, /en/studio
-  const m = nextPath.match(/^\/([a-z]{2})(\/|$)/);
-  return m?.[1] ?? "fr";
+  const match = nextPath.match(/^\/([a-z]{2})(\/|$)/);
+  return match?.[1] ?? "fr";
 }
 
 function ensureLocaleInNext(nextPath: string, locale: string): string {
-  // si next = /studio -> devient /fr/studio
   if (nextPath === "/") return `/${locale}`;
   if (nextPath.startsWith(`/${locale}/`) || nextPath === `/${locale}`) return nextPath;
-  // si next commence déjà par /xx/ avec autre locale, on le laisse
   if (/^\/[a-z]{2}(\/|$)/.test(nextPath)) return nextPath;
-  // sinon, on préfixe
   return `/${locale}${nextPath.startsWith("/") ? "" : "/"}${nextPath}`;
 }
 
 export async function GET(request: NextRequest) {
-  const url = new URL(request.url);
-  const code = url.searchParams.get("code");
-  let next = url.searchParams.get("next") ?? "/studio";
+  const t = await getApiTranslations(request, "Api.Auth");
+  const requestUrl = new URL(request.url);
+  const code = requestUrl.searchParams.get("code");
+  const refParam = requestUrl.searchParams.get("ref");
+  let next = requestUrl.searchParams.get("next") || "/studio";
 
-  // sécurité: empêche redirection externe (https://evil.com)
   if (!next.startsWith("/")) next = "/studio";
 
-  // baseUrl = origin réel (bon pour bunshin3d.com / bunshin2.vercel.app)
-  const baseUrl = request.nextUrl.origin;
-
-  // locale cohérente basée sur next
   const locale = detectLocaleFromNext(next);
   next = ensureLocaleInNext(next, locale);
 
   if (!code) {
-    return NextResponse.redirect(`${baseUrl}/${locale}/login?error=missing_code`);
+    console.error(t("errors.missingCode"));
+    return NextResponse.redirect(`${requestUrl.origin}/${locale}/login?error=no_code`);
   }
 
-  // CRITIQUE: Créer la réponse AVANT de créer le client Supabase
-  // pour que setAll() puisse écrire les cookies dessus
-  const response = NextResponse.redirect(`${baseUrl}${next}`);
-  
-  // Empêche la mise en cache du redirect d'auth
-  response.headers.set("Cache-Control", "no-store, no-cache, must-revalidate");
-  response.headers.set("Pragma", "no-cache");
+  let response = NextResponse.redirect(`${requestUrl.origin}${next}`);
+  response.headers.set("Cache-Control", "no-store, max-age=0");
 
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -56,18 +47,16 @@ export async function GET(request: NextRequest) {
           return request.cookies.getAll();
         },
         setAll(cookiesToSet) {
-          // CRITIQUE: Écrire tous les cookies sur la réponse
           cookiesToSet.forEach(({ name, value, options }) => {
-            // S'assurer que les options de cookie sont correctes pour la production
             const cookieOptions = {
               ...options,
-              // Force ces options pour garantir que les cookies fonctionnent
-              httpOnly: options?.httpOnly ?? true,
+              path: options?.path || "/",
+              httpOnly: options?.httpOnly ?? false,
               secure: process.env.NODE_ENV === "production",
-              sameSite: (options?.sameSite as "lax" | "strict" | "none") ?? "lax",
-              path: options?.path ?? "/",
+              sameSite:
+                (options?.sameSite as "lax" | "strict" | "none" | undefined) ||
+                "lax",
             };
-            
             response.cookies.set(name, value, cookieOptions);
           });
         },
@@ -75,26 +64,60 @@ export async function GET(request: NextRequest) {
     },
   );
 
-  // Échange le code pour une session
   const { data, error } = await supabase.auth.exchangeCodeForSession(code);
 
   if (error) {
-    console.error("❌ exchangeCodeForSession error:", error);
+    console.error(t("errors.exchangeFailed", { message: error.message }));
     return NextResponse.redirect(
-      `${baseUrl}/${locale}/login?error=auth_code_error`,
+      `${requestUrl.origin}/${locale}/login?error=auth_failed&msg=${encodeURIComponent(error.message)}`,
     );
   }
 
-  // Vérification supplémentaire: la session doit exister
-  if (!data.session) {
-    console.error("❌ Session non créée après exchangeCodeForSession");
-    return NextResponse.redirect(
-      `${baseUrl}/${locale}/login?error=no_session`,
-    );
+  if (!data?.session) {
+    console.error(t("errors.noSession"));
+    return NextResponse.redirect(`${requestUrl.origin}/${locale}/login?error=no_session`);
   }
 
-  console.log("✅ Session créée pour:", data.user?.email);
-  console.log("✅ Cookies écrits:", response.cookies.getAll().map(c => c.name));
+  const adminClient = await createAdminClient();
+  const { data: profile } = await adminClient
+    .from("profiles")
+    .select("id, is_banned, referred_by")
+    .eq("id", data.user.id)
+    .single();
+
+  if (profile?.is_banned) {
+    response = NextResponse.redirect(`${requestUrl.origin}/${locale}/login?error=banned`);
+    response.headers.set("Cache-Control", "no-store, max-age=0");
+    await supabase.auth.signOut();
+    return response;
+  }
+
+  const referralCode = refParam?.trim().toUpperCase();
+
+  if (referralCode && profile && !profile.referred_by) {
+    const { data: referrer } = await adminClient
+      .from("profiles")
+      .select("id")
+      .eq("referral_code", referralCode)
+      .maybeSingle();
+
+    if (referrer?.id && referrer.id !== data.user.id) {
+      await adminClient
+        .from("profiles")
+        .update({ referred_by: referrer.id })
+        .eq("id", data.user.id);
+
+      await adminClient.rpc("increment_credits", {
+        amount: 2,
+        target_user_id: referrer.id,
+      });
+
+      await adminClient.rpc("increment_referral_credits", {
+        amount: 2,
+        target_user_id: referrer.id,
+      });
+    }
+  }
 
   return response;
 }

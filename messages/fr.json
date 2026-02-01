@@ -1,18 +1,28 @@
 {
   "Metadata": {
-    "defaultTitle": "Bunshin 3D | Convertisseur IA d'Image vers STL & GLB",
-    "templateTitle": "%s | Bunshin 3D Studio",
-    "description": "Transformez instantanément vos images, logos et dessins en modèles 3D (STL, OBJ, GLB) optimisés pour l'impression 3D et les jeux vidéo.",
+    "defaultTitle": "Bunshin 3D | Convertisseur IA Gratuit Image vers STL & GLB 3D",
+    "templateTitle": "%s | Bunshin 3D - Générateur 3D IA",
+    "description": "Transformez images, logos et dessins en modèles 3D instantanément. Convertisseur IA gratuit vers STL pour impression 3D & GLB pour Unity/Unreal. Sans compétences requises !",
     "applicationName": "Bunshin 3D",
-    "keywords": "convertisseur image 3d, logo vers stl, ia 3d, générateur modèle 3d, impression 3d ia, image vers stl, logo vers 3d, conversion 2d vers 3d",
+    "keywords": "convertisseur image 3d, logo vers stl, générateur modèle 3d ia, convertisseur stl gratuit, photo vers modèle 3d, 2d vers 3d ia, image vers glb, png vers stl en ligne, impression 3d ia, logo modèle 3d, image vers 3d, assets unity 3d, générateur assets jeux, créateur modèle 3d gratuit, convertir image en stl gratuit, ia image vers modèle 3d, impression 3d depuis photo",
     "creator": "Bunshin 3D",
     "publisher": "Bunshin 3D",
-    "ogSiteName": "Bunshin 3D",
-    "ogTitle": "Bunshin 3D - L'IA qui Sculpte vos Images",
-    "ogDescription": "Générez des fichiers 3D prêts pour la production à partir de n'importe quelle image 2D en quelques secondes.",
-    "ogImageAlt": "Interface Bunshin 3D",
-    "twitterTitle": "Bunshin 3D - IA Image vers 3D",
-    "twitterDescription": "Générez des fichiers 3D prêts pour la production à partir de n'importe quelle image 2D."
+    "ogSiteName": "Bunshin 3D - Générateur de Modèles 3D par IA",
+    "ogTitle": "Transformez N'importe Quelle Image en Modèle 3D en 30 Secondes | Gratuit",
+    "ogDescription": "Convertissez logos, photos et dessins en STL/GLB instantanément. Générateur 3D IA gratuit - aucune compétence requise. Parfait pour impression 3D et jeux vidéo.",
+    "ogImageAlt": "Bunshin 3D - L'IA convertit vos images 2D en modèles 3D pour impression et jeux",
+    "twitterTitle": "ðŸš€ Convertisseur IA Image vers 3D | Générateur STL & GLB Gratuit",
+    "twitterDescription": "Transformez n'importe quelle image en modèle 3D imprimable en secondes. Convertisseur IA gratuit - aucune compétence requise. Essayez maintenant !"
+  },
+  "SEO": {
+    "siteName": "Bunshin 3D",
+    "engineeringTeam": "Équipe d’ingénierie",
+    "generator": "Bunshin 3D",
+    "appleWebAppTitle": "Bunshin 3D",
+    "twitterHandle": "@bunshin3d",
+    "organizationName": "Bunshin 3D",
+    "organizationDescription": "Plateforme de génération 3D propulsée par l’IA",
+    "contactType": "Support client"
   },
   "Navigation": {
     "brandName": "BUNSHIN",
@@ -26,9 +36,28 @@
     "terms": "Conditions",
     "privacy": "Confidentialité",
     "dashboard": "Tableau de bord",
-    "logout": "Déconnexion"
+    "admin": "Admin",
+    "logout": "Déconnexion",
+    "credits": "Crédits",
+    "buyCredits": "Acheter",
+    "lowCredits": "Faible",
+    "aria": {
+      "home": "Aller à l'accueil",
+      "mainNav": "Navigation principale",
+      "toggleNav": "Ouvrir/fermer le menu",
+      "userMenu": "Menu utilisateur",
+      "logout": "Se déconnecter",
+      "creditsAvailable": "{count} crédits disponibles",
+      "mobileNav": "Navigation mobile"
+    }
   },
   "Home": {
+    "Schema": {
+      "websiteName": "Bunshin 3D",
+      "softwareName": "Bunshin 3D",
+      "softwareCategory": "Application de conception",
+      "operatingSystem": "Web"
+    },
     "Hero": {
       "title": "Transformez des Pixels 2D en",
       "titleHighlight": "Réalité 3D.",
@@ -56,7 +85,7 @@
       "step1": "Uploader une Image",
       "step1Desc": "Glissez-déposez n'importe quel PNG, JPG ou WEBP.",
       "step2": "Traitement IA",
-      "step2Desc": "Notre Moteur Trellis reconstruit la profondeur et la texture.",
+      "step2Desc": "Notre moteur Bunshin reconstruit la profondeur et la texture.",
       "step3": "Télécharger en 3D",
       "step3Desc": "Obtenez votre asset prêt pour le jeu ou l'impression."
     },
@@ -74,22 +103,27 @@
     }
   },
   "Footer": {
-    "tagline": "L'architecture de conversion 2D vers 3D la plus avancée. Conçue pour les créateurs, optimisée pour la performance.",
+    "tagline": "Transformez vos images en superbes modèles 3D avec l'IA",
     "brandDesc": "La nouvelle génération d'outils de création 3D alimentés par l'IA. Construits pour les artistes, par des artistes.",
     "product": "Produit",
     "resources": "Ressources",
     "useCases": "Cas d'Usage",
     "pricing": "Tarifs",
     "studio": "Studio 3D",
+    "features": "Fonctionnalités",
     "blog": "Blog",
     "help": "Centre d'Aide",
+    "support": "Support",
+    "account": "Compte",
+    "contact": "Contact",
     "legal": "Légal",
     "terms": "Conditions d'Utilisation",
     "privacy": "Politique de Confidentialité",
     "mentions": "Mentions Légales",
     "rights": "Tous droits réservés.",
     "crafted": "Conçu avec précision par",
-    "copyright": "© {year} Bunshin 3D. Tous droits réservés."
+    "copyright": "© {year} Bunshin 3D. Tous droits réservés.",
+    "partnerName": "Hidden Lab"
   },
   "UseCases": {
     "logoToStl": "Convertir Logo en STL",
@@ -98,10 +132,17 @@
   },
   "Error": {
     "notFoundTitle": "Page Non Trouvée",
-    "notFoundDescription": "Désolé, la page que vous recherchez n'existe pas.",
-    "serverErrorTitle": "Une erreur s'est produite",
-    "serverErrorDescription": "Une erreur critique s'est produite sur nos serveurs. Nous y travaillons.",
-    "backHome": "Retour à l'Accueil"
+    "notFoundDescription": "La page que vous recherchez s'est égarée dans une autre dimension.",
+    "serverErrorTitle": "Une erreur s'est produite !",
+    "serverErrorDescription": "Une erreur inattendue s'est produite. Veuillez réessayer.",
+    "backHome": "Retour à l'Accueil",
+    "tryAgain": "Réessayer",
+    "logPrefix": "Erreur application :",
+    "errorId": "ID erreur : {id}",
+    "footer": "Si le problème persiste, veuillez contacter le support.",
+    "notFoundCode": "404",
+    "rootLogPrefix": "Erreur d'application :",
+    "warningSymbol": "⚠️"
   },
   "Auth": {
     "title": "Bon Retour",
@@ -113,12 +154,23 @@
     "google": "Google",
     "checkEmail": "Vérifiez votre email",
     "checkEmailDesc": "Nous vous avons envoyé un lien magique pour vous connecter.",
-    "loading": "Authentification..."
+    "loading": "Authentification...",
+    "tryDifferentEmail": "Essayer une autre adresse",
+    "Errors": {
+      "noCode": "Aucun code d'authentification reçu.",
+      "authFailed": "Échec de l'authentification : {message}",
+      "noSession": "Aucune session créée. Veuillez réessayer.",
+      "banned": "Ce compte a été suspendu.",
+      "generic": "Une erreur inattendue s'est produite.",
+      "magicLinkSend": "Impossible d'envoyer le lien magique.",
+      "googleLogin": "La connexion Google a échoué. Veuillez réessayer."
+    }
   },
   "Studio": {
     "Metadata": {
       "title": "Studio Neural",
-      "description": "Transformez vos images 2D en modèles 3D en utilisant notre Moteur IA Trellis."
+      "description": "Transformez vos images 2D en modèles 3D grâce à notre moteur IA Bunshin.",
+      "keywords": "générateur modèle 3d, studio 3d ia, image vers 3d en ligne, convertisseur 3d gratuit, générateur stl, créateur glb"
     },
     "JsonLd": {
       "name": "Bunshin 3D Studio",
@@ -128,10 +180,9 @@
     "Header": {
       "title": "Studio Neural",
       "subtitle": "Transformez la matière 2D en structure 3D.",
-      "version": "v2.0 // Moteur Trellis Actif",
+      "version": "v2.0 // Moteur Bunshin actif",
       "status": "CLUSTER GPU EN LIGNE",
-      "latency": "LATENCE : 45ms",
-      "credits": "Crédits"
+      "latency": "LATENCE : 45ms"
     },
     "Modes": {
       "imageToModel": "Image vers 3D",
@@ -152,7 +203,7 @@
       "generateButton": "Générer depuis le Texte"
     },
     "Logs": {
-      "title": "Journaux de Processus",
+      "title": "Journaux de Génération",
       "initializing": "Initialisation des moteurs IA...",
       "checkingCredits": "Vérification du solde de crédits...",
       "uploadingImage": "Téléchargement de l'image vers le cloud...",
@@ -168,38 +219,27 @@
       "complete": "Génération terminée !",
       "downloadReady": "Votre modèle est prêt à être téléchargé",
       "error": "Une erreur s'est produite pendant la génération",
-      "coolingDown": "⏳ Refroidissement API (Attente sécurisée)...",
-      "generationFailed": "Échec de la génération 3D côté serveur.",
-      "ready": "Prêt à générer"
-    },
-    "Viewer": {
-      "waitingInput": "En attente d'entrée...",
-      "creatingMagic": "Création en cours...",
-      "referenceImage": "Image de Référence"
-    },
-    "LoadingMessages": {
-      "analyzing": "Analyse de votre vision...",
-      "sculpting": "Sculpture de la matière numérique...",
-      "magic": "Un peu de magie en cours...",
-      "neurons": "Réseaux neuronaux en action...",
-      "dimensions": "Manipulation des dimensions...",
-      "geometry": "Création de la géométrie parfaite...",
-      "textures": "Peinture avec la lumière...",
-      "finalizing": "Presque terminé...",
-      "patience": "Les grandes choses prennent du temps...",
-      "creating": "Création de quelque chose d'unique..."
-    },
-    "Download": {
-      "modelReady": "Modèle Prêt !",
-      "selectFormat": "Sélectionnez le format",
-      "webAR": "(Web/AR)",
-      "print": "(Impression)"
+      "downloadSuccess": "Téléchargement prêt : {format}",
+      "downloadError": "Échec du téléchargement : {error}",
+      "errorPrefix": "Erreur : {message}",
+      "generationFailed": "Échec de la génération.",
+      "insufficientCredits": "Crédits insuffisants. Il faut {count}.",
+      "missingImage": "Veuillez téléverser une image.",
+      "missingPrompt": "Veuillez saisir un prompt.",
+      "imageUploaded": "Image téléversée dans le cloud.",
+      "imageGenerated": "Image générée.",
+      "imageGenerationFailed": "Échec de la génération de l'image.",
+      "cooldown": "Refroidissement en cours...",
+      "serverBusy": "Serveur occupé. Nouvel essai...",
+      "rateLimited": "Limite atteinte. Veuillez réessayer plus tard.",
+      "serverSideFailure": "Échec de la génération côté serveur."
     },
     "Interface": {
       "DropZone": {
         "title": "Déposer la Source d'Image",
         "subtitle": "JPG, PNG, WEBP (Max 10MB)",
-        "scanning": "ANALYSE NEURALE..."
+        "scanning": "ANALYSE NEURALE...",
+        "previewAlt": "Aperçu de l'image téléversée"
       },
       "Samples": {
         "title": "Exemples",
@@ -223,7 +263,19 @@
         "system": "ÉTAT DU SYSTÈME"
       },
       "Export": {
-        "title": "Options d'Export"
+        "title": "Options d'Export",
+        "readyTitle": "Prêt à exporter",
+        "subtitle": "Choisissez un format pour télécharger votre modèle.",
+        "labels": {
+          "glb": "GLB",
+          "web": "Web",
+          "obj": "OBJ",
+          "universal": "Universel",
+          "usdz": "USDZ",
+          "ar": "AR",
+          "stl": "STL",
+          "print": "Impression"
+        }
       },
       "Formats": {
         "standard": {
@@ -241,11 +293,18 @@
       },
       "Viewer": {
         "label": "VIEWPORT [WEBGL]",
-        "waiting": "EN ATTENTE DU FLUX DE DONNÉES...",
-        "engine": "MOTEUR TRELLIS V1.0",
+        "waiting": "En attente d'entrée...",
+        "waitingStream": "EN ATTENTE DU FLUX DE DONNÉES...",
+        "engine": "MOTEUR BUNSHIN V1.0",
         "axis": "AXE XYZ : VERROUILLÉ",
         "autoRotate": "Rotation Auto",
-        "shadows": "Ombres : ACTIF"
+        "shadows": "Ombres : ACTIF",
+        "readyToGenerate": "Prêt à générer",
+        "generated2D": "Image 2D générée",
+        "webAR": "Web/AR",
+        "print": "Impression",
+        "creatingMagic": "Création de votre modèle...",
+        "referenceImage": "Image de référence"
       },
       "Errors": {
         "fileTooLarge": "L'image est trop volumineuse (Max 10MB).",
@@ -253,12 +312,70 @@
         "conversionFailed": "Erreur de conversion locale. Vérifiez votre navigateur.",
         "timeout": "La requête a pris trop de temps (>60s). Veuillez essayer une image plus petite ou réessayer plus tard."
       }
+    },
+    "CreditsPrompt": {
+      "title": "Crédits",
+      "headline": "Votre créativité mérite mieux.",
+      "description": "Cette génération nécessite {count} crédits. Rechargez ou invitez un ami pour gagner des crédits gratuits.",
+      "ctaPricing": "Acheter des crédits",
+      "ctaReferral": "Gagner avec des parrainages",
+      "note": "Invitez un ami : +{signup} à l'inscription, +{payment} après son premier achat.",
+      "close": "Fermer",
+      "creditsLabel": "crédits"
     }
+  },
+  "HowTo": {
+    "name": "Comment convertir une image en 3D",
+    "description": "Transformez n'importe quelle image en modèle 3D téléchargeable en quelques secondes avec Bunshin 3D.",
+    "tools": {
+      "browser": "Navigateur web",
+      "image": "Fichier image (PNG, JPG ou WEBP)"
+    },
+    "steps": [
+      {
+        "name": "Importer une image",
+        "text": "Importez un PNG, JPG ou WEBP clair pour commencer."
+      },
+      {
+        "name": "Laisser l'IA générer",
+        "text": "Notre IA reconstruit la profondeur, la géométrie et les textures."
+      },
+      {
+        "name": "Télécharger le modèle 3D",
+        "text": "Récupérez votre GLB ou STL pour l'impression ou les jeux."
+      }
+    ]
   },
   "Pricing": {
     "Metadata": {
       "title": "Tarifs & Crédits",
-      "description": "Packs de crédits flexibles pour la génération 3D. Payez une fois, utilisez pour toujours."
+      "description": "Packs de crédits flexibles pour la génération 3D. Payez une fois, utilisez pour toujours.",
+      "siteName": "Bunshin 3D",
+      "ogImageAlt": "Tarifs et packs de crédits Bunshin 3D",
+      "keywords": "tarifs bunshin 3d, crédits modèle 3d, coût générateur 3d ia, acheter crédits 3d, impression 3d abordable"
+    },
+    "Schema": {
+      "productName": "Crédits Bunshin 3D",
+      "productDescription": "Packs de crédits flexibles pour la génération 3D. Payez une fois, utilisez à vie.",
+      "brandName": "Bunshin 3D",
+      "offers": {
+        "discovery": {
+          "name": "Pack Découverte",
+          "description": "Pack de départ pour tester le générateur 3D."
+        },
+        "creator": {
+          "name": "Pack Créateur",
+          "description": "Idéal pour les designers et créateurs."
+        },
+        "studio": {
+          "name": "Pack Studio",
+          "description": "Pack intensif pour studios et équipes."
+        }
+      },
+      "breadcrumb": {
+        "home": "Accueil",
+        "pricing": "Tarifs"
+      }
     },
     "Header": {
       "title": "Simple, Transparent",
@@ -276,28 +393,62 @@
       "priority": "Accès GPU Prioritaire",
       "support": "Support Prioritaire"
     },
+    "Card": {
+      "perPack": "par pack",
+      "perCredit": "/ credit",
+      "savings": "-{percent}% par credit"
+    },
     "Packs": {
       "Discovery": {
         "name": "DÉCOUVERTE",
-        "price": "2.99",
         "credits": "10 Crédits",
         "description": "Parfait pour tester.",
         "cta": "Acheter Pack Découverte"
       },
       "Creator": {
         "name": "CRÉATEUR",
-        "price": "9.99",
         "credits": "50 Crédits",
         "description": "Pour designers & créateurs.",
         "cta": "Acheter Pack Créateur"
       },
       "Studio": {
         "name": "STUDIO",
-        "price": "29.99",
         "credits": "200 Crédits",
         "description": "Usage intensif & pros.",
         "cta": "Acheter Pack Studio"
       }
+    },
+    "Footer": {
+      "note": "Paiement sécurisé. Les crédits n'expirent jamais."
+    },
+    "Trust": {
+      "secure": "Paiement Securise",
+      "noSub": "Sans Abonnement",
+      "neverExpire": "Credits Sans Expiration",
+      "commercial": "Licence Commerciale"
+    },
+    "SocialProof": {
+      "users": "Utilise par plus de 1 200 createurs dans le monde"
+    },
+    "FAQ": {
+      "title": "Questions Frequentes",
+      "q1": "À quoi servent les crédits ?",
+      "a1": "Chaque credit vous permet de generer un modele 3D a partir d'une image ou d'un prompt texte. Les credits ne sont consommes qu'en cas de generation reussie.",
+      "q2": "Les crédits expirent-ils ?",
+      "a2": "Non ! Vos credits n'expirent jamais. Achetez une fois, utilisez-les quand vous voulez. Pas d'abonnement mensuel ni de frais caches.",
+      "q3": "Quels formats d'export sont disponibles ?",
+      "a3": "Tous les modeles 3D generes peuvent etre exportes en GLB (pour les moteurs de jeux comme Unity et Unreal) et en STL (pour l'impression 3D). Les deux formats sont inclus.",
+      "q4": "Puis-je utiliser les modèles commercialement ?",
+      "a4": "Oui ! Tous les packs incluent une licence commerciale complete. Vous pouvez utiliser vos modeles 3D dans des jeux, produits, supports marketing, etc.",
+      "q5": "Comment fonctionne la génération IA ?",
+      "a5": "Notre IA analyse votre image 2D ou description textuelle et genere un maillage 3D detaille avec textures. Le processus prend environ 30 secondes sur des serveurs GPU prioritaires."
+    },
+    "Checkout": {
+      "loginRequired": "Veuillez vous connecter pour continuer.",
+      "serverError": "Erreur serveur (statut {status}).",
+      "noCheckoutUrl": "Le lien de paiement est manquant.",
+      "checkoutErrorLog": "Erreur de paiement :",
+      "paymentInitFailed": "Échec de l'initialisation du paiement : {message}"
     }
   },
   "Account": {
@@ -323,15 +474,30 @@
       "emptyBtn": "Aller au Studio",
       "download": "Télécharger",
       "date": "Créé le",
-      "models": "Modèles",
-      "generating": "GÉNÉRATION...",
-      "failed": "ÉCHEC",
-      "dataUnavailable": "Données Indisponibles",
-      "confirmDelete": "Êtes-vous sûr de vouloir supprimer ce modèle ?",
-      "downloadFailed": "Échec du téléchargement. Le lien a peut-être expiré.",
-      "previous": "Précédent",
-      "next": "Suivant",
-      "pageOf": "Page {page} sur {totalPages}"
+      "confirmDelete": "Supprimer cette génération ?",
+      "confirmYes": "Supprimer",
+      "confirmNo": "Annuler",
+      "generatedTime": "Généré à {time}",
+      "retentionNotice": "Vos générations sont enregistrées ici pour un accès rapide.",
+      "sourceAlt": "Image source",
+      "statuses": {
+        "processing": "En cours",
+        "succeeded": "Terminée",
+        "failed": "Échec",
+        "queued": "En file d'attente"
+      },
+      "downloadTitles": {
+        "glb": "Télécharger GLB",
+        "obj": "Télécharger OBJ",
+        "usdz": "Télécharger USDZ",
+        "stl": "Télécharger STL"
+      },
+      "formatLabels": {
+        "glb": "GLB",
+        "obj": "OBJ",
+        "usdz": "USDZ",
+        "stl": "STL"
+      }
     },
     "Settings": {
       "logout": "Se Déconnecter",
@@ -347,13 +513,21 @@
       "subtitle": "Accès Restreint. Personnel Autorisé Uniquement.",
       "status": "CONNEXION EN DIRECT"
     },
+    "Tabs": {
+      "overview": "Vue d'ensemble",
+      "users": "Utilisateurs"
+    },
     "KPI": {
       "revenue": "Revenu Total",
       "users": "Utilisateurs Totaux",
       "models": "Modèles Générés",
       "conversion": "Taux Conv. (Payant)",
       "arpu": "ARPU (Revenu Moyen)",
-      "burn": "Taux Consommation GPU"
+      "burn": "Taux Consommation GPU",
+      "today": "aujourd'hui",
+      "gpuCost": "Coût GPU estimé",
+      "errorRate": "Taux d'Erreur",
+      "arpuSubValue": "ARPU {symbol}{value}"
     },
     "Tables": {
       "usersTitle": "Acquisitions Utilisateurs Récentes",
@@ -366,13 +540,123 @@
       "colMode": "Mode"
     },
     "Controls": {
+      "serverTime": "HEURE SERVEUR",
+      "systemControls": "CONTRÔLES SYSTÈME",
       "maintenance": "Mode Maintenance",
       "maintenanceDesc": "Verrouille l'interface studio. L'accès API reste actif pour les flux existants.",
       "active": "SYSTÈME ACTIF",
       "inactive": "SYSTÈME VERROUILLÉ"
+    },
+    "Users": {
+      "colActions": "Actions",
+      "colUser": "Utilisateur",
+      "colCredits": "Crédits",
+      "colDate": "Inscription",
+      "role": "Rôle",
+      "status": "Statut",
+      "grantCredits": "Accorder des crédits",
+      "changeRole": "Changer le rôle",
+      "ban": "Bannir",
+      "unban": "Débannir",
+      "delete": "Supprimer",
+      "inspect": "Inspecter",
+      "searchPlaceholder": "Rechercher par email...",
+      "search": "Rechercher",
+      "actions": "Actions",
+      "grantTitle": "Accorder des Crédits",
+      "currentCredits": "Crédits actuels",
+      "selectAmount": "Sélectionner le montant",
+      "credits": "crédits",
+      "customAmount": "Montant personnalisé",
+      "cancel": "Annuler",
+      "grant": "Accorder",
+      "roleTitle": "Changer le Rôle",
+      "selectRole": "Sélectionner le rôle",
+      "roles": {
+        "user": "Utilisateur",
+        "moderator": "Modérateur",
+        "admin": "Administrateur"
+      },
+      "roleDesc": {
+        "user": "Accès standard au studio",
+        "moderator": "Peut modérer le contenu",
+        "admin": "Accès complet au système"
+      },
+      "saveRole": "Enregistrer",
+      "banTitle": "Bannir l'Utilisateur",
+      "banMessage": "Êtes-vous sûr de vouloir bannir cet utilisateur ? Il ne pourra plus accéder au service.",
+      "unbanTitle": "Débannir l'Utilisateur",
+      "unbanMessage": "Êtes-vous sûr de vouloir débannir cet utilisateur ? Il retrouvera l'accès au service.",
+      "deleteTitle": "Supprimer l'Utilisateur",
+      "deleteMessage": "Cette action est IRRÉVERSIBLE. Toutes les données de l'utilisateur seront définitivement supprimées.",
+      "deleteConfirm": "Tapez DELETE pour confirmer",
+      "typeDelete": "Tapez DELETE",
+      "confirm": "Confirmer",
+      "inspectTitle": "Générations de l'Utilisateur",
+      "noGenerations": "Aucune génération trouvée",
+      "totalGenerations": "{count} génération(s) au total",
+      "close": "Fermer",
+      "customAmountPlaceholder": "Saisir un montant",
+      "deleteKeyword": "DELETE",
+      "rolesShort": {
+        "admin": "ADMIN",
+        "moderator": "MOD",
+        "user": "UTIL"
+      },
+      "statusActive": "Actif",
+      "statusBanned": "Banni",
+      "unknownInitial": "?"
+    },
+    "Errors": {
+      "actionFailed": "Échec de l'action. Veuillez réessayer.",
+      "changeRoleFailed": "Impossible de modifier le rôle.",
+      "grantCreditsFailed": "Impossible d'attribuer des crédits.",
+      "loadUsers": "Impossible de charger les utilisateurs.",
+      "updateSystemStatus": "Impossible de mettre à jour le statut du système.",
+      "serviceRoleMissing": "La clé de service role est manquante.",
+      "userNotFound": "Utilisateur introuvable.",
+      "banUpdateFailed": "Impossible de mettre à jour le bannissement.",
+      "deleteProfileFailed": "Impossible de supprimer le profil utilisateur.",
+      "fetchUsersFailed": "Impossible de récupérer les utilisateurs.",
+      "updateSettingsFailed": "Impossible de mettre à jour les paramètres.",
+      "notAuthenticated": "Non authentifié.",
+      "notAuthorized": "Non autorisé."
+    },
+    "Statuses": {
+      "processing": "En cours",
+      "succeeded": "Réussie",
+      "failed": "Échec",
+      "queued": "En file d'attente"
     }
   },
+  "Breadcrumbs": {
+    "home": "Accueil",
+    "studio": "Studio",
+    "pricing": "Tarifs",
+    "account": "Compte",
+    "login": "Connexion",
+    "terms": "Conditions d'utilisation",
+    "privacy": "Politique de confidentialité",
+    "legalMentions": "Mentions légales"
+  },
   "Legal": {
+    "Metadata": {
+      "termsTitle": "Conditions d'utilisation - Bunshin 3D",
+      "termsDescription": "Consultez les conditions d'utilisation de Bunshin 3D.",
+      "termsOgTitle": "Conditions d'utilisation | Bunshin 3D",
+      "termsOgDescription": "Consultez les conditions régissant l'utilisation de la plateforme de génération 3D par IA Bunshin 3D.",
+      "privacyTitle": "Politique de confidentialité - Bunshin 3D",
+      "privacyDescription": "Découvrez comment Bunshin 3D collecte et utilise vos données.",
+      "privacyOgTitle": "Politique de confidentialité | Bunshin 3D",
+      "privacyOgDescription": "Découvrez comment Bunshin 3D gère vos données, images et informations personnelles en toute sécurité.",
+      "mentionsTitle": "Mentions légales - Bunshin 3D",
+      "mentionsDescription": "Informations légales et d'hébergement de Bunshin 3D.",
+      "mentionsOgTitle": "Mentions légales | Bunshin 3D",
+      "mentionsOgDescription": "Informations sur l'entreprise, l'hébergement et les mentions légales de Bunshin 3D.",
+      "termsKeywords": "conditions utilisation bunshin 3d, conditions générateur 3d, termes utilisation modèle ia",
+      "privacyKeywords": "confidentialité bunshin 3d, politique confidentialité générateur 3d, protection données ia",
+      "mentionsKeywords": "mentions légales bunshin 3d, informations entreprise, hébergement"
+    },
     "Terms": {
       "title": "Conditions d'Utilisation",
       "lastUpdated": "Dernière mise à jour : Janvier 2026",
@@ -400,7 +684,7 @@
       "editorTitle": "Éditeur",
       "editorText": "Bunshin 3D\nFrance\nEmail: contact@metalya.fr",
       "hostTitle": "Hébergement",
-      "hostText": "Qualify",
+      "hostText": "Vercel",
       "creditsTitle": "Crédits",
       "creditsText": "Design & Développement par l'Équipe Bunshin 3D."
     }
@@ -415,7 +699,26 @@
     "cancel": "Annuler",
     "confirm": "Confirmer",
     "download": "Télécharger",
-    "processing": "Traitement en cours..."
+    "processing": "Traitement en cours...",
+    "previous": "Précédent",
+    "next": "Suivant",
+    "pageOf": "Page {page} sur {total}",
+    "brandLogoAlt": "Logo Bunshin 3D",
+    "creditsWithCount": "{count, plural, one {# crédit} other {# crédits}}",
+    "currencySymbols": {
+      "eur": "€",
+      "usd": "$"
+    },
+    "downloads": {
+      "fileName": "bunshin3d-{timestamp}.{extension}"
+    },
+    "errors": {
+      "downloadErrorLog": "Erreur de téléchargement :",
+      "downloadFailed": "Échec du téléchargement.",
+      "noModelUrl": "URL du modèle manquante.",
+      "unknownFormat": "Format inconnu."
+    },
+    "pending": "En attente"
   },
   "TextTo3D": {
     "Metadata": {
@@ -479,9 +782,165 @@
       "message": "Cela coûtera 5 crédits. Les modèles premium offrent des résultats qualité cinéma avec des détails photoréalistes."
     }
   },
+  "Referral": {
+    "title": "Programme de Parrainage",
+    "linkLabel": "Votre lien de parrainage",
+    "linkUnavailable": "Lien indisponible",
+    "creditsLabel": "Crédits gagnés par parrainage",
+    "copyLabel": "Copier le lien",
+    "copiedLabel": "Copié !",
+    "Promo": {
+      "headerText": "Invitez vos amis, gagnez des crédits gratuits",
+      "headerCta": "En savoir plus",
+      "badge": "Programme de Parrainage",
+      "sectionTitle": "Gagnez des Crédits Gratuits",
+      "sectionSubtitle": "Partagez Bunshin 3D avec vos amis et gagnez des crédits à chaque inscription et achat.",
+      "bonusTitle": "Bonus de Parrainage",
+      "bonusSubtitle": "Gagnez des crédits à chaque étape",
+      "bonusBadgeSignup": "+2 crédits",
+      "bonusBadgePayment": "+10 crédits",
+      "bonusCaption": "Sans limites. Cumulez vos crédits.",
+      "steps": {
+        "invite": {
+          "title": "Partagez Votre Lien",
+          "description": "Envoyez votre lien de parrainage unique à vos amis",
+          "desc": "Envoyez votre lien de parrainage unique à vos amis"
+        },
+        "signup": {
+          "title": "Votre Ami s'Inscrit",
+          "description": "Il crée un compte via votre lien",
+          "desc": "Il crée un compte via votre lien"
+        },
+        "pay": {
+          "title": "Votre Ami Achète",
+          "description": "Quand il achète des crédits, vous gagnez tous les deux",
+          "desc": "Quand il achète des crédits, vous gagnez tous les deux"
+        }
+      },
+      "ctaPrimary": "Copier le Lien de Parrainage",
+      "ctaSecondary": "Aller au Tableau de Bord",
+      "highlightTag": "CRÉDITS GRATUITS",
+      "pricingTitle": "Parrainez & Économisez",
+      "pricingSubtitle": "Gagnez des crédits en invitant vos amis",
+      "footerTitle": "Invitez vos amis et gagnez des crédits gratuits à chaque inscription !",
+      "footerCta": "Commencer à Gagner"
+    }
+  },
+  "FAQ": {
+    "items": [
+      {
+        "question": "Comment fonctionne Bunshin 3D ?",
+        "answer": "Bunshin 3D utilise une IA avancée pour convertir des images 2D et des descriptions textuelles en modèles 3D aux formats GLB et STL. Uploadez simplement une image ou décrivez ce que vous voulez, et notre IA génère un modèle 3D prêt pour la production."
+      },
+      {
+        "question": "Quels formats sont supportés ?",
+        "answer": "Nous supportons GLB (pour les moteurs de jeu comme Unity et Unreal), STL (pour l'impression 3D) et OBJ. Tous les modèles sont optimisés."
+      },
+      {
+        "question": "Combien de crédits faut-il ?",
+        "answer": "La qualité standard coûte 1 crédit par génération. La qualité premium coûte 5 crédits pour des résultats cinématographiques avec textures photoréalistes."
+      },
+      {
+        "question": "Les crédits expirent-ils ?",
+        "answer": "Non, vos crédits n'expirent jamais. Achetez une fois, utilisez quand vous voulez."
+      },
+      {
+        "question": "Puis-je utiliser les modèles commercialement ?",
+        "answer": "Oui ! Tous les modèles générés sont à vous pour un usage commercial, y compris pour les jeux, l'impression 3D et les projets professionnels."
+      },
+      {
+        "question": "Comment fonctionne le programme de parrainage ?",
+        "answer": "Partagez votre lien unique. Quand un ami s'inscrit, vous recevez +2 crédits. Quand il effectue son premier achat, vous recevez +10 crédits. Il n'y a aucune limite."
+      }
+    ]
+  },
   "Showcase": {
     "generatedAsset": "Asset Généré",
     "viewModel": "Voir le Modèle",
-    "download": "Télécharger"
+    "download": "Télécharger",
+    "title": "Généré avec Bunshin",
+    "subtitle": "Des logos simples aux personnages complexes. Découvrez ce que notre IA peut créer.",
+    "badges": {
+      "premium": "Premium",
+      "standard": "Standard"
+    },
+    "examples": {
+      "woodenChair": {
+        "name": "Chaise en bois",
+        "prompt": "Une chaise en bois rustique simple avec dossier sculpté",
+        "alt": "Modèle 3D de chaise en bois généré par Bunshin AI"
+      },
+      "coffeeMug": {
+        "name": "Mug à café",
+        "prompt": "Un mug en céramique au design minimaliste",
+        "alt": "Modèle 3D de mug à café généré par Bunshin AI"
+      },
+      "rubberDuck": {
+        "name": "Canard en caoutchouc",
+        "prompt": "Un canard en caoutchouc jaune classique pour le bain",
+        "alt": "Modèle 3D de canard en caoutchouc généré par Bunshin AI"
+      },
+      "cactusPot": {
+        "name": "Pot de cactus",
+        "prompt": "Un petit cactus dans un pot en terre cuite avec des galets",
+        "alt": "Modèle 3D de pot de cactus généré par Bunshin AI"
+      },
+      "katanaSword": {
+        "name": "Katana",
+        "prompt": "Un katana japonais traditionnel avec poignee tressée et lame courbe",
+        "alt": "Modèle 3D de katana généré par Bunshin AI"
+      },
+      "shuriken": {
+        "name": "Shuriken",
+        "prompt": "Un shuriken à quatre pointes aiguisées avec motifs gravés",
+        "alt": "Modèle 3D de shuriken généré par Bunshin AI"
+      },
+      "battleAxe": {
+        "name": "Hache de Guerre",
+        "prompt": "Une hache de guerre viking à double tranchant avec manche en bois gravé de runes",
+        "alt": "Modèle 3D de hache de guerre généré par Bunshin AI"
+      },
+      "wizardStaff": {
+        "name": "Bâton de Mage",
+        "prompt": "Un bâton de mage mystique avec orbe de cristal lumineux et bois torsadé",
+        "alt": "Modèle 3D de bâton de mage généré par Bunshin AI"
+      }
+    },
+    "items": {
+      "poubelle": "Poubelle",
+      "shuriken": "Shuriken",
+      "robot": "Robot",
+      "coffre": "Coffre",
+      "chaise": "Chaise",
+      "hache": "Hache",
+      "tasse": "Tasse",
+      "lampe": "Lampe"
+    }
+  },
+  "OTO": {
+    "close": "Fermer",
+    "badge": "Offre de bienvenue exclusive",
+    "title": "Votre créativité mérite mieux.",
+    "subtitle": "Débloquez vos premiers crédits à un prix imbattable. Cette offre expire bientôt.",
+    "discountBadge": "JUSQU'À -67 %",
+    "discovery": {
+      "name": "Découverte",
+      "price": "0.99€",
+      "originalPrice": "2.99€",
+      "credits": "10 crédits inclus"
+    },
+    "studio": {
+      "name": "Studio Pro",
+      "price": "19.99€",
+      "originalPrice": "29.99€",
+      "credits": "200 crédits inclus"
+    },
+    "footer": "Offre unique. Les crédits n'expirent jamais.",
+    "creditsLabel": "crédits",
+    "checkoutError": "Une erreur est survenue. Veuillez réessayer.",
+    "banner": {
+      "text": "L'offre de bienvenue expire dans",
+      "cta": "En profiter"
+    }
   }
 }

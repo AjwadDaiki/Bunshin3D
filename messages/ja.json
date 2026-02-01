@@ -1,18 +1,28 @@
 {
   "Metadata": {
-    "defaultTitle": "Bunshin 3D | AI画像からSTL & GLBへの変換",
-    "templateTitle": "%s | Bunshin 3Dスタジオ",
-    "description": "画像、ロゴ、描画を3Dモデル（STL、OBJ、GLB）に瞬時に変換。3Dプリントとゲーム開発に最適化。",
+    "defaultTitle": "Bunshin 3D | 無料AI画像から3DモデルSTL・GLB変換ツール",
+    "templateTitle": "%s | Bunshin 3D - AI 3Dジェネレーター",
+    "description": "画像、ロゴ、イラストを瞬時に3Dモデルに変換。3Dプリント用STL・Unity/Unreal用GLBへの無料AI変換。デザインスキル不要！",
     "applicationName": "Bunshin 3D",
-    "keywords": "画像 3d 変換, ロゴ stl, ai 3d, 3dモデル 生成, ai 3dプリント, 画像 stl, ロゴ 3d, 2d 3d 変換",
+    "keywords": "画像 3d 変換, ロゴ stl 変換, ai 3dモデル生成, 無料 stl 変換, 写真 3dモデル, 2d 3d ai, 画像 glb 変換, png stl オンライン, ai 3dプリント, ロゴ 3dモデル, 画像から3d, unity 3d アセット, ゲームアセット生成, 無料 3dモデル作成",
     "creator": "Bunshin 3D",
     "publisher": "Bunshin 3D",
-    "ogSiteName": "Bunshin 3D",
-    "ogTitle": "Bunshin 3D - 画像を彫刻するAI",
-    "ogDescription": "2D画像から数秒でプロダクション対応の3Dファイルを生成。",
-    "ogImageAlt": "Bunshin 3Dインターフェース",
-    "twitterTitle": "Bunshin 3D - AI画像から3Dへ",
-    "twitterDescription": "2D画像からプロダクション対応の3Dファイルを生成。"
+    "ogSiteName": "Bunshin 3D - AI 3Dモデルジェネレーター",
+    "ogTitle": "30秒で画像を3Dモデルに変換 | 無料AIツール",
+    "ogDescription": "ロゴ、写真、イラストを瞬時にSTL/GLBに変換。無料AI 3Dジェネレーター - スキル不要。3Dプリントとゲーム開発に最適。",
+    "ogImageAlt": "Bunshin 3D - AIが2D画像を印刷・ゲーム用3Dモデルに変換",
+    "twitterTitle": "ðŸš€ AI画像から3D変換 | 無料STL・GLBジェネレーター",
+    "twitterDescription": "任意の画像を数秒で印刷可能な3Dモデルに変換。無料AIコンバーター - デザインスキル不要。今すぐBunshin 3Dをお試しください！"
+  },
+  "SEO": {
+    "siteName": "Bunshin 3D",
+    "engineeringTeam": "エンジニアリングチーム",
+    "generator": "Bunshin 3D",
+    "appleWebAppTitle": "Bunshin 3D",
+    "twitterHandle": "@bunshin3d",
+    "organizationName": "Bunshin 3D",
+    "organizationDescription": "AIによる3D生成プラットフォーム",
+    "contactType": "カスタマーサポート"
   },
   "Navigation": {
     "brandName": "BUNSHIN",
@@ -26,9 +36,28 @@
     "terms": "利用規約",
     "privacy": "プライバシー",
     "dashboard": "ダッシュボード",
-    "logout": "ログアウト"
+    "admin": "管理",
+    "logout": "ログアウト",
+    "credits": "クレジット",
+    "buyCredits": "購入",
+    "lowCredits": "残少",
+    "aria": {
+      "home": "ホームへ",
+      "mainNav": "メインナビゲーション",
+      "toggleNav": "ナビゲーションメニューを切り替え",
+      "userMenu": "ユーザーメニュー",
+      "logout": "ログアウト",
+      "creditsAvailable": "{count} クレジット利用可能",
+      "mobileNav": "モバイルナビゲーション"
+    }
   },
   "Home": {
+    "Schema": {
+      "websiteName": "Bunshin 3D",
+      "softwareName": "Bunshin 3D",
+      "softwareCategory": "デザインアプリケーション",
+      "operatingSystem": "Web"
+    },
     "Hero": {
       "title": "2Dピクセルを",
       "titleHighlight": "3D現実に変換。",
@@ -56,7 +85,7 @@
       "step1": "画像をアップロード",
       "step1Desc": "PNG、JPG、WEBPをドラッグ＆ドロップ。",
       "step2": "AI処理",
-      "step2Desc": "TrellisエンジンがDepthとテクスチャを再構築。",
+      "step2Desc": "Bunshinエンジンが深度とテクスチャを再構築します。",
       "step3": "3Dをダウンロード",
       "step3Desc": "ゲーム対応またはプリント対応のアセットを取得。"
     },
@@ -81,14 +110,19 @@
     "useCases": "使用例",
     "pricing": "料金",
     "studio": "3Dスタジオ",
+    "features": "機能",
     "blog": "ブログ",
     "help": "ヘルプセンター",
+    "support": "サポート",
+    "account": "アカウント",
+    "contact": "お問い合わせ",
     "legal": "法務",
     "terms": "利用規約",
     "privacy": "プライバシーポリシー",
     "mentions": "法的表示",
     "rights": "全著作権所有。",
     "crafted": "精密に制作",
+    "partnerName": "Hidden Lab",
     "copyright": "© {year} Bunshin 3D. 全著作権所有。"
   },
   "UseCases": {
@@ -101,7 +135,14 @@
     "notFoundDescription": "申し訳ございません。お探しのページは存在しません。",
     "serverErrorTitle": "エラーが発生しました",
     "serverErrorDescription": "サーバーで重大なエラーが発生しました。対応中です。",
-    "backHome": "ホームに戻る"
+    "backHome": "ホームに戻る",
+    "tryAgain": "再試行",
+    "logPrefix": "アプリケーションエラー:",
+    "errorId": "エラーID: {id}",
+    "footer": "問題が解決しない場合はサポートにお問い合わせください。",
+    "notFoundCode": "404",
+    "rootLogPrefix": "アプリケーションエラー:",
+    "warningSymbol": "⚠️"
   },
   "Auth": {
     "title": "おかえりなさい",
@@ -113,12 +154,23 @@
     "google": "Google",
     "checkEmail": "メールを確認",
     "checkEmailDesc": "サインイン用のマジックリンクを送信しました。",
-    "loading": "認証中..."
+    "loading": "認証中...",
+    "tryDifferentEmail": "別のメールアドレスを試す",
+    "Errors": {
+      "noCode": "認証コードが受信されませんでした。",
+      "authFailed": "認証に失敗しました: {message}",
+      "noSession": "セッションが作成されませんでした。もう一度お試しください。",
+      "banned": "このアカウントは停止されています。",
+      "generic": "予期しないエラーが発生しました。",
+      "magicLinkSend": "マジックリンクの送信に失敗しました。",
+      "googleLogin": "Googleログインに失敗しました。もう一度お試しください。"
+    }
   },
   "Studio": {
     "Metadata": {
       "title": "ニューラルスタジオ",
-      "description": "Trellis AIエンジンを使用して2D画像を3Dモデルに変換。"
+      "description": "Bunshin AIエンジンで2D画像を3Dモデルに変換。",
+      "keywords": "3Dモデルジェネレーター, AI 3Dスタジオ, 画像から3D変換, 無料3Dコンバーター, STLジェネレーター, GLBクリエイター"
     },
     "JsonLd": {
       "name": "Bunshin 3Dスタジオ",
@@ -128,10 +180,9 @@
     "Header": {
       "title": "ニューラルスタジオ",
       "subtitle": "2D物質を3D構造に変換。",
-      "version": "v2.0 // Trellisエンジン 有効",
+      "version": "v2.0 // Bunshinエンジン 有効",
       "status": "GPUクラスター オンライン",
-      "latency": "レイテンシ: 45ms",
-      "credits": "クレジット"
+      "latency": "レイテンシ: 45ms"
     },
     "Modes": {
       "imageToModel": "画像から3D",
@@ -152,7 +203,7 @@
       "generateButton": "テキストから生成"
     },
     "Logs": {
-      "title": "プロセスログ",
+      "title": "生成ログ",
       "initializing": "AIエンジンを初期化中...",
       "checkingCredits": "クレジット残高を確認中...",
       "uploadingImage": "画像をクラウドにアップロード中...",
@@ -168,38 +219,27 @@
       "complete": "生成完了！",
       "downloadReady": "モデルのダウンロード準備完了",
       "error": "生成中にエラーが発生しました",
-      "coolingDown": "⏳ API クールダウン中 (安全待機)...",
-      "generationFailed": "サーバー側で3D生成に失敗しました。",
-      "ready": "生成準備完了"
-    },
-    "Viewer": {
-      "waitingInput": "入力待ち...",
-      "creatingMagic": "マジック作成中...",
-      "referenceImage": "参照画像"
-    },
-    "LoadingMessages": {
-      "analyzing": "あなたのビジョンを分析中...",
-      "sculpting": "デジタル素材を彫刻中...",
-      "magic": "魔法をかけています...",
-      "neurons": "ニューラルネットワーク処理中...",
-      "dimensions": "次元を曲げています...",
-      "geometry": "完璧な形状を作成中...",
-      "textures": "光で描画中...",
-      "finalizing": "もう少しです...",
-      "patience": "素晴らしいものには時間がかかります...",
-      "creating": "ユニークなものを創造中..."
-    },
-    "Download": {
-      "modelReady": "モデル完成！",
-      "selectFormat": "ダウンロード形式を選択",
-      "webAR": "(Web/AR)",
-      "print": "(印刷)"
+      "downloadSuccess": "ダウンロード準備完了: {format}",
+      "downloadError": "ダウンロードに失敗しました: {error}",
+      "errorPrefix": "エラー: {message}",
+      "generationFailed": "生成に失敗しました。",
+      "insufficientCredits": "クレジットが不足しています。必要数: {count}。",
+      "missingImage": "画像をアップロードしてください。",
+      "missingPrompt": "プロンプトを入力してください。",
+      "imageUploaded": "画像をクラウドにアップロードしました。",
+      "imageGenerated": "画像を生成しました。",
+      "imageGenerationFailed": "画像生成に失敗しました。",
+      "cooldown": "クールダウン中...",
+      "serverBusy": "サーバーが混雑しています。再試行します...",
+      "rateLimited": "レート制限に達しました。後でもう一度お試しください。",
+      "serverSideFailure": "サーバー側の生成に失敗しました。"
     },
     "Interface": {
       "DropZone": {
         "title": "画像ソースをドロップ",
         "subtitle": "JPG、PNG、WEBP（最大10MB）",
-        "scanning": "ニューラルスキャン中..."
+        "scanning": "ニューラルスキャン中...",
+        "previewAlt": "アップロードした画像のプレビュー"
       },
       "Samples": {
         "title": "例",
@@ -223,7 +263,19 @@
         "system": "システムステータス"
       },
       "Export": {
-        "title": "エクスポートオプション"
+        "title": "エクスポートオプション",
+        "readyTitle": "エクスポート準備完了",
+        "subtitle": "モデルをダウンロードする形式を選択してください。",
+        "labels": {
+          "glb": "GLB",
+          "web": "Web",
+          "obj": "OBJ",
+          "universal": "汎用",
+          "usdz": "USDZ",
+          "ar": "AR",
+          "stl": "STL",
+          "print": "印刷"
+        }
       },
       "Formats": {
         "standard": {
@@ -241,11 +293,18 @@
       },
       "Viewer": {
         "label": "ビューポート [WEBGL]",
-        "waiting": "データストリーム待機中...",
-        "engine": "TRELLISエンジン V1.0",
+        "waiting": "入力待機中...",
+        "waitingStream": "データストリーム待機中...",
+        "engine": "BUNSHINエンジン V1.0",
         "axis": "XYZ軸: ロック済み",
         "autoRotate": "自動回転",
-        "shadows": "シャドウ: オン"
+        "shadows": "シャドウ: オン",
+        "readyToGenerate": "生成準備完了",
+        "generated2D": "2D画像生成済み",
+        "webAR": "Web/AR",
+        "print": "印刷",
+        "creatingMagic": "モデルを生成中...",
+        "referenceImage": "参照画像"
       },
       "Errors": {
         "fileTooLarge": "画像が大きすぎます（最大10MB）。",
@@ -253,12 +312,70 @@
         "conversionFailed": "ローカル変換エラー。ブラウザを確認してください。",
         "timeout": "リクエストが長すぎました（>60秒）。小さい画像で試すか、後で再試行してください。"
       }
+    },
+    "CreditsPrompt": {
+      "title": "クレジット",
+      "headline": "あなたの創造性には、もっと価値がある。",
+      "description": "この生成には{count}クレジットが必要です。チャージするか友達を招待して無料クレジットを獲得しましょう。",
+      "ctaPricing": "クレジットを購入",
+      "ctaReferral": "紹介で獲得",
+      "note": "友達を招待: 登録で+{signup}、初回購入後に+{payment}。",
+      "close": "閉じる",
+      "creditsLabel": "クレジット"
     }
+  },
+  "HowTo": {
+    "name": "画像を3Dに変換する方法",
+    "description": "Bunshin 3Dで、任意の画像を数秒でダウンロード可能な3Dモデルに変換できます。",
+    "tools": {
+      "browser": "Webブラウザ",
+      "image": "画像ファイル（PNG / JPG / WEBP）"
+    },
+    "steps": [
+      {
+        "name": "画像をアップロード",
+        "text": "鮮明なPNG/JPG/WEBPをアップロードしてください。"
+      },
+      {
+        "name": "AIで生成",
+        "text": "AIが深度・ジオメトリ・テクスチャを再構築します。"
+      },
+      {
+        "name": "3Dモデルをダウンロード",
+        "text": "GLBまたはSTLを取得して、印刷やゲームに使えます。"
+      }
+    ]
   },
   "Pricing": {
     "Metadata": {
       "title": "料金＆クレジット",
-      "description": "3D生成用の柔軟なクレジットパック。一度支払い、永久使用。"
+      "description": "3D生成用の柔軟なクレジットパック。一度支払い、永久使用。",
+      "siteName": "Bunshin 3D",
+      "ogImageAlt": "Bunshin 3Dの料金とクレジットパック",
+      "keywords": "bunshin 3d 料金, 3Dモデルクレジット, AI 3Dジェネレーター費用, 3Dクレジット購入, 手頃な3Dプリント"
+    },
+    "Schema": {
+      "productName": "Bunshin 3D クレジット",
+      "productDescription": "3D生成のための柔軟なクレジットパック。1回の支払いでずっと使えます。",
+      "brandName": "Bunshin 3D",
+      "offers": {
+        "discovery": {
+          "name": "ディスカバリーパック",
+          "description": "3Dジェネレーターを試すためのスターターパック。"
+        },
+        "creator": {
+          "name": "クリエイターパック",
+          "description": "デザイナーやクリエイターに最適。"
+        },
+        "studio": {
+          "name": "スタジオパック",
+          "description": "スタジオやチーム向けの大容量パック。"
+        }
+      },
+      "breadcrumb": {
+        "home": "ホーム",
+        "pricing": "料金"
+      }
     },
     "Header": {
       "title": "シンプル、透明",
@@ -276,28 +393,62 @@
       "priority": "優先GPUアクセス",
       "support": "優先サポート"
     },
+    "Card": {
+      "perPack": "パック毎",
+      "perCredit": "/ クレジット",
+      "savings": "{percent}%お得"
+    },
     "Packs": {
       "Discovery": {
         "name": "ディスカバリー",
-        "price": "2.99",
         "credits": "10クレジット",
         "description": "テストに最適。",
         "cta": "ディスカバリーパックを購入"
       },
       "Creator": {
         "name": "クリエイター",
-        "price": "9.99",
         "credits": "50クレジット",
         "description": "デザイナー＆クリエイター向け。",
         "cta": "クリエイターパックを購入"
       },
       "Studio": {
         "name": "スタジオ",
-        "price": "29.99",
         "credits": "200クレジット",
         "description": "集中使用＆プロ向け。",
         "cta": "スタジオパックを購入"
       }
+    },
+    "Footer": {
+      "note": "安全な決済。クレジットは失効しません。"
+    },
+    "Trust": {
+      "secure": "安全な決済",
+      "noSub": "サブスク不要",
+      "neverExpire": "クレジット無期限",
+      "commercial": "商用ライセンス"
+    },
+    "SocialProof": {
+      "users": "世界中の1,200人以上のクリエイターが利用"
+    },
+    "FAQ": {
+      "title": "よくある質問",
+      "q1": "クレジットは何に使えますか？",
+      "a1": "各クレジットで画像またはテキストプロンプトから1つの3Dモデルを生成できます。クレジットは生成成功時のみ消費されます。",
+      "q2": "クレジットに有効期限はありますか？",
+      "a2": "いいえ！クレジットは永久に有効です。一度購入すれば、いつでもご利用いただけます。月額サブスクリプションや隠れた料金はありません。",
+      "q3": "どのフォーマットでエクスポートできますか？",
+      "a3": "すべての3DモデルはGLB（Unity・Unreal等のゲームエンジン用）とSTL（3Dプリント用）でエクスポートできます。両方のフォーマットが含まれています。",
+      "q4": "モデルを商用利用できますか？",
+      "a4": "はい！すべてのクレジットパックには完全な商用ライセンスが含まれています。ゲーム、製品、マーケティング素材などにご利用いただけます。",
+      "q5": "AI生成はどのように機能しますか？",
+      "a5": "AIが2D画像またはテキスト説明を分析し、テクスチャ付きの詳細な3Dメッシュを生成します。処理は優先GPUサーバーで約30秒で完了します。"
+    },
+    "Checkout": {
+      "loginRequired": "続行するにはログインしてください。",
+      "serverError": "サーバーエラー（ステータス {status}）。",
+      "noCheckoutUrl": "チェックアウトリンクがありません。",
+      "checkoutErrorLog": "チェックアウトエラー:",
+      "paymentInitFailed": "支払い初期化に失敗しました: {message}"
     }
   },
   "Account": {
@@ -314,7 +465,7 @@
       "credits": "利用可能クレジット",
       "generations": "総作成数",
       "plan": "現在のステータス",
-      "memberSince": "メンバー登録日"
+      "memberSince": "会員登録日"
     },
     "History": {
       "title": "生成履歴",
@@ -323,15 +474,30 @@
       "emptyBtn": "スタジオへ",
       "download": "ダウンロード",
       "date": "作成日",
-      "models": "モデル",
-      "generating": "生成中...",
-      "failed": "失敗",
-      "dataUnavailable": "データがありません",
-      "confirmDelete": "このモデルを削除してもよろしいですか？",
-      "downloadFailed": "ダウンロードに失敗しました。リンクが期限切れの可能性があります。",
-      "previous": "前へ",
-      "next": "次へ",
-      "pageOf": "{page}ページ / {totalPages}ページ"
+      "confirmDelete": "この生成を削除しますか？",
+      "confirmYes": "削除",
+      "confirmNo": "キャンセル",
+      "generatedTime": "生成日時: {time}",
+      "retentionNotice": "生成結果はここに保存され、すぐにアクセスできます。",
+      "sourceAlt": "元画像",
+      "statuses": {
+        "processing": "処理中",
+        "succeeded": "完了",
+        "failed": "失敗",
+        "queued": "待機中"
+      },
+      "downloadTitles": {
+        "glb": "GLBをダウンロード",
+        "obj": "OBJをダウンロード",
+        "usdz": "USDZをダウンロード",
+        "stl": "STLをダウンロード"
+      },
+      "formatLabels": {
+        "glb": "GLB",
+        "obj": "OBJ",
+        "usdz": "USDZ",
+        "stl": "STL"
+      }
     },
     "Settings": {
       "logout": "ログアウト",
@@ -347,13 +513,21 @@
       "subtitle": "制限付きアクセス。認可された担当者のみ。",
       "status": "ライブ接続"
     },
+    "Tabs": {
+      "overview": "概要",
+      "users": "ユーザー"
+    },
     "KPI": {
       "revenue": "総収益",
       "users": "総ユーザー数",
       "models": "生成されたモデル",
       "conversion": "コンバージョン率（有料）",
       "arpu": "ARPU（平均収益）",
-      "burn": "GPU消費率"
+      "burn": "GPU消費率",
+      "today": "本日",
+      "gpuCost": "推定GPUコスト",
+      "errorRate": "エラー率",
+      "arpuSubValue": "ARPU {symbol}{value}"
     },
     "Tables": {
       "usersTitle": "最近のユーザー獲得",
@@ -366,13 +540,123 @@
       "colMode": "モード"
     },
     "Controls": {
+      "serverTime": "サーバー時刻",
+      "systemControls": "システムコントロール",
       "maintenance": "メンテナンスモード",
       "maintenanceDesc": "スタジオインターフェースをロック。既存のワークフローのAPIアクセスは有効。",
       "active": "システム 有効",
       "inactive": "システム ロック済み"
+    },
+    "Users": {
+      "colActions": "アクション",
+      "colUser": "ユーザー",
+      "colCredits": "クレジット",
+      "colDate": "登録日",
+      "role": "役割",
+      "status": "ステータス",
+      "grantCredits": "クレジット付与",
+      "changeRole": "役割変更",
+      "ban": "BAN",
+      "unban": "BAN解除",
+      "delete": "削除",
+      "inspect": "検査",
+      "searchPlaceholder": "メールで検索...",
+      "search": "検索",
+      "actions": "アクション",
+      "grantTitle": "クレジット付与",
+      "currentCredits": "現在のクレジット",
+      "selectAmount": "金額を選択",
+      "credits": "クレジット",
+      "customAmount": "カスタム金額",
+      "cancel": "キャンセル",
+      "grant": "付与",
+      "roleTitle": "役割変更",
+      "selectRole": "役割を選択",
+      "roles": {
+        "user": "ユーザー",
+        "moderator": "モデレーター",
+        "admin": "管理者"
+      },
+      "roleDesc": {
+        "user": "スタンダードスタジオアクセス",
+        "moderator": "コンテンツモデレーション可能",
+        "admin": "フルシステムアクセス"
+      },
+      "saveRole": "保存",
+      "banTitle": "ユーザーをBAN",
+      "banMessage": "このユーザーをBANしてもよろしいですか？サービスにアクセスできなくなります。",
+      "unbanTitle": "ユーザーのBAN解除",
+      "unbanMessage": "このユーザーのBANを解除してもよろしいですか？サービスへのアクセスが回復します。",
+      "deleteTitle": "ユーザー削除",
+      "deleteMessage": "この操作は取り消せません。ユーザーのすべてのデータが完全に削除されます。",
+      "deleteConfirm": "DELETEと入力して確認",
+      "typeDelete": "DELETEと入力",
+      "confirm": "確認",
+      "inspectTitle": "ユーザーの生成履歴",
+      "noGenerations": "生成履歴がありません",
+      "totalGenerations": "合計{count}件の生成",
+      "close": "閉じる",
+      "customAmountPlaceholder": "金額を入力",
+      "deleteKeyword": "DELETE",
+      "rolesShort": {
+        "admin": "管理",
+        "moderator": "MOD",
+        "user": "ユーザー"
+      },
+      "statusActive": "有効",
+      "statusBanned": "停止",
+      "unknownInitial": "?"
+    },
+    "Errors": {
+      "actionFailed": "操作に失敗しました。もう一度お試しください。",
+      "changeRoleFailed": "ロールの変更に失敗しました。",
+      "grantCreditsFailed": "クレジットの付与に失敗しました。",
+      "loadUsers": "ユーザーの読み込みに失敗しました。",
+      "updateSystemStatus": "システムステータスの更新に失敗しました。",
+      "serviceRoleMissing": "サービスロールキーがありません。",
+      "userNotFound": "ユーザーが見つかりません。",
+      "banUpdateFailed": "BANステータスの更新に失敗しました。",
+      "deleteProfileFailed": "ユーザープロフィールの削除に失敗しました。",
+      "fetchUsersFailed": "ユーザーの取得に失敗しました。",
+      "updateSettingsFailed": "設定の更新に失敗しました。",
+      "notAuthenticated": "認証されていません。",
+      "notAuthorized": "権限がありません。"
+    },
+    "Statuses": {
+      "processing": "処理中",
+      "succeeded": "成功",
+      "failed": "失敗",
+      "queued": "待機中"
     }
   },
+  "Breadcrumbs": {
+    "home": "ホーム",
+    "studio": "スタジオ",
+    "pricing": "料金",
+    "account": "アカウント",
+    "login": "ログイン",
+    "terms": "利用規約",
+    "privacy": "プライバシーポリシー",
+    "legalMentions": "法的表示"
+  },
   "Legal": {
+    "Metadata": {
+      "termsTitle": "利用規約 - Bunshin 3D",
+      "termsDescription": "Bunshin 3Dの利用規約をご確認ください。",
+      "termsOgTitle": "利用規約 | Bunshin 3D",
+      "termsOgDescription": "Bunshin 3DのAI 3Dモデル生成プラットフォームの利用規約をお読みください。",
+      "privacyTitle": "プライバシーポリシー - Bunshin 3D",
+      "privacyDescription": "Bunshin 3Dがデータを収集・利用する方法をご覧ください。",
+      "privacyOgTitle": "プライバシーポリシー | Bunshin 3D",
+      "privacyOgDescription": "Bunshin 3Dがあなたのデータ、画像、個人情報を安全に管理する方法をご覧ください。",
+      "mentionsTitle": "法的表示 - Bunshin 3D",
+      "mentionsDescription": "Bunshin 3Dの会社情報とホスティング情報。",
+      "mentionsOgTitle": "法的表示 | Bunshin 3D",
+      "mentionsOgDescription": "Bunshin 3Dの会社情報、ホスティング詳細、法的通知。",
+      "termsKeywords": "bunshin 3d 利用規約, 3Dジェネレーター利用規約, AIモデル利用条件",
+      "privacyKeywords": "bunshin 3d プライバシー, 3Dジェネレータープライバシーポリシー, AIデータ保護",
+      "mentionsKeywords": "bunshin 3d 法的情報, 会社情報, ホスティング"
+    },
     "Terms": {
       "title": "利用規約",
       "lastUpdated": "最終更新: 2026年1月",
@@ -400,7 +684,7 @@
       "editorTitle": "発行者",
       "editorText": "Bunshin 3D\nフランス\nメール: contact@metalya.fr",
       "hostTitle": "ホスティング",
-      "hostText": "Qualify",
+      "hostText": "Vercel",
       "creditsTitle": "クレジット",
       "creditsText": "Bunshin 3Dチームによるデザイン＆開発。"
     }
@@ -415,7 +699,26 @@
     "cancel": "キャンセル",
     "confirm": "確認",
     "download": "ダウンロード",
-    "processing": "処理中..."
+    "processing": "処理中...",
+    "previous": "前へ",
+    "next": "次へ",
+    "pageOf": "{total}ページ中{page}ページ",
+    "brandLogoAlt": "Bunshin 3D ロゴ",
+    "creditsWithCount": "{count} クレジット",
+    "currencySymbols": {
+      "eur": "€",
+      "usd": "$"
+    },
+    "downloads": {
+      "fileName": "bunshin3d-{timestamp}.{extension}"
+    },
+    "errors": {
+      "downloadErrorLog": "ダウンロードエラー:",
+      "downloadFailed": "ダウンロードに失敗しました。",
+      "noModelUrl": "モデルURLがありません。",
+      "unknownFormat": "不明な形式です。"
+    },
+    "pending": "保留中"
   },
   "TextTo3D": {
     "Metadata": {
@@ -479,9 +782,165 @@
       "message": "5クレジット消費します。プレミアムモデルはフォトリアルな詳細を持つ映画品質の結果を提供します。"
     }
   },
+  "Referral": {
+    "title": "紹介プログラム",
+    "linkLabel": "あなたの紹介リンク",
+    "linkUnavailable": "リンクを利用できません",
+    "creditsLabel": "紹介で獲得したクレジット",
+    "copyLabel": "リンクをコピー",
+    "copiedLabel": "コピーしました！",
+    "Promo": {
+      "headerText": "友達を招待して無料クレジットを獲得",
+      "headerCta": "詳細を見る",
+      "badge": "紹介プログラム",
+      "sectionTitle": "無料クレジットを獲得",
+      "sectionSubtitle": "Bunshin 3Dを友達に共有して、登録や購入ごとにクレジットを獲得しましょう。",
+      "bonusTitle": "紹介ボーナス",
+      "bonusSubtitle": "各ステップでクレジットを獲得",
+      "bonusBadgeSignup": "+2 クレジット",
+      "bonusBadgePayment": "+10 クレジット",
+      "bonusCaption": "上限なし。どんどん貯まる。",
+      "steps": {
+        "invite": {
+          "title": "リンクを共有",
+          "description": "あなた専用の紹介リンクを友達に送る",
+          "desc": "あなた専用の紹介リンクを友達に送る"
+        },
+        "signup": {
+          "title": "友達が登録",
+          "description": "あなたのリンクからアカウントを作成",
+          "desc": "あなたのリンクからアカウントを作成"
+        },
+        "pay": {
+          "title": "友達が購入",
+          "description": "クレジットを購入すると双方が得をする",
+          "desc": "クレジットを購入すると双方が得をする"
+        }
+      },
+      "ctaPrimary": "紹介リンクをコピー",
+      "ctaSecondary": "ダッシュボードへ",
+      "highlightTag": "無料クレジット",
+      "pricingTitle": "紹介してお得に",
+      "pricingSubtitle": "友達を招待してクレジットを獲得",
+      "footerTitle": "友達を招待して、登録ごとに無料クレジットを獲得！",
+      "footerCta": "今すぐ始める"
+    }
+  },
   "Showcase": {
     "generatedAsset": "生成されたアセット",
     "viewModel": "モデルを表示",
-    "download": "ダウンロード"
+    "download": "ダウンロード",
+    "title": "Bunshinで生成",
+    "subtitle": "シンプルなロゴから複雑なキャラクターまで。AIが作れるものをご覧ください。",
+    "badges": {
+      "premium": "プレミアム",
+      "standard": "スタンダード"
+    },
+    "examples": {
+      "woodenChair": {
+        "name": "木製の椅子",
+        "prompt": "彫刻入りの背もたれを備えた素朴な木製の椅子",
+        "alt": "Bunshin AIが生成した木製椅子の3Dモデル"
+      },
+      "coffeeMug": {
+        "name": "コーヒーマグ",
+        "prompt": "ミニマルデザインの陶器製コーヒーマグ",
+        "alt": "Bunshin AIが生成したコーヒーマグの3Dモデル"
+      },
+      "rubberDuck": {
+        "name": "ゴムのアヒル",
+        "prompt": "クラシックな黄色いバス用ラバーダック",
+        "alt": "Bunshin AIが生成したゴムのアヒルの3Dモデル"
+      },
+      "cactusPot": {
+        "name": "サボテンの鉢",
+        "prompt": "小石の入ったテラコッタ鉢の小さなサボテン",
+        "alt": "Bunshin AIが生成したサボテン鉢の3Dモデル"
+      },
+      "katanaSword": {
+        "name": "刀",
+        "prompt": "巻き柄と反りのある伝統的な日本刀",
+        "alt": "Bunshin AIが生成した刀の3Dモデル"
+      },
+      "shuriken": {
+        "name": "手裏剣",
+        "prompt": "模様が刻まれた鋭い四方手裏剣",
+        "alt": "Bunshin AIが生成した手裏剣の3Dモデル"
+      },
+      "battleAxe": {
+        "name": "戦斧",
+        "prompt": "ルーン文字が刻まれた木製の柄を持つ両刃のバイキング戦斧",
+        "alt": "Bunshin AIが生成した戦斧の3Dモデル"
+      },
+      "wizardStaff": {
+        "name": "魔法の杖",
+        "prompt": "光るクリスタルオーブとねじれた木の神秘的な魔法使いの杖",
+        "alt": "Bunshin AIが生成した魔法の杖の3Dモデル"
+      }
+    },
+    "items": {
+      "poubelle": "ゴミ箱",
+      "shuriken": "手裏剣",
+      "robot": "ロボット",
+      "coffre": "宝箱",
+      "chaise": "椅子",
+      "hache": "斧",
+      "tasse": "マグカップ",
+      "lampe": "ランプ"
+    }
+  },
+  "OTO": {
+    "close": "閉じる",
+    "badge": "限定ウェルカムオファー",
+    "title": "あなたの創造性には、もっと良いものを。",
+    "subtitle": "最初のクレジットを破格の価格で。まもなく終了します。",
+    "discountBadge": "最大67%OFF",
+    "discovery": {
+      "name": "ディスカバリー",
+      "price": "0.99€",
+      "originalPrice": "2.99€",
+      "credits": "10 クレジット込み"
+    },
+    "studio": {
+      "name": "スタジオ Pro",
+      "price": "19.99€",
+      "originalPrice": "29.99€",
+      "credits": "200 クレジット込み"
+    },
+    "footer": "一度きりのオファー。クレジットは失効しません。",
+    "creditsLabel": "クレジット",
+    "checkoutError": "エラーが発生しました。もう一度お試しください。",
+    "banner": {
+      "text": "ウェルカムオファー終了まで",
+      "cta": "今すぐ取得"
+    }
+  },
+  "FAQ": {
+    "items": [
+      {
+        "question": "Bunshin 3Dはどのように動作しますか？",
+        "answer": "Bunshin 3Dは高度なAIで2D画像やテキスト説明をGLB/STL形式の3Dモデルに変換します。画像をアップロードするか欲しいものを説明するだけで、AIが制作現場で使える3Dモデルを生成します。"
+      },
+      {
+        "question": "対応フォーマットは？",
+        "answer": "GLB（Unity/Unrealなどのゲームエンジン向け）、STL（3Dプリント用）、OBJに対応しています。すべてのモデルは最適化されたトポロジーです。"
+      },
+      {
+        "question": "必要なクレジット数は？",
+        "answer": "標準品質は1生成あたり1クレジット。プレミアム品質はフォトリアルな質感の映画品質で5クレジットです。"
+      },
+      {
+        "question": "クレジットは失効しますか？",
+        "answer": "いいえ、クレジットは失効しません。購入後いつでも利用できます。"
+      },
+      {
+        "question": "商用利用できますか？",
+        "answer": "はい！生成したモデルはゲーム、3Dプリント、プロジェクトなど商用利用できます。"
+      },
+      {
+        "question": "紹介プログラムはどう機能しますか？",
+        "answer": "専用の紹介リンクを共有してください。友達が登録すると+2クレジット、初回購入で+10クレジットが得られます。上限はありません。"
+      }
+    ]
   }
 }

@@ -1,22 +1,23 @@
-import { NextResponse } from "next/server";
+﻿import { NextRequest, NextResponse } from "next/server";
 import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
+import { getApiTranslations } from "@/lib/api-i18n";
 
-// Étape A : Text-to-Image avec Flux Schnell
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
+  const t = await getApiTranslations(request, "Api.TextToImage");
+
   try {
     const { prompt, userId } = await request.json();
 
-    console.log(`📝 Text-to-Image request: userId=${userId}`);
+    console.log(t("logs.request", { userId }));
 
     if (!userId || !prompt) {
       return NextResponse.json(
-        { error: "User ID and prompt are required" },
-        { status: 400 }
+        { error: t("responses.missingParams") },
+        { status: 400 },
       );
     }
 
-    // Vérifier les crédits de l'utilisateur
     const cookieStore = await cookies();
     const supabase = createServerClient(
       process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -29,12 +30,12 @@ export async function POST(request: Request) {
           setAll(cookiesToSet) {
             try {
               cookiesToSet.forEach(({ name, value, options }) =>
-                cookieStore.set(name, value, options)
+                cookieStore.set(name, value, options),
               );
             } catch {}
           },
         },
-      }
+      },
     );
 
     const { data: profile } = await supabase
@@ -45,17 +46,15 @@ export async function POST(request: Request) {
 
     if (!profile || profile.credits < 1) {
       return NextResponse.json(
-        { error: "Insufficient credits. You need 1 credit." },
-        { status: 400 }
+        { error: t("responses.insufficientCredits") },
+        { status: 400 },
       );
     }
 
-    // Optimisation automatique du prompt pour la 3D
     const optimizedPrompt = `${prompt}, 3d asset style, isometric view, neutral lighting, white background, no shadow, single object, high quality, 4k texture`;
 
-    console.log(`✅ Optimized prompt: ${optimizedPrompt}`);
+    console.log(t("logs.optimizedPrompt", { prompt: optimizedPrompt }));
 
-    // Appel à Replicate pour Flux Schnell
     const response = await fetch("https://api.replicate.com/v1/predictions", {
       method: "POST",
       headers: {
@@ -63,7 +62,8 @@ export async function POST(request: Request) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        version: "5599ed30703defd1d160a25a63321b4dec97101d98b4674bcc56e41f62f35637", // Flux Schnell
+        version:
+          "5599ed30703defd1d160a25a63321b4dec97101d98b4674bcc56e41f62f35637",
         input: {
           prompt: optimizedPrompt,
           num_outputs: 1,
@@ -76,23 +76,23 @@ export async function POST(request: Request) {
 
     if (!response.ok) {
       const errorText = await response.text();
-      console.error("❌ Replicate API error:", errorText);
-      throw new Error(`Replicate API failed: ${response.status}`);
+      console.error(t("errors.replicateApi"), errorText);
+      throw new Error(t("errors.replicateFailed", { status: response.status }));
     }
 
     const prediction = await response.json();
 
-    console.log(`✅ Image generation started: ${prediction.id}`);
+    console.log(t("logs.imageStarted", { predictionId: prediction.id }));
 
     return NextResponse.json({
       predictionId: prediction.id,
       status: prediction.status,
     });
   } catch (err: any) {
-    console.error("❌ Text-to-Image Error:", err.message);
+    console.error(t("errors.requestFailed", { message: err.message }));
     return NextResponse.json(
-      { error: err.message || "Image generation failed" },
-      { status: 500 }
+      { error: err.message || t("responses.imageFailed") },
+      { status: 500 },
     );
   }
 }

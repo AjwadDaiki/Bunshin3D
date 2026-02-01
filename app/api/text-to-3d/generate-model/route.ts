@@ -1,17 +1,19 @@
-import { NextResponse } from "next/server";
+﻿import { NextRequest, NextResponse } from "next/server";
 import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
+import { getApiTranslations } from "@/lib/api-i18n";
 
-// Étape B : Image-to-3D avec Trellis (Version firtoz/trellis)
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
+  const t = await getApiTranslations(request, "Api.TextToModel");
+
   try {
     const { imageUrl, userId } = await request.json();
 
-    console.log(`🖼️ Image-to-3D request: userId=${userId}`);
+    console.log(t("logs.request", { userId }));
 
     if (!userId || !imageUrl) {
       return NextResponse.json(
-        { error: "User ID and image URL are required" },
+        { error: t("responses.missingParams") },
         { status: 400 },
       );
     }
@@ -36,7 +38,6 @@ export async function POST(request: Request) {
       },
     );
 
-    // Vérifier crédits
     const { data: profile, error: profileError } = await supabase
       .from("profiles")
       .select("credits")
@@ -44,17 +45,19 @@ export async function POST(request: Request) {
       .single();
 
     if (profileError || !profile) {
-      return NextResponse.json({ error: "User not found" }, { status: 404 });
+      return NextResponse.json(
+        { error: t("responses.userNotFound") },
+        { status: 404 },
+      );
     }
 
     if (profile.credits < 1) {
       return NextResponse.json(
-        { error: "Insufficient credits" },
+        { error: t("responses.insufficientCredits") },
         { status: 400 },
       );
     }
 
-    // --- APPEL REPLICATE (Mise à jour firtoz/trellis) ---
     const response = await fetch("https://api.replicate.com/v1/predictions", {
       method: "POST",
       headers: {
@@ -62,15 +65,14 @@ export async function POST(request: Request) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        // Version mise à jour basée sur ton snippet
         version:
           "e8f6c45206993f297372f5436b90350817bd9b4a0d52d2a76df50c1c8afa2b3c",
         input: {
-          images: [imageUrl], // Trellis attend parfois un tableau
+          images: [imageUrl],
           texture_size: 2048,
           mesh_simplify: 0.9,
           generate_model: true,
-          save_gaussian_ply: false, // On a juste besoin du GLB
+          save_gaussian_ply: false,
           ss_sampling_steps: 38,
         },
       }),
@@ -78,69 +80,48 @@ export async function POST(request: Request) {
 
     if (!response.ok) {
       const errorText = await response.text();
-      console.error("❌ Replicate API error:", response.status, errorText);
+      console.error(t("errors.replicateApi"), response.status, errorText);
 
       if (response.status === 429) {
         return NextResponse.json(
-          {
-            error: "Server busy (Rate Limit). Please try again in 30 seconds.",
-          },
+          { error: t("responses.rateLimited") },
           { status: 429 },
         );
       }
+
       throw new Error(
-        `Replicate API failed: ${response.status} - ${errorText}`,
+        t("errors.replicateFailed", { status: response.status, message: errorText }),
       );
     }
 
     const prediction = await response.json();
 
-    // Déduction du crédit
     const { error: deductError } = await supabase.rpc("decrement_credits", {
       target_user_id: userId,
       amount: 1,
     });
 
     if (deductError) {
-      console.error("❌ Failed to deduct credits:", deductError);
-    } else {
-      console.log("✅ Credit deducted successfully");
+      console.error(t("errors.deductFailed", { message: deductError.message }));
     }
 
-    // Insert generation with error handling
-    const { data: insertedGen, error: insertError } = await supabase
-      .from("generations")
-      .insert({
-        user_id: userId,
-        status: "processing",
-        prediction_id: prediction.id,
-        type: "text_to_3d_trellis",
-        created_at: new Date().toISOString(),
-      })
-      .select()
-      .single();
-
-    if (insertError) {
-      console.error("❌ Failed to insert generation:", insertError);
-      // Return error but still provide prediction ID for polling
-      return NextResponse.json({
-        predictionId: prediction.id,
-        status: prediction.status,
-        warning: "Generation tracking failed but model is processing"
-      });
-    }
-
-    console.log("✅ Generation created:", insertedGen.id, "with prediction_id:", prediction.id);
+    await supabase.from("generations").insert({
+      user_id: userId,
+      status: "processing",
+      prediction_id: prediction.id,
+      type: "text_to_3d",
+      source_image_url: imageUrl,
+      created_at: new Date().toISOString(),
+    });
 
     return NextResponse.json({
       predictionId: prediction.id,
       status: prediction.status,
-      generationId: insertedGen.id
     });
   } catch (err: any) {
-    console.error("❌ Image-to-3D Error:", err.message);
+    console.error(t("errors.requestFailed", { message: err.message }));
     return NextResponse.json(
-      { error: err.message || "3D generation failed" },
+      { error: err.message || t("responses.generationFailed") },
       { status: 500 },
     );
   }

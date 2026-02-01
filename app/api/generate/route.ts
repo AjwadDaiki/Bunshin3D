@@ -1,19 +1,22 @@
-import { NextResponse } from "next/server";
+﻿import { NextRequest, NextResponse } from "next/server";
 import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
+import { getApiTranslations } from "@/lib/api-i18n";
 
 export const maxDuration = 300;
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
+  const t = await getApiTranslations(request, "Api.Generate");
+
   try {
     const { imageUrl, userId } = await request.json();
 
-    console.log(`🖼️ Image-to-3D Standard request: userId=${userId}`);
+    console.log(t("logs.request", { userId }));
 
     if (!userId || !imageUrl) {
       return NextResponse.json(
-        { error: "User ID and image URL are required" },
-        { status: 400 }
+        { error: t("responses.missingParams") },
+        { status: 400 },
       );
     }
 
@@ -29,12 +32,12 @@ export async function POST(request: Request) {
           setAll(cookiesToSet) {
             try {
               cookiesToSet.forEach(({ name, value, options }) =>
-                cookieStore.set(name, value, options)
+                cookieStore.set(name, value, options),
               );
             } catch {}
           },
         },
-      }
+      },
     );
 
     const { data: profile, error: profileError } = await supabase
@@ -44,43 +47,40 @@ export async function POST(request: Request) {
       .single();
 
     if (profileError || !profile) {
-      console.error("❌ User profile not found:", profileError);
+      console.error(t("errors.profileNotFound"), profileError);
       return NextResponse.json(
-        { error: "User not found" },
-        { status: 404 }
+        { error: t("responses.userNotFound") },
+        { status: 404 },
       );
     }
 
-    console.log(`📊 User ${userId} has ${profile.credits} credits`);
+    console.log(t("logs.credits", { userId, credits: profile.credits }));
 
     if (profile.credits < 1) {
-      console.error("❌ Insufficient credits");
+      console.error(t("errors.insufficientCredits"));
       return NextResponse.json(
-        { error: "Insufficient credits" },
-        { status: 400 }
+        { error: t("responses.insufficientCredits") },
+        { status: 400 },
       );
     }
 
-    console.log(`💳 Calling decrement_credits for user ${userId}`);
-    const { data: rpcData, error: deductError } = await supabase.rpc("decrement_credits", {
+    console.log(t("logs.decrementCredits", { userId }));
+    const { error: deductError } = await supabase.rpc("decrement_credits", {
       target_user_id: userId,
       amount: 1,
     });
 
     if (deductError) {
-      console.error("❌ Credit deduction error:", {
-        message: deductError.message,
+      console.error(t("errors.deductFailed", { message: deductError.message }), {
         details: deductError.details,
         hint: deductError.hint,
         code: deductError.code,
       });
       return NextResponse.json(
-        { error: `Failed to deduct credits: ${deductError.message}` },
-        { status: 500 }
+        { error: t("responses.deductFailed", { message: deductError.message }) },
+        { status: 500 },
       );
     }
-
-    console.log(`✅ 1 credit deducted from user ${userId}`, rpcData);
 
     const response = await fetch("https://api.replicate.com/v1/predictions", {
       method: "POST",
@@ -89,7 +89,8 @@ export async function POST(request: Request) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        version: "e8f6c45206993f297372f5436b90350817bd9b4a0d52d2a76df50c1c8afa2b3c",
+        version:
+          "e8f6c45206993f297372f5436b90350817bd9b4a0d52d2a76df50c1c8afa2b3c",
         input: {
           images: [imageUrl],
           texture_size: 1024,
@@ -107,40 +108,32 @@ export async function POST(request: Request) {
       });
 
       const errorText = await response.text();
-      console.error("❌ Replicate API error:", errorText);
-      throw new Error(`Replicate API failed: ${response.status}`);
+      console.error(t("errors.replicateApi"), errorText);
+      throw new Error(t("errors.replicateFailed", { status: response.status }));
     }
 
     const prediction = await response.json();
 
-    // Insert generation with error handling
-    const { data: insertedGen, error: insertError } = await supabase
-      .from("generations")
-      .insert({
-        user_id: userId,
-        status: "processing",
-        prediction_id: prediction.id,
-        type: "image_to_3d_standard",
-        created_at: new Date().toISOString(),
-      })
-      .select()
-      .single();
+    await supabase.from("generations").insert({
+      user_id: userId,
+      status: "processing",
+      prediction_id: prediction.id,
+      type: "image_to_3d_standard",
+      source_image_url: imageUrl,
+      created_at: new Date().toISOString(),
+    });
 
-    if (insertError) {
-      console.error("❌ Failed to insert generation:", insertError);
-    } else {
-      console.log(`✅ Generation created: ${insertedGen.id} with prediction_id: ${prediction.id}`);
-    }
+    console.log(t("logs.generationStarted", { predictionId: prediction.id }));
 
     return NextResponse.json({
       predictionId: prediction.id,
       status: prediction.status,
     });
   } catch (err: any) {
-    console.error("❌ Image-to-3D Standard Error:", err.message);
+    console.error(t("errors.requestFailed", { message: err.message }));
     return NextResponse.json(
-      { error: err.message || "Image-to-3D generation failed" },
-      { status: 500 }
+      { error: err.message || t("responses.generationFailed") },
+      { status: 500 },
     );
   }
 }

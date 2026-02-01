@@ -10,10 +10,16 @@ import { routing } from "@/i18n/routing";
 import "../globals.css";
 import { cn } from "@/lib/utils";
 import { baseMetadataConfig } from "@/lib/seo-config";
-import Script from "next/script";
 import HeaderNew from "@/components/layout/HeaderNew";
 import FooterNew from "@/components/layout/FooterNew";
-import { organizationSchema } from "@/lib/schemas/organization";
+import HeadLinks from "@/components/layout/HeadLinks";
+import AnalyticsScripts from "@/components/layout/AnalyticsScripts";
+import ModelViewerScript from "@/components/layout/ModelViewerScript";
+import OTOBanner from "@/components/layout/OTOBanner";
+import { CurrencyProvider } from "@/components/providers/CurrencyProvider";
+import { OTOProvider } from "@/components/providers/OTOProvider";
+import BackgroundFX from "@/components/landing/BackgroundFX";
+import { generateAlternates, generateOGMetadata } from "@/lib/seo-utils";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,6 +42,7 @@ export async function generateMetadata({
 }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Metadata" });
+  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "https://bunshin3d.com";
 
   return {
     ...baseMetadataConfig,
@@ -48,28 +55,50 @@ export async function generateMetadata({
     keywords: t("keywords").split(", "),
     creator: t("creator"),
     publisher: t("publisher"),
+    category: "technology",
+    classification: "3D Modeling Software",
+    alternates: generateAlternates(locale, ""),
+    verification: {
+      google: process.env.GOOGLE_SITE_VERIFICATION,
+      yandex: process.env.YANDEX_VERIFICATION,
+      other: {
+        "msvalidate.01": process.env.BING_SITE_VERIFICATION || "",
+      },
+    },
     openGraph: {
-      type: "website",
-      locale: locale,
-      url: process.env.NEXT_PUBLIC_APP_URL,
+      ...generateOGMetadata(locale, "", t("ogTitle"), t("ogDescription")),
       siteName: t("ogSiteName"),
-      title: t("ogTitle"),
-      description: t("ogDescription"),
-      images: [
-        {
-          url: `${process.env.NEXT_PUBLIC_APP_URL}/og-image.jpg`,
-          width: 1200,
-          height: 630,
-          alt: t("ogImageAlt"),
-        },
-      ],
     },
     twitter: {
-      card: "summary_large_image",
+      card: "summary_large_image" as const,
+      site: "@bunshin3d",
+      creator: "@bunshin3d",
       title: t("twitterTitle"),
       description: t("twitterDescription"),
-      creator: "@bunshin3d",
-      images: [`${process.env.NEXT_PUBLIC_APP_URL}/og-image.jpg`],
+      images: {
+        url: `${baseUrl}/og-image.jpg`,
+        alt: t("ogImageAlt"),
+      },
+    },
+    other: {
+      ...baseMetadataConfig.other,
+      "theme-color": "#9945ff",
+      "google": "notranslate",
+      "DC.title": t("defaultTitle"),
+      "DC.creator": "Bunshin 3D",
+      "DC.subject": t("description"),
+      "DC.description": t("description"),
+      "DC.publisher": "Bunshin 3D",
+      "DC.language": locale,
+      "DC.type": "Software",
+      "DC.format": "text/html",
+      "rating": "general",
+      "distribution": "global",
+      "revisit-after": "3 days",
+      "mobile-web-app-capable": "yes",
+      "apple-mobile-web-app-capable": "yes",
+      "apple-mobile-web-app-status-bar-style": "black-translucent",
+      "format-detection": "telephone=no",
     },
   };
 }
@@ -89,68 +118,15 @@ export default async function LocaleLayout({
 
   setRequestLocale(locale);
   const messages = await getMessages();
+  const tCommon = await getTranslations({ locale, namespace: "Common" });
 
-  // Récupération de l'ID Google Analytics depuis l'environnement
   const gaId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS;
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 
   return (
     <html lang={locale} className="dark" suppressHydrationWarning>
       <head>
-        {/* Resource hints pour performance */}
-        <link rel="preconnect" href="https://ajax.googleapis.com" />
-        <link rel="dns-prefetch" href="https://ajax.googleapis.com" />
-        <link rel="preconnect" href={process.env.NEXT_PUBLIC_SUPABASE_URL} />
-        <link rel="dns-prefetch" href={process.env.NEXT_PUBLIC_SUPABASE_URL} />
-        {/* Google Analytics Preconnect */}
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
-
-        {/* Favicons & Icons */}
-        <link rel="icon" href="/favicon.ico" sizes="32x32" />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/icon-16x16.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/icon-32x32.png"
-        />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/apple-touch-icon.png"
-        />
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#9945ff" />
-
-        {/* PWA Manifest */}
-        <link rel="manifest" href="/manifest.json" />
-
-        {/* Windows Tiles */}
-        <meta name="msapplication-TileColor" content="#0a0a0f" />
-        <meta name="msapplication-TileImage" content="/mstile-150x150.png" />
-
-        {/* Theme Colors */}
-        <meta name="theme-color" content="#9945ff" />
-        <meta name="color-scheme" content="dark" />
-
-        {/* Preload model-viewer avec crossorigin pour éviter l'avertissement CORS */}
-        <link
-          rel="preload"
-          href="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"
-          as="script"
-          crossOrigin="anonymous"
-        />
-
-        {/* Schema.org Organization */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationSchema),
-          }}
-        />
+        <HeadLinks supabaseUrl={supabaseUrl} />
       </head>
       <body
         className={cn(
@@ -159,43 +135,25 @@ export default async function LocaleLayout({
           geistMono.variable,
         )}
       >
-        {/* Skip link pour accessibilité */}
         <a href="#main-content" className="skip-link">
-          Skip to main content
+          {tCommon("skipToContent")}
         </a>
 
-        {/* --- GOOGLE ANALYTICS --- */}
-        {gaId && (
-          <>
-            <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
-              strategy="afterInteractive"
-            />
-            <Script id="google-analytics" strategy="afterInteractive">
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${gaId}', {
-                  page_path: window.location.pathname,
-                });
-              `}
-            </Script>
-          </>
-        )}
+        <AnalyticsScripts gaId={gaId} />
+        <ModelViewerScript />
 
-        {/* --- CHARGEMENT DU MOTEUR 3D --- */}
-        <Script
-          type="module"
-          src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"
-          strategy="lazyOnload"
-          crossOrigin="anonymous"
-        />
-
+        <BackgroundFX />
         <NextIntlClientProvider messages={messages}>
-          <HeaderNew />
-          <main id="main-content">{children}</main>
-          <FooterNew />
+          <CurrencyProvider>
+            <OTOProvider>
+              <div className="sticky top-0 z-50">
+                <OTOBanner />
+                <HeaderNew />
+              </div>
+              <main id="main-content" className="relative z-10">{children}</main>
+              <FooterNew />
+            </OTOProvider>
+          </CurrencyProvider>
         </NextIntlClientProvider>
       </body>
     </html>
