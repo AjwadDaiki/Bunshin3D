@@ -2,32 +2,15 @@
 
 import { useState, useEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
-import { Cube, CubeFocus, Crown, Star } from "@phosphor-icons/react";
+import { Cube, Crown, Star } from "@phosphor-icons/react";
 import { showcaseItems, type ShowcaseItem } from "@/lib/showcase-data";
-
-function ShowcaseBadge({ type }: { type: "standard" | "premium" }) {
-  const t = useTranslations("Showcase");
-  if (type === "premium") {
-    return (
-      <span className="inline-flex items-center gap-1 rounded-full bg-linear-to-r from-amber-500/20 to-yellow-500/20 border border-amber-500/30 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-amber-400 shadow-lg shadow-amber-500/10">
-        <Crown className="h-3 w-3" weight="fill" />
-        {t("badges.premium")}
-      </span>
-    );
-  }
-  return (
-    <span className="inline-flex items-center gap-1 rounded-full bg-white/5 border border-white/10 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-zinc-400">
-      <Star className="h-3 w-3" weight="fill" />
-      {t("badges.standard")}
-    </span>
-  );
-}
 
 function ShowcaseCard({ item }: { item: ShowcaseItem }) {
   const t = useTranslations("Showcase");
   const [isVisible, setIsVisible] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
   const itemLabel = t(`items.${item.id}`);
+  const isPremium = item.type === "premium";
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -46,9 +29,30 @@ function ShowcaseCard({ item }: { item: ShowcaseItem }) {
   return (
     <div
       ref={cardRef}
-      className="group relative aspect-square overflow-hidden rounded-2xl border border-white/6 bg-zinc-900/60 shadow-xl transition-all duration-300 hover:scale-[1.03] hover:border-white/10 hover:shadow-2xl hover:shadow-purple-500/5"
+      className={`group relative aspect-square overflow-hidden rounded-xl border bg-[#111] transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${
+        isPremium
+          ? "border-blue-500/20 hover:border-blue-500/40 hover:shadow-blue-500/10"
+          : "border-white/6 hover:border-white/12 hover:shadow-black/20"
+      }`}
     >
-      {/* 3D Viewer */}
+      {/* Type badge */}
+      <div className="absolute top-3 left-3 z-30">
+        <span
+          className={`inline-flex items-center gap-1 rounded-md px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider backdrop-blur-sm ${
+            isPremium
+              ? "bg-blue-500/20 text-blue-300 border border-blue-500/20"
+              : "bg-white/10 text-neutral-400 border border-white/6"
+          }`}
+        >
+          {isPremium ? (
+            <Crown className="w-2.5 h-2.5" weight="fill" />
+          ) : (
+            <Star className="w-2.5 h-2.5" weight="fill" />
+          )}
+          {isPremium ? t("badges.premium") : t("badges.standard")}
+        </span>
+      </div>
+
       <div className="absolute inset-0">
         {isVisible ? (
           <model-viewer
@@ -59,8 +63,7 @@ function ShowcaseCard({ item }: { item: ShowcaseItem }) {
             auto-rotate
             auto-rotate-delay="0"
             rotation-per-second="30deg"
-            shadow-intensity="1"
-            shadow-softness="0.5"
+            shadow-intensity="0.5"
             exposure="1"
             environment-image="neutral"
             disable-zoom
@@ -70,33 +73,22 @@ function ShowcaseCard({ item }: { item: ShowcaseItem }) {
             <div slot="progress-bar"></div>
           </model-viewer>
         ) : (
-          <div className="flex h-full w-full items-center justify-center bg-zinc-900/50 animate-pulse">
+          <div className="flex h-full w-full items-center justify-center bg-[#111]">
             <Cube
-              className="h-10 w-10 text-zinc-700"
+              className="h-8 w-8 text-neutral-700"
               weight="duotone"
             />
           </div>
         )}
       </div>
 
-      {/* Gradient overlay */}
-      <div className="pointer-events-none absolute inset-0 z-10 bg-linear-to-t from-black/80 via-black/20 to-transparent" />
-
-      {/* Badge */}
-      <div className="absolute left-3 top-3 z-20">
-        <ShowcaseBadge type={item.type} />
-      </div>
-
-      {/* Bottom info */}
-      <div className="absolute bottom-0 left-0 right-0 z-20 p-4">
-        <h3 className="text-sm font-semibold text-white capitalize">
+      <div className="absolute bottom-0 left-0 right-0 z-20 p-4 bg-linear-to-t from-black/70 via-black/40 to-transparent">
+        <h3 className="text-sm font-medium text-white capitalize">
           {itemLabel}
         </h3>
-      </div>
-
-      {/* Hover icon */}
-      <div className="absolute right-3 top-3 z-20 flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-white/5 opacity-0 backdrop-blur-md transition-all group-hover:opacity-100 group-hover:bg-indigo-500 group-hover:border-indigo-500/50">
-        <CubeFocus className="h-4 w-4 text-white" weight="duotone" />
+        <p className="text-[10px] text-neutral-400 mt-0.5 uppercase tracking-wider">
+          {isPremium ? t("badges.premium") : t("badges.standard")}
+        </p>
       </div>
     </div>
   );
@@ -108,23 +100,19 @@ export default function ShowcaseSection() {
   return (
     <section
       id="showcase"
-      className="relative z-10 py-24"
+      className="relative z-10 py-24 md:py-36"
     >
-      <div className="container mx-auto px-4">
-        {/* Header */}
+      <div className="container mx-auto px-4 max-w-6xl">
         <div className="mb-16 text-center">
-          <h2 className="text-sm font-mono text-zinc-500 uppercase tracking-widest flex items-center justify-center gap-3">
-            <span className="h-px w-8 bg-zinc-800" />
+          <p className="text-sm font-mono text-blue-400 uppercase tracking-widest mb-4">
             {t("title")}
-            <span className="h-px w-8 bg-zinc-800" />
-          </h2>
-          <p className="mt-4 text-lg text-zinc-400 max-w-2xl mx-auto">
-            {t("subtitle")}
           </p>
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white max-w-3xl mx-auto">
+            {t("subtitle")}
+          </h2>
         </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:gap-6">
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
           {showcaseItems.map((item) => (
             <ShowcaseCard key={item.id} item={item} />
           ))}

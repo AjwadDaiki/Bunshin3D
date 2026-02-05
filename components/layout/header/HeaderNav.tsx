@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
@@ -21,8 +21,8 @@ export default function HeaderNav({ pathname, isAdmin }: Props) {
       <Link
         href="/studio"
         className={cn(
-          "text-sm font-medium transition-colors hover:text-brand-primary",
-          pathname === "/studio" ? "text-brand-primary" : "text-gray-300",
+          "text-sm font-medium transition-colors hover:text-white",
+          pathname === "/studio" ? "text-white" : "text-neutral-400",
         )}
       >
         {t("studio")}
@@ -30,8 +30,8 @@ export default function HeaderNav({ pathname, isAdmin }: Props) {
       <Link
         href="/pricing"
         className={cn(
-          "text-sm font-medium transition-colors hover:text-brand-primary",
-          pathname === "/pricing" ? "text-brand-primary" : "text-gray-300",
+          "text-sm font-medium transition-colors hover:text-white",
+          pathname === "/pricing" ? "text-white" : "text-neutral-400",
         )}
       >
         {t("pricing")}
@@ -40,10 +40,8 @@ export default function HeaderNav({ pathname, isAdmin }: Props) {
         <Link
           href="/admin"
           className={cn(
-            "text-sm font-bold uppercase tracking-wider flex items-center gap-1.5 px-3 py-1 rounded-full border transition-all",
-            pathname === "/admin"
-              ? "bg-red-500/10 border-red-500/50 text-red-400"
-              : "bg-white/5 border-white/10 text-gray-300 hover:bg-white/10 hover:text-white",
+            "text-sm font-medium flex items-center gap-1.5 transition-colors hover:text-white",
+            pathname === "/admin" ? "text-white" : "text-neutral-400",
           )}
         >
           <ShieldCheck className="w-4 h-4" weight="fill" />

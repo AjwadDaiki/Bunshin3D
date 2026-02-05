@@ -43,9 +43,9 @@ export default function AdminUserTable({
 
   return (
     <>
-      <div className="overflow-x-auto rounded-xl border border-white/10">
+      <div className="overflow-x-auto rounded-xl border border-white/6">
         <table className="w-full text-sm">
-          <thead className="bg-white/5 text-gray-400 uppercase text-xs">
+          <thead className="bg-[#191919] text-gray-400 uppercase text-xs">
             <tr>
               <th className="px-6 py-4 text-left">{t("Tables.colUser")}</th>
               <th className="px-6 py-4 text-left">{t("Users.role")}</th>
@@ -55,7 +55,7 @@ export default function AdminUserTable({
               <th className="px-6 py-4 text-right">{t("Users.actions")}</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-white/5">
+          <tbody className="divide-y divide-white/6">
             {users.map((user) => (
               <AdminUserRow
                 key={user.id}

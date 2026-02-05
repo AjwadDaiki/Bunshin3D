@@ -22,7 +22,8 @@
     "twitterHandle": "@bunshin3d",
     "organizationName": "Bunshin 3D",
     "organizationDescription": "AI-powered 3D generation platform",
-    "contactType": "Customer Support"
+    "contactType": "Customer Support",
+    "organizationSlogan": "Turn Any Image into a 3D Model"
   },
   "Navigation": {
     "brandName": "BUNSHIN",
@@ -59,12 +60,16 @@
       "operatingSystem": "Web"
     },
     "Hero": {
+      "badge": "AI-Powered 3D Generation",
       "title": "Turn 2D Pixels into",
       "titleHighlight": "3D Reality.",
       "subtitle": "The most advanced AI pipeline for 3D Printing and Game Dev. Convert any image to GLB/STL in seconds with production-grade topology.",
       "ctaPrimary": "Start Creating Free",
       "ctaSecondary": "View Showcase",
-      "trustedBy": "TRUSTED BY 10,000+ MAKERS & DEVS"
+      "trustedBy": "TRUSTED BY 10,000+ MAKERS & DEVS",
+      "freeCredits": "2 free credits on signup",
+      "fastGeneration": "Fast generation",
+      "noSubscription": "No subscription required"
     },
     "Showcase": {
       "title": "Generated with Bunshin",
@@ -78,9 +83,16 @@
       "topologyTitle": "Clean Topology",
       "topologyDesc": "Quad-based mesh optimization for animation and rigging.",
       "exportTitle": "Multi-Format",
-      "exportDesc": "Native export to GLB, FBX, OBJ and watertight STL for printing."
+      "exportDesc": "Native export to GLB, FBX, OBJ and watertight STL for printing.",
+      "textureTitle": "HD Textures",
+      "textureDesc": "Automatic PBR textures with albedo, normal and roughness maps.",
+      "commercialTitle": "Commercial License",
+      "commercialDesc": "Full commercial rights on all generated models. Use them anywhere.",
+      "instantTitle": "Instant Download",
+      "instantDesc": "Download your models instantly in GLB, FBX, OBJ or STL format."
     },
     "Steps": {
+      "label": "How It Works",
       "title": "How it Works",
       "step1": "Upload Image",
       "step1Desc": "Drag & drop any PNG, JPG or WEBP.",
@@ -380,7 +392,9 @@
     "Header": {
       "title": "Simple, Transparent",
       "titleHighlight": "Pricing.",
-      "subtitle": "Purchase credits as you go. No monthly subscription traps. Your credits never expire."
+      "subtitle": "Purchase credits as you go. No monthly subscription traps. Your credits never expire.",
+      "socialProof": "Trusted by creators worldwide",
+      "guarantee": "100% satisfaction guaranteed — contact us anytime"
     },
     "Badges": {
       "popular": "RECOMMENDED",
@@ -396,7 +410,8 @@
     "Card": {
       "perPack": "per pack",
       "perCredit": "/ credit",
-      "savings": "Save {percent}%"
+      "savings": "Save {percent}%",
+      "securePayment": "Secure payment via Stripe"
     },
     "Packs": {
       "Discovery": {

@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { Mode } from "./types";
 import StudioImageInput from "./StudioImageInput";
@@ -27,7 +27,7 @@ export default function StudioInputPanel({
   onGenerate,
 }: Props) {
   return (
-    <div className="glass-card p-6 rounded-2xl">
+    <div className="bg-[#111] border border-white/6 rounded-xl p-6">
       {mode === "image" ? (
         <StudioImageInput imagePreview={imagePreview} onFileSelect={onFileSelect} />
       ) : (

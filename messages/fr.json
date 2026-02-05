@@ -22,7 +22,8 @@
     "twitterHandle": "@bunshin3d",
     "organizationName": "Bunshin 3D",
     "organizationDescription": "Plateforme de génération 3D propulsée par l’IA",
-    "contactType": "Support client"
+    "contactType": "Support client",
+    "organizationSlogan": "Transformez n'importe quelle image en modèle 3D"
   },
   "Navigation": {
     "brandName": "BUNSHIN",
@@ -59,12 +60,16 @@
       "operatingSystem": "Web"
     },
     "Hero": {
+      "badge": "Génération 3D par IA",
       "title": "Transformez des Pixels 2D en",
       "titleHighlight": "Réalité 3D.",
       "subtitle": "Le pipeline IA le plus avancé pour l'Impression 3D et le Développement de Jeux. Convertissez n'importe quelle image en GLB/STL en secondes avec une topologie de qualité professionnelle.",
       "ctaPrimary": "Créer Gratuitement",
       "ctaSecondary": "Voir la Galerie",
-      "trustedBy": "APPROUVÉ PAR 10 000+ CRÉATEURS & DÉVELOPPEURS"
+      "trustedBy": "APPROUVÉ PAR 10 000+ CRÉATEURS & DÉVELOPPEURS",
+      "freeCredits": "2 crédits offerts à l'inscription",
+      "fastGeneration": "Génération rapide",
+      "noSubscription": "Aucun abonnement requis"
     },
     "Showcase": {
       "title": "Généré avec Bunshin",
@@ -78,9 +83,16 @@
       "topologyTitle": "Topologie Propre",
       "topologyDesc": "Optimisation de maillage quad pour l'animation et le rigging.",
       "exportTitle": "Multi-Format",
-      "exportDesc": "Export natif vers GLB, FBX, OBJ et STL étanche pour l'impression."
+      "exportDesc": "Export natif vers GLB, FBX, OBJ et STL étanche pour l'impression.",
+      "textureTitle": "Textures HD",
+      "textureDesc": "Textures PBR automatiques avec maps albedo, normal et rugosité.",
+      "commercialTitle": "Licence Commerciale",
+      "commercialDesc": "Droits commerciaux complets sur tous les modèles générés. Utilisez-les partout.",
+      "instantTitle": "Téléchargement Instantané",
+      "instantDesc": "Téléchargez vos modèles instantanément en GLB, FBX, OBJ ou STL."
     },
     "Steps": {
+      "label": "Comment ça marche",
       "title": "Comment ça Marche",
       "step1": "Uploader une Image",
       "step1Desc": "Glissez-déposez n'importe quel PNG, JPG ou WEBP.",
@@ -380,7 +392,9 @@
     "Header": {
       "title": "Simple, Transparent",
       "titleHighlight": "Tarifs.",
-      "subtitle": "Achetez des crédits au fur et à mesure. Pas de piège d'abonnement mensuel. Vos crédits n'expirent jamais."
+      "subtitle": "Achetez des crédits au fur et à mesure. Pas de piège d'abonnement mensuel. Vos crédits n'expirent jamais.",
+      "socialProof": "Approuvé par les créateurs du monde entier",
+      "guarantee": "Satisfaction garantie à 100% — contactez-nous à tout moment"
     },
     "Badges": {
       "popular": "RECOMMANDÉ",
@@ -396,7 +410,8 @@
     "Card": {
       "perPack": "par pack",
       "perCredit": "/ credit",
-      "savings": "-{percent}% par credit"
+      "savings": "-{percent}% par credit",
+      "securePayment": "Paiement sécurisé via Stripe"
     },
     "Packs": {
       "Discovery": {

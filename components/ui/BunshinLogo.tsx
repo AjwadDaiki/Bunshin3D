@@ -21,12 +21,9 @@ export const BunshinLogo = ({
         alt={t("brandLogoAlt")}
         fill
         sizes="(max-width: 768px) 96px, 128px"
-        className={cn("object-contain", animated && "animate-logo-glow")}
+        className="object-contain"
         priority
       />
-      {animated && (
-        <div className="absolute inset-0 bg-brand-primary/40 blur-2xl rounded-full -z-10 animate-pulse-slow" />
-      )}
     </div>
   );
 };

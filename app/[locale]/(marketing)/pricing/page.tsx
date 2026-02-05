@@ -75,17 +75,19 @@ export default async function PricingPage({
       <JsonLd data={itemListSchema} />
       <JsonLd data={webPageSchema} />
 
-      <div className="min-h-screen text-white pt-32 pb-20 px-4 relative">
+      <div className="min-h-screen text-white pt-32 pb-20 px-4 relative overflow-hidden">
+        {/* Background glow */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-blue-500/5 rounded-full blur-[120px] pointer-events-none" />
 
         {/* Header */}
-        <div className="relative z-10 container mx-auto text-center space-y-6 mb-10">
+        <div className="relative z-10 container mx-auto text-center space-y-6 mb-16">
           <h1 className="text-5xl md:text-6xl font-bold tracking-tighter">
             {tHeader("title")} <br className="hidden md:block" />
-            <span className="bg-linear-to-r from-white via-indigo-200 to-indigo-500 bg-clip-text text-transparent">
+            <span className="text-blue-500">
               {tHeader("titleHighlight")}
             </span>
           </h1>
-          <p className="text-xl text-zinc-400 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl text-neutral-400 max-w-2xl mx-auto leading-relaxed">
             {tHeader("subtitle")}
           </p>
         </div>
@@ -137,7 +139,7 @@ export default async function PricingPage({
             {faqItems.map((item, i) => (
               <details
                 key={i}
-                className="group rounded-2xl border border-white/10 bg-zinc-900/50 overflow-hidden"
+                className="group rounded-xl border border-white/6 bg-[#111] overflow-hidden"
               >
                 <summary className="flex items-center justify-between cursor-pointer px-6 py-5 text-left font-medium text-zinc-200 hover:text-white transition-colors">
                   <span>{item.q}</span>

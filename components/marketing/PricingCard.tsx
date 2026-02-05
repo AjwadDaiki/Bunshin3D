@@ -50,42 +50,27 @@ export default function PricingCard({
   return (
     <div
       className={cn(
-        "relative flex flex-col p-8 rounded-3xl border transition-all duration-300 group",
+        "group relative flex flex-col bg-[#111] rounded-xl p-8 border transition-all duration-300",
         isPopular
-          ? "bg-zinc-900/80 border-indigo-500/50 shadow-[0_0_40px_-10px_rgba(99,102,241,0.3)] scale-105 z-10"
-          : isBestValue
-            ? "bg-zinc-900/60 border-amber-500/30 hover:border-amber-500/50 hover:bg-zinc-900/70"
-            : "bg-zinc-950/50 border-white/10 hover:border-white/20 hover:bg-zinc-900/50",
+          ? "border-blue-500/30 md:scale-105 shadow-lg shadow-blue-500/5 hover:shadow-xl hover:shadow-blue-500/10"
+          : "border-white/6 hover:border-white/12 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20",
       )}
     >
-      {/* Popular badge */}
-      {isPopular && popularLabel && (
-        <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-indigo-500 text-white text-xs font-bold rounded-full tracking-widest shadow-lg">
-          {popularLabel}
-        </div>
+      {/* Top accent line for popular card */}
+      {isPopular && (
+        <div className="absolute top-0 left-6 right-6 h-px bg-linear-to-r from-transparent via-blue-500/50 to-transparent" />
       )}
-
-      {/* Best value badge */}
-      {isBestValue && bestValueLabel && (
-        <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-amber-500 to-orange-500 text-white text-xs font-bold rounded-full tracking-widest shadow-lg">
-          {bestValueLabel}
-        </div>
-      )}
-
       <div className="mb-6 space-y-4">
-        <div
-          className={cn(
-            "w-12 h-12 rounded-xl flex items-center justify-center border",
-            isPopular
-              ? "bg-indigo-500/10 border-indigo-500/30"
-              : isBestValue
-                ? "bg-amber-500/10 border-amber-500/30"
-                : "bg-zinc-900 border-white/5",
-          )}
-        >
+        <div className="w-12 h-12 rounded-lg flex items-center justify-center bg-[#191919] border border-white/6">
           {icon}
         </div>
         <div>
+          {isPopular && popularLabel && (
+            <span className="text-xs font-medium text-blue-400 uppercase tracking-wider">{popularLabel}</span>
+          )}
+          {isBestValue && bestValueLabel && (
+            <span className="text-xs font-medium text-emerald-400 uppercase tracking-wider">{bestValueLabel}</span>
+          )}
           <h3 className="text-lg font-bold text-zinc-200 tracking-wide">
             {title}
           </h3>
@@ -105,20 +90,13 @@ export default function PricingCard({
               {pricePerCredit} {t("Card.perCredit")}
             </span>
             {savingsPercent > 0 && (
-              <span
-                className={cn(
-                  "text-xs font-bold px-2 py-0.5 rounded-full",
-                  isBestValue
-                    ? "bg-amber-500/15 text-amber-400"
-                    : "bg-emerald-500/15 text-emerald-400",
-                )}
-              >
+              <span className="text-emerald-500 text-xs font-medium">
                 {t("Card.savings", { percent: savingsPercent })}
               </span>
             )}
           </div>
 
-          <div className="text-sm font-mono text-indigo-400 mt-2 font-bold">
+          <div className="text-sm font-mono text-blue-500 mt-2 font-bold">
             {credits}
           </div>
         </div>
@@ -136,14 +114,7 @@ export default function PricingCard({
             className="flex items-start gap-3 text-sm text-zinc-300"
           >
             <Check
-              className={cn(
-                "w-5 h-5 shrink-0",
-                isPopular
-                  ? "text-indigo-400"
-                  : isBestValue
-                    ? "text-amber-400"
-                    : "text-zinc-500",
-              )}
+              className="w-5 h-5 shrink-0 text-blue-500"
               weight="bold"
             />
             <span>{feature}</span>
@@ -151,16 +122,21 @@ export default function PricingCard({
         ))}
       </ul>
 
+      <div className="text-xs text-neutral-500 flex items-center gap-1.5 mb-6">
+        <Check className="w-3.5 h-3.5" weight="bold" />
+        {t("Card.securePayment")}
+      </div>
+
       <button
         onClick={onSelect}
         disabled={isLoading}
         className={cn(
-          "w-full h-12 rounded-xl font-bold text-sm transition-all duration-300 flex items-center justify-center gap-2",
+          "w-full h-12 rounded-lg font-bold text-sm transition-all duration-200 flex items-center justify-center gap-2",
           isPopular
-            ? "bg-white text-black hover:bg-indigo-50 shadow-[0_0_20px_rgba(255,255,255,0.3)]"
+            ? "bg-blue-500 text-white hover:bg-blue-600"
             : isBestValue
-              ? "bg-gradient-to-r from-amber-500 to-orange-500 text-white hover:from-amber-400 hover:to-orange-400 shadow-[0_0_20px_rgba(245,158,11,0.2)]"
-              : "bg-zinc-800 text-white hover:bg-zinc-700 border border-white/5",
+              ? "bg-white text-neutral-950 hover:bg-neutral-200"
+              : "bg-transparent border border-white/10 text-white hover:bg-white/5",
           isLoading && "opacity-70 cursor-not-allowed",
         )}
       >
@@ -169,13 +145,6 @@ export default function PricingCard({
         )}
         {cta}
       </button>
-
-      {isPopular && (
-        <div className="absolute inset-0 bg-gradient-to-b from-indigo-500/5 to-transparent rounded-3xl pointer-events-none" />
-      )}
-      {isBestValue && (
-        <div className="absolute inset-0 bg-gradient-to-b from-amber-500/5 to-transparent rounded-3xl pointer-events-none" />
-      )}
     </div>
   );
 }

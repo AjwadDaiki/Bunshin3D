@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useTranslations } from "next-intl";
 
@@ -13,14 +13,14 @@ export default function StudioTextInput({ prompt, onChange, disabled }: Props) {
 
   return (
     <>
-      <label className="block text-sm font-bold text-gray-400 uppercase tracking-wider mb-3">
+      <label className="block text-sm font-bold text-neutral-400 uppercase tracking-wider mb-3">
         {t("TextMode.promptLabel")}
       </label>
       <textarea
         value={prompt}
         onChange={(event) => onChange(event.target.value)}
         placeholder={t("TextMode.promptPlaceholder")}
-        className="w-full h-40 px-4 py-3 bg-surface-3 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-primary/50 focus:border-brand-primary transition-all resize-none text-white placeholder-gray-600"
+        className="w-full h-40 px-4 py-3 bg-[#0a0a0a] border border-white/6 rounded-xl focus:outline-none focus:ring-1 focus:ring-white/20 focus:border-white/20 transition-all resize-none text-white placeholder-neutral-600"
         disabled={disabled}
       />
     </>

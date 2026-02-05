@@ -22,7 +22,8 @@
     "twitterHandle": "@bunshin3d",
     "organizationName": "Bunshin 3D",
     "organizationDescription": "KI-gestützte Plattform zur 3D-Generierung",
-    "contactType": "Kundensupport"
+    "contactType": "Kundensupport",
+    "organizationSlogan": "Verwandeln Sie jedes Bild in ein 3D-Modell"
   },
   "Navigation": {
     "brandName": "BUNSHIN",
@@ -59,12 +60,16 @@
       "operatingSystem": "Web"
     },
     "Hero": {
+      "badge": "KI-gestützte 3D-Generierung",
       "title": "Verwandeln Sie 2D-Pixel in",
       "titleHighlight": "3D-Realität.",
       "subtitle": "Die fortschrittlichste KI-Pipeline für 3D-Druck und Spieleentwicklung. Konvertieren Sie jedes Bild in GLB/STL in Sekunden mit professioneller Topologie.",
       "ctaPrimary": "Kostenlos erstellen",
       "ctaSecondary": "Galerie ansehen",
-      "trustedBy": "VERTRAUT VON 10.000+ KREATIVEN & ENTWICKLERN"
+      "trustedBy": "VERTRAUT VON 10.000+ KREATIVEN & ENTWICKLERN",
+      "freeCredits": "2 kostenlose Credits bei Anmeldung",
+      "fastGeneration": "Schnelle Generierung",
+      "noSubscription": "Kein Abonnement erforderlich"
     },
     "Showcase": {
       "title": "Mit Bunshin generiert",
@@ -78,9 +83,16 @@
       "topologyTitle": "Saubere Topologie",
       "topologyDesc": "Quad-basierte Mesh-Optimierung für Animation und Rigging.",
       "exportTitle": "Multi-Format",
-      "exportDesc": "Nativer Export zu GLB, FBX, OBJ und wasserdichtem STL für Druck."
+      "exportDesc": "Nativer Export zu GLB, FBX, OBJ und wasserdichtem STL für Druck.",
+      "textureTitle": "HD-Texturen",
+      "textureDesc": "Automatische PBR-Texturen mit Albedo-, Normal- und Roughness-Maps.",
+      "commercialTitle": "Kommerzielle Lizenz",
+      "commercialDesc": "Volle kommerzielle Rechte an allen generierten Modellen. Überall einsetzbar.",
+      "instantTitle": "Sofortiger Download",
+      "instantDesc": "Laden Sie Ihre Modelle sofort im GLB-, FBX-, OBJ- oder STL-Format herunter."
     },
     "Steps": {
+      "label": "So funktioniert's",
       "title": "Wie es funktioniert",
       "step1": "Bild hochladen",
       "step1Desc": "Ziehen Sie ein PNG, JPG oder WEBP per Drag & Drop.",
@@ -380,7 +392,9 @@
     "Header": {
       "title": "Einfach, Transparent",
       "titleHighlight": "Preise.",
-      "subtitle": "Kaufen Sie Credits nach Bedarf. Keine monatlichen Abo-Fallen. Ihre Credits verfallen nie."
+      "subtitle": "Kaufen Sie Credits nach Bedarf. Keine monatlichen Abo-Fallen. Ihre Credits verfallen nie.",
+      "socialProof": "Vertrauenswürdig für Kreative weltweit",
+      "guarantee": "100% Zufriedenheitsgarantie — kontaktieren Sie uns jederzeit"
     },
     "Badges": {
       "popular": "EMPFOHLEN",
@@ -396,7 +410,8 @@
     "Card": {
       "perPack": "pro Paket",
       "perCredit": "/ Credit",
-      "savings": "{percent}% sparen"
+      "savings": "{percent}% sparen",
+      "securePayment": "Sichere Zahlung über Stripe"
     },
     "Packs": {
       "Discovery": {

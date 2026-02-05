@@ -24,10 +24,15 @@ export function useAuthFlow(t: Translator): AuthFlowState {
   const [email, setEmail] = useState("");
   const [isSent, setIsSent] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
-  const referralCode = useMemo(
-    () => searchParams.get("ref")?.trim() || "",
-    [searchParams],
-  );
+  const referralCode = useMemo(() => {
+    const fromUrl = searchParams.get("ref")?.trim() || "";
+    if (fromUrl) {
+      try { localStorage.setItem("bunshin_ref", fromUrl); } catch {}
+      return fromUrl;
+    }
+    try { return localStorage.getItem("bunshin_ref") || ""; } catch {}
+    return "";
+  }, [searchParams]);
 
   const getLocale = useCallback(() => {
     if (typeof window === "undefined") return routing.defaultLocale;
@@ -66,6 +71,7 @@ export function useAuthFlow(t: Translator): AuthFlowState {
       if (redirected) return;
       if ((event === "SIGNED_IN" || event === "INITIAL_SESSION") && session) {
         redirected = true;
+        try { localStorage.removeItem("bunshin_ref"); } catch {}
         const locale = getLocale();
         window.location.href = `/${locale}/studio`;
       }
@@ -106,11 +112,10 @@ export function useAuthFlow(t: Translator): AuthFlowState {
     setIsLoading(true);
     setErrorMessage(null);
 
-    const locale = getLocale();
     const { error } = await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {
-        redirectTo: `${window.location.origin}/${locale}/studio`,
+        redirectTo: buildCallbackUrl(),
         queryParams: {
           access_type: "offline",
           prompt: "consent",
@@ -123,7 +128,7 @@ export function useAuthFlow(t: Translator): AuthFlowState {
       setErrorMessage(t("Errors.googleLogin"));
       setIsLoading(false);
     }
-  }, [getLocale, supabase, t]);
+  }, [buildCallbackUrl, supabase, t]);
 
   return {
     email,

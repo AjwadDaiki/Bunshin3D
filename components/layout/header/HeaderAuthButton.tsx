@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
@@ -12,7 +12,7 @@ export default function HeaderAuthButton({ variant = "desktop" }: Props) {
 
   if (variant === "mobile") {
     return (
-      <Link href="/login" className="text-sm font-medium text-brand-primary">
+      <Link href="/login" className="text-sm font-medium text-blue-500">
         {t("login")}
       </Link>
     );
@@ -21,7 +21,7 @@ export default function HeaderAuthButton({ variant = "desktop" }: Props) {
   return (
     <Link
       href="/login"
-      className="px-6 py-2 bg-brand-primary hover:bg-brand-secondary rounded-full text-sm font-medium transition-smooth"
+      className="px-5 py-2 bg-white hover:bg-neutral-200 rounded-lg text-sm font-semibold text-neutral-950 transition-colors"
     >
       {t("login")}
     </Link>

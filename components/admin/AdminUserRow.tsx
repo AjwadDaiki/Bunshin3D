@@ -43,7 +43,7 @@ export default function AdminUserRow({
     <tr className="hover:bg-white/5 transition-colors group">
       <td className="px-6 py-4">
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-full bg-linear-to-br from-brand-primary to-brand-secondary flex items-center justify-center text-white text-xs font-bold">
+          <div className="w-8 h-8 rounded-full bg-[#191919] border border-white/6 flex items-center justify-center text-white text-xs font-bold">
             {initial}
           </div>
           <div>
@@ -63,7 +63,7 @@ export default function AdminUserRow({
         {formatDate(user.created_at)}
       </td>
       <td className="px-6 py-4 text-right">
-        <span className="font-mono font-bold text-brand-primary">
+        <span className="font-mono font-bold text-blue-500">
           {user.credits}
         </span>
       </td>
@@ -81,7 +81,7 @@ export default function AdminUserRow({
           </button>
 
           {isActive && (
-            <div className="absolute right-0 top-full mt-2 w-48 py-2 bg-surface-2 border border-white/10 rounded-xl shadow-2xl z-50 animate-in fade-in slide-in-from-top-2 duration-200">
+            <div className="absolute right-0 top-full mt-2 w-48 py-2 bg-surface-2 border border-white/6 rounded-xl shadow-2xl z-50 animate-in fade-in slide-in-from-top-2 duration-200">
               <button
                 onClick={() => onAction(user, "credits")}
                 className="w-full px-4 py-2 text-left text-sm hover:bg-white/10 transition-colors flex items-center gap-3 text-gray-300"

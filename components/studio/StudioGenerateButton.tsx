@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { CircleNotch, Sparkle } from "@phosphor-icons/react";
 import { useTranslations } from "next-intl";
@@ -22,10 +22,10 @@ export default function StudioGenerateButton({
       onClick={onGenerate}
       disabled={isGenerating}
       className={cn(
-        "w-full mt-6 px-6 py-4 rounded-xl font-bold transition-all flex items-center justify-center gap-3 shadow-lg",
+        "w-full mt-6 px-6 py-4 rounded-lg font-bold transition-all flex items-center justify-center gap-3",
         canGenerate
-          ? "bg-gradient-to-r from-brand-primary to-brand-secondary hover:opacity-90 shadow-brand-primary/25"
-          : "bg-surface-3 border border-white/10 text-white/80 hover:bg-surface-2",
+          ? "bg-white text-neutral-950 hover:bg-neutral-200"
+          : "bg-[#191919] border border-white/6 text-neutral-400 hover:bg-[#222]",
         isGenerating && "opacity-60 cursor-not-allowed",
       )}
     >

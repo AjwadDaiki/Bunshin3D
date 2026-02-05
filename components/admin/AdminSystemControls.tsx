@@ -18,18 +18,18 @@ export default function AdminSystemControls({
   const t = useTranslations("Admin");
 
   return (
-    <div className="rounded-xl border border-white/10 bg-white/5 backdrop-blur-xl p-8">
-      <h2 className="text-xl font-bold mb-6 flex items-center gap-2 text-brand-primary">
+    <div className="rounded-xl border border-white/6 bg-[#111] p-8">
+      <h2 className="text-xl font-bold mb-6 flex items-center gap-2 text-white">
         <ChartLineUp className="w-5 h-5" weight="duotone" />
         {t("Controls.systemControls")}
       </h2>
 
-      <div className="flex flex-col md:flex-row items-center justify-between p-6 rounded-xl border border-white/10 bg-white/5 gap-6">
+      <div className="flex flex-col md:flex-row items-center justify-between p-6 rounded-xl border border-white/6 bg-[#191919] gap-6">
         <div>
           <h3 className="font-bold text-lg text-white">
             {t("Controls.maintenance")}
           </h3>
-          <p className="text-gray-400 text-sm mt-1 max-w-xl">
+          <p className="text-neutral-400 text-sm mt-1 max-w-xl">
             {t("Controls.maintenanceDesc")}
           </p>
         </div>
@@ -38,10 +38,10 @@ export default function AdminSystemControls({
           onClick={onToggle}
           disabled={loading}
           className={cn(
-            "flex items-center gap-2 px-8 py-4 rounded-full font-bold transition-all border uppercase tracking-widest shrink-0",
+            "flex items-center gap-2 px-8 py-4 rounded-lg font-bold transition-colors border shrink-0",
             maintenanceMode
-              ? "bg-red-500 text-white border-red-500 hover:bg-red-600 shadow-[0_0_20px_rgba(220,38,38,0.5)]"
-              : "bg-brand-primary text-white border-brand-primary hover:bg-brand-secondary shadow-[0_0_20px_rgba(153,69,255,0.3)]",
+              ? "bg-red-500 text-white border-red-500 hover:bg-red-600"
+              : "bg-blue-600 text-white border-blue-600 hover:bg-blue-700",
           )}
         >
           {maintenanceMode ? (

@@ -22,7 +22,7 @@ export default function LocaleError({
     <div className="min-h-screen flex items-center justify-center relative">
 
       <div className="relative z-10 text-center px-6 max-w-lg">
-        <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-10 shadow-2xl">
+        <div className="bg-[#111] border border-white/6 rounded-xl p-10">
           <Warning
             className="h-20 w-20 text-red-500 mx-auto mb-6"
             weight="fill"
@@ -47,14 +47,14 @@ export default function LocaleError({
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               onClick={reset}
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/15 border border-white/20 rounded-full text-white font-medium transition-all duration-200 hover:scale-105"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#191919] border border-white/6 rounded-lg text-white font-medium hover:border-white/10 transition-colors"
             >
               <ArrowClockwise className="h-5 w-5" weight="bold" />
               {t("tryAgain")}
             </button>
             <Link
               href="/"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-linear-to-r from-brand-primary to-brand-secondary hover:opacity-90 rounded-full text-white font-medium transition-all duration-200 hover:scale-105 shadow-lg shadow-brand-primary/25"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-neutral-950 font-medium rounded-lg hover:bg-neutral-200 transition-colors"
             >
               <House className="h-5 w-5" weight="fill" />
               {t("backHome")}

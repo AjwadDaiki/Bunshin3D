@@ -126,24 +126,36 @@ export default async function HomePage({
 
       <LandingPage />
 
+      <hr className="section-hr" />
+
       <section
         id="pricing"
-        className="py-24 relative overflow-hidden"
+        className="py-24 md:py-36 relative overflow-hidden"
       >
+        {/* Subtle section glow */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-blue-500/5 rounded-full blur-[120px] pointer-events-none" />
+
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center space-y-4 mb-16">
+            <p className="text-sm font-mono text-blue-400 uppercase tracking-widest">
+              {tPricing("title")}
+            </p>
             <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-white">
-              {tPricing("title")}{" "}
-              <span className="bg-linear-to-r from-indigo-300 to-indigo-500 bg-clip-text text-transparent">
-                {tPricing("titleHighlight")}
-              </span>
+              {tPricing("titleHighlight")}
             </h2>
-            <p className="text-lg text-zinc-400 max-w-2xl mx-auto">
+            <p className="text-lg text-neutral-400 max-w-2xl mx-auto">
               {tPricing("subtitle")}
+            </p>
+            <p className="text-sm text-neutral-500">
+              {tPricing("socialProof")}
             </p>
           </div>
 
           <PricingTable />
+
+          <p className="text-center text-sm text-neutral-500 mt-8">
+            {tPricing("guarantee")}
+          </p>
 
           <div className="mt-16 max-w-5xl mx-auto">
             <ReferralPromoPanel />

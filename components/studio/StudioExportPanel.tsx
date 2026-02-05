@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { Aperture, CircleNotch, Cube, DownloadSimple } from "@phosphor-icons/react";
 import { useTranslations } from "next-intl";
@@ -25,9 +25,9 @@ export default function StudioExportPanel({
   if (!modelUrl) return null;
 
   return (
-    <div className="glass-card p-6 rounded-2xl animate-in fade-in slide-in-from-bottom-4 duration-700">
+    <div className="bg-[#111] border border-white/6 rounded-xl p-6 animate-in fade-in slide-in-from-bottom-4 duration-700">
       <div className="flex items-center justify-between mb-6">
-        <h2 className="text-sm font-bold uppercase tracking-wider text-gray-400">
+        <h2 className="text-sm font-bold uppercase tracking-wider text-neutral-400">
           {t("Interface.Export.title")}
         </h2>
       </div>
@@ -40,7 +40,7 @@ export default function StudioExportPanel({
             <BunshinLogo className="h-6 w-6 text-green-400" />
             {t("Interface.Export.readyTitle")}
           </h3>
-          <p className="text-gray-400 text-sm">{t("Interface.Export.subtitle")}</p>
+          <p className="text-neutral-400 text-sm">{t("Interface.Export.subtitle")}</p>
         </div>
 
         <div className="flex flex-wrap gap-3 justify-center md:justify-end">
@@ -48,10 +48,10 @@ export default function StudioExportPanel({
             onClick={() => onDownload("glb")}
             disabled={isDownloading}
             className={cn(
-              "px-4 py-3 rounded-xl font-bold transition-all flex items-center gap-2 text-sm border",
+              "px-4 py-3 rounded-lg font-bold transition-all flex items-center gap-2 text-sm border",
               isDownloading && downloadFormat === "glb"
-                ? "bg-brand-primary border-brand-primary text-white"
-                : "bg-surface-3 hover:bg-surface-1 border-white/10 text-gray-300",
+                ? "bg-white border-white text-neutral-950"
+                : "bg-[#191919] hover:bg-[#222] border-white/6 text-neutral-300",
             )}
           >
             {isDownloading && downloadFormat === "glb" ? (
@@ -69,10 +69,10 @@ export default function StudioExportPanel({
             onClick={() => onDownload("obj")}
             disabled={isDownloading}
             className={cn(
-              "px-4 py-3 rounded-xl font-bold transition-all flex items-center gap-2 text-sm border",
+              "px-4 py-3 rounded-lg font-bold transition-all flex items-center gap-2 text-sm border",
               isDownloading && downloadFormat === "obj"
-                ? "bg-brand-primary border-brand-primary text-white"
-                : "bg-surface-3 hover:bg-surface-1 border-white/10 text-gray-300",
+                ? "bg-white border-white text-neutral-950"
+                : "bg-[#191919] hover:bg-[#222] border-white/6 text-neutral-300",
             )}
           >
             {isDownloading && downloadFormat === "obj" ? (
@@ -90,10 +90,10 @@ export default function StudioExportPanel({
             onClick={() => onDownload("usdz")}
             disabled={isDownloading}
             className={cn(
-              "px-4 py-3 rounded-xl font-bold transition-all flex items-center gap-2 text-sm border",
+              "px-4 py-3 rounded-lg font-bold transition-all flex items-center gap-2 text-sm border",
               isDownloading && downloadFormat === "usdz"
-                ? "bg-brand-primary border-brand-primary text-white"
-                : "bg-surface-3 hover:bg-surface-1 border-white/10 text-gray-300",
+                ? "bg-white border-white text-neutral-950"
+                : "bg-[#191919] hover:bg-[#222] border-white/6 text-neutral-300",
             )}
           >
             {isDownloading && downloadFormat === "usdz" ? (
@@ -111,10 +111,10 @@ export default function StudioExportPanel({
             onClick={() => onDownload("stl")}
             disabled={isDownloading}
             className={cn(
-              "px-4 py-3 rounded-xl font-bold transition-all flex items-center gap-2 text-sm border",
+              "px-4 py-3 rounded-lg font-bold transition-all flex items-center gap-2 text-sm border",
               isDownloading && downloadFormat === "stl"
-                ? "bg-brand-primary border-brand-primary text-white"
-                : "bg-surface-3 hover:bg-surface-1 border-white/10 text-gray-300",
+                ? "bg-white border-white text-neutral-950"
+                : "bg-[#191919] hover:bg-[#222] border-white/6 text-neutral-300",
             )}
           >
             {isDownloading && downloadFormat === "stl" ? (

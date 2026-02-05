@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { UploadSimple, Sparkle } from "@phosphor-icons/react";
 import { useTranslations } from "next-intl";
@@ -14,14 +14,14 @@ export default function StudioModeToggle({ mode, onChange }: Props) {
   const t = useTranslations("Studio");
 
   return (
-    <div className="glass-card p-2 rounded-2xl flex gap-2">
+    <div className="bg-[#111] border border-white/6 rounded-lg p-2 flex gap-2">
       <button
         onClick={() => onChange("image")}
         className={cn(
-          "flex-1 py-3 px-4 rounded-xl font-bold transition-all duration-300 flex items-center justify-center gap-2",
+          "flex-1 py-3 px-4 rounded-lg font-bold transition-all duration-200 flex items-center justify-center gap-2",
           mode === "image"
-            ? "bg-brand-primary text-white shadow-lg shadow-brand-primary/20"
-            : "hover:bg-white/5 text-gray-400",
+            ? "bg-white text-neutral-950"
+            : "text-neutral-400 hover:text-white",
         )}
       >
         <UploadSimple className="h-5 w-5" weight="bold" />
@@ -30,10 +30,10 @@ export default function StudioModeToggle({ mode, onChange }: Props) {
       <button
         onClick={() => onChange("text")}
         className={cn(
-          "flex-1 py-3 px-4 rounded-xl font-bold transition-all duration-300 flex items-center justify-center gap-2",
+          "flex-1 py-3 px-4 rounded-lg font-bold transition-all duration-200 flex items-center justify-center gap-2",
           mode === "text"
-            ? "bg-brand-primary text-white shadow-lg shadow-brand-primary/20"
-            : "hover:bg-white/5 text-gray-400",
+            ? "bg-white text-neutral-950"
+            : "text-neutral-400 hover:text-white",
         )}
       >
         <Sparkle className="h-5 w-5" weight="fill" />

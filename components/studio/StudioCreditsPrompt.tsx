@@ -47,7 +47,7 @@ export default function StudioCreditsPrompt({
       <button
         type="button"
         aria-label={t("CreditsPrompt.close")}
-        className="absolute inset-0 bg-black/80 backdrop-blur-xl"
+        className="absolute inset-0 bg-black/60"
         onClick={onClose}
       />
 
@@ -55,38 +55,34 @@ export default function StudioCreditsPrompt({
       <div
         role="dialog"
         aria-modal="true"
-        className="relative w-full max-w-xl animate-paywall-enter rounded-3xl border border-white/10 bg-zinc-950/95 p-8 shadow-2xl"
-        style={{
-          boxShadow:
-            "0 0 80px rgba(99, 102, 241, 0.08), 0 0 30px rgba(168, 85, 247, 0.06), 0 25px 50px rgba(0, 0, 0, 0.5)",
-        }}
+        className="relative w-full max-w-xl animate-paywall-enter rounded-xl border border-white/6 bg-[#111] p-8"
       >
         {/* Close */}
         <button
           type="button"
           aria-label={t("CreditsPrompt.close")}
           onClick={onClose}
-          className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-gray-400 transition hover:bg-white/10 hover:text-white"
+          className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-lg border border-white/6 bg-white/5 text-neutral-400 transition hover:bg-white/10 hover:text-white"
         >
           <X className="h-4 w-4" weight="bold" />
         </button>
 
         {/* Icon */}
         <div className="mb-6 flex justify-center">
-          <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-linear-to-br from-indigo-500/20 to-purple-500/20 border border-indigo-500/20">
-            <Sparkle className="h-7 w-7 text-indigo-400" weight="fill" />
+          <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-white/5 border border-white/6">
+            <Sparkle className="h-7 w-7 text-white" weight="fill" />
           </div>
         </div>
 
         {/* Text */}
         <div className="space-y-2 text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-indigo-400">
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-neutral-400">
             {t("CreditsPrompt.title")}
           </p>
           <h3 className="text-2xl font-bold text-white">
             {t("CreditsPrompt.headline")}
           </h3>
-          <p className="text-sm text-gray-400 max-w-sm mx-auto">
+          <p className="text-sm text-neutral-400 max-w-sm mx-auto">
             {t("CreditsPrompt.description", { count: requiredCredits })}
           </p>
         </div>
@@ -108,14 +104,14 @@ export default function StudioCreditsPrompt({
               <Link
                 key={id}
                 href="/pricing"
-                className="group rounded-2xl border border-white/10 bg-white/5 p-4 text-center transition hover:border-indigo-500/30 hover:bg-white/[0.08]"
+                className="group rounded-xl border border-white/6 bg-[#191919] p-4 text-center transition hover:border-white/10 hover:bg-[#222]"
               >
-                <p className="text-xs font-semibold uppercase tracking-wider text-gray-400">
+                <p className="text-xs font-semibold uppercase tracking-wider text-neutral-400">
                   {PRICING_CONFIG[id].credits} {t("CreditsPrompt.creditsLabel")}
                 </p>
                 <div className="mt-2">
                   {originalFormatted && (
-                    <span className="text-xs text-gray-500 line-through mr-1">
+                    <span className="text-xs text-neutral-500 line-through mr-1">
                       {originalFormatted}
                     </span>
                   )}
@@ -132,14 +128,14 @@ export default function StudioCreditsPrompt({
         <div className="mt-6 grid gap-3 sm:grid-cols-2">
           <Link
             href="/pricing"
-            className="group flex items-center justify-center gap-2 rounded-2xl bg-linear-to-r from-indigo-600 to-purple-600 px-5 py-3.5 font-semibold text-white shadow-lg shadow-indigo-500/20 transition hover:shadow-indigo-500/30 hover:from-indigo-500 hover:to-purple-500"
+            className="group flex items-center justify-center gap-2 rounded-lg bg-white px-5 py-3.5 font-semibold text-neutral-950 transition hover:bg-neutral-200"
           >
             <CreditCard className="h-5 w-5" weight="duotone" />
             {t("CreditsPrompt.ctaPricing")}
           </Link>
           <Link
             href="/account"
-            className="group flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-5 py-3.5 font-semibold text-white transition hover:bg-white/10 hover:border-white/15"
+            className="group flex items-center justify-center gap-2 rounded-lg border border-white/6 bg-[#191919] px-5 py-3.5 font-semibold text-white transition hover:bg-[#222] hover:border-white/10"
           >
             <Lightning className="h-5 w-5 text-amber-400" weight="fill" />
             {t("CreditsPrompt.ctaReferral")}
@@ -147,7 +143,7 @@ export default function StudioCreditsPrompt({
         </div>
 
         {/* Note */}
-        <div className="mt-5 rounded-2xl border border-white/5 bg-white/2 px-4 py-3 text-center text-xs text-gray-500">
+        <div className="mt-5 rounded-xl border border-white/6 bg-[#0a0a0a] px-4 py-3 text-center text-xs text-neutral-500">
           {t("CreditsPrompt.note", { signup: 2, payment: 10 })}
         </div>
       </div>

@@ -1,35 +1,23 @@
 "use client";
 
-import { cn } from "@/lib/utils";
-
 interface FeatureCardProps {
   icon: React.ReactNode;
   title: string;
   desc: string;
-  gradient: string;
 }
 
-export default function FeatureCard({ icon, title, desc, gradient }: FeatureCardProps) {
+export default function FeatureCard({ icon, title, desc }: FeatureCardProps) {
   return (
-    <div
-      className={cn(
-        "group relative p-8 rounded-3xl border border-white/5 bg-zinc-900/50 backdrop-blur-sm transition-all hover:border-white/10 hover:-translate-y-1",
-        "overflow-hidden"
-      )}
-    >
-      <div
-        className={cn(
-          "absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-linear-to-br",
-          gradient
-        )}
-      ></div>
+    <div className="group relative p-8 rounded-xl border border-white/6 bg-[#111] transition-all duration-300 hover:border-white/12 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20">
+      {/* Top accent line */}
+      <div className="absolute top-0 left-8 right-8 h-px bg-linear-to-r from-transparent via-blue-500/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-      <div className="relative z-10 space-y-4">
-        <div className="p-3 bg-zinc-950 rounded-2xl inline-flex ring-1 ring-white/10 shadow-lg">
+      <div className="space-y-4">
+        <div className="p-3 bg-[#191919] rounded-lg inline-flex border border-white/4 group-hover:border-white/8 transition-colors">
           {icon}
         </div>
-        <h3 className="text-xl font-bold">{title}</h3>
-        <p className="text-zinc-400 leading-relaxed text-sm">{desc}</p>
+        <h3 className="text-lg font-semibold text-white">{title}</h3>
+        <p className="text-neutral-400 leading-relaxed text-sm">{desc}</p>
       </div>
     </div>
   );
