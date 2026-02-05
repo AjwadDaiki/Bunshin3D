@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useEffect } from "react";
 import { usePathname } from "@/i18n/routing";
@@ -33,12 +33,12 @@ export default function HeaderNew() {
   return (
     <header
       className={cn(
-        "left-0 right-0 transition-all duration-500 backdrop-blur-2xl bg-surface-1/80",
-        scrolled && "shadow-lg border-b border-white/10",
+        "left-0 right-0 transition-all duration-300 bg-[#0a0a0a]/90 backdrop-blur-lg",
+        scrolled && "border-b border-white/6",
       )}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12">
-        <div className="flex h-16 items-center justify-between">
+        <div className="flex h-14 items-center justify-between">
           <HeaderBrand />
           <HeaderNav pathname={pathname} isAdmin={isAdmin} />
 

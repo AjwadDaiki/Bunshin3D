@@ -22,7 +22,8 @@
     "twitterHandle": "@bunshin3d",
     "organizationName": "Bunshin 3D",
     "organizationDescription": "AI 驱动的 3D 生成平台",
-    "contactType": "客户支持"
+    "contactType": "客户支持",
+    "organizationSlogan": "将任何图像转换为3D模型"
   },
   "Navigation": {
     "brandName": "BUNSHIN",
@@ -59,12 +60,16 @@
       "operatingSystem": "Web"
     },
     "Hero": {
+      "badge": "AI驱动的3D生成",
       "title": "将2D像素转变为",
       "titleHighlight": "3D现实。",
       "subtitle": "用于3D打印和游戏开发的最先进AI管道。使用专业级拓扑在几秒钟内将任何图像转换为GLB/STL。",
       "ctaPrimary": "免费创建",
       "ctaSecondary": "查看画廊",
-      "trustedBy": "受10,000+创作者和开发者信赖"
+      "trustedBy": "受10,000+创作者和开发者信赖",
+      "freeCredits": "注册即送2积分",
+      "fastGeneration": "快速生成",
+      "noSubscription": "无需订阅"
     },
     "Showcase": {
       "title": "使用Bunshin生成",
@@ -78,9 +83,16 @@
       "topologyTitle": "清晰拓扑",
       "topologyDesc": "基于四边形的网格优化，用于动画和绑定。",
       "exportTitle": "多格式",
-      "exportDesc": "原生导出到GLB、FBX、OBJ和用于打印的水密STL。"
+      "exportDesc": "原生导出到GLB、FBX、OBJ和用于打印的水密STL。",
+      "textureTitle": "高清贴图",
+      "textureDesc": "自动PBR贴图，包含反照率、法线和粗糙度贴图。",
+      "commercialTitle": "商业许可",
+      "commercialDesc": "所有生成模型享有完整商业权利，可用于任何场景。",
+      "instantTitle": "即时下载",
+      "instantDesc": "以GLB、FBX、OBJ或STL格式即时下载您的模型。"
     },
     "Steps": {
+      "label": "使用方法",
       "title": "工作原理",
       "step1": "上传图像",
       "step1Desc": "拖放任何PNG、JPG或WEBP。",
@@ -380,7 +392,9 @@
     "Header": {
       "title": "简单、透明",
       "titleHighlight": "价格。",
-      "subtitle": "按需购买积分。没有月度订阅陷阱。您的积分永不过期。"
+      "subtitle": "按需购买积分。没有月度订阅陷阱。您的积分永不过期。",
+      "socialProof": "深受全球创作者信赖",
+      "guarantee": "100%满意保证 — 随时联系我们"
     },
     "Badges": {
       "popular": "推荐",
@@ -396,7 +410,8 @@
     "Card": {
       "perPack": "每包",
       "perCredit": "/ 积分",
-      "savings": "节省{percent}%"
+      "savings": "节省{percent}%",
+      "securePayment": "通过Stripe安全支付"
     },
     "Packs": {
       "Discovery": {

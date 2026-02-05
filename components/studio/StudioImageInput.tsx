@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useRef } from "react";
 import { UploadSimple } from "@phosphor-icons/react";
@@ -21,12 +21,12 @@ export default function StudioImageInput({ imagePreview, onFileSelect }: Props) 
 
   return (
     <>
-      <label className="block text-sm font-bold text-gray-400 uppercase tracking-wider mb-3">
+      <label className="block text-sm font-bold text-neutral-400 uppercase tracking-wider mb-3">
         {t("Interface.DropZone.title")}
       </label>
       <div
         onClick={() => fileInputRef.current?.click()}
-        className="w-full aspect-video border-2 border-dashed border-white/10 rounded-xl flex flex-col items-center justify-center cursor-pointer hover:border-brand-primary hover:bg-white/5 transition-all group overflow-hidden relative"
+        className="w-full aspect-video border-2 border-dashed border-white/10 rounded-xl bg-[#111] flex flex-col items-center justify-center cursor-pointer hover:border-white/20 transition-all group overflow-hidden relative"
       >
         {imagePreview ? (
           <Image
@@ -37,10 +37,10 @@ export default function StudioImageInput({ imagePreview, onFileSelect }: Props) 
           />
         ) : (
           <>
-            <div className="p-4 rounded-full bg-white/5 group-hover:bg-brand-primary/20 group-hover:text-brand-primary transition-colors mb-3">
-              <UploadSimple className="h-6 w-6" weight="bold" />
+            <div className="p-4 rounded-full bg-white/5 group-hover:bg-white/10 transition-colors mb-3">
+              <UploadSimple className="h-6 w-6 text-neutral-400" weight="bold" />
             </div>
-            <p className="text-gray-500 text-sm font-medium">
+            <p className="text-neutral-500 text-sm font-medium">
               {t("Interface.DropZone.subtitle")}
             </p>
           </>

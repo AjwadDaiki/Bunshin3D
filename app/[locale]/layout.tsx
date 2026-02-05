@@ -18,7 +18,6 @@ import ModelViewerScript from "@/components/layout/ModelViewerScript";
 import OTOBanner from "@/components/layout/OTOBanner";
 import { CurrencyProvider } from "@/components/providers/CurrencyProvider";
 import { OTOProvider } from "@/components/providers/OTOProvider";
-import BackgroundFX from "@/components/landing/BackgroundFX";
 import { generateAlternates, generateOGMetadata } from "@/lib/seo-utils";
 
 const geistSans = Geist({
@@ -82,13 +81,13 @@ export async function generateMetadata({
     },
     other: {
       ...baseMetadataConfig.other,
-      "theme-color": "#9945ff",
+      "theme-color": "#3b82f6",
       "google": "notranslate",
       "DC.title": t("defaultTitle"),
-      "DC.creator": "Bunshin 3D",
+      "DC.creator": t("creator"),
       "DC.subject": t("description"),
       "DC.description": t("description"),
-      "DC.publisher": "Bunshin 3D",
+      "DC.publisher": t("publisher"),
       "DC.language": locale,
       "DC.type": "Software",
       "DC.format": "text/html",
@@ -142,7 +141,6 @@ export default async function LocaleLayout({
         <AnalyticsScripts gaId={gaId} />
         <ModelViewerScript />
 
-        <BackgroundFX />
         <NextIntlClientProvider messages={messages}>
           <CurrencyProvider>
             <OTOProvider>

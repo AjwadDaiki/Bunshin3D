@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
@@ -18,12 +18,12 @@ export default function HeaderCreditsBadge({ credits }: Props) {
     <Link
       href="/pricing"
       className={cn(
-        "px-3 py-1.5 rounded-full flex items-center gap-2 transition-all duration-300",
+        "px-3 py-1.5 rounded-lg flex items-center gap-2 text-sm transition-colors",
         isEmpty
-          ? "bg-red-500/20 border border-red-500/40 hover:bg-red-500/30"
+          ? "bg-red-500/10 border border-red-500/20 text-red-400"
           : isLow
-            ? "glass-button border border-amber-500/30 animate-pulse-subtle"
-            : "glass-button",
+            ? "bg-amber-500/10 border border-amber-500/20 text-amber-400"
+            : "bg-[#191919] border border-white/6 text-neutral-300 hover:border-white/10",
       )}
       aria-label={t("aria.creditsAvailable", { count: credits })}
     >
@@ -34,16 +34,14 @@ export default function HeaderCreditsBadge({ credits }: Props) {
         )}
         weight="fill"
       />
-      <span className={cn("text-sm font-bold", isEmpty && "text-red-400")}>
-        {credits}
-      </span>
+      <span className="font-semibold">{credits}</span>
       {isEmpty && (
-        <span className="text-xs font-semibold text-red-300 hidden sm:inline">
+        <span className="text-xs font-medium hidden sm:inline">
           {t("buyCredits")}
         </span>
       )}
       {isLow && !isEmpty && (
-        <span className="text-xs font-semibold text-amber-300 hidden sm:inline">
+        <span className="text-xs font-medium hidden sm:inline">
           {t("lowCredits")}
         </span>
       )}

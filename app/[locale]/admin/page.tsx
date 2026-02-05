@@ -79,6 +79,10 @@ export default async function AdminPage({
   }
 
   // 4. MASSIVE DATA FETCHING (Parallel)
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const todayISO = today.toISOString();
+
   const [
     settingsReq,
     usersCountReq,
@@ -86,6 +90,9 @@ export default async function AdminPage({
     recentUsersReq,
     recentGenerationsReq,
     payingUsersReq,
+    todayUsersReq,
+    todayGenerationsReq,
+    failedGenerationsReq,
   ] = await Promise.all([
     supabase.from("app_settings").select("*").single(),
     supabase.from("profiles").select("id", { count: "exact", head: true }),
@@ -104,6 +111,18 @@ export default async function AdminPage({
       .from("profiles")
       .select("id", { count: "exact", head: true })
       .gt("credits", 5), // Simple proxy for paying users
+    supabase
+      .from("profiles")
+      .select("id", { count: "exact", head: true })
+      .gte("created_at", todayISO),
+    supabase
+      .from("generations")
+      .select("id", { count: "exact", head: true })
+      .gte("created_at", todayISO),
+    supabase
+      .from("generations")
+      .select("id", { count: "exact", head: true })
+      .eq("status", "failed"),
   ]);
 
   const settings = settingsReq.data;
@@ -119,6 +138,14 @@ export default async function AdminPage({
   // Estimation coût GPU (hypothetique 0.05$ par run)
   const gpuBurn = (totalGenerations * 0.05).toFixed(2);
 
+  const todayUsers = todayUsersReq.count || 0;
+  const todayGenerations = todayGenerationsReq.count || 0;
+  const failedGenerations = failedGenerationsReq.count || 0;
+  const errorRate =
+    totalGenerations > 0
+      ? ((failedGenerations / totalGenerations) * 100).toFixed(1)
+      : "0.0";
+
   const stats = {
     revenue,
     users: totalUsers,
@@ -126,6 +153,9 @@ export default async function AdminPage({
     arpu,
     conversion: conversionRate,
     burn: gpuBurn,
+    todayUsers,
+    todayGenerations,
+    errorRate,
   };
 
   return (

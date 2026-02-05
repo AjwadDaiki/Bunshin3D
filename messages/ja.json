@@ -22,7 +22,8 @@
     "twitterHandle": "@bunshin3d",
     "organizationName": "Bunshin 3D",
     "organizationDescription": "AIによる3D生成プラットフォーム",
-    "contactType": "カスタマーサポート"
+    "contactType": "カスタマーサポート",
+    "organizationSlogan": "あらゆる画像を3Dモデルに変換"
   },
   "Navigation": {
     "brandName": "BUNSHIN",
@@ -59,12 +60,16 @@
       "operatingSystem": "Web"
     },
     "Hero": {
+      "badge": "AI搭載の3D生成",
       "title": "2Dピクセルを",
       "titleHighlight": "3D現実に変換。",
       "subtitle": "3Dプリントとゲーム開発のための最先端AIパイプライン。プロフェッショナルなトポロジーで、あらゆる画像を数秒でGLB/STLに変換。",
       "ctaPrimary": "無料で作成",
       "ctaSecondary": "ギャラリーを見る",
-      "trustedBy": "10,000人以上のクリエイター＆開発者が信頼"
+      "trustedBy": "10,000人以上のクリエイター＆開発者が信頼",
+      "freeCredits": "登録で2クレジット無料",
+      "fastGeneration": "高速生成",
+      "noSubscription": "サブスクリプション不要"
     },
     "Showcase": {
       "title": "Bunshinで生成",
@@ -78,9 +83,16 @@
       "topologyTitle": "クリーンなトポロジー",
       "topologyDesc": "アニメーションとリギング用のクワッドベースメッシュ最適化。",
       "exportTitle": "マルチフォーマット",
-      "exportDesc": "GLB、FBX、OBJ、プリント用の水密STLへのネイティブエクスポート。"
+      "exportDesc": "GLB、FBX、OBJ、プリント用の水密STLへのネイティブエクスポート。",
+      "textureTitle": "HDテクスチャ",
+      "textureDesc": "アルベド、ノーマル、ラフネスマップを含む自動PBRテクスチャ。",
+      "commercialTitle": "商用ライセンス",
+      "commercialDesc": "生成されたすべてのモデルに対する完全な商用権利。どこでも使用可能。",
+      "instantTitle": "即時ダウンロード",
+      "instantDesc": "GLB、FBX、OBJ、STL形式でモデルを即座にダウンロード。"
     },
     "Steps": {
+      "label": "使い方",
       "title": "使い方",
       "step1": "画像をアップロード",
       "step1Desc": "PNG、JPG、WEBPをドラッグ＆ドロップ。",
@@ -380,7 +392,9 @@
     "Header": {
       "title": "シンプル、透明",
       "titleHighlight": "料金。",
-      "subtitle": "必要に応じてクレジットを購入。月額サブスクリプションの罠はありません。クレジットは永久に有効。"
+      "subtitle": "必要に応じてクレジットを購入。月額サブスクリプションの罠はありません。クレジットは永久に有効。",
+      "socialProof": "世界中のクリエイターに信頼されています",
+      "guarantee": "100%満足保証 — いつでもお問い合わせください"
     },
     "Badges": {
       "popular": "推奨",
@@ -396,7 +410,8 @@
     "Card": {
       "perPack": "パック毎",
       "perCredit": "/ クレジット",
-      "savings": "{percent}%お得"
+      "savings": "{percent}%お得",
+      "securePayment": "Stripeによる安全な決済"
     },
     "Packs": {
       "Discovery": {

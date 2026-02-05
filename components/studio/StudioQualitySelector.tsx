@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { Sparkle } from "@phosphor-icons/react";
 import { useTranslations } from "next-intl";
@@ -15,18 +15,18 @@ export default function StudioQualitySelector({ quality, onChange }: Props) {
   const t = useTranslations("Studio");
 
   return (
-    <div className="glass-card p-6 rounded-2xl">
-      <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">
+    <div className="bg-[#111] border border-white/6 rounded-xl p-6">
+      <h3 className="text-sm font-bold text-neutral-400 uppercase tracking-wider mb-4">
         {t("Quality.title")}
       </h3>
       <div className="space-y-3">
         <button
           onClick={() => onChange("standard")}
           className={cn(
-            "w-full p-4 rounded-xl border-2 transition-all duration-300 flex items-center justify-between group",
+            "w-full p-4 rounded-xl border-2 transition-all duration-200 flex items-center justify-between group",
             quality === "standard"
-              ? "border-brand-primary bg-brand-primary/5"
-              : "border-white/5 hover:border-white/10 bg-surface-2",
+              ? "border-white bg-white/5"
+              : "border-white/6 hover:border-white/10 bg-[#0a0a0a]",
           )}
         >
           <div className="flex items-center gap-3">
@@ -34,8 +34,8 @@ export default function StudioQualitySelector({ quality, onChange }: Props) {
               className={cn(
                 "p-2 rounded-lg",
                 quality === "standard"
-                  ? "bg-amber-400/20 text-amber-400"
-                  : "bg-white/5 text-gray-400",
+                  ? "bg-white/10 text-white"
+                  : "bg-white/5 text-neutral-400",
               )}
             >
               <BunshinLogo className="h-5 w-5" />
@@ -44,17 +44,17 @@ export default function StudioQualitySelector({ quality, onChange }: Props) {
               <span
                 className={cn(
                   "block font-bold",
-                  quality === "standard" ? "text-white" : "text-gray-400",
+                  quality === "standard" ? "text-white" : "text-neutral-400",
                 )}
               >
                 {t("Quality.standard")}
               </span>
-              <span className="text-xs text-gray-500">
+              <span className="text-xs text-neutral-500">
                 {t("Quality.standardDesc")}
               </span>
             </div>
           </div>
-          <span className="text-brand-primary font-bold">
+          <span className="text-white font-bold">
             {t("Quality.standardCost", { cost: 1 })}
           </span>
         </button>
@@ -62,10 +62,10 @@ export default function StudioQualitySelector({ quality, onChange }: Props) {
         <button
           onClick={() => onChange("premium")}
           className={cn(
-            "w-full p-4 rounded-xl border-2 transition-all duration-300 flex items-center justify-between group",
+            "w-full p-4 rounded-xl border-2 transition-all duration-200 flex items-center justify-between group",
             quality === "premium"
-              ? "border-purple-500 bg-purple-500/5"
-              : "border-white/5 hover:border-white/10 bg-surface-2",
+              ? "border-white bg-white/5"
+              : "border-white/6 hover:border-white/10 bg-[#0a0a0a]",
           )}
         >
           <div className="flex items-center gap-3">
@@ -73,8 +73,8 @@ export default function StudioQualitySelector({ quality, onChange }: Props) {
               className={cn(
                 "p-2 rounded-lg",
                 quality === "premium"
-                  ? "bg-purple-500/20 text-purple-400"
-                  : "bg-white/5 text-gray-400",
+                  ? "bg-white/10 text-white"
+                  : "bg-white/5 text-neutral-400",
               )}
             >
               <Sparkle className="h-5 w-5" weight="fill" />
@@ -83,17 +83,17 @@ export default function StudioQualitySelector({ quality, onChange }: Props) {
               <span
                 className={cn(
                   "block font-bold",
-                  quality === "premium" ? "text-white" : "text-gray-400",
+                  quality === "premium" ? "text-white" : "text-neutral-400",
                 )}
               >
                 {t("Quality.premium")}
               </span>
-              <span className="text-xs text-gray-500">
+              <span className="text-xs text-neutral-500">
                 {t("Quality.premiumDesc")}
               </span>
             </div>
           </div>
-          <span className="text-purple-400 font-bold">
+          <span className="text-white font-bold">
             {t("Quality.premiumCost", { cost: 5 })}
           </span>
         </button>

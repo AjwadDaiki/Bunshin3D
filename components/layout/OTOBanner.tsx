@@ -22,7 +22,7 @@ export default function OTOBanner() {
   return (
     <div
       id="oto-banner"
-      className="flex items-center justify-center gap-3 bg-linear-to-r from-purple-600/90 via-amber-500/90 to-purple-600/90 px-4 py-2 text-sm font-medium text-white"
+      className="flex items-center justify-center gap-3 bg-blue-600 px-4 py-2 text-sm font-medium text-white"
     >
       <Timer className="h-4 w-4 shrink-0" weight="fill" />
       <span>{t("banner.text")}</span>
@@ -31,7 +31,7 @@ export default function OTOBanner() {
       </span>
       <Link
         href="/pricing"
-        className="ml-2 rounded-full bg-white/20 px-3 py-0.5 text-xs font-semibold transition hover:bg-white/30"
+        className="ml-2 rounded-lg bg-white/20 px-3 py-0.5 text-xs font-semibold transition-colors hover:bg-white/30"
       >
         {t("banner.cta")}
       </Link>

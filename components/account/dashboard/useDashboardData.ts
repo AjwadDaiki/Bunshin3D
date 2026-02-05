@@ -26,7 +26,8 @@ export function useDashboardData({
       .from("generations")
       .select("*")
       .eq("user_id", user.id)
-      .order("created_at", { ascending: false });
+      .order("created_at", { ascending: false })
+      .limit(50);
 
     if (!error && data) {
       setGenerations(data as Generation[]);
@@ -57,20 +58,10 @@ export function useDashboardData({
   }, [supabase]);
 
   useEffect(() => {
-    let active = true;
-    const run = async () => {
-      try {
-        await fetch("/api/generations/cleanup", { method: "POST" });
-      } catch {}
-      if (active) {
-        await fetchGenerations();
-      }
-    };
-    run();
-    return () => {
-      active = false;
-    };
-  }, [fetchGenerations]);
+    // Run cleanup in the background — don't re-fetch since we already
+    // have initialGenerations from the server. Realtime handles updates.
+    fetch("/api/generations/cleanup", { method: "POST" }).catch(() => {});
+  }, []);
 
   useEffect(() => {
     const channel = supabase

@@ -5,9 +5,9 @@ import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 
 const FORMATS = [
-  { key: "standard", icon: Sparkle, tone: "text-brand-primary" },
-  { key: "lowpoly", icon: Cube, tone: "text-emerald-400" },
-  { key: "print", icon: Aperture, tone: "text-amber-400" },
+  { key: "standard", icon: Sparkle, tone: "text-white" },
+  { key: "lowpoly", icon: Cube, tone: "text-white" },
+  { key: "print", icon: Aperture, tone: "text-white" },
 ] as const;
 
 export default function StudioExportFormats() {
@@ -18,11 +18,11 @@ export default function StudioExportFormats() {
       {FORMATS.map(({ key, icon: Icon, tone }) => (
         <div
           key={key}
-          className="rounded-2xl border border-white/10 bg-white/5 p-4 flex items-start gap-3"
+          className="rounded-xl border border-white/6 bg-[#191919] p-4 flex items-start gap-3"
         >
           <span
             className={cn(
-              "h-9 w-9 rounded-xl flex items-center justify-center bg-white/10",
+              "h-9 w-9 rounded-lg flex items-center justify-center bg-white/5",
               tone,
             )}
           >
@@ -32,7 +32,7 @@ export default function StudioExportFormats() {
             <p className="text-sm font-semibold text-white">
               {t(`Interface.Formats.${key}.title` as const)}
             </p>
-            <p className="text-xs text-gray-400">
+            <p className="text-xs text-neutral-400">
               {t(`Interface.Formats.${key}.subtitle` as const)}
             </p>
           </div>

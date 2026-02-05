@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { Aperture, Cube, DownloadSimple, SpinnerGap, CircleNotch } from "@phosphor-icons/react";
 import { useTranslations } from "next-intl";
@@ -35,32 +35,32 @@ export default function GenerationDownloads({
       icon: DownloadSimple,
       titleKey: "History.downloadTitles.glb",
       labelKey: "History.formatLabels.glb",
-      idleClass: "bg-surface-3 hover:bg-white/10 text-white border-white/10",
-      activeClass: "bg-brand-primary text-white border-brand-primary",
+      idleClass: "bg-[#191919] border-white/6 hover:border-white/10 text-white",
+      activeClass: "bg-blue-600 text-white border-blue-600",
     },
     {
       format: "obj",
       icon: Cube,
       titleKey: "History.downloadTitles.obj",
       labelKey: "History.formatLabels.obj",
-      idleClass: "bg-surface-3 hover:bg-white/10 text-white border-white/10",
-      activeClass: "bg-brand-primary text-white border-brand-primary",
+      idleClass: "bg-[#191919] border-white/6 hover:border-white/10 text-white",
+      activeClass: "bg-blue-600 text-white border-blue-600",
     },
     {
       format: "usdz",
       icon: Aperture,
       titleKey: "History.downloadTitles.usdz",
       labelKey: "History.formatLabels.usdz",
-      idleClass: "bg-surface-3 hover:bg-white/10 text-white border-white/10",
-      activeClass: "bg-brand-primary text-white border-brand-primary",
+      idleClass: "bg-[#191919] border-white/6 hover:border-white/10 text-white",
+      activeClass: "bg-blue-600 text-white border-blue-600",
     },
     {
       format: "stl",
       icon: DownloadSimple,
       titleKey: "History.downloadTitles.stl",
       labelKey: "History.formatLabels.stl",
-      idleClass: "bg-brand-primary hover:bg-brand-secondary text-white border-transparent",
-      activeClass: "bg-brand-primary text-white border-brand-primary",
+      idleClass: "bg-white text-neutral-950 border-transparent hover:bg-neutral-200",
+      activeClass: "bg-blue-600 text-white border-blue-600",
     },
   ];
 
@@ -68,7 +68,7 @@ export default function GenerationDownloads({
 
   if (!modelUrl) {
     return (
-      <div className="flex items-center justify-center gap-2 w-full py-2 bg-zinc-800 text-zinc-500 text-xs font-medium rounded-lg">
+      <div className="flex items-center justify-center gap-2 w-full py-2 bg-[#191919] text-neutral-500 text-xs font-medium rounded-lg">
         <SpinnerGap className="w-3 h-3 animate-spin" weight="bold" />
         {isProcessing ? tCommon("processing") : tCommon("pending")}
       </div>
@@ -85,7 +85,7 @@ export default function GenerationDownloads({
             onClick={() => downloadModel(modelUrl, format)}
             disabled={isDownloading}
             className={cn(
-              "flex items-center justify-center gap-1 py-2 text-xs font-medium rounded-lg transition-smooth border",
+              "flex items-center justify-center gap-1 py-2 text-xs font-medium rounded-lg transition-colors border",
               isActive ? activeClass : idleClass,
             )}
             title={t(titleKey)}

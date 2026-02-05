@@ -25,7 +25,7 @@ export function useStudioUser() {
           .select("credits")
           .eq("id", user.id)
           .single();
-        if (mounted && data) setCredits(data.credits);
+        if (mounted) setCredits(data?.credits ?? 0);
       }
     });
 

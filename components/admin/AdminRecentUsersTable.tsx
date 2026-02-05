@@ -19,9 +19,9 @@ export default function AdminRecentUsersTable({ users }: Props) {
     });
 
   return (
-    <div className="rounded-xl border border-white/10 bg-white/5 backdrop-blur-xl overflow-hidden">
-      <div className="px-6 py-4 border-b border-white/10 bg-brand-primary/5 flex justify-between items-center">
-        <h3 className="text-sm font-bold uppercase tracking-wider text-brand-primary flex items-center gap-2">
+    <div className="rounded-xl border border-white/6 bg-[#111] overflow-hidden">
+      <div className="px-6 py-4 border-b border-white/6 bg-blue-500/5 flex justify-between items-center">
+        <h3 className="text-sm font-bold uppercase tracking-wider text-blue-500 flex items-center gap-2">
           {t("Tables.usersTitle")}
         </h3>
       </div>
@@ -34,7 +34,7 @@ export default function AdminRecentUsersTable({ users }: Props) {
               <th className="px-6 py-3 text-right">{t("Tables.colCredits")}</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-white/10">
+          <tbody className="divide-y divide-white/6">
             {users.slice(0, 5).map((user) => (
               <tr
                 key={user.id}
@@ -46,7 +46,7 @@ export default function AdminRecentUsersTable({ users }: Props) {
                 <td className="px-6 py-3 text-gray-400">
                   {formatDate(user.created_at)}
                 </td>
-                <td className="px-6 py-3 text-right font-mono font-bold text-brand-primary">
+                <td className="px-6 py-3 text-right font-mono font-bold text-blue-500">
                   {user.credits}
                 </td>
               </tr>

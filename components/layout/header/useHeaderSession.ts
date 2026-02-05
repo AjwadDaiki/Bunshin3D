@@ -3,7 +3,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { createClient } from "@/lib/supabase";
 import { User } from "@supabase/supabase-js";
-import { checkIsAdmin } from "@/app/actions/admin";
 
 const supabase = createClient();
 
@@ -29,17 +28,14 @@ export function useHeaderSession() {
 
       if (nextUser) {
         setUser(nextUser);
-        const [creditsResult, adminStatus] = await Promise.all([
-          supabase
-            .from("profiles")
-            .select("credits")
-            .eq("id", nextUser.id)
-            .single(),
-          checkIsAdmin(),
-        ]);
+        const { data } = await supabase
+          .from("profiles")
+          .select("credits, is_admin")
+          .eq("id", nextUser.id)
+          .single();
         if (!mountedRef.current) return;
-        setCredits(creditsResult.data?.credits ?? 0);
-        setIsAdmin(adminStatus);
+        setCredits(data?.credits ?? 0);
+        setIsAdmin(data?.is_admin ?? false);
       } else {
         setUser(null);
         setCredits(null);

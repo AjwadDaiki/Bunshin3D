@@ -22,10 +22,8 @@ export default function AdminStatsCard({
   colorClass = "text-brand-primary",
 }: AdminStatsCardProps) {
   return (
-    <div className="group relative overflow-hidden rounded-xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 transition-all duration-300 hover:border-white/20 hover:bg-white/10">
-      <div className="absolute inset-0 bg-linear-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-
-      <div className="relative z-10">
+    <div className="group relative overflow-hidden rounded-xl border border-white/6 bg-[#111] p-6 transition-colors hover:border-white/10">
+      <div className="relative">
         <div className="flex items-center justify-between mb-4">
           <span className="text-xs font-medium uppercase tracking-wider text-gray-400">
             {label}
@@ -61,8 +59,6 @@ export default function AdminStatsCard({
           )}
         </div>
       </div>
-
-      <div className="absolute -bottom-12 -right-12 w-32 h-32 rounded-full bg-current opacity-5 group-hover:opacity-10 transition-opacity" />
     </div>
   );
 }

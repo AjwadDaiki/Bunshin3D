@@ -35,7 +35,7 @@ export const organizationSchema = {
     "Neural Networks",
   ],
   knowsLanguage: ["en", "fr", "es", "de", "ja", "zh"],
-  slogan: "Turn Any Image into a 3D Model",
+  slogan: t("organizationSlogan"),
   sameAs: [
     "https://twitter.com/bunshin3d",
     "https://github.com/bunshin3d",

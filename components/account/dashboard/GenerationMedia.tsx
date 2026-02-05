@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { Cube, Trash, CircleNotch, SpinnerGap } from "@phosphor-icons/react";
 import { useState } from "react";
@@ -27,7 +27,7 @@ export default function GenerationMedia({ generation, isDeleting, onDelete }: Pr
   const statusLabel = statusLabels[generation.status] || generation.status;
 
   return (
-    <div className="aspect-square bg-surface-2 relative flex items-center justify-center overflow-hidden">
+    <div className="aspect-square bg-[#0a0a0a] relative flex items-center justify-center overflow-hidden">
       {showImage ? (
         <img
           src={generation.source_image_url}
@@ -39,13 +39,13 @@ export default function GenerationMedia({ generation, isDeleting, onDelete }: Pr
           )}
         />
       ) : (
-        <Cube className="w-12 h-12 text-zinc-600" weight="duotone" />
+        <Cube className="w-12 h-12 text-neutral-600" weight="duotone" />
       )}
 
       <div
         className={cn(
-          "absolute top-3 right-3 px-2 py-1 glass-card rounded text-[10px] font-mono uppercase font-bold",
-          isProcessing ? "text-amber-400" : "text-brand-primary",
+          "absolute top-3 right-3 px-2 py-1 bg-[#191919] border border-white/6 rounded text-[10px] font-mono uppercase font-bold",
+          isProcessing ? "text-amber-400" : "text-blue-400",
         )}
       >
         {statusLabel}
@@ -54,7 +54,7 @@ export default function GenerationMedia({ generation, isDeleting, onDelete }: Pr
       <button
         onClick={onDelete}
         disabled={isDeleting}
-        className="absolute top-3 left-3 p-1.5 glass-card rounded text-gray-400 hover:text-red-400 hover:bg-red-500/10 transition-all opacity-0 group-hover:opacity-100"
+        className="absolute top-3 left-3 p-1.5 bg-[#191919] border border-white/6 rounded text-neutral-400 hover:text-red-400 hover:border-red-500/20 transition-colors opacity-0 group-hover:opacity-100"
       >
         {isDeleting ? (
           <CircleNotch className="w-4 h-4 animate-spin" weight="bold" />
@@ -65,7 +65,7 @@ export default function GenerationMedia({ generation, isDeleting, onDelete }: Pr
 
       {isProcessing && (
         <div className="absolute inset-0 flex items-center justify-center bg-black/30">
-          <SpinnerGap className="w-8 h-8 text-brand-primary animate-spin" weight="bold" />
+          <SpinnerGap className="w-8 h-8 text-blue-400 animate-spin" weight="bold" />
         </div>
       )}
     </div>

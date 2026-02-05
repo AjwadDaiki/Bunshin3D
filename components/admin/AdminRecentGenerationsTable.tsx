@@ -33,9 +33,9 @@ export default function AdminRecentGenerationsTable({ generations }: Props) {
   };
 
   return (
-    <div className="rounded-xl border border-white/10 bg-white/5 backdrop-blur-xl overflow-hidden">
-      <div className="px-6 py-4 border-b border-white/10 bg-brand-primary/5 flex justify-between items-center">
-        <h3 className="text-sm font-bold uppercase tracking-wider text-brand-primary flex items-center gap-2">
+    <div className="rounded-xl border border-white/6 bg-[#111] overflow-hidden">
+      <div className="px-6 py-4 border-b border-white/6 bg-blue-500/5 flex justify-between items-center">
+        <h3 className="text-sm font-bold uppercase tracking-wider text-blue-500 flex items-center gap-2">
           {t("Tables.generationsTitle")}
         </h3>
       </div>
@@ -48,13 +48,13 @@ export default function AdminRecentGenerationsTable({ generations }: Props) {
               <th className="px-6 py-3 text-right">{t("Tables.colDate")}</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-white/10">
+          <tbody className="divide-y divide-white/6">
             {generations.slice(0, 5).map((gen) => (
               <tr
                 key={gen.id}
                 className="hover:bg-white/5 transition-colors"
               >
-                <td className="px-6 py-3 uppercase font-bold text-brand-primary">
+                <td className="px-6 py-3 uppercase font-bold text-blue-500">
                   {gen.mode}
                 </td>
                 <td className="px-6 py-3">
