@@ -8,6 +8,8 @@ import { baseMetadataConfig } from "@/lib/seo-config";
 import { getPricingSchemas } from "@/lib/schemas/pricing";
 import ReferralPromoPanel from "@/components/referral/ReferralPromoPanel";
 import { generateAlternates, generateOGMetadata, APP_URL } from "@/lib/seo-utils";
+import { createServerClient } from "@supabase/ssr";
+import { cookies } from "next/headers";
 
 export async function generateMetadata({
   params,
@@ -45,11 +47,35 @@ export default async function PricingPage({
 }) {
   const { locale } = await params;
 
-  if (!routing.locales.includes(locale as any)) {
+  if (!routing.locales.includes(locale as (typeof routing.locales)[number])) {
     notFound();
   }
 
   setRequestLocale(locale);
+
+  const cookieStore = await cookies();
+  const supabase = createServerClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    {
+      cookies: {
+        getAll() {
+          return cookieStore.getAll();
+        },
+        setAll(cookiesToSet) {
+          try {
+            cookiesToSet.forEach(({ name, value, options }) =>
+              cookieStore.set(name, value, options),
+            );
+          } catch {}
+        },
+      },
+    },
+  );
+
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
 
   const tHeader = await getTranslations("Pricing.Header");
   const tFooter = await getTranslations("Pricing.Footer");
@@ -122,7 +148,7 @@ export default async function PricingPage({
 
         {/* Pricing cards */}
         <div className="relative z-10">
-          <PricingTable />
+          <PricingTable userId={user?.id ?? null} />
         </div>
 
         {/* Referral */}

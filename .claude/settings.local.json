@@ -2,7 +2,11 @@
   "permissions": {
     "allow": [
       "Bash(ls:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(find:*)",
+      "Bash(git push:*)",
+      "Bash(pnpm build:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nfix: declare runtime directly in stripe webhook re-export route\n\nNext.js requires route segment config to be statically analyzable,\nso runtime must be declared inline rather than re-exported.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")"
     ]
   }
 }

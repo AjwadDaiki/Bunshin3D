@@ -10,6 +10,8 @@ import { generateFAQSchema, getFAQData } from "@/lib/schemas/faq";
 import { generateHowToSchema } from "@/lib/schemas/howto";
 import { getHomeSchemas } from "@/lib/schemas/home";
 import ReferralPromoPanel from "@/components/referral/ReferralPromoPanel";
+import { createServerClient } from "@supabase/ssr";
+import { cookies } from "next/headers";
 
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://bunshin3d.com";
 
@@ -95,11 +97,35 @@ export default async function HomePage({
 }) {
   const { locale } = await params;
 
-  if (!routing.locales.includes(locale as any)) {
+  if (!routing.locales.includes(locale as (typeof routing.locales)[number])) {
     notFound();
   }
 
   setRequestLocale(locale);
+
+  const cookieStore = await cookies();
+  const supabase = createServerClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    {
+      cookies: {
+        getAll() {
+          return cookieStore.getAll();
+        },
+        setAll(cookiesToSet) {
+          try {
+            cookiesToSet.forEach(({ name, value, options }) =>
+              cookieStore.set(name, value, options),
+            );
+          } catch {}
+        },
+      },
+    },
+  );
+
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
 
   const tPricing = await getTranslations({
     locale,
@@ -151,7 +177,7 @@ export default async function HomePage({
             </p>
           </div>
 
-          <PricingTable />
+          <PricingTable userId={user?.id ?? null} />
 
           <p className="text-center text-sm text-neutral-500 mt-8">
             {tPricing("guarantee")}

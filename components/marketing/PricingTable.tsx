@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useMemo } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { Sparkle, Lightning, Cube } from "@phosphor-icons/react";
 import { useCurrency } from "@/components/providers/CurrencyProvider";
@@ -8,6 +8,7 @@ import { useOTO } from "@/components/providers/OTOProvider";
 import { getPriceForCurrency, getOTOPriceForCurrency, isOTOEligible, PRICING_CONFIG, type PackId } from "@/lib/config/pricing";
 import PricingCard from "./PricingCard";
 import Toast from "@/components/ui/Toast";
+import { createClient } from "@/lib/supabase";
 
 function formatPrice(amount: number, currency: string, locale: string) {
   return new Intl.NumberFormat(locale, {
@@ -26,11 +27,21 @@ export default function PricingTable({ userId = null }: PricingTableProps) {
   const locale = useLocale();
   const { currency, isLoading: currencyLoading } = useCurrency();
   const { isOfferActive } = useOTO();
+  const supabase = useMemo(() => createClient(), []);
   const [loadingPack, setLoadingPack] = useState<string | null>(null);
   const [toast, setToast] = useState<{ message: string; type: "error" | "info" } | null>(null);
 
   const handleCheckout = useCallback(async (packId: string) => {
-    if (!userId) {
+    let resolvedUserId = userId;
+
+    if (!resolvedUserId) {
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
+      resolvedUserId = user?.id ?? null;
+    }
+
+    if (!resolvedUserId) {
       setToast({ message: t("Checkout.loginRequired"), type: "info" });
       setTimeout(() => {
         window.location.href = `/${locale}/login?redirect=/pricing`;
@@ -43,7 +54,7 @@ export default function PricingTable({ userId = null }: PricingTableProps) {
       const response = await fetch("/api/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ packId, userId, currency, isOTO: isOfferActive && isOTOEligible(packId as PackId), locale }),
+        body: JSON.stringify({ packId, userId: resolvedUserId, currency, isOTO: isOfferActive && isOTOEligible(packId as PackId), locale }),
       });
 
       const data = await response.json();
@@ -59,13 +70,14 @@ export default function PricingTable({ userId = null }: PricingTableProps) {
       } else {
         throw new Error(t("Checkout.noCheckoutUrl"));
       }
-    } catch (error: any) {
+    } catch (error: unknown) {
+      const message = error instanceof Error ? error.message : String(error);
       console.error(t("Checkout.checkoutErrorLog"), error);
-      setToast({ message: t("Checkout.paymentInitFailed", { message: error.message }), type: "error" });
+      setToast({ message: t("Checkout.paymentInitFailed", { message }), type: "error" });
     } finally {
       setLoadingPack(null);
     }
-  }, [userId, currency, isOfferActive, t]);
+  }, [userId, currency, isOfferActive, t, locale, supabase]);
 
   const packs: {
     id: PackId;
