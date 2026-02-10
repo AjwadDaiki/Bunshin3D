@@ -1,6 +1,13 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+  type ReactNode,
+} from "react";
 import { createClient } from "@/lib/supabase";
 import { useSpecialOffer } from "@/hooks/useSpecialOffer";
 
@@ -26,10 +33,20 @@ export function useOTO() {
 
 export function OTOProvider({ children }: { children: ReactNode }) {
   const [userId, setUserId] = useState<string | null>(null);
-  const supabase = createClient();
+  const supabase = useMemo(() => createClient(), []);
 
   useEffect(() => {
     let mounted = true;
+
+    const hydrateSession = async () => {
+      const {
+        data: { session },
+      } = await supabase.auth.getSession();
+      if (!mounted) return;
+      setUserId(session?.user?.id ?? null);
+    };
+
+    void hydrateSession();
 
     const {
       data: { subscription },

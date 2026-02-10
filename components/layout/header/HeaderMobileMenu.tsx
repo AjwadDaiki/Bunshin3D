@@ -11,6 +11,7 @@ type Props = {
   isAdmin: boolean;
   hasUser: boolean;
   credits: number;
+  loading: boolean;
   onLogout: () => void;
 };
 
@@ -19,6 +20,7 @@ export default function HeaderMobileMenu({
   isAdmin,
   hasUser,
   credits,
+  loading,
   onLogout,
 }: Props) {
   const t = useTranslations("Navigation");
@@ -45,7 +47,12 @@ export default function HeaderMobileMenu({
           </Link>
         )}
 
-        {hasUser ? (
+        {loading ? (
+          <>
+            <div className="border-t border-white/6 my-1" />
+            <div className="h-4 w-24 rounded bg-[#191919] animate-pulse" />
+          </>
+        ) : hasUser ? (
           <>
             <div className="border-t border-white/6 my-1" />
             <div className="flex items-center justify-between">

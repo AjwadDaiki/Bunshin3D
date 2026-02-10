@@ -14,7 +14,7 @@ import { useHeaderSession } from "./header/useHeaderSession";
 
 export default function HeaderNew() {
   const pathname = usePathname();
-  const { user, credits, isAdmin, logout } = useHeaderSession();
+  const { user, credits, isAdmin, loading, logout } = useHeaderSession();
   const {
     isOpen,
     userMenuOpen,
@@ -42,7 +42,12 @@ export default function HeaderNew() {
           <HeaderBrand />
           <HeaderNav pathname={pathname} isAdmin={isAdmin} />
 
-          {user ? (
+          {loading ? (
+            <div className="hidden md:flex items-center gap-3">
+              <div className="h-8 w-20 rounded-lg border border-white/6 bg-[#191919] animate-pulse" />
+              <div className="h-9 w-9 rounded-lg border border-white/6 bg-[#191919] animate-pulse" />
+            </div>
+          ) : user ? (
             <HeaderUserMenu
               credits={safeCredits}
               userMenuOpen={userMenuOpen}
@@ -63,6 +68,7 @@ export default function HeaderNew() {
           isAdmin={isAdmin}
           hasUser={!!user}
           credits={safeCredits}
+          loading={loading}
           onLogout={logout}
         />
       </div>

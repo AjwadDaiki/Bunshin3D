@@ -111,11 +111,6 @@ export async function GET(request: NextRequest) {
         amount: 2,
         target_user_id: referrer.id,
       });
-
-      await adminClient.rpc("increment_referral_credits", {
-        amount: 2,
-        target_user_id: referrer.id,
-      });
     }
   }
 
