@@ -642,7 +642,39 @@
       "succeeded": "成功",
       "failed": "失败",
       "queued": "排队中"
+    },
+    "SimulatePayment": {
+      "title": "模拟付款",
+      "subtitle": "无需Stripe的测试支付",
+      "description": "为任何用户模拟积分包购买。积分会立即添加，无需通过Stripe。适用于测试和客户支持。",
+      "searchUser": "搜索用户",
+      "selectPack": "选择套餐",
+      "sendConfirmationEmail": "发送确认邮件",
+      "warning": "这将立即向用户账户添加{credits}积分。此操作会被记录。",
+      "simulate": "模拟付款",
+      "change": "更改",
+      "userNotFound": "未找到使用此邮箱的用户。",
+      "packs": {
+        "discovery": "探索",
+        "creator": "创作者",
+        "studio": "工作室"
+      },
+      "stripeTestCheckout": "通过Stripe Checkout测试",
+      "stripeTestInfo": "Stripe测试：使用卡号 4242 4242 4242 4242，任意未来日期，任意CVC。包含测试Webhook的完整流程。"
     }
+  },
+  "PaymentEmail": {
+    "subject": "付款确认 - 已添加{credits}积分",
+    "greeting": "您好，",
+    "thankYou": "感谢您的购买！您的付款已成功处理。",
+    "summary": "订单摘要",
+    "pack": "套餐",
+    "credits": "积分",
+    "amount": "支付金额",
+    "creditsReady": "您的{credits}积分已添加到账户，可以立即使用。",
+    "cta": "前往工作室",
+    "footer": "此邮件由Bunshin 3D发送。如果您未进行此购买，请立即与我们联系。",
+    "team": "Bunshin 3D 团队"
   },
   "Breadcrumbs": {
     "home": "首页",

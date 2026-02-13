@@ -642,7 +642,39 @@
       "succeeded": "成功",
       "failed": "失敗",
       "queued": "待機中"
+    },
+    "SimulatePayment": {
+      "title": "支払いシミュレーション",
+      "subtitle": "Stripeなしのテスト決済",
+      "description": "任意のユーザーに対してクレジットパックの購入をシミュレートします。Stripeを経由せず即座にクレジットが追加されます。テストやサポートに便利です。",
+      "searchUser": "ユーザーを検索",
+      "selectPack": "パックを選択",
+      "sendConfirmationEmail": "確認メールを送信",
+      "warning": "ユーザーのアカウントに即座に{credits}クレジットが追加されます。このアクションは記録されます。",
+      "simulate": "支払いをシミュレート",
+      "change": "変更",
+      "userNotFound": "このメールアドレスのユーザーは見つかりませんでした。",
+      "packs": {
+        "discovery": "ディスカバリー",
+        "creator": "クリエイター",
+        "studio": "スタジオ"
+      },
+      "stripeTestCheckout": "Stripe Checkoutでテスト",
+      "stripeTestInfo": "Stripeテスト：カード番号 4242 4242 4242 4242、任意の将来の日付、任意のCVCを使用。テストWebhookを含む完全なフロー。"
     }
+  },
+  "PaymentEmail": {
+    "subject": "お支払い確認 - {credits}クレジット追加",
+    "greeting": "こんにちは、",
+    "thankYou": "ご購入ありがとうございます！お支払いは正常に処理されました。",
+    "summary": "注文概要",
+    "pack": "パック",
+    "credits": "クレジット",
+    "amount": "お支払い金額",
+    "creditsReady": "{credits}クレジットがアカウントに追加され、ご利用いただけます。",
+    "cta": "スタジオへ",
+    "footer": "このメールはBunshin 3Dから送信されました。この購入に覚えがない場合は、すぐにお問い合わせください。",
+    "team": "Bunshin 3D チーム"
   },
   "Breadcrumbs": {
     "home": "ホーム",

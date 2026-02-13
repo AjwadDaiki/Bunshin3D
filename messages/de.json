@@ -642,7 +642,39 @@
       "succeeded": "Erfolgreich",
       "failed": "Fehlgeschlagen",
       "queued": "In Warteschlange"
+    },
+    "SimulatePayment": {
+      "title": "Zahlung simulieren",
+      "subtitle": "Testzahlung ohne Stripe",
+      "description": "Simulieren Sie den Kauf eines Kreditpakets für jeden Benutzer. Credits werden sofort hinzugefügt, ohne Stripe zu verwenden. Nützlich für Tests und Support.",
+      "searchUser": "Benutzer suchen",
+      "selectPack": "Paket auswählen",
+      "sendConfirmationEmail": "Bestätigungs-E-Mail senden",
+      "warning": "Dies fügt dem Konto des Benutzers sofort {credits} Credits hinzu. Diese Aktion wird protokolliert.",
+      "simulate": "Zahlung simulieren",
+      "change": "Ändern",
+      "userNotFound": "Kein Benutzer mit dieser E-Mail gefunden.",
+      "packs": {
+        "discovery": "Entdeckung",
+        "creator": "Kreator",
+        "studio": "Studio"
+      },
+      "stripeTestCheckout": "Mit Stripe Checkout testen",
+      "stripeTestInfo": "Stripe-Test: Verwenden Sie die Karte 4242 4242 4242 4242, ein zukünftiges Datum, eine beliebige CVC. Vollständiger Ablauf mit Test-Webhook."
     }
+  },
+  "PaymentEmail": {
+    "subject": "Zahlung bestätigt - {credits} Credits hinzugefügt",
+    "greeting": "Hallo,",
+    "thankYou": "Vielen Dank für Ihren Einkauf! Ihre Zahlung wurde erfolgreich verarbeitet.",
+    "summary": "Bestellübersicht",
+    "pack": "Paket",
+    "credits": "Credits",
+    "amount": "Bezahlter Betrag",
+    "creditsReady": "Ihre {credits} Credits sind jetzt in Ihrem Konto verfügbar und einsatzbereit.",
+    "cta": "Zum Studio",
+    "footer": "Diese E-Mail wurde von Bunshin 3D gesendet. Wenn Sie diesen Kauf nicht getätigt haben, kontaktieren Sie uns bitte umgehend.",
+    "team": "Das Bunshin 3D Team"
   },
   "Breadcrumbs": {
     "home": "Startseite",

@@ -116,6 +116,7 @@ export default function AdminDashboard({
           maintenanceMode={!!settings.maintenance_mode}
           loading={loading}
           onToggleMaintenance={toggleMaintenance}
+          onRefresh={handleRefresh}
         />
       )}
 

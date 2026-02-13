@@ -642,7 +642,39 @@
       "succeeded": "Succeeded",
       "failed": "Failed",
       "queued": "Queued"
+    },
+    "SimulatePayment": {
+      "title": "Simulate Payment",
+      "subtitle": "Test payment without Stripe",
+      "description": "Simulate a credit pack purchase for any user. Credits are added instantly without going through Stripe. Useful for testing and support.",
+      "searchUser": "Find user",
+      "selectPack": "Select credit pack",
+      "sendConfirmationEmail": "Send confirmation email",
+      "warning": "This will add {credits} credits to the user's account immediately. This action is logged.",
+      "simulate": "Simulate Payment",
+      "change": "Change",
+      "userNotFound": "No user found with this email.",
+      "packs": {
+        "discovery": "Discovery",
+        "creator": "Creator",
+        "studio": "Studio"
+      },
+      "stripeTestCheckout": "Test with Stripe Checkout",
+      "stripeTestInfo": "Stripe Test: Use card 4242 4242 4242 4242, any future date, any CVC. Full checkout flow with test webhook."
     }
+  },
+  "PaymentEmail": {
+    "subject": "Payment Confirmed - {credits} Credits Added",
+    "greeting": "Hi,",
+    "thankYou": "Thank you for your purchase! Your payment has been processed successfully.",
+    "summary": "Order Summary",
+    "pack": "Pack",
+    "credits": "Credits",
+    "amount": "Amount Paid",
+    "creditsReady": "Your {credits} credits are now available in your account and ready to use.",
+    "cta": "Go to Studio",
+    "footer": "This email was sent by Bunshin 3D. If you did not make this purchase, please contact us immediately.",
+    "team": "The Bunshin 3D Team"
   },
   "Breadcrumbs": {
     "home": "Home",

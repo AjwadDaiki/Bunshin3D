@@ -63,15 +63,25 @@ export async function POST(request: NextRequest) {
 
     const selectedPack = getPriceForCurrency(resolvedPackId as PackId, currency || "USD");
 
+    // Fetch user email for Stripe checkout pre-fill and confirmation email
+    const supabaseAdmin = createClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.SUPABASE_SERVICE_ROLE_KEY!,
+      { auth: { autoRefreshToken: false, persistSession: false } },
+    );
+
+    let userEmail: string | undefined;
+    try {
+      const { data: authUser } = await supabaseAdmin.auth.admin.getUserById(userId);
+      userEmail = authUser?.user?.email || undefined;
+    } catch {
+      console.warn("[Checkout] Could not fetch user email");
+    }
+
     // Validate OTO eligibility server-side
     let otoCouponId = "";
     const packCoupon = OTO_COUPONS[resolvedPackId] || "";
     if (isOTOPack && packCoupon) {
-      const supabaseAdmin = createClient(
-        process.env.NEXT_PUBLIC_SUPABASE_URL!,
-        process.env.SUPABASE_SERVICE_ROLE_KEY!,
-        { auth: { autoRefreshToken: false, persistSession: false } },
-      );
       const { data: profile } = await supabaseAdmin
         .from("profiles")
         .select("special_offer_started_at")
@@ -115,7 +125,10 @@ export async function POST(request: NextRequest) {
         userId,
         packId: resolvedPackId,
         credits: selectedPack.credits.toString(),
+        locale,
+        userEmail: userEmail || "",
       },
+      ...(userEmail ? { customer_email: userEmail } : {}),
     };
 
     if (otoCouponId) {

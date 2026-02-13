@@ -642,7 +642,39 @@
       "succeeded": "Completada",
       "failed": "Fallida",
       "queued": "En cola"
+    },
+    "SimulatePayment": {
+      "title": "Simular pago",
+      "subtitle": "Pago de prueba sin Stripe",
+      "description": "Simula la compra de un paquete de créditos para cualquier usuario. Los créditos se añaden al instante sin pasar por Stripe. Útil para pruebas y soporte.",
+      "searchUser": "Buscar usuario",
+      "selectPack": "Seleccionar paquete",
+      "sendConfirmationEmail": "Enviar email de confirmación",
+      "warning": "Esto añadirá {credits} créditos a la cuenta del usuario inmediatamente. Esta acción queda registrada.",
+      "simulate": "Simular pago",
+      "change": "Cambiar",
+      "userNotFound": "No se encontró ningún usuario con este email.",
+      "packs": {
+        "discovery": "Descubrimiento",
+        "creator": "Creador",
+        "studio": "Estudio"
+      },
+      "stripeTestCheckout": "Probar con Stripe Checkout",
+      "stripeTestInfo": "Test Stripe: Usa la tarjeta 4242 4242 4242 4242, cualquier fecha futura, cualquier CVC. Flujo completo con webhook de prueba."
     }
+  },
+  "PaymentEmail": {
+    "subject": "Pago confirmado - {credits} créditos añadidos",
+    "greeting": "Hola,",
+    "thankYou": "¡Gracias por tu compra! Tu pago se ha procesado con éxito.",
+    "summary": "Resumen del pedido",
+    "pack": "Pack",
+    "credits": "Créditos",
+    "amount": "Importe pagado",
+    "creditsReady": "Tus {credits} créditos ya están disponibles en tu cuenta y listos para usar.",
+    "cta": "Ir al Estudio",
+    "footer": "Este correo fue enviado por Bunshin 3D. Si no realizaste esta compra, contáctanos inmediatamente.",
+    "team": "El equipo de Bunshin 3D"
   },
   "Breadcrumbs": {
     "home": "Inicio",
