@@ -1,9 +1,9 @@
-﻿"use client";
+"use client";
 
 import React, { useState, useCallback, useEffect, FormEvent } from "react";
 import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
-import { getAllUsers, updateAppSettings } from "@/app/actions/admin";
+import { getAllUsers } from "@/app/actions/admin";
 import AdminDashboardHeader from "./AdminDashboardHeader";
 import AdminTabs from "./AdminTabs";
 import AdminOverviewTab from "./AdminOverviewTab";
@@ -20,14 +20,10 @@ type AdminProps = {
 
 export default function AdminDashboard({
   stats,
-  initialSettings,
   recentUsers,
-  recentGenerations,
 }: AdminProps) {
   const t = useTranslations("Admin");
   const router = useRouter();
-  const [settings, setSettings] = useState(initialSettings || {});
-  const [loading, setLoading] = useState(false);
   const [activeTab, setActiveTab] = useState<"overview" | "users">("overview");
   const [users, setUsers] = useState(recentUsers);
   const [userSearch, setUserSearch] = useState("");
@@ -41,19 +37,6 @@ export default function AdminDashboard({
     const interval = setInterval(() => setServerTime(new Date()), 1000);
     return () => clearInterval(interval);
   }, []);
-
-  const toggleMaintenance = async () => {
-    setLoading(true);
-    const newValue = !settings.maintenance_mode;
-
-    try {
-      await updateAppSettings({ maintenance_mode: newValue });
-      setSettings({ ...settings, maintenance_mode: newValue });
-    } catch {
-      setToast({ message: t("Errors.updateSystemStatus"), type: "error" });
-    }
-    setLoading(false);
-  };
 
   const loadUsers = useCallback(async (page: number, search?: string) => {
     try {
@@ -94,7 +77,6 @@ export default function AdminDashboard({
       )}
     <div className="space-y-8 animate-in fade-in duration-500 pb-20">
       <AdminDashboardHeader
-        maintenanceMode={!!settings.maintenance_mode}
         serverTime={serverTime?.toLocaleTimeString()}
       />
 
@@ -110,12 +92,6 @@ export default function AdminDashboard({
 
       {activeTab === "overview" && (
         <AdminOverviewTab
-          stats={stats}
-          recentUsers={recentUsers}
-          recentGenerations={recentGenerations}
-          maintenanceMode={!!settings.maintenance_mode}
-          loading={loading}
-          onToggleMaintenance={toggleMaintenance}
           onRefresh={handleRefresh}
         />
       )}
@@ -136,4 +112,3 @@ export default function AdminDashboard({
     </>
   );
 }
-

@@ -532,35 +532,8 @@
       "overview": "概要",
       "users": "ユーザー"
     },
-    "KPI": {
-      "revenue": "総収益",
-      "users": "総ユーザー数",
-      "models": "生成されたモデル",
-      "conversion": "コンバージョン率（有料）",
-      "arpu": "ARPU（平均収益）",
-      "burn": "GPU消費率",
-      "today": "本日",
-      "gpuCost": "推定GPUコスト",
-      "errorRate": "エラー率",
-      "arpuSubValue": "ARPU {symbol}{value}"
-    },
-    "Tables": {
-      "usersTitle": "最近のユーザー獲得",
-      "generationsTitle": "ライブ生成フィード",
-      "colUser": "ユーザー",
-      "colDate": "日付",
-      "colStatus": "ステータス",
-      "colCredits": "クレジット",
-      "colCost": "推定コスト",
-      "colMode": "モード"
-    },
     "Controls": {
-      "serverTime": "サーバー時刻",
-      "systemControls": "システムコントロール",
-      "maintenance": "メンテナンスモード",
-      "maintenanceDesc": "スタジオインターフェースをロック。既存のワークフローのAPIアクセスは有効。",
-      "active": "システム 有効",
-      "inactive": "システム ロック済み"
+      "serverTime": "サーバー時刻"
     },
     "Users": {
       "colActions": "アクション",
@@ -637,12 +610,6 @@
       "notAuthenticated": "認証されていません。",
       "notAuthorized": "権限がありません。"
     },
-    "Statuses": {
-      "processing": "処理中",
-      "succeeded": "成功",
-      "failed": "失敗",
-      "queued": "待機中"
-    },
     "SimulatePayment": {
       "title": "支払いシミュレーション",
       "subtitle": "Stripeなしのテスト決済",
@@ -661,6 +628,26 @@
       },
       "stripeTestCheckout": "Stripe Checkoutでテスト",
       "stripeTestInfo": "Stripeテスト：カード番号 4242 4242 4242 4242、任意の将来の日付、任意のCVCを使用。テストWebhookを含む完全なフロー。"
+    },
+    "ApplyPromo": {
+      "title": "プロモーション適用",
+      "subtitle": "ユーザーにOTOオファーを有効化",
+      "description": "任意のユーザーに対してプロモーションオファー（OTO）を手動で有効化します。選択した期間中、割引価格が表示されます。",
+      "selectDuration": "プロモーション期間",
+      "durations": {
+        "24": "24時間",
+        "48": "48時間",
+        "72": "72時間",
+        "168": "7日間",
+        "custom": "カスタム"
+      },
+      "customHours": "時間で指定",
+      "currentStatus": "現在のステータス",
+      "promoActive": "プロモ有効 — 残り{time}",
+      "promoInactive": "有効なプロモーションなし",
+      "apply": "プロモーション適用",
+      "remove": "プロモーション削除",
+      "warning": "選択した期間中、ユーザーにはDiscoveryとStudioパックのOTO割引価格が表示されます。"
     }
   },
   "PaymentEmail": {

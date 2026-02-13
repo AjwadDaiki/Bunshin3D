@@ -532,35 +532,8 @@
       "overview": "Vista General",
       "users": "Usuarios"
     },
-    "KPI": {
-      "revenue": "Ingresos Totales",
-      "users": "Usuarios Totales",
-      "models": "Modelos Generados",
-      "conversion": "Tasa Conv. (Pago)",
-      "arpu": "ARPU (Ingreso Promedio)",
-      "burn": "Tasa Consumo GPU",
-      "today": "hoy",
-      "gpuCost": "Costo GPU estimado",
-      "errorRate": "Tasa de Error",
-      "arpuSubValue": "ARPU {symbol}{value}"
-    },
-    "Tables": {
-      "usersTitle": "Adquisiciones de Usuarios Recientes",
-      "generationsTitle": "Flujo de Generación en Vivo",
-      "colUser": "Usuario",
-      "colDate": "Fecha",
-      "colStatus": "Estado",
-      "colCredits": "Créditos",
-      "colCost": "Costo Est.",
-      "colMode": "Modo"
-    },
     "Controls": {
-      "serverTime": "HORA DEL SERVIDOR",
-      "systemControls": "CONTROLES DEL SISTEMA",
-      "maintenance": "Modo Mantenimiento",
-      "maintenanceDesc": "Bloquea la interfaz del estudio. El acceso API permanece activo para flujos existentes.",
-      "active": "SISTEMA ACTIVO",
-      "inactive": "SISTEMA BLOQUEADO"
+      "serverTime": "HORA DEL SERVIDOR"
     },
     "Users": {
       "colActions": "Acciones",
@@ -637,12 +610,6 @@
       "notAuthenticated": "No autenticado.",
       "notAuthorized": "No autorizado."
     },
-    "Statuses": {
-      "processing": "En proceso",
-      "succeeded": "Completada",
-      "failed": "Fallida",
-      "queued": "En cola"
-    },
     "SimulatePayment": {
       "title": "Simular pago",
       "subtitle": "Pago de prueba sin Stripe",
@@ -661,6 +628,26 @@
       },
       "stripeTestCheckout": "Probar con Stripe Checkout",
       "stripeTestInfo": "Test Stripe: Usa la tarjeta 4242 4242 4242 4242, cualquier fecha futura, cualquier CVC. Flujo completo con webhook de prueba."
+    },
+    "ApplyPromo": {
+      "title": "Aplicar promoción",
+      "subtitle": "Activar oferta OTO para un usuario",
+      "description": "Activa manualmente la oferta promocional (OTO) para cualquier usuario. Verá los precios con descuento durante la duración elegida.",
+      "selectDuration": "Duración de la promoción",
+      "durations": {
+        "24": "24 horas",
+        "48": "48 horas",
+        "72": "72 horas",
+        "168": "7 días",
+        "custom": "Personalizado"
+      },
+      "customHours": "Duración en horas",
+      "currentStatus": "Estado actual",
+      "promoActive": "Promo activa — {time} restante",
+      "promoInactive": "Sin promoción activa",
+      "apply": "Aplicar promoción",
+      "remove": "Eliminar promoción",
+      "warning": "El usuario verá los precios OTO con descuento en los packs Discovery y Studio durante la duración elegida."
     }
   },
   "PaymentEmail": {

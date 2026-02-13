@@ -43,7 +43,11 @@ export const baseMetadataConfig: Metadata = {
       { url: "/icon-32x32.png", sizes: "32x32", type: "image/png" },
       { url: "/icon-48x48.png", sizes: "48x48", type: "image/png" },
       { url: "/icon-64x64.png", sizes: "64x64", type: "image/png" },
+      { url: "/icon-96x96.png", sizes: "96x96", type: "image/png" },
+      { url: "/icon-128x128.png", sizes: "128x128", type: "image/png" },
       { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon-256x256.png", sizes: "256x256", type: "image/png" },
+      { url: "/icon-384x384.png", sizes: "384x384", type: "image/png" },
       { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
       { url: "/safari-pinned-tab.svg", type: "image/svg+xml" },
     ],
@@ -54,8 +58,8 @@ export const baseMetadataConfig: Metadata = {
     other: [
       {
         rel: "mask-icon",
-        url: "/safari-pinned-tab.svg",
-        color: "#9945ff",
+        url: "/safari-pinned-tab-mono.svg",
+        color: "#3b82f6",
       },
     ],
   },

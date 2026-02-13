@@ -532,35 +532,8 @@
       "overview": "Overview",
       "users": "Users"
     },
-    "KPI": {
-      "revenue": "Total Revenue",
-      "users": "Total Users",
-      "models": "Models Generated",
-      "conversion": "Conv. Rate (Paid)",
-      "arpu": "ARPU (Avg Revenue)",
-      "burn": "GPU Burn Rate",
-      "today": "today",
-      "gpuCost": "Estimated GPU cost",
-      "errorRate": "Error Rate",
-      "arpuSubValue": "{symbol}{value} ARPU"
-    },
-    "Tables": {
-      "usersTitle": "Recent User Acquisitions",
-      "generationsTitle": "Live Generation Feed",
-      "colUser": "User",
-      "colDate": "Date",
-      "colStatus": "Status",
-      "colCredits": "Credits",
-      "colCost": "Est. Cost",
-      "colMode": "Mode"
-    },
     "Controls": {
-      "serverTime": "SERVER TIME",
-      "systemControls": "SYSTEM CONTROLS",
-      "maintenance": "Maintenance Mode",
-      "maintenanceDesc": "Locks the studio interface. API access remains active for existing workflows.",
-      "active": "SYSTEM ACTIVE",
-      "inactive": "SYSTEM LOCKED"
+      "serverTime": "SERVER TIME"
     },
     "Users": {
       "colActions": "Actions",
@@ -637,12 +610,6 @@
       "notAuthenticated": "Not authenticated.",
       "notAuthorized": "Not authorized."
     },
-    "Statuses": {
-      "processing": "Processing",
-      "succeeded": "Succeeded",
-      "failed": "Failed",
-      "queued": "Queued"
-    },
     "SimulatePayment": {
       "title": "Simulate Payment",
       "subtitle": "Test payment without Stripe",
@@ -661,6 +628,26 @@
       },
       "stripeTestCheckout": "Test with Stripe Checkout",
       "stripeTestInfo": "Stripe Test: Use card 4242 4242 4242 4242, any future date, any CVC. Full checkout flow with test webhook."
+    },
+    "ApplyPromo": {
+      "title": "Apply Promotion",
+      "subtitle": "Activate OTO offer for a user",
+      "description": "Manually activate the promotional offer (OTO) for any user. They will see discounted prices for the chosen duration.",
+      "selectDuration": "Promotion duration",
+      "durations": {
+        "24": "24 hours",
+        "48": "48 hours",
+        "72": "72 hours",
+        "168": "7 days",
+        "custom": "Custom"
+      },
+      "customHours": "Duration in hours",
+      "currentStatus": "Current status",
+      "promoActive": "Promo active — {time} remaining",
+      "promoInactive": "No active promotion",
+      "apply": "Apply Promotion",
+      "remove": "Remove Promotion",
+      "warning": "The user will see discounted OTO prices on Discovery and Studio packs for the chosen duration."
     }
   },
   "PaymentEmail": {

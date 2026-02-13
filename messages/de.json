@@ -532,35 +532,8 @@
       "overview": "Übersicht",
       "users": "Benutzer"
     },
-    "KPI": {
-      "revenue": "Gesamtumsatz",
-      "users": "Gesamte Nutzer",
-      "models": "Generierte Modelle",
-      "conversion": "Konv. Rate (Bezahlt)",
-      "arpu": "ARPU (Durchschn. Umsatz)",
-      "burn": "GPU-Verbrauchsrate",
-      "today": "heute",
-      "gpuCost": "Geschätzte GPU-Kosten",
-      "errorRate": "Fehlerrate",
-      "arpuSubValue": "ARPU {symbol}{value}"
-    },
-    "Tables": {
-      "usersTitle": "Neueste Nutzerakquisitionen",
-      "generationsTitle": "Live-Generierungsfeed",
-      "colUser": "Nutzer",
-      "colDate": "Datum",
-      "colStatus": "Status",
-      "colCredits": "Credits",
-      "colCost": "Geschätzte Kosten",
-      "colMode": "Modus"
-    },
     "Controls": {
-      "serverTime": "SERVERZEIT",
-      "systemControls": "SYSTEMSTEUERUNG",
-      "maintenance": "Wartungsmodus",
-      "maintenanceDesc": "Sperrt die Studio-Oberfläche. API-Zugang bleibt für bestehende Workflows aktiv.",
-      "active": "SYSTEM AKTIV",
-      "inactive": "SYSTEM GESPERRT"
+      "serverTime": "SERVERZEIT"
     },
     "Users": {
       "colActions": "Aktionen",
@@ -637,12 +610,6 @@
       "notAuthenticated": "Nicht authentifiziert.",
       "notAuthorized": "Nicht autorisiert."
     },
-    "Statuses": {
-      "processing": "In Bearbeitung",
-      "succeeded": "Erfolgreich",
-      "failed": "Fehlgeschlagen",
-      "queued": "In Warteschlange"
-    },
     "SimulatePayment": {
       "title": "Zahlung simulieren",
       "subtitle": "Testzahlung ohne Stripe",
@@ -661,6 +628,26 @@
       },
       "stripeTestCheckout": "Mit Stripe Checkout testen",
       "stripeTestInfo": "Stripe-Test: Verwenden Sie die Karte 4242 4242 4242 4242, ein zukünftiges Datum, eine beliebige CVC. Vollständiger Ablauf mit Test-Webhook."
+    },
+    "ApplyPromo": {
+      "title": "Promotion anwenden",
+      "subtitle": "OTO-Angebot für einen Benutzer aktivieren",
+      "description": "Aktivieren Sie manuell das Werbeangebot (OTO) für einen beliebigen Benutzer. Er sieht die reduzierten Preise für die gewählte Dauer.",
+      "selectDuration": "Aktionsdauer",
+      "durations": {
+        "24": "24 Stunden",
+        "48": "48 Stunden",
+        "72": "72 Stunden",
+        "168": "7 Tage",
+        "custom": "Benutzerdefiniert"
+      },
+      "customHours": "Dauer in Stunden",
+      "currentStatus": "Aktueller Status",
+      "promoActive": "Promo aktiv — {time} verbleibend",
+      "promoInactive": "Keine aktive Promotion",
+      "apply": "Promotion anwenden",
+      "remove": "Promotion entfernen",
+      "warning": "Der Benutzer sieht die reduzierten OTO-Preise für Discovery- und Studio-Pakete während der gewählten Dauer."
     }
   },
   "PaymentEmail": {

@@ -2,52 +2,21 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import { CreditCard } from "@phosphor-icons/react";
-import { AdminStats, AdminUserProfile } from "./types";
-import AdminKpiGrid from "./AdminKpiGrid";
-import AdminRecentUsersTable from "./AdminRecentUsersTable";
-import AdminRecentGenerationsTable from "./AdminRecentGenerationsTable";
-import AdminSystemControls from "./AdminSystemControls";
+import { CreditCard, Tag } from "@phosphor-icons/react";
 import AdminSimulatePaymentModal from "./AdminSimulatePaymentModal";
-
-type Generation = {
-  id: string;
-  mode: string;
-  status: string;
-  created_at: string;
-};
+import AdminApplyPromoModal from "./AdminApplyPromoModal";
 
 type Props = {
-  stats: AdminStats;
-  recentUsers: AdminUserProfile[];
-  recentGenerations: Generation[];
-  maintenanceMode: boolean;
-  loading: boolean;
-  onToggleMaintenance: () => void;
   onRefresh: () => void;
 };
 
-export default function AdminOverviewTab({
-  stats,
-  recentUsers,
-  recentGenerations,
-  maintenanceMode,
-  loading,
-  onToggleMaintenance,
-  onRefresh,
-}: Props) {
+export default function AdminOverviewTab({ onRefresh }: Props) {
   const t = useTranslations("Admin");
   const [showSimulate, setShowSimulate] = useState(false);
+  const [showPromo, setShowPromo] = useState(false);
 
   return (
     <>
-      <AdminKpiGrid stats={stats} />
-
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <AdminRecentUsersTable users={recentUsers} />
-        <AdminRecentGenerationsTable generations={recentGenerations} />
-      </div>
-
       {/* Simulate Payment */}
       <div className="rounded-xl border border-white/6 bg-[#111] p-8">
         <div className="flex flex-col md:flex-row items-center justify-between p-6 rounded-xl border border-white/6 bg-[#191919] gap-6">
@@ -69,15 +38,37 @@ export default function AdminOverviewTab({
         </div>
       </div>
 
-      <AdminSystemControls
-        maintenanceMode={maintenanceMode}
-        loading={loading}
-        onToggle={onToggleMaintenance}
-      />
+      {/* Apply Promotion */}
+      <div className="rounded-xl border border-white/6 bg-[#111] p-8">
+        <div className="flex flex-col md:flex-row items-center justify-between p-6 rounded-xl border border-white/6 bg-[#191919] gap-6">
+          <div>
+            <h3 className="font-bold text-lg text-white">
+              {t("ApplyPromo.title")}
+            </h3>
+            <p className="text-neutral-400 text-sm mt-1 max-w-xl">
+              {t("ApplyPromo.description")}
+            </p>
+          </div>
+          <button
+            onClick={() => setShowPromo(true)}
+            className="flex items-center gap-2 px-8 py-4 rounded-lg font-bold transition-colors border shrink-0 bg-white text-neutral-950 border-white hover:bg-zinc-200"
+          >
+            <Tag className="w-5 h-5" weight="bold" />
+            {t("ApplyPromo.apply")}
+          </button>
+        </div>
+      </div>
 
       {showSimulate && (
         <AdminSimulatePaymentModal
           onClose={() => setShowSimulate(false)}
+          onSuccess={onRefresh}
+        />
+      )}
+
+      {showPromo && (
+        <AdminApplyPromoModal
+          onClose={() => setShowPromo(false)}
           onSuccess={onRefresh}
         />
       )}

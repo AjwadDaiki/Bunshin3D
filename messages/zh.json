@@ -532,35 +532,8 @@
       "overview": "概览",
       "users": "用户"
     },
-    "KPI": {
-      "revenue": "总收入",
-      "users": "总用户",
-      "models": "生成的模型",
-      "conversion": "转化率（付费）",
-      "arpu": "ARPU（平均收入）",
-      "burn": "GPU消耗率",
-      "today": "今日",
-      "gpuCost": "预估GPU成本",
-      "errorRate": "错误率",
-      "arpuSubValue": "ARPU {symbol}{value}"
-    },
-    "Tables": {
-      "usersTitle": "最近用户获取",
-      "generationsTitle": "实时生成动态",
-      "colUser": "用户",
-      "colDate": "日期",
-      "colStatus": "状态",
-      "colCredits": "积分",
-      "colCost": "估计成本",
-      "colMode": "模式"
-    },
     "Controls": {
-      "serverTime": "服务器时间",
-      "systemControls": "系统控制",
-      "maintenance": "维护模式",
-      "maintenanceDesc": "锁定工作室界面。现有工作流的API访问保持活跃。",
-      "active": "系统活跃",
-      "inactive": "系统锁定"
+      "serverTime": "服务器时间"
     },
     "Users": {
       "colActions": "操作",
@@ -637,12 +610,6 @@
       "notAuthenticated": "未认证。",
       "notAuthorized": "无权限。"
     },
-    "Statuses": {
-      "processing": "处理中",
-      "succeeded": "成功",
-      "failed": "失败",
-      "queued": "排队中"
-    },
     "SimulatePayment": {
       "title": "模拟付款",
       "subtitle": "无需Stripe的测试支付",
@@ -661,6 +628,26 @@
       },
       "stripeTestCheckout": "通过Stripe Checkout测试",
       "stripeTestInfo": "Stripe测试：使用卡号 4242 4242 4242 4242，任意未来日期，任意CVC。包含测试Webhook的完整流程。"
+    },
+    "ApplyPromo": {
+      "title": "应用促销",
+      "subtitle": "为用户激活OTO优惠",
+      "description": "手动为任意用户激活促销优惠（OTO）。在选定时间内，他们将看到折扣价格。",
+      "selectDuration": "促销时长",
+      "durations": {
+        "24": "24小时",
+        "48": "48小时",
+        "72": "72小时",
+        "168": "7天",
+        "custom": "自定义"
+      },
+      "customHours": "输入小时数",
+      "currentStatus": "当前状态",
+      "promoActive": "促销进行中 — 剩余{time}",
+      "promoInactive": "无活跃促销",
+      "apply": "应用促销",
+      "remove": "移除促销",
+      "warning": "用户将在选定时间内看到Discovery和Studio套餐的OTO折扣价格。"
     }
   },
   "PaymentEmail": {

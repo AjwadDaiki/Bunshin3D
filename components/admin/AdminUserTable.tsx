@@ -47,10 +47,10 @@ export default function AdminUserTable({
         <table className="w-full text-sm">
           <thead className="bg-[#191919] text-gray-400 uppercase text-xs">
             <tr>
-              <th className="px-6 py-4 text-left">{t("Tables.colUser")}</th>
+              <th className="px-6 py-4 text-left">{t("Users.colUser")}</th>
               <th className="px-6 py-4 text-left">{t("Users.role")}</th>
-              <th className="px-6 py-4 text-left">{t("Tables.colDate")}</th>
-              <th className="px-6 py-4 text-right">{t("Tables.colCredits")}</th>
+              <th className="px-6 py-4 text-left">{t("Users.colDate")}</th>
+              <th className="px-6 py-4 text-right">{t("Users.colCredits")}</th>
               <th className="px-6 py-4 text-center">{t("Users.status")}</th>
               <th className="px-6 py-4 text-right">{t("Users.actions")}</th>
             </tr>
