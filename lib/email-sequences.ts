@@ -20,7 +20,7 @@ function wrapEmail(content: string, studioUrl: string): string {
   </div>
   ${content}
   <div style="margin-top:40px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.06);text-align:center">
-    <p style="color:#666;font-size:12px;margin:0">Bunshin 3D — AI 3D Model Generator</p>
+    <p style="color:#666;font-size:12px;margin:0">Bunshin 3D - AI 3D Model Generator</p>
     <p style="color:#444;font-size:11px;margin:8px 0 0">
       <a href="${studioUrl.replace('/studio', '/terms')}" style="color:#444;text-decoration:underline">Unsubscribe</a>
     </p>
@@ -74,11 +74,11 @@ export const NURTURE_SEQUENCE: NurtureStep[] = [
         Bunshin 3D users are building amazing things. Here are the top use cases:
       </p>
       <div style="background:#111;border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:20px;margin:0 0 24px">
-        <p style="color:#ccc;font-size:14px;margin:0 0 14px"><strong style="color:${BRAND_COLOR}">1.</strong> <strong style="color:#fff">3D Print custom figurines</strong> — from photos of pets, characters, or objects</p>
-        <p style="color:#ccc;font-size:14px;margin:0 0 14px"><strong style="color:${BRAND_COLOR}">2.</strong> <strong style="color:#fff">Create game assets</strong> — import GLB/FBX into Unity or Unreal Engine</p>
-        <p style="color:#ccc;font-size:14px;margin:0 0 14px"><strong style="color:${BRAND_COLOR}">3.</strong> <strong style="color:#fff">Brand signage</strong> — turn your logo into a 3D-printable desk piece</p>
-        <p style="color:#ccc;font-size:14px;margin:0 0 14px"><strong style="color:${BRAND_COLOR}">4.</strong> <strong style="color:#fff">Product visualization</strong> — create 3D models from product photos for e-commerce</p>
-        <p style="color:#ccc;font-size:14px;margin:0"><strong style="color:${BRAND_COLOR}">5.</strong> <strong style="color:#fff">Kids' art in 3D</strong> — turn your child's drawing into a real 3D-printed toy</p>
+        <p style="color:#ccc;font-size:14px;margin:0 0 14px"><strong style="color:${BRAND_COLOR}">1.</strong> <strong style="color:#fff">3D Print custom figurines</strong> - from photos of pets, characters, or objects</p>
+        <p style="color:#ccc;font-size:14px;margin:0 0 14px"><strong style="color:${BRAND_COLOR}">2.</strong> <strong style="color:#fff">Create game assets</strong> - import GLB/FBX into Unity or Unreal Engine</p>
+        <p style="color:#ccc;font-size:14px;margin:0 0 14px"><strong style="color:${BRAND_COLOR}">3.</strong> <strong style="color:#fff">Brand signage</strong> - turn your logo into a 3D-printable desk piece</p>
+        <p style="color:#ccc;font-size:14px;margin:0 0 14px"><strong style="color:${BRAND_COLOR}">4.</strong> <strong style="color:#fff">Product visualization</strong> - create 3D models from product photos for e-commerce</p>
+        <p style="color:#ccc;font-size:14px;margin:0"><strong style="color:${BRAND_COLOR}">5.</strong> <strong style="color:#fff">Kids' art in 3D</strong> - turn your child's drawing into a real 3D-printed toy</p>
       </div>
       <div style="text-align:center">
         <a href="${studioUrl}" style="display:inline-block;background:#fff;color:#0a0a0a;padding:12px 32px;border-radius:8px;text-decoration:none;font-weight:600;font-size:15px">Try It Now</a>
@@ -89,12 +89,12 @@ export const NURTURE_SEQUENCE: NurtureStep[] = [
     id: "credits-reminder",
     delayDays: 5,
     subject: {
-      en: "Your credits are running low — special offer inside",
-      fr: "Vos crédits s'épuisent — offre spéciale à l'intérieur",
-      es: "Tus créditos se agotan — oferta especial dentro",
-      de: "Ihre Credits gehen zur Neige — Sonderangebot",
-      ja: "クレジット残りわずか — 特別オファー",
-      zh: "积分即将用完 — 内含特别优惠",
+      en: "Your credits are running low - special offer inside",
+      fr: "Vos crédits s'épuisent - offre spéciale à l'intérieur",
+      es: "Tus créditos se agotan - oferta especial dentro",
+      de: "Ihre Credits gehen zur Neige - Sonderangebot",
+      ja: "クレジット残りわずか - 特別オファー",
+      zh: "积分即将用完 - 内含特别优惠",
     },
     getHtml: ({ pricingUrl, credits }) => wrapEmail(`
       <h1 style="color:#fff;font-size:24px;margin:0 0 16px;font-weight:bold">Don't stop creating</h1>
@@ -112,3 +112,61 @@ export const NURTURE_SEQUENCE: NurtureStep[] = [
     `, pricingUrl),
   },
 ];
+
+// Post-purchase upsell sequence (separate from nurture)
+export const POST_PURCHASE_SEQUENCE: NurtureStep[] = [
+  {
+    id: "upsell-creator",
+    delayDays: 3,
+    subject: {
+      en: "Save 35% per credit with the Creator pack",
+      fr: "Economisez 35% par credit avec le pack Createur",
+      es: "Ahorra 35% por credito con el pack Creador",
+      de: "Sparen Sie 35% pro Credit mit dem Kreator-Paket",
+      ja: "Creatorパックでクレジット単価35%オフ",
+      zh: "Creator套餐每积分节省35%",
+    },
+    getHtml: ({ pricingUrl }) => wrapEmail(`
+      <h1 style="color:#fff;font-size:24px;margin:0 0 16px;font-weight:bold">Get more for less</h1>
+      <p style="color:#999;font-size:15px;line-height:1.6;margin:0 0 24px">
+        You recently purchased the Discovery pack. Did you know the Creator pack gives you <strong style="color:#fff">50 credits for $12.99</strong> - that's <strong style="color:#10b981">35% less per credit</strong>?
+      </p>
+      <div style="background:#111;border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:20px;margin:0 0 24px">
+        <div style="display:flex;justify-content:space-between;margin-bottom:12px">
+          <span style="color:#999;font-size:14px">Discovery</span>
+          <span style="color:#fff;font-size:14px">$0.40/credit</span>
+        </div>
+        <div style="display:flex;justify-content:space-between">
+          <span style="color:#3b82f6;font-size:14px;font-weight:bold">Creator</span>
+          <span style="color:#10b981;font-size:14px;font-weight:bold">$0.26/credit (-35%)</span>
+        </div>
+      </div>
+      <div style="text-align:center">
+        <a href="${pricingUrl}" style="display:inline-block;background:#fff;color:#0a0a0a;padding:12px 32px;border-radius:8px;text-decoration:none;font-weight:600;font-size:15px">Upgrade Now</a>
+      </div>
+    `, pricingUrl),
+  },
+];
+
+// Credit-low alert (triggered by cron check, not by delay)
+export const CREDIT_LOW_EMAIL: NurtureStep = {
+  id: "credit-low",
+  delayDays: 0,
+  subject: {
+    en: "You have 1 credit left",
+    fr: "Il vous reste 1 credit",
+    es: "Te queda 1 credito",
+    de: "Sie haben noch 1 Credit",
+    ja: "残り1クレジットです",
+    zh: "您还剩1积分",
+  },
+  getHtml: ({ pricingUrl, credits }) => wrapEmail(`
+    <h1 style="color:#fff;font-size:24px;margin:0 0 16px;font-weight:bold">Don't run out of credits</h1>
+    <p style="color:#999;font-size:15px;line-height:1.6;margin:0 0 24px">
+      You have <strong style="color:#fff">${credits} credit${credits !== 1 ? "s" : ""}</strong> remaining. Top up to keep creating without interruption.
+    </p>
+    <div style="text-align:center">
+      <a href="${pricingUrl}" style="display:inline-block;background:#fff;color:#0a0a0a;padding:12px 32px;border-radius:8px;text-decoration:none;font-weight:600;font-size:15px">Get More Credits</a>
+    </div>
+  `, pricingUrl),
+};

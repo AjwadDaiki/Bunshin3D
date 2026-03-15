@@ -62,7 +62,7 @@ export async function GET(
       if (prediction.status === "succeeded") {
         const modelUrl = resolveModelUrl(prediction.output);
 
-        // Quick lightweight DB update — only mark status + URL
+        // Quick lightweight DB update - only mark status + URL
         await supabase
           .from("generations")
           .update({

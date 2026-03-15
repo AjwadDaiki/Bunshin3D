@@ -32,6 +32,11 @@ export default function PricingTable({ userId = null }: PricingTableProps) {
   const [toast, setToast] = useState<{ message: string; type: "error" | "info" } | null>(null);
 
   const handleCheckout = useCallback(async (packId: string) => {
+    // GA4 begin_checkout event
+    if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
+      (window as any).gtag("event", "begin_checkout", { pack_id: packId });
+    }
+
     let resolvedUserId = userId;
 
     if (!resolvedUserId) {

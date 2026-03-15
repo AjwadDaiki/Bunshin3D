@@ -7,6 +7,7 @@ import type { AudienceSlug } from "@/lib/audience-data";
 import { Link } from "@/i18n/routing";
 import JsonLd from "@/components/seo/JsonLd";
 import { generateAlternates } from "@/lib/seo-utils";
+import StickyCTA from "@/components/shared/StickyCTA";
 
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://bunshin3d.com";
 
@@ -148,6 +149,7 @@ export default async function AudiencePage({ params }: { params: Promise<{ local
           </section>
         </div>
       </main>
+      <StickyCTA />
     </>
   );
 }

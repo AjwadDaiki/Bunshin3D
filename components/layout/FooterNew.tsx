@@ -44,11 +44,6 @@ export default function FooterNew() {
                 </Link>
               </li>
               <li>
-                <Link href="/gallery" className="hover:text-white transition-colors">
-                  {t("gallery")}
-                </Link>
-              </li>
-              <li>
                 <Link href="/formats" className="hover:text-white transition-colors">
                   {t("formats")}
                 </Link>

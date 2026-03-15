@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { createServerClient } from "@supabase/ssr";
 
-const OTO_DURATION_MS = 24 * 60 * 60 * 1000; // 24h — must match useSpecialOffer.ts
+const OTO_DURATION_MS = 24 * 60 * 60 * 1000; // 24h - must match useSpecialOffer.ts
 
 export const runtime = "nodejs";
 

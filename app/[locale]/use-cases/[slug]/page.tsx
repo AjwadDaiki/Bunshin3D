@@ -7,6 +7,7 @@ import type { UseCaseSlug } from "@/lib/use-cases-data";
 import JsonLd from "@/components/seo/JsonLd";
 import { generateAlternates } from "@/lib/seo-utils";
 import UseCasePage from "@/components/use-cases/UseCasePage";
+import StickyCTA from "@/components/shared/StickyCTA";
 
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://bunshin3d.com";
 
@@ -168,6 +169,7 @@ export default async function UseCasePageRoute({
         useCaseData={useCaseData}
         locale={locale}
       />
+      <StickyCTA />
     </>
   );
 }

@@ -1,6 +1,6 @@
 {
   "Metadata": {
-    "defaultTitle": "Bunshin 3D | 画像から3Dモデル変換 無料 — STL・GLBジェネレーター",
+    "defaultTitle": "Bunshin 3D | 画像から3Dモデル変換 無料 - STL・GLBジェネレーター",
     "templateTitle": "%s | Bunshin 3D - AI 3Dモデル生成ツール",
     "description": "画像から3Dモデルを無料で生成。写真・ロゴ・イラストをSTL（3Dプリント用）やGLB（Unity/Unreal用）に30秒で変換。AIが自動処理、専門知識不要。今すぐ無料で試す！",
     "applicationName": "Bunshin 3D",
@@ -111,16 +111,16 @@
     },
     "CTA": {
       "title": "アイデアを実現する準備はできましたか？",
-      "subtitle": "30秒で作成開始 — デザインスキル不要。",
+      "subtitle": "30秒で作成開始 - デザインスキル不要。",
       "button": "スタジオを起動"
     },
     "SEOContent": {
       "title1": "AIで画像を3Dモデルに変換",
-      "text1": "Bunshin 3DはAI搭載の画像→3Dコンバーターです。写真、ロゴ、イラスト、スケッチをプロ仕様の3Dモデルに変換します。PNG、JPG、WEBPファイルをアップロードし、3D印刷用のSTL、ゲーム・Web用のGLB、BlenderやMaya用のOBJ、UnityやUnreal Engine用のFBXでダウンロード。変換は30秒以内で完了し、3Dモデリングの経験は不要です。企業ロゴをSTLファイルに変換して3D印刷したい、コンセプトアートからゲームアセットを生成したい、子供の絵を実際のフィギュアにしたい — Bunshin 3Dは1枚の画像からすべてに対応します。",
+      "text1": "Bunshin 3DはAI搭載の画像→3Dコンバーターです。写真、ロゴ、イラスト、スケッチをプロ仕様の3Dモデルに変換します。PNG、JPG、WEBPファイルをアップロードし、3D印刷用のSTL、ゲーム・Web用のGLB、BlenderやMaya用のOBJ、UnityやUnreal Engine用のFBXでダウンロード。変換は30秒以内で完了し、3Dモデリングの経験は不要です。企業ロゴをSTLファイルに変換して3D印刷したい、コンセプトアートからゲームアセットを生成したい、子供の絵を実際のフィギュアにしたい - Bunshin 3Dは1枚の画像からすべてに対応します。",
       "title2": "3Dプリント、ゲーム開発、デザインに最適",
-      "text2": "Bunshin 3Dで生成されるすべてのモデルは水密でマニフォールド — STLファイルはCura、PrusaSlicer、Bambu Studioなどのスライサーに修復なしで直接読み込めます。GLBエクスポートはglTF 2.0標準に準拠し、Unity、Unreal Engine、Godot、Three.jsとネイティブ互換です。AIはニューラル深度推定を使用して本物の3Dジオメトリを再構築 — 単なる平面押し出しやリトファンではありません。深さ、曲面、アンダーカットを持つ完全な3Dメッシュとして、プロトタイピング、製品ビジュアライゼーション、教育プロジェクト、商用制作に活用できます。",
+      "text2": "Bunshin 3Dで生成されるすべてのモデルは水密でマニフォールド - STLファイルはCura、PrusaSlicer、Bambu Studioなどのスライサーに修復なしで直接読み込めます。GLBエクスポートはglTF 2.0標準に準拠し、Unity、Unreal Engine、Godot、Three.jsとネイティブ互換です。AIはニューラル深度推定を使用して本物の3Dジオメトリを再構築 - 単なる平面押し出しやリトファンではありません。深さ、曲面、アンダーカットを持つ完全な3Dメッシュとして、プロトタイピング、製品ビジュアライゼーション、教育プロジェクト、商用制作に活用できます。",
       "title3": "無料クレジット、サブスク不要、商用利用可能",
-      "text3": "登録するとプラットフォームを試せる無料クレジットがもらえます — クレジットカード不要。クレジットは無期限で、月額サブスクリプションはありません。生成したすべての3Dモデルには完全な商用権利が付属：製品、ゲーム、印刷物、クライアント案件に制限なく使用できます。クレジットパックは10回の生成で$3.99から、大容量パックにはボリュームディスカウントがあります。Bunshin 3Dは6言語・複数通貨に対応し、世界80カ国以上のクリエイターにサービスを提供しています。"
+      "text3": "登録するとプラットフォームを試せる無料クレジットがもらえます - クレジットカード不要。クレジットは無期限で、月額サブスクリプションはありません。生成したすべての3Dモデルには完全な商用権利が付属：製品、ゲーム、印刷物、クライアント案件に制限なく使用できます。クレジットパックは10回の生成で$3.99から、大容量パックにはボリュームディスカウントがあります。Bunshin 3Dは6言語・複数通貨に対応し、世界80カ国以上のクリエイターにサービスを提供しています。"
     }
   },
   "Footer": {
@@ -144,7 +144,6 @@
     "rights": "全著作権所有。",
     "crafted": "精密に制作",
     "partnerName": "Hidden Lab",
-    "gallery": "ギャラリー",
     "formats": "フォーマット",
     "compare": "比較",
     "copyright": "© {year} Bunshin 3D. 全著作権所有。"
@@ -921,8 +920,8 @@
       "title": "シンプル、透明",
       "titleHighlight": "料金。",
       "subtitle": "必要に応じてクレジットを購入。月額サブスクリプションの罠はありません。クレジットは永久に有効。",
-      "socialProof": "サブスク不要 — 一度購入、いつでも作成。",
-      "guarantee": "100%満足保証 — いつでもお問い合わせください"
+      "socialProof": "サブスク不要 - 一度購入、いつでも作成。",
+      "guarantee": "100%満足保証 - いつでもお問い合わせください"
     },
     "Badges": {
       "popular": "推奨",
@@ -971,7 +970,7 @@
       "commercial": "商用ライセンス"
     },
     "SocialProof": {
-      "users": "安全な決済 — クレジット無期限"
+      "users": "安全な決済 - クレジット無期限"
     },
     "FAQ": {
       "title": "よくある質問",
@@ -1171,7 +1170,7 @@
       },
       "customHours": "時間で指定",
       "currentStatus": "現在のステータス",
-      "promoActive": "プロモ有効 — 残り{time}",
+      "promoActive": "プロモ有効 - 残り{time}",
       "promoInactive": "有効なプロモーションなし",
       "apply": "プロモーション適用",
       "remove": "プロモーション削除",
@@ -1505,37 +1504,8 @@
       }
     ]
   },
-  "Gallery": {
-    "metaTitle": "3Dモデルギャラリー | ビフォーアフター例 | Bunshin 3D",
-    "metaDescription": "Bunshin 3Dで変換された画像の実例をご覧ください。ロゴ、キャラクター、オブジェクト、イラストの3D変換例。",
-    "keywords": "3dモデル例, ai 3dギャラリー, ビフォーアフター 3d変換",
-    "label": "ギャラリー",
-    "h1": "Bunshin 3Dで何が作れるか見てみよう",
-    "description": "画像から3Dモデルへの変換例。ロゴからキャラクター、スケッチから製品写真まで。",
-    "all": "すべて",
-    "categories": {
-      "logos": "ロゴ",
-      "characters": "キャラクター",
-      "objects": "オブジェクト",
-      "drawings": "イラスト",
-      "photos": "写真"
-    },
-    "items": {
-      "sci-fi-helmet": "SFヘルメット",
-      "ceramic-vase": "セラミック花瓶",
-      "stylized-hero": "スタイライズドヒーロー",
-      "mech-part": "メカパーツ",
-      "brand-logo": "ブランドロゴ",
-      "child-drawing": "子供の絵"
-    },
-    "inputLabel": "入力画像",
-    "noResults": "このカテゴリにはまだ例がありません。",
-    "seoTitle": "AI画像から3D変換",
-    "seoText": "このギャラリーのすべてのモデルは、1枚の2D画像からBunshin 3Dで生成されました。AIはニューラル深度推定を使用して完全な3Dジオメトリを再構築します。",
-    "cta": "無料で試してみる"
-  },
   "ExitIntent": {
-    "title": "ちょっと待って — 試してみませんか？",
+    "title": "ちょっと待って - 試してみませんか？",
     "description": "最初の画像を無料で3Dモデルに変換。クレジットカード不要、ダウンロード不要。30秒。",
     "ctaPrimary": "無料で試す",
     "ctaSecondary": "料金を見る",
@@ -1581,19 +1551,19 @@
       "faq5Q": "何個のアセットを生成できますか？",
       "faq5A": "各生成は1クレジット（スタンダード）または5クレジット（プレミアム）です。クレジットパックは10回の生成で3.99ドルから、大量パックには割引があります。クレジットに有効期限はありません。",
       "ctaTitle": "ゲームアセットパイプラインを加速",
-      "ctaDescription": "コンセプトアートから3Dプロップ、キャラクター、環境パーツを数秒で生成。無料クレジットで始めましょう — サブスクリプション不要。"
+      "ctaDescription": "コンセプトアートから3Dプロップ、キャラクター、環境パーツを数秒で生成。無料クレジットで始めましょう - サブスクリプション不要。"
     },
     "3d-printing": {
-      "metaTitle": "画像から3Dプリントファイル — 写真からSTL生成 | Bunshin 3D",
+      "metaTitle": "画像から3Dプリントファイル - 写真からSTL生成 | Bunshin 3D",
       "metaDescription": "写真、イラスト、ロゴを水密なSTLファイルに変換して3Dプリント。Cura、PrusaSlicer、Bambu Studioに対応。3Dモデリングスキル不要。",
       "keywords": "画像から3dプリントファイル, 写真から3dプリント, 画像からstl, 写真を3dプリント",
       "h1": "あらゆる画像を3Dプリント可能なファイルに変換",
       "breadcrumb": "3Dプリント",
-      "heroDescription": "写真、ロゴ、イラストをアップロードして、3Dプリンターで即座に使える水密なSTLファイルをダウンロード。Bunshin 3DはCura、PrusaSlicer、Bambu Studioに直接読み込めるマニフォールドメッシュを生成します — クリーンアップやメッシュ修復は不要です。",
+      "heroDescription": "写真、ロゴ、イラストをアップロードして、3Dプリンターで即座に使える水密なSTLファイルをダウンロード。Bunshin 3DはCura、PrusaSlicer、Bambu Studioに直接読み込めるマニフォールドメッシュを生成します - クリーンアップやメッシュ修復は不要です。",
       "section1Title": "水密なSTLファイル、スライスの準備完了",
       "section1Text": "3Dプリントで最もフラストレーションを感じるのは、穴、非マニフォールドエッジ、反転した法線を含むモデルを受け取り、スライサーで失敗することです。Bunshin 3Dは設計上、水密でマニフォールドなメッシュを生成します。STLファイルはCura、PrusaSlicer、Bambu Studio、Simplify3Dなどの主要スライサーに直接読み込め、メッシュ修復ツールは必要ありません。FDM、SLA、SLSプリンターのいずれで印刷しても、ジオメトリは確実でスライス可能です。",
       "section2Title": "写真から実物へ",
-      "section2Text": "子どもの絵をフィギュアに、会社のロゴをデスクトロフィーに、製品スケッチをプロトタイプに変換できます。AIが画像を分析し、深度、曲線、表面ディテールを持つ完全な3Dジオメトリを再構築します — 平面的な押し出しやリソフェーンではありません。結果は、プリント時にあらゆる角度から美しく見える真の三次元モデルです。",
+      "section2Text": "子どもの絵をフィギュアに、会社のロゴをデスクトロフィーに、製品スケッチをプロトタイプに変換できます。AIが画像を分析し、深度、曲線、表面ディテールを持つ完全な3Dジオメトリを再構築します - 平面的な押し出しやリソフェーンではありません。結果は、プリント時にあらゆる角度から美しく見える真の三次元モデルです。",
       "section3Title": "3Dモデリングスキル不要",
       "section3Text": "Blender、ZBrush、その他のCADソフトウェアを学ぶ必要はありません。画像をアップロードし、約30秒待って、STLファイルをダウンロードするだけ。全プロセスがブラウザ上で完結します。ホビイスト、教育者、中小企業オーナー、そして画像を手に取って持ちたい方すべてに3Dプリントをアクセシブルにします。",
       "faq1Q": "STLファイルは本当にプリント可能ですか？",
@@ -1607,7 +1577,7 @@
       "faq5Q": "料金はいくらですか？",
       "faq5A": "標準生成は各1クレジットです。登録時に無料クレジットを受け取れ、追加パックは10クレジット3.99ドルから。クレジットに有効期限はなく、サブスクリプションもありません。",
       "ctaTitle": "画像から3Dプリントを始めよう",
-      "ctaDescription": "写真、イラスト、ロゴをアップロードして30秒でプリント対応STLファイルを取得。登録時に無料クレジット — デザインスキル不要。"
+      "ctaDescription": "写真、イラスト、ロゴをアップロードして30秒でプリント対応STLファイルを取得。登録時に無料クレジット - デザインスキル不要。"
     },
     "graphic-designers": {
       "metaTitle": "デザイナー向け画像から3Dモックアップ＆モデル | Bunshin 3D",
@@ -1633,7 +1603,7 @@
       "faq5Q": "生成後に3Dモデルを編集できますか？",
       "faq5A": "はい。OBJまたはGLB形式でエクスポートし、Blender、Maya、その他の3Dソフトウェアでさらなる調整、テクスチャリング、アニメーションが可能です。",
       "ctaTitle": "デザインワークに新しい次元を",
-      "ctaDescription": "ロゴ、アイコン、イラストをモックアップ、プレゼンテーション、物理プロトタイプ用の3Dモデルに変換。無料で試す — 3Dスキル不要。"
+      "ctaDescription": "ロゴ、アイコン、イラストをモックアップ、プレゼンテーション、物理プロトタイプ用の3Dモデルに変換。無料で試す - 3Dスキル不要。"
     },
     "architects": {
       "metaTitle": "建築・ビジュアライゼーション向けAI 3Dモデル | Bunshin 3D",
@@ -1671,7 +1641,7 @@
       "section1Title": "1枚の写真からインタラクティブな商品ビュー",
       "section1Text": "オンラインショッパーは購入前に商品をあらゆる角度から見ることをますます期待しています。Bunshin 3Dでは、1枚の商品写真から3Dモデルを生成し、商品ページにインタラクティブな3Dビューアとして埋め込めます。顧客は商品を回転、ズーム、検査でき、フラットな写真では実現できない方法で確認できます。これにより、購入者が購入物をより明確に理解でき、返品率の低減につながります。",
       "section2Title": "モダンなショッピング向けAR対応モデル",
-      "section2Text": "Bunshin 3Dで生成されたGLBモデルは、iOSおよびAndroidデバイスでのAR表示に対応しています。顧客は実際の環境に商品を配置できます — 家具が部屋に合うか、装飾品が棚にどう見えるかを購入前に確認。こうした没入型体験はEコマースにおいて競争優位性となっています。",
+      "section2Text": "Bunshin 3Dで生成されたGLBモデルは、iOSおよびAndroidデバイスでのAR表示に対応しています。顧客は実際の環境に商品を配置できます - 家具が部屋に合うか、装飾品が棚にどう見えるかを購入前に確認。こうした没入型体験はEコマースにおいて競争優位性となっています。",
       "section3Title": "商品カタログを効率的にスケール",
       "section3Text": "カタログのすべての商品を3Dアーティストにモデリングしてもらうのは高額で時間がかかります。Bunshin 3Dなら、既存の商品写真から数秒で3Dモデルを生成できます。中小規模のショップでも、数百、数千の商品に3Dビューを提供することが実用的になります。各生成はわずか1クレジットで、大量クレジットパックにはさらなる割引があります。",
       "faq1Q": "商品ページに3Dモデルを埋め込むには？",
@@ -1705,13 +1675,13 @@
       "faq2Q": "生徒自身のイラストを使えますか？",
       "faq2A": "生徒のイラストを撮影またはスキャンし、画像をアップロードして3Dモデルを生成できます。アートプロジェクト、デザインチャレンジ、クリエイティブなSTEM活動に特に効果的です。",
       "faq3Q": "3Dプリンターは必要ですか？",
-      "faq3A": "いいえ。モデルはプリントせずにブラウザ上でインタラクティブに閲覧できます。ただし、学校に3Dプリンターがある場合は、STLエクスポートがそのまま印刷可能です — スライサーソフトウェア以外に追加のソフトウェアは不要です。",
+      "faq3A": "いいえ。モデルはプリントせずにブラウザ上でインタラクティブに閲覧できます。ただし、学校に3Dプリンターがある場合は、STLエクスポートがそのまま印刷可能です - スライサーソフトウェア以外に追加のソフトウェアは不要です。",
       "faq4Q": "教育割引はありますか？",
       "faq4A": "クレジットパックは10回の生成で3.99ドルから、すでにお手頃な価格です。クレジットに有効期限はありません。Studioパック（200クレジット）は、学期や学年を通じた教室利用に最もお得です。",
       "faq5Q": "どの教科が3Dモデルから恩恵を受けますか？",
       "faq5A": "理科（生物、化学、地学）、数学（幾何学、空間的推論）、歴史（遺物、建築）、美術・デザイン、工学のすべてが3Dビジュアライゼーションと物理モデルから恩恵を受けます。教科横断的な使用に十分な柔軟性を持つツールです。",
       "ctaTitle": "授業を3Dで体験",
-      "ctaDescription": "画像や生徒のイラストをインタラクティブ学習と3Dプリント用の3Dモデルに変換。登録時に無料クレジット — 技術スキル不要。"
+      "ctaDescription": "画像や生徒のイラストをインタラクティブ学習と3Dプリント用の3Dモデルに変換。登録時に無料クレジット - 技術スキル不要。"
     }
   },
   "Compare": {
@@ -1753,7 +1723,7 @@
       }
     },
     "meshy-alternative": {
-      "metaTitle": "Bunshin 3D vs Meshy — 2026年最高のMeshy代替",
+      "metaTitle": "Bunshin 3D vs Meshy - 2026年最高のMeshy代替",
       "metaDescription": "Meshyの代替をお探しですか？Bunshin 3D vs Meshyを料金、速度、エクスポート形式、商用ライセンスで比較。Bunshin 3Dを無料でお試しください。",
       "keywords": "meshy 代替, meshy vs bunshin 3d, meshy 競合, 画像3d meshy代替, ai 3dジェネレーター比較",
       "h1": "Bunshin 3D vs Meshy：どちらのAI 3Dジェネレーターが最適？",
@@ -1761,13 +1731,13 @@
       "heroDescription": "Meshyはテキスト→3Dおよび画像→3D機能を備えた人気のAI 3Dジェネレーターです。Bunshin 3Dは従量課金制の料金、より速い生成、幅広いエクスポート形式サポートを備えたスリムな代替手段を提供します。正直な比較をご覧ください。",
       "comparisonTitle": "機能比較",
       "row1Feature": "登録時の無料クレジット",
-      "row1Bunshin": "あり — 2無料クレジット",
+      "row1Bunshin": "あり - 2無料クレジット",
       "row1Competitor": "限定生成付き無料プランあり",
       "row2Feature": "サブスクリプション不要",
-      "row2Bunshin": "一度購入 — クレジット無期限",
+      "row2Bunshin": "一度購入 - クレジット無期限",
       "row2Competitor": "月額サブスクリプションプラン",
       "row3Feature": "3Dプリント用STLエクスポート",
-      "row3Bunshin": "あり — 水密STL付き",
+      "row3Bunshin": "あり - 水密STL付き",
       "row3Competitor": "有料プランで利用可能",
       "row4Feature": "複数のエクスポート形式",
       "row4Bunshin": "GLB, STL, OBJ, FBX",
@@ -1779,9 +1749,9 @@
       "row6Bunshin": "すべての生成に含まれる",
       "row6Competitor": "有料プランに含まれる",
       "section1Title": "MeshyよりBunshin 3Dを検討すべき理由",
-      "section1Text": "Meshyはテキスト→3Dおよび画像→3D機能を備えた堅実なプラットフォームですが、Bunshin 3Dはサブスクリプション不要のモデルで差別化しています。クレジットを一度購入すれば無期限 — 定期的な費用は発生しません。生成時間は通常30秒以内で、すべてのモデルに商用権が含まれます。3Dプリント用STLファイルが必要な場合、Bunshin 3Dはスライサーソフトウェア対応の水密メッシュを出力します。",
+      "section1Text": "Meshyはテキスト→3Dおよび画像→3D機能を備えた堅実なプラットフォームですが、Bunshin 3Dはサブスクリプション不要のモデルで差別化しています。クレジットを一度購入すれば無期限 - 定期的な費用は発生しません。生成時間は通常30秒以内で、すべてのモデルに商用権が含まれます。3Dプリント用STLファイルが必要な場合、Bunshin 3Dはスライサーソフトウェア対応の水密メッシュを出力します。",
       "section2Title": "Meshyが優れている場合",
-      "section2Text": "AIテクスチャリングワークフローを用いたテキスト→3D生成に大きく依存している場合、またはMeshyの特定のコミュニティ機能やモデルライブラリが必要な場合は、Meshyが好ましいかもしれません。Meshyは決定前に複数の生成をテストできる無料プランも提供しています。両プラットフォームとも優れたツールです — 最適な選択は特定のワークフローと予算の好みによって異なります。",
+      "section2Text": "AIテクスチャリングワークフローを用いたテキスト→3D生成に大きく依存している場合、またはMeshyの特定のコミュニティ機能やモデルライブラリが必要な場合は、Meshyが好ましいかもしれません。Meshyは決定前に複数の生成をテストできる無料プランも提供しています。両プラットフォームとも優れたツールです - 最適な選択は特定のワークフローと予算の好みによって異なります。",
       "faq1Q": "Bunshin 3DはMeshyより安いですか？",
       "faq1A": "Bunshin 3Dは10回の生成で3.99ドルからの従量課金制クレジットシステムで、月額サブスクリプションなし。Meshyは月額サブスクリプションプランを使用。よりコスト効率の良いオプションは生成量によって異なります。",
       "faq2Q": "両プラットフォームからSTLファイルをエクスポートできますか？",
@@ -1796,7 +1766,7 @@
       "ctaDescription": "無料で登録してプラットフォームテスト用に2クレジットを取得。サブスクリプション不要、クレジットカード不要。"
     },
     "kaedim-alternative": {
-      "metaTitle": "Bunshin 3D vs Kaedim — 2026年最高のKaedim代替",
+      "metaTitle": "Bunshin 3D vs Kaedim - 2026年最高のKaedim代替",
       "metaDescription": "Kaedimの代替をお探しですか？Bunshin 3D vs Kaedimを料金、自動化、エクスポート形式、速度で比較。Bunshin 3Dを無料でお試しください。",
       "keywords": "kaedim 代替, kaedim vs bunshin 3d, kaedim 競合, ai 3dモデルジェネレーター, 画像3d代替",
       "h1": "Bunshin 3D vs Kaedim：AI 3D生成の比較",
@@ -1804,13 +1774,13 @@
       "heroDescription": "Kaedimはゲーム対応アセットのための人的品質管理を含むAI支援3Dモデル作成に特化しています。Bunshin 3Dは完全自動の即時代替手段を従量課金で提供します。比較をご覧ください。",
       "comparisonTitle": "機能比較",
       "row1Feature": "登録時の無料クレジット",
-      "row1Bunshin": "あり — 2無料クレジット",
+      "row1Bunshin": "あり - 2無料クレジット",
       "row1Competitor": "リクエストに応じてトライアル可能",
       "row2Feature": "サブスクリプション不要",
-      "row2Bunshin": "一度購入 — クレジット無期限",
+      "row2Bunshin": "一度購入 - クレジット無期限",
       "row2Competitor": "サブスクリプション型料金",
       "row3Feature": "3Dプリント用STLエクスポート",
-      "row3Bunshin": "あり — 水密STL付き",
+      "row3Bunshin": "あり - 水密STL付き",
       "row3Competitor": "ゲーム対応フォーマット中心",
       "row4Feature": "複数のエクスポート形式",
       "row4Bunshin": "GLB, STL, OBJ, FBX",
@@ -1822,7 +1792,7 @@
       "row6Bunshin": "すべての生成に含まれる",
       "row6Competitor": "有料プランに含まれる",
       "section1Title": "KaedimよりBunshin 3Dを検討すべき理由",
-      "section1Text": "Bunshin 3Dは完全自動です — 画像をアップロードして30秒以内に3Dモデルを受け取れます。人的レビューや待ち時間はありません。従量課金制なので使った分だけの支払い、月額の義務なし。すべての生成にゲーム対応フォーマットと3Dプリント用STLエクスポートが含まれます。",
+      "section1Text": "Bunshin 3Dは完全自動です - 画像をアップロードして30秒以内に3Dモデルを受け取れます。人的レビューや待ち時間はありません。従量課金制なので使った分だけの支払い、月額の義務なし。すべての生成にゲーム対応フォーマットと3Dプリント用STLエクスポートが含まれます。",
       "section2Title": "Kaedimが優れている場合",
       "section2Text": "Kaedimは人間を介したプロセスにより、アニメーションやリギングに最適化されたクリーンなトポロジーを持つ高品質なゲーム対応アセットを生成できます。手動品質保証を伴うAAA級ゲーム開発向けプロダクションレベルのモデルが必要な場合は、Kaedimのアプローチがその特定のユースケースにより良い結果を提供する可能性があります。",
       "faq1Q": "Bunshin 3Dは完全自動で、Kaedimは人的レビューを使用しますか？",
@@ -1834,12 +1804,12 @@
       "faq4Q": "どちらがより高品質なモデルを生成しますか？",
       "faq4A": "品質はユースケースによって異なります。Kaedimの人的レビューモデルはアニメーション向けのよりクリーンなトポロジーを持つ場合があります。Bunshin 3Dは3Dプリント、プロトタイピング、汎用3Dコンテンツに優れた結果を提供します。",
       "faq5Q": "クレジットカードなしでBunshin 3Dを試せますか？",
-      "faq5A": "はい。登録すると即座に2無料クレジットを取得 — クレジットカード不要。",
+      "faq5A": "はい。登録すると即座に2無料クレジットを取得 - クレジットカード不要。",
       "ctaTitle": "Bunshin 3Dを試してみませんか？",
       "ctaDescription": "無料で登録してプラットフォームテスト用に2クレジットを取得。サブスクリプション不要、クレジットカード不要。"
     },
     "luma-ai-alternative": {
-      "metaTitle": "Bunshin 3D vs Luma AI — 2026年最高のLuma AI代替",
+      "metaTitle": "Bunshin 3D vs Luma AI - 2026年最高のLuma AI代替",
       "metaDescription": "Luma AIの代替をお探しですか？Bunshin 3D vs Luma AIを3D生成、料金、エクスポート形式、速度で比較。Bunshin 3Dを無料でお試しください。",
       "keywords": "luma ai 代替, luma ai vs bunshin 3d, luma 3d 競合, genie 代替, 画像3d比較",
       "h1": "Bunshin 3D vs Luma AI：画像→3Dの比較",
@@ -1847,13 +1817,13 @@
       "heroDescription": "Luma AIはGenieモデルによる3Dキャプチャーや生成を含むAIツールスイートを提供しています。Bunshin 3Dは単一画像をダウンロード可能な3Dモデルに変換することに特化し、複数のエクスポート形式をサポートしています。比較をご覧ください。",
       "comparisonTitle": "機能比較",
       "row1Feature": "登録時の無料クレジット",
-      "row1Bunshin": "あり — 2無料クレジット",
+      "row1Bunshin": "あり - 2無料クレジット",
       "row1Competitor": "無料生成あり",
       "row2Feature": "サブスクリプション不要",
-      "row2Bunshin": "一度購入 — クレジット無期限",
+      "row2Bunshin": "一度購入 - クレジット無期限",
       "row2Competitor": "有料アップグレード付き無料プラン",
       "row3Feature": "3Dプリント用STLエクスポート",
-      "row3Bunshin": "あり — 水密STL付き",
+      "row3Bunshin": "あり - 水密STL付き",
       "row3Competitor": "主要な焦点ではない",
       "row4Feature": "複数のエクスポート形式",
       "row4Bunshin": "GLB, STL, OBJ, FBX",
@@ -1865,7 +1835,7 @@
       "row6Bunshin": "すべての生成に含まれる",
       "row6Competitor": "現在の規約をご確認ください",
       "section1Title": "Luma AIよりBunshin 3Dを検討すべき理由",
-      "section1Text": "Bunshin 3Dは画像をダウンロード可能な3Dファイルに変換する専用設計です。1回の生成でSTL、GLB、OBJ、FBXのエクスポートが可能 — 3Dプリントとゲーム開発の両方に最適。サブスクリプションなしの従量課金モデルで、作成時のみ費用が発生。生成時間は30秒以内。",
+      "section1Text": "Bunshin 3Dは画像をダウンロード可能な3Dファイルに変換する専用設計です。1回の生成でSTL、GLB、OBJ、FBXのエクスポートが可能 - 3Dプリントとゲーム開発の両方に最適。サブスクリプションなしの従量課金モデルで、作成時のみ費用が発生。生成時間は30秒以内。",
       "section2Title": "Luma AIが優れている場合",
       "section2Text": "Luma AIは画像→3D以外にも動画生成や写真からの3Dシーンキャプチャーを含む幅広いAI機能を提供しています。複数画像や動画からのフォトグラメトリースタイル3Dキャプチャーが必要な場合、またはLumaの動画AIツールに関心がある場合は、より広範なクリエイティブツールを提供するプラットフォームです。",
       "faq1Q": "Luma AIは3Dプリント用STLエクスポートをサポートしていますか？",
@@ -1882,7 +1852,7 @@
       "ctaDescription": "無料で登録してプラットフォームテスト用に2クレジットを取得。サブスクリプション不要、クレジットカード不要。"
     },
     "tripo-ai-alternative": {
-      "metaTitle": "Bunshin 3D vs Tripo AI — 2026年最高のTripo AI代替",
+      "metaTitle": "Bunshin 3D vs Tripo AI - 2026年最高のTripo AI代替",
       "metaDescription": "Tripo AIの代替をお探しですか？Bunshin 3D vs Tripo AIを速度、料金、3Dプリントサポート、エクスポート形式で比較。Bunshin 3Dを無料でお試しください。",
       "keywords": "tripo ai 代替, tripo vs bunshin 3d, tripo 3d 競合, ai 3dモデル比較, 画像3d tripo代替",
       "h1": "Bunshin 3D vs Tripo AI：AI 3Dジェネレーター比較",
@@ -1890,13 +1860,13 @@
       "heroDescription": "Tripo AIはテキスト→3Dおよび画像→3D機能を備えたAI搭載3D生成プラットフォームです。Bunshin 3Dは即座の生成と柔軟な従量課金制による集中的な画像→3Dワークフローを提供します。比較をご覧ください。",
       "comparisonTitle": "機能比較",
       "row1Feature": "登録時の無料クレジット",
-      "row1Bunshin": "あり — 2無料クレジット",
+      "row1Bunshin": "あり - 2無料クレジット",
       "row1Competitor": "無料トライアル生成あり",
       "row2Feature": "サブスクリプション不要",
-      "row2Bunshin": "一度購入 — クレジット無期限",
+      "row2Bunshin": "一度購入 - クレジット無期限",
       "row2Competitor": "サブスクリプションプランあり",
       "row3Feature": "3Dプリント用STLエクスポート",
-      "row3Bunshin": "あり — 水密STL付き",
+      "row3Bunshin": "あり - 水密STL付き",
       "row3Competitor": "STLエクスポート対応",
       "row4Feature": "複数のエクスポート形式",
       "row4Bunshin": "GLB, STL, OBJ, FBX",
@@ -1912,7 +1882,7 @@
       "section2Title": "Tripo AIが優れている場合",
       "section2Text": "Tripo AIはアニメーション機能と開発者向けAPIを備えたテキスト→3Dおよび画像→3Dの両方を提供。API経由で独自のアプリケーションに3D生成を統合する必要がある場合、またはリギングとアニメーション付きテキスト→3Dがワークフローに重要な場合は、Tripo AIがそのニーズに適した機能を提供しています。",
       "faq1Q": "Tripo AIにはサブスクリプションが必要ですか？",
-      "faq1A": "Tripo AIは定期ユーザー向けのサブスクリプションプランを提供。Bunshin 3Dはサブスクリプションなしの従量課金制クレジットシステムを使用 — 一度購入すればクレジットは無期限です。",
+      "faq1A": "Tripo AIは定期ユーザー向けのサブスクリプションプランを提供。Bunshin 3Dはサブスクリプションなしの従量課金制クレジットシステムを使用 - 一度購入すればクレジットは無期限です。",
       "faq2Q": "どちらのプラットフォームが速いですか？",
       "faq2A": "Bunshin 3Dは30秒以内にモデルを生成。Tripo AIはモデルの複雑さとキューに応じて通常1〜2分を要します。",
       "faq3Q": "両プラットフォームのモデルで3Dプリントできますか？",
@@ -1925,7 +1895,7 @@
       "ctaDescription": "無料で登録してプラットフォームテスト用に2クレジットを取得。サブスクリプション不要、クレジットカード不要。"
     },
     "alpha3d-alternative": {
-      "metaTitle": "Bunshin 3D vs Alpha3D — 2026年最高のAlpha3D代替",
+      "metaTitle": "Bunshin 3D vs Alpha3D - 2026年最高のAlpha3D代替",
       "metaDescription": "Alpha3Dの代替をお探しですか？Bunshin 3D vs Alpha3Dを料金、速度、エクスポート形式、3Dプリントサポートで比較。Bunshin 3Dを無料でお試しください。",
       "keywords": "alpha3d 代替, alpha3d vs bunshin 3d, alpha3d 競合, ai 3dコンバーター比較, 画像3d代替",
       "h1": "Bunshin 3D vs Alpha3D：AI 3Dコンバーター比較",
@@ -1933,13 +1903,13 @@
       "heroDescription": "Alpha3DはEコマースやデジタルカタログ向けに2D商品画像を3Dモデルに変換することに焦点を当てています。Bunshin 3Dは3Dプリントサポートと従量課金制のより幅広い画像→3Dソリューションを提供しています。詳細な比較をご覧ください。",
       "comparisonTitle": "機能比較",
       "row1Feature": "登録時の無料クレジット",
-      "row1Bunshin": "あり — 2無料クレジット",
+      "row1Bunshin": "あり - 2無料クレジット",
       "row1Competitor": "無料トライアルあり",
       "row2Feature": "サブスクリプション不要",
-      "row2Bunshin": "一度購入 — クレジット無期限",
+      "row2Bunshin": "一度購入 - クレジット無期限",
       "row2Competitor": "サブスクリプション型料金",
       "row3Feature": "3Dプリント用STLエクスポート",
-      "row3Bunshin": "あり — 水密STL付き",
+      "row3Bunshin": "あり - 水密STL付き",
       "row3Competitor": "Web/AR形式が中心",
       "row4Feature": "複数のエクスポート形式",
       "row4Bunshin": "GLB, STL, OBJ, FBX",
@@ -1951,7 +1921,7 @@
       "row6Bunshin": "すべての生成に含まれる",
       "row6Competitor": "サブスクリプションに含まれる",
       "section1Title": "Alpha3DよりBunshin 3Dを検討すべき理由",
-      "section1Text": "Bunshin 3Dはスピードと柔軟性を重視して構築されています。3Dプリント用STLを含む4つのエクスポート形式で30秒以内にモデルを生成。クレジットベースの料金体系で月額の義務なし — 必要な時にクレジットを購入し、無期限で利用可能。フリーランサー、ホビイスト、作業量が変動するスタジオに最適です。",
+      "section1Text": "Bunshin 3Dはスピードと柔軟性を重視して構築されています。3Dプリント用STLを含む4つのエクスポート形式で30秒以内にモデルを生成。クレジットベースの料金体系で月額の義務なし - 必要な時にクレジットを購入し、無期限で利用可能。フリーランサー、ホビイスト、作業量が変動するスタジオに最適です。",
       "section2Title": "Alpha3Dが優れている場合",
       "section2Text": "Alpha3DはEコマース3Dコンテンツに特化して最適化されています。オンラインストア向け商品ビジュアライゼーション、ARトライオン体験、大規模カタログデジタル化が必要な場合は、Alpha3Dの専門パイプラインがこれらの商用アプリケーションにより良い結果を提供する可能性があります。",
       "faq1Q": "Alpha3DはEコマースに優れていますか？",
@@ -1968,7 +1938,7 @@
       "ctaDescription": "無料で登録してプラットフォームテスト用に2クレジットを取得。サブスクリプション不要、クレジットカード不要。"
     },
     "3d-ai-studio-alternative": {
-      "metaTitle": "Bunshin 3D vs 3DAI Studio — 2026年最高の3DAI Studio代替",
+      "metaTitle": "Bunshin 3D vs 3DAI Studio - 2026年最高の3DAI Studio代替",
       "metaDescription": "3DAI Studioの代替をお探しですか？Bunshin 3D vs 3DAI Studioを速度、料金、フォーマット、機能で比較。Bunshin 3Dを無料でお試しください。",
       "keywords": "3d ai studio 代替, 3dai studio vs bunshin 3d, 3d ai studio 競合, ai 3dジェネレーター比較, 最高の3d aiツール",
       "h1": "Bunshin 3D vs 3DAI Studio：AI 3Dツール比較",
@@ -1976,13 +1946,13 @@
       "heroDescription": "3DAI Studioはテキストプロンプトや画像からのAI搭載3Dモデル生成を提供。Bunshin 3Dは高速生成と包括的なエクスポートオプションを備えた集中的な画像→3Dパイプラインを提供しています。比較をご覧ください。",
       "comparisonTitle": "機能比較",
       "row1Feature": "登録時の無料クレジット",
-      "row1Bunshin": "あり — 2無料クレジット",
+      "row1Bunshin": "あり - 2無料クレジット",
       "row1Competitor": "限定無料生成",
       "row2Feature": "サブスクリプション不要",
-      "row2Bunshin": "一度購入 — クレジット無期限",
+      "row2Bunshin": "一度購入 - クレジット無期限",
       "row2Competitor": "サブスクリプションプランあり",
       "row3Feature": "3Dプリント用STLエクスポート",
-      "row3Bunshin": "あり — 水密STL付き",
+      "row3Bunshin": "あり - 水密STL付き",
       "row3Competitor": "STLエクスポート対応",
       "row4Feature": "複数のエクスポート形式",
       "row4Bunshin": "GLB, STL, OBJ, FBX",
@@ -1994,13 +1964,13 @@
       "row6Bunshin": "すべての生成に含まれる",
       "row6Competitor": "プランにより異なる",
       "section1Title": "3DAI StudioよりBunshin 3Dを検討すべき理由",
-      "section1Text": "Bunshin 3Dはシンプルなアップロード＆ダウンロードのワークフローで30秒以内に3Dモデルを提供。従量課金制でサブスクリプション疲れを解消 — クレジットは無期限。4つのエクスポート形式（GLB、STL、OBJ、FBX）が3DプリントからGame Enginesまであらゆるユースケースをカバー、すべて各生成に含まれます。",
+      "section1Text": "Bunshin 3Dはシンプルなアップロード＆ダウンロードのワークフローで30秒以内に3Dモデルを提供。従量課金制でサブスクリプション疲れを解消 - クレジットは無期限。4つのエクスポート形式（GLB、STL、OBJ、FBX）が3DプリントからGame Enginesまであらゆるユースケースをカバー、すべて各生成に含まれます。",
       "section2Title": "3DAI Studioが優れている場合",
       "section2Text": "テキスト→3D生成を主要なワークフローとして使用している場合、または3DAI Studio特有のテクスチャやマテリアルオプションがプロジェクト要件に合う場合は、3DAI Studioが好ましいかもしれません。典型的な3D生成ニーズに基づいて両プラットフォームを評価してください。",
       "faq1Q": "Bunshin 3Dは3DAI Studioより速いですか？",
       "faq1A": "Bunshin 3Dは通常30秒以内にモデルを生成。3DAI Studioの生成時間はモデルと設定に応じて1〜5分です。",
       "faq2Q": "たまの利用にはどちらの料金が優れていますか？",
-      "faq2A": "Bunshin 3Dの従量課金制クレジットはたまのユーザーに最適 — サブスクリプション不要でクレジットは無期限。3DAI Studioは大量ユーザーに適したサブスクリプションプランを提供しています。",
+      "faq2A": "Bunshin 3Dの従量課金制クレジットはたまのユーザーに最適 - サブスクリプション不要でクレジットは無期限。3DAI Studioは大量ユーザーに適したサブスクリプションプランを提供しています。",
       "faq3Q": "両方で3Dプリントに使えますか？",
       "faq3A": "両プラットフォームともSTLエクスポートに対応。Bunshin 3DはCuraやPrusaSlicerなどの主要スライサーでテスト済みの水密でマニフォールドなSTLファイルを生成します。",
       "faq4Q": "どちらがより多くのエクスポート形式をサポートしていますか？",
@@ -2011,7 +1981,7 @@
       "ctaDescription": "無料で登録してプラットフォームテスト用に2クレジットを取得。サブスクリプション不要、クレジットカード不要。"
     },
     "csm-ai-alternative": {
-      "metaTitle": "Bunshin 3D vs CSM AI — 2026年最高のCSM AI代替",
+      "metaTitle": "Bunshin 3D vs CSM AI - 2026年最高のCSM AI代替",
       "metaDescription": "CSM AIの代替をお探しですか？Bunshin 3D vs CSM AI（Common Sense Machines）を速度、料金、エクスポート形式で比較。Bunshin 3Dを無料でお試しください。",
       "keywords": "csm ai 代替, csm vs bunshin 3d, common sense machines 代替, ai 3dジェネレーター比較, 画像3d csm代替",
       "h1": "Bunshin 3D vs CSM AI：画像→3Dジェネレーター比較",
@@ -2019,13 +1989,13 @@
       "heroDescription": "CSM AI（Common Sense Machines）はCube AIモデルを使用して画像やテキストから3Dモデルを作成します。Bunshin 3Dは即時ダウンロードと従量課金制のスリムな画像→3Dワークフローを提供しています。正直な比較をご覧ください。",
       "comparisonTitle": "機能比較",
       "row1Feature": "登録時の無料クレジット",
-      "row1Bunshin": "あり — 2無料クレジット",
+      "row1Bunshin": "あり - 2無料クレジット",
       "row1Competitor": "無料デモあり",
       "row2Feature": "サブスクリプション不要",
-      "row2Bunshin": "一度購入 — クレジット無期限",
+      "row2Bunshin": "一度購入 - クレジット無期限",
       "row2Competitor": "APIベースの料金",
       "row3Feature": "3Dプリント用STLエクスポート",
-      "row3Bunshin": "あり — 水密STL付き",
+      "row3Bunshin": "あり - 水密STL付き",
       "row3Competitor": "限定的なフォーマットサポート",
       "row4Feature": "複数のエクスポート形式",
       "row4Bunshin": "GLB, STL, OBJ, FBX",
@@ -2037,7 +2007,7 @@
       "row6Bunshin": "すべての生成に含まれる",
       "row6Competitor": "現在の規約をご確認ください",
       "section1Title": "CSM AIよりBunshin 3Dを検討すべき理由",
-      "section1Text": "Bunshin 3Dは完全なセルフサービス体験を提供：画像をアップロード、30秒以内に3Dモデルを受け取り、4つの形式でダウンロード。従量課金の料金は透明でシンプル — APIキーや開発者セットアップは不要。3Dプリント用STLエクスポートはすべての生成に含まれ、メーカーやホビイストにもアクセシブルです。",
+      "section1Text": "Bunshin 3Dは完全なセルフサービス体験を提供：画像をアップロード、30秒以内に3Dモデルを受け取り、4つの形式でダウンロード。従量課金の料金は透明でシンプル - APIキーや開発者セットアップは不要。3Dプリント用STLエクスポートはすべての生成に含まれ、メーカーやホビイストにもアクセシブルです。",
       "section2Title": "CSM AIが優れている場合",
       "section2Text": "CSM AIは研究グレードの3D生成に焦点を当て、独自のアプリケーションに3D生成を組み込む開発者向けのAPIファーストアプローチを提供しています。高度なモデル制御を持つプログラマティックな3D生成アクセスが必要な場合は、CSM AIの開発者指向プラットフォームがより適している可能性があります。",
       "faq1Q": "CSM AIは開発者指向で、Bunshin 3Dはユーザー指向ですか？",
@@ -2054,7 +2024,7 @@
       "ctaDescription": "無料で登録してプラットフォームテスト用に2クレジットを取得。サブスクリプション不要、クレジットカード不要。"
     },
     "best-ai-3d-generators": {
-      "metaTitle": "2026年最高のAI 3Dジェネレーター — 完全比較ガイド",
+      "metaTitle": "2026年最高のAI 3Dジェネレーター - 完全比較ガイド",
       "metaDescription": "2026年最高のAI 3Dジェネレーターを比較：Bunshin 3D、Meshy、Kaedim、Luma AI、Tripo AI、Alpha3D、3DAI Studio、CSM AI。機能、料金、フォーマットの比較。",
       "keywords": "最高のai 3dジェネレーター, ai 3dモデルジェネレーター 2026, 画像3d ai比較, トップ3d aiツール, ai 3dジェネレーターランキング",
       "h1": "2026年最高のAI 3Dジェネレーター：完全比較",
@@ -2062,14 +2032,14 @@
       "heroDescription": "AI 3D生成の世界は大きく成熟しました。3Dプリント、ゲーム開発、Eコマース、プロトタイピングのいずれにモデルが必要でも、複数の優れたプラットフォームから選べます。このガイドでは料金、速度、エクスポート形式、機能にわたり主要な選択肢を比較します。",
       "comparisonTitle": "トップAI 3Dジェネレーターの比較",
       "row1Feature": "登録時の無料クレジット",
-      "row1Bunshin": "あり — 2無料クレジット",
+      "row1Bunshin": "あり - 2無料クレジット",
       "row1Competitor": "プラットフォームにより異なる",
       "row2Feature": "サブスクリプション不要",
-      "row2Bunshin": "一度購入 — クレジット無期限",
+      "row2Bunshin": "一度購入 - クレジット無期限",
       "row2Competitor": "ほとんどが月額サブスクリプション",
       "row3Feature": "3Dプリント用STLエクスポート",
-      "row3Bunshin": "あり — 水密STL付き",
-      "row3Competitor": "異なる — 常に含まれるとは限らない",
+      "row3Bunshin": "あり - 水密STL付き",
+      "row3Competitor": "異なる - 常に含まれるとは限らない",
       "row4Feature": "複数のエクスポート形式",
       "row4Bunshin": "GLB, STL, OBJ, FBX",
       "row4Competitor": "通常2〜3形式",
@@ -2080,7 +2050,7 @@
       "row6Bunshin": "すべての生成に含まれる",
       "row6Competitor": "通常有料プランが必要",
       "section1Title": "AI 3Dジェネレーターの選び方",
-      "section1Text": "AI 3Dジェネレーターを選ぶ際は、主なユースケースを考慮してください。3Dプリントには水密なSTLエクスポートが不可欠。ゲーム開発にはクリーンなトポロジーを持つGLBとFBXサポートが最重要。プロトタイピングには速度とコスト効率が鍵。料金モデルも評価しましょう — サブスクリプションは大量ユーザー向け、従量課金制クレジットはたまのまたは変動的な使用に適しています。",
+      "section1Text": "AI 3Dジェネレーターを選ぶ際は、主なユースケースを考慮してください。3Dプリントには水密なSTLエクスポートが不可欠。ゲーム開発にはクリーンなトポロジーを持つGLBとFBXサポートが最重要。プロトタイピングには速度とコスト効率が鍵。料金モデルも評価しましょう - サブスクリプションは大量ユーザー向け、従量課金制クレジットはたまのまたは変動的な使用に適しています。",
       "section2Title": "Bunshin 3Dが際立つ理由",
       "section2Text": "Bunshin 3Dはスピード（30秒以内）、包括的なフォーマットサポート（GLB、STL、OBJ、FBX）、サブスクリプション不要の料金モデルを一つのプラットフォームに統合。登録時の無料クレジットで決定前にテストでき、すべての生成に商用権が含まれます。月額の義務なしで高速かつ手頃な3D生成を求めるユーザーに最適な選択肢です。",
       "faq1Q": "最高の無料AI 3Dジェネレーターは？",
@@ -2100,9 +2070,9 @@
   "Formats": {
     "index": {
       "label": "エクスポート形式",
-      "h1": "AI画像→3D — あらゆる形式でエクスポート",
+      "h1": "AI画像→3D - あらゆる形式でエクスポート",
       "description": "画像を3Dモデルに変換し、STL、GLB、OBJ、FBX、glTFでエクスポート。Bunshin 3Dはプリント、ゲーム、デザイン向けの主要3D形式をすべてサポート。",
-      "metaTitle": "3Dエクスポート形式 — STL, GLB, OBJ, FBX, glTF | Bunshin 3D",
+      "metaTitle": "3Dエクスポート形式 - STL, GLB, OBJ, FBX, glTF | Bunshin 3D",
       "metaDescription": "あらゆる画像を3Dモデルに変換し、STL、GLB、OBJ、FBX、glTF形式でダウンロード。3Dプリント、ゲーム開発、デザイン向けAIコンバーター。",
       "keywords": "3dファイル形式, 画像3d変換, stl glb obj fbx gltf, 3dモデルエクスポート, ai 3dコンバーター形式"
     },
@@ -2127,18 +2097,18 @@
         "obj": "画像からBlender、Maya、3DワークフローのためのOBJファイルを生成。",
         "fbx": "画像をUnity、Unreal Engine、アニメーションパイプライン向けFBX形式に変換。",
         "gltf": "画像からWebベース3DビューアやAR体験用のglTFファイルを作成。",
-        "3d-printing": "あらゆる画像からプリント対応3Dファイルを準備 — FDMおよびレジンプリンターに最適化。"
+        "3d-printing": "あらゆる画像からプリント対応3Dファイルを準備 - FDMおよびレジンプリンターに最適化。"
       }
     },
     "stl": {
-      "metaTitle": "画像→STLコンバーター — 無料AI STLファイルジェネレーター | Bunshin 3D",
-      "metaDescription": "あらゆる画像を数秒でプリント可能なSTLファイルに変換。無料AI STLジェネレーター — 写真、ロゴ、イラストをアップロードして3Dプリント用水密STLをダウンロード。",
+      "metaTitle": "画像→STLコンバーター - 無料AI STLファイルジェネレーター | Bunshin 3D",
+      "metaDescription": "あらゆる画像を数秒でプリント可能なSTLファイルに変換。無料AI STLジェネレーター - 写真、ロゴ、イラストをアップロードして3Dプリント用水密STLをダウンロード。",
       "keywords": "stlファイル変換, 画像からstl, stlジェネレーター, 写真からstl, 画像stl変換無料, ai stl変換, pngからstl, ロゴからstlファイル, stl 3dプリント",
       "h1": "AIであらゆる画像をSTLファイルに変換",
       "breadcrumb": "画像→STL",
-      "heroDescription": "写真、ロゴ、イラストをアップロードして、3Dプリント対応の水密STLファイルを取得。Bunshin 3DはAIを使って実際の3Dジオメトリを再構築 — 平面的な押し出しではありません。Cura、PrusaSlicer、Bambu Studio、その他すべての主要スライサーに対応。",
+      "heroDescription": "写真、ロゴ、イラストをアップロードして、3Dプリント対応の水密STLファイルを取得。Bunshin 3DはAIを使って実際の3Dジオメトリを再構築 - 平面的な押し出しではありません。Cura、PrusaSlicer、Bambu Studio、その他すべての主要スライサーに対応。",
       "section1Title": "STLファイルとは？",
-      "section1Text": "STL（Standard Tessellation Language）は3Dプリントの標準形式です。3Dオブジェクトの表面ジオメトリを三角形メッシュとして格納します。すべてのデスクトップFDMプリンター、レジンプリンター、産業用3Dプリントサービスがstlファイルを受け付けます。Bunshin 3Dで画像をSTLに変換すると、出力は水密でマニフォールドです — メッシュ修復なしでスライサーに直接読み込めます。",
+      "section1Text": "STL（Standard Tessellation Language）は3Dプリントの標準形式です。3Dオブジェクトの表面ジオメトリを三角形メッシュとして格納します。すべてのデスクトップFDMプリンター、レジンプリンター、産業用3Dプリントサービスがstlファイルを受け付けます。Bunshin 3Dで画像をSTLに変換すると、出力は水密でマニフォールドです - メッシュ修復なしでスライサーに直接読み込めます。",
       "section2Title": "なぜ画像をSTLに変換するのか？",
       "section2Text": "2D画像を3Dプリント可能なSTLファイルに変換するには、従来BlenderやCADソフトウェアで何時間もの手動モデリングが必要でした。Bunshin 3Dはそのステップを完全に排除します。会社のロゴをアップロードしてプリント可能なサインを取得。フィギュアのコンセプトを撮影してEnder 3やPrusaでプリント。子どもの絵を物理的な記念品に変換。AIが深度推定、メッシュ生成、トポロジー最適化を自動的に処理します。",
       "step1Title": "画像をアップロード",
@@ -2156,19 +2126,19 @@
       "faq4Q": "STLにはカラーやテクスチャが含まれますか？",
       "faq4A": "標準STLファイルはジオメトリのみで、カラーデータは含みません。テクスチャが必要な場合は、PBRマテリアルを含むGLB形式をダウンロードしてください。3Dプリント品の塗装には、STLジオメトリが優れた表面ディテールを提供します。",
       "faq5Q": "画像をSTLに変換するのにいくらかかりますか？",
-      "faq5A": "各変換は1クレジットです。新規ユーザーは登録時に無料クレジットを受け取れます — クレジットカード不要。追加クレジットパックは10回の生成で3.99ドルから。",
+      "faq5A": "各変換は1クレジットです。新規ユーザーは登録時に無料クレジットを受け取れます - クレジットカード不要。追加クレジットパックは10回の生成で3.99ドルから。",
       "ctaTitle": "画像をSTLに変換する準備はできましたか？",
       "ctaDescription": "あらゆる画像をアップロードして30秒でプリント対応STLファイルを取得。3Dモデリングスキルは不要。"
     },
     "glb": {
-      "metaTitle": "画像→GLBコンバーター — 無料AI写真→GLBジェネレーター | Bunshin 3D",
+      "metaTitle": "画像→GLBコンバーター - 無料AI写真→GLBジェネレーター | Bunshin 3D",
       "metaDescription": "あらゆる画像をテクスチャ付きGLB 3Dモデルに変換。Unity、Unreal、Three.js、Webベース3Dビューア向け無料AIコンバーター。アップロードして即座にダウンロード。",
       "keywords": "画像からglb, glb変換, 写真からglb, pngからglb, ai glb生成, 画像glb変換, glb 3dモデル, glb unity, glb web, gltf binary",
       "h1": "AIであらゆる画像をGLB 3Dモデルに変換",
       "breadcrumb": "画像→GLB",
-      "heroDescription": "写真、ロゴ、アートワークをテクスチャ付きGLB 3Dモデルに変換。GLBはバイナリglTF形式 — Web、Game Engines、ARアプリでのリアルタイム3Dの標準です。Bunshin 3DはPBRテクスチャ付きのプロダクション対応GLBファイルを30秒以内に生成します。",
+      "heroDescription": "写真、ロゴ、アートワークをテクスチャ付きGLB 3Dモデルに変換。GLBはバイナリglTF形式 - Web、Game Engines、ARアプリでのリアルタイム3Dの標準です。Bunshin 3DはPBRテクスチャ付きのプロダクション対応GLBファイルを30秒以内に生成します。",
       "section1Title": "GLBファイルとは？",
-      "section1Text": "GLBはglTF 2.0のバイナリコンテナ形式 — 「3DのJPEG」と呼ばれます。ジオメトリ、テクスチャ、マテリアル、アニメーションを1つのファイルにパッケージ化。Unity、Unreal Engine、Godot、Three.js、Babylon.js、Google Model Viewer、WebXR対応のすべての主要ブラウザでネイティブサポート。どこでも使えるテクスチャ付き3Dモデルが必要ならGLBが最適です。",
+      "section1Text": "GLBはglTF 2.0のバイナリコンテナ形式 - 「3DのJPEG」と呼ばれます。ジオメトリ、テクスチャ、マテリアル、アニメーションを1つのファイルにパッケージ化。Unity、Unreal Engine、Godot、Three.js、Babylon.js、Google Model Viewer、WebXR対応のすべての主要ブラウザでネイティブサポート。どこでも使えるテクスチャ付き3Dモデルが必要ならGLBが最適です。",
       "section2Title": "なぜ画像をGLBに変換するのか？",
       "section2Text": "テクスチャ付き3Dアセットの作成には通常、ZBrushでのスカルプティング、Blenderでのリトポロジー、UVマッピング、テクスチャベイクのパイプラインが必要です。Bunshin 3Dはこれを1回のアップロードに集約。AIが画像から3Dジオメトリを再構築し、アルベド、法線、ラフネスマップを含むPBRマテリアルを自動生成。結果のGLBはWebに十分軽量で、ゲームに十分な詳細度を持ちます。",
       "step1Title": "画像をアップロード",
@@ -2191,12 +2161,12 @@
       "ctaDescription": "あらゆる画像をアップロードして数秒でテクスチャ付きGLB 3Dモデルを取得。ゲーム、Web、ARに最適。"
     },
     "obj": {
-      "metaTitle": "画像→OBJコンバーター — 無料AI OBJファイルジェネレーター | Bunshin 3D",
+      "metaTitle": "画像→OBJコンバーター - 無料AI OBJファイルジェネレーター | Bunshin 3D",
       "metaDescription": "あらゆる画像をOBJ 3Dモデルファイルに変換。Blender、Maya、3ds Max、すべての主要3Dソフトウェアと互換性のある無料AI OBJコンバーター。モデリングスキル不要。",
       "keywords": "画像からobj, obj変換, 写真からobj, 画像obj変換, ai obj生成, 画像からobjファイル, blender用obj, obj 3dモデル, wavefront obj",
       "h1": "AIであらゆる画像をOBJファイルに変換",
       "breadcrumb": "画像→OBJ",
-      "heroDescription": "AIを使ってあらゆる画像からWavefront OBJファイルを生成。OBJは業界で最も広くサポートされている3D形式 — Blender、Maya、3ds Max、Cinema 4D、ZBrush、事実上すべての3Dアプリケーションと互換性があります。画像をアップロードして数秒でクリーンなOBJメッシュをダウンロード。",
+      "heroDescription": "AIを使ってあらゆる画像からWavefront OBJファイルを生成。OBJは業界で最も広くサポートされている3D形式 - Blender、Maya、3ds Max、Cinema 4D、ZBrush、事実上すべての3Dアプリケーションと互換性があります。画像をアップロードして数秒でクリーンなOBJメッシュをダウンロード。",
       "section1Title": "OBJファイルとは？",
       "section1Text": "OBJ（Wavefront Object）は最も古く、最も汎用的な3Dモデル形式です。頂点位置、法線、テクスチャ座標、面データをシンプルなテキストベース形式で格納します。ほぼすべての3DアプリケーションがOBJのインポートとエクスポートをサポート。BlenderとMayaからZBrushとSubstance Painterまで、異なる3Dツール間の相互運用性の標準形式です。",
       "section2Title": "なぜ画像をOBJに変換するのか？",
@@ -2221,12 +2191,12 @@
       "ctaDescription": "あらゆる画像をアップロードして、すべての3Dアプリケーションと互換性のあるクリーンなOBJファイルをダウンロード。"
     },
     "fbx": {
-      "metaTitle": "画像→FBXコンバーター — 無料AI FBXファイルジェネレーター | Bunshin 3D",
+      "metaTitle": "画像→FBXコンバーター - 無料AI FBXファイルジェネレーター | Bunshin 3D",
       "metaDescription": "あらゆる画像をFBX 3Dモデルに変換。Unity、Unreal Engine、アニメーションパイプライン向け無料AIコンバーター。写真、ロゴ、アートワークからFBXファイルを即座に生成。",
       "keywords": "画像からfbx, fbx変換, 写真からfbx, 画像fbx変換, ai fbx生成, fbx unity, fbx unreal, fbx 3dモデル, autodesk fbx",
       "h1": "AIであらゆる画像をFBXファイルに変換",
       "breadcrumb": "画像→FBX",
-      "heroDescription": "AIを使って画像からFBXファイルを生成。FBXはGame Enginesとアニメーションの業界標準形式 — Unity、Unreal Engine、Maya、3ds Max、MotionBuilderでネイティブサポート。あらゆる画像をアップロードして数秒でプロダクション対応FBXモデルを取得。",
+      "heroDescription": "AIを使って画像からFBXファイルを生成。FBXはGame Enginesとアニメーションの業界標準形式 - Unity、Unreal Engine、Maya、3ds Max、MotionBuilderでネイティブサポート。あらゆる画像をアップロードして数秒でプロダクション対応FBXモデルを取得。",
       "section1Title": "FBXファイルとは？",
       "section1Text": "FBX（Filmbox）はAutodeskの独自3D交換形式です。メッシュ、マテリアル、テクスチャ、アニメーション、ボーン、ブレンドシェイプを1つのファイルでサポート。FBXはUnityとUnreal Engineのデフォルトインポート形式であり、映画・ゲーム制作パイプラインの標準交換形式です。アニメーションやGame Engine統合を含むワークフローにはFBXが最適です。",
       "section2Title": "なぜ画像をFBXに変換するのか？",
@@ -2251,12 +2221,12 @@
       "ctaDescription": "あらゆる画像をアップロードして数秒でGame Engine対応FBXファイルを取得。Unity、Unreal、アニメーションワークフローに最適。"
     },
     "gltf": {
-      "metaTitle": "画像→glTFコンバーター — 無料AI glTFジェネレーター | Bunshin 3D",
+      "metaTitle": "画像→glTFコンバーター - 無料AI glTFジェネレーター | Bunshin 3D",
       "metaDescription": "あらゆる画像をテクスチャ付きglTF 3Dモデルに変換。Web 3D、AR体験、Three.js向け無料AI glTFコンバーター。写真をアップロードして即座にダウンロード。",
       "keywords": "gltf変換, 画像からgltf, 写真からgltf, ai gltf生成, 画像gltf変換, gltf 3dモデル, gltf web, gltf threejs, gltf 2.0",
       "h1": "AIであらゆる画像をglTF 3Dモデルに変換",
       "breadcrumb": "画像→glTF",
-      "heroDescription": "あらゆる画像をPBRテクスチャ付きglTF 2.0 3Dモデルに変換。glTFはWeb上の3Dのオープンスタンダード — すべての主要ブラウザ、Three.js、Babylon.js、ARプラットフォームでサポート。画像をアップロードして数秒でWeb最適化3Dモデルを取得。",
+      "heroDescription": "あらゆる画像をPBRテクスチャ付きglTF 2.0 3Dモデルに変換。glTFはWeb上の3Dのオープンスタンダード - すべての主要ブラウザ、Three.js、Babylon.js、ARプラットフォームでサポート。画像をアップロードして数秒でWeb最適化3Dモデルを取得。",
       "section1Title": "glTFファイルとは？",
       "section1Text": "glTF（GL Transmission Format）は3Dコンテンツの効率的な配信のためにKhronos Groupが開発したオープンスタンダードです。「3DのJPEG」と呼ばれ、リアルタイムアプリケーションでの高速ロードとレンダリングのために設計されています。PBRマテリアル、アニメーション、メッシュ圧縮をサポート。バイナリ版（GLB）はすべてを1ファイルにパッケージ化し、標準glTFは別々のJSONとバイナリリソースを使用します。",
       "section2Title": "なぜ画像をglTFに変換するのか？",
@@ -2268,7 +2238,7 @@
       "step3Title": "glTF/GLBファイルをダウンロード",
       "step3Desc": "Three.js、Babylon.js、Google Model Viewer、その他のWebGLアプリケーション対応のglTF 2.0準拠ファイルを取得。",
       "faq1Q": "glTFとGLBの違いは？",
-      "faq1A": "glTFは形式の仕様です。GLBはそのバイナリパッケージング — JSONディスクリプタ、ジオメトリバッファ、テクスチャを含む単一ファイル。Bunshin 3DはglTFの最もポータブルな形式であるGLBファイルをエクスポートします。",
+      "faq1A": "glTFは形式の仕様です。GLBはそのバイナリパッケージング - JSONディスクリプタ、ジオメトリバッファ、テクスチャを含む単一ファイル。Bunshin 3DはglTFの最もポータブルな形式であるGLBファイルをエクスポートします。",
       "faq2Q": "glTFをThree.jsで使えますか？",
       "faq2A": "はい。Three.jsには完全なPBRマテリアルサポート付きでglTF/GLBファイルを処理する組み込みGLTFLoaderがあります。Bunshin 3Dで生成されたファイルはどのThree.jsシーンにも直接ロードされます。",
       "faq3Q": "glTFはARやVRに適していますか？",
@@ -2281,20 +2251,20 @@
       "ctaDescription": "あらゆる画像をアップロードしてPBRテクスチャ付きWeb対応glTF 3Dモデルを取得。Three.js、AR、モダンWeb向けに構築。"
     },
     "3d-printing": {
-      "metaTitle": "3Dプリントファイルコンバーター — 画像→プリント対応3Dモデル | Bunshin 3D",
+      "metaTitle": "3Dプリントファイルコンバーター - 画像→プリント対応3Dモデル | Bunshin 3D",
       "metaDescription": "あらゆる画像を数秒で3Dプリント可能ファイルに変換。AIが水密でマニフォールドなメッシュを生成、FDMおよびレジンプリンター対応。Cura、PrusaSlicer、全スライサーで動作。",
       "keywords": "3dプリントファイル変換, 3dプリント用モデル準備, 画像から3dプリント, 写真3dプリントファイル, ai 3dプリント, 画像プリント可能3dモデル変換, stlプリント用, 写真から3dプリント, 画像から3dプリント",
       "h1": "AIであらゆる画像を3Dプリント可能ファイルに変換",
       "breadcrumb": "3Dプリントコンバーター",
-      "heroDescription": "写真、ロゴ、イラスト、アートワークを3Dプリント可能ファイルに変換。Bunshin 3DはCura、PrusaSlicer、Bambu Studio、すべての主要スライサーに直接読み込める水密STLメッシュを生成 — メッシュ修復不要。FDMまたはレジンプリンターでプリント。",
+      "heroDescription": "写真、ロゴ、イラスト、アートワークを3Dプリント可能ファイルに変換。Bunshin 3DはCura、PrusaSlicer、Bambu Studio、すべての主要スライサーに直接読み込める水密STLメッシュを生成 - メッシュ修復不要。FDMまたはレジンプリンターでプリント。",
       "section1Title": "画像から3Dプリントへ、30秒で",
-      "section1Text": "従来の3Dプリントファイル作成には何時間ものCADモデリングや3Dスカルプティングが必要です。Bunshin 3Dは手動プロセス全体をスキップします。あらゆる画像をアップロード — 会社のロゴ、製品コンセプト、キャラクタースケッチ、子どもの絵 — そしてAIが深度、曲線、表面ディテールを持つ本物の3Dジオメトリを再構築。結果のSTLファイルは水密でマニフォールド、スライサーがエラーや修復ステップなしで受け入れます。",
+      "section1Text": "従来の3Dプリントファイル作成には何時間ものCADモデリングや3Dスカルプティングが必要です。Bunshin 3Dは手動プロセス全体をスキップします。あらゆる画像をアップロード - 会社のロゴ、製品コンセプト、キャラクタースケッチ、子どもの絵 - そしてAIが深度、曲線、表面ディテールを持つ本物の3Dジオメトリを再構築。結果のSTLファイルは水密でマニフォールド、スライサーがエラーや修復ステップなしで受け入れます。",
       "section2Title": "FDMおよびレジンプリント最適化",
-      "section2Text": "Bunshin 3Dで生成されたすべての3Dプリントファイルはプリント適性がテスト済み。メッシュには非マニフォールドエッジ、自己交差、反転法線がありません。FDMプリンター（Creality Ender 3、Prusa MK4、Bambu Lab X1）とレジンプリンター（Elegoo Mars、Anycubic Photon）の両方で問題なく動作します。スライサーで任意のサイズにスケーリング — 28mmのミニチュアから300mm以上のディスプレイピースまで十分にクリーンなジオメトリです。",
+      "section2Text": "Bunshin 3Dで生成されたすべての3Dプリントファイルはプリント適性がテスト済み。メッシュには非マニフォールドエッジ、自己交差、反転法線がありません。FDMプリンター（Creality Ender 3、Prusa MK4、Bambu Lab X1）とレジンプリンター（Elegoo Mars、Anycubic Photon）の両方で問題なく動作します。スライサーで任意のサイズにスケーリング - 28mmのミニチュアから300mm以上のディスプレイピースまで十分にクリーンなジオメトリです。",
       "step1Title": "あらゆる画像をアップロード",
       "step1Desc": "PNG、JPG、WEBPをドラッグ＆ドロップ。ロゴ、写真、コンセプトアート、手描きスケッチすべてに対応。",
       "step2Title": "AIがプリント対応ジオメトリを構築",
-      "step2Desc": "AIが適切な壁厚とクリーンなトポロジーの水密3Dメッシュを生成 — 穴なし、破損面なし。",
+      "step2Desc": "AIが適切な壁厚とクリーンなトポロジーの水密3Dメッシュを生成 - 穴なし、破損面なし。",
       "step3Title": "ダウンロードしてプリント",
       "step3Desc": "STLファイルをダウンロードし、CuraまたはPrusaSlicerで開き、スライスしてプリント。メッシュ修復や手動クリーンアップは不要。",
       "faq1Q": "このファイルは私の3Dプリンターで使えますか？",
@@ -2309,6 +2279,69 @@
       "faq5A": "はい。すべての生成モデルに完全な商用権が含まれます。3Dプリント製品の販売、クライアントプロジェクトでの使用、商用製品ラインへの組み込みが制限なく可能です。",
       "ctaTitle": "あらゆる画像から3Dプリントの準備はできましたか？",
       "ctaDescription": "画像をアップロードして30秒でプリント対応STLファイルを取得。モデリングスキル不要、メッシュ修復不要、手間なし。"
+    }
+  },
+  "StickyCTA": {
+    "text": "画像を3Dモデルに変換 - 無料クレジット付き",
+    "cta": "無料で試す"
+  },
+  "Tools": {
+    "common": {
+      "uploadTitle": "Drop your image here",
+      "uploadSubtitle": "PNG, JPG, or WEBP - max 10MB",
+      "uploadCta": "Start Converting",
+      "outputFormat": "Output:",
+      "relatedTools": "More Tools",
+      "slugTitles": {
+        "image-to-stl": "Image to STL",
+        "png-to-3d": "PNG to 3D",
+        "logo-to-3d": "Logo to 3D",
+        "photo-to-3d-print": "Photo to 3D Print"
+      }
+    },
+    "image-to-stl": {
+      "metaTitle": "Free Image to STL Converter Online | Bunshin 3D",
+      "metaDescription": "Convert any image to a watertight STL file for 3D printing. Free online tool - no software download needed.",
+      "keywords": "image to stl, stl converter online, free stl generator, png to stl, photo to stl file",
+      "h1": "Image to STL Converter",
+      "description": "Upload any image and get a 3D-printable STL file in 30 seconds. Free, online, no software needed.",
+      "section1Title": "How it works",
+      "section1Text": "Upload your image and our AI reconstructs the 3D geometry using neural depth estimation. The output is a watertight STL file ready for any slicer.",
+      "section2Title": "Print-ready output",
+      "section2Text": "Every STL is manifold with no holes or inverted faces. Compatible with FDM, SLA, and SLS printers."
+    },
+    "png-to-3d": {
+      "metaTitle": "Free PNG to 3D Model Converter | Bunshin 3D",
+      "metaDescription": "Convert PNG images to 3D models online. AI generates STL/GLB files from your PNG files.",
+      "keywords": "png to 3d, png to 3d model, convert png to 3d, png to stl, png to glb",
+      "h1": "PNG to 3D Model Converter",
+      "description": "Upload a PNG file and convert it to a 3D model. Download as STL for printing or GLB for games.",
+      "section1Title": "Beyond flat extrusions",
+      "section1Text": "Bunshin 3D uses neural depth estimation to build genuine 3D geometry with depth, curves, and volume from your PNG image.",
+      "section2Title": "Multiple output formats",
+      "section2Text": "Download your 3D model as STL, GLB, OBJ, or FBX. All formats included."
+    },
+    "logo-to-3d": {
+      "metaTitle": "Free Logo to 3D Model Converter | Bunshin 3D",
+      "metaDescription": "Convert your logo to a 3D model for printing, signage, or digital display. Free AI tool.",
+      "keywords": "logo to 3d, logo 3d model, logo to stl, 3d print logo, logo 3d converter",
+      "h1": "Logo to 3D Model Converter",
+      "description": "Turn your company logo into a 3D model. Perfect for signage, desk pieces, and presentations.",
+      "section1Title": "Brand identity in 3D",
+      "section1Text": "A 3D logo creates a premium impression for trade shows, office displays, and client gifts. Upload your logo and the AI generates a 3D model with depth and clean edges.",
+      "section2Title": "Print or display digitally",
+      "section2Text": "Download STL for 3D printing or GLB for embedding in websites, presentations, and AR experiences."
+    },
+    "photo-to-3d-print": {
+      "metaTitle": "Free Photo to 3D Print Converter | Bunshin 3D",
+      "metaDescription": "Convert any photo to a 3D-printable file. AI generates watertight STL from your photos.",
+      "keywords": "photo to 3d print, picture to 3d print, image to 3d printing, convert photo to stl",
+      "h1": "Photo to 3D Print File",
+      "description": "Upload a photo of any object and get a 3D-printable STL file. No 3D modeling skills needed.",
+      "section1Title": "From camera to printer",
+      "section1Text": "Take a photo with your phone, upload it, and download a watertight STL ready for your slicer.",
+      "section2Title": "Works with every printer",
+      "section2Text": "Compatible with FDM, SLA, and all printers that accept STL files. Scale freely in your slicer."
     }
   }
 }

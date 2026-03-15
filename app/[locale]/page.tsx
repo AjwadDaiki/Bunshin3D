@@ -157,7 +157,7 @@ export default async function HomePage({
 
       <LandingPage />
 
-      {/* Server-rendered SEO content block — crawlable by search engines */}
+      {/* Server-rendered SEO content block - crawlable by search engines */}
       <section className="py-20 md:py-28 px-4">
         <div className="container mx-auto max-w-4xl">
           <article className="space-y-12">

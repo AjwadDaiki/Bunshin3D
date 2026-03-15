@@ -107,6 +107,11 @@ export function useStudioGeneration({
         t,
       });
 
+      // GA4 generate event
+      if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
+        (window as any).gtag("event", "generate_model", { quality, mode });
+      }
+
       onGenerationSuccess?.();
     } catch (error: any) {
       console.error(error);

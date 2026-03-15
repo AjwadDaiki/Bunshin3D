@@ -40,7 +40,7 @@ export default function HeadLinks({ supabaseUrl }: Props) {
       {supabaseUrl && <link rel="dns-prefetch" href={supabaseUrl} />}
       <link rel="preconnect" href="https://www.googletagmanager.com" />
 
-      {/* msapplication tags — not handled by Next.js metadata API */}
+      {/* msapplication tags - not handled by Next.js metadata API */}
       <meta name="msapplication-TileColor" content="#0a0a0f" />
       <meta name="msapplication-TileImage" content="/mstile-150x150.png" />
       <meta name="color-scheme" content="dark" />
