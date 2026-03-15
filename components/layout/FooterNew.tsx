@@ -13,8 +13,8 @@ export default function FooterNew() {
   return (
     <footer className="relative border-t border-white/6 bg-[#0a0a0a]">
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-12 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="md:col-span-1">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8">
+          <div className="col-span-2 sm:col-span-3 md:col-span-5">
             <div className="flex items-center gap-2 mb-4">
               <BunshinLogo className="h-6 w-6 text-blue-500" />
               <span className="text-lg font-bold">
@@ -51,6 +51,32 @@ export default function FooterNew() {
               <li>
                 <Link href="/compare" className="hover:text-white transition-colors">
                   {t("compare")}
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-sm font-semibold text-white mb-4">{t("tools")}</h3>
+            <ul className="space-y-2.5 text-sm text-neutral-500">
+              <li>
+                <Link href="/tools/image-to-stl" className="hover:text-white transition-colors">
+                  {t("toolImageToStl")}
+                </Link>
+              </li>
+              <li>
+                <Link href="/tools/png-to-3d" className="hover:text-white transition-colors">
+                  {t("toolPngTo3d")}
+                </Link>
+              </li>
+              <li>
+                <Link href="/tools/logo-to-3d" className="hover:text-white transition-colors">
+                  {t("toolLogoTo3d")}
+                </Link>
+              </li>
+              <li>
+                <Link href="/tools/photo-to-3d-print" className="hover:text-white transition-colors">
+                  {t("toolPhotoToPrint")}
                 </Link>
               </li>
             </ul>

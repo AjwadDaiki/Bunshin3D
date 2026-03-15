@@ -146,7 +146,12 @@
     "copyright": "© {year} Bunshin 3D. Todos los derechos reservados.",
     "partnerName": "Hidden Lab",
     "formats": "Formatos",
-    "compare": "Comparaciones"
+    "compare": "Comparaciones",
+    "tools": "Herramientas",
+    "toolImageToStl": "Imagen a STL",
+    "toolPngTo3d": "PNG a 3D",
+    "toolLogoTo3d": "Logo a 3D",
+    "toolPhotoToPrint": "Foto a impresion 3D"
   },
   "UseCases": {
     "logoToStl": "Convertir Logo a STL",
@@ -2342,6 +2347,21 @@
       "section1Text": "Take a photo with your phone, upload it, and download a watertight STL ready for your slicer.",
       "section2Title": "Works with every printer",
       "section2Text": "Compatible with FDM, SLA, and all printers that accept STL files. Scale freely in your slicer."
+    },
+    "index": {
+      "label": "Herramientas",
+      "h1": "Herramientas de Conversion 3D Gratis",
+      "description": "Sube una imagen y convierte a modelo 3D al instante.",
+      "metaTitle": "Herramientas 3D Gratis | Bunshin 3D",
+      "metaDescription": "Herramientas gratis para convertir imagenes a modelos 3D.",
+      "keywords": "herramientas 3d gratis, imagen a stl, png a 3d",
+      "viewAll": "Ver herramientas",
+      "descriptions": {
+        "image-to-stl": "Convierte imagenes a STL para impresion 3D",
+        "png-to-3d": "Transforma PNG en modelos 3D",
+        "logo-to-3d": "Convierte tu logo en modelo 3D",
+        "photo-to-3d-print": "Convierte fotos en archivos 3D"
+      }
     }
   }
 }

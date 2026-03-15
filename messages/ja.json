@@ -146,7 +146,12 @@
     "partnerName": "Hidden Lab",
     "formats": "フォーマット",
     "compare": "比較",
-    "copyright": "© {year} Bunshin 3D. 全著作権所有。"
+    "copyright": "© {year} Bunshin 3D. 全著作権所有。",
+    "tools": "無料ツール",
+    "toolImageToStl": "画像からSTL",
+    "toolPngTo3d": "PNGから3D",
+    "toolLogoTo3d": "ロゴから3D",
+    "toolPhotoToPrint": "写真から3Dプリント"
   },
   "UseCases": {
     "logoToStl": "ロゴをSTLに変換",
@@ -2342,6 +2347,21 @@
       "section1Text": "Take a photo with your phone, upload it, and download a watertight STL ready for your slicer.",
       "section2Title": "Works with every printer",
       "section2Text": "Compatible with FDM, SLA, and all printers that accept STL files. Scale freely in your slicer."
+    },
+    "index": {
+      "label": "無料ツール",
+      "h1": "無料3D変換ツール",
+      "description": "画像をアップロードして3Dモデルに変換。",
+      "metaTitle": "無料3D変換ツール | Bunshin 3D",
+      "metaDescription": "画像を3Dモデルに変換する無料ツール。",
+      "keywords": "無料3dツール, 画像stl変換",
+      "viewAll": "全ツールを見る",
+      "descriptions": {
+        "image-to-stl": "画像をSTLに変換",
+        "png-to-3d": "PNGを3Dモデルに",
+        "logo-to-3d": "ロゴを3Dモデルに",
+        "photo-to-3d-print": "写真を3Dプリント用に"
+      }
     }
   }
 }

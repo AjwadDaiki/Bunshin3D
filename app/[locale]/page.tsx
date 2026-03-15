@@ -10,6 +10,7 @@ import { generateFAQSchema, getFAQData } from "@/lib/schemas/faq";
 import { generateHowToSchema } from "@/lib/schemas/howto";
 import { getHomeSchemas } from "@/lib/schemas/home";
 import ReferralPromoPanel from "@/components/referral/ReferralPromoPanel";
+import HomeToolsSection from "@/components/home/HomeToolsSection";
 import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
 
@@ -225,6 +226,10 @@ export default async function HomePage({
           </div>
         </div>
       </section>
+
+      <hr className="section-hr" />
+
+      <HomeToolsSection />
     </>
   );
 }
