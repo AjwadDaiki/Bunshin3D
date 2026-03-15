@@ -3,7 +3,7 @@ import { createNavigation } from "next-intl/navigation";
 
 export const routing = defineRouting({
   // Liste exhaustive pour le SEO
-  locales: ["fr", "en", "es", "de", "ja", "zh"],
+  locales: ["fr", "en", "es", "de", "ja", "zh", "pt"],
 
   // ANGLAIS PAR DÉFAUT comme demandé
   defaultLocale: "en",
@@ -20,6 +20,7 @@ export const localeNames: Record<Locale, string> = {
   de: "Deutsch",
   ja: "日本語",
   zh: "中文",
+  pt: "Português",
 };
 
 export const localeFlags: Record<Locale, string> = {
@@ -29,6 +30,7 @@ export const localeFlags: Record<Locale, string> = {
   de: "🇩🇪",
   ja: "🇯🇵",
   zh: "🇨🇳",
+  pt: "🇧🇷",
 };
 
 export const { Link, redirect, usePathname, useRouter } =

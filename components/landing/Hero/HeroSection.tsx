@@ -2,7 +2,7 @@
 
 import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
-import { ArrowRight, Lightning, ShieldCheck, Gift } from "@phosphor-icons/react";
+import { ArrowRight, Lightning, ShieldCheck, Gift, CreditCard } from "@phosphor-icons/react";
 
 export default function HeroSection() {
   const t = useTranslations("Home");
@@ -28,22 +28,28 @@ export default function HeroSection() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
           <Link
             href="/studio"
-            className="group inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-white px-8 font-semibold text-neutral-950 transition-all hover:bg-neutral-100 hover:shadow-lg hover:shadow-white/10"
+            className="group inline-flex h-13 items-center justify-center gap-2 rounded-lg bg-white px-10 font-semibold text-neutral-950 text-lg transition-all hover:bg-neutral-100 hover:shadow-lg hover:shadow-white/10"
           >
             {t("Hero.ctaPrimary")}
-            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" weight="bold" />
+            <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-0.5" weight="bold" />
           </Link>
 
           <Link
             href="#pricing"
-            className="inline-flex h-12 items-center justify-center gap-2 rounded-lg border border-white/10 bg-white/3 px-8 font-medium text-white transition-all hover:bg-white/6 hover:border-white/15"
+            className="inline-flex h-13 items-center justify-center gap-2 rounded-lg border border-white/10 bg-white/3 px-10 font-medium text-white text-lg transition-all hover:bg-white/6 hover:border-white/15"
           >
             {t("Hero.ctaSecondary")}
           </Link>
         </div>
 
+        {/* No credit card needed */}
+        <p className="text-sm text-neutral-500 flex items-center justify-center gap-1.5">
+          <CreditCard className="w-4 h-4" weight="regular" />
+          {t("Hero.noCreditCard")}
+        </p>
+
         {/* Trust indicators */}
-        <div className="flex flex-wrap items-center justify-center gap-6 pt-6 text-sm text-neutral-500">
+        <div className="flex flex-wrap items-center justify-center gap-6 pt-2 text-sm text-neutral-500">
           <span className="inline-flex items-center gap-1.5">
             <Gift className="w-4 h-4 text-blue-400" weight="fill" />
             {t("Hero.freeCredits")}

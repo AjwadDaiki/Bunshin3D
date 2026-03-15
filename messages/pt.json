@@ -1,0 +1,1798 @@
+{
+  "Metadata": {
+    "defaultTitle": "Bunshin 3D | Conversor Gratuito de Imagem para Modelo 3D STL & GLB com IA",
+    "templateTitle": "%s | Bunshin 3D - Gerador 3D com IA",
+    "description": "Transforme imagens, logos e desenhos em modelos 3D instantaneamente. Conversor STL gratuito com IA para impressão 3D e GLB para Unity/Unreal. Sem habilidades técnicas. Experimente agora!",
+    "applicationName": "Bunshin 3D",
+    "keywords": "imagem para modelo 3D grátis, conversor STL gratuito, foto para modelo 3D, gerador 3D com IA, imagem para STL online, impressão 3D, logo para stl, png para stl online, 2d para 3d ia, imagem para glb, gerador de assets 3d, converter imagem para stl grátis, imagem para modelo 3d com ia, impressão 3d a partir de foto, blender obj de imagem",
+    "creator": "Bunshin 3D",
+    "publisher": "Bunshin 3D",
+    "ogSiteName": "Bunshin 3D - Gerador de Modelos 3D com IA",
+    "ogTitle": "Transforme Qualquer Imagem em Modelo 3D em 30 Segundos | Conversor Gratuito com IA",
+    "ogDescription": "Converta logos, fotos e desenhos para STL/GLB instantaneamente. Gerador 3D gratuito com IA - sem habilidades necessárias. Perfeito para impressão 3D e desenvolvimento de jogos.",
+    "ogImageAlt": "Bunshin 3D - IA converte imagens 2D em modelos 3D para impressão e jogos",
+    "twitterTitle": "Conversor de Imagem para 3D com IA | Gerador Gratuito de STL & GLB",
+    "twitterDescription": "Transforme qualquer imagem em um modelo 3D imprimível em segundos. Conversor gratuito com IA - sem habilidades de design necessárias. Experimente o Bunshin 3D agora!"
+  },
+  "SEO": {
+    "siteName": "Bunshin 3D",
+    "engineeringTeam": "Equipe de Engenharia",
+    "generator": "Bunshin 3D",
+    "appleWebAppTitle": "Bunshin 3D",
+    "twitterHandle": "@bunshin3d",
+    "organizationName": "Bunshin 3D",
+    "organizationDescription": "Plataforma de geração 3D com inteligência artificial",
+    "contactType": "Suporte ao Cliente",
+    "organizationSlogan": "Transforme Qualquer Imagem em Modelo 3D"
+  },
+  "Navigation": {
+    "brandName": "BUNSHIN",
+    "brandSuffix": "3D",
+    "useCases": "Casos de Uso",
+    "pricing": "Preços",
+    "login": "Entrar",
+    "start": "Começar",
+    "studio": "Estúdio",
+    "api": "API",
+    "terms": "Termos",
+    "privacy": "Privacidade",
+    "dashboard": "Painel",
+    "admin": "Admin",
+    "logout": "Sair",
+    "credits": "Créditos",
+    "buyCredits": "Comprar Créditos",
+    "lowCredits": "Baixo",
+    "aria": {
+      "home": "Ir para a página inicial",
+      "mainNav": "Navegação principal",
+      "toggleNav": "Alternar menu de navegação",
+      "userMenu": "Menu do usuário",
+      "logout": "Sair",
+      "creditsAvailable": "{count} créditos disponíveis",
+      "mobileNav": "Navegação mobile"
+    }
+  },
+  "Home": {
+    "Schema": {
+      "websiteName": "Bunshin 3D",
+      "softwareName": "Bunshin 3D",
+      "softwareCategory": "Aplicativo de Design",
+      "operatingSystem": "Web"
+    },
+    "Hero": {
+      "badge": "Geração 3D com IA",
+      "title": "Sua imagem se torna um",
+      "titleHighlight": "modelo 3D.",
+      "subtitle": "Envie uma foto ou desenho e receba um arquivo 3D pronto para imprimir ou usar nos seus projetos. Simples, rápido, sem conhecimento técnico.",
+      "ctaPrimary": "Experimente grátis",
+      "ctaSecondary": "Ver preços",
+      "trustedBy": "MOTOR DE GERAÇÃO 3D COM IA",
+      "freeCredits": "2 créditos grátis ao se cadastrar",
+      "fastGeneration": "Geração rápida",
+      "noSubscription": "Sem assinatura",
+      "noCreditCard": "Sem cartão de crédito"
+    },
+    "Showcase": {
+      "title": "Gerado com Bunshin",
+      "subtitle": "De logos simples a personagens complexos. Sem modelagem manual."
+    },
+    "Features": {
+      "title": "Arquitetura Pronta para Produção",
+      "subtitle": "Feito para profissionais que precisam de velocidade, precisão e automação.",
+      "speedTitle": "Ultra Rápido",
+      "speedDesc": "Inferência acelerada por GPU gera modelos em menos de 30 segundos.",
+      "topologyTitle": "Topologia Limpa",
+      "topologyDesc": "Otimização de malha baseada em quads para animação e rigging.",
+      "exportTitle": "Multi-Formato",
+      "exportDesc": "Exportação nativa para GLB, FBX, OBJ e STL estanque para impressão.",
+      "textureTitle": "Texturas HD",
+      "textureDesc": "Texturas PBR automáticas com mapas de albedo, normal e roughness.",
+      "commercialTitle": "Licença Comercial",
+      "commercialDesc": "Direitos comerciais completos em todos os modelos gerados. Use onde quiser.",
+      "instantTitle": "Download Instantâneo",
+      "instantDesc": "Baixe seus modelos instantaneamente em formato GLB, FBX, OBJ ou STL."
+    },
+    "Steps": {
+      "label": "Como Funciona",
+      "title": "Como Funciona",
+      "step1": "Envie a Imagem",
+      "step1Desc": "Arraste e solte qualquer PNG, JPG ou WEBP.",
+      "step2": "Processamento com IA",
+      "step2Desc": "Nosso Bunshin Engine reconstrói profundidade e textura.",
+      "step3": "Baixe o 3D",
+      "step3Desc": "Receba seu asset pronto para jogos ou impressão."
+    },
+    "Samples": {
+      "title": "Gerações Recentes",
+      "helmet": "Capacete Sci-Fi",
+      "vase": "Vaso de Cerâmica",
+      "character": "Herói Estilizado",
+      "mech": "Peça Mecânica"
+    },
+    "CTA": {
+      "title": "Pronto para materializar suas ideias?",
+      "subtitle": "Comece a criar em 30 segundos — sem habilidades de design.",
+      "button": "Abrir Estúdio"
+    },
+    "SEOContent": {
+      "title1": "Converta Qualquer Imagem em Modelo 3D com IA",
+      "text1": "Bunshin 3D é um conversor de imagem para 3D com inteligência artificial que transforma fotos, logos, desenhos e ilustrações em modelos 3D prontos para produção. Envie um arquivo PNG, JPG ou WEBP e baixe seu modelo em formato STL para impressão 3D, GLB para jogos e web, OBJ para Blender e Maya, ou FBX para Unity e Unreal Engine. A conversão leva menos de 30 segundos e não requer experiência em modelagem 3D. Seja para converter o logo da empresa em arquivo STL para impressão 3D, gerar assets de jogos a partir de concept art, ou transformar o desenho de uma criança em uma miniatura física — o Bunshin 3D faz tudo a partir de uma única imagem.",
+      "title2": "Feito para Impressão 3D, Desenvolvimento de Jogos & Design",
+      "text2": "Todo modelo gerado pelo Bunshin 3D é estanque e manifold, o que significa que os arquivos STL carregam diretamente em fatiadores como Cura, PrusaSlicer e Bambu Studio sem reparo. As exportações GLB seguem o padrão glTF 2.0 para compatibilidade nativa com Unity, Unreal Engine, Godot, Three.js e visualizadores web de modelos. A IA usa estimativa neural de profundidade para reconstruir geometria 3D genuína — não extrusões planas ou litofanias. O resultado é uma malha totalmente dimensional com profundidade, curvas e rebaixos que funciona para prototipagem, visualização de produtos, projetos educacionais e produção comercial.",
+      "title3": "Créditos Grátis, Sem Assinatura, Direitos Comerciais Completos",
+      "text3": "Cadastre-se e receba créditos grátis para testar a plataforma — sem cartão de crédito. Os créditos nunca expiram e não há assinaturas mensais. Todo modelo 3D gerado vem com direitos comerciais completos: use em produtos, jogos, impressões ou trabalhos para clientes sem restrições. Pacotes de créditos começam a partir de $3.99 por 10 gerações, com descontos por volume disponíveis para pacotes maiores. O Bunshin 3D suporta vários idiomas e múltiplas moedas, atendendo criadores em mais de 80 países no mundo todo."
+    }
+  },
+  "Footer": {
+    "tagline": "Transforme suas imagens em modelos 3D incríveis com IA",
+    "brandDesc": "A nova geração de ferramentas de criação 3D com IA. Feito por artistas, para artistas.",
+    "product": "Produto",
+    "resources": "Recursos",
+    "useCases": "Casos de Uso",
+    "pricing": "Preços",
+    "studio": "Estúdio 3D",
+    "features": "Funcionalidades",
+    "blog": "Blog",
+    "help": "Central de Ajuda",
+    "support": "Suporte",
+    "account": "Conta",
+    "contact": "Contato",
+    "legal": "Jurídico",
+    "terms": "Termos de Serviço",
+    "privacy": "Política de Privacidade",
+    "mentions": "Menções Legais",
+    "rights": "Todos os direitos reservados.",
+    "crafted": "Criado com precisão por",
+    "copyright": "© {year} Bunshin 3D. Todos os direitos reservados.",
+    "partnerName": "Hidden Lab",
+    "gallery": "Galeria",
+    "formats": "Formatos",
+    "compare": "Comparações"
+  },
+  "UseCases": {
+    "logoToStl": "Converter Logo para STL",
+    "unityAssets": "Criar Assets para Unity",
+    "printing": "Impressão 3D"
+  },
+  "Error": {
+    "notFoundTitle": "Página Não Encontrada",
+    "notFoundDescription": "A página que você procura se perdeu em outra dimensão.",
+    "serverErrorTitle": "Algo deu errado!",
+    "serverErrorDescription": "Ocorreu um erro inesperado. Por favor, tente novamente.",
+    "backHome": "Voltar ao Início",
+    "tryAgain": "Tentar Novamente",
+    "logPrefix": "Erro da aplicação:",
+    "errorId": "ID do Erro: {id}",
+    "footer": "Se o problema persistir, entre em contato com o suporte.",
+    "notFoundCode": "404",
+    "rootLogPrefix": "Erro da aplicação:",
+    "warningSymbol": "⚠️"
+  },
+  "Auth": {
+    "title": "Bem-vindo de Volta",
+    "subtitle": "Insira suas credenciais para acessar o Neural Studio.",
+    "emailLabel": "Endereço de e-mail",
+    "emailPlaceholder": "nome@exemplo.com",
+    "magicLink": "Enviar Link Mágico",
+    "or": "OU CONTINUE COM",
+    "google": "Google",
+    "checkEmail": "Verifique seu e-mail",
+    "checkEmailDesc": "Enviamos um link mágico para você entrar.",
+    "loading": "Autenticando...",
+    "tryDifferentEmail": "Tentar outro e-mail",
+    "Errors": {
+      "noCode": "Nenhum código de autenticação recebido.",
+      "authFailed": "Autenticação falhou: {message}",
+      "noSession": "Nenhuma sessão criada. Por favor, tente novamente.",
+      "banned": "Esta conta foi suspensa.",
+      "generic": "Ocorreu um erro inesperado.",
+      "magicLinkSend": "Falha ao enviar o link mágico.",
+      "googleLogin": "Login com Google falhou. Por favor, tente novamente."
+    }
+  },
+  "Studio": {
+    "Metadata": {
+      "title": "Neural Studio",
+      "description": "Transforme suas imagens 2D em modelos 3D usando nosso Bunshin AI Engine.",
+      "keywords": "gerador de modelos 3d, estúdio 3d com ia, imagem para 3d online, conversor 3d gratuito, gerador stl, criador glb, gerador de modelos com ia"
+    },
+    "JsonLd": {
+      "name": "Bunshin 3D Studio",
+      "applicationCategory": "DesignApplication",
+      "featureList": "Imagem para STL, Logo para 3D, Geração 3D com IA"
+    },
+    "Header": {
+      "title": "Neural Studio",
+      "subtitle": "Transforme matéria 2D em estrutura 3D.",
+      "version": "v2.0 // Bunshin Engine Ativo",
+      "status": "CLUSTER GPU ONLINE",
+      "latency": "LATÊNCIA: 45ms"
+    },
+    "Modes": {
+      "imageToModel": "Imagem para 3D",
+      "textToModel": "Texto para 3D"
+    },
+    "Quality": {
+      "title": "Nível de Qualidade",
+      "standard": "Padrão",
+      "standardDesc": "Geração rápida, boa qualidade",
+      "standardCost": "{cost} crédito",
+      "premium": "Premium",
+      "premiumDesc": "Qualidade cinema, fotorrealista",
+      "premiumCost": "{cost} créditos"
+    },
+    "TextMode": {
+      "promptLabel": "Descreva seu modelo 3D",
+      "promptPlaceholder": "Um robô futurista em pé sobre uma plataforma...",
+      "generateButton": "Gerar a partir do Texto"
+    },
+    "Logs": {
+      "title": "Logs de Geração",
+      "initializing": "Inicializando motores de IA...",
+      "checkingCredits": "Verificando saldo de créditos...",
+      "uploadingImage": "Enviando imagem para a nuvem...",
+      "optimizingPrompt": "Otimizando prompt para geração 3D...",
+      "generatingImage": "Gerando imagem otimizada...",
+      "analyzingImage": "Analisando estrutura da imagem...",
+      "extractingFeatures": "Extraindo características geométricas...",
+      "buildingMesh": "Construindo malha 3D...",
+      "applyingTextures": "Aplicando texturas e materiais...",
+      "optimizingGeometry": "Otimizando geometria...",
+      "finalizingModel": "Finalizando modelo 3D...",
+      "uploadingResult": "Enviando resultado...",
+      "complete": "Geração concluída!",
+      "downloadReady": "Seu modelo está pronto para download",
+      "error": "Ocorreu um erro durante a geração",
+      "downloadSuccess": "Download pronto: {format}",
+      "downloadError": "Download falhou: {error}",
+      "errorPrefix": "Erro: {message}",
+      "generationFailed": "Geração falhou.",
+      "insufficientCredits": "Créditos insuficientes. Necessário {count}.",
+      "missingImage": "Por favor, envie uma imagem.",
+      "missingPrompt": "Por favor, insira um prompt.",
+      "imageUploaded": "Imagem enviada para a nuvem.",
+      "imageGenerated": "Imagem gerada.",
+      "imageGenerationFailed": "Geração de imagem falhou.",
+      "cooldown": "Resfriando...",
+      "serverBusy": "Servidor ocupado. Tentando novamente...",
+      "rateLimited": "Limite de requisições atingido. Tente novamente mais tarde.",
+      "serverSideFailure": "Geração no servidor falhou."
+    },
+    "Interface": {
+      "DropZone": {
+        "title": "Solte a Imagem Aqui",
+        "subtitle": "JPG, PNG, WEBP (Máx 10MB)",
+        "scanning": "ESCANEAMENTO NEURAL...",
+        "previewAlt": "Pré-visualização da imagem enviada"
+      },
+      "Samples": {
+        "title": "Exemplos",
+        "helmet": "Capacete Sci-Fi",
+        "vase": "Vaso Antigo",
+        "character": "Personagem Cyber",
+        "mech": "Peça Mecânica"
+      },
+      "Controls": {
+        "title": "Centro de Controle",
+        "ready": "PRONTO",
+        "generate": "GERAR MODELO 3D",
+        "awaiting": "AGUARDANDO ENTRADA",
+        "processing": "PROCESSANDO"
+      },
+      "Actions": {
+        "reset": "Redefinir Imagem",
+        "generate": "Gerar 3D"
+      },
+      "Status": {
+        "system": "STATUS DO SISTEMA"
+      },
+      "Export": {
+        "title": "Opções de Exportação",
+        "readyTitle": "Pronto para exportar",
+        "subtitle": "Escolha um formato para baixar seu modelo.",
+        "labels": {
+          "glb": "GLB",
+          "web": "Web",
+          "obj": "OBJ",
+          "universal": "Universal",
+          "usdz": "USDZ",
+          "ar": "AR",
+          "stl": "STL",
+          "print": "Impressão"
+        }
+      },
+      "Formats": {
+        "standard": {
+          "title": "Formato Master",
+          "subtitle": "High Poly • Textura GLB"
+        },
+        "lowpoly": {
+          "title": "Game Ready",
+          "subtitle": "Low Poly Otimizado • 50% Decimação"
+        },
+        "print": {
+          "title": "Impressão 3D",
+          "subtitle": "STL Sólido • Formato Binário"
+        }
+      },
+      "Viewer": {
+        "label": "VIEWPORT [WEBGL]",
+        "waiting": "Aguardando entrada...",
+        "waitingStream": "AGUARDANDO FLUXO DE DADOS...",
+        "engine": "BUNSHIN ENGINE V1.0",
+        "axis": "EIXO XYZ: TRAVADO",
+        "autoRotate": "Rotação Automática",
+        "shadows": "Sombras: ON",
+        "readyToGenerate": "Pronto para gerar",
+        "generated2D": "2D Gerado",
+        "webAR": "Web/AR",
+        "print": "Impressão",
+        "creatingMagic": "Criando seu modelo...",
+        "referenceImage": "Imagem de referência"
+      },
+      "Errors": {
+        "fileTooLarge": "Imagem muito grande (Máx 10MB).",
+        "generationFailed": "O cluster GPU não conseguiu processar a requisição. Tente novamente.",
+        "conversionFailed": "Erro de conversão local. Verifique seu navegador.",
+        "timeout": "A requisição demorou demais (>60s). Tente uma imagem menor ou tente novamente mais tarde."
+      }
+    },
+    "CreditsPrompt": {
+      "title": "Créditos",
+      "headline": "Sua criatividade merece mais.",
+      "description": "Esta geração requer {count} créditos. Recarregue ou convide um amigo para ganhar créditos grátis.",
+      "ctaPricing": "Comprar Créditos",
+      "ctaReferral": "Ganhe com Indicações",
+      "note": "Convide um amigo: +{signup} ao se cadastrar, +{payment} após a primeira compra.",
+      "close": "Fechar",
+      "creditsLabel": "créditos"
+    }
+  },
+  "HowTo": {
+    "name": "Como converter uma imagem em 3D",
+    "description": "Transforme qualquer imagem em um modelo 3D para download em segundos com o Bunshin 3D.",
+    "tools": {
+      "browser": "Navegador web",
+      "image": "Arquivo de imagem (PNG, JPG ou WEBP)"
+    },
+    "steps": [
+      {
+        "name": "Envie uma imagem",
+        "text": "Envie um PNG, JPG ou WEBP nítido para começar."
+      },
+      {
+        "name": "Deixe a IA gerar",
+        "text": "Nossa IA reconstrói profundidade, geometria e texturas."
+      },
+      {
+        "name": "Baixe seu modelo 3D",
+        "text": "Receba seu GLB ou STL para impressão ou jogos."
+      }
+    ]
+  },
+  "Pricing": {
+    "Metadata": {
+      "title": "Preços & Créditos",
+      "description": "Pacotes flexíveis de créditos para geração 3D. Pague uma vez, use para sempre.",
+      "siteName": "Bunshin 3D",
+      "ogImageAlt": "Preços e pacotes de créditos do Bunshin 3D",
+      "keywords": "bunshin 3d preços, créditos para modelo 3d, custo gerador 3d com ia, comprar créditos 3d, impressão 3d acessível, preços geração stl"
+    },
+    "Schema": {
+      "productName": "Créditos Bunshin 3D",
+      "productDescription": "Pacotes flexíveis de créditos para geração 3D. Pague uma vez, use para sempre.",
+      "brandName": "Bunshin 3D",
+      "offers": {
+        "discovery": {
+          "name": "Pacote Descoberta",
+          "description": "Pacote inicial para testar o gerador 3D."
+        },
+        "creator": {
+          "name": "Pacote Criador",
+          "description": "Ideal para designers e criadores."
+        },
+        "studio": {
+          "name": "Pacote Estúdio",
+          "description": "Pacote de alto volume para estúdios e equipes."
+        }
+      },
+      "breadcrumb": {
+        "home": "Início",
+        "pricing": "Preços"
+      }
+    },
+    "Header": {
+      "title": "Preços Simples e",
+      "titleHighlight": "Transparentes.",
+      "subtitle": "Compre créditos conforme a necessidade. Sem armadilhas de assinatura mensal. Seus créditos nunca expiram.",
+      "socialProof": "Sem assinatura — pague uma vez, crie quando quiser.",
+      "guarantee": "100% de satisfação garantida — entre em contato a qualquer momento"
+    },
+    "Badges": {
+      "popular": "RECOMENDADO",
+      "bestValue": "MELHOR CUSTO-BENEFÍCIO"
+    },
+    "Features": {
+      "quality": "Geração de Alta Qualidade",
+      "commercial": "Licença Comercial",
+      "formats": "Exportações GLB & STL",
+      "priority": "Acesso GPU Prioritário",
+      "support": "Suporte Prioritário"
+    },
+    "Card": {
+      "perPack": "por pacote",
+      "perCredit": "/ crédito",
+      "savings": "Economize {percent}%",
+      "securePayment": "Pagamento seguro via Stripe"
+    },
+    "Packs": {
+      "Discovery": {
+        "name": "DESCOBERTA",
+        "credits": "10 Créditos",
+        "description": "Ideal para: Testes e primeiros projetos",
+        "cta": "Começar"
+      },
+      "Creator": {
+        "name": "CRIADOR",
+        "credits": "50 Créditos",
+        "description": "Ideal para: Projetos pessoais e freelancers",
+        "cta": "Começar"
+      },
+      "Studio": {
+        "name": "ESTÚDIO",
+        "credits": "200 Créditos",
+        "description": "Ideal para: Estúdios e uso profissional",
+        "cta": "Começar"
+      }
+    },
+    "Footer": {
+      "note": "Checkout seguro. Créditos nunca expiram."
+    },
+    "Trust": {
+      "secure": "Pagamento Seguro",
+      "noSub": "Sem Assinatura",
+      "neverExpire": "Créditos Nunca Expiram",
+      "commercial": "Licença Comercial"
+    },
+    "SocialProof": {
+      "users": "Checkout seguro — créditos nunca expiram"
+    },
+    "FAQ": {
+      "title": "Perguntas Frequentes",
+      "q1": "Para que servem os créditos?",
+      "a1": "Cada crédito permite gerar um modelo 3D a partir de uma imagem ou prompt de texto. Os créditos são consumidos apenas em gerações bem-sucedidas.",
+      "q2": "Os créditos expiram?",
+      "a2": "Não! Seus créditos nunca expiram. Compre uma vez e use quando quiser. Não há assinaturas mensais ou taxas ocultas.",
+      "q3": "Quais formatos posso exportar?",
+      "a3": "Todos os modelos 3D gerados podem ser exportados em GLB (para engines de jogos como Unity & Unreal) e STL (para impressão 3D). Ambos os formatos estão incluídos em cada geração.",
+      "q4": "Posso usar os modelos comercialmente?",
+      "a4": "Sim! Todos os pacotes de créditos incluem licença comercial completa. Você pode usar seus modelos 3D gerados em jogos, produtos, materiais de marketing e muito mais.",
+      "q5": "Como funciona a geração com IA?",
+      "a5": "Nossa IA analisa sua imagem 2D ou descrição em texto e gera uma malha 3D detalhada com texturas. O processo leva cerca de 30 segundos e roda em servidores GPU prioritários."
+    },
+    "Checkout": {
+      "loginRequired": "Por favor, faça login para continuar.",
+      "serverError": "Erro no servidor (status {status}).",
+      "noCheckoutUrl": "Link de checkout não encontrado.",
+      "checkoutErrorLog": "Erro no checkout:",
+      "paymentInitFailed": "Falha na inicialização do pagamento: {message}"
+    }
+  },
+  "Account": {
+    "Metadata": {
+      "title": "Meu Painel",
+      "description": "Gerencie suas gerações e créditos."
+    },
+    "Header": {
+      "title": "Centro de Comando",
+      "subtitle": "Visão geral dos seus assets criativos e recursos.",
+      "welcome": "Bem-vindo de volta,"
+    },
+    "Stats": {
+      "credits": "Créditos Disponíveis",
+      "generations": "Total de Criações",
+      "plan": "Status Atual",
+      "memberSince": "Membro Desde"
+    },
+    "History": {
+      "title": "Histórico de Gerações",
+      "emptyTitle": "Nenhuma criação ainda",
+      "emptyDesc": "Comece sua primeira transformação 3D no Estúdio.",
+      "emptyBtn": "Ir para o Estúdio",
+      "download": "Baixar",
+      "date": "Criado em",
+      "confirmDelete": "Excluir esta geração?",
+      "confirmYes": "Excluir",
+      "confirmNo": "Cancelar",
+      "generatedTime": "Gerado às {time}",
+      "retentionNotice": "Suas gerações ficam salvas aqui para acesso rápido.",
+      "sourceAlt": "Imagem de origem",
+      "statuses": {
+        "processing": "Processando",
+        "succeeded": "Concluído",
+        "failed": "Falhou",
+        "queued": "Na fila"
+      },
+      "downloadTitles": {
+        "glb": "Baixar GLB",
+        "obj": "Baixar OBJ",
+        "usdz": "Baixar USDZ",
+        "stl": "Baixar STL"
+      },
+      "formatLabels": {
+        "glb": "GLB",
+        "obj": "OBJ",
+        "usdz": "USDZ",
+        "stl": "STL"
+      }
+    },
+    "Settings": {
+      "logout": "Sair",
+      "buyCredits": "Recarregar Créditos"
+    }
+  },
+  "Admin": {
+    "Metadata": {
+      "title": "OVERRIDE DO SISTEMA // ADMIN"
+    },
+    "Header": {
+      "title": "Centro de Comando",
+      "subtitle": "Acesso Restrito. Somente Pessoal Autorizado.",
+      "status": "CONEXÃO ATIVA"
+    },
+    "Tabs": {
+      "overview": "Visão Geral",
+      "users": "Usuários"
+    },
+    "Controls": {
+      "serverTime": "HORÁRIO DO SERVIDOR"
+    },
+    "Users": {
+      "colActions": "Ações",
+      "colUser": "Usuário",
+      "colCredits": "Créditos",
+      "colDate": "Cadastro",
+      "role": "Cargo",
+      "status": "Status",
+      "grantCredits": "Conceder créditos",
+      "changeRole": "Alterar cargo",
+      "ban": "Banir",
+      "unban": "Desbanir",
+      "delete": "Excluir",
+      "inspect": "Inspecionar",
+      "searchPlaceholder": "Buscar por e-mail...",
+      "search": "Buscar",
+      "actions": "Ações",
+      "grantTitle": "Conceder Créditos",
+      "currentCredits": "Créditos atuais",
+      "selectAmount": "Selecionar quantidade",
+      "credits": "créditos",
+      "customAmount": "Quantidade personalizada",
+      "cancel": "Cancelar",
+      "grant": "Conceder",
+      "roleTitle": "Alterar Cargo",
+      "selectRole": "Selecionar cargo",
+      "roles": {
+        "user": "Usuário",
+        "moderator": "Moderador",
+        "admin": "Administrador"
+      },
+      "roleDesc": {
+        "user": "Acesso padrão ao estúdio",
+        "moderator": "Pode moderar conteúdo",
+        "admin": "Acesso total ao sistema"
+      },
+      "saveRole": "Salvar",
+      "banTitle": "Banir Usuário",
+      "banMessage": "Tem certeza que deseja banir este usuário? Ele não poderá mais acessar o serviço.",
+      "unbanTitle": "Desbanir Usuário",
+      "unbanMessage": "Tem certeza que deseja desbanir este usuário? Ele recuperará o acesso ao serviço.",
+      "deleteTitle": "Excluir Usuário",
+      "deleteMessage": "Esta ação é IRREVERSÍVEL. Todos os dados do usuário serão excluídos permanentemente.",
+      "deleteConfirm": "Digite EXCLUIR para confirmar",
+      "typeDelete": "Digite EXCLUIR",
+      "confirm": "Confirmar",
+      "inspectTitle": "Gerações do Usuário",
+      "noGenerations": "Nenhuma geração encontrada",
+      "totalGenerations": "{count} geração(ões) no total",
+      "close": "Fechar",
+      "customAmountPlaceholder": "Inserir quantidade",
+      "deleteKeyword": "EXCLUIR",
+      "rolesShort": {
+        "admin": "ADMIN",
+        "moderator": "MOD",
+        "user": "USUÁRIO"
+      },
+      "statusActive": "Ativo",
+      "statusBanned": "Banido",
+      "unknownInitial": "?"
+    },
+    "Errors": {
+      "actionFailed": "Ação falhou. Por favor, tente novamente.",
+      "changeRoleFailed": "Falha ao alterar o cargo.",
+      "grantCreditsFailed": "Falha ao conceder créditos.",
+      "loadUsers": "Falha ao carregar usuários.",
+      "updateSystemStatus": "Falha ao atualizar o status do sistema.",
+      "serviceRoleMissing": "Chave de service role ausente.",
+      "userNotFound": "Usuário não encontrado.",
+      "banUpdateFailed": "Falha ao atualizar status de banimento.",
+      "deleteProfileFailed": "Falha ao excluir perfil do usuário.",
+      "fetchUsersFailed": "Falha ao buscar usuários.",
+      "updateSettingsFailed": "Falha ao atualizar configurações.",
+      "notAuthenticated": "Não autenticado.",
+      "notAuthorized": "Não autorizado."
+    },
+    "SimulatePayment": {
+      "title": "Simular Pagamento",
+      "subtitle": "Testar pagamento sem Stripe",
+      "description": "Simule a compra de um pacote de créditos para qualquer usuário. Os créditos são adicionados instantaneamente sem passar pelo Stripe. Útil para testes e suporte.",
+      "searchUser": "Buscar usuário",
+      "selectPack": "Selecionar pacote de créditos",
+      "sendConfirmationEmail": "Enviar e-mail de confirmação",
+      "warning": "Isso adicionará {credits} créditos à conta do usuário imediatamente. Esta ação é registrada.",
+      "simulate": "Simular Pagamento",
+      "change": "Alterar",
+      "userNotFound": "Nenhum usuário encontrado com este e-mail.",
+      "packs": {
+        "discovery": "Descoberta",
+        "creator": "Criador",
+        "studio": "Estúdio"
+      },
+      "stripeTestCheckout": "Testar com Stripe Checkout",
+      "stripeTestInfo": "Teste Stripe: Use o cartão 4242 4242 4242 4242, qualquer data futura, qualquer CVC. Fluxo completo de checkout com webhook de teste."
+    },
+    "ApplyPromo": {
+      "title": "Aplicar Promoção",
+      "subtitle": "Ativar oferta OTO para um usuário",
+      "description": "Ative manualmente a oferta promocional (OTO) para qualquer usuário. Ele verá preços com desconto pela duração escolhida.",
+      "selectDuration": "Duração da promoção",
+      "durations": {
+        "24": "24 horas",
+        "48": "48 horas",
+        "72": "72 horas",
+        "168": "7 dias",
+        "custom": "Personalizado"
+      },
+      "customHours": "Duração em horas",
+      "currentStatus": "Status atual",
+      "promoActive": "Promoção ativa — {time} restantes",
+      "promoInactive": "Nenhuma promoção ativa",
+      "apply": "Aplicar Promoção",
+      "remove": "Remover Promoção",
+      "warning": "O usuário verá preços OTO com desconto nos pacotes Descoberta e Estúdio pela duração escolhida."
+    }
+  },
+  "PaymentEmail": {
+    "subject": "Pagamento Confirmado - {credits} Créditos Adicionados",
+    "greeting": "Olá,",
+    "thankYou": "Obrigado pela sua compra! Seu pagamento foi processado com sucesso.",
+    "summary": "Resumo do Pedido",
+    "pack": "Pacote",
+    "credits": "Créditos",
+    "amount": "Valor Pago",
+    "creditsReady": "Seus {credits} créditos já estão disponíveis na sua conta e prontos para uso.",
+    "cta": "Ir para o Estúdio",
+    "footer": "Este e-mail foi enviado pelo Bunshin 3D. Se você não fez esta compra, entre em contato conosco imediatamente.",
+    "team": "Equipe Bunshin 3D"
+  },
+  "Breadcrumbs": {
+    "home": "Início",
+    "studio": "Estúdio",
+    "pricing": "Preços",
+    "account": "Conta",
+    "login": "Entrar",
+    "terms": "Termos de Serviço",
+    "privacy": "Política de Privacidade",
+    "legalMentions": "Menções Legais"
+  },
+  "Legal": {
+    "Metadata": {
+      "termsTitle": "Termos de Serviço - Bunshin 3D",
+      "termsDescription": "Leia os termos de serviço do Bunshin 3D.",
+      "termsOgTitle": "Termos de Serviço | Bunshin 3D",
+      "termsOgDescription": "Leia os termos que regem o uso da plataforma de geração de modelos 3D com IA do Bunshin 3D.",
+      "privacyTitle": "Política de Privacidade - Bunshin 3D",
+      "privacyDescription": "Saiba como o Bunshin 3D coleta e usa seus dados.",
+      "privacyOgTitle": "Política de Privacidade | Bunshin 3D",
+      "privacyOgDescription": "Saiba como o Bunshin 3D lida com seus dados, imagens e informações pessoais de forma segura.",
+      "mentionsTitle": "Menções Legais - Bunshin 3D",
+      "mentionsDescription": "Informações da empresa e hospedagem do Bunshin 3D.",
+      "mentionsOgTitle": "Menções Legais | Bunshin 3D",
+      "mentionsOgDescription": "Informações da empresa, detalhes de hospedagem e avisos legais do Bunshin 3D.",
+      "termsKeywords": "bunshin 3d termos, termos de serviço gerador 3d, termos de uso modelo ia",
+      "privacyKeywords": "bunshin 3d privacidade, política de privacidade gerador 3d, proteção de dados ia, privacidade upload de imagem",
+      "mentionsKeywords": "bunshin 3d legal, informações da empresa, detalhes de hospedagem"
+    },
+    "Terms": {
+      "title": "Termos de Serviço",
+      "lastUpdated": "Última atualização: Janeiro de 2026",
+      "intro": "Bem-vindo ao Bunshin 3D. Ao usar nossos serviços, você concorda com estes termos.",
+      "section1Title": "1. Uso",
+      "section1Text": "Nosso serviço permite gerar modelos 3D usando IA. Você deve usar este serviço em conformidade com todas as leis aplicáveis.",
+      "section2Title": "2. Propriedade Intelectual",
+      "section2Text": "Você mantém os direitos sobre os modelos que gera, sujeito à licença concedida a nós para hospedá-los e exibi-los.",
+      "section3Title": "3. Responsabilidade",
+      "section3Text": "O serviço é fornecido 'como está'. Não nos responsabilizamos por quaisquer danos decorrentes do seu uso."
+    },
+    "Privacy": {
+      "title": "Política de Privacidade",
+      "lastUpdated": "Última atualização: Janeiro de 2026",
+      "intro": "Sua privacidade é importante para nós. Esta política explica como lidamos com seus dados.",
+      "section1Title": "1. Coleta de Dados",
+      "section1Text": "Coletamos seu e-mail e imagens enviadas exclusivamente para fornecer o serviço.",
+      "section2Title": "2. Uso dos Dados",
+      "section2Text": "Não vendemos seus dados. Suas imagens são processadas por nossos provedores de IA e armazenadas de forma segura.",
+      "section3Title": "3. Seus Direitos",
+      "section3Text": "Você pode solicitar a exclusão da sua conta e dados a qualquer momento pelo seu painel."
+    },
+    "Mentions": {
+      "title": "Menções Legais",
+      "editorTitle": "Editor",
+      "editorText": "Bunshin 3D\nFrança\nE-mail: contact@metalya.fr",
+      "hostTitle": "Hospedagem",
+      "hostText": "Vercel",
+      "creditsTitle": "Créditos",
+      "creditsText": "Design e Desenvolvimento pela Equipe Bunshin 3D."
+    }
+  },
+  "Common": {
+    "skipToContent": "Pular para o conteúdo principal",
+    "generatedAsset": "Asset Gerado",
+    "buyCredits": "Comprar Créditos",
+    "loading": "Carregando...",
+    "error": "Erro",
+    "success": "Sucesso",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "download": "Baixar",
+    "processing": "Processando...",
+    "previous": "Anterior",
+    "next": "Próximo",
+    "pageOf": "Página {page} de {total}",
+    "brandLogoAlt": "Logo Bunshin 3D",
+    "creditsWithCount": "{count, plural, one {# crédito} other {# créditos}}",
+    "currencySymbols": {
+      "eur": "€",
+      "usd": "$"
+    },
+    "downloads": {
+      "fileName": "bunshin3d-{timestamp}.{extension}"
+    },
+    "errors": {
+      "downloadErrorLog": "Erro no download:",
+      "downloadFailed": "Download falhou.",
+      "noModelUrl": "URL do modelo não encontrada.",
+      "unknownFormat": "Formato desconhecido."
+    },
+    "pending": "Pendente"
+  },
+  "TextTo3D": {
+    "Metadata": {
+      "title": "Texto para 3D - Padrão",
+      "description": "Gere modelos 3D a partir de descrições de texto usando IA. 1 crédito por geração."
+    },
+    "Header": {
+      "title": "Texto para 3D - Padrão",
+      "subtitle": "Transforme suas ideias em modelos 3D",
+      "cost": "1 Crédito por geração"
+    },
+    "Form": {
+      "promptLabel": "Descreva seu modelo 3D",
+      "promptPlaceholder": "Um robô futurista em pé sobre uma plataforma...",
+      "generateButton": "Gerar Modelo 3D",
+      "generatingImage": "Etapa 1/2: Gerando imagem otimizada...",
+      "generatingModel": "Etapa 2/2: Convertendo para modelo 3D...",
+      "imageReady": "Imagem gerada! Prosseguindo para 3D...",
+      "modelReady": "Modelo 3D pronto!",
+      "downloadGLB": "Baixar GLB",
+      "insufficientCredits": "Créditos insuficientes. Você precisa de 1 crédito para gerar.",
+      "promptRequired": "Por favor, insira uma descrição"
+    },
+    "Tips": {
+      "title": "Dicas para melhores resultados",
+      "tip1": "Seja específico sobre a forma e os detalhes do objeto",
+      "tip2": "Mencione o ângulo de visualização (isométrico, vista frontal, etc.)",
+      "tip3": "Evite cenas complexas com múltiplos objetos",
+      "tip4": "A qualidade padrão é perfeita para protótipos e conceitos"
+    }
+  },
+  "Premium3D": {
+    "Metadata": {
+      "title": "Premium Imagem para 3D",
+      "description": "Geração 3D de alta fidelidade a partir de imagens usando Rodin AI. 5 créditos por geração."
+    },
+    "Header": {
+      "title": "Premium Imagem para 3D",
+      "subtitle": "Modelos 3D com qualidade cinema a partir das suas imagens",
+      "cost": "5 Créditos por geração"
+    },
+    "Form": {
+      "uploadLabel": "Envie sua imagem",
+      "uploadHint": "JPG, PNG, WEBP (Máx 10MB)",
+      "generateButton": "Gerar 3D Premium",
+      "generating": "Rodin AI está trabalhando... (Est. 2 minutos)",
+      "modelReady": "Modelo 3D Premium pronto!",
+      "downloadGLB": "Baixar GLB",
+      "insufficientCredits": "Créditos insuficientes. Você precisa de 5 créditos para geração premium.",
+      "imageRequired": "Por favor, envie uma imagem primeiro"
+    },
+    "Features": {
+      "title": "Recursos Premium",
+      "feature1": "Texturas fotorrealistas",
+      "feature2": "Malha de alta poligonagem para máximo detalhe",
+      "feature3": "Reconstrução avançada de geometria",
+      "feature4": "Pronto para produção em filmes e jogos AAA"
+    },
+    "Warning": {
+      "title": "⚠️ Geração Premium",
+      "message": "Isso custará 5 créditos. Modelos premium oferecem resultados com qualidade cinema e detalhes fotorrealistas."
+    }
+  },
+  "Referral": {
+    "title": "Programa de Indicação",
+    "linkLabel": "Seu link de indicação",
+    "linkUnavailable": "Link indisponível",
+    "creditsLabel": "Créditos ganhos com indicações",
+    "copyLabel": "Copiar link",
+    "copiedLabel": "Copiado!",
+    "Promo": {
+      "headerText": "Convide amigos, ganhe créditos grátis",
+      "headerCta": "Saiba Mais",
+      "badge": "Programa de Indicação",
+      "sectionTitle": "Ganhe Créditos Grátis",
+      "sectionSubtitle": "Compartilhe o Bunshin 3D com seus amigos e ganhe créditos por cada cadastro e compra.",
+      "bonusTitle": "Bônus de Indicação",
+      "bonusSubtitle": "Ganhe créditos em cada etapa",
+      "bonusBadgeSignup": "+2 créditos",
+      "bonusBadgePayment": "+10 créditos",
+      "bonusCaption": "Sem limites. Acumule créditos.",
+      "steps": {
+        "invite": {
+          "title": "Compartilhe Seu Link",
+          "description": "Envie seu link de indicação exclusivo para amigos",
+          "desc": "Envie seu link de indicação exclusivo para amigos"
+        },
+        "signup": {
+          "title": "Amigo se Cadastra",
+          "description": "Ele cria uma conta usando seu link",
+          "desc": "Ele cria uma conta usando seu link"
+        },
+        "pay": {
+          "title": "Amigo Compra",
+          "description": "Quando ele compra créditos, vocês dois ganham",
+          "desc": "Quando ele compra créditos, vocês dois ganham"
+        }
+      },
+      "ctaPrimary": "Copiar Link de Indicação",
+      "ctaSecondary": "Ir para o Painel",
+      "highlightTag": "CRÉDITOS GRÁTIS",
+      "pricingTitle": "Indique & Economize",
+      "pricingSubtitle": "Ganhe créditos convidando amigos",
+      "footerTitle": "Convide seus amigos e ganhe créditos grátis por cada cadastro!",
+      "footerCta": "Começar a Ganhar"
+    }
+  },
+  "Showcase": {
+    "generatedAsset": "Asset Gerado",
+    "viewModel": "Ver Modelo",
+    "download": "Baixar",
+    "title": "Gerado com Bunshin",
+    "subtitle": "De logos simples a personagens complexos. Veja o que nossa IA pode criar.",
+    "badges": {
+      "premium": "Premium",
+      "standard": "Padrão"
+    },
+    "examples": {
+      "woodenChair": {
+        "name": "Cadeira de Madeira",
+        "prompt": "Uma cadeira rústica de madeira simples com encosto entalhado",
+        "alt": "Modelo 3D de cadeira de madeira gerado pela IA Bunshin"
+      },
+      "coffeeMug": {
+        "name": "Caneca de Café",
+        "prompt": "Uma caneca de café de cerâmica com design minimalista",
+        "alt": "Modelo 3D de caneca de café gerado pela IA Bunshin"
+      },
+      "rubberDuck": {
+        "name": "Pato de Borracha",
+        "prompt": "Um clássico pato de borracha amarelo de banho",
+        "alt": "Modelo 3D de pato de borracha gerado pela IA Bunshin"
+      },
+      "cactusPot": {
+        "name": "Vaso de Cacto",
+        "prompt": "Um pequeno cacto em um vaso de terracota com pedrinhas",
+        "alt": "Modelo 3D de vaso de cacto gerado pela IA Bunshin"
+      },
+      "katanaSword": {
+        "name": "Espada Katana",
+        "prompt": "Uma katana japonesa tradicional com cabo trançado e lâmina curvada",
+        "alt": "Modelo 3D de espada katana gerado pela IA Bunshin"
+      },
+      "shuriken": {
+        "name": "Shuriken",
+        "prompt": "Uma shuriken afiada de quatro pontas com padrões gravados",
+        "alt": "Modelo 3D de shuriken gerado pela IA Bunshin"
+      },
+      "battleAxe": {
+        "name": "Machado de Batalha",
+        "prompt": "Um machado de batalha viking de duas lâminas com cabo de madeira entalhado com runas",
+        "alt": "Modelo 3D de machado de batalha gerado pela IA Bunshin"
+      },
+      "wizardStaff": {
+        "name": "Cajado de Mago",
+        "prompt": "Um cajado místico de mago com orbe de cristal brilhante e madeira retorcida",
+        "alt": "Modelo 3D de cajado de mago gerado pela IA Bunshin"
+      }
+    },
+    "items": {
+      "poubelle": "Lixeira",
+      "shuriken": "Shuriken",
+      "robot": "Robô",
+      "coffre": "Baú",
+      "chaise": "Cadeira",
+      "hache": "Machado",
+      "tasse": "Caneca",
+      "lampe": "Luminária"
+    }
+  },
+  "OTO": {
+    "close": "Fechar",
+    "badge": "Oferta Exclusiva de Boas-Vindas",
+    "title": "Sua criatividade merece mais.",
+    "subtitle": "Desbloqueie seus primeiros créditos com um preço imbatível. Esta oferta expira em breve.",
+    "discountBadge": "ATÉ -67% DE DESCONTO",
+    "discovery": {
+      "name": "Descoberta",
+      "price": "0.99€",
+      "originalPrice": "2.99€",
+      "credits": "10 créditos inclusos"
+    },
+    "studio": {
+      "name": "Studio Pro",
+      "price": "19.99€",
+      "originalPrice": "29.99€",
+      "credits": "200 créditos inclusos"
+    },
+    "footer": "Oferta única. Créditos nunca expiram.",
+    "creditsLabel": "créditos",
+    "checkoutError": "Ocorreu um erro. Por favor, tente novamente.",
+    "banner": {
+      "text": "Oferta de boas-vindas expira em",
+      "cta": "Aproveitar Agora"
+    }
+  },
+  "FAQ": {
+    "items": [
+      {
+        "question": "Como o Bunshin 3D funciona?",
+        "answer": "O Bunshin 3D usa IA avançada para converter imagens 2D e descrições de texto em modelos 3D nos formatos GLB e STL. Basta enviar uma imagem ou descrever o que você quer, e nossa IA gera um modelo 3D pronto para produção."
+      },
+      {
+        "question": "Quais formatos são suportados?",
+        "answer": "Suportamos GLB (para engines de jogos como Unity e Unreal), STL (para impressão 3D) e formatos OBJ. Todos os modelos vêm com topologia otimizada."
+      },
+      {
+        "question": "Quantos créditos eu preciso?",
+        "answer": "A qualidade padrão custa 1 crédito por geração. A qualidade premium custa 5 créditos para resultados com qualidade cinema e texturas fotorrealistas."
+      },
+      {
+        "question": "Os créditos expiram?",
+        "answer": "Não, seus créditos nunca expiram. Compre uma vez e use quando quiser."
+      },
+      {
+        "question": "Posso usar os modelos comercialmente?",
+        "answer": "Sim! Todos os modelos gerados são seus para uso comercial, incluindo jogos, impressão 3D e projetos profissionais."
+      },
+      {
+        "question": "Como funciona o programa de indicação?",
+        "answer": "Compartilhe seu link de indicação exclusivo. Quando um amigo se cadastrar, você ganha +2 créditos. Quando ele fizer a primeira compra, você ganha +10 créditos. Não há limites nos ganhos de indicação."
+      }
+    ]
+  },
+  "Gallery": {
+    "metaTitle": "Galeria de Modelos 3D | Exemplos Antes & Depois | Bunshin 3D",
+    "metaDescription": "Veja exemplos reais de imagens convertidas em modelos 3D com o Bunshin 3D. Navegue por logos, personagens, objetos e desenhos transformados em arquivos 3D imprimíveis.",
+    "keywords": "exemplos de modelos 3d, exemplos imagem para 3d, galeria modelos 3d com ia, antes e depois conversão 3d, exemplos impressão 3d",
+    "label": "Galeria",
+    "h1": "Veja o que o Bunshin 3D Pode Criar",
+    "description": "Exemplos reais de imagens convertidas em modelos 3D. De logos a personagens, desenhos a fotos de produtos — veja a qualidade por si mesmo.",
+    "all": "Todos",
+    "categories": {
+      "logos": "Logos",
+      "characters": "Personagens",
+      "objects": "Objetos",
+      "drawings": "Desenhos",
+      "photos": "Fotos"
+    },
+    "items": {
+      "sci-fi-helmet": "Capacete Sci-Fi",
+      "ceramic-vase": "Vaso de Cerâmica",
+      "stylized-hero": "Personagem Herói Estilizado",
+      "mech-part": "Peça Mecânica",
+      "brand-logo": "Logo de Marca",
+      "child-drawing": "Desenho de Criança"
+    },
+    "inputLabel": "Imagem de Entrada",
+    "noResults": "Nenhum exemplo nesta categoria ainda.",
+    "seoTitle": "Conversão de Imagem para 3D com IA",
+    "seoText": "Todo modelo mostrado nesta galeria foi gerado pelo Bunshin 3D a partir de uma única imagem 2D. A IA usa estimativa neural de profundidade para reconstruir geometria 3D completa — não extrusões planas. Os resultados variam com base na qualidade da imagem de entrada, mas os exemplos acima representam a saída típica. Todos os modelos podem ser baixados em STL para impressão 3D, GLB para jogos e web, ou OBJ para softwares 3D.",
+    "cta": "Experimente Você Mesmo — Grátis"
+  },
+  "ExitIntent": {
+    "title": "Espere — experimente antes de sair!",
+    "description": "Converta sua primeira imagem em modelo 3D de graça. Sem cartão de crédito, sem downloads. Leva 30 segundos.",
+    "ctaPrimary": "Experimente Grátis — Sem Cadastro",
+    "ctaSecondary": "Ver Preços",
+    "note": "Créditos grátis ao se cadastrar. Sem compromisso."
+  },
+  "Formats": {
+    "index": {
+      "label": "Formatos de Exportação",
+      "h1": "Imagem para 3D com IA — Exporte em Qualquer Formato",
+      "description": "Converta imagens em modelos 3D e exporte em STL, GLB, OBJ, FBX ou glTF. O Bunshin 3D suporta todos os principais formatos 3D para impressão, jogos e design.",
+      "metaTitle": "Formatos de Exportação 3D — STL, GLB, OBJ, FBX, glTF | Bunshin 3D",
+      "metaDescription": "Converta qualquer imagem em modelo 3D e baixe em STL, GLB, OBJ, FBX ou glTF. Conversor com IA para impressão 3D, desenvolvimento de jogos e design.",
+      "keywords": "formatos de arquivo 3d, conversor de imagem para 3d, stl glb obj fbx gltf, exportar modelo 3d, conversor 3d com ia"
+    },
+    "common": {
+      "indexTitle": "Escolha Seu Formato 3D",
+      "howItWorks": "Como Funciona",
+      "faqTitle": "Perguntas Frequentes",
+      "relatedFormats": "Formatos Relacionados",
+      "ctaTryFree": "Experimente Grátis",
+      "ctaPricing": "Ver Preços",
+      "slugTitles": {
+        "stl": "Conversor de Imagem para STL",
+        "glb": "Conversor de Imagem para GLB",
+        "obj": "Conversor de Imagem para OBJ",
+        "fbx": "Conversor de Imagem para FBX",
+        "gltf": "Conversor de Imagem para glTF",
+        "3d-printing": "Conversor de Arquivo para Impressão 3D"
+      },
+      "slugDescriptions": {
+        "stl": "Converta qualquer imagem em um arquivo STL estanque pronto para impressão 3D.",
+        "glb": "Transforme fotos e imagens em modelos GLB para web, RA e motores de jogos.",
+        "obj": "Gere arquivos OBJ a partir de imagens para usar no Blender, Maya e fluxos de trabalho 3D.",
+        "fbx": "Converta imagens para o formato FBX para Unity, Unreal Engine e pipelines de animação.",
+        "gltf": "Crie arquivos glTF a partir de imagens para visualizadores 3D na web e experiências de RA.",
+        "3d-printing": "Prepare arquivos 3D prontos para impressão a partir de qualquer imagem — otimizados para impressoras FDM e de resina."
+      }
+    },
+    "stl": {
+      "metaTitle": "Conversor de Imagem para STL — Gerador de STL com IA Grátis | Bunshin 3D",
+      "metaDescription": "Converta qualquer imagem em um arquivo STL imprimível em segundos. Gerador de STL com IA gratuito — envie uma foto, logotipo ou desenho e baixe um STL estanque para impressão 3D.",
+      "keywords": "conversor de arquivo stl, imagem para stl, gerador de stl, foto para stl, converter imagem para stl grátis, conversor stl com ia, png para stl, logotipo para stl, stl para impressão 3d",
+      "h1": "Converta Qualquer Imagem em Arquivo STL com IA",
+      "breadcrumb": "Imagem para STL",
+      "heroDescription": "Envie uma foto, logotipo ou desenho e receba um arquivo STL estanque pronto para impressão 3D. O Bunshin 3D usa IA para reconstruir geometria 3D real — não extrusões planas. Funciona com Cura, PrusaSlicer, Bambu Studio e todos os principais fatiadores.",
+      "section1Title": "O Que É um Arquivo STL?",
+      "section1Text": "STL (Standard Tessellation Language) é o formato universal para impressão 3D. Ele armazena a geometria da superfície de um objeto 3D como uma malha de triângulos. Toda impressora FDM de mesa, impressora de resina e serviço de impressão 3D industrial aceita arquivos STL. Quando você converte uma imagem para STL com o Bunshin 3D, o resultado é estanque e manifold — ou seja, carrega diretamente no seu fatiador sem precisar de reparo de malha.",
+      "section2Title": "Por Que Converter Imagens para STL?",
+      "section2Text": "Transformar uma imagem 2D em um arquivo STL imprimível em 3D tradicionalmente exige horas de modelagem manual no Blender ou em softwares CAD. O Bunshin 3D elimina essa etapa completamente. Envie um logotipo de empresa e receba uma placa imprimível. Tire uma foto de um conceito de miniatura e imprima na sua Ender 3 ou Prusa. Converta o desenho de uma criança em uma lembrança física. A IA cuida da estimativa de profundidade, geração de malha e otimização de topologia automaticamente.",
+      "step1Title": "Envie Sua Imagem",
+      "step1Desc": "Arraste e solte qualquer imagem PNG, JPG ou WEBP. Logotipos, fotos, desenhos e concept art funcionam.",
+      "step2Title": "A IA Gera Geometria 3D",
+      "step2Desc": "Nossa rede neural reconstrói profundidade, curvas e detalhes de superfície para construir uma malha 3D genuína em menos de 30 segundos.",
+      "step3Title": "Baixe Seu Arquivo STL",
+      "step3Desc": "Receba um arquivo STL binário otimizado para impressão 3D. Carregue direto no Cura, PrusaSlicer ou qualquer fatiador e comece a imprimir.",
+      "faq1Q": "O arquivo STL é estanque e pronto para imprimir?",
+      "faq1A": "Sim. Todo arquivo STL gerado pelo Bunshin 3D é estanque e manifold. Ele carrega diretamente em fatiadores como Cura, PrusaSlicer e Bambu Studio sem precisar de ferramentas de reparo de malha.",
+      "faq2Q": "Que tipo de imagens funcionam melhor para conversão em STL?",
+      "faq2A": "Imagens claras com um único objeto em fundo liso produzem os melhores resultados. Logotipos, fotos de produtos, ilustrações de personagens e desenhos convertem bem. Evite cenas confusas com múltiplos objetos sobrepostos.",
+      "faq3Q": "Posso redimensionar o arquivo STL para minha impressora?",
+      "faq3A": "Com certeza. O arquivo STL pode ser redimensionado, girado e reposicionado em qualquer fatiador. A malha é limpa o suficiente para escalar de miniaturas a peças de exposição grandes sem artefatos.",
+      "faq4Q": "O STL inclui cor ou textura?",
+      "faq4A": "Arquivos STL padrão contêm apenas geometria e não incluem dados de cor. Se você precisa de texturas, baixe o formato GLB, que inclui materiais PBR. Para pintar impressões 3D, a geometria STL oferece excelentes detalhes de superfície.",
+      "faq5Q": "Quanto custa converter uma imagem para STL?",
+      "faq5A": "Cada conversão custa 1 crédito. Novos usuários recebem créditos grátis ao se cadastrar — sem cartão de crédito. Pacotes adicionais de créditos começam em US$ 3,99 por 10 gerações.",
+      "ctaTitle": "Pronto para Converter Sua Imagem em STL?",
+      "ctaDescription": "Envie qualquer imagem e baixe um arquivo STL pronto para impressão em 30 segundos. Sem habilidades de modelagem 3D necessárias."
+    },
+    "glb": {
+      "metaTitle": "Conversor de Imagem para GLB — Gerador de GLB com IA Grátis | Bunshin 3D",
+      "metaDescription": "Converta qualquer imagem em um modelo 3D GLB com texturas. Conversor GLB com IA gratuito para Unity, Unreal, Three.js e visualizadores 3D na web. Envie e baixe instantaneamente.",
+      "keywords": "imagem para glb, conversor glb, foto para glb, png para glb, gerador glb com ia, converter imagem para glb, modelo 3d glb, glb para unity, glb para web, gltf binário",
+      "h1": "Converta Qualquer Imagem em um Modelo 3D GLB com IA",
+      "breadcrumb": "Imagem para GLB",
+      "heroDescription": "Transforme fotos, logotipos e artes em modelos 3D GLB texturizados. GLB é o formato binário glTF — o padrão universal para 3D em tempo real na web, em motores de jogos e em apps de RA. O Bunshin 3D gera arquivos GLB prontos para produção com texturas PBR em menos de 30 segundos.",
+      "section1Title": "O Que É um Arquivo GLB?",
+      "section1Text": "GLB é o formato de contêiner binário para glTF 2.0 — o \"JPEG do 3D\". Ele empacota geometria, texturas, materiais e animações em um único arquivo. O GLB é suportado nativamente por Unity, Unreal Engine, Godot, Three.js, Babylon.js, Google Model Viewer e todos os principais navegadores com WebXR. Quando você precisa de um modelo 3D texturizado que funcione em qualquer lugar, GLB é a resposta.",
+      "section2Title": "Por Que Converter Imagens para GLB?",
+      "section2Text": "Criar assets 3D texturizados normalmente requer um pipeline de modelagem: escultura no ZBrush, retopologia no Blender, mapeamento UV e baking de texturas. O Bunshin 3D resume tudo isso em um único upload. A IA reconstrói a geometria 3D da sua imagem e gera automaticamente materiais PBR com mapas de albedo, normal e roughness. O GLB resultante é leve o suficiente para web e detalhado o suficiente para jogos.",
+      "step1Title": "Envie Sua Imagem",
+      "step1Desc": "Envie qualquer PNG, JPG ou WEBP. Fotos de produtos, concept art de jogos, logotipos e ilustrações funcionam.",
+      "step2Title": "A IA Constrói um Modelo 3D Texturizado",
+      "step2Desc": "Nosso motor reconstrói profundidade e geometria, depois aplica texturas PBR automaticamente. O processo completo leva menos de 30 segundos.",
+      "step3Title": "Baixe Seu Arquivo GLB",
+      "step3Desc": "Receba um único arquivo GLB com texturas embutidas. Coloque direto no Unity, Unreal, Three.js ou qualquer visualizador compatível com glTF.",
+      "faq1Q": "O arquivo GLB inclui texturas?",
+      "faq1A": "Sim. Todo GLB gerado pelo Bunshin 3D inclui texturas PBR embutidas com mapas de albedo, normal e roughness. O modelo está pronto para exibição imediatamente.",
+      "faq2Q": "Posso usar o GLB no Unity ou Unreal Engine?",
+      "faq2A": "Sim. GLB/glTF é suportado nativamente pelo Unity (via glTFast), Unreal Engine, Godot e todos os principais motores de jogos. Importe o arquivo diretamente no seu projeto.",
+      "faq3Q": "O GLB é adequado para web e RA?",
+      "faq3A": "O GLB é o formato padrão para 3D na web. Funciona com Three.js, Babylon.js, Google Model Viewer e WebXR. Também é o formato recomendado para RA no Android (Scene Viewer) e iOS (Quick Look via conversão USDZ).",
+      "faq4Q": "Qual a diferença entre GLB e glTF?",
+      "faq4A": "GLB é a versão binária do glTF. Ele empacota tudo — geometria, texturas, materiais — em um único arquivo. O glTF padrão usa arquivos JSON e binários separados. O Bunshin 3D exporta GLB para máxima portabilidade.",
+      "faq5Q": "Qual o tamanho dos arquivos GLB gerados?",
+      "faq5A": "Arquivos GLB típicos têm entre 2 MB e 15 MB dependendo da complexidade da malha e resolução da textura. Eles são otimizados para renderização em tempo real e carregamento rápido.",
+      "ctaTitle": "Pronto para Converter Sua Imagem em GLB?",
+      "ctaDescription": "Envie qualquer imagem e receba um modelo 3D GLB texturizado em segundos. Perfeito para jogos, web e RA."
+    },
+    "obj": {
+      "metaTitle": "Conversor de Imagem para OBJ — Gerador de OBJ com IA Grátis | Bunshin 3D",
+      "metaDescription": "Converta qualquer imagem em um arquivo de modelo 3D OBJ. Conversor OBJ com IA gratuito compatível com Blender, Maya, 3ds Max e todos os principais softwares 3D. Sem habilidades de modelagem.",
+      "keywords": "imagem para obj, conversor obj, foto para obj, converter imagem para obj, gerador obj com ia, arquivo obj a partir de imagem, obj para blender, modelo 3d obj, wavefront obj",
+      "h1": "Converta Qualquer Imagem em Arquivo OBJ com IA",
+      "breadcrumb": "Imagem para OBJ",
+      "heroDescription": "Gere arquivos Wavefront OBJ a partir de qualquer imagem usando IA. OBJ é o formato 3D mais amplamente suportado da indústria — compatível com Blender, Maya, 3ds Max, Cinema 4D, ZBrush e praticamente todos os aplicativos 3D já criados. Envie uma imagem e baixe uma malha OBJ limpa em segundos.",
+      "section1Title": "O Que É um Arquivo OBJ?",
+      "section1Text": "OBJ (Wavefront Object) é o formato de modelo 3D mais antigo e universal. Ele armazena posições de vértices, normais, coordenadas de textura e dados de faces em um formato simples baseado em texto. Praticamente todo aplicativo 3D suporta importação e exportação de OBJ. É o formato padrão para interoperabilidade entre diferentes ferramentas 3D — do Blender e Maya ao ZBrush e Substance Painter.",
+      "section2Title": "Por Que Converter Imagens para OBJ?",
+      "section2Text": "Arquivos OBJ são ideais quando você precisa de máxima compatibilidade entre softwares 3D. Se você trabalha no Blender e precisa entregar para um artista de Maya, ou se esculpe no ZBrush e texturiza no Substance Painter, o OBJ garante que a malha seja transferida de forma limpa. O Bunshin 3D gera arquivos OBJ com normais e coordenadas UV corretas, prontos para edição, rigging ou texturização no aplicativo de sua preferência.",
+      "step1Title": "Envie Sua Imagem",
+      "step1Desc": "Envie uma imagem PNG, JPG ou WEBP. Arte de personagens, fotos de produtos, esboços e logotipos produzem ótimos resultados.",
+      "step2Title": "A IA Reconstrói Geometria 3D",
+      "step2Desc": "A IA analisa sua imagem, estima profundidade e gera uma malha 3D com topologia limpa e mapeamento UV.",
+      "step3Title": "Baixe Seu Arquivo OBJ",
+      "step3Desc": "Receba um arquivo Wavefront OBJ padrão. Abra no Blender, Maya, 3ds Max, Cinema 4D ou qualquer software 3D.",
+      "faq1Q": "Posso editar o arquivo OBJ no Blender?",
+      "faq1A": "Sim. O OBJ é totalmente suportado no Blender. Importe o arquivo, modifique a malha, aplique materiais, prepare para animação ou use como base para escultura adicional.",
+      "faq2Q": "O OBJ inclui coordenadas UV?",
+      "faq2A": "Sim. O arquivo OBJ gerado inclui coordenadas UV para mapeamento de textura. Você pode aplicar suas próprias texturas no Blender, Substance Painter ou qualquer ferramenta de texturização.",
+      "faq3Q": "Posso converter o OBJ para outros formatos?",
+      "faq3A": "Com certeza. O OBJ é universalmente suportado, então você pode importá-lo em qualquer aplicativo 3D e re-exportar como FBX, glTF, STL ou qualquer outro formato que precisar.",
+      "faq4Q": "O OBJ é bom para desenvolvimento de jogos?",
+      "faq4A": "O OBJ funciona para malhas estáticas em jogos, mas GLB/glTF ou FBX são melhores opções para motores de jogos porque suportam animações e materiais embutidos. Use OBJ quando precisar editar a malha em ferramentas externas antes de importar no seu motor.",
+      "faq5Q": "Qual a qualidade da malha dos arquivos OBJ gerados?",
+      "faq5A": "O Bunshin 3D gera malhas com topologia otimizada adequada para edição posterior. A contagem de polígonos é equilibrada entre detalhe e performance, e a malha é limpa o suficiente para subdivisão ou escultura.",
+      "ctaTitle": "Pronto para Converter Sua Imagem em OBJ?",
+      "ctaDescription": "Envie qualquer imagem e baixe um arquivo OBJ limpo compatível com todos os aplicativos 3D."
+    },
+    "fbx": {
+      "metaTitle": "Conversor de Imagem para FBX — Gerador de FBX com IA Grátis | Bunshin 3D",
+      "metaDescription": "Converta qualquer imagem em um modelo 3D FBX. Conversor com IA gratuito para Unity, Unreal Engine e pipelines de animação. Gere arquivos FBX a partir de fotos, logotipos e artes instantaneamente.",
+      "keywords": "imagem para fbx, conversor fbx, foto para fbx, converter imagem para fbx, gerador fbx com ia, fbx para unity, fbx para unreal, modelo 3d fbx, autodesk fbx",
+      "h1": "Converta Qualquer Imagem em Arquivo FBX com IA",
+      "breadcrumb": "Imagem para FBX",
+      "heroDescription": "Gere arquivos FBX a partir de imagens usando IA. FBX é o formato padrão da indústria para motores de jogos e animação — suportado nativamente por Unity, Unreal Engine, Maya, 3ds Max e MotionBuilder. Envie qualquer imagem e receba um modelo FBX pronto para produção em segundos.",
+      "section1Title": "O Que É um Arquivo FBX?",
+      "section1Text": "FBX (Filmbox) é o formato de intercâmbio 3D proprietário da Autodesk. Ele suporta malhas, materiais, texturas, animações, bones e blend shapes em um único arquivo. FBX é o formato de importação padrão para Unity e Unreal Engine, e o formato de troca padrão em pipelines de produção de filmes e jogos. Quando seu fluxo de trabalho envolve animação ou integração com motores de jogos, FBX é o formato a usar.",
+      "section2Title": "Por Que Converter Imagens para FBX?",
+      "section2Text": "O FBX faz a ponte entre ferramentas de criação 3D e motores de jogos. Se você está criando assets para Unity ou Unreal Engine, o FBX é o caminho de importação mais confiável. Ele preserva atribuições de materiais, layouts UV e hierarquia de malha. O Bunshin 3D gera arquivos FBX que importam perfeitamente em qualquer motor, prontos para rigging, animação ou posicionamento direto na sua cena.",
+      "step1Title": "Envie Sua Imagem",
+      "step1Desc": "Envie qualquer PNG, JPG ou WEBP. Concept art de jogos, esboços de personagens, fotos de produtos e logotipos funcionam.",
+      "step2Title": "A IA Gera Geometria Pronta para FBX",
+      "step2Desc": "A IA reconstrói geometria 3D da sua imagem com hierarquia de malha e mapeamento UV adequados, otimizados para exportação FBX.",
+      "step3Title": "Baixe Seu Arquivo FBX",
+      "step3Desc": "Receba um arquivo FBX pronto para Unity, Unreal Engine, Maya ou 3ds Max. Importe diretamente e comece a criar.",
+      "faq1Q": "Posso importar o FBX no Unity?",
+      "faq1A": "Sim. FBX é o formato de importação preferido do Unity. Arraste o arquivo para sua pasta Assets e o Unity importará automaticamente a malha, materiais e dados UV.",
+      "faq2Q": "O FBX funciona com Unreal Engine?",
+      "faq2A": "Sim. FBX é o formato de importação padrão para Unreal Engine. Use o diálogo de importação FBX para trazer a malha com suporte completo a materiais.",
+      "faq3Q": "Posso animar o modelo FBX?",
+      "faq3A": "O FBX gerado contém uma malha estática limpa o suficiente para rigging. Importe no Maya, Blender ou Mixamo para adicionar bones e animações antes de re-exportar.",
+      "faq4Q": "Qual a diferença entre FBX e GLB para jogos?",
+      "faq4A": "O FBX é melhor para pipelines de desenvolvimento de jogos offline (importação no Unity/Unreal). O GLB é melhor para carregamento em tempo de execução e 3D na web. Muitos desenvolvedores usam FBX durante o desenvolvimento e GLB para entrega final.",
+      "faq5Q": "O FBX é adequado para impressão 3D?",
+      "faq5A": "O FBX pode ser usado para impressão 3D, mas o STL é o formato preferido para fatiadores. Se seu objetivo é impressão 3D, baixe o formato STL para compatibilidade garantida com fatiadores.",
+      "ctaTitle": "Pronto para Converter Sua Imagem em FBX?",
+      "ctaDescription": "Envie qualquer imagem e receba um arquivo FBX pronto para motores de jogos em segundos. Perfeito para Unity, Unreal e fluxos de animação."
+    },
+    "gltf": {
+      "metaTitle": "Conversor de Imagem para glTF — Gerador de glTF com IA Grátis | Bunshin 3D",
+      "metaDescription": "Converta qualquer imagem em um modelo 3D glTF com texturas. Conversor glTF com IA gratuito para 3D na web, experiências de RA e Three.js. Envie uma foto e baixe instantaneamente.",
+      "keywords": "conversor gltf, imagem para gltf, foto para gltf, gerador gltf com ia, converter imagem para gltf, modelo 3d gltf, gltf para web, gltf para threejs, gltf 2.0",
+      "h1": "Converta Qualquer Imagem em um Modelo 3D glTF com IA",
+      "breadcrumb": "Imagem para glTF",
+      "heroDescription": "Transforme qualquer imagem em um modelo 3D glTF 2.0 com texturas PBR. glTF é o padrão aberto para 3D na web — suportado por todos os principais navegadores, Three.js, Babylon.js e plataformas de RA. Envie uma imagem e receba um modelo 3D otimizado para web em segundos.",
+      "section1Title": "O Que É um Arquivo glTF?",
+      "section1Text": "glTF (GL Transmission Format) é o padrão aberto desenvolvido pelo Khronos Group para entrega eficiente de conteúdo 3D. Frequentemente chamado de \"JPEG do 3D\", o glTF é projetado para carregamento e renderização rápidos em aplicações de tempo real. Ele suporta materiais PBR, animações e compressão de malha. A variante binária (GLB) empacota tudo em um único arquivo, enquanto o glTF padrão usa recursos JSON e binários separados.",
+      "section2Title": "Por Que Converter Imagens para glTF?",
+      "section2Text": "O glTF é o padrão para experiências 3D na web. Se você está desenvolvendo com Three.js, Babylon.js, A-Frame ou React Three Fiber, o glTF é o formato nativo. Também é a base para experiências de RA no Android (Scene Viewer) e é facilmente convertido para USDZ para RA no iOS. O Bunshin 3D gera modelos compatíveis com glTF com materiais PBR otimizados que renderizam lindamente em qualquer contexto WebGL.",
+      "step1Title": "Envie Sua Imagem",
+      "step1Desc": "Envie qualquer imagem PNG, JPG ou WEBP. Fotos de produtos, ilustrações, ícones e artes produzem excelentes modelos 3D.",
+      "step2Title": "A IA Cria um Modelo Otimizado para glTF",
+      "step2Desc": "A IA gera geometria 3D com materiais PBR, otimizados para renderização web em tempo real e carregamento rápido.",
+      "step3Title": "Baixe Seu Arquivo glTF / GLB",
+      "step3Desc": "Receba um arquivo compatível com glTF 2.0 pronto para Three.js, Babylon.js, Google Model Viewer ou qualquer aplicação WebGL.",
+      "faq1Q": "Qual a diferença entre glTF e GLB?",
+      "faq1A": "glTF é a especificação do formato. GLB é seu empacotamento binário — um único arquivo contendo o descritor JSON, buffers de geometria e texturas. O Bunshin 3D exporta arquivos GLB, que são a forma mais portátil do glTF.",
+      "faq2Q": "Posso usar glTF com Three.js?",
+      "faq2A": "Sim. O Three.js tem um GLTFLoader integrado que lida com arquivos glTF/GLB com suporte completo a materiais PBR. Os arquivos gerados pelo Bunshin 3D carregam diretamente em qualquer cena Three.js.",
+      "faq3Q": "O glTF é bom para RA e RV?",
+      "faq3A": "O glTF é o formato recomendado para experiências WebXR e RA no Android (Scene Viewer). Para AR Quick Look no iOS, o GLB pode ser convertido para USDZ. É o formato mais versátil para experiências imersivas.",
+      "faq4Q": "O glTF suporta animações?",
+      "faq4A": "A especificação glTF suporta animações esqueléticas, morph targets e animações por keyframe. O Bunshin 3D gera modelos estáticos, mas você pode adicionar animações no Blender ou qualquer ferramenta compatível com glTF e re-exportar.",
+      "faq5Q": "Quão otimizados são os arquivos glTF para performance na web?",
+      "faq5A": "Os arquivos GLB gerados são otimizados para renderização em tempo real com geometria eficiente e texturas comprimidas. Tamanhos típicos de arquivo são de 2 a 15 MB, adequados para entrega na web sem otimização adicional.",
+      "ctaTitle": "Pronto para Converter Sua Imagem em glTF?",
+      "ctaDescription": "Envie qualquer imagem e receba um modelo 3D glTF pronto para web com texturas PBR. Feito para Three.js, RA e a web moderna."
+    },
+    "3d-printing": {
+      "metaTitle": "Conversor de Arquivo para Impressão 3D — Imagem para Modelo 3D Imprimível | Bunshin 3D",
+      "metaDescription": "Converta qualquer imagem em arquivo imprimível em 3D em segundos. A IA gera malhas estanques e manifold prontas para impressoras FDM e de resina. Funciona com Cura, PrusaSlicer e todos os fatiadores.",
+      "keywords": "conversor de arquivo para impressão 3d, preparar modelo para impressão 3d, imagem para impressão 3d, foto para arquivo de impressão 3d, impressão 3d com ia, converter imagem para modelo 3d imprimível, stl para impressão, imprimir 3d a partir de foto, imprimir 3d a partir de imagem",
+      "h1": "Converta Qualquer Imagem em Arquivo Imprimível em 3D com IA",
+      "breadcrumb": "Conversor para Impressão 3D",
+      "heroDescription": "Transforme fotos, logotipos, desenhos e artes em arquivos imprimíveis em 3D. O Bunshin 3D gera malhas STL estanques que carregam diretamente no Cura, PrusaSlicer, Bambu Studio e todos os principais fatiadores — sem reparo de malha. Imprima em qualquer impressora FDM ou de resina.",
+      "section1Title": "De Imagem a Impressão 3D em 30 Segundos",
+      "section1Text": "A criação tradicional de arquivos para impressão 3D exige horas de modelagem CAD ou escultura 3D. O Bunshin 3D pula todo o processo manual. Envie qualquer imagem — um logotipo de empresa, um conceito de produto, um esboço de personagem, um desenho de criança — e a IA reconstrói geometria 3D genuína com profundidade, curvas e detalhes de superfície. O arquivo STL resultante é estanque e manifold, o que significa que seu fatiador o aceitará sem erros ou etapas de reparo.",
+      "section2Title": "Otimizado para Impressão FDM e Resina",
+      "section2Text": "Todo arquivo de impressão 3D gerado pelo Bunshin 3D é testado para imprimibilidade. A malha não possui arestas não-manifold, auto-interseções ou normais invertidas. Funciona igualmente bem em impressoras FDM (Creality Ender 3, Prusa MK4, Bambu Lab X1) e impressoras de resina (Elegoo Mars, Anycubic Photon). Redimensione o modelo para qualquer tamanho no seu fatiador — a geometria é limpa o suficiente para miniaturas de 28mm ou peças de exposição acima de 300mm.",
+      "step1Title": "Envie Qualquer Imagem",
+      "step1Desc": "Arraste e solte uma imagem PNG, JPG ou WEBP. Logotipos, fotos, concept art e esboços à mão funcionam.",
+      "step2Title": "A IA Constrói Geometria Pronta para Impressão",
+      "step2Desc": "A IA gera uma malha 3D estanque com espessura de parede adequada e topologia limpa — sem furos, sem faces quebradas.",
+      "step3Title": "Baixe e Imprima",
+      "step3Desc": "Baixe o arquivo STL, abra no Cura ou PrusaSlicer, fatie e imprima. Sem reparo de malha ou limpeza manual necessários.",
+      "faq1Q": "O arquivo vai funcionar com minha impressora 3D?",
+      "faq1A": "Sim. A saída é um arquivo STL binário padrão compatível com todas as impressoras 3D e fatiadores, incluindo Cura, PrusaSlicer, Bambu Studio, ChiTuBox e Lychee Slicer. Funciona em impressoras FDM e de resina de qualquer fabricante.",
+      "faq2Q": "Preciso reparar a malha antes de imprimir?",
+      "faq2A": "Não. Toda malha gerada pelo Bunshin 3D é estanque e manifold. Não há furos, arestas não-manifold ou normais invertidas. Seu fatiador aceitará o arquivo sem nenhuma etapa de reparo.",
+      "faq3Q": "Posso imprimir miniaturas e estatuetas?",
+      "faq3A": "Sim. O detalhe da malha é suficiente para miniaturas de até 28mm em impressoras de resina. Para impressão FDM, modelos a partir de 50mm produzem excelentes resultados. Redimensione livremente no seu fatiador.",
+      "faq4Q": "E quanto a suportes e orientação?",
+      "faq4A": "O arquivo STL contém a geometria bruta. Você configura suportes, orientação, altura de camada e preenchimento no seu fatiador como faria normalmente. A malha limpa torna a geração automática de suportes mais confiável.",
+      "faq5Q": "Posso usar os modelos impressos comercialmente?",
+      "faq5A": "Sim. Todos os modelos gerados incluem direitos comerciais completos. Você pode vender produtos impressos em 3D, usá-los em projetos de clientes ou incluí-los em linhas de produtos comerciais sem restrições.",
+      "ctaTitle": "Pronto para Imprimir 3D a Partir de Qualquer Imagem?",
+      "ctaDescription": "Envie uma imagem e receba um arquivo STL pronto para impressão em 30 segundos. Sem modelagem, sem reparo de malha, sem complicação."
+    }
+  },
+  "Audience": {
+    "common": {
+      "faqTitle": "Perguntas Frequentes",
+      "recommendedFormats": "Formatos de Exportação Recomendados",
+      "otherAudiences": "Explore Mais Casos de Uso",
+      "ctaTryFree": "Experimente o Bunshin 3D Grátis",
+      "ctaPricing": "Ver Preços",
+      "slugTitles": {
+        "game-developers": "Desenvolvedores de Jogos",
+        "3d-printing": "Impressão 3D",
+        "graphic-designers": "Designers Gráficos",
+        "architects": "Arquitetos",
+        "ecommerce": "E-Commerce",
+        "educators": "Educadores"
+      }
+    },
+    "game-developers": {
+      "metaTitle": "Gerador de Modelos 3D com IA para Desenvolvedores de Jogos | Bunshin 3D",
+      "metaDescription": "Gere modelos 3D prontos para jogos a partir de concept art e imagens. Exporte em GLB para Unity, Unreal Engine e Godot. Crie assets 3D em segundos, não horas.",
+      "keywords": "assets 3d para jogos, gerador de modelos 3d unity, assets unreal engine ia, criador de assets para jogos",
+      "h1": "Gere Assets 3D para Jogos a Partir de Qualquer Imagem",
+      "breadcrumb": "Desenvolvedores de Jogos",
+      "heroDescription": "Transforme concept art, rascunhos e imagens de referência em modelos 3D prontos para jogos. O Bunshin 3D exporta diretamente nos formatos GLB e OBJ compatíveis com Unity, Unreal Engine e Godot — permitindo que você prototipe mais rápido e itere com mais liberdade.",
+      "section1Title": "De Concept Art a Asset 3D em Segundos",
+      "section1Text": "O desenvolvimento de jogos é rápido, e esperar dias para um artista 3D modelar um único objeto atrasa tudo. O Bunshin 3D permite que você envie concept art, rascunhos de personagens ou fotos de referência e receba um modelo 3D texturizado em menos de 30 segundos. Use-o para preencher cenários, criar assets provisórios para prototipagem ou gerar objetos que vão direto para o seu build. A IA reconstrói geometria 3D real com profundidade e curvatura — não extrusões planas.",
+      "section2Title": "Exportações Prontas para Engines: GLB, OBJ e FBX",
+      "section2Text": "Cada modelo é exportado em GLB (glTF 2.0), o formato padrão suportado nativamente por Unity, Unreal Engine, Godot e Three.js. Exportações em OBJ estão disponíveis para Blender, Maya e outras ferramentas DCC. Os modelos incluem texturas prontas para PBR com albedo, normal e roughness, integrando-se facilmente ao seu pipeline de renderização sem trabalho manual de UV.",
+      "section3Title": "Licença Comercial Incluída",
+      "section3Text": "Todos os assets gerados vêm com licença comercial completa. Use-os em jogos indie, produções AAA, game jams ou pacotes de assets para venda. Não há royalties, taxas por título ou restrições de distribuição. Os créditos nunca expiram, então você pode acumular e gerar assets conforme a necessidade do seu projeto.",
+      "faq1Q": "Quais formatos funcionam com Unity e Unreal?",
+      "faq1A": "GLB (glTF 2.0) é importado nativamente tanto no Unity quanto no Unreal Engine. Arquivos OBJ funcionam com Blender, Maya e a maioria das ferramentas 3D. Todos os formatos estão incluídos em cada geração.",
+      "faq2Q": "Os modelos são low-poly o suficiente para renderização em tempo real?",
+      "faq2A": "As gerações padrão produzem malhas mid-poly adequadas para muitos cenários de jogos. Para contagens de polígonos menores, você pode usar a opção de decimação integrada ou importar para sua ferramenta 3D preferida para otimização adicional.",
+      "faq3Q": "Posso usar os assets gerados em jogos comerciais?",
+      "faq3A": "Sim. Todo modelo vem com licença comercial completa. Você pode usá-los em jogos que vende, em pacotes de assets ou em qualquer projeto comercial sem royalties ou restrições.",
+      "faq4Q": "Como a IA lida com arte estilizada ou cartoon?",
+      "faq4A": "A IA funciona bem com diversos estilos artísticos, incluindo estilizado, cartoon, realista e pixel art. Imagens claras e bem iluminadas com um único objeto em fundo limpo produzem os melhores resultados.",
+      "faq5Q": "Quantos assets posso gerar?",
+      "faq5A": "Cada geração custa 1 crédito (padrão) ou 5 créditos (premium). Os pacotes de créditos começam em $3,99 por 10 gerações, com descontos por volume em pacotes maiores. Os créditos nunca expiram.",
+      "ctaTitle": "Acelere Seu Pipeline de Assets para Jogos",
+      "ctaDescription": "Gere props, personagens e elementos de cenário 3D a partir de concept art em segundos. Comece com créditos grátis — sem assinatura necessária."
+    },
+    "3d-printing": {
+      "metaTitle": "Imagem para Arquivo de Impressão 3D — STL a Partir de Qualquer Foto | Bunshin 3D",
+      "metaDescription": "Converta fotos, desenhos e logos em arquivos STL estanques prontos para impressão 3D. Funciona com Cura, PrusaSlicer e Bambu Studio. Sem necessidade de modelagem 3D.",
+      "keywords": "imagem para impressão 3d, impressão 3d a partir de fotos, stl a partir de imagem, foto para impressão 3d",
+      "h1": "Transforme Qualquer Imagem em Arquivo para Impressão 3D",
+      "breadcrumb": "Impressão 3D",
+      "heroDescription": "Envie uma foto, logo ou desenho e baixe um arquivo STL estanque pronto para sua impressora 3D. O Bunshin 3D gera malhas manifold que carregam diretamente no Cura, PrusaSlicer e Bambu Studio — sem necessidade de limpeza ou reparo de malha.",
+      "section1Title": "Arquivos STL Estanques, Prontos para Fatiar",
+      "section1Text": "Uma das maiores frustrações na impressão 3D é receber um modelo com buracos, arestas não-manifold ou normais invertidas que falha no seu fatiador. O Bunshin 3D gera malhas estanques e manifold por design. Os arquivos STL carregam diretamente em fatiadores populares como Cura, PrusaSlicer, Bambu Studio e Simplify3D sem necessidade de ferramentas de reparo de malha. Seja imprimindo em FDM, SLA ou SLS, a geometria é sólida e pronta para fatiar.",
+      "section2Title": "De Foto a Objeto Físico",
+      "section2Text": "Transforme o desenho de uma criança em uma miniatura, converta o logo de uma empresa em um troféu de mesa ou transforme um esboço de produto em um protótipo. A IA analisa sua imagem e reconstrói geometria 3D completa com profundidade, curvas e detalhes de superfície — não apenas extrusões planas ou litofanias. O resultado é um modelo genuinamente tridimensional que fica ótimo de todos os ângulos quando impresso.",
+      "section3Title": "Sem Necessidade de Habilidades em Modelagem 3D",
+      "section3Text": "Você não precisa aprender Blender, ZBrush ou nenhum software CAD. Envie sua imagem, espere cerca de 30 segundos e baixe seu STL. Todo o processo acontece no seu navegador. Isso torna a impressão 3D acessível para hobistas, educadores, donos de pequenos negócios e qualquer pessoa que tenha uma imagem que queira segurar nas mãos.",
+      "faq1Q": "Os arquivos STL são realmente prontos para impressão?",
+      "faq1A": "Sim. Todas as exportações STL são estanques e manifold. Elas carregam diretamente em fatiadores como Cura, PrusaSlicer e Bambu Studio sem precisar de reparo no Meshmixer ou Netfabb.",
+      "faq2Q": "Quais tipos de imagens funcionam melhor para impressão 3D?",
+      "faq2A": "Imagens claras com um único objeto em fundo simples produzem os melhores resultados. Logos, fotos de produtos, ilustrações de personagens e desenhos simples funcionam bem. Evite fundos com muitos elementos ou objetos sobrepostos.",
+      "faq3Q": "Posso redimensionar o modelo antes de imprimir?",
+      "faq3A": "Sim. O arquivo STL pode ser redimensionado livremente no seu software fatiador. A geometria da malha é independente de resolução, então você pode aumentar ou diminuir sem perder integridade estrutural.",
+      "faq4Q": "Funciona com impressoras de resina (SLA)?",
+      "faq4A": "Sim. Os arquivos STL estanques são compatíveis com impressoras FDM e SLA/resina. A estrutura de malha sólida garante fatiamento limpo independente do tipo da sua impressora.",
+      "faq5Q": "Quanto custa?",
+      "faq5A": "Gerações padrão custam 1 crédito cada. Você recebe créditos grátis ao se cadastrar, e pacotes adicionais começam em $3,99 por 10 créditos. Os créditos nunca expiram e não há assinaturas.",
+      "ctaTitle": "Comece a Imprimir em 3D a Partir das Suas Imagens",
+      "ctaDescription": "Envie qualquer foto, desenho ou logo e receba um arquivo STL pronto para impressão em 30 segundos. Créditos grátis ao se cadastrar — sem habilidades de design necessárias."
+    },
+    "graphic-designers": {
+      "metaTitle": "Mockups e Modelos 3D a Partir de Imagens para Designers | Bunshin 3D",
+      "metaDescription": "Transforme logos, ilustrações e designs em modelos 3D para mockups, apresentações e branding. Exporte em GLB para visualizadores web ou STL para protótipos físicos.",
+      "keywords": "mockup 3d a partir de imagem, logo para modelo 3d, ferramenta de design 3d, imagem para 3d para designers",
+      "h1": "Crie Modelos 3D a Partir dos Seus Designs Instantaneamente",
+      "breadcrumb": "Designers Gráficos",
+      "heroDescription": "Transforme logos, ícones, ilustrações e assets de marca planos em modelos tridimensionais. Use-os em cenas de mockup, apresentações web interativas, conteúdo para redes sociais ou imprima em 3D como presentes para clientes. Sem necessidade de experiência em modelagem 3D.",
+      "section1Title": "Logo para Modelo 3D em 30 Segundos",
+      "section1Text": "Apresentar um logo em 3D adiciona profundidade e impacto a apresentações de marca, pitch decks e conteúdo para redes sociais. O Bunshin 3D converte seus arquivos de logo — PNG, JPG ou WEBP — em modelos 3D texturizados com profundidade e detalhes de superfície genuínos. O resultado não é uma extrusão plana: a IA interpreta seu design e gera curvas naturais, chanfros e forma dimensional que dão vida à sua marca de todos os ângulos de visualização.",
+      "section2Title": "Mockups e Apresentações que se Destacam",
+      "section2Text": "Baixe seu modelo 3D em formato GLB e incorpore em visualizadores web interativos, protótipos no Figma ou ferramentas de apresentação que suportem conteúdo 3D. Gire, amplie e exiba seus designs de qualquer ângulo. Para apresentações físicas, exporte em STL e imprima em 3D seu logo, mascote ou conceito de produto como um protótipo tangível que clientes possam segurar.",
+      "section3Title": "Amplie Seu Kit de Ferramentas Criativas",
+      "section3Text": "O Bunshin 3D não é um substituto para suas ferramentas de design — é um complemento. Use-o junto com Photoshop, Illustrator, Figma ou Canva para adicionar uma dimensão 3D ao seu fluxo de trabalho. Gere modelos a partir de ilustrações para motion graphics, crie assets 3D para filtros de AR ou produza chaveiros e peças de mesa a partir dos seus conjuntos de ícones. Todos os arquivos incluem direitos comerciais completos.",
+      "faq1Q": "Posso converter um logo com transparência?",
+      "faq1A": "Sim. Arquivos PNG com fundos transparentes funcionam bem. A IA foca nos elementos visuais do design e gera geometria 3D a partir deles, ignorando as áreas transparentes.",
+      "faq2Q": "Qual deve ser a qualidade da minha imagem de origem?",
+      "faq2A": "Imagens de maior resolução produzem melhores resultados, mas a IA funciona com uma ampla variedade de qualidades de imagem. Para melhores resultados, use imagens de pelo menos 512x512 pixels com formas claras e bem definidas.",
+      "faq3Q": "Posso incorporar o modelo 3D em um site?",
+      "faq3A": "Sim. Arquivos GLB podem ser exibidos usando model-viewer, Three.js ou qualquer visualizador 3D baseado em WebGL. Isso permite visualização 3D interativa diretamente em navegadores sem plugins.",
+      "faq4Q": "Eu tenho os direitos comerciais dos modelos gerados?",
+      "faq4A": "Sim. Todos os modelos gerados vêm com direitos comerciais completos. Use-os em trabalhos para clientes, materiais de marketing, produtos e muito mais sem taxas de licenciamento adicionais.",
+      "faq5Q": "Posso editar o modelo 3D após a geração?",
+      "faq5A": "Sim. Exporte no formato OBJ ou GLB e abra o modelo no Blender, Maya ou qualquer software de edição 3D para refinamento, texturização ou animação adicionais.",
+      "ctaTitle": "Adicione uma Nova Dimensão ao Seu Trabalho de Design",
+      "ctaDescription": "Converta logos, ícones e ilustrações em modelos 3D para mockups, apresentações e protótipos físicos. Experimente grátis — sem habilidades 3D necessárias."
+    },
+    "architects": {
+      "metaTitle": "Modelos 3D com IA para Arquitetura e Visualização | Bunshin 3D",
+      "metaDescription": "Gere modelos 3D a partir de esboços, plantas e imagens de referência para visualização arquitetônica. Exporte em GLB para apresentações ou STL para maquetes físicas.",
+      "keywords": "planta para modelo 3d, arquitetura 3d ia, planta baixa para 3d, visualização arquitetônica",
+      "h1": "Gere Modelos 3D Arquitetônicos a Partir de Imagens",
+      "breadcrumb": "Arquitetos",
+      "heroDescription": "Transforme esboços arquitetônicos, desenhos de elevação e fotos de referência de edifícios em modelos 3D. Use-os para visualização em estágios iniciais, apresentações para clientes e maquetes físicas em escala. O Bunshin 3D ajuda você a comunicar ideias espaciais mais rapidamente.",
+      "section1Title": "De Esboço a Modelo Espacial",
+      "section1Text": "Nos estágios iniciais de um projeto, velocidade importa mais que precisão. O Bunshin 3D permite que você envie um esboço feito à mão, uma foto de fachada ou um desenho de elevação e gera um modelo 3D em segundos. Use esses modelos para comunicar rapidamente forma e volumetria a clientes, explorar direções de design ou criar referências visuais para sua equipe. A IA reconstrói profundidade e volume a partir de uma única imagem, dando a você um ponto de partida tangível.",
+      "section2Title": "Visualização e Apresentações para Clientes",
+      "section2Text": "Baixe seu modelo em formato GLB e carregue em ferramentas de apresentação, visualizadores 3D baseados na web ou aplicativos de AR. Clientes podem girar e explorar o modelo interativamente, facilitando a discussão de proporções, materiais e relações espaciais. Para apresentações físicas, exporte em STL e imprima em 3D uma maquete em escala do seu conceito de design para levar a reuniões de obra ou revisões com stakeholders.",
+      "section3Title": "Complemente Seu Fluxo de Trabalho BIM",
+      "section3Text": "O Bunshin 3D não é um substituto para Revit, ArchiCAD ou SketchUp — é uma ferramenta de ideação rápida. Use-o durante a fase conceitual para gerar estudos 3D rápidos a partir de esboços antes de investir tempo em modelos BIM detalhados. Também é útil para gerar versões 3D de elementos decorativos, peças de mobiliário ou elementos paisagísticos a partir de fotos de referência que você pode colocar em suas cenas arquitetônicas.",
+      "faq1Q": "Ele consegue converter uma planta baixa em modelo 3D?",
+      "faq1A": "A IA funciona melhor com imagens que mostram forma tridimensional — elevações, esboços em perspectiva e fotos de edifícios. Plantas baixas planas podem produzir resultados limitados pois carecem de informação de profundidade. Tente usar um esboço em perspectiva ou renderização 3D da sua planta para melhores resultados.",
+      "faq2Q": "Quais formatos estão disponíveis para uso arquitetônico?",
+      "faq2A": "GLB (glTF 2.0) funciona com visualizadores web, ferramentas de AR e muitas plataformas de visualização. OBJ importa para SketchUp, Blender e Rhino. STL é ideal para imprimir maquetes físicas em escala.",
+      "faq3Q": "Os modelos são dimensionalmente precisos?",
+      "faq3A": "Os modelos capturam proporções e forma da imagem de origem, mas não são dimensionalmente precisos. São mais adequados para visualização conceitual, estudos de volumetria e apresentações do que para documentação de construção.",
+      "faq4Q": "Posso imprimir em 3D uma maquete do meu projeto?",
+      "faq4A": "Sim. Exporte em formato STL e imprima em qualquer escala no seu fatiador. A malha estanque imprime perfeitamente em impressoras FDM e SLA, tornando prático criar modelos de apresentação.",
+      "faq5Q": "Existe desconto para escritórios de arquitetura?",
+      "faq5A": "Oferecemos pacotes de créditos por volume com descontos para compras maiores. O pacote Studio (200 créditos) oferece o melhor preço por crédito. Os créditos nunca expiram, então sua equipe pode usá-los em vários projetos.",
+      "ctaTitle": "Visualize Seus Projetos Mais Rápido",
+      "ctaDescription": "Transforme esboços arquitetônicos e imagens de referência em modelos 3D em segundos. Ótimo para apresentações em estágios iniciais e maquetes físicas em escala. Comece grátis."
+    },
+    "ecommerce": {
+      "metaTitle": "Visualização 3D de Produtos para E-Commerce | Bunshin 3D",
+      "metaDescription": "Converta fotos de produtos em modelos 3D interativos para sua loja online. Aumente o engajamento com visualizações 360 graus. Exporte em GLB para web ou experiências em AR.",
+      "keywords": "modelo 3d de produto, visualização 3d de produtos, fotografia de produto para 3d, 3d ecommerce",
+      "h1": "Transforme Fotos de Produtos em Modelos 3D Interativos",
+      "breadcrumb": "E-Commerce",
+      "heroDescription": "Dê aos seus clientes uma visão 360 graus dos seus produtos. Envie uma foto do produto e gere um modelo 3D que pode ser incorporado nas páginas de produto, compartilhado em experiências de AR ou usado em materiais de marketing. Sem necessidade de estúdio fotográfico ou artista 3D.",
+      "section1Title": "Visualizações Interativas de Produtos a Partir de Uma Única Foto",
+      "section1Text": "Compradores online esperam cada vez mais ver produtos de todos os ângulos antes de comprar. O Bunshin 3D permite gerar um modelo 3D a partir de uma única foto de produto, que você pode incorporar nas páginas de produto como um visualizador 3D interativo. Clientes podem girar, ampliar e inspecionar seu produto de maneiras que a fotografia plana não consegue igualar. Isso pode ajudar a reduzir taxas de devolução dando aos compradores uma compreensão mais clara do que estão adquirindo.",
+      "section2Title": "Modelos Prontos para AR e Compras Modernas",
+      "section2Text": "Os modelos GLB gerados pelo Bunshin 3D são compatíveis com visualização em AR em dispositivos iOS e Android. Clientes podem colocar seu produto no ambiente real deles — vendo como um móvel fica na sala ou como um objeto decorativo fica na prateleira — antes de finalizar a compra. Esse tipo de experiência imersiva está se tornando um diferencial competitivo no e-commerce.",
+      "section3Title": "Escale Seu Catálogo de Produtos com Eficiência",
+      "section3Text": "Contratar um artista 3D para modelar cada produto do seu catálogo pode ser caro e demorado. Com o Bunshin 3D, você pode gerar modelos 3D a partir de fotos de produtos existentes em segundos. Isso torna viável oferecer visualizações 3D para centenas ou milhares de produtos, mesmo para lojas de pequeno e médio porte. Cada geração custa apenas 1 crédito, e pacotes de créditos em volume oferecem economia adicional.",
+      "faq1Q": "Como incorporo um modelo 3D na minha página de produto?",
+      "faq1A": "Baixe o arquivo GLB e use um componente web como o model-viewer do Google ou um app de visualização 3D para Shopify. A maioria das plataformas modernas de e-commerce suporta modelos 3D de produtos nativamente ou através de plugins.",
+      "faq2Q": "Funciona com fotos de produtos em fundo branco?",
+      "faq2A": "Sim, fotos de produtos em fundos brancos ou neutros limpos produzem os melhores resultados. Fotografia padrão de e-commerce é a entrada ideal para a IA.",
+      "faq3Q": "Os clientes podem ver o modelo 3D em AR?",
+      "faq3A": "Sim. Arquivos GLB suportam AR Quick Look no iOS e Scene Viewer no Android. Muitas soluções de visualização 3D para e-commerce incluem funcionalidade AR integrada ao usar o formato GLB.",
+      "faq4Q": "Quão precisos são os modelos 3D em relação ao produto real?",
+      "faq4A": "A IA captura a forma geral, proporções e aparência da superfície a partir da sua foto. Para melhor precisão, use fotos de produtos de alta qualidade com iluminação uniforme. Os modelos são excelentes para fins de visualização.",
+      "faq5Q": "Posso gerar modelos 3D para todo o meu catálogo?",
+      "faq5A": "Sim. O custo por crédito torna econômico gerar modelos em escala. O pacote Studio (200 créditos) é popular entre lojas de e-commerce que desejam adicionar visualizações 3D em todas as suas linhas de produtos.",
+      "ctaTitle": "Turbine Suas Páginas de Produto com 3D",
+      "ctaDescription": "Converta fotos de produtos em modelos 3D interativos para sua loja online. Aumente o engajamento e reduza devoluções. Comece com créditos grátis."
+    },
+    "educators": {
+      "metaTitle": "Modelos 3D para Educação e Aprendizado STEM | Bunshin 3D",
+      "metaDescription": "Crie modelos 3D a partir de imagens para uso em sala de aula, projetos STEM e impressão 3D educacional. Simples o suficiente para alunos, poderoso o suficiente para professores.",
+      "keywords": "modelos 3d para educação, impressão 3d em sala de aula, ferramentas 3d educacionais, impressão 3d stem",
+      "h1": "Crie Modelos 3D para Aprendizado em Sala de Aula",
+      "breadcrumb": "Educadores",
+      "heroDescription": "Dê vida às aulas transformando imagens, diagramas e desenhos de alunos em modelos 3D. Imprima para aprendizado prático, visualize em 3D interativo na tela ou use em projetos de STEM e artes. Sem necessidade de conhecimento técnico.",
+      "section1Title": "Aprendizado Prático com Impressão 3D",
+      "section1Text": "A impressão 3D está transformando as salas de aula, mas criar arquivos 3D imprimíveis geralmente requer habilidades em CAD que a maioria dos professores e alunos não possui. O Bunshin 3D elimina essa barreira. Alunos podem desenhar um artefato histórico, uma célula biológica ou uma forma geométrica no papel, fotografar e converter em um arquivo STL imprimível em 3D em segundos. Isso transforma conceitos abstratos em objetos tangíveis que podem ser segurados, examinados e usados como ferramenta de aprendizado.",
+      "section2Title": "Projetos STEM Mais Acessíveis",
+      "section2Text": "De biologia a engenharia, modelos 3D ajudam os alunos a entender relações espaciais que livros didáticos não conseguem transmitir. Use o Bunshin 3D para gerar modelos 3D de moléculas, formas de relevo, estruturas arquitetônicas ou peças mecânicas a partir de imagens de referência. Alunos podem explorar esses modelos na tela ou imprimi-los para projetos em grupo e feiras de ciências. A ferramenta funciona no navegador em computadores da escola sem necessidade de instalação de software.",
+      "section3Title": "Simples o Suficiente para Qualquer Sala de Aula",
+      "section3Text": "O Bunshin 3D não requer downloads de software, cadastro para visualização e nenhum conhecimento em modelagem 3D. Professores podem enviar uma imagem e ter um modelo 3D pronto para mostrar à turma em menos de um minuto. Os créditos grátis no cadastro permitem testar com seus alunos antes de comprometer qualquer orçamento. Para escolas com necessidades contínuas, os pacotes de créditos são acessíveis e nunca expiram.",
+      "faq1Q": "O Bunshin 3D é adequado para alunos mais novos?",
+      "faq1A": "Sim. A interface é direta — envie uma imagem, clique em gerar, baixe o resultado. Alunos do ensino fundamental podem usá-lo com orientação do professor. Não há software complexo para aprender.",
+      "faq2Q": "Os alunos podem usar seus próprios desenhos?",
+      "faq2A": "Fotografe ou escaneie um desenho do aluno, envie a imagem e gere um modelo 3D a partir dele. Isso funciona especialmente bem para projetos de arte, desafios de design e atividades criativas de STEM.",
+      "faq3Q": "Precisamos de uma impressora 3D?",
+      "faq3A": "Não. Os modelos podem ser visualizados interativamente no navegador sem impressão. No entanto, se sua escola tiver uma impressora 3D, as exportações STL estão prontas para imprimir diretamente — sem software adicional necessário além do seu fatiador.",
+      "faq4Q": "Existe desconto educacional?",
+      "faq4A": "Os pacotes de créditos já têm preços acessíveis a partir de $3,99 por 10 gerações, e os créditos nunca expiram. O pacote Studio (200 créditos) oferece o melhor custo-benefício para uso em sala de aula ao longo de um semestre ou ano letivo.",
+      "faq5Q": "Quais disciplinas se beneficiam de modelos 3D?",
+      "faq5A": "Ciências (biologia, química, geologia), matemática (geometria, raciocínio espacial), história (artefatos, arquitetura), artes e design, e engenharia se beneficiam da visualização 3D e modelos físicos. A ferramenta é flexível o suficiente para uso interdisciplinar.",
+      "ctaTitle": "Leve Suas Aulas para o 3D",
+      "ctaDescription": "Transforme imagens e desenhos de alunos em modelos 3D para aprendizado interativo e impressão 3D. Créditos grátis ao se cadastrar — sem habilidades técnicas necessárias."
+    }
+  },
+  "Compare": {
+    "index": {
+      "label": "Comparativos",
+      "h1": "Bunshin 3D vs. Concorrentes",
+      "description": "Veja como o Bunshin 3D se compara a outros geradores de modelos 3D com IA. Comparações honestas e lado a lado de preços, velocidade, formatos de exportação e funcionalidades.",
+      "metaTitle": "Alternativas ao Bunshin 3D e Comparativos | Gerador 3D com IA",
+      "metaDescription": "Compare o Bunshin 3D com Meshy, Kaedim, Luma AI, Tripo AI, Alpha3D, 3DAI Studio, CSM AI e muito mais. Encontre o melhor conversor de imagem para 3D com IA.",
+      "keywords": "alternativa bunshin 3d, comparativo gerador 3d com ia, melhor conversor imagem para 3d, meshy vs bunshin, ferramentas 3d ia comparadas"
+    },
+    "common": {
+      "indexTitle": "Todos os Comparativos",
+      "faqTitle": "Perguntas Frequentes",
+      "relatedComparisons": "Comparativos Relacionados",
+      "ctaTryFree": "Experimente o Bunshin 3D Grátis",
+      "ctaPricing": "Ver Preços",
+      "feature": "Recurso",
+      "others": "Outros",
+      "slugTitles": {
+        "meshy-alternative": "Bunshin 3D vs Meshy",
+        "kaedim-alternative": "Bunshin 3D vs Kaedim",
+        "luma-ai-alternative": "Bunshin 3D vs Luma AI",
+        "tripo-ai-alternative": "Bunshin 3D vs Tripo AI",
+        "alpha3d-alternative": "Bunshin 3D vs Alpha3D",
+        "3d-ai-studio-alternative": "Bunshin 3D vs 3DAI Studio",
+        "csm-ai-alternative": "Bunshin 3D vs CSM AI",
+        "best-ai-3d-generators": "Melhores Geradores 3D com IA em 2026"
+      },
+      "slugDescriptions": {
+        "meshy-alternative": "Compare Bunshin 3D e Meshy para geração de modelos 3D com IA. Veja diferenças de preço, velocidade e formatos de exportação.",
+        "kaedim-alternative": "Compare Bunshin 3D e Kaedim para criação de assets 3D com IA. Análise detalhada de funcionalidades, custo e qualidade.",
+        "luma-ai-alternative": "Compare Bunshin 3D e Luma AI para transformar imagens em modelos 3D. Lado a lado em velocidade, formatos e preços.",
+        "tripo-ai-alternative": "Compare Bunshin 3D e Tripo AI para geração 3D com inteligência artificial. Comparativo honesto de recursos e custo-benefício.",
+        "alpha3d-alternative": "Compare Bunshin 3D e Alpha3D para converter imagens em 3D. Preços, opções de exportação e licenciamento comercial comparados.",
+        "3d-ai-studio-alternative": "Compare Bunshin 3D e 3DAI Studio para criação de modelos 3D com IA. Análise recurso por recurso.",
+        "csm-ai-alternative": "Compare Bunshin 3D e CSM AI para conversão de imagem para 3D. Velocidade, preços e formatos comparados.",
+        "best-ai-3d-generators": "O guia definitivo dos melhores geradores 3D com IA em 2026. Compare recursos, preços e qualidade de saída."
+      }
+    },
+    "meshy-alternative": {
+      "metaTitle": "Bunshin 3D vs Meshy — Melhor Alternativa ao Meshy em 2026",
+      "metaDescription": "Procurando uma alternativa ao Meshy? Compare Bunshin 3D vs Meshy em preço, velocidade, formatos de exportação e licença comercial. Experimente o Bunshin 3D grátis.",
+      "keywords": "alternativa meshy, meshy vs bunshin 3d, concorrente meshy, alternativa imagem para 3d meshy, comparativo gerador 3d ia",
+      "h1": "Bunshin 3D vs Meshy: Qual Gerador 3D com IA É Melhor para Você?",
+      "breadcrumb": "Alternativa ao Meshy",
+      "heroDescription": "Meshy é um gerador 3D com IA popular que oferece texto para 3D e imagem para 3D. O Bunshin 3D é uma alternativa simplificada com preço avulso, geração mais rápida e mais formatos de exportação. Veja um comparativo honesto.",
+      "comparisonTitle": "Comparativo de Recursos",
+      "row1Feature": "Créditos grátis no cadastro",
+      "row1Bunshin": "Sim — 2 créditos grátis",
+      "row1Competitor": "Plano gratuito com gerações limitadas",
+      "row2Feature": "Sem assinatura necessária",
+      "row2Bunshin": "Pague uma vez — créditos nunca expiram",
+      "row2Competitor": "Planos de assinatura mensal",
+      "row3Feature": "Exportação STL para impressão 3D",
+      "row3Bunshin": "Sim — STL watertight incluído",
+      "row3Competitor": "Disponível nos planos pagos",
+      "row4Feature": "Múltiplos formatos de exportação",
+      "row4Bunshin": "GLB, STL, OBJ, FBX",
+      "row4Competitor": "GLB, FBX, OBJ, STL",
+      "row5Feature": "Velocidade de geração",
+      "row5Bunshin": "Menos de 30 segundos",
+      "row5Competitor": "1–3 minutos normalmente",
+      "row6Feature": "Direitos comerciais",
+      "row6Bunshin": "Incluídos em todas as gerações",
+      "row6Competitor": "Incluídos nos planos pagos",
+      "section1Title": "Por Que Considerar o Bunshin 3D em Vez do Meshy?",
+      "section1Text": "Embora o Meshy ofereça uma plataforma sólida com texto para 3D e imagem para 3D, o Bunshin 3D se diferencia com um modelo sem assinatura. Você compra créditos uma vez e eles nunca expiram — sem cobranças recorrentes. Os tempos de geração são tipicamente inferiores a 30 segundos, e todo modelo vem com direitos comerciais incluídos. Se você precisa de arquivos STL para impressão 3D, o Bunshin 3D gera malhas watertight prontas para software de fatiamento.",
+      "section2Title": "Quando o Meshy Pode Ser a Melhor Escolha",
+      "section2Text": "O Meshy pode ser preferível se você depende muito de geração texto para 3D com workflows de texturização por IA, ou se precisa dos recursos de comunidade e biblioteca de modelos. O Meshy também oferece um plano gratuito que permite testar várias gerações antes de se comprometer. Ambas as plataformas são ferramentas capazes — a melhor escolha depende do seu workflow e preferências de orçamento.",
+      "faq1Q": "O Bunshin 3D é mais barato que o Meshy?",
+      "faq1A": "O Bunshin 3D usa um sistema de créditos avulsos a partir de $3,99 por 10 gerações, sem assinatura mensal. O Meshy usa planos de assinatura mensal. A opção mais econômica depende do seu volume de geração.",
+      "faq2Q": "Posso exportar arquivos STL em ambas as plataformas?",
+      "faq2A": "Sim. Tanto Bunshin 3D quanto Meshy suportam exportação STL. O Bunshin 3D gera arquivos STL watertight otimizados para impressão 3D em cada geração.",
+      "faq3Q": "Qual é mais rápido para gerar modelos 3D?",
+      "faq3A": "O Bunshin 3D normalmente gera modelos em menos de 30 segundos. Os tempos de geração do Meshy variam de 1 a 3 minutos dependendo das configurações de qualidade e carga do servidor.",
+      "faq4Q": "Ambas as plataformas incluem licença comercial?",
+      "faq4A": "O Bunshin 3D inclui direitos comerciais em todas as gerações. O Meshy inclui direitos comerciais nos planos de assinatura pagos. Consulte os termos atuais de cada plataforma para detalhes.",
+      "faq5Q": "Posso experimentar ambas as plataformas antes de pagar?",
+      "faq5A": "Sim. O Bunshin 3D oferece 2 créditos grátis no cadastro, sem cartão de crédito. O Meshy oferece um plano gratuito com gerações mensais limitadas.",
+      "ctaTitle": "Pronto para Experimentar o Bunshin 3D?",
+      "ctaDescription": "Cadastre-se grátis e ganhe 2 créditos para testar a plataforma. Sem assinatura, sem cartão de crédito."
+    },
+    "kaedim-alternative": {
+      "metaTitle": "Bunshin 3D vs Kaedim — Melhor Alternativa ao Kaedim em 2026",
+      "metaDescription": "Procurando uma alternativa ao Kaedim? Compare Bunshin 3D vs Kaedim em preço, automação, formatos de exportação e velocidade. Experimente o Bunshin 3D grátis.",
+      "keywords": "alternativa kaedim, kaedim vs bunshin 3d, concorrente kaedim, gerador modelos 3d ia, alternativa imagem para 3d",
+      "h1": "Bunshin 3D vs Kaedim: Geração 3D com IA Comparada",
+      "breadcrumb": "Alternativa ao Kaedim",
+      "heroDescription": "O Kaedim é especializado em criação de modelos 3D assistida por IA com controle de qualidade humano para assets prontos para jogos. O Bunshin 3D oferece uma alternativa totalmente automatizada e instantânea com preço por uso. Veja como se comparam.",
+      "comparisonTitle": "Comparativo de Recursos",
+      "row1Feature": "Créditos grátis no cadastro",
+      "row1Bunshin": "Sim — 2 créditos grátis",
+      "row1Competitor": "Teste disponível sob solicitação",
+      "row2Feature": "Sem assinatura necessária",
+      "row2Bunshin": "Pague uma vez — créditos nunca expiram",
+      "row2Competitor": "Preço baseado em assinatura",
+      "row3Feature": "Exportação STL para impressão 3D",
+      "row3Bunshin": "Sim — STL watertight incluído",
+      "row3Competitor": "Foco em formatos para jogos",
+      "row4Feature": "Múltiplos formatos de exportação",
+      "row4Bunshin": "GLB, STL, OBJ, FBX",
+      "row4Competitor": "FBX, OBJ, GLB",
+      "row5Feature": "Velocidade de geração",
+      "row5Bunshin": "Menos de 30 segundos",
+      "row5Competitor": "Minutos a horas (revisão humana envolvida)",
+      "row6Feature": "Direitos comerciais",
+      "row6Bunshin": "Incluídos em todas as gerações",
+      "row6Competitor": "Incluídos nos planos pagos",
+      "section1Title": "Por Que Considerar o Bunshin 3D em Vez do Kaedim?",
+      "section1Text": "O Bunshin 3D é totalmente automatizado — envie uma imagem e receba seu modelo 3D em menos de 30 segundos. Sem espera por revisão humana ou filas. O modelo de preço avulso significa que você paga apenas pelo que usa, sem compromissos mensais. Cada geração inclui exportação STL para impressão 3D junto com formatos prontos para jogos.",
+      "section2Title": "Quando o Kaedim Pode Ser a Melhor Escolha",
+      "section2Text": "O Kaedim usa um processo com revisão humana que pode produzir assets para jogos de maior qualidade com topologia limpa otimizada para animação e rigging. Se você precisa de modelos de nível de produção para desenvolvimento de jogos AAA com garantia de qualidade manual, a abordagem do Kaedim pode entregar melhores resultados para esse caso de uso específico.",
+      "faq1Q": "O Bunshin 3D é totalmente automatizado enquanto o Kaedim usa revisão humana?",
+      "faq1A": "Sim. O Bunshin 3D é inteiramente baseado em IA e entrega resultados em menos de 30 segundos. O Kaedim combina IA com artistas humanos para controle de qualidade, o que pode levar mais tempo mas pode produzir assets para jogos mais refinados.",
+      "faq2Q": "Qual plataforma é mais acessível?",
+      "faq2A": "O Bunshin 3D usa créditos avulsos a partir de $3,99 por 10 gerações. O Kaedim usa preços baseados em assinatura que são tipicamente mais altos, refletindo seu workflow assistido por humanos.",
+      "faq3Q": "Posso usar modelos do Bunshin 3D para impressão 3D?",
+      "faq3A": "Sim. O Bunshin 3D gera arquivos STL watertight compatíveis com fatiadores como Cura, PrusaSlicer e Bambu Studio. O Kaedim foca principalmente em assets prontos para jogos.",
+      "faq4Q": "Qual produz modelos de melhor qualidade?",
+      "faq4A": "A qualidade depende do caso de uso. Os modelos revisados por humanos do Kaedim podem ter topologia mais limpa para animação. O Bunshin 3D produz excelentes resultados para impressão 3D, prototipagem e conteúdo 3D de uso geral.",
+      "faq5Q": "Posso experimentar o Bunshin 3D sem cartão de crédito?",
+      "faq5A": "Sim. Cadastre-se e receba 2 créditos grátis imediatamente — sem cartão de crédito.",
+      "ctaTitle": "Pronto para Experimentar o Bunshin 3D?",
+      "ctaDescription": "Cadastre-se grátis e ganhe 2 créditos para testar a plataforma. Sem assinatura, sem cartão de crédito."
+    },
+    "luma-ai-alternative": {
+      "metaTitle": "Bunshin 3D vs Luma AI — Melhor Alternativa ao Luma AI em 2026",
+      "metaDescription": "Procurando uma alternativa ao Luma AI? Compare Bunshin 3D vs Luma AI em geração 3D, preços, formatos de exportação e velocidade. Experimente o Bunshin 3D grátis.",
+      "keywords": "alternativa luma ai, luma ai vs bunshin 3d, concorrente luma 3d, alternativa genie, comparativo imagem para 3d",
+      "h1": "Bunshin 3D vs Luma AI: Imagem para 3D Comparados",
+      "breadcrumb": "Alternativa ao Luma AI",
+      "heroDescription": "O Luma AI oferece um conjunto de ferramentas de IA incluindo captura e geração 3D através do modelo Genie. O Bunshin 3D foca especificamente em converter imagens individuais em modelos 3D para download com múltiplos formatos de exportação. Veja como se comparam.",
+      "comparisonTitle": "Comparativo de Recursos",
+      "row1Feature": "Créditos grátis no cadastro",
+      "row1Bunshin": "Sim — 2 créditos grátis",
+      "row1Competitor": "Gerações gratuitas disponíveis",
+      "row2Feature": "Sem assinatura necessária",
+      "row2Bunshin": "Pague uma vez — créditos nunca expiram",
+      "row2Competitor": "Plano gratuito com upgrades pagos",
+      "row3Feature": "Exportação STL para impressão 3D",
+      "row3Bunshin": "Sim — STL watertight incluído",
+      "row3Competitor": "Não é foco principal",
+      "row4Feature": "Múltiplos formatos de exportação",
+      "row4Bunshin": "GLB, STL, OBJ, FBX",
+      "row4Competitor": "GLB, OBJ",
+      "row5Feature": "Velocidade de geração",
+      "row5Bunshin": "Menos de 30 segundos",
+      "row5Competitor": "Varia conforme modelo e fila",
+      "row6Feature": "Direitos comerciais",
+      "row6Bunshin": "Incluídos em todas as gerações",
+      "row6Competitor": "Consulte os termos atuais",
+      "section1Title": "Por Que Considerar o Bunshin 3D em Vez do Luma AI?",
+      "section1Text": "O Bunshin 3D foi feito especificamente para converter imagens em arquivos 3D para download. Você obtém exportação em STL, GLB, OBJ e FBX a partir de uma única geração — ideal tanto para impressão 3D quanto para desenvolvimento de jogos. O modelo avulso sem assinatura significa que você só gasta quando cria. Os tempos de geração ficam abaixo de 30 segundos.",
+      "section2Title": "Quando o Luma AI Pode Ser a Melhor Escolha",
+      "section2Text": "O Luma AI oferece capacidades de IA mais amplas além de imagem para 3D, incluindo geração de vídeo e captura de cenas 3D a partir de fotos. Se você precisa de captura 3D estilo fotogrametria a partir de múltiplas imagens ou vídeo, ou se tem interesse nas ferramentas de vídeo IA do Luma, a plataforma deles oferece uma gama mais ampla de ferramentas criativas.",
+      "faq1Q": "O Luma AI suporta exportação STL para impressão 3D?",
+      "faq1A": "O Luma AI foca principalmente em captura e geração 3D para uso digital. O Bunshin 3D inclui exportação STL watertight otimizada para impressão 3D em cada geração.",
+      "faq2Q": "Qual é melhor para conversão de imagem única para 3D?",
+      "faq2A": "O Bunshin 3D foi projetado especificamente para conversão de imagem única para 3D com entrega rápida e múltiplos formatos de exportação. O Luma AI oferece isso através do Genie mas também disponibiliza ferramentas mais amplas de captura 3D.",
+      "faq3Q": "O Bunshin 3D é mais barato que o Luma AI?",
+      "faq3A": "O Bunshin 3D oferece créditos avulsos a partir de $3,99 por 10 gerações. O Luma AI fornece algumas gerações gratuitas com planos pagos para maior uso. A comparação de custo depende do seu volume.",
+      "faq4Q": "Posso usar modelos de ambas as plataformas no Unity?",
+      "faq4A": "Sim. Ambas as plataformas exportam arquivos GLB compatíveis com Unity. O Bunshin 3D também exporta FBX, que é o formato de importação preferido do Unity.",
+      "faq5Q": "Qual plataforma é mais fácil para começar?",
+      "faq5A": "Ambas as plataformas são simples. O Bunshin 3D requer apenas o upload de uma imagem — você recebe um modelo 3D para download em menos de 30 segundos com 2 créditos grátis no cadastro.",
+      "ctaTitle": "Pronto para Experimentar o Bunshin 3D?",
+      "ctaDescription": "Cadastre-se grátis e ganhe 2 créditos para testar a plataforma. Sem assinatura, sem cartão de crédito."
+    },
+    "tripo-ai-alternative": {
+      "metaTitle": "Bunshin 3D vs Tripo AI — Melhor Alternativa ao Tripo AI em 2026",
+      "metaDescription": "Procurando uma alternativa ao Tripo AI? Compare Bunshin 3D vs Tripo AI em velocidade, preço, suporte à impressão 3D e formatos de exportação. Experimente o Bunshin 3D grátis.",
+      "keywords": "alternativa tripo ai, tripo vs bunshin 3d, concorrente tripo 3d, comparativo modelos 3d ia, alternativa imagem para 3d tripo",
+      "h1": "Bunshin 3D vs Tripo AI: Geradores 3D com IA Comparados",
+      "breadcrumb": "Alternativa ao Tripo AI",
+      "heroDescription": "O Tripo AI é uma plataforma de geração 3D com IA que oferece texto para 3D e imagem para 3D. O Bunshin 3D oferece um workflow focado de imagem para 3D com geração instantânea e preço avulso flexível. Veja como se comparam.",
+      "comparisonTitle": "Comparativo de Recursos",
+      "row1Feature": "Créditos grátis no cadastro",
+      "row1Bunshin": "Sim — 2 créditos grátis",
+      "row1Competitor": "Gerações de teste gratuitas disponíveis",
+      "row2Feature": "Sem assinatura necessária",
+      "row2Bunshin": "Pague uma vez — créditos nunca expiram",
+      "row2Competitor": "Planos de assinatura disponíveis",
+      "row3Feature": "Exportação STL para impressão 3D",
+      "row3Bunshin": "Sim — STL watertight incluído",
+      "row3Competitor": "Exportação STL disponível",
+      "row4Feature": "Múltiplos formatos de exportação",
+      "row4Bunshin": "GLB, STL, OBJ, FBX",
+      "row4Competitor": "GLB, FBX, OBJ, STL",
+      "row5Feature": "Velocidade de geração",
+      "row5Bunshin": "Menos de 30 segundos",
+      "row5Competitor": "Normalmente 1–2 minutos",
+      "row6Feature": "Direitos comerciais",
+      "row6Bunshin": "Incluídos em todas as gerações",
+      "row6Competitor": "Incluídos nos planos pagos",
+      "section1Title": "Por Que Considerar o Bunshin 3D em Vez do Tripo AI?",
+      "section1Text": "O Bunshin 3D oferece tempos de geração mais rápidos — normalmente menos de 30 segundos — com um modelo simples de pagamento avulso. Os créditos nunca expiram, então não há pressão para usá-los dentro de um ciclo de cobrança. Cada geração inclui arquivos STL watertight para impressão 3D e direitos comerciais. A plataforma foi pensada para ser direta: envie uma imagem, baixe seu modelo 3D.",
+      "section2Title": "Quando o Tripo AI Pode Ser a Melhor Escolha",
+      "section2Text": "O Tripo AI oferece texto para 3D e imagem para 3D com capacidades de animação e uma API para desenvolvedores. Se você precisa integrar geração 3D no seu próprio aplicativo via API, ou se texto para 3D com rigging e animação é importante para o seu workflow, o Tripo AI oferece recursos que podem atender a essas necessidades.",
+      "faq1Q": "O Tripo AI requer assinatura?",
+      "faq1A": "O Tripo AI oferece planos de assinatura para usuários regulares. O Bunshin 3D usa um sistema de créditos avulsos sem assinatura — compre créditos uma vez e eles nunca expiram.",
+      "faq2Q": "Qual plataforma é mais rápida?",
+      "faq2A": "O Bunshin 3D gera modelos em menos de 30 segundos. O Tripo AI normalmente leva de 1 a 2 minutos dependendo da complexidade do modelo e da fila.",
+      "faq3Q": "Posso imprimir em 3D modelos de ambas as plataformas?",
+      "faq3A": "Ambas as plataformas suportam exportação STL. O Bunshin 3D gera arquivos STL watertight especificamente otimizados para software de impressão 3D.",
+      "faq4Q": "O Tripo AI oferece uma API?",
+      "faq4A": "Sim, o Tripo AI disponibiliza uma API para desenvolvedores integrarem geração 3D em aplicativos. O Bunshin 3D também oferece acesso via API para desenvolvedores.",
+      "faq5Q": "Qual tem melhor suporte a formatos de exportação?",
+      "faq5A": "Ambas as plataformas oferecem GLB, STL, OBJ e FBX. O Bunshin 3D inclui todos os formatos em cada geração sem custo adicional.",
+      "ctaTitle": "Pronto para Experimentar o Bunshin 3D?",
+      "ctaDescription": "Cadastre-se grátis e ganhe 2 créditos para testar a plataforma. Sem assinatura, sem cartão de crédito."
+    },
+    "alpha3d-alternative": {
+      "metaTitle": "Bunshin 3D vs Alpha3D — Melhor Alternativa ao Alpha3D em 2026",
+      "metaDescription": "Procurando uma alternativa ao Alpha3D? Compare Bunshin 3D vs Alpha3D em preço, velocidade, formatos de exportação e suporte à impressão 3D. Experimente o Bunshin 3D grátis.",
+      "keywords": "alternativa alpha3d, alpha3d vs bunshin 3d, concorrente alpha3d, comparativo conversor 3d ia, alternativa imagem para 3d",
+      "h1": "Bunshin 3D vs Alpha3D: Conversores 3D com IA Comparados",
+      "breadcrumb": "Alternativa ao Alpha3D",
+      "heroDescription": "O Alpha3D foca em transformar imagens 2D de produtos em modelos 3D para e-commerce e catálogos digitais. O Bunshin 3D oferece uma solução mais ampla de imagem para 3D com suporte à impressão 3D e preço avulso. Veja um comparativo detalhado.",
+      "comparisonTitle": "Comparativo de Recursos",
+      "row1Feature": "Créditos grátis no cadastro",
+      "row1Bunshin": "Sim — 2 créditos grátis",
+      "row1Competitor": "Teste gratuito disponível",
+      "row2Feature": "Sem assinatura necessária",
+      "row2Bunshin": "Pague uma vez — créditos nunca expiram",
+      "row2Competitor": "Preço baseado em assinatura",
+      "row3Feature": "Exportação STL para impressão 3D",
+      "row3Bunshin": "Sim — STL watertight incluído",
+      "row3Competitor": "Foco em formatos web/AR",
+      "row4Feature": "Múltiplos formatos de exportação",
+      "row4Bunshin": "GLB, STL, OBJ, FBX",
+      "row4Competitor": "GLB, USDZ, FBX",
+      "row5Feature": "Velocidade de geração",
+      "row5Bunshin": "Menos de 30 segundos",
+      "row5Competitor": "Vários minutos",
+      "row6Feature": "Direitos comerciais",
+      "row6Bunshin": "Incluídos em todas as gerações",
+      "row6Competitor": "Incluídos na assinatura",
+      "section1Title": "Por Que Considerar o Bunshin 3D em Vez do Alpha3D?",
+      "section1Text": "O Bunshin 3D foi feito para velocidade e flexibilidade. Os modelos são gerados em menos de 30 segundos com quatro formatos de exportação incluindo STL para impressão 3D. O preço baseado em créditos significa zero compromissos mensais — compre créditos quando precisar, e eles nunca expiram. Isso torna o Bunshin 3D ideal para freelancers, hobbyistas e estúdios com demandas variáveis.",
+      "section2Title": "Quando o Alpha3D Pode Ser a Melhor Escolha",
+      "section2Text": "O Alpha3D é especificamente otimizado para conteúdo 3D de e-commerce. Se você precisa de visualização de produtos para lojas online, experiências de AR para provar itens, ou digitalização de catálogos em larga escala, o pipeline especializado do Alpha3D pode entregar melhores resultados para essas aplicações comerciais.",
+      "faq1Q": "O Alpha3D é melhor para e-commerce?",
+      "faq1A": "O Alpha3D é especializado em visualização 3D para e-commerce e digitalização de produtos. O Bunshin 3D é um conversor de imagem para 3D de uso geral adequado para impressão 3D, desenvolvimento de jogos e prototipagem.",
+      "faq2Q": "Qual é mais acessível para uso ocasional?",
+      "faq2A": "Os créditos avulsos do Bunshin 3D são normalmente mais econômicos para usuários ocasionais já que não há assinatura mensal. Os créditos começam em $3,99 por 10 gerações e nunca expiram.",
+      "faq3Q": "Posso imprimir em 3D modelos do Alpha3D?",
+      "faq3A": "O Alpha3D foca em formatos para web e AR. O Bunshin 3D inclui exportação STL watertight projetada especificamente para impressão 3D em cada geração.",
+      "faq4Q": "Qual plataforma gera modelos mais rápido?",
+      "faq4A": "O Bunshin 3D gera modelos em menos de 30 segundos. Os tempos de processamento do Alpha3D variam e podem levar vários minutos dependendo da complexidade.",
+      "faq5Q": "Ambas as plataformas incluem licença comercial?",
+      "faq5A": "Sim. O Bunshin 3D inclui direitos comerciais em todas as gerações. O Alpha3D inclui direitos comerciais nos planos de assinatura.",
+      "ctaTitle": "Pronto para Experimentar o Bunshin 3D?",
+      "ctaDescription": "Cadastre-se grátis e ganhe 2 créditos para testar a plataforma. Sem assinatura, sem cartão de crédito."
+    },
+    "3d-ai-studio-alternative": {
+      "metaTitle": "Bunshin 3D vs 3DAI Studio — Melhor Alternativa ao 3DAI Studio em 2026",
+      "metaDescription": "Procurando uma alternativa ao 3DAI Studio? Compare Bunshin 3D vs 3DAI Studio em velocidade, preço, formatos e funcionalidades. Experimente o Bunshin 3D grátis.",
+      "keywords": "alternativa 3d ai studio, 3dai studio vs bunshin 3d, concorrente 3d ai studio, comparativo gerador 3d ia, melhor ferramenta 3d ia",
+      "h1": "Bunshin 3D vs 3DAI Studio: Ferramentas 3D com IA Comparadas",
+      "breadcrumb": "Alternativa ao 3DAI Studio",
+      "heroDescription": "O 3DAI Studio oferece geração de modelos 3D com IA a partir de prompts de texto e imagens. O Bunshin 3D oferece um pipeline focado de imagem para 3D com geração rápida e opções abrangentes de exportação. Veja como se comparam.",
+      "comparisonTitle": "Comparativo de Recursos",
+      "row1Feature": "Créditos grátis no cadastro",
+      "row1Bunshin": "Sim — 2 créditos grátis",
+      "row1Competitor": "Gerações gratuitas limitadas",
+      "row2Feature": "Sem assinatura necessária",
+      "row2Bunshin": "Pague uma vez — créditos nunca expiram",
+      "row2Competitor": "Planos de assinatura disponíveis",
+      "row3Feature": "Exportação STL para impressão 3D",
+      "row3Bunshin": "Sim — STL watertight incluído",
+      "row3Competitor": "Exportação STL disponível",
+      "row4Feature": "Múltiplos formatos de exportação",
+      "row4Bunshin": "GLB, STL, OBJ, FBX",
+      "row4Competitor": "GLB, OBJ, STL",
+      "row5Feature": "Velocidade de geração",
+      "row5Bunshin": "Menos de 30 segundos",
+      "row5Competitor": "1–5 minutos",
+      "row6Feature": "Direitos comerciais",
+      "row6Bunshin": "Incluídos em todas as gerações",
+      "row6Competitor": "Varia conforme o plano",
+      "section1Title": "Por Que Considerar o Bunshin 3D em Vez do 3DAI Studio?",
+      "section1Text": "O Bunshin 3D entrega modelos 3D em menos de 30 segundos com um workflow direto de envio e download. O preço avulso elimina a fadiga de assinaturas — seus créditos nunca expiram. Quatro formatos de exportação (GLB, STL, OBJ, FBX) cobrem todos os casos de uso, da impressão 3D a engines de jogos, incluídos em cada geração.",
+      "section2Title": "Quando o 3DAI Studio Pode Ser a Melhor Escolha",
+      "section2Text": "O 3DAI Studio pode ser preferível se você depende de geração texto para 3D como seu workflow principal, ou se as opções específicas de textura e material atendem aos requisitos do seu projeto. Avalie ambas as plataformas com base nas suas necessidades típicas de geração 3D.",
+      "faq1Q": "O Bunshin 3D é mais rápido que o 3DAI Studio?",
+      "faq1A": "O Bunshin 3D normalmente gera modelos em menos de 30 segundos. Os tempos de geração do 3DAI Studio variam de 1 a 5 minutos dependendo do modelo e configurações.",
+      "faq2Q": "Qual tem melhor preço para usuários de baixo volume?",
+      "faq2A": "Os créditos avulsos do Bunshin 3D são ideais para usuários de baixo volume — sem assinatura necessária, e os créditos nunca expiram. O 3DAI Studio oferece planos de assinatura que podem ser mais adequados para usuários de alto volume.",
+      "faq3Q": "Posso usar ambos para impressão 3D?",
+      "faq3A": "Ambas as plataformas suportam exportação STL. O Bunshin 3D gera arquivos STL watertight e manifold testados com fatiadores populares como Cura e PrusaSlicer.",
+      "faq4Q": "Qual suporta mais formatos de exportação?",
+      "faq4A": "O Bunshin 3D exporta para GLB, STL, OBJ e FBX. O 3DAI Studio suporta GLB, OBJ e STL. O suporte FBX do Bunshin 3D é útil para workflows com Unity e Unreal Engine.",
+      "faq5Q": "Preciso de assinatura para o Bunshin 3D?",
+      "faq5A": "Não. O Bunshin 3D usa um sistema de créditos sem assinatura. Compre créditos uma vez, use quando quiser. Os créditos nunca expiram.",
+      "ctaTitle": "Pronto para Experimentar o Bunshin 3D?",
+      "ctaDescription": "Cadastre-se grátis e ganhe 2 créditos para testar a plataforma. Sem assinatura, sem cartão de crédito."
+    },
+    "csm-ai-alternative": {
+      "metaTitle": "Bunshin 3D vs CSM AI — Melhor Alternativa ao CSM AI em 2026",
+      "metaDescription": "Procurando uma alternativa ao CSM AI? Compare Bunshin 3D vs CSM AI (Common Sense Machines) em velocidade, preço e formatos de exportação. Experimente o Bunshin 3D grátis.",
+      "keywords": "alternativa csm ai, csm vs bunshin 3d, alternativa common sense machines, comparativo gerador 3d ia, alternativa imagem para 3d csm",
+      "h1": "Bunshin 3D vs CSM AI: Geradores de Imagem para 3D Comparados",
+      "breadcrumb": "Alternativa ao CSM AI",
+      "heroDescription": "O CSM AI (Common Sense Machines) cria modelos 3D a partir de imagens e texto usando o modelo Cube AI. O Bunshin 3D oferece um workflow simplificado de imagem para 3D com downloads instantâneos e preço avulso. Veja um comparativo honesto.",
+      "comparisonTitle": "Comparativo de Recursos",
+      "row1Feature": "Créditos grátis no cadastro",
+      "row1Bunshin": "Sim — 2 créditos grátis",
+      "row1Competitor": "Demo gratuita disponível",
+      "row2Feature": "Sem assinatura necessária",
+      "row2Bunshin": "Pague uma vez — créditos nunca expiram",
+      "row2Competitor": "Preço baseado em API",
+      "row3Feature": "Exportação STL para impressão 3D",
+      "row3Bunshin": "Sim — STL watertight incluído",
+      "row3Competitor": "Suporte limitado de formatos",
+      "row4Feature": "Múltiplos formatos de exportação",
+      "row4Bunshin": "GLB, STL, OBJ, FBX",
+      "row4Competitor": "GLB, OBJ",
+      "row5Feature": "Velocidade de geração",
+      "row5Bunshin": "Menos de 30 segundos",
+      "row5Competitor": "1–3 minutos",
+      "row6Feature": "Direitos comerciais",
+      "row6Bunshin": "Incluídos em todas as gerações",
+      "row6Competitor": "Consulte os termos atuais",
+      "section1Title": "Por Que Considerar o Bunshin 3D em Vez do CSM AI?",
+      "section1Text": "O Bunshin 3D oferece uma experiência completa e autônoma: envie uma imagem, receba um modelo 3D em menos de 30 segundos e baixe em quatro formatos. O preço avulso é transparente e simples — sem chaves de API ou configuração para desenvolvedores. A exportação STL para impressão 3D está incluída em cada geração, tornando-o acessível para makers e hobbyistas.",
+      "section2Title": "Quando o CSM AI Pode Ser a Melhor Escolha",
+      "section2Text": "O CSM AI foca em geração 3D de nível acadêmico e oferece uma abordagem API-first que atrai desenvolvedores que estão integrando geração 3D em seus próprios aplicativos. Se você precisa de acesso programático à geração 3D com controle avançado de modelo, a plataforma orientada a desenvolvedores do CSM AI pode atender melhor às suas necessidades.",
+      "faq1Q": "O CSM AI é focado em desenvolvedores enquanto o Bunshin 3D é focado no usuário?",
+      "faq1A": "O CSM AI enfatiza acesso via API e integração para desenvolvedores. O Bunshin 3D oferece tanto uma interface web para uso direto quanto acesso via API, sendo adequado para criadores individuais e desenvolvedores.",
+      "faq2Q": "Qual suporta mais formatos de exportação?",
+      "faq2A": "O Bunshin 3D exporta para GLB, STL, OBJ e FBX. O CSM AI suporta principalmente GLB e OBJ. O suporte mais amplo de formatos do Bunshin 3D cobre mais casos de uso.",
+      "faq3Q": "Posso usar o CSM AI sem programar?",
+      "faq3A": "O CSM AI oferece uma demo web mas é principalmente orientado por API. O Bunshin 3D oferece uma interface web completa onde você pode enviar imagens e baixar modelos 3D sem nenhum código.",
+      "faq4Q": "Qual é mais rápido para gerar modelos 3D?",
+      "faq4A": "O Bunshin 3D gera modelos em menos de 30 segundos. Os tempos de processamento do CSM AI normalmente variam de 1 a 3 minutos.",
+      "faq5Q": "O Bunshin 3D tem melhor suporte à impressão 3D?",
+      "faq5A": "Sim. O Bunshin 3D gera arquivos STL watertight otimizados para impressão 3D em cada geração. O foco principal do CSM AI é conteúdo 3D digital, não impressão 3D.",
+      "ctaTitle": "Pronto para Experimentar o Bunshin 3D?",
+      "ctaDescription": "Cadastre-se grátis e ganhe 2 créditos para testar a plataforma. Sem assinatura, sem cartão de crédito."
+    },
+    "best-ai-3d-generators": {
+      "metaTitle": "Melhores Geradores 3D com IA em 2026 — Guia Completo de Comparação",
+      "metaDescription": "Compare os melhores geradores 3D com IA em 2026: Bunshin 3D, Meshy, Kaedim, Luma AI, Tripo AI, Alpha3D, 3DAI Studio e CSM AI. Recursos, preços e formatos comparados.",
+      "keywords": "melhor gerador 3d ia, gerador modelos 3d ia 2026, comparativo imagem para 3d ia, melhores ferramentas 3d ia, ranking gerador 3d ia",
+      "h1": "Melhores Geradores 3D com IA em 2026: Comparativo Completo",
+      "breadcrumb": "Melhores Geradores 3D com IA",
+      "heroDescription": "O cenário de geração 3D com IA amadureceu significativamente. Seja para impressão 3D, desenvolvimento de jogos, e-commerce ou prototipagem, agora existem múltiplas plataformas capazes para escolher. Este guia compara as principais opções em preço, velocidade, formatos de exportação e funcionalidades.",
+      "comparisonTitle": "Como os Melhores Geradores 3D com IA se Comparam",
+      "row1Feature": "Créditos grátis no cadastro",
+      "row1Bunshin": "Sim — 2 créditos grátis",
+      "row1Competitor": "Varia por plataforma",
+      "row2Feature": "Sem assinatura necessária",
+      "row2Bunshin": "Pague uma vez — créditos nunca expiram",
+      "row2Competitor": "A maioria usa assinaturas mensais",
+      "row3Feature": "Exportação STL para impressão 3D",
+      "row3Bunshin": "Sim — STL watertight incluído",
+      "row3Competitor": "Varia — nem sempre incluído",
+      "row4Feature": "Múltiplos formatos de exportação",
+      "row4Bunshin": "GLB, STL, OBJ, FBX",
+      "row4Competitor": "Normalmente 2–3 formatos",
+      "row5Feature": "Velocidade de geração",
+      "row5Bunshin": "Menos de 30 segundos",
+      "row5Competitor": "1–5 minutos normalmente",
+      "row6Feature": "Direitos comerciais",
+      "row6Bunshin": "Incluídos em todas as gerações",
+      "row6Competitor": "Geralmente requer plano pago",
+      "section1Title": "O Que Procurar em um Gerador 3D com IA",
+      "section1Text": "Ao escolher um gerador 3D com IA, considere seu caso de uso principal. Para impressão 3D, exportação STL watertight é essencial. Para desenvolvimento de jogos, suporte a GLB e FBX com topologia limpa é o mais importante. Para prototipagem, velocidade e custo-benefício são fundamentais. Avalie também o modelo de preços — assinaturas servem para usuários de alto volume, enquanto créditos avulsos funcionam melhor para uso ocasional ou variável.",
+      "section2Title": "Por Que o Bunshin 3D se Destaca",
+      "section2Text": "O Bunshin 3D combina velocidade (menos de 30 segundos), suporte abrangente de formatos (GLB, STL, OBJ, FBX) e um modelo de preço sem assinatura em uma única plataforma. Créditos grátis no cadastro permitem testar antes de se comprometer, e direitos comerciais estão incluídos em cada geração. É uma ótima escolha para quem quer geração 3D rápida e acessível sem compromissos mensais.",
+      "faq1Q": "Qual é o melhor gerador 3D com IA gratuito?",
+      "faq1A": "A maioria dos geradores 3D com IA oferece uso gratuito limitado. O Bunshin 3D fornece 2 créditos grátis no cadastro sem cartão de crédito. Meshy e Tripo AI também oferecem planos gratuitos. A melhor opção gratuita depende das suas necessidades de formato e caso de uso.",
+      "faq2Q": "Qual gerador 3D com IA é melhor para impressão 3D?",
+      "faq2A": "O Bunshin 3D é otimizado para impressão 3D com arquivos STL watertight compatíveis com Cura, PrusaSlicer e Bambu Studio. Alguns concorrentes oferecem exportação STL mas podem não garantir malhas watertight.",
+      "faq3Q": "Modelos 3D gerados por IA são bons o suficiente para produção?",
+      "faq3A": "Modelos gerados por IA são excelentes para prototipagem, impressão 3D, jogos indie e criação de conteúdo. Para produção de jogos AAA ou VFX de cinema, refinamento manual em ferramentas como Blender ou ZBrush ainda é normalmente necessário.",
+      "faq4Q": "Qual gerador 3D com IA é o mais barato?",
+      "faq4A": "O Bunshin 3D oferece créditos a partir de $3,99 por 10 gerações sem assinatura. A maioria dos concorrentes usa assinaturas mensais variando de $10 a $100+. Para usuários ocasionais, modelos avulsos são normalmente mais baratos.",
+      "faq5Q": "Posso usar modelos 3D gerados por IA comercialmente?",
+      "faq5A": "A maioria dos geradores 3D com IA inclui direitos comerciais nos planos pagos. O Bunshin 3D inclui direitos comerciais em todas as gerações, incluindo as feitas com créditos grátis. Sempre verifique os termos específicos de cada plataforma.",
+      "ctaTitle": "Experimente o Bunshin 3D Grátis Hoje",
+      "ctaDescription": "Cadastre-se e ganhe 2 créditos grátis para gerar seus primeiros modelos 3D. Sem assinatura, sem cartão de crédito. Descubra por que milhares de criadores escolhem o Bunshin 3D."
+    }
+  }
+}

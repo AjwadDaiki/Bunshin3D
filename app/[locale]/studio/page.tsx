@@ -90,13 +90,6 @@ export default async function StudioPage({
       availability: "https://schema.org/InStock",
     },
     featureList: tJsonLd("featureList"),
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.8",
-      ratingCount: "1247",
-      bestRating: "5",
-      worstRating: "1",
-    },
   };
 
   return (

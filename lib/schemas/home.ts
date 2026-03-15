@@ -66,13 +66,6 @@ export async function getHomeSchemas(
       availability: "https://schema.org/InStock",
       description: tHome("Hero.ctaPrimary"),
     },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.8",
-      ratingCount: "1247",
-      bestRating: "5",
-      worstRating: "1",
-    },
     featureList: [
       tHome("Features.speedTitle"),
       tHome("Features.topologyTitle"),

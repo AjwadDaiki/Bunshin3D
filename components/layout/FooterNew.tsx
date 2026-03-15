@@ -38,6 +38,26 @@ export default function FooterNew() {
                   {tNav("pricing")}
                 </Link>
               </li>
+              <li>
+                <Link href="/use-cases" className="hover:text-white transition-colors">
+                  {tNav("useCases")}
+                </Link>
+              </li>
+              <li>
+                <Link href="/gallery" className="hover:text-white transition-colors">
+                  {t("gallery")}
+                </Link>
+              </li>
+              <li>
+                <Link href="/formats" className="hover:text-white transition-colors">
+                  {t("formats")}
+                </Link>
+              </li>
+              <li>
+                <Link href="/compare" className="hover:text-white transition-colors">
+                  {t("compare")}
+                </Link>
+              </li>
             </ul>
           </div>
 

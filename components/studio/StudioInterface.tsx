@@ -44,6 +44,7 @@ export default function StudioInterface() {
   const { logs, addLog, clearLogs, logsContainerRef } = useStudioLogs();
   const t = useTranslations("Studio");
   const [creditsPromptOpen, setCreditsPromptOpen] = useState(false);
+  const [generationCount, setGenerationCount] = useState(0);
 
   const { handleGenerate } = useStudioGeneration({
     mode,
@@ -59,8 +60,17 @@ export default function StudioInterface() {
         setOtoOpen(true);
       } else {
         // Already triggered before (or promo expired): show normal credits prompt
-        // StudioCreditsPrompt will show promo prices if the offer is still active
         setCreditsPromptOpen(true);
+      }
+    },
+    onGenerationSuccess: () => {
+      const newCount = generationCount + 1;
+      setGenerationCount(newCount);
+      // Trigger OTO after first successful generation (moment of delight)
+      if (newCount === 1 && !offerStartedAt) {
+        triggerOffer();
+        // Show OTO popup after a brief delay so the user sees their result first
+        setTimeout(() => setOtoOpen(true), 2000);
       }
     },
     setCredits,

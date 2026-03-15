@@ -132,6 +132,11 @@ export default async function HomePage({
     namespace: "Pricing.Header",
   });
 
+  const tSEO = await getTranslations({
+    locale,
+    namespace: "Home.SEOContent",
+  });
+
   const faqData = await getFAQData(locale);
   const faqSchema = generateFAQSchema(faqData, locale);
   const howToSchema = await generateHowToSchema(locale);
@@ -151,6 +156,38 @@ export default async function HomePage({
       <JsonLd data={howToSchema} />
 
       <LandingPage />
+
+      {/* Server-rendered SEO content block — crawlable by search engines */}
+      <section className="py-20 md:py-28 px-4">
+        <div className="container mx-auto max-w-4xl">
+          <article className="space-y-12">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tighter text-white mb-4">
+                {tSEO("title1")}
+              </h2>
+              <p className="text-neutral-400 leading-relaxed text-base">
+                {tSEO("text1")}
+              </p>
+            </div>
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tighter text-white mb-4">
+                {tSEO("title2")}
+              </h2>
+              <p className="text-neutral-400 leading-relaxed text-base">
+                {tSEO("text2")}
+              </p>
+            </div>
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tighter text-white mb-4">
+                {tSEO("title3")}
+              </h2>
+              <p className="text-neutral-400 leading-relaxed text-base">
+                {tSEO("text3")}
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
 
       <hr className="section-hr" />
 

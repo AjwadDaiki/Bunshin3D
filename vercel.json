@@ -1,0 +1,8 @@
+{
+  "crons": [
+    {
+      "path": "/api/cron/send-nurture",
+      "schedule": "0 10 * * *"
+    }
+  ]
+}

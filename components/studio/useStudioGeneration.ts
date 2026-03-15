@@ -16,6 +16,7 @@ type Props = {
   userId: string | null;
   credits: number;
   onInsufficientCredits?: () => void;
+  onGenerationSuccess?: () => void;
   setCredits: React.Dispatch<React.SetStateAction<number>>;
   setGeneratedImageUrl: (value: string | null) => void;
   setModelUrl: (value: string | null) => void;
@@ -33,6 +34,7 @@ export function useStudioGeneration({
   userId,
   credits,
   onInsufficientCredits,
+  onGenerationSuccess,
   setCredits,
   setGeneratedImageUrl,
   setModelUrl,
@@ -104,6 +106,8 @@ export function useStudioGeneration({
         setCredits,
         t,
       });
+
+      onGenerationSuccess?.();
     } catch (error: any) {
       console.error(error);
       addLog(t("Logs.errorPrefix", { message: error.message }), "error");
@@ -117,6 +121,7 @@ export function useStudioGeneration({
     credits,
     imageFile,
     mode,
+    onGenerationSuccess,
     onInsufficientCredits,
     prompt,
     quality,

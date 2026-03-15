@@ -16,6 +16,7 @@ import HeadLinks from "@/components/layout/HeadLinks";
 import AnalyticsScripts from "@/components/layout/AnalyticsScripts";
 import ModelViewerScript from "@/components/layout/ModelViewerScript";
 import OTOBanner from "@/components/layout/OTOBanner";
+import ExitIntentPopup from "@/components/conversion/ExitIntentPopup";
 import { CurrencyProvider } from "@/components/providers/CurrencyProvider";
 import { OTOProvider } from "@/components/providers/OTOProvider";
 import { generateAlternates, generateOGMetadata } from "@/lib/seo-utils";
@@ -150,6 +151,7 @@ export default async function LocaleLayout({
               </div>
               <main id="main-content" className="relative z-10">{children}</main>
               <FooterNew />
+              <ExitIntentPopup />
             </OTOProvider>
           </CurrencyProvider>
         </NextIntlClientProvider>
