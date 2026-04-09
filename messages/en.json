@@ -735,8 +735,11 @@
       "standardDesc": "Fast generation, good quality",
       "standardCost": "{cost} credit",
       "premium": "Premium",
-      "premiumDesc": "Cinema quality, photorealistic",
-      "premiumCost": "{cost} credits"
+      "premiumDesc": "High detail, fine textures",
+      "premiumCost": "{cost} credits",
+      "ultra": "Ultra",
+      "ultraDesc": "Cinema quality, PBR photorealistic",
+      "ultraCost": "{cost} credits"
     },
     "TextMode": {
       "promptLabel": "Describe your 3D model",
@@ -1396,6 +1399,7 @@
     "title": "Generated with Bunshin",
     "subtitle": "From simple logos to complex characters. See what our AI can create.",
     "badges": {
+      "ultra": "Ultra",
       "premium": "Premium",
       "standard": "Standard"
     },

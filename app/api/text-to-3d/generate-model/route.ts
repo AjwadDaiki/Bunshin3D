@@ -69,11 +69,14 @@ export async function POST(request: NextRequest) {
           "e8f6c45206993f297372f5436b90350817bd9b4a0d52d2a76df50c1c8afa2b3c",
         input: {
           images: [imageUrl],
-          texture_size: 2048,
-          mesh_simplify: 0.9,
+          texture_size: 1024,
+          mesh_simplify: 0.95,
           generate_model: true,
           save_gaussian_ply: false,
-          ss_sampling_steps: 38,
+          ss_sampling_steps: 12,
+          slat_sampling_steps: 12,
+          ss_guidance_strength: 7.5,
+          slat_guidance_strength: 3,
         },
       }),
     });

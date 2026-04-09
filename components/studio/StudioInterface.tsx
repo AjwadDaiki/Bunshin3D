@@ -88,7 +88,8 @@ export default function StudioInterface() {
     onError: (err) => addLog(t("Logs.downloadError", { error: err }), "error"),
   });
 
-  const costInCredits = quality === "premium" ? 5 : 1;
+  const costMap = { standard: 1, premium: 5, ultra: 10 } as const;
+  const costInCredits = costMap[quality];
   const canGenerate = credits >= costInCredits;
   const hasInput =
     mode === "image" ? Boolean(imagePreview) : Boolean(prompt.trim());

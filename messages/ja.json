@@ -738,8 +738,11 @@
       "standardDesc": "高速生成、良好な品質",
       "standardCost": "{cost}クレジット",
       "premium": "プレミアム",
-      "premiumDesc": "映画品質、フォトリアル",
-      "premiumCost": "{cost}クレジット"
+      "premiumDesc": "高精細、繊細なテクスチャ",
+      "premiumCost": "{cost}クレジット",
+      "ultra": "ウルトラ",
+      "ultraDesc": "映画品質、PBRフォトリアル",
+      "ultraCost": "{cost}クレジット"
     },
     "TextMode": {
       "promptLabel": "3Dモデルを説明",
@@ -1399,6 +1402,7 @@
     "title": "Bunshinで生成",
     "subtitle": "シンプルなロゴから複雑なキャラクターまで。AIが作れるものをご覧ください。",
     "badges": {
+      "ultra": "ウルトラ",
       "premium": "プレミアム",
       "standard": "スタンダード"
     },

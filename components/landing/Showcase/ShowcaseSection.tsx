@@ -10,6 +10,7 @@ function ShowcaseCard({ item }: { item: ShowcaseItem }) {
   const [isVisible, setIsVisible] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
   const itemLabel = t(`items.${item.id}`);
+  const isUltra = item.type === "ultra";
   const isPremium = item.type === "premium";
 
   useEffect(() => {
@@ -26,30 +27,42 @@ function ShowcaseCard({ item }: { item: ShowcaseItem }) {
     return () => observer.disconnect();
   }, []);
 
+  const borderClass = isUltra
+    ? "border-amber-500/20 hover:border-amber-500/40 hover:shadow-amber-500/10"
+    : isPremium
+      ? "border-blue-500/20 hover:border-blue-500/40 hover:shadow-blue-500/10"
+      : "border-white/6 hover:border-white/12 hover:shadow-black/20";
+
+  const badgeClass = isUltra
+    ? "bg-amber-500/20 text-amber-300 border border-amber-500/20"
+    : isPremium
+      ? "bg-blue-500/20 text-blue-300 border border-blue-500/20"
+      : "bg-white/10 text-neutral-400 border border-white/6";
+
+  const badgeLabel = isUltra
+    ? t("badges.ultra")
+    : isPremium
+      ? t("badges.premium")
+      : t("badges.standard");
+
   return (
     <div
       ref={cardRef}
-      className={`group relative aspect-square overflow-hidden rounded-xl border bg-[#111] transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${
-        isPremium
-          ? "border-blue-500/20 hover:border-blue-500/40 hover:shadow-blue-500/10"
-          : "border-white/6 hover:border-white/12 hover:shadow-black/20"
-      }`}
+      className={`group relative aspect-square overflow-hidden rounded-xl border bg-[#111] transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${borderClass}`}
     >
       {/* Type badge */}
       <div className="absolute top-3 left-3 z-30">
         <span
-          className={`inline-flex items-center gap-1 rounded-md px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider backdrop-blur-sm ${
-            isPremium
-              ? "bg-blue-500/20 text-blue-300 border border-blue-500/20"
-              : "bg-white/10 text-neutral-400 border border-white/6"
-          }`}
+          className={`inline-flex items-center gap-1 rounded-md px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider backdrop-blur-sm ${badgeClass}`}
         >
-          {isPremium ? (
+          {isUltra ? (
             <Crown className="w-2.5 h-2.5" weight="fill" />
+          ) : isPremium ? (
+            <Star className="w-2.5 h-2.5" weight="fill" />
           ) : (
             <Star className="w-2.5 h-2.5" weight="fill" />
           )}
-          {isPremium ? t("badges.premium") : t("badges.standard")}
+          {badgeLabel}
         </span>
       </div>
 
@@ -87,7 +100,7 @@ function ShowcaseCard({ item }: { item: ShowcaseItem }) {
           {itemLabel}
         </h3>
         <p className="text-[10px] text-neutral-400 mt-0.5 uppercase tracking-wider">
-          {isPremium ? t("badges.premium") : t("badges.standard")}
+          {badgeLabel}
         </p>
       </div>
     </div>

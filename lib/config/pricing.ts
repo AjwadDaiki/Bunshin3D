@@ -46,6 +46,13 @@ const OTO_PRICES: Partial<Record<PackId, Record<SupportedCurrency, number>>> = {
   studio:    { EUR: 19.99, USD: 22.99, JPY: 2999, CNY: 168 },
 };
 
+// Stripe product IDs for each pack (used for inline OTO pricing)
+export const STRIPE_PRODUCTS: Record<PackId, string> = {
+  discovery: "prod_TqELcIpcATx2kx",
+  creator:   "prod_TqENhIOqhHzdd3",
+  studio:    "prod_TqEORAoZzNF0zW",
+};
+
 export const OTO_PACK_IDS: PackId[] = ["discovery", "studio"];
 
 export function isOTOEligible(packId: PackId): boolean {

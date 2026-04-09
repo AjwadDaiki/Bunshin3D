@@ -738,8 +738,11 @@
       "standardDesc": "快速生成，良好质量",
       "standardCost": "{cost}积分",
       "premium": "高级",
-      "premiumDesc": "电影质量，照片级真实",
-      "premiumCost": "{cost}积分"
+      "premiumDesc": "高清画质，精细纹理",
+      "premiumCost": "{cost}积分",
+      "ultra": "超级",
+      "ultraDesc": "影院级画质，PBR照片级真实",
+      "ultraCost": "{cost}积分"
     },
     "TextMode": {
       "promptLabel": "描述您的3D模型",
@@ -1399,6 +1402,7 @@
     "title": "Bunshin 生成",
     "subtitle": "从简单的标志到复杂的角色。看看我们的 AI 能创造什么。",
     "badges": {
+      "ultra": "超级",
       "premium": "高级",
       "standard": "标准"
     },

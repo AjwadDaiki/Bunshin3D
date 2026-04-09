@@ -1,4 +1,4 @@
-﻿import { NextRequest, NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
 import { getApiTranslations } from "@/lib/api-i18n";
@@ -42,7 +42,7 @@ export async function POST(request: NextRequest) {
       .eq("id", userId)
       .single();
 
-    if (!profile || profile.credits < 5) {
+    if (!profile || profile.credits < 10) {
       return NextResponse.json(
         { error: t("responses.insufficientCredits") },
         { status: 400 },
@@ -51,7 +51,7 @@ export async function POST(request: NextRequest) {
 
     const { error: deductError } = await supabase.rpc("decrement_credits", {
       target_user_id: userId,
-      amount: 5,
+      amount: 10,
     });
 
     if (deductError) {
@@ -61,7 +61,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Trellis with boosted parameters for premium quality
+    // Rodin Gen-2 for ultra quality
     const response = await fetch("https://api.replicate.com/v1/predictions", {
       method: "POST",
       headers: {
@@ -69,18 +69,15 @@ export async function POST(request: NextRequest) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        version:
-          "e8f6c45206993f297372f5436b90350817bd9b4a0d52d2a76df50c1c8afa2b3c",
+        version: "hyper3d/rodin",
         input: {
           images: [imageUrl],
-          texture_size: 2048,
-          mesh_simplify: 0.9,
-          generate_model: true,
-          save_gaussian_ply: false,
-          ss_sampling_steps: 38,
-          slat_sampling_steps: 12,
-          ss_guidance_strength: 7.5,
-          slat_guidance_strength: 3,
+          prompt:
+            "High fidelity 3D model, realistic texture, 4k, photorealistic",
+          quality: "medium",
+          material: "PBR",
+          mesh_mode: "Quad",
+          geometry_file_format: "glb",
         },
       }),
     });
@@ -88,7 +85,7 @@ export async function POST(request: NextRequest) {
     if (!response.ok) {
       await supabase.rpc("increment_credits", {
         target_user_id: userId,
-        amount: 5,
+        amount: 10,
       });
 
       console.error(t("errors.replicateApi"), response.status);
@@ -109,7 +106,7 @@ export async function POST(request: NextRequest) {
       user_id: userId,
       status: "processing",
       prediction_id: prediction.id,
-      type: "premium_3d",
+      type: "ultra_3d",
       source_image_url: imageUrl,
       created_at: new Date().toISOString(),
     });

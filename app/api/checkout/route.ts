@@ -2,13 +2,15 @@
 import Stripe from "stripe";
 import { createClient } from "@supabase/supabase-js";
 import { getApiTranslations } from "@/lib/api-i18n";
-import { getPriceForCurrency, type PackId } from "@/lib/config/pricing";
+import {
+  getPriceForCurrency,
+  getOTOPriceForCurrency,
+  isOTOEligible,
+  STRIPE_PRODUCTS,
+  type PackId,
+} from "@/lib/config/pricing";
 
 const OTO_DURATION_MS = 24 * 60 * 60 * 1000;
-const OTO_COUPONS: Record<string, string> = {
-  discovery: process.env.STRIPE_OTO_COUPON_DISCOVERY || "",
-  studio: process.env.STRIPE_OTO_COUPON_STUDIO || "",
-};
 
 export async function POST(request: NextRequest) {
   const t = await getApiTranslations(request, "Api.Checkout");
@@ -42,7 +44,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // OTO packs use the same Stripe prices but with a coupon applied
+    // OTO packs use the same base pack but with inline OTO pricing
     const otoPackMapping: Record<string, string> = {
       oto_discovery: "discovery",
       oto_studio: "studio",
@@ -79,9 +81,8 @@ export async function POST(request: NextRequest) {
     }
 
     // Validate OTO eligibility server-side
-    let otoCouponId = "";
-    const packCoupon = OTO_COUPONS[resolvedPackId] || "";
-    if (isOTOPack && packCoupon) {
+    let useOTOPricing = false;
+    if (isOTOPack && isOTOEligible(resolvedPackId as PackId)) {
       const { data: profile } = await supabaseAdmin
         .from("profiles")
         .select("special_offer_started_at")
@@ -91,7 +92,7 @@ export async function POST(request: NextRequest) {
       if (profile?.special_offer_started_at) {
         const start = new Date(profile.special_offer_started_at).getTime();
         if (Date.now() - start < OTO_DURATION_MS) {
-          otoCouponId = packCoupon;
+          useOTOPricing = true;
         }
       }
     }
@@ -110,13 +111,45 @@ export async function POST(request: NextRequest) {
     };
     const stripeLocale = stripeLocaleMap[locale] || "auto";
 
-    const sessionParams: Stripe.Checkout.SessionCreateParams = {
-      line_items: [
+    // Build line_items: use inline price_data for OTO, or existing Stripe price
+    let lineItems: Stripe.Checkout.SessionCreateParams.LineItem[];
+
+    if (useOTOPricing) {
+      const otoPrice = getOTOPriceForCurrency(resolvedPackId as PackId, currency || "USD");
+      if (!otoPrice) {
+        return NextResponse.json(
+          { error: t("responses.invalidPack") },
+          { status: 400 },
+        );
+      }
+      // Convert amount to smallest currency unit (cents, yen, etc.)
+      const currencyCode = otoPrice.currency.toLowerCase();
+      const unitAmount = currencyCode === "jpy" || currencyCode === "cny"
+        ? Math.round(otoPrice.amount)
+        : Math.round(otoPrice.amount * 100);
+
+      lineItems = [
+        {
+          price_data: {
+            currency: currencyCode,
+            product: STRIPE_PRODUCTS[resolvedPackId as PackId],
+            unit_amount: unitAmount,
+          },
+          quantity: 1,
+        },
+      ];
+      console.log(`[Checkout] OTO pricing applied: ${otoPrice.amount} ${otoPrice.currency} for ${resolvedPackId}`);
+    } else {
+      lineItems = [
         {
           price: selectedPack.priceId as string,
           quantity: 1,
         },
-      ],
+      ];
+    }
+
+    const sessionParams: Stripe.Checkout.SessionCreateParams = {
+      line_items: lineItems,
       mode: "payment",
       locale: stripeLocale as Stripe.Checkout.SessionCreateParams["locale"],
       success_url: `${origin}/${locale}/studio?success=true`,
@@ -127,13 +160,10 @@ export async function POST(request: NextRequest) {
         credits: selectedPack.credits.toString(),
         locale,
         userEmail: userEmail || "",
+        isOTO: useOTOPricing ? "true" : "false",
       },
       ...(userEmail ? { customer_email: userEmail } : {}),
     };
-
-    if (otoCouponId) {
-      sessionParams.discounts = [{ coupon: otoCouponId }];
-    }
 
     const session = await stripe.checkout.sessions.create(sessionParams);
 
