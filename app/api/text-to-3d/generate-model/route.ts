@@ -58,6 +58,19 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Deduct credits BEFORE API call (refund on failure)
+    const { error: deductError } = await supabase.rpc("decrement_credits", {
+      target_user_id: userId,
+      amount: 1,
+    });
+
+    if (deductError) {
+      return NextResponse.json(
+        { error: t("responses.insufficientCredits") },
+        { status: 500 },
+      );
+    }
+
     const response = await fetch("https://api.replicate.com/v1/predictions", {
       method: "POST",
       headers: {
@@ -82,6 +95,12 @@ export async function POST(request: NextRequest) {
     });
 
     if (!response.ok) {
+      // Refund credit on API failure
+      await supabase.rpc("increment_credits", {
+        target_user_id: userId,
+        amount: 1,
+      });
+
       const errorText = await response.text();
       console.error(t("errors.replicateApi"), response.status, errorText);
 
@@ -98,15 +117,6 @@ export async function POST(request: NextRequest) {
     }
 
     const prediction = await response.json();
-
-    const { error: deductError } = await supabase.rpc("decrement_credits", {
-      target_user_id: userId,
-      amount: 1,
-    });
-
-    if (deductError) {
-      console.error(t("errors.deductFailed", { message: deductError.message }));
-    }
 
     await supabase.from("generations").insert({
       user_id: userId,
