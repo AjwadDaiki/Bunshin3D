@@ -15,31 +15,11 @@ export function useHeaderSession() {
   const mountedRef = useRef(true);
   const activeUserIdRef = useRef<string | null>(null);
 
-  const syncSession = useCallback(async (nextUser: User | null) => {
-    if (!mountedRef.current) return;
-
-    if (!nextUser) {
-      activeUserIdRef.current = null;
-      setUser(null);
-      setCredits(null);
-      setIsAdmin(false);
-      setLoading(false);
-      return;
-    }
-
-    if (activeUserIdRef.current === nextUser.id) {
-      setLoading(false);
-      return;
-    }
-
-    activeUserIdRef.current = nextUser.id;
-    setUser(nextUser);
-    setLoading(true);
-
+  const fetchProfile = useCallback(async (userId: string) => {
     const { data, error } = await supabase
       .from("profiles")
       .select("credits, is_admin")
-      .eq("id", nextUser.id)
+      .eq("id", userId)
       .single();
 
     if (!mountedRef.current) return;
@@ -56,6 +36,29 @@ export function useHeaderSession() {
     setIsAdmin(data?.is_admin ?? false);
     setLoading(false);
   }, []);
+
+  const syncSession = useCallback(async (nextUser: User | null) => {
+    if (!mountedRef.current) return;
+
+    if (!nextUser) {
+      activeUserIdRef.current = null;
+      setUser(null);
+      setCredits(null);
+      setIsAdmin(false);
+      setLoading(false);
+      return;
+    }
+
+    const isNewUser = activeUserIdRef.current !== nextUser.id;
+    activeUserIdRef.current = nextUser.id;
+
+    if (isNewUser) {
+      setUser(nextUser);
+      setLoading(true);
+    }
+
+    await fetchProfile(nextUser.id);
+  }, [fetchProfile]);
 
   useEffect(() => {
     mountedRef.current = true;
