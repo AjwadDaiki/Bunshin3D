@@ -52,16 +52,13 @@ export async function GET(request: NextRequest) {
         },
         setAll(cookiesToSet) {
           cookiesToSet.forEach(({ name, value, options }) => {
-            const cookieOptions = {
+            response.cookies.set(name, value, {
               ...options,
-              path: options?.path || "/",
-              httpOnly: options?.httpOnly ?? false,
-              secure: process.env.NODE_ENV === "production",
-              sameSite:
-                (options?.sameSite as "lax" | "strict" | "none" | undefined) ||
-                "lax",
-            };
-            response.cookies.set(name, value, cookieOptions);
+              path: "/",
+              httpOnly: false,
+              secure: true,
+              sameSite: "lax" as const,
+            });
           });
         },
       },

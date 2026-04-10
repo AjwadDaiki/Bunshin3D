@@ -3,25 +3,20 @@ import { NextResponse, type NextRequest } from "next/server";
 import createMiddleware from "next-intl/middleware";
 import { routing } from "./i18n/routing";
 
-// Initialisation du middleware next-intl qui gère la détection de langue
 const handleI18nRouting = createMiddleware(routing);
 
 export async function proxy(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
 
-  // Ignorer les appels API auth callback pour ne pas interférer avec Supabase
+  // Skip middleware for auth callback — it handles its own cookies
   if (pathname.includes("/api/auth/callback")) {
     return NextResponse.next();
   }
 
-  // 1. GESTION DE LA LANGUE (next-intl)
-  // Cette fonction analyse les headers (Accept-Language) et gère :
-  // - La redirection / -> /fr (ou /de, /en selon le navigateur)
-  // - La redirection si la langue n'est pas dans l'URL
-  const response = handleI18nRouting(request);
+  // 1. Run next-intl i18n routing first
+  let response = handleI18nRouting(request);
 
-  // 2. CONFIGURATION SUPABASE
-  // On utilise l'objet 'response' créé par next-intl pour y injecter les cookies Supabase
+  // 2. Create Supabase server client to refresh auth session
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
@@ -31,35 +26,47 @@ export async function proxy(request: NextRequest) {
           return request.cookies.getAll();
         },
         setAll(cookiesToSet) {
-          cookiesToSet.forEach(({ name, value, options }) => {
+          // Update request cookies so downstream server code sees them
+          cookiesToSet.forEach(({ name, value }) => {
             request.cookies.set(name, value);
-            response.cookies.set(name, value, options);
+          });
+
+          // Recreate response with updated request to forward cookies to SSR
+          response = NextResponse.next({
+            request,
+            headers: response.headers,
+          });
+
+          // Set cookies on response so browser receives them
+          // CRITICAL: httpOnly must be false so createBrowserClient can read them
+          cookiesToSet.forEach(({ name, value, options }) => {
+            response.cookies.set(name, value, {
+              ...options,
+              httpOnly: false,
+            });
           });
         },
       },
     },
   );
 
-  // 3. VÉRIFICATION DE L'AUTHENTIFICATION
-  // On récupère l'utilisateur pour protéger les routes
+  // 3. Refresh the session — this calls setAll if tokens need updating
   const {
     data: { user },
     error,
   } = await supabase.auth.getUser();
 
-  // Si next-intl a déjà décidé de rediriger (ex: de "/" vers "/fr"), on arrête ici
-  // pour laisser la redirection de langue se faire avant de vérifier l'auth.
+  // If next-intl decided to redirect (language detection), return as-is
+  // The redirect response already has the refreshed cookies from setAll
   if (response.status === 307 || response.status === 308) {
     return response;
   }
 
   const isLoggedIn = !!user && !error;
 
-  // Extraction de la locale pour construire les URLs de redirection Auth correctement
   const localeMatch = pathname.match(/^\/([a-z]{2})(\/|$)/);
   const locale = localeMatch ? localeMatch[1] : routing.defaultLocale;
 
-  // Chemin "propre" sans la locale pour vérifier les routes protégées
   const cleanPath =
     pathname.replace(new RegExp(`^/${locale}(?=/|$)`), "") || "/";
 
@@ -72,12 +79,10 @@ export async function proxy(request: NextRequest) {
     "/legal-mentions",
   ];
 
-  // Vérification si la route est publique
   const isPublicRoute = publicRoutes.some(
     (route) => cleanPath === route || cleanPath.startsWith(`${route}/`),
   );
 
-  // Vérification des assets publics
   const isWellKnownPublicAsset = [
     "/manifest.json",
     "/robots.txt",
@@ -89,12 +94,10 @@ export async function proxy(request: NextRequest) {
     return response;
   }
 
-  // LOGIQUE DE PROTECTION DES ROUTES
-
   // Use configured app URL to avoid localhost redirects behind reverse proxy
   const appOrigin = process.env.NEXT_PUBLIC_APP_URL || request.nextUrl.origin;
 
-  // Cas 1 : Utilisateur NON connecté tentant d'accéder à une page privée
+  // Redirect unauthenticated users away from private routes
   if (!isLoggedIn && !isPublicRoute) {
     const redirectResponse = NextResponse.redirect(
       new URL(`/${locale}/login`, appOrigin),
@@ -103,7 +106,7 @@ export async function proxy(request: NextRequest) {
     return redirectResponse;
   }
 
-  // Cas 2 : Utilisateur CONNECTÉ tentant d'accéder à la page de login
+  // Redirect authenticated users away from login page
   if (isLoggedIn && cleanPath === "/login") {
     const redirectResponse = NextResponse.redirect(
       new URL(`/${locale}/studio`, appOrigin),
@@ -117,7 +120,6 @@ export async function proxy(request: NextRequest) {
 
 export const config = {
   matcher: [
-    // Matcher optimisé pour next-intl et Supabase
     "/((?!api|_next/static|_next/image|favicon.ico|manifest.json|manifest.webmanifest|robots.txt|sitemap.xml|.*\\.(?:svg|png|jpg|jpeg|gif|webp|glb|gltf|stl|css|js|map)$).*)",
   ],
 };
