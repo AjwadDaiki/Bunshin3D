@@ -30,12 +30,16 @@ export async function GET(request: NextRequest) {
   const locale = detectLocaleFromNext(next);
   next = ensureLocaleInNext(next, locale);
 
+  // Use configured app URL instead of request origin to avoid
+  // localhost redirects when behind a reverse proxy
+  const origin = process.env.NEXT_PUBLIC_APP_URL || requestUrl.origin;
+
   if (!code) {
     console.error(t("errors.missingCode"));
-    return NextResponse.redirect(`${requestUrl.origin}/${locale}/login?error=no_code`);
+    return NextResponse.redirect(`${origin}/${locale}/login?error=no_code`);
   }
 
-  let response = NextResponse.redirect(`${requestUrl.origin}${next}`);
+  let response = NextResponse.redirect(`${origin}${next}`);
   response.headers.set("Cache-Control", "no-store, max-age=0");
 
   const supabase = createServerClient(
@@ -69,13 +73,13 @@ export async function GET(request: NextRequest) {
   if (error) {
     console.error(t("errors.exchangeFailed", { message: error.message }));
     return NextResponse.redirect(
-      `${requestUrl.origin}/${locale}/login?error=auth_failed&msg=${encodeURIComponent(error.message)}`,
+      `${origin}/${locale}/login?error=auth_failed&msg=${encodeURIComponent(error.message)}`,
     );
   }
 
   if (!data?.session) {
     console.error(t("errors.noSession"));
-    return NextResponse.redirect(`${requestUrl.origin}/${locale}/login?error=no_session`);
+    return NextResponse.redirect(`${origin}/${locale}/login?error=no_session`);
   }
 
   const adminClient = await createAdminClient();
@@ -86,7 +90,7 @@ export async function GET(request: NextRequest) {
     .single();
 
   if (profile?.is_banned) {
-    response = NextResponse.redirect(`${requestUrl.origin}/${locale}/login?error=banned`);
+    response = NextResponse.redirect(`${origin}/${locale}/login?error=banned`);
     response.headers.set("Cache-Control", "no-store, max-age=0");
     await supabase.auth.signOut();
     return response;

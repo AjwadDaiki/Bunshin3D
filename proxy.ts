@@ -91,24 +91,23 @@ export async function proxy(request: NextRequest) {
 
   // LOGIQUE DE PROTECTION DES ROUTES
 
+  // Use configured app URL to avoid localhost redirects behind reverse proxy
+  const appOrigin = process.env.NEXT_PUBLIC_APP_URL || request.nextUrl.origin;
+
   // Cas 1 : Utilisateur NON connecté tentant d'accéder à une page privée
   if (!isLoggedIn && !isPublicRoute) {
-    const url = request.nextUrl.clone();
-    url.pathname = `/${locale}/login`;
-    const redirectResponse = NextResponse.redirect(url);
-
-    // On s'assure de copier les cookies (Supabase + next-intl)
+    const redirectResponse = NextResponse.redirect(
+      new URL(`/${locale}/login`, appOrigin),
+    );
     redirectResponse.cookies.set("NEXT_LOCALE", locale);
     return redirectResponse;
   }
 
   // Cas 2 : Utilisateur CONNECTÉ tentant d'accéder à la page de login
   if (isLoggedIn && cleanPath === "/login") {
-    const url = request.nextUrl.clone();
-    url.pathname = `/${locale}/studio`;
-    const redirectResponse = NextResponse.redirect(url);
-
-    // On s'assure de copier les cookies
+    const redirectResponse = NextResponse.redirect(
+      new URL(`/${locale}/studio`, appOrigin),
+    );
     redirectResponse.cookies.set("NEXT_LOCALE", locale);
     return redirectResponse;
   }
