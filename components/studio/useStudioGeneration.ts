@@ -49,7 +49,8 @@ export function useStudioGeneration({
   const supabase = useMemo(() => createClient(), []);
 
   const handleGenerate = useCallback(async () => {
-    const costInCredits = quality === "premium" ? 5 : 1;
+    const costMap = { standard: 1, premium: 5, ultra: 10 } as const;
+    const costInCredits = costMap[quality];
 
     if (mode === "image" && !imageFile) {
       addLog(t("Logs.missingImage"), "error");

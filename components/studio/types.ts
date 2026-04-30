@@ -1,5 +1,5 @@
 ﻿export type Mode = "image" | "text";
-export type Quality = "standard" | "premium";
+export type Quality = "standard" | "premium" | "ultra";
 
 export type LogEntry = {
   id: number;

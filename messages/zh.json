@@ -764,8 +764,11 @@
       "standardDesc": "快速生成，良好质量",
       "standardCost": "{cost}积分",
       "premium": "高级",
-      "premiumDesc": "电影质量，照片级真实",
-      "premiumCost": "{cost}积分"
+      "premiumDesc": "高清画质，精细纹理",
+      "premiumCost": "{cost}积分",
+      "ultra": "超级",
+      "ultraDesc": "影院级画质，PBR照片级真实",
+      "ultraCost": "{cost}积分"
     },
     "TextMode": {
       "promptLabel": "描述您的3D模型",
@@ -1405,6 +1408,7 @@
     "title": "从图片到3D模型 — 几秒完成",
     "subtitle": "Logo、照片、草图与概念图秒变可打印 STL 与游戏可用 GLB 网格 — 无需手工雕刻。",
     "badges": {
+      "ultra": "超级",
       "premium": "高级",
       "standard": "标准"
     },

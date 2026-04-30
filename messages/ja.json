@@ -764,8 +764,11 @@
       "standardDesc": "高速生成、良好な品質",
       "standardCost": "{cost}クレジット",
       "premium": "プレミアム",
-      "premiumDesc": "映画品質、フォトリアル",
-      "premiumCost": "{cost}クレジット"
+      "premiumDesc": "高精細、繊細なテクスチャ",
+      "premiumCost": "{cost}クレジット",
+      "ultra": "ウルトラ",
+      "ultraDesc": "映画品質、PBRフォトリアル",
+      "ultraCost": "{cost}クレジット"
     },
     "TextMode": {
       "promptLabel": "3Dモデルを説明",
@@ -1405,6 +1408,7 @@
     "title": "画像から3Dモデルへ — 数秒で完成",
     "subtitle": "ロゴ・写真・スケッチ・コンセプトアートを、すぐに印刷できる STL とゲーム向け GLB メッシュへ。手作業のスカルプト不要。",
     "badges": {
+      "ultra": "ウルトラ",
       "premium": "プレミアム",
       "standard": "スタンダード"
     },

@@ -248,8 +248,11 @@
       "standardDesc": "Geração rápida, boa qualidade",
       "standardCost": "{cost} crédito",
       "premium": "Premium",
-      "premiumDesc": "Qualidade cinema, fotorrealista",
-      "premiumCost": "{cost} créditos"
+      "premiumDesc": "Alta definição, texturas finas",
+      "premiumCost": "{cost} créditos",
+      "ultra": "Ultra",
+      "ultraDesc": "Qualidade cinema, PBR fotorrealista",
+      "ultraCost": "{cost} créditos"
     },
     "TextMode": {
       "promptLabel": "Descreva seu modelo 3D",
@@ -889,6 +892,7 @@
     "title": "Da imagem ao modelo 3D em segundos",
     "subtitle": "Logotipos, fotos, esboços e concept art transformados em STL prontos para imprimir e malhas GLB prontas para o jogo — sem escultura manual.",
     "badges": {
+      "ultra": "Ultra",
       "premium": "Premium",
       "standard": "Padrão"
     },

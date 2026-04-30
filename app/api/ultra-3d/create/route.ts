@@ -1,15 +1,13 @@
-﻿import { NextRequest, NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
 import { getApiTranslations } from "@/lib/api-i18n";
 
 export async function POST(request: NextRequest) {
-  const t = await getApiTranslations(request, "Api.TextToModel");
+  const t = await getApiTranslations(request, "Api.Premium3D");
 
   try {
     const { imageUrl, userId } = await request.json();
-
-    console.log(t("logs.request", { userId }));
 
     if (!userId || !imageUrl) {
       return NextResponse.json(
@@ -38,39 +36,32 @@ export async function POST(request: NextRequest) {
       },
     );
 
-    const { data: profile, error: profileError } = await supabase
+    const { data: profile } = await supabase
       .from("profiles")
       .select("credits")
       .eq("id", userId)
       .single();
 
-    if (profileError || !profile) {
-      return NextResponse.json(
-        { error: t("responses.userNotFound") },
-        { status: 404 },
-      );
-    }
-
-    if (profile.credits < 1) {
+    if (!profile || profile.credits < 10) {
       return NextResponse.json(
         { error: t("responses.insufficientCredits") },
         { status: 400 },
       );
     }
 
-    // Deduct credits BEFORE API call (refund on failure)
     const { error: deductError } = await supabase.rpc("decrement_credits", {
       target_user_id: userId,
-      amount: 1,
+      amount: 10,
     });
 
     if (deductError) {
       return NextResponse.json(
-        { error: t("responses.insufficientCredits") },
+        { error: t("responses.deductFailed") },
         { status: 500 },
       );
     }
 
+    // Rodin Gen-2 for ultra quality
     const response = await fetch("https://api.replicate.com/v1/predictions", {
       method: "POST",
       headers: {
@@ -78,31 +69,26 @@ export async function POST(request: NextRequest) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        version:
-          "e8f6c45206993f297372f5436b90350817bd9b4a0d52d2a76df50c1c8afa2b3c",
+        version: "hyper3d/rodin",
         input: {
           images: [imageUrl],
-          texture_size: 1024,
-          mesh_simplify: 0.95,
-          generate_model: true,
-          save_gaussian_ply: false,
-          ss_sampling_steps: 12,
-          slat_sampling_steps: 12,
-          ss_guidance_strength: 7.5,
-          slat_guidance_strength: 3,
+          prompt:
+            "High fidelity 3D model, realistic texture, 4k, photorealistic",
+          quality: "medium",
+          material: "PBR",
+          mesh_mode: "Quad",
+          geometry_file_format: "glb",
         },
       }),
     });
 
     if (!response.ok) {
-      // Refund credit on API failure
       await supabase.rpc("increment_credits", {
         target_user_id: userId,
-        amount: 1,
+        amount: 10,
       });
 
-      const errorText = await response.text();
-      console.error(t("errors.replicateApi"), response.status, errorText);
+      console.error(t("errors.replicateApi"), response.status);
 
       if (response.status === 429) {
         return NextResponse.json(
@@ -111,9 +97,7 @@ export async function POST(request: NextRequest) {
         );
       }
 
-      throw new Error(
-        t("errors.replicateFailed", { status: response.status, message: errorText }),
-      );
+      throw new Error(t("errors.replicateFailed", { status: response.status }));
     }
 
     const prediction = await response.json();
@@ -122,7 +106,7 @@ export async function POST(request: NextRequest) {
       user_id: userId,
       status: "processing",
       prediction_id: prediction.id,
-      type: "text_to_3d",
+      type: "ultra_3d",
       source_image_url: imageUrl,
       created_at: new Date().toISOString(),
     });

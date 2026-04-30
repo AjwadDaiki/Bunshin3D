@@ -61,6 +61,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Trellis with boosted parameters for premium quality
     const response = await fetch("https://api.replicate.com/v1/predictions", {
       method: "POST",
       headers: {
@@ -68,11 +69,18 @@ export async function POST(request: NextRequest) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        version: "hyper3d/rodin",
+        version:
+          "e8f6c45206993f297372f5436b90350817bd9b4a0d52d2a76df50c1c8afa2b3c",
         input: {
           images: [imageUrl],
-          prompt:
-            "High fidelity 3D model, realistic texture, 4k, photorealistic",
+          texture_size: 2048,
+          mesh_simplify: 0.9,
+          generate_model: true,
+          save_gaussian_ply: false,
+          ss_sampling_steps: 38,
+          slat_sampling_steps: 12,
+          ss_guidance_strength: 7.5,
+          slat_guidance_strength: 3,
         },
       }),
     });

@@ -6,7 +6,13 @@ type Translator = (key: string, values?: Record<string, string | number>) => str
 type SetCredits = (value: number | ((current: number) => number)) => void;
 type SetModelUrl = (value: string | null) => void;
 
-type Quality = "standard" | "premium";
+type Quality = "standard" | "premium" | "ultra";
+
+const QUALITY_ENDPOINTS: Record<Quality, string> = {
+  standard: "/api/text-to-3d/generate-model",
+  premium: "/api/premium-3d/create",
+  ultra: "/api/ultra-3d/create",
+};
 
 type Args = {
   quality: Quality;
@@ -30,7 +36,7 @@ export async function generateModel({
   t,
 }: Args) {
   addLog(t("Logs.buildingMesh"));
-  const apiEndpoint = quality === "premium" ? "/api/premium-3d/create" : "/api/text-to-3d/generate-model";
+  const apiEndpoint = QUALITY_ENDPOINTS[quality];
 
   const maxAttempts = 5;
   let attempt = 0;
@@ -60,7 +66,8 @@ export async function generateModel({
   const modelPredictionId = modelData.predictionId;
   let modelResult: string | null = null;
   let pollCount = 0;
-  const MAX_POLLS = 90; // ~6 minutes max (90 * 4s)
+  // Ultra (Rodin) can take up to 3 minutes; standard/premium are faster
+  const MAX_POLLS = quality === "ultra" ? 120 : 90; // ~8 or ~6 minutes max
 
   while (!modelResult) {
     await sleep(4000);
