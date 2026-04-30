@@ -8,6 +8,8 @@ type SchemaBundle = {
   webPageSchema: Record<string, any>;
   imageObjectSchema: Record<string, any>;
   serviceSchema: Record<string, any>;
+  breadcrumbSchema: Record<string, any>;
+  glossarySchema: Record<string, any>;
 };
 
 const SEO_KEYWORDS = [
@@ -158,6 +160,10 @@ export async function getHomeSchemas(
       "@type": "SoftwareApplication",
       "@id": `${appUrl}/#software`,
     },
+    mainEntity: {
+      "@type": "SoftwareApplication",
+      "@id": `${appUrl}/#software`,
+    },
     primaryImageOfPage: {
       "@type": "ImageObject",
       url: `${appUrl}/og-image.jpg`,
@@ -166,6 +172,13 @@ export async function getHomeSchemas(
       "@type": "SpeakableSpecification",
       cssSelector: ["h1", ".hero-subtitle"],
     },
+    significantLink: [
+      `${appUrl}/${locale}/studio`,
+      `${appUrl}/${locale}/pricing`,
+      `${appUrl}/${locale}/tools`,
+      `${appUrl}/${locale}/use-cases`,
+      `${appUrl}/${locale}/formats`,
+    ],
   };
 
   const imageObjectSchema = {
@@ -246,5 +259,85 @@ export async function getHomeSchemas(
     },
   };
 
-  return { websiteSchema, softwareSchema, webPageSchema, imageObjectSchema, serviceSchema };
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Bunshin 3D",
+        item: `${appUrl}/${locale}`,
+      },
+    ],
+  };
+
+  const glossaryTerms = [
+    {
+      term: "STL",
+      definition: "STL stores a 3D shape as a list of triangles. It is the standard file you load into a 3D printer slicer like Cura, PrusaSlicer or Bambu Studio.",
+      url: `${appUrl}/${locale}/formats/stl`,
+    },
+    {
+      term: "GLB",
+      definition: "GLB packs geometry, materials and textures in a single binary glTF 2.0 file. Unity, Unreal, Godot, Three.js and most web viewers read it natively.",
+      url: `${appUrl}/${locale}/formats/glb`,
+    },
+    {
+      term: "OBJ",
+      definition: "OBJ is the classic mesh format read by Blender, Maya and Cinema 4D. It carries geometry and UVs, and pairs with an MTL file for materials.",
+      url: `${appUrl}/${locale}/formats/obj`,
+    },
+    {
+      term: "FBX",
+      definition: "FBX is the legacy interchange format from Autodesk. Older Unity projects and some studio pipelines still rely on it for animated meshes.",
+      url: `${appUrl}/${locale}/formats/fbx`,
+    },
+    {
+      term: "glTF",
+      definition: "glTF 2.0 is a Khronos open standard for transmitting 3D scenes. GLB is the binary single-file flavor of glTF.",
+      url: `${appUrl}/${locale}/formats/glb`,
+    },
+    {
+      term: "Watertight mesh",
+      definition: "A watertight mesh has no holes or gaps. 3D printer slicers need this to compute layers cleanly.",
+      url: `${appUrl}/${locale}/formats/stl`,
+    },
+    {
+      term: "PBR textures",
+      definition: "Physically based rendering uses albedo, normal and roughness maps so a surface looks consistent under any light.",
+      url: `${appUrl}/${locale}`,
+    },
+    {
+      term: "Mesh",
+      definition: "A mesh is the surface of a 3D object made of vertices, edges and faces. Every export from Bunshin 3D is a mesh.",
+      url: `${appUrl}/${locale}`,
+    },
+  ];
+
+  const glossarySchema = {
+    "@context": "https://schema.org",
+    "@type": "DefinedTermSet",
+    "@id": `${appUrl}/${locale}#glossary`,
+    name: "3D file formats and modeling glossary",
+    inLanguage: localeToLang[locale] || "en-US",
+    url: `${appUrl}/${locale}#glossary`,
+    hasDefinedTerm: glossaryTerms.map((t) => ({
+      "@type": "DefinedTerm",
+      name: t.term,
+      description: t.definition,
+      url: t.url,
+      inDefinedTermSet: `${appUrl}/${locale}#glossary`,
+    })),
+  };
+
+  return {
+    websiteSchema,
+    softwareSchema,
+    webPageSchema,
+    imageObjectSchema,
+    serviceSchema,
+    breadcrumbSchema,
+    glossarySchema,
+  };
 }

@@ -147,6 +147,50 @@
         "freeStl": "Kostenloser STL Datei Generator",
         "aiImageTo3d": "KI Bild zu 3D Modell, kostenlos"
       }
+    },
+    "Glossary": {
+      "label": "Glossar",
+      "title": "3D Formate und Begriffe, kurz erklärt",
+      "subtitle": "Kurzdefinitionen für die Wörter, die dir beim Exportieren begegnen.",
+      "items": {
+        "stl": {
+          "term": "STL",
+          "def": "Speichert eine 3D Form als Liste von Dreiecken. Die Standarddatei für Slicer wie Cura, PrusaSlicer oder Bambu Studio."
+        },
+        "glb": {
+          "term": "GLB",
+          "def": "Eine einzige binäre glTF 2.0 Datei mit Geometrie, Materialien und Texturen. Unity, Unreal, Godot und die meisten Web Viewer lesen sie direkt."
+        },
+        "obj": {
+          "term": "OBJ",
+          "def": "Das klassische Mesh Format für Blender, Maya und Cinema 4D. Trägt Geometrie und UVs und wird mit einer MTL für Materialien gepaart."
+        },
+        "fbx": {
+          "term": "FBX",
+          "def": "Autodesks älteres Austauschformat. Ältere Unity Projekte und manche Studiopipelines nutzen es noch für animierte Meshes."
+        },
+        "gltf": {
+          "term": "glTF",
+          "def": "Ein offener Khronos Standard für 3D Szenen. GLB ist die binäre Single File Variante von glTF."
+        },
+        "watertight": {
+          "term": "Wasserdichtes Mesh",
+          "def": "Ein Mesh ohne Löcher oder Lücken. 3D Drucker Slicer brauchen das, um Schichten sauber zu berechnen."
+        },
+        "pbr": {
+          "term": "PBR Texturen",
+          "def": "Physically Based Rendering nutzt Albedo, Normal und Roughness Maps, damit eine Oberfläche unter jedem Licht gleich aussieht."
+        },
+        "mesh": {
+          "term": "Mesh",
+          "def": "Die Oberfläche eines 3D Objekts aus Vertices, Kanten und Flächen. Jeder Bunshin Export ist ein Mesh."
+        }
+      }
+    },
+    "CompatibleWith": {
+      "label": "Funktioniert mit",
+      "title": "Datei direkt in deine gewohnten Tools ziehen",
+      "subtitle": "Wir exportieren die Formate, die diese Programme schon kennen."
     }
   },
   "Footer": {
@@ -712,7 +756,21 @@
     "footer": "Wenn das Problem weiterhin besteht, wenden Sie sich bitte an den Support.",
     "notFoundCode": "404",
     "rootLogPrefix": "Anwendungsfehler:",
-    "warningSymbol": "⚠️"
+    "warningSymbol": "⚠️",
+    "recovery": {
+      "title": "Probier stattdessen einen dieser Links",
+      "items": {
+        "studio": "Studio öffnen",
+        "pricing": "Preise ansehen",
+        "imageToStl": "Bild zu STL Konverter",
+        "pngTo3d": "PNG zu 3D",
+        "logoTo3d": "Logo zu 3D",
+        "photoTo3dPrint": "Foto zu 3D Druck",
+        "useCases": "Alle Anwendungsfälle",
+        "formats": "Export Formate",
+        "compare": "Tools vergleichen"
+      }
+    }
   },
   "Auth": {
     "title": "Willkommen zurück",

@@ -147,6 +147,50 @@
         "freeStl": "無料 STL ファイルジェネレーター",
         "aiImageTo3d": "AI 画像から 3D モデル、無料"
       }
+    },
+    "Glossary": {
+      "label": "用語集",
+      "title": "3D ファイル形式と用語、ざっくり解説",
+      "subtitle": "モデルを書き出すときに出てくる言葉の短い説明です。",
+      "items": {
+        "stl": {
+          "term": "STL",
+          "def": "三角形の集合として 3D 形状を保存する形式。Cura、PrusaSlicer、Bambu Studio などのスライサーに読み込む標準のファイルです。"
+        },
+        "glb": {
+          "term": "GLB",
+          "def": "ジオメトリ、マテリアル、テクスチャを 1 つにまとめたバイナリの glTF 2.0 ファイル。Unity、Unreal、Godot、ほとんどの Web ビューワーがそのまま読めます。"
+        },
+        "obj": {
+          "term": "OBJ",
+          "def": "Blender、Maya、Cinema 4D で読まれてきた定番のメッシュ形式。ジオメトリと UV を持ち、マテリアルは MTL ファイルと組み合わせます。"
+        },
+        "fbx": {
+          "term": "FBX",
+          "def": "Autodesk の古い交換形式。古い Unity プロジェクトや一部のスタジオパイプラインは、いまでもアニメーション付きメッシュでこれを使います。"
+        },
+        "gltf": {
+          "term": "glTF",
+          "def": "3D シーンを記述する Khronos のオープン規格。GLB はその 1 ファイル完結のバイナリ版です。"
+        },
+        "watertight": {
+          "term": "水密メッシュ",
+          "def": "穴やすき間のないメッシュ。3D プリンターのスライサーは、これがないとレイヤーを正しく計算できません。"
+        },
+        "pbr": {
+          "term": "PBR テクスチャ",
+          "def": "物理ベースレンダリング。アルベド、ノーマル、ラフネスのマップを使い、どの光でも一貫した見た目になります。"
+        },
+        "mesh": {
+          "term": "メッシュ",
+          "def": "3D オブジェクトの表面で、頂点・辺・面でできています。Bunshin の書き出しはすべてメッシュです。"
+        }
+      }
+    },
+    "CompatibleWith": {
+      "label": "対応ツール",
+      "title": "いつものツールにそのままドロップ",
+      "subtitle": "これらのアプリがすでに扱える形式で書き出します。"
     }
   },
   "Footer": {
@@ -712,7 +756,21 @@
     "footer": "問題が解決しない場合はサポートにお問い合わせください。",
     "notFoundCode": "404",
     "rootLogPrefix": "アプリケーションエラー:",
-    "warningSymbol": "⚠️"
+    "warningSymbol": "⚠️",
+    "recovery": {
+      "title": "代わりにこちらをどうぞ",
+      "items": {
+        "studio": "Studio を開く",
+        "pricing": "料金を見る",
+        "imageToStl": "画像を STL に変換",
+        "pngTo3d": "PNG から 3D",
+        "logoTo3d": "ロゴから 3D",
+        "photoTo3dPrint": "写真を 3D プリント",
+        "useCases": "すべてのユースケース",
+        "formats": "書き出し形式",
+        "compare": "ツール比較"
+      }
+    }
   },
   "Auth": {
     "title": "おかえりなさい",

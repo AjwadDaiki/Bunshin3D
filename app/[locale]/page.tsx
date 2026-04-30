@@ -12,6 +12,8 @@ import { getHomeSchemas } from "@/lib/schemas/home";
 import ReferralPromoPanel from "@/components/referral/ReferralPromoPanel";
 import HomeToolsSection from "@/components/home/HomeToolsSection";
 import KeywordHub from "@/components/seo/KeywordHub";
+import Glossary from "@/components/seo/Glossary";
+import CompatibleWith from "@/components/seo/CompatibleWith";
 import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
 
@@ -142,11 +144,15 @@ export default async function HomePage({
   const faqData = await getFAQData(locale);
   const faqSchema = generateFAQSchema(faqData, locale);
   const howToSchema = await generateHowToSchema(locale);
-  const { websiteSchema, softwareSchema, webPageSchema, imageObjectSchema, serviceSchema } = await getHomeSchemas(
-    locale,
-    APP_URL,
-    localeToLang,
-  );
+  const {
+    websiteSchema,
+    softwareSchema,
+    webPageSchema,
+    imageObjectSchema,
+    serviceSchema,
+    breadcrumbSchema,
+    glossarySchema,
+  } = await getHomeSchemas(locale, APP_URL, localeToLang);
 
   return (
     <>
@@ -155,6 +161,8 @@ export default async function HomePage({
       <JsonLd data={webPageSchema} />
       <JsonLd data={imageObjectSchema} />
       <JsonLd data={serviceSchema} />
+      <JsonLd data={breadcrumbSchema} />
+      <JsonLd data={glossarySchema} />
       <JsonLd data={faqSchema} />
       <JsonLd data={howToSchema} />
 
@@ -210,6 +218,14 @@ export default async function HomePage({
       <hr className="section-hr" />
 
       <KeywordHub locale={locale} />
+
+      <hr className="section-hr" />
+
+      <CompatibleWith locale={locale} />
+
+      <hr className="section-hr" />
+
+      <Glossary locale={locale} />
 
       <hr className="section-hr" />
 

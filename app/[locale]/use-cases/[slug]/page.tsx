@@ -134,6 +134,38 @@ export default async function UseCasePageRoute({
     ],
   };
 
+  const techArticleSchema = {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    headline: t("h1"),
+    description: t("metaDescription"),
+    url: `${APP_URL}/${locale}/use-cases/${slug}`,
+    inLanguage: locale,
+    image: `${APP_URL}/og-image.jpg`,
+    datePublished: "2025-01-01",
+    dateModified: new Date().toISOString().split("T")[0],
+    author: {
+      "@type": "Organization",
+      "@id": `${APP_URL}/#organization`,
+      name: "Bunshin 3D",
+    },
+    publisher: {
+      "@type": "Organization",
+      "@id": `${APP_URL}/#organization`,
+      name: "Bunshin 3D",
+      logo: {
+        "@type": "ImageObject",
+        url: `${APP_URL}/icon-512.png`,
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${APP_URL}/${locale}/use-cases/${slug}`,
+    },
+    proficiencyLevel: "Beginner",
+    keywords: t("keywords"),
+  };
+
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -163,6 +195,7 @@ export default async function UseCasePageRoute({
     <>
       <JsonLd data={howToSchema} />
       <JsonLd data={faqSchema} />
+      <JsonLd data={techArticleSchema} />
       <JsonLd data={breadcrumbSchema} />
       <UseCasePage
         slug={slug as UseCaseSlug}

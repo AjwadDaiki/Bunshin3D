@@ -147,6 +147,50 @@
         "freeStl": "Générateur de fichiers STL gratuit",
         "aiImageTo3d": "IA image vers modèle 3D, gratuit"
       }
+    },
+    "Glossary": {
+      "label": "Glossaire",
+      "title": "Les formats 3D et les termes, expliqués",
+      "subtitle": "Des définitions courtes pour les mots que vous croiserez en exportant un modèle.",
+      "items": {
+        "stl": {
+          "term": "STL",
+          "def": "Stocke une forme 3D sous forme de liste de triangles. C'est le fichier standard à charger dans un slicer comme Cura, PrusaSlicer ou Bambu Studio."
+        },
+        "glb": {
+          "term": "GLB",
+          "def": "Un seul fichier binaire glTF 2.0 qui contient la géométrie, les matériaux et les textures. Unity, Unreal, Godot et la plupart des visualiseurs web le lisent nativement."
+        },
+        "obj": {
+          "term": "OBJ",
+          "def": "Le format de mesh classique lu par Blender, Maya et Cinema 4D. Il porte la géométrie et les UV, et se couple à un MTL pour les matériaux."
+        },
+        "fbx": {
+          "term": "FBX",
+          "def": "Le format d'échange historique d'Autodesk. Les anciens projets Unity et certains pipelines de studio en dépendent encore pour les meshes animés."
+        },
+        "gltf": {
+          "term": "glTF",
+          "def": "Un standard ouvert de Khronos pour décrire des scènes 3D. Le GLB est sa version binaire en un seul fichier."
+        },
+        "watertight": {
+          "term": "Mesh étanche",
+          "def": "Un mesh sans trou ni espace. Les slicers d'impression 3D en ont besoin pour calculer les couches proprement."
+        },
+        "pbr": {
+          "term": "Textures PBR",
+          "def": "Le rendu physiquement plausible utilise des cartes albedo, normales et rugosité pour que la surface reste cohérente sous toute lumière."
+        },
+        "mesh": {
+          "term": "Mesh",
+          "def": "La surface d'un objet 3D, faite de sommets, d'arêtes et de faces. Tout export Bunshin est un mesh."
+        }
+      }
+    },
+    "CompatibleWith": {
+      "label": "Fonctionne avec",
+      "title": "Déposez le fichier directement dans vos outils habituels",
+      "subtitle": "On exporte les formats que ces logiciels comprennent déjà."
     }
   },
   "Footer": {
@@ -712,7 +756,21 @@
     "footer": "Si le problème persiste, veuillez contacter le support.",
     "notFoundCode": "404",
     "rootLogPrefix": "Erreur d'application :",
-    "warningSymbol": "⚠️"
+    "warningSymbol": "⚠️",
+    "recovery": {
+      "title": "Essayez plutôt l'un de ces liens",
+      "items": {
+        "studio": "Ouvrir le studio",
+        "pricing": "Voir les tarifs",
+        "imageToStl": "Convertisseur image vers STL",
+        "pngTo3d": "PNG vers 3D",
+        "logoTo3d": "Logo vers 3D",
+        "photoTo3dPrint": "Photo vers impression 3D",
+        "useCases": "Tous les cas d'usage",
+        "formats": "Formats d'export",
+        "compare": "Comparer les outils"
+      }
+    }
   },
   "Auth": {
     "title": "Bon Retour",

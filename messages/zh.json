@@ -147,6 +147,50 @@
         "freeStl": "免费 STL 文件生成器",
         "aiImageTo3d": "AI 图片转 3D 模型，免费"
       }
+    },
+    "Glossary": {
+      "label": "术语表",
+      "title": "3D 文件格式和术语，一句话讲清",
+      "subtitle": "导出模型时会遇到的词，给你最短的解释。",
+      "items": {
+        "stl": {
+          "term": "STL",
+          "def": "把 3D 形状存成一堆三角形。这是导入 Cura、PrusaSlicer 或 Bambu Studio 等切片器的标准文件。"
+        },
+        "glb": {
+          "term": "GLB",
+          "def": "把几何、材质、贴图打包到一个二进制 glTF 2.0 文件里。Unity、Unreal、Godot 和大多数网页查看器都直接能读。"
+        },
+        "obj": {
+          "term": "OBJ",
+          "def": "Blender、Maya、Cinema 4D 都能读的经典网格格式。带几何和 UV，材质靠配套的 MTL。"
+        },
+        "fbx": {
+          "term": "FBX",
+          "def": "Autodesk 的老牌交换格式。一些老的 Unity 项目和工作室管线，做带动画的网格还会用它。"
+        },
+        "gltf": {
+          "term": "glTF",
+          "def": "Khronos 的开放标准，用来描述 3D 场景。GLB 就是 glTF 的单文件二进制版本。"
+        },
+        "watertight": {
+          "term": "水密网格",
+          "def": "没有破洞和缝隙的网格。3D 打印的切片器要靠它才能算出干净的层。"
+        },
+        "pbr": {
+          "term": "PBR 贴图",
+          "def": "基于物理的渲染，用基础色、法线和粗糙度贴图，让表面在任何光照下都保持一致。"
+        },
+        "mesh": {
+          "term": "网格",
+          "def": "3D 物体的表面，由顶点、边、面组成。Bunshin 导出的每个文件都是网格。"
+        }
+      }
+    },
+    "CompatibleWith": {
+      "label": "兼容",
+      "title": "直接拖进你常用的软件",
+      "subtitle": "我们导出的格式，这些应用本来就能读。"
     }
   },
   "Footer": {
@@ -712,7 +756,21 @@
     "footer": "如果问题仍然存在，请联系支持。",
     "notFoundCode": "404",
     "rootLogPrefix": "应用程序错误:",
-    "warningSymbol": "⚠️"
+    "warningSymbol": "⚠️",
+    "recovery": {
+      "title": "试试这些链接",
+      "items": {
+        "studio": "打开 Studio",
+        "pricing": "查看价格",
+        "imageToStl": "图片转 STL",
+        "pngTo3d": "PNG 转 3D",
+        "logoTo3d": "Logo 转 3D",
+        "photoTo3dPrint": "照片转 3D 打印",
+        "useCases": "所有使用场景",
+        "formats": "导出格式",
+        "compare": "工具对比"
+      }
+    }
   },
   "Auth": {
     "title": "欢迎回来",

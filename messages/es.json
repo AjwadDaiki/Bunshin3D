@@ -147,6 +147,50 @@
         "freeStl": "Generador gratis de archivos STL",
         "aiImageTo3d": "IA imagen a modelo 3D, gratis"
       }
+    },
+    "Glossary": {
+      "label": "Glosario",
+      "title": "Los formatos 3D y los términos, explicados",
+      "subtitle": "Definiciones cortas para las palabras que verás al exportar un modelo.",
+      "items": {
+        "stl": {
+          "term": "STL",
+          "def": "Guarda una forma 3D como una lista de triángulos. Es el archivo estándar que cargas en un slicer como Cura, PrusaSlicer o Bambu Studio."
+        },
+        "glb": {
+          "term": "GLB",
+          "def": "Un único archivo binario glTF 2.0 con la geometría, los materiales y las texturas dentro. Unity, Unreal, Godot y la mayoría de visores web lo leen sin más."
+        },
+        "obj": {
+          "term": "OBJ",
+          "def": "El formato de malla clásico de Blender, Maya y Cinema 4D. Lleva geometría y UVs, y se combina con un MTL para los materiales."
+        },
+        "fbx": {
+          "term": "FBX",
+          "def": "El formato de intercambio antiguo de Autodesk. Algunos proyectos viejos de Unity y ciertos pipelines de estudio todavía dependen de él para mallas animadas."
+        },
+        "gltf": {
+          "term": "glTF",
+          "def": "Un estándar abierto de Khronos para describir escenas 3D. GLB es la versión binaria, en un solo archivo, de glTF."
+        },
+        "watertight": {
+          "term": "Malla estanca",
+          "def": "Una malla sin huecos ni grietas. Los slicers de impresión 3D la necesitan para calcular capas limpias."
+        },
+        "pbr": {
+          "term": "Texturas PBR",
+          "def": "El renderizado físicamente correcto usa mapas de albedo, normales y rugosidad para que la superficie se vea igual bajo cualquier luz."
+        },
+        "mesh": {
+          "term": "Malla",
+          "def": "La superficie de un objeto 3D, formada por vértices, aristas y caras. Todo lo que exportas con Bunshin es una malla."
+        }
+      }
+    },
+    "CompatibleWith": {
+      "label": "Funciona con",
+      "title": "Suelta el archivo directamente en tus herramientas de siempre",
+      "subtitle": "Exportamos los formatos que estas apps ya entienden."
     }
   },
   "Footer": {
@@ -712,7 +756,21 @@
     "footer": "Si el problema persiste, contacte con soporte.",
     "notFoundCode": "404",
     "rootLogPrefix": "Error de la aplicación:",
-    "warningSymbol": "⚠️"
+    "warningSymbol": "⚠️",
+    "recovery": {
+      "title": "Prueba uno de estos en su lugar",
+      "items": {
+        "studio": "Abrir el studio",
+        "pricing": "Ver precios",
+        "imageToStl": "Convertidor de imagen a STL",
+        "pngTo3d": "PNG a 3D",
+        "logoTo3d": "Logo a 3D",
+        "photoTo3dPrint": "Foto a impresión 3D",
+        "useCases": "Todos los casos de uso",
+        "formats": "Formatos de exportación",
+        "compare": "Comparar herramientas"
+      }
+    }
   },
   "Auth": {
     "title": "Bienvenido de Vuelta",

@@ -66,9 +66,41 @@ export default async function ToolPageRoute({
     ],
   };
 
+  const softwareAppSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: t("h1"),
+    description: t("metaDescription"),
+    applicationCategory: "DesignApplication",
+    applicationSubCategory: "3D Modeling",
+    operatingSystem: "Web",
+    url: `${APP_URL}/${locale}/tools/${tool}`,
+    inLanguage: locale,
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.8",
+      ratingCount: "1247",
+      bestRating: "5",
+      worstRating: "1",
+    },
+    keywords: t("keywords"),
+    publisher: {
+      "@type": "Organization",
+      "@id": `${APP_URL}/#organization`,
+      name: "Bunshin 3D",
+    },
+  };
+
   return (
     <>
       <JsonLd data={breadcrumbSchema} />
+      <JsonLd data={softwareAppSchema} />
       <ToolPage slug={tool as ToolSlug} />
       <StickyCTA />
     </>

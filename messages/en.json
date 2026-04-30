@@ -147,6 +147,50 @@
         "freeStl": "Free STL file generator",
         "aiImageTo3d": "AI image to 3D model, free"
       }
+    },
+    "Glossary": {
+      "label": "Glossary",
+      "title": "3D file formats and terms, explained",
+      "subtitle": "Quick definitions for the words you'll meet when you export a model.",
+      "items": {
+        "stl": {
+          "term": "STL",
+          "def": "Stores a 3D shape as a list of triangles. The standard file you load into a 3D printer slicer like Cura, PrusaSlicer or Bambu Studio."
+        },
+        "glb": {
+          "term": "GLB",
+          "def": "A single binary glTF 2.0 file with geometry, materials and textures inside. Unity, Unreal, Godot and most web viewers read it natively."
+        },
+        "obj": {
+          "term": "OBJ",
+          "def": "The classic mesh format read by Blender, Maya and Cinema 4D. Carries geometry and UVs, and pairs with an MTL for materials."
+        },
+        "fbx": {
+          "term": "FBX",
+          "def": "Autodesk's legacy interchange format. Older Unity projects and some studio pipelines still rely on it for animated meshes."
+        },
+        "gltf": {
+          "term": "glTF",
+          "def": "An open Khronos standard for 3D scenes. GLB is the binary, single-file flavor of glTF."
+        },
+        "watertight": {
+          "term": "Watertight mesh",
+          "def": "A mesh with no holes or gaps. 3D printer slicers need this to compute layers cleanly."
+        },
+        "pbr": {
+          "term": "PBR textures",
+          "def": "Physically based rendering uses albedo, normal and roughness maps so a surface stays consistent under any light."
+        },
+        "mesh": {
+          "term": "Mesh",
+          "def": "The surface of a 3D object made of vertices, edges and faces. Every Bunshin export is a mesh."
+        }
+      }
+    },
+    "CompatibleWith": {
+      "label": "Works with",
+      "title": "Drop the file straight into your usual tools",
+      "subtitle": "We export the formats these apps already speak."
     }
   },
   "Footer": {
@@ -709,7 +753,21 @@
     "footer": "If the problem persists, please contact support.",
     "notFoundCode": "404",
     "rootLogPrefix": "Application error:",
-    "warningSymbol": "⚠️"
+    "warningSymbol": "⚠️",
+    "recovery": {
+      "title": "Try one of these instead",
+      "items": {
+        "studio": "Open the studio",
+        "pricing": "See pricing",
+        "imageToStl": "Image to STL converter",
+        "pngTo3d": "PNG to 3D",
+        "logoTo3d": "Logo to 3D",
+        "photoTo3dPrint": "Photo to 3D print",
+        "useCases": "All use cases",
+        "formats": "Export formats",
+        "compare": "Compare tools"
+      }
+    }
   },
   "Auth": {
     "title": "Welcome Back",
