@@ -433,8 +433,6 @@
       "headline": "Sua criatividade merece mais.",
       "description": "Esta geração requer {count} créditos. Recarregue ou convide um amigo para ganhar créditos grátis.",
       "ctaPricing": "Comprar Créditos",
-      "ctaReferral": "Ganhe com Indicações",
-      "note": "Convide um amigo: +{signup} ao se cadastrar, +{payment} após a primeira compra.",
       "close": "Fechar",
       "creditsLabel": "créditos"
     }
@@ -559,7 +557,7 @@
       "q4": "Posso usar os modelos comercialmente?",
       "a4": "Sim! Todos os pacotes de créditos incluem licença comercial completa. Você pode usar seus modelos 3D gerados em jogos, produtos, materiais de marketing e muito mais.",
       "q5": "Como funciona a geração com IA?",
-      "a5": "Nossa IA analisa sua imagem 2D ou descrição em texto e gera uma malha 3D detalhada com texturas. O processo leva cerca de 30 segundos e roda em servidores GPU prioritários."
+      "a5": "Com seus 2 créditos grátis no cadastro, dá pra gerar 2 modelos em qualidade padrão. Depois, os pacotes de créditos começam em 2,99 euros por 10 gerações."
     },
     "Checkout": {
       "loginRequired": "Por favor, faça login para continuar.",
@@ -899,50 +897,6 @@
       "message": "Isso custará 5 créditos. Modelos premium oferecem resultados com qualidade cinema e detalhes fotorrealistas."
     }
   },
-  "Referral": {
-    "title": "Programa de Indicação",
-    "linkLabel": "Seu link de indicação",
-    "linkUnavailable": "Link indisponível",
-    "creditsLabel": "Créditos ganhos com indicações",
-    "copyLabel": "Copiar link",
-    "copiedLabel": "Copiado!",
-    "Promo": {
-      "headerText": "Convide amigos, ganhe créditos grátis",
-      "headerCta": "Saiba Mais",
-      "badge": "Programa de Indicação",
-      "sectionTitle": "Ganhe Créditos Grátis",
-      "sectionSubtitle": "Compartilhe o Bunshin 3D com seus amigos e ganhe créditos por cada cadastro e compra.",
-      "bonusTitle": "Bônus de Indicação",
-      "bonusSubtitle": "Ganhe créditos em cada etapa",
-      "bonusBadgeSignup": "+2 créditos",
-      "bonusBadgePayment": "+10 créditos",
-      "bonusCaption": "Sem limites. Acumule créditos.",
-      "steps": {
-        "invite": {
-          "title": "Compartilhe Seu Link",
-          "description": "Envie seu link de indicação exclusivo para amigos",
-          "desc": "Envie seu link de indicação exclusivo para amigos"
-        },
-        "signup": {
-          "title": "Amigo se Cadastra",
-          "description": "Ele cria uma conta usando seu link",
-          "desc": "Ele cria uma conta usando seu link"
-        },
-        "pay": {
-          "title": "Amigo Compra",
-          "description": "Quando ele compra créditos, vocês dois ganham",
-          "desc": "Quando ele compra créditos, vocês dois ganham"
-        }
-      },
-      "ctaPrimary": "Copiar Link de Indicação",
-      "ctaSecondary": "Ir para o Painel",
-      "highlightTag": "CRÉDITOS GRÁTIS",
-      "pricingTitle": "Indique & Economize",
-      "pricingSubtitle": "Ganhe créditos convidando amigos",
-      "footerTitle": "Convide seus amigos e ganhe créditos grátis por cada cadastro!",
-      "footerCta": "Começar a Ganhar"
-    }
-  },
   "Showcase": {
     "generatedAsset": "Asset Gerado",
     "viewModel": "Ver Modelo",
@@ -1030,8 +984,8 @@
         "answer": "Sim! Todos os modelos gerados são seus para uso comercial, incluindo jogos, impressão 3D e projetos profissionais."
       },
       {
-        "question": "Como funciona o programa de indicação?",
-        "answer": "Compartilhe seu link de indicação exclusivo. Quando um amigo se cadastrar, você ganha +2 créditos. Quando ele fizer a primeira compra, você ganha +10 créditos. Não há limites nos ganhos de indicação."
+        "question": "Como funciona o planos de créditos?",
+        "answer": "Compartilhe seu link de créditos exclusivo. Quando um amigo se cadastrar, você ganha +2 créditos. Quando ele fizer a primeira compra, você ganha +10 créditos. Não há limites nos ganhos de créditos."
       }
     ]
   },

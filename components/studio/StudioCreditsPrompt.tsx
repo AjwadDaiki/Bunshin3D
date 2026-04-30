@@ -1,6 +1,6 @@
 "use client";
 
-import { X, Sparkle, CreditCard, Lightning } from "@phosphor-icons/react";
+import { X, Sparkle, CreditCard } from "@phosphor-icons/react";
 import { useTranslations, useLocale } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { useCurrency } from "@/components/providers/CurrencyProvider";
@@ -102,7 +102,7 @@ export default function StudioCreditsPrompt({
           })}
         </div>
 
-        <div className="mt-6 grid gap-3 sm:grid-cols-2">
+        <div className="mt-6">
           <Link
             href="/pricing"
             className="group flex items-center justify-center gap-2 rounded-lg bg-white px-5 py-3.5 font-semibold text-neutral-950 transition hover:bg-neutral-200"
@@ -110,17 +110,6 @@ export default function StudioCreditsPrompt({
             <CreditCard className="h-5 w-5" weight="duotone" />
             {t("CreditsPrompt.ctaPricing")}
           </Link>
-          <Link
-            href="/account"
-            className="group flex items-center justify-center gap-2 rounded-lg border border-white/6 bg-[#191919] px-5 py-3.5 font-semibold text-white transition hover:bg-[#222] hover:border-white/10"
-          >
-            <Lightning className="h-5 w-5 text-amber-400" weight="fill" />
-            {t("CreditsPrompt.ctaReferral")}
-          </Link>
-        </div>
-
-        <div className="mt-5 rounded-xl border border-white/6 bg-[#0a0a0a] px-4 py-3 text-center text-xs text-neutral-500">
-          {t("CreditsPrompt.note", { signup: 2, payment: 10 })}
         </div>
       </div>
 

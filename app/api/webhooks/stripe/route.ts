@@ -200,35 +200,6 @@ export async function POST(request: NextRequest) {
     }
 
 
-    try {
-      const { data: profile } = await supabaseAdmin
-        .from("profiles")
-        .select("referred_by, referral_reward_paid")
-        .eq("id", userId)
-        .single();
-
-      if (profile?.referred_by && !profile.referral_reward_paid) {
-        const { error: referralCreditsError } = await supabaseAdmin.rpc(
-          "increment_credits",
-          { target_user_id: profile.referred_by, amount: 10 },
-        );
-
-        if (!referralCreditsError) {
-          await supabaseAdmin
-            .from("profiles")
-            .update({ referral_reward_paid: true })
-            .eq("id", userId);
-
-          console.log(`[Stripe webhook] Referral bonus: +10 credits to ${profile.referred_by}`);
-        } else {
-          console.warn("[Stripe webhook] Referral credits failed:", referralCreditsError);
-        }
-      }
-    } catch (err) {
-      console.warn("[Stripe webhook] Referral handling failed (non-critical):", err);
-    }
-
-
     if (idempotencyEnabled) {
       try {
         await supabaseAdmin

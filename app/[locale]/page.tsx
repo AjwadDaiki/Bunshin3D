@@ -9,7 +9,6 @@ import { baseMetadataConfig } from "@/lib/seo-config";
 import { generateFAQSchema, getFAQData } from "@/lib/schemas/faq";
 import { generateHowToSchema } from "@/lib/schemas/howto";
 import { getHomeSchemas } from "@/lib/schemas/home";
-import ReferralPromoPanel from "@/components/referral/ReferralPromoPanel";
 import HomeToolsSection from "@/components/home/HomeToolsSection";
 import KeywordHub from "@/components/seo/KeywordHub";
 import Glossary from "@/components/seo/Glossary";
@@ -256,10 +255,6 @@ export default async function HomePage({
           <p className="text-center text-sm text-neutral-500 mt-8">
             {tPricing("guarantee")}
           </p>
-
-          <div className="mt-16 max-w-5xl mx-auto">
-            <ReferralPromoPanel />
-          </div>
         </div>
       </section>
 

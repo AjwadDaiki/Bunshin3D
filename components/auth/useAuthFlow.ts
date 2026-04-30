@@ -1,5 +1,5 @@
 ﻿"use client";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { createClient } from "@/lib/supabase";
 import { routing } from "@/i18n/routing";
 import { useSearchParams } from "next/navigation";
@@ -24,15 +24,6 @@ export function useAuthFlow(t: Translator): AuthFlowState {
   const [email, setEmail] = useState("");
   const [isSent, setIsSent] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
-  const referralCode = useMemo(() => {
-    const fromUrl = searchParams.get("ref")?.trim() || "";
-    if (fromUrl) {
-      try { localStorage.setItem("bunshin_ref", fromUrl); } catch {}
-      return fromUrl;
-    }
-    try { return localStorage.getItem("bunshin_ref") || ""; } catch {}
-    return "";
-  }, [searchParams]);
 
   const getLocale = useCallback(() => {
     if (typeof window === "undefined") return routing.defaultLocale;
@@ -45,9 +36,8 @@ export function useAuthFlow(t: Translator): AuthFlowState {
   const buildCallbackUrl = useCallback(() => {
     if (typeof window === "undefined") return "";
     const locale = getLocale();
-    const refParam = referralCode ? `&ref=${encodeURIComponent(referralCode)}` : "";
-    return `${window.location.origin}/api/auth/callback?next=/${locale}/studio${refParam}`;
-  }, [getLocale, referralCode]);
+    return `${window.location.origin}/api/auth/callback?next=/${locale}/studio`;
+  }, [getLocale]);
 
   useEffect(() => {
     const errorParam = searchParams.get("error");
@@ -71,7 +61,6 @@ export function useAuthFlow(t: Translator): AuthFlowState {
       if (redirected) return;
       if ((event === "SIGNED_IN" || event === "INITIAL_SESSION") && session) {
         redirected = true;
-        try { localStorage.removeItem("bunshin_ref"); } catch {}
 
         if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
           (window as any).gtag("event", "sign_up", { method: "email_or_google" });

@@ -6,7 +6,6 @@ import DashboardHeader from "./dashboard/DashboardHeader";
 import DashboardStatsGrid from "./dashboard/DashboardStatsGrid";
 import GenerationHistory from "./dashboard/GenerationHistory";
 import { useDashboardData } from "./dashboard/useDashboardData";
-import ReferralSection from "@/components/referral/ReferralSection";
 import { AccountProfile, AccountUser, Generation } from "./types";
 
 type DashboardProps = {
@@ -57,11 +56,6 @@ export default function UserDashboard({
         credits={profile?.credits ?? 0}
         generationsCount={visibleGenerations.length}
         memberSince={new Date(user.created_at).toLocaleDateString()}
-      />
-
-      <ReferralSection
-        referralCode={profile?.referral_code}
-        referralCredits={profile?.referral_credits}
       />
 
       <GenerationHistory

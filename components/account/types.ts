@@ -21,6 +21,4 @@ export type AccountUser = {
 export type AccountProfile = {
   email?: string;
   credits?: number;
-  referral_code?: string;
-  referral_credits?: number;
 };

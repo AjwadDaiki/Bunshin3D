@@ -454,7 +454,7 @@
       "faq1Q": "¿Es realmente gratis?",
       "faq1A": "Sí. 2 créditos gratuitos al registrarte para generar 2 modelos 3D completos. Sin tarjeta de crédito.",
       "faq2Q": "¿Qué pasa cuando se acaban los créditos gratis?",
-      "faq2A": "Compra packs desde 2,99 € o gana créditos gratis invitando amigos con tu enlace de referido.",
+      "faq2A": "Compra packs desde 2,99 € o gana créditos gratis invitando amigos con tu enlace de créditos.",
       "faq3Q": "¿Los modelos gratis tienen marca de agua?",
       "faq3A": "No. Misma calidad y licencia que los de pago. Sin marcas de agua ni limitaciones.",
       "faq4Q": "¿En qué formatos puedo descargar?",
@@ -949,8 +949,6 @@
       "headline": "Tu creatividad merece más.",
       "description": "Esta generación requiere {count} créditos. Recarga o invita a un amigo para ganar créditos gratis.",
       "ctaPricing": "Comprar créditos",
-      "ctaReferral": "Ganar con referidos",
-      "note": "Invita a un amigo: +{signup} al registrarse, +{payment} después de su primera compra.",
       "close": "Cerrar",
       "creditsLabel": "créditos"
     }
@@ -1075,7 +1073,7 @@
       "q4": "¿Puedo usar los modelos comercialmente?",
       "a4": "Si! Todos los packs incluyen una licencia comercial completa. Puedes usar tus modelos 3D en juegos, productos, materiales de marketing y mas.",
       "q5": "¿Cómo funciona la generación con IA?",
-      "a5": "Nuestra IA analiza tu imagen 2D o descripcion de texto y genera una malla 3D detallada con texturas. El proceso tarda unos 30 segundos en servidores GPU prioritarios."
+      "a5": "Con tus 2 créditos gratis al registrarte, puedes generar 2 modelos en calidad estándar. Después, los packs de créditos empiezan en 2,99 euros por 10 generaciones."
     },
     "Checkout": {
       "loginRequired": "Inicia sesión para continuar.",
@@ -1415,50 +1413,6 @@
       "message": "Esto costará 5 créditos. Los modelos premium ofrecen resultados con calidad cinematográfica y detalles fotorrealistas."
     }
   },
-  "Referral": {
-    "title": "Programa de Referidos",
-    "linkLabel": "Tu enlace de referido",
-    "linkUnavailable": "Enlace no disponible",
-    "creditsLabel": "Créditos ganados por referidos",
-    "copyLabel": "Copiar enlace",
-    "copiedLabel": "¡Copiado!",
-    "Promo": {
-      "headerText": "Invita amigos, gana créditos gratis",
-      "headerCta": "Saber más",
-      "badge": "Programa de Referidos",
-      "sectionTitle": "Gana Créditos Gratis",
-      "sectionSubtitle": "Comparte Bunshin 3D con tus amigos y gana créditos.",
-      "bonusTitle": "Bonos de Referido",
-      "bonusSubtitle": "Gana créditos en cada paso",
-      "bonusBadgeSignup": "+2 créditos",
-      "bonusBadgePayment": "+10 créditos",
-      "bonusCaption": "Sin límites. Acumula créditos.",
-      "steps": {
-        "invite": {
-          "title": "Comparte Tu Enlace",
-          "description": "Envía tu enlace de referido único",
-          "desc": "Envía tu enlace de referido único"
-        },
-        "signup": {
-          "title": "Tu Amigo se Registra",
-          "description": "Crea una cuenta con tu enlace",
-          "desc": "Crea una cuenta con tu enlace"
-        },
-        "pay": {
-          "title": "Tu Amigo Compra",
-          "description": "Cuando compra créditos, ambos ganan",
-          "desc": "Cuando compra créditos, ambos ganan"
-        }
-      },
-      "ctaPrimary": "Copiar Enlace",
-      "ctaSecondary": "Ir al Panel",
-      "highlightTag": "CRÉDITOS GRATIS",
-      "pricingTitle": "Refiere y Ahorra",
-      "pricingSubtitle": "Gana créditos invitando amigos",
-      "footerTitle": "¡Invita a tus amigos y gana créditos gratis!",
-      "footerCta": "Empezar a Ganar"
-    }
-  },
   "FAQ": {
     "items": [
       {
@@ -1482,7 +1436,7 @@
         "answer": "¡Sí! Todos los modelos generados son tuyos para uso comercial."
       },
       {
-        "question": "¿Cómo funciona el programa de referidos?",
+        "question": "¿Cómo funciona el planes de créditos?",
         "answer": "Comparte tu enlace único. +2 créditos por registro, +10 créditos por primera compra. Sin límites."
       }
     ]
@@ -1892,7 +1846,7 @@
       "faq3Q": "¿Es Bunshin 3D más barato que Luma AI?",
       "faq3A": "Bunshin 3D ofrece créditos de pago por uso desde $3.99 por 10 generaciones. Luma AI ofrece algunas generaciones gratuitas con niveles de pago para mayor uso. La comparación de costes depende de tu volumen.",
       "faq4Q": "¿Puedo usar modelos de ambas plataformas en Unity?",
-      "faq4A": "Sí. Ambas plataformas exportan archivos GLB compatibles con Unity. Bunshin 3D también exporta en FBX, el formato de importación preferido de Unity.",
+      "faq4A": "Sí. Ambas plataformas exportan archivos GLB compatibles con Unity. Bunshin 3D también exporta en FBX, el formato de importación pcréditos de Unity.",
       "faq5Q": "¿Qué plataforma es más fácil para empezar?",
       "faq5A": "Ambas plataformas son sencillas. Bunshin 3D solo requiere subir una imagen. obtienes un modelo 3D descargable en menos de 30 segundos con 2 créditos gratis al registrarte.",
       "ctaTitle": "¿Listo para probar Bunshin 3D?",
@@ -2255,7 +2209,7 @@
       "step3Title": "Descarga tu archivo FBX",
       "step3Desc": "Obtén un archivo FBX listo para Unity, Unreal Engine, Maya o 3ds Max. Importa directamente y empieza a construir.",
       "faq1Q": "¿Puedo importar el FBX en Unity?",
-      "faq1A": "Sí. FBX es el formato de importación preferido de Unity. Arrastra el archivo a tu carpeta Assets y Unity importará automáticamente la malla, materiales y datos UV.",
+      "faq1A": "Sí. FBX es el formato de importación pcréditos de Unity. Arrastra el archivo a tu carpeta Assets y Unity importará automáticamente la malla, materiales y datos UV.",
       "faq2Q": "¿El FBX funciona con Unreal Engine?",
       "faq2A": "Sí. FBX es el formato de importación estándar para Unreal Engine. Usa el diálogo de importación FBX para incorporar la malla con soporte completo de materiales.",
       "faq3Q": "¿Puedo animar el modelo FBX?",
@@ -2263,7 +2217,7 @@
       "faq4Q": "¿Cuál es la diferencia entre FBX y GLB para juegos?",
       "faq4A": "FBX es ideal para pipelines de desarrollo de juegos offline (importación en Unity/Unreal). GLB es mejor para carga en tiempo real y 3D web. Muchos desarrolladores usan FBX durante el desarrollo y GLB para la entrega final.",
       "faq5Q": "¿Es el FBX adecuado para impresión 3D?",
-      "faq5A": "FBX puede usarse para impresión 3D, pero STL es el formato preferido por los laminadores. Si tu objetivo es impresión 3D, descarga el formato STL para compatibilidad garantizada con laminadores.",
+      "faq5A": "FBX puede usarse para impresión 3D, pero STL es el formato pcréditos por los laminadores. Si tu objetivo es impresión 3D, descarga el formato STL para compatibilidad garantizada con laminadores.",
       "ctaTitle": "¿Listo para convertir tu imagen a FBX?",
       "ctaDescription": "Sube cualquier imagen y obtén un archivo FBX listo para motores de juego en segundos. Perfecto para Unity, Unreal y flujos de trabajo de animación."
     },

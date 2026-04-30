@@ -6,7 +6,6 @@ import JsonLd from "@/components/seo/JsonLd";
 import PricingTable from "@/components/marketing/PricingTable";
 import { baseMetadataConfig } from "@/lib/seo-config";
 import { getPricingSchemas } from "@/lib/schemas/pricing";
-import ReferralPromoPanel from "@/components/referral/ReferralPromoPanel";
 import { generateAlternates, generateOGMetadata, APP_URL } from "@/lib/seo-utils";
 import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
@@ -151,12 +150,6 @@ export default async function PricingPage({
           <PricingTable userId={user?.id ?? null} />
         </div>
 
-        {}
-        <div className="relative z-10 mt-16 max-w-5xl mx-auto px-4">
-          <ReferralPromoPanel />
-        </div>
-
-        {}
         <div className="relative z-10 mt-20 max-w-3xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-10 tracking-tight">
             {tFaq("title")}

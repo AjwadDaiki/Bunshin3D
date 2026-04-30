@@ -946,8 +946,6 @@
       "headline": "Your creativity deserves more.",
       "description": "This generation requires {count} credits. Top up or invite a friend to earn free credits.",
       "ctaPricing": "Buy Credits",
-      "ctaReferral": "Earn with Referrals",
-      "note": "Invite a friend: +{signup} on signup, +{payment} after their first purchase.",
       "close": "Close",
       "creditsLabel": "credits"
     }
@@ -1072,7 +1070,7 @@
       "q4": "Can I use the models commercially?",
       "a4": "Yes! All credit packs include a full commercial license. You can use your generated 3D models in games, products, marketing materials, and more.",
       "q5": "How does the AI generation work?",
-      "a5": "Our AI analyzes your 2D image or text description and generates a detailed 3D mesh with textures. The process takes about 30 seconds and runs on priority GPU servers."
+      "a5": "With your 2 free signup credits, you can generate 2 models in standard quality. After that, credit packs start at 3.99 dollars for 10 generations."
     },
     "Checkout": {
       "loginRequired": "Please log in to continue.",
@@ -1412,50 +1410,6 @@
       "message": "This will cost 5 credits. Premium models offer cinema-quality results with photorealistic details."
     }
   },
-  "Referral": {
-    "title": "Referral Program",
-    "linkLabel": "Your referral link",
-    "linkUnavailable": "Link unavailable",
-    "creditsLabel": "Credits earned from referrals",
-    "copyLabel": "Copy link",
-    "copiedLabel": "Copied!",
-    "Promo": {
-      "headerText": "Invite friends, earn free credits",
-      "headerCta": "Learn More",
-      "badge": "Referral Program",
-      "sectionTitle": "Earn Free Credits",
-      "sectionSubtitle": "Share Bunshin 3D with your friends and earn credits for every signup and purchase.",
-      "bonusTitle": "Referral Bonuses",
-      "bonusSubtitle": "Earn credits at every step",
-      "bonusBadgeSignup": "+2 credits",
-      "bonusBadgePayment": "+10 credits",
-      "bonusCaption": "No limits. Stack credits.",
-      "steps": {
-        "invite": {
-          "title": "Share Your Link",
-          "description": "Send your unique referral link to friends",
-          "desc": "Send your unique referral link to friends"
-        },
-        "signup": {
-          "title": "Friend Signs Up",
-          "description": "They create an account using your link",
-          "desc": "They create an account using your link"
-        },
-        "pay": {
-          "title": "Friend Purchases",
-          "description": "When they buy credits, you both win",
-          "desc": "When they buy credits, you both win"
-        }
-      },
-      "ctaPrimary": "Copy Referral Link",
-      "ctaSecondary": "Go to Dashboard",
-      "highlightTag": "FREE CREDITS",
-      "pricingTitle": "Refer & Save",
-      "pricingSubtitle": "Earn credits by inviting friends",
-      "footerTitle": "Invite your friends and earn free credits for every signup!",
-      "footerCta": "Start Earning"
-    }
-  },
   "Showcase": {
     "generatedAsset": "Generated Asset",
     "viewModel": "View Model",
@@ -1543,8 +1497,8 @@
         "answer": "Yes! All generated models are yours to use commercially, including for games, 3D printing, and professional projects."
       },
       {
-        "question": "How does the referral program work?",
-        "answer": "Share your unique referral link. When a friend signs up, you get +2 credits. When they make their first purchase, you get +10 credits. There are no limits on referral earnings."
+        "question": "How are credits priced?",
+        "answer": "Credit packs start at 3.99 dollars for 10 generations. Credits never expire and there is no monthly subscription. Bigger packs cost less per credit."
       }
     ]
   },

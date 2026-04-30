@@ -460,7 +460,7 @@
       "faq4Q": "Quelle est la qualité des modèles générés ?",
       "faq4A": "La qualité standard produit des modèles détaillés et utilisables. Pour un résultat cinématographique, la qualité premium est disponible pour 5 crédits.",
       "faq5Q": "Combien de modèles puis-je générer gratuitement ?",
-      "faq5A": "Avec les 2 crédits offerts, vous pouvez générer 2 modèles en qualité standard. Vous pouvez ensuite gagner plus de crédits via le programme de parrainage.",
+      "faq5A": "Avec les 2 crédits offerts, vous pouvez générer 2 modèles en qualité standard. Au-delà, des packs de crédits sont disponibles.",
       "ctaTitle": "Essayez la conversion 3D gratuite",
       "ctaDescription": "2 crédits offerts à l'inscription. Aucune carte bancaire requise. Résultat en 30 secondes."
     },
@@ -949,8 +949,6 @@
       "headline": "Votre créativité mérite mieux.",
       "description": "Cette génération nécessite {count} crédits. Rechargez ou invitez un ami pour gagner des crédits gratuits.",
       "ctaPricing": "Acheter des crédits",
-      "ctaReferral": "Gagner avec des parrainages",
-      "note": "Invitez un ami : +{signup} à l'inscription, +{payment} après son premier achat.",
       "close": "Fermer",
       "creditsLabel": "crédits"
     }
@@ -1075,7 +1073,7 @@
       "q4": "Puis-je utiliser les modèles commercialement ?",
       "a4": "Oui ! Tous les packs incluent une licence commerciale complete. Vous pouvez utiliser vos modeles 3D dans des jeux, produits, supports marketing, etc.",
       "q5": "Comment fonctionne la génération IA ?",
-      "a5": "Notre IA analyse votre image 2D ou description textuelle et genere un maillage 3D detaille avec textures. Le processus prend environ 30 secondes sur des serveurs GPU prioritaires."
+      "a5": "Avec vos 2 crédits gratuits à l'inscription, vous pouvez générer 2 modèles en qualité standard. Ensuite, les packs de crédits commencent à 2,99 euros pour 10 générations."
     },
     "Checkout": {
       "loginRequired": "Veuillez vous connecter pour continuer.",
@@ -1415,50 +1413,6 @@
       "message": "Cela coûtera 5 crédits. Les modèles premium offrent des résultats qualité cinéma avec des détails photoréalistes."
     }
   },
-  "Referral": {
-    "title": "Programme de Parrainage",
-    "linkLabel": "Votre lien de parrainage",
-    "linkUnavailable": "Lien indisponible",
-    "creditsLabel": "Crédits gagnés par parrainage",
-    "copyLabel": "Copier le lien",
-    "copiedLabel": "Copié !",
-    "Promo": {
-      "headerText": "Invitez vos amis, gagnez des crédits gratuits",
-      "headerCta": "En savoir plus",
-      "badge": "Programme de Parrainage",
-      "sectionTitle": "Gagnez des Crédits Gratuits",
-      "sectionSubtitle": "Partagez Bunshin 3D avec vos amis et gagnez des crédits à chaque inscription et achat.",
-      "bonusTitle": "Bonus de Parrainage",
-      "bonusSubtitle": "Gagnez des crédits à chaque étape",
-      "bonusBadgeSignup": "+2 crédits",
-      "bonusBadgePayment": "+10 crédits",
-      "bonusCaption": "Sans limites. Cumulez vos crédits.",
-      "steps": {
-        "invite": {
-          "title": "Partagez Votre Lien",
-          "description": "Envoyez votre lien de parrainage unique à vos amis",
-          "desc": "Envoyez votre lien de parrainage unique à vos amis"
-        },
-        "signup": {
-          "title": "Votre Ami s'Inscrit",
-          "description": "Il crée un compte via votre lien",
-          "desc": "Il crée un compte via votre lien"
-        },
-        "pay": {
-          "title": "Votre Ami Achète",
-          "description": "Quand il achète des crédits, vous gagnez tous les deux",
-          "desc": "Quand il achète des crédits, vous gagnez tous les deux"
-        }
-      },
-      "ctaPrimary": "Copier le Lien de Parrainage",
-      "ctaSecondary": "Aller au Tableau de Bord",
-      "highlightTag": "CRÉDITS GRATUITS",
-      "pricingTitle": "Parrainez & Économisez",
-      "pricingSubtitle": "Gagnez des crédits en invitant vos amis",
-      "footerTitle": "Invitez vos amis et gagnez des crédits gratuits à chaque inscription !",
-      "footerCta": "Commencer à Gagner"
-    }
-  },
   "FAQ": {
     "items": [
       {
@@ -1482,8 +1436,8 @@
         "answer": "Oui ! Tous les modèles générés sont à vous pour un usage commercial, y compris pour les jeux, l'impression 3D et les projets professionnels."
       },
       {
-        "question": "Comment fonctionne le programme de parrainage ?",
-        "answer": "Partagez votre lien unique. Quand un ami s'inscrit, vous recevez +2 crédits. Quand il effectue son premier achat, vous recevez +10 crédits. Il n'y a aucune limite."
+        "question": "Comment sont calculés les prix des crédits ?",
+        "answer": "Les packs de crédits commencent à 2,99 euros pour 10 générations. Les crédits n'expirent jamais et il n'y a pas d'abonnement mensuel. Les gros packs coûtent moins cher au crédit."
       }
     ]
   },

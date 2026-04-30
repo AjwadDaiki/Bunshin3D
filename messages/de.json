@@ -458,7 +458,7 @@
       "faq3Q": "Kann ich die kostenlosen Modelle kommerziell nutzen?",
       "faq3A": "Ja, auch mit kostenlosen Credits generierte Modelle unterliegen unserer kommerziellen Lizenz.",
       "faq4Q": "Wie bekomme ich mehr kostenlose Credits?",
-      "faq4A": "Über unser Empfehlungsprogramm: Laden Sie Freunde ein und erhalten Sie zusätzliche kostenlose Credits.",
+      "faq4A": "Über unser Credit Pakete: Laden Sie Freunde ein und erhalten Sie zusätzliche kostenlose Credits.",
       "faq5Q": "Was ist der Unterschied zwischen Standard und Premium?",
       "faq5A": "Standard (1 Credit) liefert gute Qualität für die meisten Zwecke. Premium (5 Credits) bietet Kinoqualität mit fotorealistischen Texturen.",
       "ctaTitle": "Jetzt kostenlos 3D-Modelle erstellen",
@@ -949,8 +949,6 @@
       "headline": "Ihre Kreativität verdient mehr.",
       "description": "Diese Generierung erfordert {count} Credits. Laden Sie auf oder laden Sie einen Freund ein, um kostenlose Credits zu erhalten.",
       "ctaPricing": "Credits kaufen",
-      "ctaReferral": "Mit Empfehlungen verdienen",
-      "note": "Einen Freund einladen: +{signup} bei der Registrierung, +{payment} nach dem ersten Kauf.",
       "close": "Schließen",
       "creditsLabel": "Credits"
     }
@@ -1075,7 +1073,7 @@
       "q4": "Kann ich die Modelle kommerziell nutzen?",
       "a4": "Ja! Alle Credit-Pakete enthalten eine vollstandige kommerzielle Lizenz. Sie konnen Ihre 3D-Modelle in Spielen, Produkten, Marketingmaterialien und mehr verwenden.",
       "q5": "Wie funktioniert die KI-Generierung?",
-      "a5": "Unsere KI analysiert Ihr 2D-Bild oder Ihre Textbeschreibung und generiert ein detailliertes 3D-Mesh mit Texturen. Der Prozess dauert ca. 30 Sekunden auf prioritaren GPU-Servern."
+      "a5": "Mit deinen 2 Gratis Credits bei der Anmeldung kannst du 2 Modelle in Standardqualität generieren. Danach starten die Credit Pakete bei 2,99 Euro für 10 Generierungen."
     },
     "Checkout": {
       "loginRequired": "Bitte melden Sie sich an, um fortzufahren.",
@@ -1415,50 +1413,6 @@
       "message": "Dies kostet 5 Credits. Premium-Modelle bieten Ergebnisse in Kinoqualität mit fotorealistischen Details."
     }
   },
-  "Referral": {
-    "title": "Empfehlungsprogramm",
-    "linkLabel": "Ihr Empfehlungslink",
-    "linkUnavailable": "Link nicht verfügbar",
-    "creditsLabel": "Durch Empfehlungen verdiente Credits",
-    "copyLabel": "Link kopieren",
-    "copiedLabel": "Kopiert!",
-    "Promo": {
-      "headerText": "Freunde einladen, kostenlose Credits verdienen",
-      "headerCta": "Mehr erfahren",
-      "badge": "Empfehlungsprogramm",
-      "sectionTitle": "Kostenlose Credits verdienen",
-      "sectionSubtitle": "Teilen Sie Bunshin 3D mit Ihren Freunden und verdienen Sie Credits für jede Anmeldung und jeden Kauf.",
-      "bonusTitle": "Empfehlungsboni",
-      "bonusSubtitle": "Verdienen Sie Credits bei jedem Schritt",
-      "bonusBadgeSignup": "+2 Credits",
-      "bonusBadgePayment": "+10 Credits",
-      "bonusCaption": "Keine Limits. Credits stapeln.",
-      "steps": {
-        "invite": {
-          "title": "Ihren Link teilen",
-          "description": "Senden Sie Ihren einzigartigen Empfehlungslink an Freunde",
-          "desc": "Senden Sie Ihren einzigartigen Empfehlungslink an Freunde"
-        },
-        "signup": {
-          "title": "Freund meldet sich an",
-          "description": "Er erstellt ein Konto über Ihren Link",
-          "desc": "Er erstellt ein Konto über Ihren Link"
-        },
-        "pay": {
-          "title": "Freund kauft",
-          "description": "Wenn er Credits kauft, gewinnen beide",
-          "desc": "Wenn er Credits kauft, gewinnen beide"
-        }
-      },
-      "ctaPrimary": "Empfehlungslink kopieren",
-      "ctaSecondary": "Zum Dashboard",
-      "highlightTag": "KOSTENLOSE CREDITS",
-      "pricingTitle": "Empfehlen & sparen",
-      "pricingSubtitle": "Credits verdienen durch Einladungen",
-      "footerTitle": "Laden Sie Ihre Freunde ein und verdienen Sie bei jeder Anmeldung kostenlose Credits!",
-      "footerCta": "Jetzt verdienen"
-    }
-  },
   "Showcase": {
     "generatedAsset": "Generiertes Asset",
     "viewModel": "Modell ansehen",
@@ -1546,8 +1500,8 @@
         "answer": "Ja! Alle generierten Modelle gehören Ihnen und können kommerziell genutzt werden, inklusive für Spiele, 3D-Druck und professionelle Projekte."
       },
       {
-        "question": "Wie funktioniert das Empfehlungsprogramm?",
-        "answer": "Teilen Sie Ihren individuellen Empfehlungslink. Wenn sich ein Freund anmeldet, erhalten Sie +2 Credits. Wenn er seinen ersten Kauf tätigt, erhalten Sie +10 Credits. Es gibt keine Limits."
+        "question": "Wie funktioniert das Credit Pakete?",
+        "answer": "Teilen Sie Ihren individuellen Credit link. Wenn sich ein Freund anmeldet, erhalten Sie +2 Credits. Wenn er seinen ersten Kauf tätigt, erhalten Sie +10 Credits. Es gibt keine Limits."
       }
     ]
   },

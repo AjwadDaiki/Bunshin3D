@@ -460,7 +460,7 @@
       "faq4Q": "生成需要多长时间？",
       "faq4A": "通常30秒内完成。",
       "faq5Q": "可以邀请朋友获取积分吗？",
-      "faq5A": "可以！通过推荐计划，朋友注册+2积分，首次购买+10积分。",
+      "faq5A": "可以！通过积分包，朋友注册+2积分，首次购买+10积分。",
       "ctaTitle": "立即免费生成3D模型",
       "ctaDescription": "注册获取免费积分。上传图片即可由AI转换为3D。"
     },
@@ -949,8 +949,6 @@
       "headline": "你的创造力值得更多。",
       "description": "本次生成需要 {count} 积分。充值或邀请好友获取免费积分。",
       "ctaPricing": "购买积分",
-      "ctaReferral": "通过邀请赚取",
-      "note": "邀请好友：注册 +{signup}，首次购买后 +{payment}。",
       "close": "关闭",
       "creditsLabel": "积分"
     }
@@ -1075,7 +1073,7 @@
       "q4": "我可以将模型用于商业用途吗？",
       "a4": "可以！所有积分包都包含完整的商业许可证。您可以在游戏、产品、营销材料等中使用生成的3D模型。",
       "q5": "AI生成是如何工作的？",
-      "a5": "我们的AI分析您的2D图片或文字描述，生成带有纹理的详细3D网格。该过程在优先GPU服务器上大约需要30秒。"
+      "a5": "注册送 2 个免费积分，可以生成 2 个标准质量的模型。之后可以购买积分包，10 次起价 3.99 美元。"
     },
     "Checkout": {
       "loginRequired": "请登录以继续。",
@@ -1415,50 +1413,6 @@
       "message": "这将消耗5积分。高级模型提供具有照片级真实细节的电影质量结果。"
     }
   },
-  "Referral": {
-    "title": "推荐计划",
-    "linkLabel": "你的推荐链接",
-    "linkUnavailable": "链接不可用",
-    "creditsLabel": "通过推荐获得的积分",
-    "copyLabel": "复制链接",
-    "copiedLabel": "已复制！",
-    "Promo": {
-      "headerText": "邀请好友，赚取免费积分",
-      "headerCta": "了解更多",
-      "badge": "推荐计划",
-      "sectionTitle": "赚取免费积分",
-      "sectionSubtitle": "与好友分享 Bunshin 3D，每次注册和购买都能获得积分。",
-      "bonusTitle": "推荐奖励",
-      "bonusSubtitle": "每个步骤都能赚积分",
-      "bonusBadgeSignup": "+2 积分",
-      "bonusBadgePayment": "+10 积分",
-      "bonusCaption": "无上限，积分可累积。",
-      "steps": {
-        "invite": {
-          "title": "分享你的链接",
-          "description": "将你的专属推荐链接发给好友",
-          "desc": "将你的专属推荐链接发给好友"
-        },
-        "signup": {
-          "title": "好友注册",
-          "description": "他们通过你的链接创建账户",
-          "desc": "他们通过你的链接创建账户"
-        },
-        "pay": {
-          "title": "好友购买",
-          "description": "当他们购买积分时，双方都获益",
-          "desc": "当他们购买积分时，双方都获益"
-        }
-      },
-      "ctaPrimary": "复制推荐链接",
-      "ctaSecondary": "前往仪表板",
-      "highlightTag": "免费积分",
-      "pricingTitle": "推荐立省",
-      "pricingSubtitle": "邀请好友赚取积分",
-      "footerTitle": "邀请好友注册即可获得免费积分！",
-      "footerCta": "开始赚取"
-    }
-  },
   "Showcase": {
     "generatedAsset": "生成的资产",
     "viewModel": "查看模型",
@@ -1546,8 +1500,8 @@
         "answer": "可以！所有生成的模型均可用于商业用途，包括游戏、3D 打印和专业项目。"
       },
       {
-        "question": "推荐计划如何运作？",
-        "answer": "分享你的专属推荐链接。好友注册可获得 +2 积分，首次购买可获得 +10 积分。推荐奖励无上限。"
+        "question": "积分包如何运作？",
+        "answer": "分享你的专属积分。好友注册可获得 +2 积分，首次购买可获得 +10 积分。推荐奖励无上限。"
       }
     ]
   },

@@ -22,7 +22,6 @@ export async function GET(request: NextRequest) {
   const t = await getApiTranslations(request, "Api.Auth");
   const requestUrl = new URL(request.url);
   const code = requestUrl.searchParams.get("code");
-  const refParam = requestUrl.searchParams.get("ref");
   let next = requestUrl.searchParams.get("next") || "/studio";
 
   if (!next.startsWith("/")) next = "/studio";
@@ -81,7 +80,7 @@ export async function GET(request: NextRequest) {
   const adminClient = await createAdminClient();
   const { data: profile } = await adminClient
     .from("profiles")
-    .select("id, is_banned, referred_by")
+    .select("id, is_banned")
     .eq("id", data.user.id)
     .single();
 
@@ -90,28 +89,6 @@ export async function GET(request: NextRequest) {
     response.headers.set("Cache-Control", "no-store, max-age=0");
     await supabase.auth.signOut();
     return response;
-  }
-
-  const referralCode = refParam?.trim().toUpperCase();
-
-  if (referralCode && profile && !profile.referred_by) {
-    const { data: referrer } = await adminClient
-      .from("profiles")
-      .select("id")
-      .eq("referral_code", referralCode)
-      .maybeSingle();
-
-    if (referrer?.id && referrer.id !== data.user.id) {
-      await adminClient
-        .from("profiles")
-        .update({ referred_by: referrer.id })
-        .eq("id", data.user.id);
-
-      await adminClient.rpc("increment_credits", {
-        amount: 2,
-        target_user_id: referrer.id,
-      });
-    }
   }
 
   return response;

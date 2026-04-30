@@ -8,7 +8,6 @@ import { BunshinLogo } from "../ui/BunshinLogo";
 export default function FooterNew() {
   const t = useTranslations("Footer");
   const tNav = useTranslations("Navigation");
-  const tReferral = useTranslations("Referral.Promo");
 
   return (
     <footer className="relative border-t border-white/6 bg-[#0a0a0a]">
@@ -123,19 +122,6 @@ export default function FooterNew() {
               </li>
             </ul>
           </div>
-        </div>
-
-        <div className="relative mt-12 rounded-xl border border-white/6 bg-[#111] p-6 flex flex-col md:flex-row items-center justify-between gap-4 overflow-hidden">
-          <div className="absolute -right-20 top-1/2 -translate-y-1/2 w-40 h-40 bg-blue-500/10 rounded-full blur-[60px] pointer-events-none" />
-          <p className="text-sm text-neutral-300 font-medium relative">
-            {tReferral("footerTitle")}
-          </p>
-          <Link
-            href="/account"
-            className="relative px-5 py-2.5 rounded-lg bg-white text-neutral-950 font-semibold hover:bg-neutral-100 hover:shadow-lg hover:shadow-white/5 transition-all text-sm"
-          >
-            {tReferral("footerCta")}
-          </Link>
         </div>
 
         <div className="mt-12 pt-8 border-t border-white/6 flex flex-col md:flex-row justify-between items-center gap-4">
