@@ -1,18 +1,18 @@
 {
   "Metadata": {
-    "defaultTitle": "Bunshin 3D | Bild in 3D Modell umwandeln kostenlos - STL & GLB Generator",
-    "templateTitle": "%s | Bunshin 3D - KI 3D-Modell Generator",
-    "description": "Bild in 3D Modell umwandeln - kostenlos mit KI. Fotos, Logos & Zeichnungen in STL für 3D-Druck oder GLB für Unity/Unreal konvertieren. In 30 Sekunden, ohne Vorkenntnisse. Jetzt testen!",
-    "applicationName": "Bunshin 3D",
-    "keywords": "bild 3d konverter, logo zu stl, ki 3d modell generator, kostenloser stl konverter, foto zu 3d modell, 2d zu 3d ki, bild zu glb, png zu stl online, ki 3d druck, logo 3d modell, bild zu 3d, unity 3d assets, spiel asset generator, kostenloser 3d modell ersteller",
+    "defaultTitle": "KI Bild-zu-3D Konverter — kostenlos STL, GLB & OBJ | Bunshin 3D",
+    "templateTitle": "%s | Bunshin 3D - KI Bild zu 3D (STL, GLB, OBJ, FBX)",
+    "description": "Verwandle jedes Bild, Foto, Logo oder Zeichnung mit KI in ein 3D-Modell. Kostenloser Bild-zu-STL, PNG-zu-3D, JPG-zu-GLB und Logo-zu-3D-Druck Konverter — sofortiger Download als STL, GLB, OBJ und FBX. Keine Installation, keine Designkenntnisse.",
+    "applicationName": "Bunshin 3D — KI 3D Generator",
+    "keywords": "bild zu 3d, bild zu 3d konverter, bild zu stl, png zu stl, png zu 3d, jpg zu 3d, foto zu 3d, foto zu 3d druck, logo zu stl, logo zu 3d, zeichnung zu 3d, skizze zu 3d, 2d zu 3d, ki 3d generator, ki 3d modell generator, ki 3d druck, kostenlos 3d modell, stl generator kostenlos, bild zu stl kostenlos, stl konverter online, bild in stl umwandeln, png in stl umwandeln, foto in 3d umwandeln, unity 3d assets, unreal engine assets, blender obj aus bild, godot 3d assets, spiel asset generator, foto in 3d modell, ki bild zu 3d kostenlos",
     "creator": "Bunshin 3D",
     "publisher": "Bunshin 3D",
-    "ogSiteName": "Bunshin 3D - KI 3D-Modell Generator",
-    "ogTitle": "Jedes Bild in 30 Sekunden zum 3D-Modell | Kostenlos",
-    "ogDescription": "Konvertieren Sie Logos, Fotos und Zeichnungen sofort zu STL/GLB. Kostenloser KI 3D-Generator - keine Kenntnisse erforderlich. Perfekt für 3D-Druck und Spieleentwicklung.",
-    "ogImageAlt": "Bunshin 3D - KI konvertiert 2D-Bilder zu 3D-Modellen für Druck und Spiele",
-    "twitterTitle": "ðŸš€ KI Bild zu 3D Konverter | Kostenloser STL & GLB Generator",
-    "twitterDescription": "Verwandeln Sie jedes Bild in Sekunden in ein druckbares 3D-Modell. Kostenloser KI-Konverter - keine Designkenntnisse nötig. Jetzt testen!"
+    "ogSiteName": "Bunshin 3D — KI 3D Modell Generator",
+    "ogTitle": "Bild in 30 Sekunden zum 3D-Modell — kostenloser STL & GLB Konverter",
+    "ogDescription": "Kostenloser KI Bild-zu-3D Konverter: Foto, Logo oder Zeichnung hochladen und STL für 3D-Druck, GLB für Unity/Unreal oder OBJ für Blender herunterladen.",
+    "ogImageAlt": "Bunshin 3D — KI verwandelt Fotos, Logos und Zeichnungen in 3D-Modelle für Druck, Unity, Unreal und Blender",
+    "twitterTitle": "KI Bild-zu-3D Konverter — kostenlos STL, GLB & OBJ",
+    "twitterDescription": "Bilder, Fotos, Logos und Zeichnungen in 3D-Modelle umwandeln. Kostenloser KI Konverter — STL, GLB, OBJ, FBX in Sekunden."
   },
   "SEO": {
     "siteName": "Bunshin 3D",
@@ -61,10 +61,10 @@
     },
     "Hero": {
       "badge": "KI-gestützte 3D-Generierung",
-      "title": "Ihr Bild wird zum",
-      "titleHighlight": "3D-Modell.",
-      "subtitle": "Laden Sie ein Foto oder eine Zeichnung hoch und erhalten Sie eine druckfertige 3D-Datei für Ihre Projekte. Einfach, schnell, keine technischen Kenntnisse nötig.",
-      "ctaPrimary": "Kostenlos testen",
+      "title": "KI Bild-zu-3D Konverter —",
+      "titleHighlight": "STL, GLB & OBJ in 30 Sekunden.",
+      "subtitle": "Foto, Logo oder Zeichnung hochladen — unsere KI generiert ein wasserdichtes 3D-Modell: STL für 3D-Druck, GLB für Unity, Unreal oder Web, OBJ für Blender. Kostenlos testen, ohne Installation, ohne Designkenntnisse.",
+      "ctaPrimary": "Kostenlos testen — Bild zu 3D",
       "ctaSecondary": "Preise ansehen",
       "trustedBy": "KI-GESTÜTZTER 3D-GENERIERUNGS-ENGINE",
       "freeCredits": "2 kostenlose Credits bei Anmeldung",
@@ -73,12 +73,12 @@
       "noCreditCard": "Keine Kreditkarte erforderlich"
     },
     "Showcase": {
-      "title": "Mit Bunshin generiert",
-      "subtitle": "Von einfachen Logos bis zu komplexen Charakteren. Keine manuelle Modellierung erforderlich."
+      "title": "Vom Bild zum 3D-Modell in Sekunden",
+      "subtitle": "Logos, Fotos, Skizzen und Concept Art werden zu druckfertigen STL-Dateien und game-ready GLB-Meshes — ohne manuelles Sculpting."
     },
     "Features": {
-      "title": "Produktionsreife Architektur",
-      "subtitle": "Entwickelt für Profis, die Geschwindigkeit, Präzision und Automatisierung benötigen.",
+      "title": "Der schnellste kostenlose KI Bild-zu-3D Konverter",
+      "subtitle": "Gebaut für 3D-Druck, Spieleentwicklung und Rapid Prototyping. Foto zu STL, PNG zu 3D, Logo zu 3D, Skizze zu Mesh — alles in einem.",
       "speedTitle": "Blitzschnell",
       "speedDesc": "GPU-beschleunigte Inferenz erzeugt Modelle in < 30 Sekunden.",
       "topologyTitle": "Saubere Topologie",
@@ -93,8 +93,8 @@
       "instantDesc": "Laden Sie Ihre Modelle sofort im GLB-, FBX-, OBJ- oder STL-Format herunter."
     },
     "Steps": {
-      "label": "So funktioniert's",
-      "title": "Wie es funktioniert",
+      "label": "Wie der Bild-zu-3D Konverter funktioniert",
+      "title": "In drei Schritten ein Bild in 3D umwandeln",
       "step1": "Bild hochladen",
       "step1Desc": "Ziehen Sie ein PNG, JPG oder WEBP per Drag & Drop.",
       "step2": "KI-Verarbeitung",
@@ -115,12 +115,38 @@
       "button": "Studio starten"
     },
     "SEOContent": {
-      "title1": "Jedes Bild in ein 3D-Modell umwandeln - mit KI",
-      "text1": "Bunshin 3D ist ein KI-gestützter Bild-zu-3D-Konverter, der Fotos, Logos, Zeichnungen und Illustrationen in produktionsreife 3D-Modelle verwandelt. Laden Sie eine PNG-, JPG- oder WEBP-Datei hoch und laden Sie Ihr Modell im STL-Format für den 3D-Druck, GLB für Spiele und Web, OBJ für Blender und Maya oder FBX für Unity und Unreal Engine herunter. Die Konvertierung dauert weniger als 30 Sekunden und erfordert keine 3D-Modellierungserfahrung. Ob Sie ein Firmenlogo in eine STL-Datei für den 3D-Druck umwandeln, Game-Assets aus Concept Art erstellen oder die Zeichnung eines Kindes in eine physische Figur verwandeln möchten - Bunshin 3D erledigt alles aus einem einzigen Bild.",
-      "title2": "Entwickelt für 3D-Druck, Spieleentwicklung und Design",
-      "text2": "Jedes von Bunshin 3D generierte Modell ist wasserdicht und manifold: STL-Dateien laden direkt in Slicer wie Cura, PrusaSlicer und Bambu Studio ohne Reparatur. GLB-Exporte folgen dem glTF 2.0-Standard für native Kompatibilität mit Unity, Unreal Engine, Godot, Three.js und webbasierten 3D-Viewern. Die KI nutzt neuronale Tiefenschätzung zur Rekonstruktion echter 3D-Geometrie - keine flachen Extrusionen oder Lithophane. Das Ergebnis ist ein vollständig dreidimensionales Mesh mit Tiefe, Kurven und Hinterschneidungen für Prototyping, Produktvisualisierung, Bildungsprojekte und kommerzielle Produktion.",
-      "title3": "Kostenlose Credits, kein Abo, volle kommerzielle Rechte",
-      "text3": "Registrieren Sie sich und erhalten Sie kostenlose Credits zum Testen der Plattform - keine Kreditkarte erforderlich. Credits verfallen nie und es gibt keine monatlichen Abonnements. Jedes 3D-Modell, das Sie generieren, wird mit vollen kommerziellen Rechten geliefert: Verwenden Sie es in Produkten, Spielen, Drucken oder Kundenprojekten ohne Einschränkungen. Credit-Pakete beginnen ab 3,99 € für 10 Generierungen mit Mengenrabatten für größere Pakete. Bunshin 3D unterstützt sechs Sprachen und mehrere Währungen und bedient Kreative in über 80 Ländern weltweit."
+      "title1": "KI Bild-zu-3D Konverter — STL, GLB, OBJ & FBX",
+      "text1": "Bunshin 3D ist ein kostenloser KI-gestützter Bild-zu-3D Konverter, der jedes Foto, Logo, jede Zeichnung oder Concept Art in ein produktionsreifes 3D-Modell verwandelt. Lade ein PNG, JPG oder WEBP hoch und lade dein Modell als wasserdichtes STL für 3D-Druck, GLB für Unity, Unreal Engine, Godot und Web, OBJ für Blender und Maya oder FBX für ältere Pipelines herunter. Konvertierung in unter 30 Sekunden — ohne 3D-Modellierungserfahrung, ohne Software-Installation, ohne Kreditkarte.",
+      "title2": "Gebaut für 3D-Druck, Spiele und Rapid Prototyping",
+      "text2": "Jede vom Bild-zu-STL-Engine erzeugte Datei ist manifold und wasserdicht, sodass sie direkt in Slicer wie Cura, PrusaSlicer und Bambu Studio geladen werden kann — ganz ohne Reparatur. GLB-Exporte folgen dem glTF 2.0 Standard und sind nativ kompatibel mit Unity, Unreal Engine, Godot, Three.js und Online-Viewern. Das neuronale Tiefen-Pipeline rekonstruiert echte volumetrische Geometrie — keine flachen Extrusionen, keine Lithophanien — perfekt für Prototyping, Produktvisualisierung, Bildung, Spielassets und kommerzielle Produktion.",
+      "title3": "Gratis-Credits, kein Abo, volle kommerzielle Lizenz",
+      "text3": "Registrieren und Gratis-Credits zum Testen erhalten — keine Kreditkarte nötig. Credits laufen nie ab, kein Monatsabo, jedes generierte 3D-Modell kommt mit voller kommerzieller Lizenz: Verwende es im Spiel, verkaufe Drucke, liefere Kundenprojekte, ohne Tantiemen. Credit-Pakete starten bei 2,99 € für 10 Generierungen mit Mengenrabatten. Bunshin 3D unterstützt sieben Sprachen und mehrere Währungen für Kreative in über 80 Ländern.",
+      "title4": "Fotos, PNG, JPG und Logos in druckbares STL umwandeln",
+      "text4": "Nutze den Foto-zu-3D Konverter für Figuren aus Schnappschüssen, das PNG-zu-STL Tool für Schilder und Plaketten aus transparenten PNGs, die Logo-zu-3D-Druck Pipeline um Markenzeichen in Tischobjekte zu verwandeln, und die Zeichnung-zu-3D Engine um Kinderkunst real werden zu lassen. Jede Eingabe — Skizze, Screenshot, Vektor-Logo, gescannte Seite — wird zu einem druckbaren STL mit sauberen Wänden, ohne dünne Schalen, ohne manuelle Reparatur.",
+      "title5": "KI 3D Asset Generator für Unity, Unreal, Godot und Blender",
+      "text5": "Spielestudios und Indie-Entwickler nutzen Bunshin 3D als schnellen Asset-Generator: Concept-Art-Bild hochladen und ein quad-freundliches OBJ für Blender-Retopo, ein GLB zum direkten Drag-and-Drop in Unity oder Unreal oder ein FBX für ältere Pipelines erhalten. Jedes Modell enthält PBR-Texturen (Albedo, Normalen, Rauheit), sodass es ohne Materialaufwand in Echtzeitszenen passt. Ideal für Prototyping, Game Jams, Asset-Packs, AR/VR-Szenen oder AAA-Pre-Production."
+    },
+    "KeywordHub": {
+      "label": "Beliebte Suchanfragen",
+      "title": "Was kannst du mit Bunshin in 3D umwandeln?",
+      "subtitle": "Direktlinks zu den meistgenutzten Bild-zu-3D Konvertierungen.",
+      "items": {
+        "imageToStl": "Bild zu STL Konverter",
+        "pngToStl": "PNG zu STL online",
+        "jpgTo3d": "JPG zu 3D Modell",
+        "photoTo3dPrint": "Foto zu 3D-Druck",
+        "logoToStl": "Logo zu STL für 3D-Druck",
+        "logoTo3d": "Logo zu 3D Modell",
+        "drawingTo3d": "Zeichnung zu 3D Modell",
+        "sketchTo3d": "Skizze zu 3D Mesh",
+        "imageToGlb": "Bild zu GLB für Unity",
+        "imageToObj": "Bild zu OBJ für Blender",
+        "unityAssets": "Unity 3D Assets aus Fotos",
+        "unrealAssets": "Unreal Engine Assets aus Bildern",
+        "aiGameAssets": "KI Spiel-Asset Generator",
+        "freeStl": "Kostenloser STL-Datei Generator",
+        "aiImageTo3d": "KI Bild zu 3D Modell — kostenlos"
+      }
     }
   },
   "Footer": {
@@ -1160,26 +1186,6 @@
       },
       "stripeTestCheckout": "Mit Stripe Checkout testen",
       "stripeTestInfo": "Stripe-Test: Verwenden Sie die Karte 4242 4242 4242 4242, ein zukünftiges Datum, eine beliebige CVC. Vollständiger Ablauf mit Test-Webhook."
-    },
-    "ApplyPromo": {
-      "title": "Promotion anwenden",
-      "subtitle": "OTO-Angebot für einen Benutzer aktivieren",
-      "description": "Aktivieren Sie manuell das Werbeangebot (OTO) für einen beliebigen Benutzer. Er sieht die reduzierten Preise für die gewählte Dauer.",
-      "selectDuration": "Aktionsdauer",
-      "durations": {
-        "24": "24 Stunden",
-        "48": "48 Stunden",
-        "72": "72 Stunden",
-        "168": "7 Tage",
-        "custom": "Benutzerdefiniert"
-      },
-      "customHours": "Dauer in Stunden",
-      "currentStatus": "Aktueller Status",
-      "promoActive": "Promo aktiv - {time} verbleibend",
-      "promoInactive": "Keine aktive Promotion",
-      "apply": "Promotion anwenden",
-      "remove": "Promotion entfernen",
-      "warning": "Der Benutzer sieht die reduzierten OTO-Preise für Discovery- und Studio-Pakete während der gewählten Dauer."
     }
   },
   "PaymentEmail": {
@@ -1396,8 +1402,8 @@
     "generatedAsset": "Generiertes Asset",
     "viewModel": "Modell ansehen",
     "download": "Herunterladen",
-    "title": "Mit Bunshin erstellt",
-    "subtitle": "Von einfachen Logos bis zu komplexen Charakteren. Sehen Sie, was unsere KI erstellen kann.",
+    "title": "Vom Bild zum 3D-Modell in Sekunden",
+    "subtitle": "Logos, Fotos, Skizzen und Concept Art werden zu druckfertigen STL-Dateien und game-ready GLB-Meshes — ohne manuelles Sculpting.",
     "badges": {
       "premium": "Premium",
       "standard": "Standard"
@@ -1453,32 +1459,6 @@
       "hache": "Axt",
       "tasse": "Tasse",
       "lampe": "Lampe"
-    }
-  },
-  "OTO": {
-    "close": "Schließen",
-    "badge": "Exklusives Willkommensangebot",
-    "title": "Ihre Kreativität verdient Besseres.",
-    "subtitle": "Sichern Sie sich Ihre ersten Credits zu einem unschlagbaren Preis. Dieses Angebot läuft bald ab.",
-    "discountBadge": "BIS ZU -67 %",
-    "discovery": {
-      "name": "Entdeckung",
-      "price": "0.99€",
-      "originalPrice": "2.99€",
-      "credits": "10 Credits enthalten"
-    },
-    "studio": {
-      "name": "Studio Pro",
-      "price": "19.99€",
-      "originalPrice": "29.99€",
-      "credits": "200 Credits enthalten"
-    },
-    "footer": "Einmaliges Angebot. Credits verfallen nie.",
-    "creditsLabel": "Credits",
-    "checkoutError": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.",
-    "banner": {
-      "text": "Willkommensangebot endet in",
-      "cta": "Jetzt sichern"
     }
   },
   "FAQ": {

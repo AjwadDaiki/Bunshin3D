@@ -4,8 +4,7 @@ import React, { useState, useCallback, useMemo } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { Sparkle, Lightning, Cube } from "@phosphor-icons/react";
 import { useCurrency } from "@/components/providers/CurrencyProvider";
-import { useOTO } from "@/components/providers/OTOProvider";
-import { getPriceForCurrency, getOTOPriceForCurrency, isOTOEligible, PRICING_CONFIG, type PackId } from "@/lib/config/pricing";
+import { getPriceForCurrency, PRICING_CONFIG, type PackId } from "@/lib/config/pricing";
 import PricingCard from "./PricingCard";
 import Toast from "@/components/ui/Toast";
 import { createClient } from "@/lib/supabase";
@@ -26,7 +25,6 @@ export default function PricingTable({ userId = null }: PricingTableProps) {
   const t = useTranslations("Pricing");
   const locale = useLocale();
   const { currency, isLoading: currencyLoading } = useCurrency();
-  const { isOfferActive } = useOTO();
   const supabase = useMemo(() => createClient(), []);
   const [loadingPack, setLoadingPack] = useState<string | null>(null);
   const [toast, setToast] = useState<{ message: string; type: "error" | "info" } | null>(null);
@@ -59,7 +57,7 @@ export default function PricingTable({ userId = null }: PricingTableProps) {
       const response = await fetch("/api/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ packId, userId: resolvedUserId, currency, isOTO: isOfferActive && isOTOEligible(packId as PackId), locale }),
+        body: JSON.stringify({ packId, userId: resolvedUserId, currency, locale }),
       });
 
       const data = await response.json();
@@ -82,7 +80,7 @@ export default function PricingTable({ userId = null }: PricingTableProps) {
     } finally {
       setLoadingPack(null);
     }
-  }, [userId, currency, isOfferActive, t, locale, supabase]);
+  }, [userId, currency, t, locale, supabase]);
 
   const packs: {
     id: PackId;
@@ -128,18 +126,12 @@ export default function PricingTable({ userId = null }: PricingTableProps) {
         {packs.map(({ id, icon, isPopular, isBestValue }) => {
           const name = packNameMap[id];
           const priceData = getPriceForCurrency(id, currency);
-          const otoPriceData = isOfferActive ? getOTOPriceForCurrency(id, currency) : null;
 
-          const displayAmount = otoPriceData ? otoPriceData.amount : priceData.amount;
           const formattedPrice = currencyLoading
             ? "---"
-            : formatPrice(displayAmount, priceData.currency, locale);
+            : formatPrice(priceData.amount, priceData.currency, locale);
 
-          const originalPrice = otoPriceData && !currencyLoading
-            ? formatPrice(priceData.amount, priceData.currency, locale)
-            : undefined;
-
-          const perCredit = displayAmount / priceData.credits;
+          const perCredit = priceData.amount / priceData.credits;
           const formattedPerCredit = currencyLoading
             ? "---"
             : formatPrice(perCredit, priceData.currency, locale);
@@ -154,7 +146,6 @@ export default function PricingTable({ userId = null }: PricingTableProps) {
               id={id}
               title={t(`Packs.${name}.name`)}
               price={formattedPrice}
-              originalPrice={originalPrice}
               pricePerCredit={formattedPerCredit}
               savingsPercent={savingsPercent}
               credits={t(`Packs.${name}.credits`)}
@@ -174,7 +165,6 @@ export default function PricingTable({ userId = null }: PricingTableProps) {
               bestValueLabel={isBestValue ? t("Badges.bestValue") : undefined}
               isLoading={loadingPack === id}
               onSelect={() => handleCheckout(id)}
-              isPromo={!!otoPriceData}
             />
           );
         })}

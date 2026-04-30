@@ -1,14 +1,8 @@
-﻿import { NextRequest, NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 import { createClient } from "@supabase/supabase-js";
 import { getApiTranslations } from "@/lib/api-i18n";
 import { getPriceForCurrency, type PackId } from "@/lib/config/pricing";
-
-const OTO_DURATION_MS = 24 * 60 * 60 * 1000;
-const OTO_COUPONS: Record<string, string> = {
-  discovery: process.env.STRIPE_OTO_COUPON_DISCOVERY || "",
-  studio: process.env.STRIPE_OTO_COUPON_STUDIO || "",
-};
 
 export async function POST(request: NextRequest) {
   const t = await getApiTranslations(request, "Api.Checkout");
@@ -27,7 +21,7 @@ export async function POST(request: NextRequest) {
   });
 
   try {
-    const { packId, userId, currency, isOTO, locale: clientLocale } = await request.json();
+    const { packId, userId, currency, locale: clientLocale } = await request.json();
     const locale = clientLocale || "en";
     const origin =
       request.headers.get("origin") || process.env.NEXT_PUBLIC_APP_URL || "";
@@ -42,18 +36,8 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // OTO packs use the same Stripe prices but with a coupon applied
-    const otoPackMapping: Record<string, string> = {
-      oto_discovery: "discovery",
-      oto_studio: "studio",
-    };
-
-    const resolvedPackId = otoPackMapping[packId] || packId;
-    const isOTOPack = packId in otoPackMapping || isOTO;
-
-    // Validate pack and currency using central config
     const validPackIds = ["discovery", "creator", "studio"];
-    if (!validPackIds.includes(resolvedPackId)) {
+    if (!validPackIds.includes(packId)) {
       console.error(t("errors.invalidPack", { packId }));
       return NextResponse.json(
         { error: t("responses.invalidPack") },
@@ -61,7 +45,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const selectedPack = getPriceForCurrency(resolvedPackId as PackId, currency || "USD");
+    const selectedPack = getPriceForCurrency(packId as PackId, currency || "USD");
 
     // Fetch user email for Stripe checkout pre-fill and confirmation email
     const supabaseAdmin = createClient(
@@ -76,24 +60,6 @@ export async function POST(request: NextRequest) {
       userEmail = authUser?.user?.email || undefined;
     } catch {
       console.warn("[Checkout] Could not fetch user email");
-    }
-
-    // Validate OTO eligibility server-side
-    let otoCouponId = "";
-    const packCoupon = OTO_COUPONS[resolvedPackId] || "";
-    if (isOTOPack && packCoupon) {
-      const { data: profile } = await supabaseAdmin
-        .from("profiles")
-        .select("special_offer_started_at")
-        .eq("id", userId)
-        .single();
-
-      if (profile?.special_offer_started_at) {
-        const start = new Date(profile.special_offer_started_at).getTime();
-        if (Date.now() - start < OTO_DURATION_MS) {
-          otoCouponId = packCoupon;
-        }
-      }
     }
 
     console.log(
@@ -123,17 +89,13 @@ export async function POST(request: NextRequest) {
       cancel_url: `${origin}/${locale}/pricing?canceled=true`,
       metadata: {
         userId,
-        packId: resolvedPackId,
+        packId,
         credits: selectedPack.credits.toString(),
         locale,
         userEmail: userEmail || "",
       },
       ...(userEmail ? { customer_email: userEmail } : {}),
     };
-
-    if (otoCouponId) {
-      sessionParams.discounts = [{ coupon: otoCouponId }];
-    }
 
     const session = await stripe.checkout.sessions.create(sessionParams);
 

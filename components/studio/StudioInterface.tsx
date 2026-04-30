@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import StudioHeader from "./StudioHeader";
 import StudioModeToggle from "./StudioModeToggle";
@@ -9,20 +9,16 @@ import StudioViewer from "./StudioViewer";
 import StudioExportPanel from "./StudioExportPanel";
 import StudioPromptSamples from "./StudioPromptSamples";
 import StudioCreditsPrompt from "./StudioCreditsPrompt";
-import OTOPopup from "./OTOPopup";
 import { useStudioUser } from "./useStudioUser";
 import { useStudioState } from "./useStudioState";
 import { useStudioLogs } from "./useStudioLogs";
 import { useStudioGeneration } from "./useStudioGeneration";
 import { useModelDownload, DownloadFormat } from "@/hooks/useModelDownload";
-import { useOTO } from "@/components/providers/OTOProvider";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 
 export default function StudioInterface() {
   const { credits, setCredits, userId } = useStudioUser();
-  const { isOfferActive, timeRemaining, triggerOffer, offerStartedAt } = useOTO();
-  const [otoOpen, setOtoOpen] = useState(false);
   const {
     mode,
     setMode,
@@ -44,7 +40,6 @@ export default function StudioInterface() {
   const { logs, addLog, clearLogs, logsContainerRef } = useStudioLogs();
   const t = useTranslations("Studio");
   const [creditsPromptOpen, setCreditsPromptOpen] = useState(false);
-  const [generationCount, setGenerationCount] = useState(0);
 
   const { handleGenerate } = useStudioGeneration({
     mode,
@@ -54,24 +49,7 @@ export default function StudioInterface() {
     userId,
     credits,
     onInsufficientCredits: () => {
-      if (!offerStartedAt && credits === 0) {
-        // First time reaching 0 credits: trigger the 24h promo and show OTO popup
-        triggerOffer();
-        setOtoOpen(true);
-      } else {
-        // Already triggered before (or promo expired): show normal credits prompt
-        setCreditsPromptOpen(true);
-      }
-    },
-    onGenerationSuccess: () => {
-      const newCount = generationCount + 1;
-      setGenerationCount(newCount);
-      // Trigger OTO after first successful generation (moment of delight)
-      if (newCount === 1 && !offerStartedAt) {
-        triggerOffer();
-        // Show OTO popup after a brief delay so the user sees their result first
-        setTimeout(() => setOtoOpen(true), 2000);
-      }
+      setCreditsPromptOpen(true);
     },
     setCredits,
     setGeneratedImageUrl,
@@ -147,14 +125,7 @@ export default function StudioInterface() {
       <StudioCreditsPrompt
         open={creditsPromptOpen}
         requiredCredits={costInCredits}
-        isPromoActive={isOfferActive}
         onClose={() => setCreditsPromptOpen(false)}
-      />
-      <OTOPopup
-        open={otoOpen}
-        timeRemaining={timeRemaining}
-        userId={userId}
-        onClose={() => setOtoOpen(false)}
       />
     </div>
   );

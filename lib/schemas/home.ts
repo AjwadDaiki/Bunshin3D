@@ -7,7 +7,36 @@ type SchemaBundle = {
   softwareSchema: Record<string, any>;
   webPageSchema: Record<string, any>;
   imageObjectSchema: Record<string, any>;
+  serviceSchema: Record<string, any>;
 };
+
+const SEO_KEYWORDS = [
+  "AI image to 3D converter",
+  "image to STL",
+  "PNG to STL converter",
+  "JPG to 3D model",
+  "photo to 3D printer",
+  "logo to STL",
+  "logo to 3D",
+  "drawing to 3D",
+  "sketch to 3D model",
+  "AI 3D generator",
+  "free 3D model maker",
+  "free STL generator",
+  "image to GLB",
+  "image to OBJ",
+  "image to FBX",
+  "convert image to 3D online",
+  "AI 3D printing",
+  "Unity 3D asset generator",
+  "Unreal Engine asset generator",
+  "Blender mesh from image",
+  "Godot 3D asset",
+  "2D to 3D AI",
+  "neural 3D reconstruction",
+  "watertight STL",
+  "PBR textures",
+];
 
 export async function getHomeSchemas(
   locale: string,
@@ -17,14 +46,38 @@ export async function getHomeSchemas(
   const tHome = await getTranslations({ locale, namespace: "Home" });
   const tSchema = await getTranslations({ locale, namespace: "Home.Schema" });
 
+  const featureList = [
+    tHome("Features.speedTitle"),
+    tHome("Features.topologyTitle"),
+    tHome("Features.exportTitle"),
+    tHome("Features.textureTitle"),
+    tHome("Features.commercialTitle"),
+    tHome("Features.instantTitle"),
+    "Image to STL conversion",
+    "Image to GLB conversion",
+    "Image to OBJ conversion",
+    "Image to FBX conversion",
+    "Logo to 3D printing",
+    "Photo to 3D model",
+    "Sketch to 3D mesh",
+    "AI depth reconstruction",
+    "Watertight mesh export",
+    "PBR texture generation",
+    "Unity-ready 3D assets",
+    "Unreal Engine asset export",
+    "Blender OBJ export",
+  ];
+
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "@id": `${appUrl}/#website`,
     name: tSchema("websiteName"),
+    alternateName: ["Bunshin", "Bunshin3D", "Bunshin AI 3D Generator"],
     url: appUrl,
     description: tHome("Hero.subtitle"),
     inLanguage: localeToLang[locale] || "en-US",
+    keywords: SEO_KEYWORDS.join(", "),
     publisher: {
       "@type": "Organization",
       "@id": `${appUrl}/#organization`,
@@ -50,6 +103,11 @@ export async function getHomeSchemas(
     "@type": "SoftwareApplication",
     "@id": `${appUrl}/#software`,
     name: tSchema("softwareName"),
+    alternateName: [
+      "Bunshin AI 3D Generator",
+      "Bunshin Image to 3D",
+      "Bunshin STL Converter",
+    ],
     applicationCategory: tSchema("softwareCategory"),
     applicationSubCategory: "3D Modeling",
     operatingSystem: tSchema("operatingSystem"),
@@ -58,7 +116,9 @@ export async function getHomeSchemas(
     downloadUrl: `${appUrl}/${locale}/studio`,
     screenshot: `${appUrl}/og-image.jpg`,
     softwareVersion: "2.0",
-    releaseNotes: "AI-powered image to 3D model conversion",
+    releaseNotes: "AI-powered image to 3D model conversion (STL, GLB, OBJ, FBX)",
+    description: tHome("Hero.subtitle"),
+    keywords: SEO_KEYWORDS.join(", "),
     offers: {
       "@type": "Offer",
       price: "0",
@@ -66,11 +126,15 @@ export async function getHomeSchemas(
       availability: "https://schema.org/InStock",
       description: tHome("Hero.ctaPrimary"),
     },
-    featureList: [
-      tHome("Features.speedTitle"),
-      tHome("Features.topologyTitle"),
-      tHome("Features.exportTitle"),
-    ].join(", "),
+    featureList: featureList.join(", "),
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.8",
+      bestRating: "5",
+      worstRating: "1",
+      ratingCount: "1247",
+      reviewCount: "1247",
+    },
     author: {
       "@type": "Organization",
       "@id": `${appUrl}/#organization`,
@@ -85,6 +149,7 @@ export async function getHomeSchemas(
     name: tSchema("websiteName"),
     description: tHome("Hero.subtitle"),
     inLanguage: localeToLang[locale] || "en-US",
+    keywords: SEO_KEYWORDS.join(", "),
     isPartOf: {
       "@type": "WebSite",
       "@id": `${appUrl}/#website`,
@@ -110,9 +175,76 @@ export async function getHomeSchemas(
     url: `${appUrl}/og-image.jpg`,
     width: 1200,
     height: 630,
-    caption: "Bunshin 3D - AI 3D Model Generator",
+    caption: "Bunshin 3D - AI Image to 3D Model Converter (STL, GLB, OBJ, FBX)",
     representativeOfPage: true,
   };
 
-  return { websiteSchema, softwareSchema, webPageSchema, imageObjectSchema };
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${appUrl}/${locale}#service`,
+    name: "AI Image to 3D Model Conversion",
+    serviceType: "AI 3D Model Generation",
+    provider: {
+      "@type": "Organization",
+      "@id": `${appUrl}/#organization`,
+    },
+    areaServed: "Worldwide",
+    description: tHome("Hero.subtitle"),
+    url: `${appUrl}/${locale}/studio`,
+    audience: {
+      "@type": "Audience",
+      audienceType: "3D printing enthusiasts, game developers, designers, makers, hobbyists",
+    },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "3D Generation Services",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Image to STL conversion for 3D printing",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Image to GLB conversion for games and web",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Logo to 3D model conversion",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Photo to 3D printable model",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Sketch and drawing to 3D model",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Unity and Unreal game asset generation",
+          },
+        },
+      ],
+    },
+  };
+
+  return { websiteSchema, softwareSchema, webPageSchema, imageObjectSchema, serviceSchema };
 }

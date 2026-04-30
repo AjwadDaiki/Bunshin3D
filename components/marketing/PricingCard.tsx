@@ -8,7 +8,6 @@ type PricingCardProps = {
   id: string;
   title: string;
   price: string;
-  originalPrice?: string;
   pricePerCredit: string;
   savingsPercent: number;
   credits: string;
@@ -22,14 +21,12 @@ type PricingCardProps = {
   bestValueLabel?: string;
   isLoading?: boolean;
   onSelect: () => void;
-  isPromo?: boolean;
 };
 
 export default function PricingCard({
   id,
   title,
   price,
-  originalPrice,
   pricePerCredit,
   savingsPercent,
   credits,
@@ -43,7 +40,6 @@ export default function PricingCard({
   bestValueLabel,
   isLoading,
   onSelect,
-  isPromo = false,
 }: PricingCardProps) {
   const t = useTranslations("Pricing");
 
@@ -75,10 +71,7 @@ export default function PricingCard({
             {title}
           </h3>
           <div className="flex items-baseline gap-2 mt-2">
-            <span className={cn("text-4xl font-bold", isPromo ? "text-emerald-400" : "text-white")}>{price}</span>
-            {originalPrice && (
-              <span className="text-lg text-zinc-500 line-through">{originalPrice}</span>
-            )}
+            <span className="text-4xl font-bold text-white">{price}</span>
             <span className="text-zinc-500 font-medium">
               {t("Card.perPack")}
             </span>

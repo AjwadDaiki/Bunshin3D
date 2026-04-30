@@ -11,6 +11,7 @@ import { generateHowToSchema } from "@/lib/schemas/howto";
 import { getHomeSchemas } from "@/lib/schemas/home";
 import ReferralPromoPanel from "@/components/referral/ReferralPromoPanel";
 import HomeToolsSection from "@/components/home/HomeToolsSection";
+import KeywordHub from "@/components/seo/KeywordHub";
 import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
 
@@ -141,7 +142,7 @@ export default async function HomePage({
   const faqData = await getFAQData(locale);
   const faqSchema = generateFAQSchema(faqData, locale);
   const howToSchema = await generateHowToSchema(locale);
-  const { websiteSchema, softwareSchema, webPageSchema, imageObjectSchema } = await getHomeSchemas(
+  const { websiteSchema, softwareSchema, webPageSchema, imageObjectSchema, serviceSchema } = await getHomeSchemas(
     locale,
     APP_URL,
     localeToLang,
@@ -153,6 +154,7 @@ export default async function HomePage({
       <JsonLd data={softwareSchema} />
       <JsonLd data={webPageSchema} />
       <JsonLd data={imageObjectSchema} />
+      <JsonLd data={serviceSchema} />
       <JsonLd data={faqSchema} />
       <JsonLd data={howToSchema} />
 
@@ -186,9 +188,29 @@ export default async function HomePage({
                 {tSEO("text3")}
               </p>
             </div>
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tighter text-white mb-4">
+                {tSEO("title4")}
+              </h2>
+              <p className="text-neutral-400 leading-relaxed text-base">
+                {tSEO("text4")}
+              </p>
+            </div>
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tighter text-white mb-4">
+                {tSEO("title5")}
+              </h2>
+              <p className="text-neutral-400 leading-relaxed text-base">
+                {tSEO("text5")}
+              </p>
+            </div>
           </article>
         </div>
       </section>
+
+      <hr className="section-hr" />
+
+      <KeywordHub locale={locale} />
 
       <hr className="section-hr" />
 

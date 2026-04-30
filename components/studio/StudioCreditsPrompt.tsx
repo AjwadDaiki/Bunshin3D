@@ -1,13 +1,11 @@
 "use client";
 
-import { useState } from "react";
 import { X, Sparkle, CreditCard, Lightning } from "@phosphor-icons/react";
 import { useTranslations, useLocale } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { useCurrency } from "@/components/providers/CurrencyProvider";
 import {
   getPriceForCurrency,
-  getOTOPriceForCurrency,
   PRICING_CONFIG,
   type PackId,
 } from "@/lib/config/pricing";
@@ -15,7 +13,6 @@ import {
 type Props = {
   open: boolean;
   requiredCredits: number;
-  isPromoActive?: boolean;
   onClose: () => void;
 };
 
@@ -32,7 +29,6 @@ const PACK_IDS: PackId[] = ["discovery", "creator", "studio"];
 export default function StudioCreditsPrompt({
   open,
   requiredCredits,
-  isPromoActive,
   onClose,
 }: Props) {
   const t = useTranslations("Studio");
@@ -91,14 +87,7 @@ export default function StudioCreditsPrompt({
         <div className="mt-6 grid gap-3 sm:grid-cols-3">
           {PACK_IDS.map((id) => {
             const price = getPriceForCurrency(id, currency);
-            const otoPrice = isPromoActive
-              ? getOTOPriceForCurrency(id, currency)
-              : null;
-            const displayAmount = otoPrice ? otoPrice.amount : price.amount;
-            const formattedPrice = formatPrice(displayAmount, price.currency, locale);
-            const originalFormatted = otoPrice
-              ? formatPrice(price.amount, price.currency, locale)
-              : null;
+            const formattedPrice = formatPrice(price.amount, price.currency, locale);
 
             return (
               <Link
@@ -110,12 +99,7 @@ export default function StudioCreditsPrompt({
                   {PRICING_CONFIG[id].credits} {t("CreditsPrompt.creditsLabel")}
                 </p>
                 <div className="mt-2">
-                  {originalFormatted && (
-                    <span className="text-xs text-neutral-500 line-through mr-1">
-                      {originalFormatted}
-                    </span>
-                  )}
-                  <span className={`text-lg font-bold ${otoPrice ? "text-green-400" : "text-white"}`}>
+                  <span className="text-lg font-bold text-white">
                     {formattedPrice}
                   </span>
                 </div>

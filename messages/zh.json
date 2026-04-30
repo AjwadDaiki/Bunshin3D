@@ -1,18 +1,18 @@
 {
   "Metadata": {
-    "defaultTitle": "Bunshin 3D | 免费AI图像转3D模型STL和GLB转换器",
-    "templateTitle": "%s | Bunshin 3D - AI 3D生成器",
-    "description": "即时将图像、徽标和绘图转换为3D模型。免费AI转换器，支持3D打印STL和Unity/Unreal的GLB。无需设计技能！",
-    "applicationName": "Bunshin 3D",
-    "keywords": "图像3d转换器, 徽标转stl, ai 3d模型生成器, 免费stl转换器, 照片转3d模型, 2d转3d ai, 图像转glb, png转stl在线, ai 3d打印, 徽标3d模型, 图像转3d, unity 3d资产, 游戏资产生成器, 免费3d模型制作, 图像转stl免费",
+    "defaultTitle": "AI 图片转3D模型 — 免费 STL、GLB 与 OBJ 生成器 | Bunshin 3D",
+    "templateTitle": "%s | Bunshin 3D - AI 图片转3D (STL、GLB、OBJ、FBX)",
+    "description": "用 AI 把任何图片、照片、Logo 或绘画转换为 3D 模型。免费在线 图片转 STL、PNG 转 3D、JPG 转 GLB、Logo 转 3D 打印 — 即时下载 STL、GLB、OBJ 与 FBX。无需安装,无需设计技能。",
+    "applicationName": "Bunshin 3D — AI 3D 生成器",
+    "keywords": "图片转3d, 图片转stl, png转stl, png转3d, jpg转3d, 照片转3d, 照片转3d打印, logo转stl, logo转3d, 绘画转3d, 草图转3d, 2d转3d, ai 3d生成器, ai 3d模型生成器, ai 3d打印, 免费3d模型, 免费stl生成器, 图片转stl免费, 在线stl转换, 把图片转成stl, 把png转成stl, 把照片转成3d, unity 3d素材, unreal engine素材, blender obj 来自图片, godot 3d素材, 游戏素材生成器, 把图片变成3d, ai 图片转3d 免费",
     "creator": "Bunshin 3D",
     "publisher": "Bunshin 3D",
-    "ogSiteName": "Bunshin 3D - AI 3D模型生成器",
-    "ogTitle": "30秒将任意图像转换为3D模型 | 免费AI工具",
-    "ogDescription": "即时将徽标、照片和绘图转换为STL/GLB。免费AI 3D生成器 - 无需技能。完美适用于3D打印和游戏开发。",
-    "ogImageAlt": "Bunshin 3D - AI将2D图像转换为用于打印和游戏的3D模型",
-    "twitterTitle": "ðŸš€ AI图像转3D转换器 | 免费STL和GLB生成器",
-    "twitterDescription": "几秒钟内将任何图像转换为可打印的3D模型。免费AI转换器 - 无需设计技能。立即尝试Bunshin 3D！"
+    "ogSiteName": "Bunshin 3D — AI 3D 模型生成器",
+    "ogTitle": "30秒把图片变成3D模型 — 免费 AI STL 与 GLB 转换器",
+    "ogDescription": "免费 AI 图片转3D 工具:拖入照片、Logo 或绘画,即可下载用于3D打印的 STL、用于 Unity/Unreal 的 GLB、或用于 Blender 的 OBJ。",
+    "ogImageAlt": "Bunshin 3D — AI 把照片、Logo 与绘画变成可用于3D打印、Unity、Unreal 与 Blender 的 3D 模型",
+    "twitterTitle": "AI 图片转3D — 免费 STL、GLB、OBJ 生成器",
+    "twitterDescription": "把图片、照片、Logo 与绘画变成 3D 模型。免费 AI 转换器 — 立即生成 STL、GLB、OBJ、FBX。"
   },
   "SEO": {
     "siteName": "Bunshin 3D",
@@ -61,10 +61,10 @@
     },
     "Hero": {
       "badge": "AI驱动的3D生成",
-      "title": "您的图片变成",
-      "titleHighlight": "3D模型。",
-      "subtitle": "上传照片或插画，即刻获得可打印或用于项目的3D文件。简单、快速，无需专业技能。",
-      "ctaPrimary": "免费试用",
+      "title": "AI 图片转3D模型 —",
+      "titleHighlight": "30秒生成 STL、GLB 与 OBJ。",
+      "subtitle": "拖入一张照片、Logo 或绘画,我们的 AI 会生成水密的 3D 模型:用于3D打印的 STL,用于 Unity、Unreal 或 Web 的 GLB,用于 Blender 的 OBJ。免费试用,无需安装,无需设计技能。",
+      "ctaPrimary": "免费试用 — 图片转3D",
       "ctaSecondary": "查看价格",
       "trustedBy": "AI驱动的3D生成引擎",
       "freeCredits": "注册即送2积分",
@@ -73,12 +73,12 @@
       "noCreditCard": "无需信用卡"
     },
     "Showcase": {
-      "title": "使用Bunshin生成",
-      "subtitle": "从简单的徽标到复杂的角色。无需手动雕刻。"
+      "title": "从图片到3D模型 — 几秒完成",
+      "subtitle": "Logo、照片、草图与概念图秒变可打印 STL 与游戏可用 GLB 网格 — 无需手工雕刻。"
     },
     "Features": {
-      "title": "生产就绪架构",
-      "subtitle": "为需要速度、精度和自动化的专业人士设计。",
+      "title": "最快的免费 AI 图片转3D 工具",
+      "subtitle": "面向3D打印、游戏开发与快速原型设计。照片转 STL、PNG 转 3D、Logo 转 3D、草图转网格 — 一站式。",
       "speedTitle": "闪电般快速",
       "speedDesc": "GPU加速推理在<30秒内生成模型。",
       "topologyTitle": "清晰拓扑",
@@ -93,8 +93,8 @@
       "instantDesc": "以GLB、FBX、OBJ或STL格式即时下载您的模型。"
     },
     "Steps": {
-      "label": "使用方法",
-      "title": "工作原理",
+      "label": "图片转3D 的工作原理",
+      "title": "三步把任何图片变成3D",
       "step1": "上传图像",
       "step1Desc": "拖放任何PNG、JPG或WEBP。",
       "step2": "AI处理",
@@ -115,12 +115,38 @@
       "button": "启动工作室"
     },
     "SEOContent": {
-      "title1": "用AI将任何图片转换为3D模型",
-      "text1": "Bunshin 3D是一款AI驱动的图片转3D转换器，可将照片、Logo、绘画和插图转化为可直接使用的3D模型。上传PNG、JPG或WEBP文件，即可下载STL格式（用于3D打印）、GLB格式（用于游戏和网页）、OBJ格式（用于Blender和Maya）或FBX格式（用于Unity和Unreal Engine）的模型。转换过程不到30秒，无需任何3D建模经验。无论您需要将公司Logo转换为STL文件进行3D打印、从概念图生成游戏资产，还是将孩子的画作变成实体手办 - Bunshin 3D只需一张图片即可完成。",
-      "title2": "专为3D打印、游戏开发和设计而打造",
-      "text2": "Bunshin 3D生成的每个模型都是水密的（manifold）--STL文件可以直接加载到Cura、PrusaSlicer、Bambu Studio等切片软件中，无需修复。GLB导出遵循glTF 2.0标准，与Unity、Unreal Engine、Godot、Three.js和网页端3D查看器原生兼容。AI使用神经深度估计来重建真实的3D几何结构--不是简单的平面拉伸或浮雕。输出结果是具有深度、曲面和倒扣的完整三维网格，适用于原型设计、产品可视化、教育项目和商业生产。",
-      "title3": "免费积分、无订阅、完整商业权利",
-      "text3": "注册即可获得免费积分来测试平台--无需信用卡。积分永不过期，没有月费订阅。您生成的每个3D模型都附带完整的商业使用权：可用于产品、游戏、打印或客户项目，没有任何限制。积分包起价$3.99（10次生成），大容量包享有批量折扣。Bunshin 3D支持六种语言和多种货币，服务全球80多个国家的创作者。"
+      "title1": "AI 图片转3D — STL、GLB、OBJ 与 FBX",
+      "text1": "Bunshin 3D 是一款由 AI 驱动的免费图片转3D 转换器,可以把任何照片、Logo、绘画或概念图变成生产级的 3D 模型。拖入 PNG、JPG 或 WEBP,即可下载用于3D打印的水密 STL、用于 Unity、Unreal Engine、Godot 与 Web 的 GLB、用于 Blender 与 Maya 的 OBJ,以及用于旧版游戏管线的 FBX。转换不到 30 秒 — 无需3D建模经验、无需安装、无需信用卡。",
+      "title2": "为3D打印、游戏开发与原型设计而生",
+      "text2": "图片转 STL 引擎产出的每个文件都是流形且水密的,可直接载入 Cura、PrusaSlicer、Bambu Studio 等切片器,无需修复。GLB 导出符合 glTF 2.0 标准,与 Unity、Unreal Engine、Godot、Three.js 与在线查看器原生兼容。神经深度管线重建真实的体积几何 — 不是平面挤出也不是立体光栅 — 适用于原型设计、产品可视化、教育、游戏素材与商业生产。",
+      "title3": "免费积分、无订阅、完整商业授权",
+      "text3": "注册即可获得免费积分用于试用 — 无需信用卡。积分永不过期、没有月度订阅,每个生成的 3D 模型都附带完整商业授权:用于游戏、出售打印件、交付客户项目均免版税。积分包从 10 次生成 3.99 美元起,大包另享数量折扣。Bunshin 3D 支持七种语言与多种货币,服务于全球 80+ 国家的创作者。",
+      "title4": "把照片、PNG、JPG 与 Logo 变成可打印 STL",
+      "text4": "用照片转3D 工具从一张照片打印手办与浮雕,用 PNG 转 STL 从透明 PNG 制作标牌与铭牌,用 Logo 转3D 打印管线把品牌标志变为桌面物件,用绘画转3D 引擎把孩子的画作变成实物。每种输入 — 草图、截图、矢量 Logo、扫描页面 — 都会变成可打印的 STL,壁面干净、无超薄壳体、无需手工修复。",
+      "title5": "面向 Unity、Unreal、Godot、Blender 的 AI 3D 素材生成器",
+      "text5": "游戏工作室与独立开发者把 Bunshin 3D 当作快速素材生成器:拖入概念图,获取适合 Blender 重拓扑的四边面 OBJ、可直接拖入 Unity 或 Unreal 的 GLB,或用于旧管线的 FBX。每个模型都带有 PBR 贴图(基础色、法线、粗糙度),无需手写材质即可融入实时场景。适合原型设计、Game Jam、素材包、AR/VR 场景或 AAA 前期制作。"
+    },
+    "KeywordHub": {
+      "label": "热门搜索",
+      "title": "用 Bunshin 可以把什么转换为3D?",
+      "subtitle": "直达最常用的图片转3D 转换流程。",
+      "items": {
+        "imageToStl": "图片转 STL 转换器",
+        "pngToStl": "PNG 转 STL 在线",
+        "jpgTo3d": "JPG 转 3D 模型",
+        "photoTo3dPrint": "照片转 3D 打印",
+        "logoToStl": "Logo 转 STL (用于3D打印)",
+        "logoTo3d": "Logo 转 3D 模型",
+        "drawingTo3d": "绘画转 3D 模型",
+        "sketchTo3d": "草图转 3D 网格",
+        "imageToGlb": "Unity 用 图片转 GLB",
+        "imageToObj": "Blender 用 图片转 OBJ",
+        "unityAssets": "照片转 Unity 3D 素材",
+        "unrealAssets": "图片转 Unreal Engine 素材",
+        "aiGameAssets": "AI 游戏素材生成器",
+        "freeStl": "免费 STL 文件生成器",
+        "aiImageTo3d": "AI 图片转3D 模型 — 免费"
+      }
     }
   },
   "Footer": {
@@ -1160,26 +1186,6 @@
       },
       "stripeTestCheckout": "通过Stripe Checkout测试",
       "stripeTestInfo": "Stripe测试：使用卡号 4242 4242 4242 4242，任意未来日期，任意CVC。包含测试Webhook的完整流程。"
-    },
-    "ApplyPromo": {
-      "title": "应用促销",
-      "subtitle": "为用户激活OTO优惠",
-      "description": "手动为任意用户激活促销优惠（OTO）。在选定时间内，他们将看到折扣价格。",
-      "selectDuration": "促销时长",
-      "durations": {
-        "24": "24小时",
-        "48": "48小时",
-        "72": "72小时",
-        "168": "7天",
-        "custom": "自定义"
-      },
-      "customHours": "输入小时数",
-      "currentStatus": "当前状态",
-      "promoActive": "促销进行中 - 剩余{time}",
-      "promoInactive": "无活跃促销",
-      "apply": "应用促销",
-      "remove": "移除促销",
-      "warning": "用户将在选定时间内看到Discovery和Studio套餐的OTO折扣价格。"
     }
   },
   "PaymentEmail": {
@@ -1396,8 +1402,8 @@
     "generatedAsset": "生成的资产",
     "viewModel": "查看模型",
     "download": "下载",
-    "title": "Bunshin 生成",
-    "subtitle": "从简单的标志到复杂的角色。看看我们的 AI 能创造什么。",
+    "title": "从图片到3D模型 — 几秒完成",
+    "subtitle": "Logo、照片、草图与概念图秒变可打印 STL 与游戏可用 GLB 网格 — 无需手工雕刻。",
     "badges": {
       "premium": "高级",
       "standard": "标准"
@@ -1453,32 +1459,6 @@
       "hache": "斧头",
       "tasse": "杯子",
       "lampe": "灯"
-    }
-  },
-  "OTO": {
-    "close": "关闭",
-    "badge": "独家欢迎优惠",
-    "title": "你的创造力值得更好。",
-    "subtitle": "以超值价格解锁你的首批积分。优惠即将结束。",
-    "discountBadge": "最高 -67% 优惠",
-    "discovery": {
-      "name": "探索",
-      "price": "0.99€",
-      "originalPrice": "2.99€",
-      "credits": "包含10积分"
-    },
-    "studio": {
-      "name": "工作室 Pro",
-      "price": "19.99€",
-      "originalPrice": "29.99€",
-      "credits": "包含200积分"
-    },
-    "footer": "一次性优惠，积分永不过期。",
-    "creditsLabel": "积分",
-    "checkoutError": "发生错误，请重试。",
-    "banner": {
-      "text": "欢迎优惠将于",
-      "cta": "立即领取"
     }
   },
   "FAQ": {
