@@ -58,7 +58,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Deduct credits BEFORE API call (refund on failure)
+
     const { error: deductError } = await supabase.rpc("decrement_credits", {
       target_user_id: userId,
       amount: 1,
@@ -95,7 +95,7 @@ export async function POST(request: NextRequest) {
     });
 
     if (!response.ok) {
-      // Refund credit on API failure
+
       await supabase.rpc("increment_credits", {
         target_user_id: userId,
         amount: 1,

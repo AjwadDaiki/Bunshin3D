@@ -55,7 +55,7 @@ export async function GET(request: Request) {
   try {
     let sent = 0;
 
-    // 1. Nurture sequence for non-payers (Day 2, Day 5)
+
     for (const step of NURTURE_SEQUENCE) {
       if (step.delayDays === 0) continue;
 
@@ -85,7 +85,7 @@ export async function GET(request: Request) {
       }
     }
 
-    // 2. Post-purchase upsell (Day+3 after first purchase of Discovery)
+
     for (const step of POST_PURCHASE_SEQUENCE) {
       const targetDate = new Date();
       targetDate.setDate(targetDate.getDate() - step.delayDays);
@@ -113,7 +113,7 @@ export async function GET(request: Request) {
       }
     }
 
-    // 3. Credit-low alert (users with credits <= 1 who haven't been notified)
+
     {
       const { data: lowCreditUsers } = await supabase
         .from("profiles")

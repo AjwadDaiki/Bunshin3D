@@ -47,7 +47,7 @@ export async function POST(request: NextRequest) {
 
     const selectedPack = getPriceForCurrency(packId as PackId, currency || "USD");
 
-    // Fetch user email for Stripe checkout pre-fill and confirmation email
+
     const supabaseAdmin = createClient(
       process.env.NEXT_PUBLIC_SUPABASE_URL!,
       process.env.SUPABASE_SERVICE_ROLE_KEY!,
@@ -70,7 +70,7 @@ export async function POST(request: NextRequest) {
       }),
     );
 
-    // Map app locales to Stripe-supported locale codes
+
     const stripeLocaleMap: Record<string, string> = {
       fr: "fr", en: "en", es: "es", de: "de", ja: "ja", zh: "zh",
     };

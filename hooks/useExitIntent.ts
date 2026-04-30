@@ -7,7 +7,7 @@ export function useExitIntent(options: { delay?: number; once?: boolean } = {}) 
   const [triggered, setTriggered] = useState(false);
   const [ready, setReady] = useState(false);
 
-  // Wait before enabling to avoid false triggers on page load
+
   useEffect(() => {
     const timer = setTimeout(() => setReady(true), delay);
     return () => clearTimeout(timer);
@@ -17,7 +17,7 @@ export function useExitIntent(options: { delay?: number; once?: boolean } = {}) 
     (e: MouseEvent) => {
       if (!ready) return;
       if (once && triggered) return;
-      // Only trigger when cursor leaves from the top of the viewport
+
       if (e.clientY <= 0) {
         setTriggered(true);
       }

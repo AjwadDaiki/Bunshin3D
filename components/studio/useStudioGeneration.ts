@@ -44,8 +44,7 @@ export function useStudioGeneration({
   buildFilePath,
 }: Props) {
   const t = useTranslations("Studio");
-  // Stable reference: avoid recreating the Supabase client on every render
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+
   const supabase = useMemo(() => createClient(), []);
 
   const handleGenerate = useCallback(async () => {
@@ -108,7 +107,7 @@ export function useStudioGeneration({
         t,
       });
 
-      // GA4 generate event
+
       if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
         (window as any).gtag("event", "generate_model", { quality, mode });
       }

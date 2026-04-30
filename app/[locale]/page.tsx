@@ -160,7 +160,6 @@ export default async function HomePage({
 
       <LandingPage />
 
-      {/* Server-rendered SEO content block - crawlable by search engines */}
       <section className="py-20 md:py-28 px-4">
         <div className="container mx-auto max-w-4xl">
           <article className="space-y-12">
@@ -218,7 +217,6 @@ export default async function HomePage({
         id="pricing"
         className="py-24 md:py-36 relative overflow-hidden"
       >
-        {/* Subtle section glow */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-blue-500/5 rounded-full blur-[120px] pointer-events-none" />
 
         <div className="container mx-auto px-4 relative z-10">

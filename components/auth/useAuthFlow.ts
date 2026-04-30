@@ -72,7 +72,7 @@ export function useAuthFlow(t: Translator): AuthFlowState {
       if ((event === "SIGNED_IN" || event === "INITIAL_SESSION") && session) {
         redirected = true;
         try { localStorage.removeItem("bunshin_ref"); } catch {}
-        // GA4 signup event
+
         if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
           (window as any).gtag("event", "sign_up", { method: "email_or_google" });
         }

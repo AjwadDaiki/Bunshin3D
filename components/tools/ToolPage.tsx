@@ -18,7 +18,7 @@ export default function ToolPage({ slug }: ToolPageProps) {
   return (
     <main className="min-h-screen text-white pt-32 pb-20 px-4">
       <div className="container mx-auto max-w-3xl text-center">
-        {/* Hero */}
+        {}
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter leading-tight mb-6">
           {t("h1")}
         </h1>
@@ -26,7 +26,7 @@ export default function ToolPage({ slug }: ToolPageProps) {
           {t("description")}
         </p>
 
-        {/* Upload zone - links to studio */}
+        {}
         <Link
           href="/studio"
           className="group block rounded-2xl border-2 border-dashed border-white/10 hover:border-blue-500/30 bg-[#111] hover:bg-[#141414] p-12 md:p-16 transition-all cursor-pointer"
@@ -46,7 +46,7 @@ export default function ToolPage({ slug }: ToolPageProps) {
           </div>
         </Link>
 
-        {/* Output format badge */}
+        {}
         <div className="mt-8 flex items-center justify-center gap-2">
           <span className="text-sm text-neutral-500">{tCommon("outputFormat")}</span>
           <span className="px-3 py-1 rounded-md bg-[#191919] border border-white/6 text-sm font-mono text-neutral-300">
@@ -54,7 +54,7 @@ export default function ToolPage({ slug }: ToolPageProps) {
           </span>
         </div>
 
-        {/* SEO content */}
+        {}
         <div className="mt-16 text-left space-y-8">
           <div>
             <h2 className="text-2xl font-bold tracking-tight mb-3">{t("section1Title")}</h2>
@@ -66,7 +66,7 @@ export default function ToolPage({ slug }: ToolPageProps) {
           </div>
         </div>
 
-        {/* Related tools */}
+        {}
         <div className="mt-16">
           <h2 className="text-xl font-bold tracking-tight mb-6">{tCommon("relatedTools")}</h2>
           <div className="grid sm:grid-cols-2 gap-4">

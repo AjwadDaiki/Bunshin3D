@@ -10,7 +10,7 @@ import { generateAlternates } from "@/lib/seo-utils";
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
-// --- SEO ---
+
 export async function generateMetadata({
   params,
 }: {
@@ -34,7 +34,7 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-// --- SERVER PAGE ---
+
 export default async function AccountPage({
   params,
 }: {
@@ -48,7 +48,7 @@ export default async function AccountPage({
 
   setRequestLocale(locale);
 
-  // 1. Initialisation Supabase Serveur (Cookie-based Auth)
+
   const cookieStore = await cookies();
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -64,16 +64,14 @@ export default async function AccountPage({
               cookieStore.set(name, value, options),
             );
           } catch {
-            // The `setAll` method was called from a Server Component.
-            // This can be ignored if you have middleware refreshing
-            // user sessions.
+
           }
         },
       },
     },
   );
 
-  // 2. Vérification Auth
+
   const {
     data: { user },
   } = await supabase.auth.getUser();
@@ -82,7 +80,7 @@ export default async function AccountPage({
     redirect(`/${locale}/login`);
   }
 
-  // 3. Fetch Data (Parallel)
+
   const [profileReq, generationsReq] = await Promise.all([
     supabase.from("profiles").select("*").eq("id", user.id).single(),
     supabase

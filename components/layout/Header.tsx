@@ -91,7 +91,7 @@ export default function Header() {
           )}
         >
           <div className="flex items-center justify-between">
-            {/* LOGO - ORGANIQUE */}
+            {}
             <Link href="/" className="flex items-center gap-3 group pl-2">
               <div className="relative">
                 <div className="absolute inset-0 bg-indigo-500 blur-lg opacity-20 group-hover:opacity-40 transition-opacity"></div>
@@ -102,7 +102,7 @@ export default function Header() {
               </span>
             </Link>
 
-            {/* NAV - MINIMALISTE */}
+            {}
             <nav className="hidden md:flex items-center gap-1">
               {navLinks.map((link) => (
                 <Link
@@ -123,7 +123,7 @@ export default function Header() {
               ))}
             </nav>
 
-            {/* ACTIONS - FUTURISTE */}
+            {}
             <div className="hidden md:flex items-center gap-3">
               {!loading && user ? (
                 <div className="flex items-center gap-3 pl-4 border-l border-white/5">
@@ -171,7 +171,7 @@ export default function Header() {
               )}
             </div>
 
-            {/* MOBILE TRIGGER */}
+            {}
             <button
               className="md:hidden text-white p-2"
               onClick={() => setIsOpen(!isOpen)}
@@ -185,7 +185,7 @@ export default function Header() {
           </div>
         </div>
 
-        {/* MOBILE OVERLAY */}
+        {}
         {isOpen && (
           <div className="absolute top-24 inset-x-4 p-6 glass-panel rounded-3xl md:hidden animate-in fade-in slide-in-from-top-4 duration-300 flex flex-col gap-4">
             {navLinks.map((link) => (

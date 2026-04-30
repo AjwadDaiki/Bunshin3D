@@ -30,8 +30,7 @@ export async function GET(request: NextRequest) {
   const locale = detectLocaleFromNext(next);
   next = ensureLocaleInNext(next, locale);
 
-  // Use configured app URL instead of request origin to avoid
-  // localhost redirects when behind a reverse proxy
+
   const origin = process.env.NEXT_PUBLIC_APP_URL || requestUrl.origin;
 
   if (!code) {

@@ -102,10 +102,10 @@ export default async function PricingPage({
       <JsonLd data={webPageSchema} />
 
       <div className="min-h-screen text-white pt-32 pb-20 px-4 relative overflow-hidden">
-        {/* Background glow */}
+        {}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-blue-500/5 rounded-full blur-[120px] pointer-events-none" />
 
-        {/* Header */}
+        {}
         <div className="relative z-10 container mx-auto text-center space-y-6 mb-16">
           <h1 className="text-5xl md:text-6xl font-bold tracking-tighter">
             {tHeader("title")} <br className="hidden md:block" />
@@ -118,7 +118,7 @@ export default async function PricingPage({
           </p>
         </div>
 
-        {/* Trust bar */}
+        {}
         <div className="relative z-10 max-w-3xl mx-auto mb-16">
           <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-zinc-400">
             <span className="flex items-center gap-2">
@@ -146,17 +146,17 @@ export default async function PricingPage({
           </p>
         </div>
 
-        {/* Pricing cards */}
+        {}
         <div className="relative z-10">
           <PricingTable userId={user?.id ?? null} />
         </div>
 
-        {/* Referral */}
+        {}
         <div className="relative z-10 mt-16 max-w-5xl mx-auto px-4">
           <ReferralPromoPanel />
         </div>
 
-        {/* FAQ */}
+        {}
         <div className="relative z-10 mt-20 max-w-3xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-10 tracking-tight">
             {tFaq("title")}
@@ -187,7 +187,7 @@ export default async function PricingPage({
           </div>
         </div>
 
-        {/* Footer note */}
+        {}
         <div className="text-center mt-20 text-zinc-500 text-sm font-mono uppercase tracking-widest opacity-60">
           {tFooter("note")}
         </div>

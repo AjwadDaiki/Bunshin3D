@@ -39,7 +39,6 @@ export default function StudioCreditsPrompt({
 
   return (
     <div className="fixed inset-0 z-9999 flex items-center justify-center px-4 animate-paywall-backdrop">
-      {/* Backdrop */}
       <button
         type="button"
         aria-label={t("CreditsPrompt.close")}
@@ -47,13 +46,11 @@ export default function StudioCreditsPrompt({
         onClick={onClose}
       />
 
-      {/* Dialog */}
       <div
         role="dialog"
         aria-modal="true"
         className="relative w-full max-w-xl animate-paywall-enter rounded-xl border border-white/6 bg-[#111] p-8"
       >
-        {/* Close */}
         <button
           type="button"
           aria-label={t("CreditsPrompt.close")}
@@ -63,14 +60,12 @@ export default function StudioCreditsPrompt({
           <X className="h-4 w-4" weight="bold" />
         </button>
 
-        {/* Icon */}
         <div className="mb-6 flex justify-center">
           <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-white/5 border border-white/6">
             <Sparkle className="h-7 w-7 text-white" weight="fill" />
           </div>
         </div>
 
-        {/* Text */}
         <div className="space-y-2 text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-neutral-400">
             {t("CreditsPrompt.title")}
@@ -83,7 +78,6 @@ export default function StudioCreditsPrompt({
           </p>
         </div>
 
-        {/* Pack prices */}
         <div className="mt-6 grid gap-3 sm:grid-cols-3">
           {PACK_IDS.map((id) => {
             const price = getPriceForCurrency(id, currency);
@@ -108,7 +102,6 @@ export default function StudioCreditsPrompt({
           })}
         </div>
 
-        {/* CTA buttons */}
         <div className="mt-6 grid gap-3 sm:grid-cols-2">
           <Link
             href="/pricing"
@@ -126,7 +119,6 @@ export default function StudioCreditsPrompt({
           </Link>
         </div>
 
-        {/* Note */}
         <div className="mt-5 rounded-xl border border-white/6 bg-[#0a0a0a] px-4 py-3 text-center text-xs text-neutral-500">
           {t("CreditsPrompt.note", { signup: 2, payment: 10 })}
         </div>

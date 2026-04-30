@@ -14,7 +14,7 @@ export default function ExitIntentPopup() {
 
   useEffect(() => {
     if (!triggered) return;
-    // Only show once per session
+
     if (typeof window !== "undefined" && sessionStorage.getItem(STORAGE_KEY)) return;
     setVisible(true);
     if (typeof window !== "undefined") {
@@ -31,13 +31,13 @@ export default function ExitIntentPopup() {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-      {/* Backdrop */}
+      {}
       <div
         className="absolute inset-0 bg-black/80 backdrop-blur-sm animate-[fadeIn_200ms_ease-out]"
         onClick={handleClose}
       />
 
-      {/* Modal */}
+      {}
       <div className="relative w-full max-w-md rounded-2xl border border-white/10 bg-[#111] p-8 shadow-2xl animate-[scaleIn_300ms_ease-out]">
         <button
           onClick={handleClose}

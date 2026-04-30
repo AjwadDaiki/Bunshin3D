@@ -95,7 +95,7 @@ export default async function ComparePage({ params }: { params: Promise<{ locale
             </div>
           </header>
 
-          {/* Comparison table */}
+          {}
           <section className="mb-16 overflow-x-auto">
             <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-8">{t("comparisonTitle")}</h2>
             <div className="rounded-xl border border-white/6 bg-[#111] overflow-hidden">

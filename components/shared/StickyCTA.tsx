@@ -11,7 +11,7 @@ export default function StickyCTA() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Show after scrolling 400px
+
       setVisible(window.scrollY > 400);
     };
     window.addEventListener("scroll", handleScroll, { passive: true });

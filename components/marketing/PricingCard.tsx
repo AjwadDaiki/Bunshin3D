@@ -52,7 +52,7 @@ export default function PricingCard({
           : "border-white/6 hover:border-white/12 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20",
       )}
     >
-      {/* Top accent line for popular card */}
+      {}
       {isPopular && (
         <div className="absolute top-0 left-6 right-6 h-px bg-linear-to-r from-transparent via-blue-500/50 to-transparent" />
       )}
@@ -77,7 +77,7 @@ export default function PricingCard({
             </span>
           </div>
 
-          {/* Price per credit */}
+          {}
           <div className="flex items-center gap-2 mt-2">
             <span className="text-sm text-zinc-400">
               {pricePerCredit} {t("Card.perCredit")}

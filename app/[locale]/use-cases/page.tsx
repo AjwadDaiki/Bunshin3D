@@ -88,7 +88,7 @@ export default async function UseCasesIndexPage({
 
       <main className="min-h-screen text-white pt-32 pb-20 px-4">
         <div className="container mx-auto max-w-5xl">
-          {/* Header */}
+          {}
           <header className="text-center mb-16">
             <p className="text-sm font-mono text-blue-400 uppercase tracking-widest mb-4">
               {t("label")}
@@ -101,7 +101,7 @@ export default async function UseCasesIndexPage({
             </p>
           </header>
 
-          {/* Use case grid */}
+          {}
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {USE_CASE_SLUGS.map((slug) => {
               const data = USE_CASES_DATA[slug];
@@ -129,7 +129,7 @@ export default async function UseCasesIndexPage({
             })}
           </div>
 
-          {/* Bottom CTA */}
+          {}
           <div className="text-center mt-16">
             <Link
               href="/studio"

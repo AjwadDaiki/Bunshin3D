@@ -48,7 +48,7 @@ export default function AdminSimulatePaymentModal({ onClose, onSuccess }: Props)
     }
   };
 
-  // Direct simulation (bypass Stripe)
+
   const handleSimulate = async () => {
     if (!selectedUser) return;
     setLoading(true);
@@ -80,7 +80,7 @@ export default function AdminSimulatePaymentModal({ onClose, onSuccess }: Props)
     }
   };
 
-  // Real Stripe test checkout
+
   const handleStripeTest = async () => {
     setStripeLoading(true);
     setError(null);
@@ -145,7 +145,7 @@ export default function AdminSimulatePaymentModal({ onClose, onSuccess }: Props)
         </div>
 
         <div className="p-6 space-y-5">
-          {/* User search */}
+          {}
           <div>
             <label className="text-sm text-zinc-400 mb-2 block">
               {t("SimulatePayment.searchUser")}
@@ -203,7 +203,7 @@ export default function AdminSimulatePaymentModal({ onClose, onSuccess }: Props)
             )}
           </div>
 
-          {/* Pack selection */}
+          {}
           <div>
             <label className="text-sm text-zinc-400 mb-2 block">
               {t("SimulatePayment.selectPack")}
@@ -227,7 +227,7 @@ export default function AdminSimulatePaymentModal({ onClose, onSuccess }: Props)
             </div>
           </div>
 
-          {/* Send email toggle (only for direct simulation) */}
+          {}
           <label className="flex items-center gap-3 cursor-pointer group">
             <div
               className={cn(
@@ -249,14 +249,14 @@ export default function AdminSimulatePaymentModal({ onClose, onSuccess }: Props)
             </div>
           </label>
 
-          {/* Info */}
+          {}
           <div className="p-3 bg-amber-500/10 border border-amber-500/20 rounded-lg">
             <p className="text-xs text-amber-300">
               {t("SimulatePayment.warning", { credits: selectedPackData.credits })}
             </p>
           </div>
 
-          {/* Stripe test info */}
+          {}
           <div className="p-3 bg-blue-500/10 border border-blue-500/20 rounded-lg">
             <p className="text-xs text-blue-300">
               {t("SimulatePayment.stripeTestInfo")}
@@ -271,7 +271,7 @@ export default function AdminSimulatePaymentModal({ onClose, onSuccess }: Props)
         </div>
 
         <div className="flex flex-col gap-3 p-6 border-t border-white/6">
-          {/* Row 1: Direct simulation */}
+          {}
           <div className="flex gap-3">
             <button
               onClick={onClose}
@@ -295,7 +295,7 @@ export default function AdminSimulatePaymentModal({ onClose, onSuccess }: Props)
             </button>
           </div>
 
-          {/* Row 2: Stripe test checkout */}
+          {}
           <button
             onClick={handleStripeTest}
             disabled={stripeLoading}

@@ -8,15 +8,15 @@ const handleI18nRouting = createMiddleware(routing);
 export async function proxy(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
 
-  // Skip middleware for auth callback — it handles its own cookies
+
   if (pathname.includes("/api/auth/callback")) {
     return NextResponse.next();
   }
 
-  // 1. Run next-intl i18n routing first
+
   let response = handleI18nRouting(request);
 
-  // 2. Create Supabase server client to refresh auth session
+
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
@@ -26,19 +26,18 @@ export async function proxy(request: NextRequest) {
           return request.cookies.getAll();
         },
         setAll(cookiesToSet) {
-          // Update request cookies so downstream server code sees them
+
           cookiesToSet.forEach(({ name, value }) => {
             request.cookies.set(name, value);
           });
 
-          // Recreate response with updated request to forward cookies to SSR
+
           response = NextResponse.next({
             request,
             headers: response.headers,
           });
 
-          // Set cookies on response so browser receives them
-          // CRITICAL: httpOnly must be false so createBrowserClient can read them
+
           cookiesToSet.forEach(({ name, value, options }) => {
             response.cookies.set(name, value, {
               ...options,
@@ -50,14 +49,13 @@ export async function proxy(request: NextRequest) {
     },
   );
 
-  // 3. Refresh the session — this calls setAll if tokens need updating
+
   const {
     data: { user },
     error,
   } = await supabase.auth.getUser();
 
-  // If next-intl decided to redirect (language detection), return as-is
-  // The redirect response already has the refreshed cookies from setAll
+
   if (response.status === 307 || response.status === 308) {
     return response;
   }
@@ -94,10 +92,10 @@ export async function proxy(request: NextRequest) {
     return response;
   }
 
-  // Use configured app URL to avoid localhost redirects behind reverse proxy
+
   const appOrigin = process.env.NEXT_PUBLIC_APP_URL || request.nextUrl.origin;
 
-  // Redirect unauthenticated users away from private routes
+
   if (!isLoggedIn && !isPublicRoute) {
     const redirectResponse = NextResponse.redirect(
       new URL(`/${locale}/login`, appOrigin),
@@ -106,7 +104,7 @@ export async function proxy(request: NextRequest) {
     return redirectResponse;
   }
 
-  // Redirect authenticated users away from login page
+
   if (isLoggedIn && cleanPath === "/login") {
     const redirectResponse = NextResponse.redirect(
       new URL(`/${locale}/studio`, appOrigin),

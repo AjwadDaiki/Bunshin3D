@@ -9,7 +9,7 @@ import StepsSection from "@/components/landing/Steps/StepsSection";
 import CTASection from "@/components/landing/CTA/CTASection";
 
 export default function LandingPage() {
-  // Capture referral code from URL and persist to localStorage
+
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const ref = params.get("ref")?.trim();

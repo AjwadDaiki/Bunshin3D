@@ -113,7 +113,6 @@ export const NURTURE_SEQUENCE: NurtureStep[] = [
   },
 ];
 
-// Post-purchase upsell sequence (separate from nurture)
 export const POST_PURCHASE_SEQUENCE: NurtureStep[] = [
   {
     id: "upsell-creator",
@@ -148,7 +147,6 @@ export const POST_PURCHASE_SEQUENCE: NurtureStep[] = [
   },
 ];
 
-// Credit-low alert (triggered by cron check, not by delay)
 export const CREDIT_LOW_EMAIL: NurtureStep = {
   id: "credit-low",
   delayDays: 0,

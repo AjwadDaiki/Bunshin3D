@@ -23,7 +23,7 @@ const QUALITY_OPTIONS: {
 }[] = [
   {
     id: "standard",
-    icon: Sparkle, // placeholder, we use BunshinLogo instead
+    icon: Sparkle,
     iconWeight: "fill",
     labelKey: "Quality.standard",
     descKey: "Quality.standardDesc",

@@ -34,10 +34,6 @@ export async function GET(
     }
     const prediction = await response.json();
 
-    // IMPORTANT: Respond to the client FAST.
-    // Heavy operations (model download/upload) are done in background AFTER the response.
-    // This prevents the polling loop from hanging while downloading/uploading GLB files.
-
     if (prediction.status === "succeeded" || prediction.status === "failed") {
       const cookieStore = await cookies();
       const supabase = createServerClient(
@@ -62,7 +58,6 @@ export async function GET(
       if (prediction.status === "succeeded") {
         const modelUrl = resolveModelUrl(prediction.output);
 
-        // Quick lightweight DB update - only mark status + URL
         await supabase
           .from("generations")
           .update({
@@ -71,8 +66,6 @@ export async function GET(
           })
           .eq("prediction_id", id);
 
-        // Fire-and-forget: store model to permanent storage in background.
-        // This does NOT block the response to the client.
         if (modelUrl) {
           const { data: gen } = await supabase
             .from("generations")

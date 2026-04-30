@@ -33,7 +33,7 @@ export async function POST(request: Request) {
       }
     );
 
-    // Security: Only delete if the generation belongs to the user
+
     const { data: generation } = await supabase
       .from("generations")
       .select("user_id")

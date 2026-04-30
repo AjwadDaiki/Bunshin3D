@@ -45,7 +45,7 @@ export default function StepsSection() {
               key={idx}
               className="group relative p-8 rounded-xl border border-white/6 bg-[#111] transition-all duration-300 hover:border-white/12 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20"
             >
-              {/* Step number */}
+              {}
               <div className="flex items-center gap-3 mb-6">
                 <span className="text-3xl font-bold text-white/10">{item.step}</span>
                 <div className="h-px flex-1 bg-white/6" />

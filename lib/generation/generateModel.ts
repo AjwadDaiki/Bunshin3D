@@ -66,8 +66,8 @@ export async function generateModel({
   const modelPredictionId = modelData.predictionId;
   let modelResult: string | null = null;
   let pollCount = 0;
-  // Ultra (Rodin) can take up to 3 minutes; standard/premium are faster
-  const MAX_POLLS = quality === "ultra" ? 120 : 90; // ~8 or ~6 minutes max
+
+  const MAX_POLLS = quality === "ultra" ? 120 : 90;
 
   while (!modelResult) {
     await sleep(4000);
@@ -85,7 +85,7 @@ export async function generateModel({
       status = await pollPredictionStatus(modelPredictionId);
     } catch (pollError: any) {
       console.error("Poll error:", pollError.message);
-      // Retry on transient errors instead of crashing
+
       if (pollCount > MAX_POLLS - 5) throw pollError;
       continue;
     }

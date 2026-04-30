@@ -45,7 +45,7 @@ export function useHeaderSession() {
     mountedRef.current = true;
     const supabase = supabaseRef.current;
 
-    // Hydrate from cookies on mount
+
     const init = async () => {
       const {
         data: { session },
@@ -63,7 +63,7 @@ export function useHeaderSession() {
 
     void init();
 
-    // Listen for ALL auth state changes without skipping any
+
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange(async (_event, session) => {

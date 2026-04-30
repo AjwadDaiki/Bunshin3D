@@ -18,7 +18,7 @@ export default async function UseCasePage({ slug, useCaseData, locale }: UseCase
   return (
     <main className="min-h-screen text-white pt-32 pb-20 px-4">
       <div className="container mx-auto max-w-4xl">
-        {/* Breadcrumb */}
+        {}
         <nav className="flex items-center gap-2 text-sm text-neutral-500 mb-8">
           <Link href="/" className="hover:text-white transition-colors">
             Bunshin 3D
@@ -31,7 +31,7 @@ export default async function UseCasePage({ slug, useCaseData, locale }: UseCase
           <span className="text-neutral-300">{t("breadcrumb")}</span>
         </nav>
 
-        {/* Hero */}
+        {}
         <header className="mb-16">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter leading-tight mb-6">
             {t("h1")}
@@ -55,7 +55,7 @@ export default async function UseCasePage({ slug, useCaseData, locale }: UseCase
           </div>
         </header>
 
-        {/* Main content - SEO rich text */}
+        {}
         <article className="prose prose-invert prose-neutral max-w-none mb-16">
           <section className="mb-12">
             <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-4">{t("section1Title")}</h2>
@@ -68,7 +68,7 @@ export default async function UseCasePage({ slug, useCaseData, locale }: UseCase
           </section>
         </article>
 
-        {/* How it works steps */}
+        {}
         <section className="mb-16">
           <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-8">{tCommon("howItWorks")}</h2>
           <div className="grid md:grid-cols-3 gap-6">
@@ -94,7 +94,7 @@ export default async function UseCasePage({ slug, useCaseData, locale }: UseCase
           </div>
         </section>
 
-        {/* Supported formats */}
+        {}
         <section className="mb-16">
           <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-6">{tCommon("supportedFormats")}</h2>
           <div className="flex flex-wrap gap-3">
@@ -109,7 +109,7 @@ export default async function UseCasePage({ slug, useCaseData, locale }: UseCase
           </div>
         </section>
 
-        {/* FAQ */}
+        {}
         <section className="mb-16">
           <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-8">{tCommon("faqTitle")}</h2>
           <div className="space-y-4">
@@ -138,7 +138,7 @@ export default async function UseCasePage({ slug, useCaseData, locale }: UseCase
           </div>
         </section>
 
-        {/* CTA */}
+        {}
         <section className="rounded-xl border border-white/6 bg-[#111] p-8 md:p-12 text-center mb-16">
           <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-4">{t("ctaTitle")}</h2>
           <p className="text-neutral-400 mb-8 max-w-xl mx-auto">{t("ctaDescription")}</p>
@@ -150,7 +150,7 @@ export default async function UseCasePage({ slug, useCaseData, locale }: UseCase
           </Link>
         </section>
 
-        {/* Related use cases */}
+        {}
         <section>
           <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-8">{tCommon("relatedUseCases")}</h2>
           <div className="grid sm:grid-cols-2 gap-4">

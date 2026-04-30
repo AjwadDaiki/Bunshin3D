@@ -15,7 +15,6 @@ export default function AdminOverviewTab({ onRefresh }: Props) {
 
   return (
     <>
-      {/* Simulate Payment */}
       <div className="rounded-xl border border-white/6 bg-[#111] p-8">
         <div className="flex flex-col md:flex-row items-center justify-between p-6 rounded-xl border border-white/6 bg-[#191919] gap-6">
           <div>

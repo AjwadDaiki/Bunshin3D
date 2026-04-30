@@ -9,29 +9,26 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
 
 export const runtime = "nodejs";
 
-/**
- * Try to verify webhook signature against live secret first,
- * then test secret. This allows one endpoint to handle both modes.
- */
+
 function verifyWebhookEvent(body: string, sig: string): Stripe.Event {
   const liveSecret = process.env.STRIPE_WEBHOOK_SECRET || "";
   const testSecret = process.env.STRIPE_TEST_WEBHOOK_SECRET || "";
 
-  // Try live secret first
+
   if (liveSecret) {
     try {
       return stripe.webhooks.constructEvent(body, sig, liveSecret);
     } catch {
-      // Fall through to test secret
+
     }
   }
 
-  // Try test secret
+
   if (testSecret) {
     try {
       return stripe.webhooks.constructEvent(body, sig, testSecret);
     } catch {
-      // Fall through to error
+
     }
   }
 
@@ -105,7 +102,7 @@ export async function POST(request: NextRequest) {
       },
     );
 
-    // ── 1. IDEMPOTENCY CHECK (non-blocking if table missing) ──
+
     let idempotencyEnabled = true;
     try {
       const { error: idempotencyError } = await supabaseAdmin
@@ -142,7 +139,7 @@ export async function POST(request: NextRequest) {
       idempotencyEnabled = false;
     }
 
-    // ── 2. CRITICAL: ADD CREDITS (this is the primary goal) ──
+
     let creditsApplied = false;
     try {
       const { error: creditsError } = await supabaseAdmin.rpc("increment_credits", {
@@ -152,7 +149,7 @@ export async function POST(request: NextRequest) {
 
       if (creditsError) {
         console.error("[Stripe webhook] increment_credits RPC failed, trying direct UPDATE:", creditsError);
-        // Fallback: direct UPDATE if RPC doesn't exist
+
         const { data: currentProfile } = await supabaseAdmin
           .from("profiles")
           .select("credits")
@@ -176,7 +173,7 @@ export async function POST(request: NextRequest) {
       const msg = err instanceof Error ? err.message : String(err);
       console.error(`[Stripe webhook] CRITICAL: Failed to add credits: ${msg}`);
 
-      // Clean up idempotency record since we failed
+
       if (idempotencyEnabled && session.id) {
         await supabaseAdmin
           .from("processed_webhooks")
@@ -190,7 +187,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // ── 3. NON-CRITICAL: Update stripe_customer_id ──
+
     try {
       if (session.customer && typeof session.customer === "string") {
         await supabaseAdmin
@@ -202,7 +199,7 @@ export async function POST(request: NextRequest) {
       console.warn("[Stripe webhook] Failed to update stripe_customer_id (non-critical):", err);
     }
 
-    // ── 4. NON-CRITICAL: Handle referral bonus ──
+
     try {
       const { data: profile } = await supabaseAdmin
         .from("profiles")
@@ -231,7 +228,7 @@ export async function POST(request: NextRequest) {
       console.warn("[Stripe webhook] Referral handling failed (non-critical):", err);
     }
 
-    // ── 5. NON-CRITICAL: Mark idempotency as processed ──
+
     if (idempotencyEnabled) {
       try {
         await supabaseAdmin
@@ -243,7 +240,7 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // ── 6. NON-CRITICAL: Send payment confirmation email ──
+
     if (customerEmail) {
       try {
         await sendPaymentConfirmationEmail({

@@ -50,7 +50,7 @@ function ShowcaseCard({ item }: { item: ShowcaseItem }) {
       ref={cardRef}
       className={`group relative aspect-square overflow-hidden rounded-xl border bg-[#111] transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${borderClass}`}
     >
-      {/* Type badge */}
+      {}
       <div className="absolute top-3 left-3 z-30">
         <span
           className={`inline-flex items-center gap-1 rounded-md px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider backdrop-blur-sm ${badgeClass}`}

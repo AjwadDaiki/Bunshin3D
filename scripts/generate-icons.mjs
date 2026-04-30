@@ -1,11 +1,4 @@
-/**
- * Generate all icon formats from source SVG for SEO, PWA, and browser compatibility.
- *
- * Usage: node scripts/generate-icons.mjs
- *
- * Source: public/safari-pinned-tab.svg
- * Outputs to: public/ and app/
- */
+
 
 import sharp from "sharp";
 import { readFileSync, writeFileSync, copyFileSync, existsSync } from "fs";
@@ -22,7 +15,7 @@ const SVG_SOURCE = join(PUBLIC, "safari-pinned-tab.svg");
 const BG_COLOR = "#0a0a0a";
 const ACCENT_COLOR = "#3b82f6";
 
-// All icon sizes to generate
+
 const ICON_SIZES = [16, 32, 48, 64, 96, 128, 150, 180, 192, 256, 384, 512];
 
 async function generatePngFromSvg(size, padding = 0) {
@@ -30,7 +23,7 @@ async function generatePngFromSvg(size, padding = 0) {
   const innerSize = size - padding * 2;
 
   if (padding > 0) {
-    // Render SVG at inner size, then composite on padded background
+
     const inner = await sharp(svgBuffer)
       .resize(innerSize, innerSize, { fit: "contain", background: { r: 0, g: 0, b: 0, alpha: 0 } })
       .png()
@@ -67,7 +60,7 @@ async function generateStandardIcons() {
     writeFileSync(join(PUBLIC, filename), buffer);
     console.log(`  ${filename} (${size}x${size})`);
 
-    // Also copy to app/ for Next.js convention
+
     if (existsSync(APP)) {
       copyToApp(filename, buffer);
     }
@@ -76,7 +69,7 @@ async function generateStandardIcons() {
 
 async function generateMaskableIcon() {
   console.log("Generating maskable icon (512x512 with safe zone padding)...");
-  // Maskable icons need ~10% padding on each side for safe zone
+
   const buffer = await generatePngFromSvg(512, 51);
   writeFileSync(join(PUBLIC, "icon-maskable-512.png"), buffer);
   copyToApp("icon-maskable-512.png", buffer);
@@ -104,11 +97,11 @@ async function generateOgImage() {
   const logoSize = 300;
   const logoBuffer = await generatePngFromSvg(logoSize);
 
-  // Create dark background with centered logo
+
   const width = 1200;
   const height = 630;
 
-  // Create the "BUNSHIN3D" text as SVG
+
   const textSvg = Buffer.from(`
     <svg width="${width}" height="${height}">
       <text x="${width / 2}" y="${height / 2 + logoSize / 2 + 50}"
@@ -141,7 +134,7 @@ async function generateOgImage() {
   writeFileSync(join(PUBLIC, "og-image.jpg"), ogBuffer);
   writeFileSync(join(APP, "og-image.jpg"), ogBuffer);
 
-  // Also generate PNG version for Twitter
+
   const ogPng = await sharp({
     create: {
       width,
@@ -169,13 +162,13 @@ async function generateMonochromeSvg() {
   console.log("Generating monochrome Safari pinned tab SVG...");
   let svg = readFileSync(SVG_SOURCE, "utf8");
 
-  // Replace all fill colors and gradients with black
+
   svg = svg.replace(/<style>[\s\S]*?<\/style>/g, `<style>
       path, g path { fill: #000000; }
     </style>`);
-  // Remove gradient defs
+
   svg = svg.replace(/<linearGradient[\s\S]*?<\/linearGradient>/g, "");
-  // Replace class-based fills and url() fills
+
   svg = svg.replace(/class="cls-\d+"/g, 'fill="#000000"');
   svg = svg.replace(/fill="url\([^)]+\)"/g, 'fill="#000000"');
 
@@ -219,7 +212,7 @@ function copyToApp(filename, buffer) {
   try {
     writeFileSync(join(APP, filename), buffer);
   } catch {
-    // app/ dir file copy failed, non-critical
+
   }
 }
 

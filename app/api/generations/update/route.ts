@@ -43,7 +43,7 @@ export async function POST(request: Request) {
       }
     );
 
-    // First check if generation exists
+
     const { data: existing } = await supabase
       .from("generations")
       .select("id, prediction_id, status, user_id")
@@ -52,12 +52,12 @@ export async function POST(request: Request) {
 
     console.log("🔍 Existing generation:", existing);
 
-    // Determine the final URL (upload to R2 if configured and output is a URL)
+
     let finalOutputUrl = output;
     let r2Url: string | null = null;
 
     if (output && status === "succeeded" && typeof output === "string" && output.startsWith("http")) {
-      // Try to upload to R2 for permanent storage
+
       if (isR2Configured()) {
         const targetUserId = userId || existing?.user_id;
         if (targetUserId) {
@@ -66,11 +66,11 @@ export async function POST(request: Request) {
 
           if (r2Result.success && r2Result.url) {
             r2Url = r2Result.url;
-            finalOutputUrl = r2Result.url; // Use R2 URL as the main output
+            finalOutputUrl = r2Result.url;
             console.log("✅ Model uploaded to R2:", r2Url);
           } else {
             console.warn("⚠️ R2 upload failed, keeping Replicate URL:", r2Result.error);
-            // Keep the original Replicate URL as fallback
+
           }
         }
       } else {
@@ -78,7 +78,7 @@ export async function POST(request: Request) {
       }
     }
 
-    // If generation doesn't exist and we have userId, CREATE it (handles INSERT failures)
+
     if (!existing) {
       if (!userId) {
         console.error("❌ Generation not found and no userId provided for creation");
@@ -103,7 +103,7 @@ export async function POST(request: Request) {
         created_at: new Date().toISOString(),
       };
 
-      // Add r2_url if available
+
       if (r2Url) {
         insertData.r2_url = r2Url;
       }
@@ -126,7 +126,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ success: true, data: [newGen], created: true, r2Uploaded: !!r2Url });
     }
 
-    // Generation exists, update it
+
     const updateData: { status?: string; output?: string; r2_url?: string } = {};
     if (status) updateData.status = status;
     if (finalOutputUrl) {

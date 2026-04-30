@@ -5,13 +5,13 @@ export type ShowcaseItem = {
 };
 
 export const showcaseItems: ShowcaseItem[] = [
-  // Ultra (formerly premium showcase items)
+
   { id: "poubelle", model_url: "/models/poubelle.glb", type: "ultra" },
   { id: "robot", model_url: "/models/robot.glb", type: "ultra" },
-  // Premium
+
   { id: "shuriken", model_url: "/models/shuriken.glb", type: "premium" },
   { id: "coffre", model_url: "/models/coffre.glb", type: "premium" },
-  // Standard
+
   { id: "chaise", model_url: "/models/chaise.glb", type: "standard" },
   { id: "hache", model_url: "/models/hache.glb", type: "standard" },
   { id: "tasse", model_url: "/models/tasse.glb", type: "standard" },

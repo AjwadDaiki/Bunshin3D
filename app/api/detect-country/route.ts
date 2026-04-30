@@ -11,7 +11,7 @@ export async function GET(request: NextRequest) {
       ? forwarded.split(",")[0]
       : request.headers.get("x-real-ip") || "unknown";
 
-    // In local dev, use ipapi without IP to auto-detect from outgoing connection
+
     const isLocal = ip === "::1" || ip === "127.0.0.1" || ip === "unknown";
     const testIp = isLocal ? null : ip;
 

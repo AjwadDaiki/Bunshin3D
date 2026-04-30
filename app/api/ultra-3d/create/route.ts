@@ -61,7 +61,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Rodin Gen-2 for ultra quality
+
     const response = await fetch("https://api.replicate.com/v1/predictions", {
       method: "POST",
       headers: {

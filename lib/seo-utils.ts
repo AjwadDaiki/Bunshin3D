@@ -20,9 +20,7 @@ const localeToLang: Record<string, string> = {
   zh: "zh-CN",
 };
 
-/**
- * Generate hreflang alternates for a given path.
- */
+
 export function generateAlternates(locale: string, path: string) {
   const languages: Record<string, string> = {};
   routing.locales.forEach((loc) => {
@@ -36,9 +34,7 @@ export function generateAlternates(locale: string, path: string) {
   };
 }
 
-/**
- * Generate OpenGraph metadata for a page.
- */
+
 export function generateOGMetadata(
   locale: string,
   path: string,
@@ -67,9 +63,7 @@ export function generateOGMetadata(
   };
 }
 
-/**
- * Generate BreadcrumbList JSON-LD schema.
- */
+
 export function generateBreadcrumbJsonLd(
   items: Array<{ name: string; url: string }>,
 ) {
@@ -85,9 +79,7 @@ export function generateBreadcrumbJsonLd(
   };
 }
 
-/**
- * Generate WebPage JSON-LD schema for any page.
- */
+
 export function generateWebPageJsonLd(opts: {
   locale: string;
   path: string;
@@ -124,9 +116,7 @@ export function generateWebPageJsonLd(opts: {
   };
 }
 
-/**
- * Generate SpeakableSpecification for a page (helps voice assistants).
- */
+
 export function generateSpeakableJsonLd(locale: string, path: string, cssSelectors: string[]) {
   return {
     "@context": "https://schema.org",

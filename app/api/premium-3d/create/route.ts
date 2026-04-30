@@ -61,7 +61,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Trellis with boosted parameters for premium quality
+
     const response = await fetch("https://api.replicate.com/v1/predictions", {
       method: "POST",
       headers: {

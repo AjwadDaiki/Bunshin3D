@@ -15,7 +15,7 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  // 1. Authenticate
+
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
@@ -37,7 +37,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Not authenticated" }, { status: 401 });
   }
 
-  // 2. Check admin
+
   const supabaseAdmin = createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.SUPABASE_SERVICE_ROLE_KEY!,
@@ -54,7 +54,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Not authorized" }, { status: 403 });
   }
 
-  // 3. Parse request
+
   const { packId, targetUserId, locale: clientLocale } = await request.json();
   const locale = clientLocale || "en";
   const origin = request.headers.get("origin") || process.env.NEXT_PUBLIC_APP_URL || "";
@@ -67,10 +67,10 @@ export async function POST(request: NextRequest) {
   const userId = targetUserId || user.id;
   const pack = PRICING_CONFIG[packId as PackId];
 
-  // Use first available price amount for test mode (EUR as reference)
+
   const refPrice = pack.prices.EUR;
 
-  // 4. Create test Stripe checkout with inline price_data (no test price IDs needed)
+
   const stripe = new Stripe(testKey, { apiVersion: "2025-12-15.clover" });
 
   const stripeLocaleMap: Record<string, string> = {

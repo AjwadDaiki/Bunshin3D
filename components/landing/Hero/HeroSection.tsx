@@ -9,7 +9,7 @@ export default function HeroSection() {
 
   return (
     <section className="relative z-10 pt-32 pb-24 md:pt-48 md:pb-36 px-4 overflow-hidden">
-      {/* Subtle radial glow behind hero */}
+      {}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-blue-500/7 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute top-1/4 right-1/4 w-[400px] h-[400px] bg-indigo-500/4 rounded-full blur-[100px] pointer-events-none" />
 
@@ -42,13 +42,13 @@ export default function HeroSection() {
           </Link>
         </div>
 
-        {/* No credit card needed */}
+        {}
         <p className="text-sm text-neutral-500 flex items-center justify-center gap-1.5">
           <CreditCard className="w-4 h-4" weight="regular" />
           {t("Hero.noCreditCard")}
         </p>
 
-        {/* Trust indicators */}
+        {}
         <div className="flex flex-wrap items-center justify-center gap-6 pt-2 text-sm text-neutral-500">
           <span className="inline-flex items-center gap-1.5">
             <Gift className="w-4 h-4 text-blue-400" weight="fill" />

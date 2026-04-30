@@ -30,7 +30,7 @@ export function CurrencyProvider({ children }: { children: ReactNode }) {
         }
       })
       .catch(() => {
-        // keep USD default
+
       })
       .finally(() => setIsLoading(false));
   }, []);

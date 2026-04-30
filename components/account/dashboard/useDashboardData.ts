@@ -58,8 +58,7 @@ export function useDashboardData({
   }, [supabase]);
 
   useEffect(() => {
-    // Run cleanup in the background - don't re-fetch since we already
-    // have initialGenerations from the server. Realtime handles updates.
+
     fetch("/api/generations/cleanup", { method: "POST" }).catch(() => {});
   }, []);
 

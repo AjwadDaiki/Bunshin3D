@@ -40,7 +40,7 @@ export default async function AdminPage({
 
   setRequestLocale(locale);
 
-  // 1. Init Supabase (Cookie Auth)
+
   const cookieStore = await cookies();
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -61,13 +61,13 @@ export default async function AdminPage({
     },
   );
 
-  // 2. Auth Check
+
   const {
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) redirect(`/${locale}/login`);
 
-  // 3. Admin Check
+
   const { data: profile } = await supabase
     .from("profiles")
     .select("is_admin")
@@ -78,7 +78,7 @@ export default async function AdminPage({
     redirect(`/${locale}`);
   }
 
-  // 4. MASSIVE DATA FETCHING (Parallel)
+
   const today = new Date();
   today.setHours(0, 0, 0, 0);
   const todayISO = today.toISOString();
@@ -110,7 +110,7 @@ export default async function AdminPage({
     supabase
       .from("profiles")
       .select("id", { count: "exact", head: true })
-      .gt("credits", 5), // Simple proxy for paying users
+      .gt("credits", 5),
     supabase
       .from("profiles")
       .select("id", { count: "exact", head: true })
@@ -131,11 +131,11 @@ export default async function AdminPage({
   const payingUsers = payingUsersReq.count || 0;
   const revenue = settings?.total_revenue || 0;
 
-  // Calculs KPI
+
   const arpu = totalUsers > 0 ? (revenue / totalUsers).toFixed(2) : "0.00";
   const conversionRate =
     totalUsers > 0 ? ((payingUsers / totalUsers) * 100).toFixed(1) : "0.0";
-  // Estimation coût GPU (hypothetique 0.05$ par run)
+
   const gpuBurn = (totalGenerations * 0.05).toFixed(2);
 
   const todayUsers = todayUsersReq.count || 0;

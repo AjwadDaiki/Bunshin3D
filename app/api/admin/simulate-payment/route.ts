@@ -7,7 +7,7 @@ import { PRICING_CONFIG, type PackId } from "@/lib/config/pricing";
 export const runtime = "nodejs";
 
 export async function POST(request: NextRequest) {
-  // 1. Authenticate the requesting user via cookies
+
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
@@ -29,7 +29,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Not authenticated" }, { status: 401 });
   }
 
-  // 2. Check admin role
+
   const supabaseAdmin = createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.SUPABASE_SERVICE_ROLE_KEY!,
@@ -46,7 +46,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Not authorized" }, { status: 403 });
   }
 
-  // 3. Parse request body
+
   const { targetUserId, packId, sendEmail } = await request.json();
 
   if (!targetUserId || !packId) {
@@ -67,7 +67,7 @@ export async function POST(request: NextRequest) {
   const pack = PRICING_CONFIG[packId as PackId];
   const creditsToAdd = pack.credits;
 
-  // 4. Verify target user exists
+
   const { data: targetProfile, error: targetError } = await supabaseAdmin
     .from("profiles")
     .select("credits, email")
@@ -78,14 +78,14 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Target user not found" }, { status: 404 });
   }
 
-  // 5. Add credits
+
   const { error: rpcError } = await supabaseAdmin.rpc("increment_credits", {
     target_user_id: targetUserId,
     amount: creditsToAdd,
   });
 
   if (rpcError) {
-    // Fallback to direct update
+
     const newCredits = (targetProfile.credits || 0) + creditsToAdd;
     const { error: updateError } = await supabaseAdmin
       .from("profiles")
@@ -104,10 +104,10 @@ export async function POST(request: NextRequest) {
     `[Admin] Simulated payment: admin=${user.id} target=${targetUserId} pack=${packId} credits=+${creditsToAdd}`,
   );
 
-  // 6. Optionally send confirmation email
+
   if (sendEmail && targetProfile.email) {
     try {
-      // Fetch user's locale preference
+
       const { data: authUser } = await supabaseAdmin.auth.admin.getUserById(targetUserId);
       const locale = authUser?.user?.user_metadata?.locale || "en";
 
