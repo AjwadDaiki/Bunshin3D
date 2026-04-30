@@ -8,18 +8,19 @@ import { TOOL_SLUGS } from "@/lib/tools-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "https://bunshin3d.com";
+  const ogImage = `${baseUrl}/og-image.jpg`;
 
   const mainRoutes = [
-    { path: "", priority: 1.0, changeFrequency: "daily" as const },
-    { path: "/pricing", priority: 0.9, changeFrequency: "weekly" as const },
-    { path: "/use-cases", priority: 0.8, changeFrequency: "weekly" as const },
-    { path: "/formats", priority: 0.8, changeFrequency: "weekly" as const },
-    { path: "/compare", priority: 0.7, changeFrequency: "weekly" as const },
-    { path: "/tools", priority: 0.9, changeFrequency: "weekly" as const },
-    { path: "/login", priority: 0.5, changeFrequency: "monthly" as const },
-    { path: "/terms", priority: 0.3, changeFrequency: "yearly" as const },
-    { path: "/privacy", priority: 0.3, changeFrequency: "yearly" as const },
-    { path: "/legal-mentions", priority: 0.3, changeFrequency: "yearly" as const },
+    { path: "", priority: 1.0, changeFrequency: "daily" as const, images: [ogImage] },
+    { path: "/pricing", priority: 0.9, changeFrequency: "weekly" as const, images: [ogImage] },
+    { path: "/use-cases", priority: 0.8, changeFrequency: "weekly" as const, images: [ogImage] },
+    { path: "/formats", priority: 0.8, changeFrequency: "weekly" as const, images: [ogImage] },
+    { path: "/compare", priority: 0.7, changeFrequency: "weekly" as const, images: [ogImage] },
+    { path: "/tools", priority: 0.9, changeFrequency: "weekly" as const, images: [ogImage] },
+    { path: "/login", priority: 0.5, changeFrequency: "monthly" as const, images: [] },
+    { path: "/terms", priority: 0.3, changeFrequency: "yearly" as const, images: [] },
+    { path: "/privacy", priority: 0.3, changeFrequency: "yearly" as const, images: [] },
+    { path: "/legal-mentions", priority: 0.3, changeFrequency: "yearly" as const, images: [] },
   ];
 
   const dynamicRoutes = [
@@ -32,7 +33,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const entries: MetadataRoute.Sitemap = [];
 
-  const addEntry = (locale: string, path: string, priority: number, changeFrequency: "daily" | "weekly" | "monthly" | "yearly") => {
+  const addEntry = (
+    locale: string,
+    path: string,
+    priority: number,
+    changeFrequency: "daily" | "weekly" | "monthly" | "yearly",
+    images: string[],
+  ) => {
     const alternates: Record<string, string> = {};
     routing.locales.forEach((loc) => {
       alternates[loc] = `${baseUrl}/${loc}${path}`;
@@ -45,16 +52,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency,
       priority,
       alternates: { languages: alternates },
+      ...(images.length ? { images } : {}),
     });
   };
 
   routing.locales.forEach((locale) => {
     mainRoutes.forEach((route) => {
-      addEntry(locale, route.path, route.priority, route.changeFrequency);
+      addEntry(locale, route.path, route.priority, route.changeFrequency, route.images);
     });
 
     dynamicRoutes.forEach((route) => {
-      addEntry(locale, `${route.prefix}/${route.slug}`, route.priority, "weekly");
+      addEntry(locale, `${route.prefix}/${route.slug}`, route.priority, "weekly", [ogImage]);
     });
   });
 

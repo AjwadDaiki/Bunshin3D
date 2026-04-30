@@ -1,18 +1,18 @@
 {
   "Metadata": {
-    "defaultTitle": "AI 图片转3D模型. 免费 STL、GLB 与 OBJ 生成器 | Bunshin 3D",
-    "templateTitle": "%s | Bunshin 3D. AI 图片转3D (STL、GLB、OBJ、FBX)",
-    "description": "用 AI 把任何图片、照片、Logo 或绘画转换为 3D 模型。免费在线 图片转 STL、PNG 转 3D、JPG 转 GLB、Logo 转 3D 打印. 即时下载 STL、GLB、OBJ 与 FBX。无需安装,无需设计技能。",
-    "applicationName": "Bunshin 3D. AI 3D 生成器",
+    "defaultTitle": "Bunshin 3D，AI 图片转 3D 模型 (STL、GLB、OBJ)",
+    "templateTitle": "%s | Bunshin 3D",
+    "description": "上传照片、Logo 或草图，Bunshin 3D 给你一个可以打印或用在项目里的 3D 文件。3D 打印的 STL、Unity 和 Unreal 的 GLB、Blender 的 OBJ。免费试用，无需安装。",
+    "applicationName": "Bunshin 3D",
     "keywords": "图片转3d, 图片转stl, png转stl, png转3d, jpg转3d, 照片转3d, 照片转3d打印, logo转stl, logo转3d, 绘画转3d, 草图转3d, 2d转3d, ai 3d生成器, ai 3d模型生成器, ai 3d打印, 免费3d模型, 免费stl生成器, 图片转stl免费, 在线stl转换, 把图片转成stl, 把png转成stl, 把照片转成3d, unity 3d素材, unreal engine素材, blender obj 来自图片, godot 3d素材, 游戏素材生成器, 把图片变成3d, ai 图片转3d 免费",
     "creator": "Bunshin 3D",
     "publisher": "Bunshin 3D",
-    "ogSiteName": "Bunshin 3D. AI 3D 模型生成器",
-    "ogTitle": "30秒把图片变成3D模型. 免费 AI STL 与 GLB 转换器",
-    "ogDescription": "免费 AI 图片转3D 工具:拖入照片、Logo 或绘画,即可下载用于3D打印的 STL、用于 Unity/Unreal 的 GLB、或用于 Blender 的 OBJ。",
-    "ogImageAlt": "Bunshin 3D. AI 把照片、Logo 与绘画变成可用于3D打印、Unity、Unreal 与 Blender 的 3D 模型",
-    "twitterTitle": "AI 图片转3D. 免费 STL、GLB、OBJ 生成器",
-    "twitterDescription": "把图片、照片、Logo 与绘画变成 3D 模型。免费 AI 转换器. 立即生成 STL、GLB、OBJ、FBX。"
+    "ogSiteName": "Bunshin 3D",
+    "ogTitle": "把任何图片变成 3D 模型",
+    "ogDescription": "照片、Logo、绘画。Bunshin 3D 帮你做成 3D 文件。免费试用，无需安装。",
+    "ogImageAlt": "Bunshin 3D，用于打印、Unity、Unreal 和 Blender 的图片转 3D 工具",
+    "twitterTitle": "图片转 3D 模型，免费",
+    "twitterDescription": "丢一张图，拿一份 3D 文件。打印用 STL，Unity 用 GLB。免费试用。"
   },
   "SEO": {
     "siteName": "Bunshin 3D",
@@ -61,10 +61,10 @@
     },
     "Hero": {
       "badge": "AI驱动的3D生成",
-      "title": "AI 图片转3D模型 ",
-      "titleHighlight": "30秒生成 STL、GLB 与 OBJ。",
-      "subtitle": "拖入一张照片、Logo 或绘画,我们的 AI 会生成水密的 3D 模型:用于3D打印的 STL,用于 Unity、Unreal 或 Web 的 GLB,用于 Blender 的 OBJ。免费试用,无需安装,无需设计技能。",
-      "ctaPrimary": "免费试用. 图片转3D",
+      "title": "把一张图片变成 3D 模型。",
+      "titleHighlight": "免费，浏览器就够。",
+      "subtitle": "上传一张照片、一个 Logo 或一张草图。你会拿到一个可以打印或者放进项目的 3D 文件。不用装软件。大多数导出不到一分钟。",
+      "ctaPrimary": "马上开始，免费",
       "ctaSecondary": "查看价格",
       "trustedBy": "AI驱动的3D生成引擎",
       "freeCredits": "注册即送2积分",
@@ -73,12 +73,12 @@
       "noCreditCard": "无需信用卡"
     },
     "Showcase": {
-      "title": "从图片到3D模型. 几秒完成",
-      "subtitle": "Logo、照片、草图与概念图秒变可打印 STL 与游戏可用 GLB 网格. 无需手工雕刻。"
+      "title": "大家都在做的东西",
+      "subtitle": "Logo、物品照片、甚至小孩的画。建模交给 AI，你什么都不用动。"
     },
     "Features": {
-      "title": "最快的免费 AI 图片转3D 工具",
-      "subtitle": "面向3D打印、游戏开发与快速原型设计。照片转 STL、PNG 转 3D、Logo 转 3D、草图转网格. 一站式。",
+      "title": "为打印、游戏和个人项目而做",
+      "subtitle": "我们只关心你真正想用文件时最在意的部分。",
       "speedTitle": "闪电般快速",
       "speedDesc": "GPU加速推理在<30秒内生成模型。",
       "topologyTitle": "清晰拓扑",
@@ -93,14 +93,14 @@
       "instantDesc": "以GLB、FBX、OBJ或STL格式即时下载您的模型。"
     },
     "Steps": {
-      "label": "图片转3D 的工作原理",
-      "title": "三步把任何图片变成3D",
-      "step1": "上传图像",
-      "step1Desc": "拖放任何PNG、JPG或WEBP。",
-      "step2": "AI处理",
-      "step2Desc": "我们的Bunshin引擎重建深度和纹理。",
-      "step3": "下载3D",
-      "step3Desc": "获取您的游戏就绪或打印就绪资产。"
+      "label": "怎么用",
+      "title": "三步，五分钟。",
+      "step1": "上传图片",
+      "step1Desc": "PNG、JPG 或 WEBP。直接拖进来或选文件。",
+      "step2": "让 AI 干活",
+      "step2Desc": "它会从图片里把深度和纹理重建出来。",
+      "step3": "下载文件",
+      "step3Desc": "STL、GLB、OBJ 或 FBX。挑你需要的那个。"
     },
     "Samples": {
       "title": "最近生成",
@@ -115,37 +115,37 @@
       "button": "启动工作室"
     },
     "SEOContent": {
-      "title1": "AI 图片转3D. STL、GLB、OBJ 与 FBX",
-      "text1": "Bunshin 3D 是一款由 AI 驱动的免费图片转3D 转换器,可以把任何照片、Logo、绘画或概念图变成生产级的 3D 模型。拖入 PNG、JPG 或 WEBP,即可下载用于3D打印的水密 STL、用于 Unity、Unreal Engine、Godot 与 Web 的 GLB、用于 Blender 与 Maya 的 OBJ,以及用于旧版游戏管线的 FBX。转换不到 30 秒. 无需3D建模经验、无需安装、无需信用卡。",
-      "title2": "为3D打印、游戏开发与原型设计而生",
-      "text2": "图片转 STL 引擎产出的每个文件都是流形且水密的,可直接载入 Cura、PrusaSlicer、Bambu Studio 等切片器,无需修复。GLB 导出符合 glTF 2.0 标准,与 Unity、Unreal Engine、Godot、Three.js 与在线查看器原生兼容。神经深度管线重建真实的体积几何. 不是平面挤出也不是立体光栅. 适用于原型设计、产品可视化、教育、游戏素材与商业生产。",
-      "title3": "免费积分、无订阅、完整商业授权",
-      "text3": "注册即可获得免费积分用于试用. 无需信用卡。积分永不过期、没有月度订阅,每个生成的 3D 模型都附带完整商业授权:用于游戏、出售打印件、交付客户项目均免版税。积分包从 10 次生成 3.99 美元起,大包另享数量折扣。Bunshin 3D 支持七种语言与多种货币,服务于全球 80+ 国家的创作者。",
-      "title4": "把照片、PNG、JPG 与 Logo 变成可打印 STL",
-      "text4": "用照片转3D 工具从一张照片打印手办与浮雕,用 PNG 转 STL 从透明 PNG 制作标牌与铭牌,用 Logo 转3D 打印管线把品牌标志变为桌面物件,用绘画转3D 引擎把孩子的画作变成实物。每种输入. 草图、截图、矢量 Logo、扫描页面. 都会变成可打印的 STL,壁面干净、无超薄壳体、无需手工修复。",
-      "title5": "面向 Unity、Unreal、Godot、Blender 的 AI 3D 素材生成器",
-      "text5": "游戏工作室与独立开发者把 Bunshin 3D 当作快速素材生成器:拖入概念图,获取适合 Blender 重拓扑的四边面 OBJ、可直接拖入 Unity 或 Unreal 的 GLB,或用于旧管线的 FBX。每个模型都带有 PBR 贴图(基础色、法线、粗糙度),无需手写材质即可融入实时场景。适合原型设计、Game Jam、素材包、AR/VR 场景或 AAA 前期制作。"
+      "title1": "Bunshin 3D 是什么",
+      "text1": "Bunshin 3D 是一个把 2D 图片变成 3D 模型的在线工具。你上传一张图（照片、Logo、截图、草图都行），AI 会把它在 3D 里重新搭出来。可以下载成 3D 打印用的 STL、Unity 和 Unreal 用的 GLB、Blender 用的 OBJ，或者老游戏管线用的 FBX。大多数文件不到一分钟就好了。",
+      "title2": "都是谁在用",
+      "text2": "有人把家里旧照片印成小手办。有游戏开发者在等真正的美术之前，把概念图先转成临时素材。有家长把孩子早上画的小东西打印出来。也有设计师在交给真正的 3D 师傅之前，先用它做包装的草样。老师把图变成学生能拿在手里的东西。每周都有新用法，我们很乐意听到。",
+      "title3": "价格，说人话",
+      "text3": "注册就送免费积分，不用绑卡。积分不会过期。没有月度订阅。要更多就买积分包，10 次的包从 3.99 美元起。你做的每个模型都归你，包括商业用途。我们不抽分成。",
+      "title4": "我们能导出哪些格式",
+      "text4": "STL 直接进 Cura、PrusaSlicer 或 Bambu Studio，不用修。GLB 走 glTF 2.0 标准，Unity、Unreal、Godot 和大多数网页查看器都能直接读。OBJ 配 Blender、Maya 和 Cinema 4D。FBX 留给老的 Unity 项目和某些工作室管线。导出页里自己选格式。",
+      "title5": "我们为什么做这个",
+      "text5": "没做过的人，在 Blender 里建一个简单的东西要几个小时。我们觉得不该这样。所以训练了一个模型替你做无聊的部分，界面也尽量小，免得迷路。结果想之后再用你熟的 3D 软件再修，也可以。大多数人其实不需要再修。"
     },
     "KeywordHub": {
-      "label": "热门搜索",
-      "title": "用 Bunshin 可以把什么转换为3D?",
-      "subtitle": "直达最常用的图片转3D 转换流程。",
+      "label": "快速链接",
+      "title": "大家都在搜什么",
+      "subtitle": "这是用户最常拿这个工具去做的事。",
       "items": {
-        "imageToStl": "图片转 STL 转换器",
-        "pngToStl": "PNG 转 STL 在线",
-        "jpgTo3d": "JPG 转 3D 模型",
-        "photoTo3dPrint": "照片转 3D 打印",
-        "logoToStl": "Logo 转 STL (用于3D打印)",
-        "logoTo3d": "Logo 转 3D 模型",
-        "drawingTo3d": "绘画转 3D 模型",
-        "sketchTo3d": "草图转 3D 网格",
-        "imageToGlb": "Unity 用 图片转 GLB",
-        "imageToObj": "Blender 用 图片转 OBJ",
-        "unityAssets": "照片转 Unity 3D 素材",
-        "unrealAssets": "图片转 Unreal Engine 素材",
+        "imageToStl": "图片转 STL",
+        "pngToStl": "PNG 变 3D 文件",
+        "jpgTo3d": "用 JPG 做 3D 模型",
+        "photoTo3dPrint": "把照片打印成 3D",
+        "logoToStl": "把 Logo 打印成 3D",
+        "logoTo3d": "Logo 变 3D 模型",
+        "drawingTo3d": "把画变成 3D 物体",
+        "sketchTo3d": "草图变 3D 网格",
+        "imageToGlb": "Unity 用的图片转 GLB",
+        "imageToObj": "Blender 用的图片转 OBJ",
+        "unityAssets": "用照片做 Unity 素材",
+        "unrealAssets": "用图片做 Unreal 素材",
         "aiGameAssets": "AI 游戏素材生成器",
         "freeStl": "免费 STL 文件生成器",
-        "aiImageTo3d": "AI 图片转3D 模型. 免费"
+        "aiImageTo3d": "AI 图片转 3D 模型，免费"
       }
     }
   },
@@ -1405,8 +1405,8 @@
     "generatedAsset": "生成的资产",
     "viewModel": "查看模型",
     "download": "下载",
-    "title": "从图片到3D模型. 几秒完成",
-    "subtitle": "Logo、照片、草图与概念图秒变可打印 STL 与游戏可用 GLB 网格. 无需手工雕刻。",
+    "title": "大家都在做的东西",
+    "subtitle": "Logo、物品照片、甚至小孩的画。建模交给 AI，你什么都不用动。",
     "badges": {
       "ultra": "超级",
       "premium": "高级",

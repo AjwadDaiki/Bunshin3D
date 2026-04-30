@@ -1,18 +1,18 @@
 {
   "Metadata": {
-    "defaultTitle": "AI 画像から3Dモデル変換. 無料 STL・GLB・OBJ ジェネレーター | Bunshin 3D",
-    "templateTitle": "%s | Bunshin 3D. AI 画像から3D変換 (STL, GLB, OBJ, FBX)",
-    "description": "AI で写真・ロゴ・イラスト・絵を 3D モデルに変換。画像から STL、PNG から 3D、JPG から GLB、ロゴから 3D プリント. 無料・オンライン・即時ダウンロード。インストール不要、デザインスキル不要。",
-    "applicationName": "Bunshin 3D. AI 3D ジェネレーター",
+    "defaultTitle": "Bunshin 3D、AI 画像から3Dモデル変換 (STL、GLB、OBJ)",
+    "templateTitle": "%s | Bunshin 3D",
+    "description": "写真、ロゴ、スケッチを送ると Bunshin 3D が 3D ファイルを返します。3D プリント用の STL、Unity と Unreal 用の GLB、Blender 用の OBJ。無料で試せます、インストール不要。",
+    "applicationName": "Bunshin 3D",
     "keywords": "画像 3d 変換, 画像 stl 変換, png stl 変換, png 3d 変換, jpg 3d 変換, 写真 3d 変換, 写真 3d プリント, ロゴ stl, ロゴ 3d, 絵 3d 変換, スケッチ 3d, 2d 3d 変換, ai 3d ジェネレーター, ai 3d モデル, ai 3d プリント, 無料 3d モデル, 無料 stl ジェネレーター, 画像 stl 無料, stl コンバーター オンライン, 画像 stl 変換 無料, 画像 glb 変換, 写真 3d モデル, unity アセット, unreal engine アセット, blender obj 画像, ゲーム アセット ジェネレーター, 写真から3dモデル, ai 画像 3d 無料",
     "creator": "Bunshin 3D",
     "publisher": "Bunshin 3D",
-    "ogSiteName": "Bunshin 3D. AI 3D モデルジェネレーター",
-    "ogTitle": "画像を30秒で3Dモデルに. 無料 AI STL・GLB コンバーター",
-    "ogDescription": "無料 AI 画像から3D変換ツール:写真・ロゴ・イラストをドロップして、3Dプリント用 STL、Unity/Unreal 用 GLB、Blender 用 OBJ をダウンロード。",
-    "ogImageAlt": "Bunshin 3D. AI が写真・ロゴ・イラストを 3D プリント、Unity、Unreal、Blender 用の 3D モデルに変換",
-    "twitterTitle": "AI 画像から3D変換. 無料 STL・GLB・OBJ ジェネレーター",
-    "twitterDescription": "画像・写真・ロゴ・イラストを 3D モデルに変換。無料 AI コンバーター. STL・GLB・OBJ・FBX を即時生成。"
+    "ogSiteName": "Bunshin 3D",
+    "ogTitle": "どんな画像でも 3D モデルに",
+    "ogDescription": "写真、ロゴ、絵。Bunshin 3D が 3D ファイルを作ります。無料で試せて、インストールも不要です。",
+    "ogImageAlt": "Bunshin 3D、印刷や Unity、Unreal、Blender のための画像から 3D 変換ツール",
+    "twitterTitle": "画像から 3D モデル、無料",
+    "twitterDescription": "画像を渡せば 3D ファイルが返ってきます。印刷用の STL、Unity 用の GLB。無料で試してください。"
   },
   "SEO": {
     "siteName": "Bunshin 3D",
@@ -61,10 +61,10 @@
     },
     "Hero": {
       "badge": "AI搭載の3D生成",
-      "title": "AI 画像から3Dモデル変換 ",
-      "titleHighlight": "STL・GLB・OBJ を30秒で。",
-      "subtitle": "写真・ロゴ・イラストをアップロードすると、AI が水密な3Dモデルを生成:3DプリントなSTL、Unity・Unreal・Web 用 GLB、Blender 用 OBJ。無料でお試し、インストール不要、デザインスキル不要。",
-      "ctaPrimary": "無料で試す. 画像から3Dへ",
+      "title": "画像を 3D モデルに変えます。",
+      "titleHighlight": "無料、ブラウザだけで。",
+      "subtitle": "写真、ロゴ、スケッチをアップしてください。印刷にも、プロジェクトにも使える 3D ファイルが届きます。インストール不要。だいたい 1 分で終わります。",
+      "ctaPrimary": "今すぐ始める、無料",
       "ctaSecondary": "料金を見る",
       "trustedBy": "AI搭載3Dジェネレーションエンジン",
       "freeCredits": "登録で2クレジット無料",
@@ -73,12 +73,12 @@
       "noCreditCard": "クレジットカード不要"
     },
     "Showcase": {
-      "title": "画像から3Dモデルへ. 数秒で完成",
-      "subtitle": "ロゴ・写真・スケッチ・コンセプトアートを、すぐに印刷できる STL とゲーム向け GLB メッシュへ。手作業のスカルプト不要。"
+      "title": "みんなが作っているもの",
+      "subtitle": "ロゴ、物の写真、子どもの絵まで。モデリングは AI に任せて、あなたは何もしなくて大丈夫です。"
     },
     "Features": {
-      "title": "最速の無料 AI 画像から3D変換",
-      "subtitle": "3Dプリント・ゲーム開発・ラピッドプロトタイピング向け。写真から STL、PNG から 3D、ロゴから 3D、スケッチからメッシュ. すべてここで。",
+      "title": "印刷、ゲーム、個人プロジェクトのために",
+      "subtitle": "ファイルを実際に使うときに大事なところに集中して作りました。",
       "speedTitle": "超高速",
       "speedDesc": "GPU加速推論により30秒以内にモデルを生成。",
       "topologyTitle": "クリーンなトポロジー",
@@ -93,14 +93,14 @@
       "instantDesc": "GLB、FBX、OBJ、STL形式でモデルを即座にダウンロード。"
     },
     "Steps": {
-      "label": "画像から3D変換の仕組み",
-      "title": "画像を3つのステップで3Dに変換",
+      "label": "使い方",
+      "title": "3 ステップで、5 分。",
       "step1": "画像をアップロード",
-      "step1Desc": "PNG、JPG、WEBPをドラッグ＆ドロップ。",
-      "step2": "AI処理",
-      "step2Desc": "Bunshinエンジンが深度とテクスチャを再構築します。",
-      "step3": "3Dをダウンロード",
-      "step3Desc": "ゲーム対応またはプリント対応のアセットを取得。"
+      "step1Desc": "PNG、JPG、WEBP。ドラッグするかファイルを選んでください。",
+      "step2": "AI に任せる",
+      "step2Desc": "画像から奥行きとテクスチャを再構築します。",
+      "step3": "ファイルをダウンロード",
+      "step3Desc": "STL、GLB、OBJ、FBX から必要なものを選んでください。"
     },
     "Samples": {
       "title": "最近の生成物",
@@ -115,37 +115,37 @@
       "button": "スタジオを起動"
     },
     "SEOContent": {
-      "title1": "AI 画像から3D変換. STL・GLB・OBJ・FBX",
-      "text1": "Bunshin 3D は AI を活用した無料の画像から3Dへの変換ツールで、写真・ロゴ・イラスト・コンセプトアートをプロダクション品質の3Dモデルに変換します。PNG・JPG・WEBP をドロップし、3Dプリント用の水密 STL、Unity・Unreal Engine・Godot・Web 用 GLB、Blender・Maya 用 OBJ、レガシー パイプライン用 FBX としてダウンロードできます。変換は30秒以内. 3Dモデリング経験・インストール・クレジットカード不要。",
-      "title2": "3Dプリント・ゲーム開発・プロトタイピングのために",
-      "text2": "AI 画像から STL エンジンが生成するファイルはすべてマニフォールドで水密。Cura・PrusaSlicer・Bambu Studio などのスライサーに修復不要でそのまま読み込めます。GLB は glTF 2.0 標準に準拠し、Unity・Unreal Engine・Godot・Three.js・オンラインビューワーにネイティブ対応。ニューラル深度パイプラインが本物のボリュームジオメトリを再構築. 平面押し出しやリトファン風ではないので、プロトタイピング・製品ビジュアライゼーション・教育・ゲームアセット・商用に使えます。",
-      "title3": "無料クレジット、サブスクなし、商用ライセンス付き",
-      "text3": "登録するだけで無料クレジットを獲得. クレジットカード不要。クレジットは失効せず、月額サブスクもありません。生成した3Dモデルにはすべて商用ライセンスが付き、ゲームでの使用・印刷物の販売・クライアントワークでもロイヤリティ不要。クレジットパックは10回分3.99ドルから、量に応じた割引もあります。Bunshin 3D は7言語対応、複数通貨対応で80カ国以上のクリエイターに使われています。",
-      "title4": "写真・PNG・JPG・ロゴを印刷できる STL に変換",
-      "text4": "写真から3D変換ツールで一枚の写真からフィギュアを印刷、PNG から STL ツールで透過 PNG からサインや銘板を作成、ロゴから3Dプリントのパイプラインでブランドマークをデスクトップオブジェクトに、絵から3D エンジンで子供のアートを実物化できます。どの入力. スケッチ、スクリーンショット、ベクターロゴ、スキャンページ. もきれいな壁・薄殻なし・手動修復不要の印刷可能な STL になります。",
-      "title5": "Unity・Unreal・Godot・Blender 向け AI 3Dアセットジェネレーター",
-      "text5": "ゲームスタジオとインディー開発者は Bunshin 3D を高速アセットジェネレーターとして利用しています。コンセプトアートをドロップして、Blender リトポロジー用のクワッドフレンドリーな OBJ、Unity や Unreal にそのままドラッグできる GLB、レガシーパイプライン用の FBX を入手。各モデルには PBR テクスチャ(アルベド・ノーマル・ラフネス)が含まれ、マテリアルを書かずにリアルタイムシーンに統合できます。プロトタイピング・ゲームジャム・アセットパック・AR/VR シーン・AAA プリプロダクションに最適。"
+      "title1": "Bunshin 3D とは",
+      "text1": "Bunshin 3D は 2D 画像を 3D モデルに変換するオンラインツールです。写真、ロゴ、スクリーンショット、スケッチをアップロードすると、AI が 3D 版を組み立てます。3D プリント用の STL、Unity と Unreal 用の GLB、Blender 用の OBJ、古いゲームパイプライン用の FBX としてダウンロードできます。だいたい 1 分以内に出来上がります。",
+      "title2": "どんな人が使っていますか",
+      "text2": "古い家族写真からフィギュアを印刷する人がいます。本物のアーティストを待つ間、コンセプトアートを仮アセットに変えるゲーム開発者もいます。子どもが朝に描いた絵を印刷する親もいます。本物のモデラーに渡す前にパッケージ案を確認するデザイナーも。先生が図を生徒の手に渡せる物に変えたりもします。リストは毎週増えていて、新しい使い方を聞くのが楽しみです。",
+      "title3": "料金、わかりやすく",
+      "text3": "登録するだけで無料クレジットが付きます、カード不要です。クレジットは失効しません。月額もありません。もっと欲しいときは、10 回分のパックが 3.99 ドルから。作ったモデルはすべてあなたのもの、商用にも使えます。ロイヤリティはとりません。",
+      "title4": "対応している書き出し形式",
+      "text4": "STL は Cura、PrusaSlicer、Bambu Studio に修復なしでそのまま読み込めます。GLB は glTF 2.0 準拠で、Unity、Unreal、Godot、ほとんどの Web ビューワーに自然に入ります。OBJ は Blender、Maya、Cinema 4D で動きます。FBX は古い Unity プロジェクトや一部のスタジオパイプライン向けです。書き出し画面で形式を選べます。",
+      "title5": "なぜ作ったか",
+      "text5": "やったことのない人にとって、Blender で簡単な物を作るのに何時間もかかります。それは違う、と思いました。だから退屈な部分を代わりにやる AI を学習させて、迷わないように UI を小さく保ちました。後で好きな 3D ソフトで磨きたいなら、それもできます。ほとんどの人は必要ありません。"
     },
     "KeywordHub": {
-      "label": "人気の検索",
-      "title": "Bunshin で何を3Dに変換できる?",
-      "subtitle": "よく使われる画像から3D変換へのショートカット。",
+      "label": "ショートカット",
+      "title": "よく検索されること",
+      "subtitle": "ユーザーがこのツールに頼む、いちばん多い使い方です。",
       "items": {
-        "imageToStl": "画像から STL コンバーター",
-        "pngToStl": "PNG から STL オンライン",
-        "jpgTo3d": "JPG から3Dモデル",
-        "photoTo3dPrint": "写真から3Dプリント",
-        "logoToStl": "ロゴから STL (3Dプリント用)",
-        "logoTo3d": "ロゴから3Dモデル",
-        "drawingTo3d": "絵から3Dモデル",
-        "sketchTo3d": "スケッチから3Dメッシュ",
-        "imageToGlb": "Unity 用 画像から GLB",
-        "imageToObj": "Blender 用 画像から OBJ",
-        "unityAssets": "写真から Unity 3Dアセット",
+        "imageToStl": "画像を STL に変換",
+        "pngToStl": "PNG を 3D ファイルに",
+        "jpgTo3d": "JPG から 3D モデル",
+        "photoTo3dPrint": "写真を 3D プリント",
+        "logoToStl": "ロゴを 3D プリント",
+        "logoTo3d": "ロゴを 3D モデルに",
+        "drawingTo3d": "絵を 3D オブジェクトに",
+        "sketchTo3d": "スケッチから 3D メッシュ",
+        "imageToGlb": "Unity 用の画像から GLB",
+        "imageToObj": "Blender 用の画像から OBJ",
+        "unityAssets": "写真から Unity アセット",
         "unrealAssets": "画像から Unreal Engine アセット",
         "aiGameAssets": "AI ゲームアセットジェネレーター",
         "freeStl": "無料 STL ファイルジェネレーター",
-        "aiImageTo3d": "AI 画像から3Dモデル. 無料"
+        "aiImageTo3d": "AI 画像から 3D モデル、無料"
       }
     }
   },
@@ -1405,8 +1405,8 @@
     "generatedAsset": "生成されたアセット",
     "viewModel": "モデルを表示",
     "download": "ダウンロード",
-    "title": "画像から3Dモデルへ. 数秒で完成",
-    "subtitle": "ロゴ・写真・スケッチ・コンセプトアートを、すぐに印刷できる STL とゲーム向け GLB メッシュへ。手作業のスカルプト不要。",
+    "title": "みんなが作っているもの",
+    "subtitle": "ロゴ、物の写真、子どもの絵まで。モデリングは AI に任せて、あなたは何もしなくて大丈夫です。",
     "badges": {
       "ultra": "ウルトラ",
       "premium": "プレミアム",

@@ -1,18 +1,18 @@
 {
   "Metadata": {
-    "defaultTitle": "Convertidor de Imagen a 3D con IA. STL, GLB y OBJ gratis | Bunshin 3D",
-    "templateTitle": "%s | Bunshin 3D. Imagen a 3D con IA (STL, GLB, OBJ, FBX)",
-    "description": "Convierte cualquier imagen, foto, logo o dibujo en un modelo 3D con IA. Convertidor de imagen a STL, PNG a 3D, JPG a GLB y logo a impresión 3D, gratis y en línea. Descarga instantánea en STL, GLB, OBJ y FBX. Sin instalación, sin habilidades de diseño.",
-    "applicationName": "Bunshin 3D. Generador 3D con IA",
+    "defaultTitle": "Bunshin 3D, convertidor de imagen a 3D con IA (STL, GLB, OBJ)",
+    "templateTitle": "%s | Bunshin 3D",
+    "description": "Sube una foto, un logo o un boceto y Bunshin 3D te devuelve un archivo 3D listo para imprimir o usar en tu proyecto. STL para impresión 3D, GLB para Unity y Unreal, OBJ para Blender. Gratis para probar, sin instalar nada.",
+    "applicationName": "Bunshin 3D",
     "keywords": "imagen a 3d, convertidor imagen 3d, imagen a stl, png a stl, png a 3d, jpg a 3d, foto a 3d, foto a impresion 3d, logo a stl, logo a 3d, dibujo a 3d, croquis a 3d, 2d a 3d, generador 3d ia, generador modelo 3d ia, ia impresion 3d, gratis modelo 3d, generador stl gratis, imagen a stl gratis, convertidor stl online, convertir imagen a stl, convertir png a stl, convertir foto a 3d, assets unity 3d, assets unreal engine, blender obj desde imagen, generador assets juegos, transformar imagen en 3d, generador 3d ia gratis",
     "creator": "Bunshin 3D",
     "publisher": "Bunshin 3D",
-    "ogSiteName": "Bunshin 3D. Generador de modelos 3D con IA",
-    "ogTitle": "Convierte una imagen en modelo 3D en 30 segundos. Convertidor STL y GLB gratis",
-    "ogDescription": "Convertidor imagen a 3D con IA gratis: arrastra una foto, logo o dibujo y descarga un STL para imprimir, un GLB para Unity y Unreal, o un OBJ para Blender.",
-    "ogImageAlt": "Bunshin 3D. la IA transforma fotos, logos y dibujos en modelos 3D para impresión, Unity, Unreal y Blender",
-    "twitterTitle": "Convertidor Imagen a 3D con IA. STL, GLB y OBJ gratis",
-    "twitterDescription": "Convierte imágenes, fotos, logos y dibujos en modelos 3D. Convertidor IA gratis. STL, GLB, OBJ, FBX instantáneos."
+    "ogSiteName": "Bunshin 3D",
+    "ogTitle": "Convierte cualquier imagen en un modelo 3D",
+    "ogDescription": "Fotos, logos, dibujos. Bunshin 3D te genera el archivo 3D. Gratis para probar, sin instalación.",
+    "ogImageAlt": "Bunshin 3D, convertidor de imagen a 3D para impresión, Unity, Unreal y Blender",
+    "twitterTitle": "Convertidor de imagen a 3D, gratis",
+    "twitterDescription": "Sube una imagen, baja un archivo 3D. STL para imprimir, GLB para Unity. Pruébalo gratis."
   },
   "SEO": {
     "siteName": "Bunshin 3D",
@@ -61,10 +61,10 @@
     },
     "Hero": {
       "badge": "Generación 3D con IA",
-      "title": "Convertidor de Imagen a 3D con IA ",
-      "titleHighlight": "STL, GLB y OBJ en 30 segundos.",
-      "subtitle": "Arrastra una foto, logo o dibujo y nuestra IA genera un modelo 3D estanco: STL para impresión 3D, GLB para Unity, Unreal o web, OBJ para Blender. Gratis para probar, sin instalación, sin habilidades de diseño.",
-      "ctaPrimary": "Probar gratis. convertir imagen a 3D",
+      "title": "Convierte una imagen en modelo 3D.",
+      "titleHighlight": "Gratis, en tu navegador.",
+      "subtitle": "Sube una foto, un logo o un boceto. Recibes un archivo 3D listo para imprimir o usar en tu proyecto. Sin software que instalar. La mayoría de exports tardan menos de un minuto.",
+      "ctaPrimary": "Empezar, es gratis",
       "ctaSecondary": "Ver precios",
       "trustedBy": "MOTOR DE GENERACIÓN 3D CON IA",
       "freeCredits": "2 créditos gratis al registrarte",
@@ -73,12 +73,12 @@
       "noCreditCard": "Sin tarjeta de crédito"
     },
     "Showcase": {
-      "title": "De la imagen al modelo 3D en segundos",
-      "subtitle": "Logos, fotos, bocetos y concept art convertidos en STL listos para imprimir y mallas GLB listas para juego. sin esculpir manualmente."
+      "title": "Lo que la gente crea con esto",
+      "subtitle": "Logos, fotos de objetos, incluso dibujos de niños. La IA se encarga del modelado, tú no haces nada."
     },
     "Features": {
-      "title": "El convertidor imagen a 3D con IA más rápido",
-      "subtitle": "Diseñado para impresión 3D, desarrollo de videojuegos y prototipado rápido. Foto a STL, PNG a 3D, logo a 3D, boceto a malla. todo en uno.",
+      "title": "Hecho para imprimir, jugar y proyectos personales",
+      "subtitle": "Nos enfocamos en lo que de verdad importa cuando quieres usar el archivo.",
       "speedTitle": "Ultrarrápido",
       "speedDesc": "Inferencia acelerada por GPU genera modelos en < 30 segundos.",
       "topologyTitle": "Topología Limpia",
@@ -93,14 +93,14 @@
       "instantDesc": "Descarga tus modelos al instante en formato GLB, FBX, OBJ o STL."
     },
     "Steps": {
-      "label": "Cómo funciona el convertidor imagen a 3D",
-      "title": "Convierte cualquier imagen a 3D en tres pasos",
-      "step1": "Subir Imagen",
-      "step1Desc": "Arrastra y suelta cualquier PNG, JPG o WEBP.",
-      "step2": "Procesamiento IA",
-      "step2Desc": "Nuestro motor Bunshin reconstruye la profundidad y la textura.",
-      "step3": "Descargar 3D",
-      "step3Desc": "Obtén tu asset listo para juego o impresión."
+      "label": "Cómo funciona",
+      "title": "Tres pasos. Cinco minutos.",
+      "step1": "Sube una imagen",
+      "step1Desc": "PNG, JPG o WEBP. Arrastra y suelta o elige un archivo.",
+      "step2": "Deja trabajar a la IA",
+      "step2Desc": "Reconstruye la profundidad y la textura desde la imagen.",
+      "step3": "Descarga tu archivo",
+      "step3Desc": "STL, GLB, OBJ o FBX. Elige el que necesites."
     },
     "Samples": {
       "title": "Generaciones Recientes",
@@ -115,37 +115,37 @@
       "button": "Lanzar Estudio"
     },
     "SEOContent": {
-      "title1": "Convertidor imagen a 3D con IA. STL, GLB, OBJ y FBX",
-      "text1": "Bunshin 3D es un convertidor imagen a 3D gratuito impulsado por IA que transforma cualquier foto, logo, dibujo o concept art en un modelo 3D listo para producción. Arrastra un PNG, JPG o WEBP y descarga tu modelo como STL estanco para impresión 3D, GLB para Unity, Unreal Engine, Godot y la web, OBJ para Blender y Maya, o FBX para pipelines de juego antiguos. La conversión tarda menos de 30 segundos. sin experiencia en modelado 3D, sin instalación, sin tarjeta de crédito.",
-      "title2": "Diseñado para impresión 3D, videojuegos y prototipado",
-      "text2": "Cada archivo producido por el motor imagen-a-STL es manifold y estanco, por lo que se carga directamente en slicers como Cura, PrusaSlicer y Bambu Studio sin reparación. Las exportaciones GLB siguen el estándar glTF 2.0 con compatibilidad nativa con Unity, Unreal Engine, Godot, Three.js y visores en línea. La red neuronal de profundidad reconstruye geometría volumétrica real. no extrusiones planas ni litofanías. así que la salida sirve para prototipado, visualización de producto, educación, assets de juego y producción comercial.",
-      "title3": "Créditos gratis, sin suscripción, licencia comercial completa",
-      "text3": "Regístrate y recibe créditos gratis para probar la plataforma. sin tarjeta de crédito. Los créditos no caducan, no hay suscripción mensual y cada modelo 3D generado incluye licencia comercial completa: úsalo en tu juego, vende impresiones, entrega proyectos a clientes, sin regalías. Los packs de créditos empiezan en 2,99 € por 10 generaciones con descuentos por volumen. Bunshin 3D está disponible en siete idiomas y varias divisas para creadores en más de 80 países.",
-      "title4": "Convierte fotos, PNG, JPG y logos a STL imprimible",
-      "text4": "Usa el convertidor foto a 3D para imprimir figuras desde una simple foto, la herramienta PNG a STL para producir señalética y placas desde PNG transparentes, el pipeline logo a impresión 3D para convertir tu marca en un objeto de escritorio, y el motor dibujo a 3D para dar vida al arte infantil. Cada entrada. boceto, captura de pantalla, logo vectorial, página escaneada. se convierte en un STL imprimible con paredes limpias, sin caparazones finas y sin reparaciones manuales.",
-      "title5": "Generador de assets 3D con IA para Unity, Unreal, Godot y Blender",
-      "text5": "Estudios de videojuegos y desarrolladores indie usan Bunshin 3D como generador rápido de assets: arrastra una imagen de concept art y obtén un OBJ con topología cuad para retopología en Blender, un GLB listo para arrastrar a Unity o Unreal, o un FBX para pipelines antiguos. Cada modelo incluye texturas PBR (albedo, normales, rugosidad) para integrarlo en tiempo real sin escribir materiales. Ideal para prototipado, game jams, asset packs, escenas AR/VR o pre-producción AAA."
+      "title1": "¿Qué es Bunshin 3D?",
+      "text1": "Bunshin 3D es una herramienta online que convierte una imagen 2D en un modelo 3D. Subes una foto, un logo, una captura o un boceto, y la IA reconstruye el objeto en 3D. Puedes descargarlo en STL para impresión 3D, GLB para Unity y Unreal, OBJ para Blender, o FBX para pipelines de juego más antiguos. La mayoría de los archivos están listos en menos de un minuto.",
+      "title2": "¿Quién lo usa de verdad?",
+      "text2": "Hay quien imprime figuritas a partir de fotos antiguas de familia. Hay desarrolladores de juegos que pasan concept art a assets temporales mientras esperan a un artista. Hay padres que imprimen el objeto que su hijo dibujó esa mañana. Diseñadores que prototipan packaging antes de pasarlo a un modelador real. La lista crece cada semana y nos encanta descubrir casos nuevos.",
+      "title3": "Precios, dichos claro",
+      "text3": "Te damos créditos gratis al registrarte, sin pedir tarjeta. Los créditos no caducan. No hay suscripción mensual. Si necesitas más, los packs empiezan en 2,99 euros por 10 generaciones. Cada modelo que generas es tuyo, también para uso comercial. No cobramos regalías.",
+      "title4": "Los formatos que exportamos",
+      "text4": "Los STL se cargan directos en Cura, PrusaSlicer o Bambu Studio sin reparación. El GLB sigue el estándar glTF 2.0, así que entra limpio en Unity, Unreal, Godot y la mayoría de visores web. El OBJ funciona con Blender, Maya y Cinema 4D. El FBX está para proyectos antiguos de Unity y algunos pipelines de estudio. Eliges el formato en la pantalla de exportación.",
+      "title5": "Por qué lo hicimos",
+      "text5": "Modelar un objeto simple en Blender lleva horas si nunca lo has hecho. Pensamos que no debería. Así que entrenamos un modelo para hacer la parte aburrida por ti, y dejamos la interfaz pequeña para que nadie se pierda. Si después quieres pulir el resultado en tu programa 3D favorito, lo puedes hacer. La mayoría no lo necesita."
     },
     "KeywordHub": {
-      "label": "Búsquedas populares",
-      "title": "¿Qué puedes convertir a 3D con Bunshin?",
-      "subtitle": "Accesos directos a las conversiones imagen-a-3D más usadas.",
+      "label": "Accesos rápidos",
+      "title": "Lo que busca la gente",
+      "subtitle": "Estos son los usos más comunes que la gente nos pide.",
       "items": {
-        "imageToStl": "Convertidor imagen a STL",
-        "pngToStl": "PNG a STL en línea",
-        "jpgTo3d": "JPG a modelo 3D",
-        "photoTo3dPrint": "Foto a impresión 3D",
-        "logoToStl": "Logo a STL para impresión 3D",
+        "imageToStl": "Convertir una imagen a STL",
+        "pngToStl": "Pasar un PNG a archivo 3D",
+        "jpgTo3d": "Hacer un modelo 3D desde un JPG",
+        "photoTo3dPrint": "Imprimir una foto en 3D",
+        "logoToStl": "Imprimir un logo en 3D",
         "logoTo3d": "Logo a modelo 3D",
-        "drawingTo3d": "Dibujo a modelo 3D",
-        "sketchTo3d": "Boceto a malla 3D",
+        "drawingTo3d": "Pasar un dibujo a objeto 3D",
+        "sketchTo3d": "De boceto a malla 3D",
         "imageToGlb": "Imagen a GLB para Unity",
         "imageToObj": "Imagen a OBJ para Blender",
-        "unityAssets": "Assets Unity 3D desde fotos",
-        "unrealAssets": "Assets Unreal Engine desde imágenes",
-        "aiGameAssets": "Generador de assets de juego IA",
-        "freeStl": "Generador de archivos STL gratis",
-        "aiImageTo3d": "IA imagen a modelo 3D. gratis"
+        "unityAssets": "Assets de Unity desde fotos",
+        "unrealAssets": "Assets de Unreal desde imágenes",
+        "aiGameAssets": "Generador de assets de juego con IA",
+        "freeStl": "Generador gratis de archivos STL",
+        "aiImageTo3d": "IA imagen a modelo 3D, gratis"
       }
     }
   },
@@ -1433,8 +1433,8 @@
     "generatedAsset": "Activo Generado",
     "viewModel": "Ver Modelo",
     "download": "Descargar",
-    "title": "De la imagen al modelo 3D en segundos",
-    "subtitle": "Logos, fotos, bocetos y concept art convertidos en STL listos para imprimir y mallas GLB listas para juego. sin esculpir manualmente.",
+    "title": "Lo que la gente crea con esto",
+    "subtitle": "Logos, fotos de objetos, incluso dibujos de niños. La IA se encarga del modelado, tú no haces nada.",
     "badges": {
       "ultra": "Ultra",
       "premium": "Premium",
